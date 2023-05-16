@@ -123,7 +123,7 @@
         Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
 
         ```java
-        @Service
+ 
         public class InputMeta extends FieldMetaBuilder<InputDTO> {
         
           @Override
@@ -323,8 +323,33 @@ It can be calculated.
 ??? Example
     === "List widget"
         === "Editable"
+            **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
+            ```java
+            public class InputDTO extends DataResponseDTO {
+            
+                private String customField;
+            
+                public InputDTO(Input entity) {
+                    this.customField = entity.getCustomField();
+                }
+            }
+            ```
 
-            Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+            **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+                ```java
+                
+                public class InputService extends VersionAwareResponseService<InputDTO, Input> {
+         
+                    @Override
+                    protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
+                        if (data.isFieldChanged(InputDTO_.customField)) {
+                            entity.setCustomField(data.getCustomField());
+                        }
+                        return new ActionResultDTO<>(entityToDto(bc, entity));
+                    }
+              
+                ```
+            **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
 
             ```java
             public class InputMeta extends FieldMetaBuilder<InputDTO> {
@@ -337,7 +362,6 @@ It can be calculated.
               }
             }
             ```
-
         === "Readonly"
 
             **Option 1** Enabled by default.
@@ -347,7 +371,7 @@ It can be calculated.
               @Override
               public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
                                                 Long id, Long parentId) {
-
+            
               }
             }
             ```
@@ -359,7 +383,33 @@ It can be calculated.
     === "Form widget"
         === "Editable"
         
-            Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+            **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
+            ```java
+            public class InputDTO extends DataResponseDTO {
+            
+                private String customField;
+            
+                public InputDTO(Input entity) {
+                    this.customField = entity.getCustomField();
+                }
+            }
+            ```
+
+            **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+            ```java
+            
+            public class InputService extends VersionAwareResponseService<InputDTO, Input> {
+     
+                @Override
+                protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
+                    if (data.isFieldChanged(InputDTO_.customField)) {
+                        entity.setCustomField(data.getCustomField());
+                    }
+                    return new ActionResultDTO<>(entityToDto(bc, entity));
+                }
+          
+            ```
+            **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
 
             ```java
             public class InputMeta extends FieldMetaBuilder<InputDTO> {
@@ -372,22 +422,21 @@ It can be calculated.
               }
             }
             ```
-
         === "Readonly"
 
-           **Option 1** Enabled by default.
+            **Option 1** Enabled by default.
 
             ```java
             public class InputMeta extends FieldMetaBuilder<InputDTO> {
               @Override
               public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
                                                 Long id, Long parentId) {
-
+            
               }
             }
             ```
-            **Option 2**
-            `Not recommended.` Property fields.setDisabled() overrides the enable field if you use after property fields.setEnabled.
+
+            **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enable field if you use after property fields.setEnabled.
 
 ## Filtration
 `Filtration` is used to filter data according to specified criteria.
@@ -415,7 +464,7 @@ It retrieves all records where the value contains "value from filter" at any pos
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
 
         ```java
-        @Service
+ 
         public class InputMeta extends FieldMetaBuilder<InputDTO> {
         
           @Override
@@ -583,22 +632,24 @@ It retrieves all records where the value contains "value from filter" at any pos
               }
             }
             ```
-        `Step 2` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.       
-            ```java
-            public class InputMeta extends FieldMetaBuilder<InputDTO> {
-            
-              @Override
-              public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-                Long id, Long parentId) {
-               
-                fields.setDrilldown(
-                  InputDTO_.customField,
-                  DrillDownType.INNER,
-                  "/screen/Input/view/Inputinfo/" + TeslerInputController.Input + "/" + id
-                );
-              }            
-            }
-            ```
+        `Step 2`Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**. 
+
+        ```java
+        public class InputMeta extends FieldMetaBuilder<InputDTO> {
+        
+          @Override
+          public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
+            Long id, Long parentId) {
+           
+            fields.setDrilldown(
+              InputDTO_.customField,
+              DrillDownType.INNER,
+                  "/screen/input/view/inputinfo/" + PlatformInputController.Input + "/" + id
+            );
+          }            
+        }
+        ```
+
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
 
@@ -612,15 +663,18 @@ Validation can be of two types:
 2) Confirm  is designed to display a dialog with an optional message, and to wait until the user either confirms or cancels the dialog.
 ### How does it look?
 === "List widget"
-    === "Exception"
+    === "BusinessException"
         ![img_ex_list](img_ex_list.png)
-
+    === "RuntimeException"
+        ![img_ex_list](img_ex_list.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
 === "Info widget"
     _not applicable_ 
 === "Form widget"
-    === "Exception"
+    === "BusinessException"
+        ![img_ex_list](img_ex_list.png)
+    === "RuntimeException"
         ![img_ex_list](img_ex_list.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
@@ -628,12 +682,53 @@ Validation can be of two types:
 ### How to add?
 ??? Example
     === "List widget"
-        === "Exception"
+        === "BusinessException"
+            `BusinessException` describes an error  within a business process.
     
+            Add **BusinessException** to corresponding **VersionAwareResponseService**.
+    
+            ```java
+            public class InputService extends VersionAwareResponseService<InputDTO, Input> {
+     
+                @Override
+                protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
+                    if (data.isFieldChanged(InputDTO_.customField)) {
+                        entity.setCustomField(data.getCustomField());
+                        if (StringUtils.isNotEmpty(data.getCustomField())
+                                && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
+                        ) {
+                            throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
+                        }
+                    }
+                    return new ActionResultDTO<>(entityToDto(bc, entity));
+                }              
+            ```
+
+        === "RuntimeException"
+
+            `RuntimeException` describes an error  within a business process.
+            
+            Add **RuntimeException** to corresponding **VersionAwareResponseService**.
+            
+            ```java
+                @Override
+                protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
+                    if (data.isFieldChanged(InputDTO_.customField)) {
+                        entity.setCustomField(data.getCustomField());
+                       try {
+                           //call custom function
+                       }
+                       catch(Exception e){
+                            throw new RuntimeException("An unexpected error has occurred.");
+                        }
+                    }
+                    return new ActionResultDTO<>(entityToDto(bc, entity));
+                }
+            ```                   
         === "Confirm"
             Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
             ```java
-                @Service
+         
                 public class InputService extends VersionAwareResponseService<InputDTO, Input> {
 
                     @Override
@@ -647,15 +742,57 @@ Validation can be of two types:
                     }
                 }
             ```
+
     === "Info widget"
         _not applicable_ 
     === "Form widget"
-        === "Exception"
-    
+        === "BusinessException"
+            `BusinessException` describes an error  within a business process.
+
+            Add **BusinessException** to corresponding **VersionAwareResponseService**.
+
+            ```java
+            public class InputService extends VersionAwareResponseService<InputDTO, Input> {
+        
+                @Override
+                protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
+                    if (data.isFieldChanged(InputDTO_.customField)) {
+                        entity.setCustomField(data.getCustomField());
+                        if (StringUtils.isNotEmpty(data.getCustomField())
+                                && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
+                        ) {
+                            throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
+                        }
+                    }
+                    return new ActionResultDTO<>(entityToDto(bc, entity));
+                }              
+            ```
+
+        === "RuntimeException"
+            `RuntimeException` describes an error  within a business process.
+            
+            Add **RuntimeException** to corresponding **VersionAwareResponseService**.
+            
+            ```java
+            @Override
+            protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
+                if (data.isFieldChanged(InputDTO_.customField)) {
+                    entity.setCustomField(data.getCustomField());
+                   try {
+                       //call custom function
+                   }
+                   catch(Exception e){
+                        throw new RuntimeException("An unexpected error has occurred.");
+                    }
+                }
+                return new ActionResultDTO<>(entityToDto(bc, entity));
+            }
+            ```    
+
         === "Confirm"
             Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
             ```java
-                @Service
+         
                 public class InputService extends VersionAwareResponseService<InputDTO, Input> {
 
                     @Override
@@ -687,3 +824,44 @@ The records in descending order by default. It orders by value numbers, then by 
     _not applicable_
 === "Form widget"
     _not applicable_
+
+## Required
+`Required` indicates that this field requires a value.
+
+### How does it look?
+=== "List widget"
+    ![img_req_list.png](img_req_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_req_form.png](img_req_form.png)
+### How to add?
+=== "List widget"
+     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+
+    ```java
+
+    public class InputMeta extends FieldMetaBuilder<InputDTO> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setEnabled(InputDTO_.customField);
+        fields.setRequired(InputDTO_.customField);
+      }
+    ```
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+
+    ```java
+    public class InputMeta extends FieldMetaBuilder<InputDTO> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setEnabled(InputDTO_.customField);
+        fields.setRequired(InputDTO_.customField);
+      }
+    ```

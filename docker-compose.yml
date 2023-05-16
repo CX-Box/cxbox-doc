@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  mkdocs-material:
+    build: ./
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./src/main/resources/docs:/docs
+    expose:
+      -  8000
+

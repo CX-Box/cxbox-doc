@@ -1,0 +1,71 @@
+site_name: Tesler Documentation
+
+# Структура навигации генерируемого сайта.
+nav:
+  - Home: index.md
+  - Visual components:
+      - Field input(i): widget/fields/field/input/input.md
+      - Field text: widget/fields/field/text/text.md
+      - Field dictionary: widget/fields/field/dictionary/hidden.md
+      - Field hidden: widget/fields/field/hidden/hidden.md
+      - Field date: widget/fields/field/date/date.md
+      - Field dateTime: widget/fields/field/dateTime/dateTime.md
+      - Field dateTimeWithSeconds: widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md
+      - Field number: widget/fields/field/number/number.md
+      - Field money: widget/fields/field/money/money.md
+      - Field percent: widget/fields/field/percent/percent.md
+      - Field radio: widget/fields/field/radio/radio.md
+      - Field checkbox: widget/fields/field/checkbox/checkbox.md
+      - Field fileUpload: widget/fields/field/fileUpload.md
+      - Field pickList: widget/fields/field/fileUpload/pickList.md
+      - Field inlinePickList: widget/fields/field/inlinePickList/inlinePickList.md
+      - Field multifield: widget/fields/field/multifield/multifield.md
+      - Field multivalue: widget/fields/field/multivalue/multivalue.md
+      - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
+      - Field hint: widget/fields/field/hint/hint.md
+      - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
+  - Features:
+      - DrillDown: features/element/drillDown/drillDown.md
+      - SearchParameter: features/element/searchParameter/searchParameter.md
+  - Advanced customization:
+      - DrillDown: advancedCustomization/element/drillDown/drillDown.md
+      - Confirm: advancedCustomization/element/confirm/confirm.md
+      - SearchParameter: advancedCustomization/element/searchParameter/searchParameter.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+theme:
+  name: mkdocs
+  highlightjs: true
+  hljs_languages:
+    - json
+    - java
+
+plugins:
+  - redirects:
+      redirect_maps:
+        'widget_field_input.md': 'widget/fields/field/input/input.md'
+        'widget_field_dictionary.md': 'widget/fields/field/dictionary/dictionary.md'
+        'widget_field_hidden.md': 'widget/fields/field/hidden/hidden.md'
+        'widget_field_text.md': 'widget/fields/field/text/text.md'
+        'widget_field_date.md': 'widget/fields/field/date/date.md'
+        'widget_field_dateTime.md': 'widget/fields/field/dateTime/dateTime.md'
+        'widget_field_dateTimeWithSeconds.md': 'widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md'
+        'widget_field_number.md': 'widget/fields/field/number/number.md'
+        'widget_field_money.md': 'widget/fields/field/money/money.md'
+        'widget_field_percent.md': 'widget/fields/field/percent/percent.md'
+        'widget_field_radio.md': 'widget/fields/field/radio/radio.md'
+        'widget_field_checkbox.md': 'widget/fields/field/checkbox/checkbox.md'
+        'widget_field_fileUpload.md': 'widget/fields/field/fileUpload/fileUpload.md'
+        'widget_field_pickList.md': 'widget/fields/field/pickList/pickList.md'
+        'widget_field_inlinePickList.md': 'widget/fields/field/inlinePickList/inlinePickList.md'
+        'widget_field_multifield.md': 'widget/fields/field/multifield/multifield.md'
+        'widget_field_multivalue.md': 'widget/fields/field/multivalue/multivalue.md'
+        'widget_field_multipleSelect.md': 'widget/fields/field/multipleSelect/multipleSelect.md'
+        'widget_field_hint.md': 'widget/fields/field/hint/hint.md'
+        'widget_field_multivalueHover.md': 'widget/fields/field/multivalueHover/multivalueHover.md'
+        'features_drillDown.md': 'features/element/drillDown/drillDown.md'

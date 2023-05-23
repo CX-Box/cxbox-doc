@@ -10,18 +10,21 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup python
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - run: pip install mkdocs-material==9.1.14
-      - run: pip install --no-cache-dir mkdocs-redirects
-      - uses: actions/cache@v3
+      - name: cache prepare
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - name: setup mkdocs-material and mkdocs-redirects, build site, push it to gh-pages branch and auto deploy to Github pages
+        uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - run: pip install --force-reinstall -v "mkdocs-material==9.1.14"
+      - run: pip install --no-cache-dir mkdocs-redirects
       - run: mkdocs gh-deploy --force

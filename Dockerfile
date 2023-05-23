@@ -1,4 +1,4 @@
-FROM squidfunk/mkdocs-material:8.5.10
+FROM squidfunk/mkdocs-material:9.1.14
 RUN pip install --no-cache-dir \
   mkdocs-redirects
 ENTRYPOINT ["mkdocs"]

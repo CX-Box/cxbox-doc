@@ -1,6 +1,5 @@
 # Welcome to Cxbox documentation
 
-<blockquote>
 <div> 
 <p align="center">
 <h4 align="center">CXBOX - Rapid Enterprise Level Application Development Platform</h4>
@@ -45,4 +44,3 @@ widgets, fields, layouts (views), navigation (screens).
  <a href="https://github.com/CX-Box/cxbox-demo" target="_blank">download Demo</a> and follow <a href="https://github.com/CX-Box/cxbox-demo#readme" target="_blank">README.md</a> instructions. Feel free to use demo as template project to start your own projects
 </li>
 </ul>
-</blockquote>

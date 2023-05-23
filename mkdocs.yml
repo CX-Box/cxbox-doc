@@ -45,11 +45,9 @@ theme:
     - json
     - java
   features:
-    - navigation.sections
     - search.highlight
     - content.action.edit
   icon:
-    repo: fontawesome/brands/github
     edit: material/pencil
     view: material/eye
 plugins:
@@ -79,5 +77,4 @@ plugins:
         'features_drillDown.md': 'features/element/drillDown/drillDown.md'
 
 repo_url: https://github.com/CX-Box/cxbox-doc
-repo_name: cxbox-doc
 edit_uri: edit/main/docs/

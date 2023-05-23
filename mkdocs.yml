@@ -39,7 +39,7 @@ markdown_extensions:
       alternate_style: true
 
 theme:
-  name: mkdocs
+  name: material
   highlightjs: true
   hljs_languages:
     - json

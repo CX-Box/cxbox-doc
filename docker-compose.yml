@@ -4,9 +4,9 @@ services:
   mkdocs-material:
     build: ./
     ports:
-      - "8001:8000"
+      - "8000:8000"
     volumes:
-      - ./src/main/resources/docs:/docs
+      - ./docs:/docs
     expose:
       -  8000
 

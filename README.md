@@ -1,4 +1,4 @@
-<h2 align="center">CXBOX Demo</h2>
+<h2 align="center">CXBOX Doc</h2>
 <div align="center">
 <a href="https://github.com/CX-Box/cxbox-doc/actions/workflows/build_main.yml"><img src="https://github.com/CX-Box/cxbox-doc/actions/workflows/build_main.yml/badge.svg" title="">
 </a>

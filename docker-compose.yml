@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./docs:/docs
+      - ./:/docs
     expose:
       -  8000
 

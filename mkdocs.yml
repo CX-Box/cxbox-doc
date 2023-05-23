@@ -5,8 +5,9 @@ nav:
   - Home: index.md
   - Visual components:
       - Field input(i): widget/fields/field/input/input.md
-      - Field text: widget/fields/field/text/percent.md
-      - Field dictionary: widget/fields/field/dictionary/date.md
+      - Field checkbox(i): widget/fields/field/checkbox/checkbox.md
+      - Field text: widget/fields/field/text/text.md
+      - Field dictionary: widget/fields/field/dictionary/dictionary.md
       - Field hidden: widget/fields/field/hidden/hidden.md
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md
@@ -15,9 +16,8 @@ nav:
       - Field money: widget/fields/field/money/money.md
       - Field percent: widget/fields/field/percent/percent.md
       - Field radio: widget/fields/field/radio/radio.md
-      - Field checkbox: widget/fields/field/checkbox/checkbox.md
-      - Field fileUpload: widget/fields/field/fileUpload.md
-      - Field pickList: widget/fields/field/fileUpload/pickList.md
+      - Field fileUpload: widget/fields/field/fileUpload/fileUpload.md
+      - Field pickList: widget/fields/field/pickList/pickList.md
       - Field inlinePickList: widget/fields/field/inlinePickList/inlinePickList.md
       - Field multifield: widget/fields/field/multifield/multifield.md
       - Field multivalue: widget/fields/field/multivalue/multivalue.md
@@ -26,11 +26,11 @@ nav:
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Features:
       - DrillDown: features/element/drillDown/drillDown.md
-      - SearchParameter: features/element/searchParameter/searchParameter.md
+      - Filtration: features/element/filtration/filtration.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drillDown/drillDown.md
-      - Confirm: advancedCustomization/element/confirm/confirm.md
-      - SearchParameter: advancedCustomization/element/searchParameter/searchParameter.md
+      - Validation: advancedCustomization/element/validation/validation.md
+      - Filtration: advancedCustomization/element/filtration/filtration.md
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -76,6 +76,9 @@ plugins:
         'widget_field_hint.md': 'widget/fields/field/hint/hint.md'
         'widget_field_multivalueHover.md': 'widget/fields/field/multivalueHover/multivalueHover.md'
         'features_drillDown.md': 'features/element/drillDown/drillDown.md'
+        'advancedCustomization_drillDown.md': 'advancedCustomization/element/drillDown/drillDown.md'
+        'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
+        'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
 
 repo_url: https://github.com/CX-Box/cxbox-doc
 edit_uri: edit/main/docs/

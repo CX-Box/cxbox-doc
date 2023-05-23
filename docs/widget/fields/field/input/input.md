@@ -452,7 +452,7 @@ It retrieves all records where the value contains "value from filter" at any pos
 ### How to add?
 ??? Example
     === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchParameter/searchParameter)
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration)
 
         ```java
         public class InputDTO extends DataResponseDTO {
@@ -539,7 +539,7 @@ It retrieves all records where the value contains "value from filter" at any pos
             ```
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization_drillDown) 
  
     === "Info widget"
 
@@ -595,7 +595,7 @@ It retrieves all records where the value contains "value from filter" at any pos
         }
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization_drillDown) 
  
     === "Form widget"
 
@@ -651,9 +651,9 @@ It retrieves all records where the value contains "value from filter" at any pos
         ```
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization_drillDown) 
 
-[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+[Advanced customization](/advancedCustomization_drillDown)
 ## Validation
 `Validation` is designed to check values entered into visual components.
 Validation can be of two types:
@@ -726,7 +726,7 @@ Validation can be of two types:
                 }
             ```                   
         === "Confirm"
-            Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
+            Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
             ```java
          
                 public class InputService extends VersionAwareResponseService<InputDTO, Input> {
@@ -790,7 +790,7 @@ Validation can be of two types:
             ```    
 
         === "Confirm"
-            Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
+            Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
             ```java
          
                 public class InputService extends VersionAwareResponseService<InputDTO, Input> {

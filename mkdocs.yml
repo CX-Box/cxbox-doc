@@ -26,11 +26,11 @@ nav:
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Features:
       - DrillDown: features/element/drillDown/drillDown.md
-      - SearchParameter: features/element/searchParameter/searchParameter.md
+      - Filtration: features/element/filtration/filtration.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drillDown/drillDown.md
-      - Confirm: advancedCustomization/element/confirm/confirm.md
-      - SearchParameter: advancedCustomization/element/searchParameter/searchParameter.md
+      - Validation: advancedCustomization/element/validation/validation.md
+      - Filtration: advancedCustomization/element/filtration/filtration.md
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -76,6 +76,9 @@ plugins:
         'widget_field_hint.md': 'widget/fields/field/hint/hint.md'
         'widget_field_multivalueHover.md': 'widget/fields/field/multivalueHover/multivalueHover.md'
         'features_drillDown.md': 'features/element/drillDown/drillDown.md'
+        'advancedCustomization_drillDown.md': 'advancedCustomization/element/drillDown/drillDown.md'
+        'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
+        'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
 
 repo_url: https://github.com/CX-Box/cxbox-doc
 edit_uri: edit/main/docs/

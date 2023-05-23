@@ -1,4 +1,0 @@
-# Confirm
-
-`Confirm`  
- 

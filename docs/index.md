@@ -1,5 +1,3 @@
-# Welcome to Cxbox documentation
-
 <div> 
 <p align="center">
 <h4 align="center">CXBOX - Rapid Enterprise Level Application Development Platform</h4>

@@ -44,8 +44,16 @@ theme:
   hljs_languages:
     - json
     - java
-
+  features:
+    - navigation.sections
+    - search.highlight
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
 plugins:
+  - search
   - redirects:
       redirect_maps:
         'widget_field_input.md': 'widget/fields/field/input/input.md'
@@ -69,3 +77,7 @@ plugins:
         'widget_field_hint.md': 'widget/fields/field/hint/hint.md'
         'widget_field_multivalueHover.md': 'widget/fields/field/multivalueHover/multivalueHover.md'
         'features_drillDown.md': 'features/element/drillDown/drillDown.md'
+
+repo_url: https://github.com/CX-Box/cxbox-doc
+repo_name: cxbox-doc
+edit_uri: edit/main/docs/

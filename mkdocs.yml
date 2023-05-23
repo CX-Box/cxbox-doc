@@ -45,6 +45,7 @@ theme:
     - json
     - java
   features:
+    - navigation.sections
     - search.highlight
     - content.action.edit
   icon:

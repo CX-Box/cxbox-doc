@@ -14,8 +14,28 @@
 
 ### How to add?
 ??? Example
+    **Step1** Add field **String** to corresponding **DataResponseDTO**.
+
+    ```java
+    public class InputDTO extends DataResponseDTO {
+    
+    private String customField;
+    
+        public InputDTO(InputEntity entity) {
+        this.customField = entity.getCustomField();
+        }
+    }
+    ```
+    **Step2** Add field **String** to corresponding **BaseEntity**.
+
+    ```java
+    public class InputEntity extends BaseEntity {
+    
+        private String customField;
+    }
+    ```
     === "List widget"
-        Add to **_.widget.json_**.
+        **Step3** Add to **_.widget.json_**.
 
         ```json
         {
@@ -49,7 +69,7 @@
 
 
     === "Info widget"
-        Add to **_.widget.json_**.
+        **Step3** Add to **_.widget.json_**.
 
         ```json
         {
@@ -72,7 +92,7 @@
         ```
 
     === "Form widget"
-        Add to **_.widget.json_**.
+        **Step3** Add to **_.widget.json_**.
 
         ```json
         {

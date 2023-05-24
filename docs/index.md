@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="http://cxbox.org/" target="_blank">
+    <a href="https://cxbox.org/" target="_blank">
       Website
     </a>
     <span> | </span>
@@ -16,7 +16,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="http://doc.cxbox.org/" target="_blank">
+    <a href="https://doc.cxbox.org/" target="_blank">
       Documentation
     </a>
   </h3>

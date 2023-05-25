@@ -1,5 +1,4 @@
 # DateTimeWithSeconds
-
 `DateTimeWithSeconds` is a component for date with time editing. It can be used for editing and displaying dates with time and with seconds.
 
 ## Basics
@@ -44,7 +43,7 @@
           "name": "DateTimeWithSecondsList",
           "title": "List title",
           "type": "List",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "title": "custom Field",
@@ -66,7 +65,7 @@
           "name": "DateTimeWithSecondsInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "label": "custom Field",
@@ -100,7 +99,7 @@
           "name": "DateTimeWithSecondsForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "label": "custom Field",
@@ -128,8 +127,8 @@
 ## Placeholder
 
 ## Color
-`Color`  is an element of user interface that lets an user to specify a field color.
-It can be calculated.
+`Color` allows you to specify a field color. It can be calculated based on business logic of application
+
 
 ### How does it look?
 === "List widget"
@@ -145,7 +144,7 @@ It can be calculated.
 ### How to add?
 ??? Example
     === "Calculated color"
-        It can be calculated.
+        
     
         **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
     
@@ -168,7 +167,7 @@ It can be calculated.
               "name": "DateTimeWithSecondsList",
               "title": "List title",
               "type": "List",
-              "bc": "DateTimeWithSeconds",
+              "bc": "myBcDateTimeWithSeconds",
               "fields": [
                 {
                   "title": "custom Field",
@@ -190,7 +189,7 @@ It can be calculated.
               "name": "DateTimeWithSecondsInfo",
               "title": "Info title",
               "type": "Info",
-              "bc": "DateTimeWithSeconds",
+              "bc": "myBcDateTimeWithSeconds",
               "fields": [
                 {
                   "label": "custom Field",
@@ -280,7 +279,7 @@ It can be calculated.
 
 
 ## Readonly/Editable
-`Readonly/Editable` indicates that the field can be edited or not.It can be calculated.
+`Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
 === "Editable List widget"
@@ -293,21 +292,8 @@ It can be calculated.
 
 ### How to add?
 ??? Example
-    === "Editable"
-         **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
-    
-        ```java
-        public class DateTimeWithSecondsDTO extends DataResponseDTO {
-        
-            private LocalDateTime customField;
-        
-            public DateTimeWithSecondsDTO(DateTimeWithSecondsEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-    
-        **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+    === "Editable"   
+        **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
             public class DateTimeWithSecondsService extends VersionAwareResponseService<DateTimeWithSecondsDTO, DateTimeWithSeconds> {
@@ -321,7 +307,7 @@ It can be calculated.
                 }
           
             ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
         public class DateTimeWithSecondsMeta extends FieldMetaBuilder<DateTimeWithSecondsDTO> {
@@ -363,7 +349,7 @@ It can be calculated.
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtration` is used to filter data according to specified criteria. Search by range current day . 
+`Filtering` allows you to search data based on criteria.Search by range current day . 
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -404,9 +390,10 @@ It can be calculated.
         _not applicable_
 
 ## Drilldown
-`DrillDown` lets the user to navigate to another view by tapping it.
+`DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-`see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+
 
 ### How does it look?
 === "List widget"
@@ -431,7 +418,7 @@ It can be calculated.
               fields.setDrilldown(
                     DateTimeWithSecondsDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/DateTimeWithSeconds/view/dateTimeWithSecondsinfo/" + PlatformDateTimeWithSecondsController.dateTimeWithSeconds + "/" + id
+                    "/screen/DateTimeWithSeconds/view/dateTimeWithSecondsinfo/" + PlatformDateTimeWithSecondsController.myBcDateTimeWithSeconds + "/" + id
             );
     ```
     === "List widget"
@@ -441,7 +428,7 @@ It can be calculated.
               "name": "DateTimeWithSecondsList",
               "title": "List title",
               "type": "List",
-              "bc": "DateTimeWithSeconds",
+              "bc": "myBcDateTimeWithSeconds",
               "fields": [
                 {
                   "title": "custom Field",
@@ -470,7 +457,7 @@ It can be calculated.
           "name": "DateTimeWithSecondsInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "label": "custom Field",
@@ -503,12 +490,11 @@ It can be calculated.
 [Advanced customization](/advancedCustomization/element/drillDown/drillDown)
 
 ## Validation
-`Validation` is designed to check values entered into visual components.
-Validation can be of two types:
+`Validation` allows you to check any business rules for user-entered value. There are two types of validation:
 
-1) Exception is message about technical or business errors.
+1) Exception: Displays a message to notify users about technical or business errors.
 
-2) Confirm  is designed to display a dialog with an optional message, and to wait until the user either confirms or cancels the dialog.
+2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 ### How does it look?
 === "List widget"
     === "BusinessException"
@@ -600,7 +586,7 @@ Validation can be of two types:
             **Works for Form.**
 
 ## Sorting
-`Sorting` function allows to sort in ascending or descending order.
+`Sorting` allows you to sort data in ascending or descending order.
 The records in descending order by default. 
 
 ### How does it look?
@@ -619,8 +605,7 @@ The records in descending order by default.
     _not applicable_
 
 ## Required
-`Required` indicates that this field requires a value.
-
+`Required` allows you to denote, that this field must have a value provided.
 ### How does it look?
 === "List widget"
     ![img_req_list.png](img_req_list.png)

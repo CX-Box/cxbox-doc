@@ -8,11 +8,11 @@ nav:
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md
       - Field dateTimeWithSeconds: widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md
+      - Field number: widget/fields/field/number/number.md
       - Field checkbox: widget/fields/field/checkbox/checkbox.md
       - Field text: widget/fields/field/text/text.md
       - Field dictionary: widget/fields/field/dictionary/dictionary.md
       - Field hidden: widget/fields/field/hidden/hidden.md
-      - Field number: widget/fields/field/number/number.md
       - Field money: widget/fields/field/money/money.md
       - Field percent: widget/fields/field/percent/percent.md
       - Field radio: widget/fields/field/radio/radio.md

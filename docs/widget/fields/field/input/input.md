@@ -1,5 +1,4 @@
 # Input
-
 `Field Input` component is used for text editing. It allows editing and displaying single-line text.
 ## Basics
 ### How does it look?
@@ -42,7 +41,7 @@
           "name": "InputInfo",
           "title": "Info Title",
           "type": "Info",
-          "bc": "input",
+          "bc": "myBcInput",
           "fields": [
             {
               "label": "custom Field",
@@ -76,7 +75,7 @@
           "name": "InputList",
           "title": "List Title",
           "type": "List",
-          "bc": "input",
+          "bc": "myBcInput",
           "fields": [
             {
               "title": "custom Field",
@@ -99,7 +98,7 @@
           "name": "InputForm",
           "title": "Form Title",
           "type": "Form",
-          "bc": "input",
+          "bc": "myBcInput",
           "fields": [
             {
               "label": "custom Field",
@@ -125,43 +124,43 @@
         ```
 
 ## Placeholder
-`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
 ### How does it look?
 === "List widget"
-    _not applicable_
+    ![img_plchldr_list.png](img_plchldr_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
     ![form_label.png](img_plchldr_form.png)
 ### How to add?
 ??? Example
-    === "List widget"
-        _not applicable_
-    === "Info widget"
-        _not applicable_
-    === "Form widget"
-        Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
 
-        ```java
- 
-        public class InputMeta extends FieldMetaBuilder<InputDTO> {
-        
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-            Long id, Long parentId) {
-            fields.setPlaceholder(InputDTO_.customField, "placeholder text");
-          }
-        ```
+    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
+    
+    ```java
+    
+    public class InputMeta extends FieldMetaBuilder<InputDTO> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setPlaceholder(InputDTO_.customField, "placeholder text");
+      }
+    ```
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**
+    === "Form widget"
+        **Works for Form.**
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
  
 ### How does it look?
 === "List widget"
     ![img_1.png](img_1.png)
-
 === "Info widget"
     ![img_2.png](img_2.png)
-
 === "Form widget"
     _not applicable_
 
@@ -170,7 +169,7 @@
 ??? Example
     === "List widget"
         === "Calculated color"
-            It can be calculated.
+            
 
             **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**.                    
             ```java
@@ -192,7 +191,7 @@
               "name": "InputInfo",
               "title": "Info Title",
               "type": "Info",
-              "bc": "input",
+              "bc": "myBcInput",
               "fields": [
                 {
                   "label": "custom Field",
@@ -224,7 +223,7 @@
               "name": "InputInfo",
               "title": "Info Title",
               "type": "Info",
-              "bc": "input",
+              "bc": "myBcInput",
               "fields": [
                 {
                   "label": "custom Field",
@@ -252,7 +251,7 @@
 
     === "Info widget"
         === "Calculated color"
-            It can be calculated.
+            
 
             **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**.                    
             ```java
@@ -273,7 +272,7 @@
               "name": "InputInfo",
               "title": "Info Title",
               "type": "Info",
-              "bc": "input",
+              "bc": "myBcInput",
               "fields": [
                 {
                   "label": "custom Field",
@@ -305,7 +304,7 @@
               "name": "InputInfo",
               "title": "Info Title",
               "type": "Info",
-              "bc": "input",
+              "bc": "myBcInput",
               "fields": [
                 {
                   "label": "custom Field",
@@ -524,7 +523,7 @@ Also, it optionally allows you to filter data on target view before it will be o
               "name": "InputList",
               "title": "List Title",
               "type": "List",
-              "bc": "input",
+              "bc": "myBcInput",
               "fields": [
                 {
                   "title": "custom Field",
@@ -551,7 +550,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 fields.setDrilldown(
                   InputDTO_.customField,
                   DrillDownType.INNER,
-                  "/screen/input/view/inputinfo/" + PlatformInputController.Input + "/" + id
+                  "/screen/input/view/inputinfo/" + PlatformInputController.myBcInput + "/" + id
                 );
               }            
             }
@@ -571,7 +570,7 @@ Also, it optionally allows you to filter data on target view before it will be o
           "name": "InputInfo",
           "title": "Info Title",
           "type": "Info",
-          "bc": "input",
+          "bc": "myBcInput",
           "fields": [
             {
               "label": "custom Field",
@@ -626,7 +625,7 @@ Also, it optionally allows you to filter data on target view before it will be o
               "name": "InputForm",
               "title": "Form Title",
               "type": "Form",
-              "bc": "input",
+              "bc": "myBcInput",
               "fields": [
                 {
                   "label": "custom Field",

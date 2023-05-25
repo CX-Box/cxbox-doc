@@ -1,5 +1,4 @@
 # DateTimeWithSeconds
-
 `DateTimeWithSeconds` is a component for date with time editing. It can be used for editing and displaying dates with time and with seconds.
 
 ## Basics
@@ -44,7 +43,7 @@
           "name": "DateTimeWithSecondsList",
           "title": "List title",
           "type": "List",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "title": "custom Field",
@@ -66,7 +65,7 @@
           "name": "DateTimeWithSecondsInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "label": "custom Field",
@@ -100,7 +99,7 @@
           "name": "DateTimeWithSecondsForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "label": "custom Field",
@@ -168,7 +167,7 @@ It can be calculated.
               "name": "DateTimeWithSecondsList",
               "title": "List title",
               "type": "List",
-              "bc": "DateTimeWithSeconds",
+              "bc": "myBcDateTimeWithSeconds",
               "fields": [
                 {
                   "title": "custom Field",
@@ -190,7 +189,7 @@ It can be calculated.
               "name": "DateTimeWithSecondsInfo",
               "title": "Info title",
               "type": "Info",
-              "bc": "DateTimeWithSeconds",
+              "bc": "myBcDateTimeWithSeconds",
               "fields": [
                 {
                   "label": "custom Field",
@@ -293,21 +292,8 @@ It can be calculated.
 
 ### How to add?
 ??? Example
-    === "Editable"
-         **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
-    
-        ```java
-        public class DateTimeWithSecondsDTO extends DataResponseDTO {
-        
-            private LocalDateTime customField;
-        
-            public DateTimeWithSecondsDTO(DateTimeWithSecondsEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-    
-        **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+    === "Editable"   
+        **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
             public class DateTimeWithSecondsService extends VersionAwareResponseService<DateTimeWithSecondsDTO, DateTimeWithSeconds> {
@@ -321,7 +307,7 @@ It can be calculated.
                 }
           
             ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
         public class DateTimeWithSecondsMeta extends FieldMetaBuilder<DateTimeWithSecondsDTO> {
@@ -441,7 +427,7 @@ It can be calculated.
               "name": "DateTimeWithSecondsList",
               "title": "List title",
               "type": "List",
-              "bc": "DateTimeWithSeconds",
+              "bc": "myBcDateTimeWithSeconds",
               "fields": [
                 {
                   "title": "custom Field",
@@ -470,7 +456,7 @@ It can be calculated.
           "name": "DateTimeWithSecondsInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "DateTimeWithSeconds",
+          "bc": "myBcDateTimeWithSeconds",
           "fields": [
             {
               "label": "custom Field",

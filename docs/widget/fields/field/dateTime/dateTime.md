@@ -1,5 +1,4 @@
 # DateTime
-
 `DateTime`  is a component for date with time editing. It can be used for editing and displaying dates with time.
 ## Basics
 ### How does it look?
@@ -43,7 +42,7 @@
           "name": "DateTimeList",
           "title": "List title",
           "type": "List",
-          "bc": "dateTime",
+          "bc": "myBcDateTime",
           "fields": [
             {
               "title": "custom Field",
@@ -65,7 +64,7 @@
           "name": "DateTimeInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "DateTime",
+          "bc": "myBcDateTime",
           "fields": [
             {
               "label": "custom Field",
@@ -99,7 +98,7 @@
           "name": "DateTimeForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "DateTime",
+          "bc": "myBcDateTime",
           "fields": [
             {
               "label": "custom Field",
@@ -167,7 +166,7 @@ It can be calculated.
               "name": "DateTimeList",
               "title": "List title",
               "type": "List",
-              "bc": "DateTime",
+              "bc": "myBcDateTime",
               "fields": [
                 {
                   "title": "custom Field",
@@ -189,7 +188,7 @@ It can be calculated.
               "name": "DateTimeInfo",
               "title": "Info title",
               "type": "Info",
-              "bc": "DateTime",
+              "bc": "myBcDateTime",
               "fields": [
                 {
                   "label": "custom Field",
@@ -293,20 +292,7 @@ It can be calculated.
 ### How to add?
 ??? Example
     === "Editable"
-         **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
-    
-        ```java
-        public class DateTimeDTO extends DataResponseDTO {
-        
-            private LocalDateTime customField;
-        
-            public DateTimeDTO(DateTimeEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-    
-        **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
             public class DateTimeService extends VersionAwareResponseService<DateTimeDTO, DateTime> {
@@ -320,7 +306,7 @@ It can be calculated.
                 }
           
             ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
         public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
@@ -440,7 +426,7 @@ It can be calculated.
               "name": "DateTimeList",
               "title": "List title",
               "type": "List",
-              "bc": "DateTime",
+              "bc": "myBcDateTime",
               "fields": [
                 {
                   "title": "custom Field",
@@ -469,7 +455,7 @@ It can be calculated.
           "name": "DateTimeInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "DateTime",
+          "bc": "myBcDateTime",
           "fields": [
             {
               "label": "custom Field",

@@ -1,5 +1,4 @@
 # Date
-
 `Date`  is a component for date with time editing. It can be used for editing and displaying dates.
 
 ## Basics
@@ -46,7 +45,7 @@
           "name": "DateList",
           "title": "List title",
           "type": "List",
-          "bc": "Date",
+          "bc": "myBcDate",
           "fields": [
             {
               "title": "custom Field",
@@ -69,7 +68,7 @@
           "name": "DateInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "Date",
+          "bc": "myBcDate",
           "fields": [
             {
               "label": "custom Field",
@@ -102,7 +101,7 @@
           "name": "DateForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "Date",
+          "bc": "myBcDate",
           "fields": [
             {
               "label": "custom Field",
@@ -170,7 +169,7 @@ It can be calculated.
               "name": "DateList",
               "title": "List title",
               "type": "List",
-              "bc": "Date",
+              "bc": "myBcDate",
               "fields": [
                 {
                   "title": "custom Field",
@@ -192,7 +191,7 @@ It can be calculated.
               "name": "DateInfo",
               "title": "Info title",
               "type": "Info",
-              "bc": "Date",
+              "bc": "myBcDate",
               "fields": [
                 {
                   "label": "custom Field",
@@ -228,7 +227,7 @@ It can be calculated.
               "name": "DaterList",
               "title": "List title",
               "type": "List",
-              "bc": "Dater",
+              "bc": "myBcDate",
               "fields": [
                 {
                   "title": "custom Field",
@@ -251,7 +250,7 @@ It can be calculated.
               "name": "DaterInfo",
               "title": "Info title",
               "type": "Info",
-              "bc": "Dater",
+              "bc": "myBcDate",
               "fields": [
                 {
                   "label": "custom Field",
@@ -295,20 +294,7 @@ It can be calculated.
 ### How to add?
 ??? Example
     === "Editable"
-        **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
-
-        ```java
-        public class DateDTO extends DataResponseDTO {
-            @SearchParameter(name = "customField", provider = DateValueProvider.class)
-            private LocalDate customField;
-        
-            public DateDTO(DateEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-    
-        **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+        **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
             public class DateService extends VersionAwareResponseService<DateDTO, Date> {
@@ -322,7 +308,7 @@ It can be calculated.
                 }
           
             ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
         public class DateMeta extends FieldMetaBuilder<DateDTO> {
@@ -443,7 +429,7 @@ It can be calculated.
               "name": "DateList",
               "title": "List title",
               "type": "List",
-              "bc": "Date",
+              "bc": "myBcDate",
               "fields": [
                 {
                   "title": "custom Field",
@@ -472,7 +458,7 @@ It can be calculated.
           "name": "DateInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "Date",
+          "bc": "myBcDate",
           "fields": [
             {
               "label": "custom Field",

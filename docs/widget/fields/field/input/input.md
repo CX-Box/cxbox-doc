@@ -1,6 +1,6 @@
 # Input
 
-`Field Input` is a component for text editing. It can be used for editing and displaying single line text.
+`Field Input` component is used for text editing. It allows editing and displaying single-line text.
 ## Basics
 ### How does it look?
 
@@ -105,7 +105,7 @@
         ```
 
 ## Placeholder
-`The placeholder` specifies a short hint that describes the expected value of an input field. The hint is displayed in the input field before the user enters a value.
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
     _not applicable_
@@ -133,8 +133,7 @@
           }
         ```
 ## Color
-`Color`  is an element of user interface that lets an user to specify a field color. 
-It can be calculated.
+`Color` allows you to specify a field color. It can be calculated based on business logic of application
  
 ### How does it look?
 === "List widget"
@@ -317,7 +316,7 @@ It can be calculated.
       
 
 ## Readonly/Editable
-`Readonly/Editable` indicates that the field can be edited or not.It can be calculated.
+`Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How to add?
 ??? Example
@@ -438,9 +437,9 @@ It can be calculated.
 
             **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enable field if you use after property fields.setEnabled.
 
-## Filtration
-`Filtration` is used to filter data according to specified criteria.
-It retrieves all records where the value contains "value from filter" at any position(e.g. %Like%). Filtration function is not case-sensitive.
+## Filtering
+`Filtering` allows you to search data based on criteria.
+For `Input field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ). 
 ### How does it look?
 === "List widget"
     ![img_filtr_table.png](img_filtr_table.png)
@@ -481,9 +480,9 @@ It retrieves all records where the value contains "value from filter" at any pos
         _not applicable_
 
 ## Drilldown
-`DrillDown` lets the user to navigate to another view by tapping it.
+`DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-`see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
 
 ### How does it look?
 === "List widget"
@@ -655,12 +654,12 @@ It retrieves all records where the value contains "value from filter" at any pos
 
 [Advanced customization](/advancedCustomization_drillDown)
 ## Validation
-`Validation` is designed to check values entered into visual components.
-Validation can be of two types:
+`Validation` allows you to check any business rules for user-entered value. There are two types of validation:
 
-1) Exception is message about technical or business errors.
+1) Exception: Displays a message to notify users about technical or business errors.
 
-2) Confirm  is designed to display a dialog with an optional message, and to wait until the user either confirms or cancels the dialog.
+2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
+
 ### How does it look?
 === "List widget"
     === "BusinessException"
@@ -807,8 +806,8 @@ Validation can be of two types:
                 }
             ```
 ## Sorting
-`Sorting` function allows to sort in ascending or descending order. 
-The records in descending order by default. It orders by value numbers, then by alphabet.
+`Sorting` allows you to sort data in ascending or descending order.
+`Input field` is a text field, so lexicographic sorting is used for it
 
 ### How does it look?
 === "List widget"
@@ -818,15 +817,16 @@ The records in descending order by default. It orders by value numbers, then by 
 === "Form widget"
     _not applicable_
 ### How to add?
-=== "List widget"
-    Enabled on default.
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-    _not applicable_
+??? Example
+    === "List widget"
+        Enabled on default.
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Required
-`Required` indicates that this field requires a value.
+`Required` allows you to denote, that this field must have a value provided. By default, `Input field` is not required
 
 ### How does it look?
 === "List widget"
@@ -836,32 +836,33 @@ The records in descending order by default. It orders by value numbers, then by 
 === "Form widget"
     ![img_req_form.png](img_req_form.png)
 ### How to add?
-=== "List widget"
-     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
-    ```java
-
-    public class InputMeta extends FieldMetaBuilder<InputDTO> {
+??? Example
+    === "List widget"
+         Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(InputDTO_.customField);
-        fields.setRequired(InputDTO_.customField);
-      }
-    ```
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
-    ```java
-    public class InputMeta extends FieldMetaBuilder<InputDTO> {
+        ```java
     
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(InputDTO_.customField);
-        fields.setRequired(InputDTO_.customField);
-      }
-    ```
+        public class InputMeta extends FieldMetaBuilder<InputDTO> {
+        
+          @Override
+          public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
+            Long id, Long parentId) {
+            fields.setEnabled(InputDTO_.customField);
+            fields.setRequired(InputDTO_.customField);
+          }
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+         Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+    
+        ```java
+        public class InputMeta extends FieldMetaBuilder<InputDTO> {
+        
+          @Override
+          public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
+            Long id, Long parentId) {
+            fields.setEnabled(InputDTO_.customField);
+            fields.setRequired(InputDTO_.customField);
+          }
+        ```

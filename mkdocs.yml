@@ -10,11 +10,11 @@ nav:
       - Field dateTimeWithSeconds: widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md
       - Field number: widget/fields/field/number/number.md
       - Field checkbox: widget/fields/field/checkbox/checkbox.md
-      - Field text: widget/fields/field/text/text.md
-      - Field dictionary: widget/fields/field/dictionary/dictionary.md
       - Field hidden: widget/fields/field/hidden/hidden.md
       - Field money: widget/fields/field/money/money.md
       - Field percent: widget/fields/field/percent/percent.md
+      - Field text: widget/fields/field/text/text.md
+      - Field dictionary: widget/fields/field/dictionary/dictionary.md
       - Field radio: widget/fields/field/radio/radio.md
       - Field fileUpload: widget/fields/field/fileUpload/fileUpload.md
       - Field pickList: widget/fields/field/pickList/pickList.md

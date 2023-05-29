@@ -682,9 +682,9 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How does it look?
 === "List widget"
     === "BusinessException"
-        ![img_ex_list](img_ex_list.png)
+        ![img_business_error](img_business_error.png)
     === "RuntimeException"
-        ![img_ex_list](img_ex_list.png)
+        ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
 === "Info widget"

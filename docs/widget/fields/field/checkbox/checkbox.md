@@ -214,18 +214,16 @@ Indicates that the field can be edited or not.
 
 ### How to add?
 ??? Example
-=== "List widget"
-Add **fields.enableFilter(`dto field name`.`custom field name`)** to corresponding **buildIndependentMeta**.
-
-            ```java
-            @Service
-              @Override
-                public void buildIndependentMeta(FieldsMeta<InputDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(InputDTO_.customField);
-                }
-            ```
-     
-         ??? разобраться   @SearchParameter(name = "customField", provider = StringValueProvider.class)
+    === "List widget"
+        Add **fields.enableFilter(`dto field name`.`custom field name`)** to corresponding **buildIndependentMeta**.
+    
+        ```java
+        @Service
+          @Override
+            public void buildIndependentMeta(FieldsMeta<InputDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+            fields.enableFilter(InputDTO_.customField);
+            }
+        ```
 
     === "Info widget"
         _not applicable_

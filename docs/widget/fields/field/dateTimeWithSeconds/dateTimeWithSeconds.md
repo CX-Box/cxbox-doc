@@ -123,8 +123,37 @@
           }
         }
         ```
-
 ## Placeholder
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
+### How does it look?
+=== "List widget"
+    ![img_plchldr_list.png](img_plchldr_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![form_label.png](img_plchldr_form.png)
+
+### How to add?
+??? Example
+
+    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
+    
+    ```java
+    
+    public class InputMeta extends FieldMetaBuilder<DateTimeWithSecondsDTO> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeWithSecondsDTO> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setPlaceholder(DateTimeWithSecondsDTO_.customField,  LocalDateTime.now().toString());
+      }
+    ```
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**
+    === "Form widget"
+        **Works for Form.**
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -498,18 +527,18 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How does it look?
 === "List widget"
     === "BusinessException"
-    
+        ![img_business_error](img_business_error.png)
     === "RuntimeException"
-        _not applicable_   
+        ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
     === "BusinessException"
-    
+        ![img_business_error](img_business_error.png)
     === "RuntimeException"
-    
+        ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
 

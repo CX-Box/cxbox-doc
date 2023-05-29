@@ -1,6 +1,7 @@
 # Number
 
 `Number` is a component for numbers editing. It can be used for editing and displaying numbers
+Default value is 0.
 ## Basics
 ### How does it look?
 

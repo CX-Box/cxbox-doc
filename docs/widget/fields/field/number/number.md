@@ -1,7 +1,8 @@
 # Number
 
 `Number` is a component for numbers editing. It can be used for editing and displaying numbers
-Default value is 0.
+Restricts input to numbers. Default value is 0.
+
 ## Basics
 ### How does it look?
 
@@ -14,6 +15,7 @@ Default value is 0.
 
 
 ### How to add?
+Long or Double 
 ??? Example
     **Step1** Add field **Long** to corresponding **DataResponseDTO**.
 
@@ -590,3 +592,234 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Form widget"
         _not applicable_
 [Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+
+## Validation
+`Validation` allows you to check any business rules for user-entered value. There are two types of validation:
+
+1) Exception: Displays a message to notify users about technical or business errors.
+
+2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
+
+### How does it look?
+=== "List widget"
+    === "BusinessException"
+        ![img_business_error](img_business_error.png)
+    === "RuntimeException"
+        ![img_runtime_error](img_runtime_error.png)
+    === "Confirm"
+        ![confirm_form](confirm_form.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    === "BusinessException"
+        ![img_business_error](img_business_error.png)
+    === "RuntimeException"
+        ![img_runtime_error](img_runtime_error.png)
+    === "Confirm"
+        ![confirm_form](confirm_form.png)
+
+### How to add?
+??? Example
+    === "BusinessException"
+        `BusinessException` describes an error  within a business process.
+
+        Add **BusinessException** to corresponding **VersionAwareResponseService**.
+
+        ```java
+        public class NumberService extends VersionAwareResponseService<NumberDTO, Number> {
+ 
+            @Override
+            protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
+                if (data.isFieldChanged(NumberDTO_.customField)) {
+                    entity.setCustomField(data.getCustomField());
+                    if (data.getCustomField() < 20000) {
+                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 20 000.");
+                    }
+                }
+                return new ActionResultDTO<>(entityToDto(bc, entity));
+            }              
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+    === "RuntimeException"
+
+        `RuntimeException` describes an error  within a business process.
+        
+        Add **RuntimeException** to corresponding **VersionAwareResponseService**.
+        
+        ```java
+            @Override
+            protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
+                if (data.isFieldChanged(NumberDTO_.customField)) {
+                    entity.setCustomField(data.getCustomField());
+                   try {
+                       //call custom function
+                   }
+                   catch(Exception e){
+                        throw new RuntimeException("An unexpected error has occurred.");
+                    }
+                }
+                return new ActionResultDTO<>(entityToDto(bc, entity));
+            }
+        ```    
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+    === "Confirm"
+        Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
+        ```java
+     
+            public class NumberService extends VersionAwareResponseService<NumberDTO, Number> {
+
+                @Override
+                public Actions<NumberDTO> getActions() {
+                    return Actions.<NumberDTO>builder()
+                    .newAction()
+                    .action("save", "save")
+                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
+                    .add()
+                    .build();
+                }
+            }
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+
+## Sorting
+`Sorting` allows you to sort data in ascending or descending order.
+
+### How does it look?
+=== "List widget"
+    ![img_sort_list](img_sort_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+### How to add?
+??? Example
+    === "List widget"
+        Enabled on default.
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+
+## Required
+Default value is 0.
+
+## Additional properties
+`digits`
+
+=== "List widget"
+    ![img_digits_list.png](img_digits_list.png)
+=== "Info widget"
+    ![img_digits_info.png](img_digits_info.png)
+=== "Form widget"
+    ![img_digits_form.png](img_digits_form.png)
+
+??? Example
+    === "List widget"
+        Add **digits** to **_.widget.json_**.
+        ```json
+        {
+          "name": "NumberForm",
+          "title": "Form title",
+          "type": "Form",
+          "bc": "myBcNumber",
+          "fields": [
+            {
+              "label": "custom Field",
+              "key": "customField",
+              "type": "number",
+              "digits": 2
+            }
+          ],
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                },
+                {
+                  "cols": [
+                  ]
+                }
+              ]
+            }
+          }
+        }
+        ```  
+    === "Info widget"
+        Add **digits** to **_.widget.json_**.
+        ```json
+         {
+          "name": "NumberInfo",
+          "title": "Info title",
+          "type": "Info",
+          "bc": "myBcNumber",
+          "fields": [
+            {
+              "label": "custom Field",
+              "key": "customField",
+              "type": "number",
+              "digits": 2
+            }
+          ],
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                },
+                {
+                  "cols": [
+                  ]
+                }
+              ]
+            }
+          }
+        }
+        ```
+    === "Form widget"
+        Add **digits** to **_.widget.json_**.
+        ```json
+        {
+          "name": "NumberList",
+          "title": "List title",
+          "type": "List",
+          "bc": "myBcNumber",
+          "fields": [
+            {
+              "title": "custom Field",
+              "key": "customField",
+              "type": "number",
+              "digits": 2
+            }
+          ],
+          "options": {
+            "actionGroups": {
+            }
+          }
+        }
+        ``` 

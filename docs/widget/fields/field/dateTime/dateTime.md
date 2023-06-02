@@ -615,7 +615,6 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
-The records in descending order by default. 
 
 ### How does it look?
 === "List widget"

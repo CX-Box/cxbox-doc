@@ -64,7 +64,7 @@ plugins:
         'widget_field_dateTimeWithSeconds.md': 'widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md'
         'widget_field_number.md': 'widget/fields/field/number/number.md'
         'widget_field_money.md': 'widget/fields/field/money/money.md'
-        'widget_field_percent.md': 'widget/fields/field/percent/percent.md'
+        'widget_field_percent.md': 'widget/fields/field/percent/percent2.md'
         'widget_field_radio.md': 'widget/fields/field/radio/radio.md'
         'widget_field_checkbox.md': 'widget/fields/field/checkbox/checkbox.md'
         'widget_field_fileUpload.md': 'widget/fields/field/fileUpload/fileUpload.md'

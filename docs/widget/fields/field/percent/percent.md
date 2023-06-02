@@ -14,8 +14,9 @@
 
 
 ### How to add?
-Long or Double 
+
 ??? Example
+    **Option1**
     **Step1** Add field **Long** to corresponding **DataResponseDTO**.
 
     ```java
@@ -135,6 +136,7 @@ Long or Double
           }
         }
         ```
+    **Option2** Add field **Double** to corresponding **DataResponseDTO** in Step1.
 
 ## Placeholder
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application

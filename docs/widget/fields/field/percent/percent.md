@@ -520,7 +520,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/MyExample/view/MyExampleinfo/" + TeslerMyExampleController.myBcMyExample + "/" + id
+                    "/screen/MyExample/view/MyExampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
             );
     ```
     === "List widget"
@@ -718,4 +718,110 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
-Default value is 0.
+`Required` allows you to denote, that this field must have a value provided. By default, `Percent` is 0.
+But can use `nullable`. see more `Additional properties-nullable`
+
+### How does it look?
+=== "List widget"
+    ![img_req_list.png](img_req_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_req_form.png](img_req_form.png)
+### How to add?
+??? Example
+    Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+
+    ```java
+
+    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setEnabled(MyExample_.customField);
+        fields.setRequired(MyExample_.customField);
+      }
+    ```
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**
+    === "Form widget"
+        **Works for Form.**
+
+## Additional properties
+
+`nullable`
+
+=== "List widget"
+    ![img_nullable_list.png](img_nullable_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_nullable_form.png](img_nullable_form.png)
+
+??? Example
+    === "List widget"
+        Add **nullable** to **_.widget.json_**.
+        ```json
+        {
+          "name": "MyExampleList",
+          "title": "List title",
+          "type": "List",
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "title": "Custom Field",
+              "key": "customField",
+              "type": "percent",
+              "nullable": true
+            }
+          ],
+          "options": {
+            "actionGroups": {
+            }
+          }
+        } 
+        ```
+    === "Info widget"
+        _not applicable_  
+
+    === "Form widget"
+        Add **nullable** to **_.widget.json_**.
+        ```json
+        {
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "label": "Custom Field",
+              "key": "customField",
+              "type": "percent",
+              "nullable": true
+            }
+          ],
+          "name": "MyExampleForm",
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                },
+                {
+                  "cols": [
+                  ]
+                }
+              ]
+            }
+          },
+          "title": "Form title",
+          "type": "Form"
+        }
+        ```
+
+

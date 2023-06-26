@@ -520,7 +520,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/MyExample/view/MyExampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
             );
     ```
     === "List widget"

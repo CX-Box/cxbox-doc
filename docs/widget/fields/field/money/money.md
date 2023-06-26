@@ -53,7 +53,7 @@
             {
               "title": "custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
             }
           ],
@@ -76,7 +76,7 @@
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
             }
           ],
@@ -115,7 +115,7 @@
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
             }
           ],
@@ -212,7 +212,7 @@
                 {
                   "title": "custom Field",
                   "key": "customField",
-                  "type": "money",
+                  "type": "radio",
                   "bgColorKey": "customFieldColor"
                 }
               ],
@@ -234,7 +234,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "money",
+                  "type": "radio",
                   "bgColorKey": "customFieldColor"
                 }
               ],
@@ -270,7 +270,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "money",
+                  "type": "radio",
                   "bgColorKey": "customFieldColor"
                 }
               ],
@@ -307,7 +307,7 @@
                 {
                   "title": "custom Field",
                   "key": "customField",
-                  "type": "money",
+                  "type": "radio",
                   "bgColor": "#eda6a6"
                 }
               ],
@@ -331,7 +331,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "money",
+                  "type": "radio",
                   "bgColor": "#eda6a6"
                 }
               ],
@@ -368,7 +368,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "money",
+                  "type": "radio",
                   "bgColor": "#eda6a6"
                 }
               ],
@@ -522,7 +522,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/MyExample/view/MyExampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
             );
     ```
     === "List widget"
@@ -537,7 +537,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             {
               "title": "custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
               "drillDown": "true"
             }
@@ -567,7 +567,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
               "drillDown": "true"
             }
@@ -778,7 +778,7 @@ But can use `nullable`. see more `Additional properties-nullable`
             {
               "title": "Custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
               "nullable": true
             }
@@ -801,7 +801,7 @@ But can use `nullable`. see more `Additional properties-nullable`
             {
               "label": "Custom Field",
               "key": "customField",
-              "type": "money",
+              "type": "radio",
               "digits": 2
               "nullable": true
             }

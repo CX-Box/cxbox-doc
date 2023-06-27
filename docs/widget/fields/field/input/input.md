@@ -18,7 +18,8 @@
     ```java
     public class InputDTO extends DataResponseDTO {
     
-    private String customField;
+        @SearchParameter(name = "customField", provider = StringValueProvider.class)
+        private String customField;
     
         public InputDTO(InputEntity entity) {
         this.customField = entity.getCustomField();
@@ -322,19 +323,7 @@
 ### How to add?
 ??? Example
     === "Editable"
-        **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
-        ```java
-        public class InputDTO extends DataResponseDTO {
-        
-            private String customField;
-        
-            public InputDTO(Input entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-    
-        **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+          **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
             public class InputService extends VersionAwareResponseService<InputDTO, Input> {
@@ -355,9 +344,7 @@
           @Override
           public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
                                             Long id, Long parentId) {
-            fields.setEnabled(
-              InputDTO_.customField
-            );
+            fields.setEnabled(InputDTO_.customField);
           }
         }
         ```

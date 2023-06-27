@@ -342,9 +342,7 @@
           @Override
           public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeDTO> fields, InnerBcDescription bcDescription,
                                             Long id, Long parentId) {
-            fields.setEnabled(
-              DateTimeDTO_.customField
-            );
+            fields.setEnabled(DateTimeDTO_.customField);
           }
         }
         ```

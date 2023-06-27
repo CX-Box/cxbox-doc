@@ -17,7 +17,7 @@
 
 ??? Example
     **Option1**
-    **Step1** Add field **Long** to corresponding **DataResponseDTO**.
+    **Step1** Add field **Double** to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -31,7 +31,7 @@
     }
     ```
 
-    **Step2** Add field **Long** to corresponding **BaseEntity**.
+    **Step2** Add field **Double** to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -522,7 +522,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/MyExample/view/MyExampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
             );
     ```
     === "List widget"
@@ -538,7 +538,7 @@ Also, it optionally allows you to filter data on target view before it will be o
               "title": "custom Field",
               "key": "customField",
               "type": "money",
-              "digits": 2
+              "digits": 2,
               "drillDown": "true"
             }
           ],
@@ -568,7 +568,7 @@ Also, it optionally allows you to filter data on target view before it will be o
               "label": "custom Field",
               "key": "customField",
               "type": "money",
-              "digits": 2
+              "digits": 2,
               "drillDown": "true"
             }
           ],
@@ -779,7 +779,7 @@ But can use `nullable`. see more `Additional properties-nullable`
               "title": "Custom Field",
               "key": "customField",
               "type": "money",
-              "digits": 2
+              "digits": 2,
               "nullable": true
             }
           ],
@@ -802,7 +802,7 @@ But can use `nullable`. see more `Additional properties-nullable`
               "label": "Custom Field",
               "key": "customField",
               "type": "money",
-              "digits": 2
+              "digits": 2,
               "nullable": true
             }
           ],

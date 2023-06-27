@@ -79,7 +79,7 @@
             {
               "title": "Custom Field",
               "key": "customField",
-              "type": "radio",
+              "type": "radio"
             }
           ],
           "options": {
@@ -102,7 +102,7 @@
             {
               "label": "Custom Field",
               "key": "customField",
-              "type": "radio",
+              "type": "radio"
             }
           ],
           "options": {
@@ -140,7 +140,7 @@
             {
               "label": "Custom Field",
               "key": "customField",
-              "type": "radio",
+              "type": "radio"
             }
           ],
           "options": {
@@ -164,7 +164,7 @@
         }
         ```
 ## Placeholder
-    **_not applicable_**
+**_not applicable_**
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application

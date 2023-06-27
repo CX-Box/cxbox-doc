@@ -17,7 +17,7 @@
 
 ??? Example
     **Option1**
-    **Step1** Add field **Long** to corresponding **DataResponseDTO**.
+    **Step1** Add field **Double** to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -31,7 +31,7 @@
     }
     ```
 
-    **Step2** Add field **Long** to corresponding **BaseEntity**.
+    **Step2** Add field **Double** to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -53,7 +53,7 @@
             {
               "title": "custom Field",
               "key": "customField",
-              "type": "radio",
+              "type": "money",
               "digits": 2
             }
           ],
@@ -76,7 +76,7 @@
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "radio",
+              "type": "money",
               "digits": 2
             }
           ],
@@ -115,7 +115,7 @@
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "radio",
+              "type": "money",
               "digits": 2
             }
           ],
@@ -212,7 +212,7 @@
                 {
                   "title": "custom Field",
                   "key": "customField",
-                  "type": "radio",
+                  "type": "money",
                   "bgColorKey": "customFieldColor"
                 }
               ],
@@ -234,7 +234,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "radio",
+                  "type": "money",
                   "bgColorKey": "customFieldColor"
                 }
               ],
@@ -270,7 +270,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "radio",
+                  "type": "money",
                   "bgColorKey": "customFieldColor"
                 }
               ],
@@ -307,7 +307,7 @@
                 {
                   "title": "custom Field",
                   "key": "customField",
-                  "type": "radio",
+                  "type": "money",
                   "bgColor": "#eda6a6"
                 }
               ],
@@ -331,7 +331,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "radio",
+                  "type": "money",
                   "bgColor": "#eda6a6"
                 }
               ],
@@ -368,7 +368,7 @@
                 {
                   "label": "custom Field",
                   "key": "customField",
-                  "type": "radio",
+                  "type": "money",
                   "bgColor": "#eda6a6"
                 }
               ],
@@ -537,8 +537,8 @@ Also, it optionally allows you to filter data on target view before it will be o
             {
               "title": "custom Field",
               "key": "customField",
-              "type": "radio",
-              "digits": 2
+              "type": "money",
+              "digits": 2,
               "drillDown": "true"
             }
           ],
@@ -567,8 +567,8 @@ Also, it optionally allows you to filter data on target view before it will be o
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "radio",
-              "digits": 2
+              "type": "money",
+              "digits": 2,
               "drillDown": "true"
             }
           ],
@@ -778,8 +778,8 @@ But can use `nullable`. see more `Additional properties-nullable`
             {
               "title": "Custom Field",
               "key": "customField",
-              "type": "radio",
-              "digits": 2
+              "type": "money",
+              "digits": 2,
               "nullable": true
             }
           ],
@@ -801,8 +801,8 @@ But can use `nullable`. see more `Additional properties-nullable`
             {
               "label": "Custom Field",
               "key": "customField",
-              "type": "radio",
-              "digits": 2
+              "type": "money",
+              "digits": 2,
               "nullable": true
             }
           ],

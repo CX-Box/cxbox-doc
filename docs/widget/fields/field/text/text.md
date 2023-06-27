@@ -19,7 +19,8 @@
     ```java
     public class MyExampleDTO extends DataResponseDTO {
     
-    private String customField;
+        @SearchParameter(name = "customField", provider = StringValueProvider.class)
+        private String customField;
     
         public MyExampleDTO(MyExampleEntity entity) {
         this.customField = entity.getCustomField();
@@ -323,19 +324,7 @@
 ### How to add?
 ??? Example
     === "Editable"
-        **Step1** Add mapping entity->DTO to corresponding **DataResponseDTO**.
-        ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            private String customField;
-        
-            public MyExampleDTO(MyExample entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-    
-        **Step2** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+        **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
             public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
@@ -356,9 +345,7 @@
           @Override
           public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
                                             Long id, Long parentId) {
-            fields.setEnabled(
-              MyExampleDTO_.customField
-            );
+            fields.setEnabled(MyExampleDTO_.customField);
           }
         }
         ```

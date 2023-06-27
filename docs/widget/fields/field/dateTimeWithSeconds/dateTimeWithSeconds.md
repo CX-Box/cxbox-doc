@@ -343,9 +343,7 @@
           @Override
           public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeWithSecondsDTO> fields, InnerBcDescription bcDescription,
                                             Long id, Long parentId) {
-            fields.setEnabled(
-              DateTimeWithSecondsDTO_.customField
-            );
+            fields.setEnabled(DateTimeWithSecondsDTO_.customField);
           }
         }
         ```

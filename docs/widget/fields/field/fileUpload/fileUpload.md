@@ -318,8 +318,7 @@
 **_not applicable_**
 
 ## Required
-`Required` allows you to denote, that this field must have a value provided. By default, `Percent` is 0.
-But can use `nullable`. see more `Additional properties-nullable`
+`Required` allows you to denote, that this field must have a value provided. 
 
 ### How does it look?
 === "List widget"

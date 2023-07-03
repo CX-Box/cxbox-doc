@@ -16,7 +16,7 @@
 ### How to add?
 
 ??? Example
-    **Step1** Create Enum. Recommend that use additional variable for visual display.
+    **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
         ```java
         public enum CustomFieldEnum {
             HIGH("High"),
@@ -633,7 +633,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
-Lexicographic sorting is used for it.
+Sort by key value.
 
 ### How does it look?
 === "List widget"

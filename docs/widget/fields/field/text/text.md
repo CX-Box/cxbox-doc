@@ -19,7 +19,7 @@
     ```java
     public class MyExampleDTO extends DataResponseDTO {
     
-        @SearchParameter(name = "customField", provider = StringValueProvider.class)
+        @SearchParameter(name = "customField")
         private String customField;
     
         public MyExampleDTO(MyExampleEntity entity) {

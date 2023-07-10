@@ -22,9 +22,9 @@
     ```java
     public class MyExampleDTO extends DataResponseDTO {
     
-    @SearchParameter(name = "customField", provider = StringValueProvider.class)
+    @SearchParameter(name = "customField")
     private String customField;
-    @SearchParameter(name = "customFieldId", provider = StringValueProvider.class)
+    @SearchParameter(name = "customFieldId")
     private String customFieldId;
 
     public MyExampleDTO(MyEntity entity) {
@@ -174,11 +174,14 @@
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-                fields.setEnabled(MyExampleDTO_.customField);
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+        
+            @Override
+            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+                                              Long id, Long parentId) {
+              fields.setEnabled(MyExampleDTO_.customFieldId);
+              fields.setEnabled(MyExampleDTO_.customField);
             }
-        }
         ```
         === "List widget"
             **Works for List.**
@@ -192,7 +195,7 @@
         **Option 1** Enabled by default.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
             public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
             }
         }

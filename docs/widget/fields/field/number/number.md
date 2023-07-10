@@ -156,7 +156,7 @@ Long or Double
       @Override
       public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setPlaceholder(NumberDTO_.customField, "123456"));
+        fields.setPlaceholder(NumberDTO_.customField, "1456"));
       }
     ```
     === "List widget"
@@ -415,7 +415,7 @@ Long or Double
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
+        public class NumberMeta extends FieldMetaBuilder<NumberDTO> {
             public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
                 fields.setEnabled(NumberDTO_.customField);
             }
@@ -433,7 +433,7 @@ Long or Double
         **Option 1** Enabled by default.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
+        public class NumberMeta extends FieldMetaBuilder<NumberDTO> {
             public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
             }
         }
@@ -751,6 +751,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 ## Additional properties
 `digits`
 
+### How does it look?
 === "List widget"
     ![img_digits_list.png](img_digits_list.png)
 === "Info widget"
@@ -758,6 +759,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 === "Form widget"
     ![img_digits_form.png](img_digits_form.png)
 
+### How to add?
 ??? Example
     === "List widget"
         Add **digits** to **_.widget.json_**.
@@ -855,7 +857,7 @@ But can use `nullable`. see more `Additional properties-nullable`
         ```
 
 `nullable`
-
+### How does it look?
 === "List widget"
     ![img_nullable_list.png](img_nullable_list.png)
 === "Info widget"
@@ -863,6 +865,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 === "Form widget"
     ![img_nullable_form.png](img_nullable_form.png)
 
+### How to add?
 ??? Example
     === "List widget"
         Add **nullable** to **_.widget.json_**.

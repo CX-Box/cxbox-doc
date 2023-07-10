@@ -16,7 +16,6 @@
 ### How to add?
 
 ??? Example
-    **Option1**
     **Step1** Add field **Long** to corresponding **DataResponseDTO**.
 
     ```java
@@ -139,7 +138,6 @@
           }
         }
         ```
-    **Option2** Add field **Double** to corresponding **DataResponseDTO** in Step1.
 
 ## Placeholder
 **_not applicable_**

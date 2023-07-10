@@ -417,7 +417,7 @@
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
             public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
                 fields.setEnabled(MyExampleDTO_.customField);
             }
@@ -435,7 +435,7 @@
         **Option 1** Enabled by default.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
             public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
             }
         }
@@ -753,7 +753,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 ## Additional properties
 
 `nullable`
-
+### How does it look?
 === "List widget"
     ![img_nullable_list.png](img_nullable_list.png)
 === "Info widget"
@@ -761,6 +761,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 === "Form widget"
     ![img_nullable_form.png](img_nullable_form.png)
 
+### How to add?
 ??? Example
     === "List widget"
         Add **nullable** to **_.widget.json_**.

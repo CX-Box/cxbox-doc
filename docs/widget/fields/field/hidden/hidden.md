@@ -13,24 +13,24 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDateTime** to corresponding **DataResponseDTO**.
+    **Step1** Add field **LocalMyExample** to corresponding **DataResponseDTO**.
 
     ```java
-    public class DateTimeDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField", provider = DateTimeValueProvider.class)   
-        private LocalDateTime customField;
+    public class MyExampleDTO extends DataResponseDTO {
+        @SearchParameter(name = "customField")   
+        private LocalMyExample customField;
     
-        public DateTimeDTO(DateTimeEntity entity) {
+        public MyExampleDTO(MyExampleEntity entity) {
             this.customField = entity.getCustomField();
         }
     }
     ```
-    **Step2** Add field **LocalDateTime** to corresponding **BaseEntity**.
+    **Step2** Add field **LocalMyExample** to corresponding **BaseEntity**.
 
     ```java
-    public class DateTimeEntity extends BaseEntity {
+    public class MyExampleEntity extends BaseEntity {
     
-        private LocalDateTime customField;
+        private LocalMyExample customField;
     
     }
     ```
@@ -39,15 +39,15 @@
 
         ```json
         {
-          "name": "DateTimeList",
+          "name": "MyExampleList",
           "title": "List title",
           "type": "List",
-          "bc": "myBcDateTime",
+          "bc": "myBcMyExample",
           "fields": [
             {
               "title": "custom Field",
               "key": "customField",
-              "type": "dateTime"
+              "type": "input"
             }
           ],
           "options": {
@@ -61,15 +61,15 @@
 
         ```json
         {
-          "name": "DateTimeInfo",
+          "name": "MyExampleInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "myBcDateTime",
+          "bc": "myBcMyExample",
           "fields": [
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "dateTime"
+              "type": "input"
             }
           ],
           "options": {
@@ -95,15 +95,15 @@
 
         ```json
         {
-          "name": "DateTimeForm",
+          "name": "MyExampleForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "myBcDateTime",
+          "bc": "myBcMyExample",
           "fields": [
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "dateTime"
+              "type": "input"
             }
           ],
           "options": {

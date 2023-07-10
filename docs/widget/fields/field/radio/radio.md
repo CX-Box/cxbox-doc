@@ -349,8 +349,12 @@
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+        
+            @Override
+            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+                                              Long id, Long parentId) {
+                fields.setEnumValues(MyExampleDTO_.customField, CustomFieldEnum.values());
                 fields.setEnabled(MyExampleDTO_.customField);
             }
         }
@@ -367,7 +371,7 @@
         **Option 1** Enabled by default.
     
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
             public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
             }
         }

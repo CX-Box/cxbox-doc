@@ -18,7 +18,7 @@
     ```java
     public class InputDTO extends DataResponseDTO {
     
-        @SearchParameter(name = "customField", provider = StringValueProvider.class)
+        @SearchParameter(name = "customField")
         private String customField;
     
         public InputDTO(InputEntity entity) {
@@ -712,6 +712,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 ## Additional properties
 `maxInput`
 
+### How does it look?
 === "List widget"
     ![max_input_list.png](max_input_list.png)
 === "Info widget"
@@ -719,6 +720,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 === "Form widget"
     ![max_input_form.png](max_input_form.png)
 
+### How to add?
 ??? Example
     === "List widget"
         Add **maxInput** to **_.widget.json_**.

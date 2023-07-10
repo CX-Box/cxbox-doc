@@ -36,7 +36,7 @@ widgets, fields, layouts (views), navigation (screens).
 
 <h3>Using CXBOX</h2>
 <ul>
-<li> <a href="https://plugins.jetbrains.com/plugin/19523-tesler-helper" target="_blank">download Intellij Plugin</a> adds platform specific autocomplete, inspection, navigation and code generation features.
+<li> <a href="https://plugins.jetbrains.com/plugin/195-tesler-helper" target="_blank">download Intellij Plugin</a> adds platform specific autocomplete, inspection, navigation and code generation features.
 </li>
 <li>
  <a href="https://github.com/CX-Box/cxbox-demo" target="_blank">download Demo</a> and follow <a href="https://github.com/CX-Box/cxbox-demo#readme" target="_blank">README.md</a> instructions. Feel free to use demo as template project to start your own projects

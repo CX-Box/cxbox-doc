@@ -16,7 +16,6 @@
 ### How to add?
 
 ??? Example
-    **Option1**
     **Step1** Add field **String** to corresponding **DataResponseDTO**.
 
     ```java

@@ -1,7 +1,6 @@
 # Multifield
 
 `Multifield` is a logical block containing any number of other field types
-All Fields is readonly in  block containing.
 
 ## Basics
 ### How does it look?

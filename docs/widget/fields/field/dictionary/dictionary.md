@@ -1,7 +1,8 @@
 # Dictionary
 
 `Dictionary` is a component that allows to select value from dropdown list of predefined values.
-
+Use for directory or non-growing entities no more than 1000 lines(data are loaded into memory).
+For large entities use inlinePickList.`see more` [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 ## Basics
 ### How does it look?
 

@@ -16,6 +16,8 @@
 ### How to add?
 
 ??? Example
+    Need to define storage for files.In the example file storage is minio.
+
     **Step1** Add field **Long** to corresponding **DataResponseDTO**.
 
     ```java

@@ -20,8 +20,8 @@ nav:
       - Field pickList: widget/fields/field/pickList/pickList.md
       - Field inlinePickList: widget/fields/field/inlinePickList/inlinePickList.md
       - Field hint: widget/fields/field/hint/hint.md
-      - Field multivalue: widget/fields/field/multivalue/multivalue.md
       - Field multifield: widget/fields/field/multifield/multifield.md
+      - Field multivalue: widget/fields/field/multivalue/multivalue.md
       - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Features:

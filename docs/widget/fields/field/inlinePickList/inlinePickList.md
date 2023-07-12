@@ -1,6 +1,7 @@
 # InlinePickList
 
 `InlinePickList` is component similar to PickList, but with drop-down instead of popup to select values
+Use for growing entities more than 1000 lines.For small entities use dictionary.`see more` [dictionary](/widget/fields/field/dictionary/dictionary)
 
 ## Basics
 ### How does it look?
@@ -16,7 +17,8 @@
 ### How to add?
 
 ??? Example
-    **Step1.Popup** Add field,for example, **String** to corresponding **DataResponseDTO**.
+    **Step 1.Popup**
+    **Step 1.1.Popup** Add field,for example, **String** to corresponding **DataResponseDTO**.
 
     ```java
     public class MyEntityPickDTO extends DataResponseDTO {
@@ -31,7 +33,7 @@
 
     }
     ```
-    **Step2.Popup** Add field **String** to corresponding **BaseEntity**.
+    **Step 1.2.Popup** Add field **String** to corresponding **BaseEntity**.
 
     ```java
     public class MyEntityPickEntity extends BaseEntity {
@@ -39,7 +41,7 @@
         private String customField;
     }
     ```
-    **Step3.Popup**  Create Popup List to **_.widget.json_**.
+    **Step 1.3.Popup**  Create Popup List to **_.widget.json_**.
     ```json
     {
       "title": "myEntityPickListPopup title",
@@ -60,7 +62,7 @@
       ]
     }
     ```
-    **Step 4.Popup** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    **Step 1.4.Popup** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
 
     ```java
 
@@ -74,7 +76,7 @@
     }
     ```
 
-    **Step 5** Add **Popup** to **_.view.json_**.
+    **Step 2** Add **Popup** to **_.view.json_**.
 
     ```json
     {
@@ -105,7 +107,7 @@
     ```
 
     === "List widget"
-        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step 3** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -137,7 +139,7 @@
         _not applicable_
     === "Form widget"
 
-        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step3** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json

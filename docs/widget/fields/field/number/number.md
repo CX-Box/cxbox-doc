@@ -139,6 +139,7 @@ Long or Double
 
 ## Placeholder
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
+### How does it look?
 === "List widget"
     ![img_plchldr_list.png](img_plchldr_list.png) 
 === "Info widget"
@@ -518,7 +519,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     NumberDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/Number/view/Numberinfo/" + TeslerNumberController.myBcNumber + "/" + id
+                    "/screen/Number/view/Numberinfo/" + PlatformNumberController.myBcNumber + "/" + id
             );
     ```
     === "List widget"

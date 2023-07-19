@@ -1,77 +1,71 @@
-# MultipleSelect
+# Multivalue
 
-`MultipleSelect` is a component that allows to select multiple values from dropdown list of predefined values
+`Multivalue` is a component that allows to select multiple values from Popup List of entities
 
 ## Basics
 ### How does it look?
 
 === "List widget"
-    ![img_list.gif](img_list.gif)
+    ![img_list.png](img_list.png)
 === "Info widget"
     ![img_info.png](img_info.png)
 === "Form widget"
-    ![img_form.gif](img_form.gif)
+    ![img_form.png](img_form.png)
+
 
 ### How to add?
 
 ??? Example
-    **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
-        ```java
-        public enum CustomFieldEnum {
-            HIGH("High"),
-            MIDDLE("Middle"),
-            LOW("Low");
-        
-            @JsonValue
-            private final String value;
-        
-            public static CustomFieldEnum getByValue(@NonNull String value) {
-                return Arrays.stream(CustomFieldEnum.values())
-                        .filter(enm -> Objects.equals(enm.getValue(), value))
-                        .findFirst()
-                        .orElse(null);
-            }
-        }
-        ```
-    **Step2** Add field **Custom Field** to corresponding **DataResponseDTO**.
 
-    ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField.value", multiFieldKey = StringValueProvider.class)
-        private MultivalueField customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-           this.customField = entity.getCustomField().stream().collect(MultivalueField.toMultivalueField(Enum::name, CustomFieldEnum::getValue));
-        }
-    }
-    ```
-
-    **Step3** Add field **Custom Field** to corresponding **BaseEntity**.
+    **Step1** Add field **List** to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
    
-            @Enumerated(value = EnumType.STRING)
-            @CollectionTable(name = "CUSTOM_FIELD", joinColumns = @JoinColumn(name = "MyEntity_ID"))
-            @ElementCollection(targetClass = CustomFieldEnum.class)
-            @Column(name = "VALUE", nullable = false)
-            private Set<CustomFieldEnum> customField = new HashSet<>();
-    }
+        @Column
+            @JoinTable(name = "MyEntity_MyEntityMultivalue",
+            joinColumns = @JoinColumn(name = "MyEntity_id"),
+            inverseJoinColumns = @JoinColumn(name = "MyEntityMultivalue_id")
+        )
+        @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+        private List<MyEntityMultivalue> customFieldList = new ArrayList<>();
+        }
     ```
-    **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
+
+    **Step 3** Add field **MultivalueField** to corresponding **DataResponseDTO**.
 
     ```java
-    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample26DTO> fields, InnerBcDescription bcDescription,
-                                      Long id, Long parentId) {
-            fields.setDictionaryTypeWithCustomValues(MyExample251DTO_.customField, Arrays.stream(CustomFieldEnum.values())
-            .map(CustomFieldEnum::getValue)
-            .toArray(String[]::new));
+    public class MyExampleDTO extends DataResponseDTO {
+        @SearchParameter(name = "customField.customField", multiFieldKey = MultiFieldValueProvider.class)
+        private MultivalueField customField;
+        private String customFieldCalc;
+
+        public MyExampleDTO(MyEntity entity) {
+            this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
+                    e -> String.valueOf(e.getId()),
+                    MyEntityMultivalue::getCustomField
+            ));
+            this.customFieldCalc = entity.getCustomFieldList().stream()
+                        .map(obj -> obj.getCustomField())
+                        .collect(Collectors.joining(", "));
     }
     ```
 
+    **Step4** Add bc **MyEntityMultivalueAssocListPopup** to corresponding **EnumBcIdentifier**.
+
+    ```java
+    public enum PlatformMyExampleController implements EnumBcIdentifier {
+        myExampleBc(MyExampleService.class), myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
+    ```
     === "List widget"
-        **Step5** Add to **_.widget.json_**.
+        **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
+
+        `popupBcName` - name bc Step 1.6.AssocListPopup
+
+        `assocValueKey` - field for opening AssocListPopup
+
+        `displayedKey` - calculated field for displaing data on List widget
+
         ```json
         {
           "name": "MyExampleList",
@@ -82,19 +76,21 @@
             {
               "title": "Custom Field",
               "key": "customField",
-              "type": "multipleSelect"
+              "type": "multivalue",
+              "popupBcName": "myEntityMultivalueAssocListPopup",
+              "assocValueKey": "customField",
+              "displayedKey": "customFieldCalc"
             }
           ],
           "options": {
             "actionGroups": {
             }
           }
-        }
+        }      
         ```
 
     === "Info widget"
-        **Step5** Add to **_.widget.json_**.
-
+        **Step 5** Add to **_.widget.json_**.
         ```json
         {
           "name": "MyExampleInfo",
@@ -105,7 +101,9 @@
             {
               "label": "Custom Field",
               "key": "customField",
-              "type": "multipleSelect"
+              "type": "multivalue",
+              "popupBcName": "myEntityAssocListPopup",
+              "assocValueKey": "customField"
             }
           ],
           "options": {
@@ -122,12 +120,14 @@
               ]
             }
           }
-        }       
+        }
         ```
-
     === "Form widget"
+        **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
 
-        **Step5** Add to **_.widget.json_**.
+        `popupBcName` - name bc Step 1.6.AssocListPopup
+
+        `assocValueKey' - field for open AssocListPopup
 
         ```json
         {
@@ -139,7 +139,9 @@
             {
               "label": "Custom Field",
               "key": "customField",
-              "type": "multipleSelect"
+              "type": "multivalue",
+              "popupBcName": "myEntityMultivalueAssocListPopup",
+              "assocValueKey": "customField"
             }
           ],
           "options": {
@@ -158,8 +160,11 @@
           }
         }
         ```
+
+
 ## Placeholder
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
+
 ### How does it look?
 === "List widget"
     _not applicable_
@@ -167,6 +172,7 @@
     _not applicable_
 === "Form widget"
     ![img_plchldr_form.png](img_plchldr_form.png)
+
 ### How to add?
 ??? Example
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
@@ -178,10 +184,6 @@
       @Override
       public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                .map(CustomFieldEnum::getValue)
-                .toArray(String[]::new));
-        fields.setEnabled(MyExampleDTO_.customField);
         fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
       }
     ```
@@ -194,19 +196,116 @@
 
 
 ## Color
-_not applicable_
+`Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+### How does it look?
+=== "List widget"
+    ![img_color_list.png](img_color_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+
+### How to add?
+??? Example
+    === "Calculated color"
+
+
+        **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
+    
+        ```java
+        public class MyExampleDTO extends DataResponseDTO {
+
+            @SearchParameter(name = "customField.customField", multiFieldKey = MultiFieldValueProvider.class)
+            private MultivalueField customField;
+            private String customFieldColor;
+            private String customFieldCalc;
+            public MyExampleDTO(MyEntity entity) {
+                this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
+                        e -> String.valueOf(e.getId()),
+                        MyEntityMultivalue::getCustomField
+                ));
+                this.customFieldColor = "#eda6a6";
+                this.customFieldCalc = entity.getCustomFieldList().stream()
+                        .map(obj -> obj.getCustomField())
+                        .collect(Collectors.joining(", "));
+        }
+
+        ```
+        === "List widget"   
+            **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
+            ```json
+            {
+              "name": "MyExampleList",
+              "title": "List title",
+              "type": "List",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "title": "Custom Field",
+                  "key": "customField",
+                  "type": "multivalue",
+                  "popupBcName": "myEntityAssocListPopup",
+                  "assocValueKey": "customField",
+                  "displayedKey": "customFieldCalc",
+                  "bgColorKey": "customFieldColor"
+                }
+              ],
+              "options": {
+                "actionGroups": {
+                }
+              }
+            }
+            ```
+        === "Info widget"
+            _not applicable_
+        === "Form widget"
+            _not applicable_
+
+    === "Constant color"
+        === "List widget" 
+            Add **"bgColor"** :  `custom color`  to .widget.json.
+            ```json
+            {
+              "name": "MyExampleList",
+              "title": "List title",
+              "type": "List",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "title": "Custom Field",
+                  "key": "customField",
+                  "type": "multivalue",
+                  "popupBcName": "myEntityAssocListPopup",
+                  "assocValueKey": "customField",
+                  "bgColor": "#eda6a6",
+                  "displayedKey": "customFieldCalc"
+                }
+              ],
+              "options": {
+                "actionGroups": {
+                }
+              }
+            }
+            ```
+
+        === "Info widget"
+            _not applicable_
+        === "Form widget"
+            _not applicable_
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
 === "Editable List widget"
-    ![img_list.gif](img_list.gif)
+    _not applicable_
 === "Editable Info widget"
     _not applicable_
 === "Editable Form widget"
     ![img_form.gif](img_form.gif)
- 
+
+
 ### How to add?
 ??? Example
     === "Editable" 
@@ -214,11 +313,13 @@ _not applicable_
             ```java
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(
-                    data.getCustomField().getValues()
-                    .stream()
-                    .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                    .collect(Collectors.toSet()));
+                    entity.getCustomFieldList().clear();
+                    entity.getCustomFieldList().addAll(data.getCustomField().getValues().stream()
+                    .map(MultivalueFieldSingleValue::getId)
+                    .filter(Objects::nonNull)
+                    .map(Long::parseLong)
+                    .map(e -> entityManager.getReference(MyEntityMultivalue.class, e))
+                    .collect(Collectors.toList()));
                 }
             return new ActionResultDTO<>(entityToDto(bc, entity));
             ```
@@ -227,18 +328,15 @@ _not applicable_
     
         ```java
         public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-        
-            @Override
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                              Long id, Long parentId) {
-                fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                .map(CustomFieldEnum::getValue)
-                .toArray(String[]::new));
-                fields.setEnabled(MyExampleDTO_.customField);
-            }
+    
+        @Override
+        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+                                          Long id, Long parentId) {
+          fields.setEnabled(MyExampleDTO_.customField);
+        }
         ```
         === "List widget"
-            **Works for List.**
+            **_not applicable_**
         === "Info widget"
             **_not applicable_**
         === "Form widget"
@@ -257,17 +355,17 @@ _not applicable_
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enable field if you use after property fields.setEnabled.
         === "List widget"
-            **Works for List.**
+            **_not applicable_**
         === "Info widget"
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
 ## Filtration
 **_not applicable_**
 
 ## Drilldown
 **_not applicable_**
-
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are two types of validation:
@@ -306,20 +404,18 @@ _not applicable_
  
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
-            if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                entity.setCustomField(
-                        data.getCustomField().getValues()
-                                .stream()
-                                .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                                .collect(Collectors.toSet()));
-                        if(data.getCustomField().getValues()
-                        .stream()
-                        .filter(val->val.getValue().equals(CustomFieldEnum.HIGH.getValue()))
-                        .findFirst().equals(true))
-                        {
-                            throw new BusinessException().addPopup("The field 'customField' cannot contain 'High'");
-                        }
-             }             
+                if (data.isFieldChanged(MyExample114DTO_.customFieldId)) {
+                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
+                            ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
+                            : null);
+                    if (StringUtils.isNotEmpty(data.getCustomField())
+                            && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
+                    ) {
+                        throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
+                    }
+                }
+                return new ActionResultDTO<>(entityToDto(bc, entity));
+            }              
         ```
         === "List widget"
             **Works for List.**
@@ -336,21 +432,19 @@ _not applicable_
         ```java
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExample249DTO_.customField)) {
-                    entity.setCustomField(
-                            data.getCustomField().getValues()
-                                    .stream()
-                                    .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                                    .collect(Collectors.toSet()));
-                    try {
-                        //call custom function
-                        throw new Exception("Error");
-                    }
-                    catch(Exception e){
+                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
+                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
+                            ? entityManager.getReference(MyEntity131.class, data.getCustomFieldId())
+                            : null);
+                   try {
+                       //call custom function
+                   }
+                   catch(Exception e){
                         throw new RuntimeException("An unexpected error has occurred.");
                     }
                 }
-
+                return new ActionResultDTO<>(entityToDto(bc, entity));
+            }
         ```    
         === "List widget"
             **Works for List.**
@@ -386,11 +480,11 @@ _not applicable_
 **_not applicable_**
 
 ## Required
-`Required` allows you to denote, that this field must have a value provided.
+`Required` allows you to denote, that this field must have a value provided. 
 
 ### How does it look?
 === "List widget"
-    ![img_req_list.png](img_req_list.png)
+    _not applicable_
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -406,15 +500,16 @@ _not applicable_
       @Override
       public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                .map(CustomFieldEnum::getValue)
-                .toArray(String[]::new));
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
+        fields.setEnabled(MyExample_.customField);
+        fields.setRequired(MyExample_.customField);
+      }
     ```
     === "List widget"
-        **Works for List.**
+        **_not applicable_**
     === "Info widget"
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+
+

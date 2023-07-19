@@ -23,7 +23,7 @@
     
         private String customField;
     
-        public MyExampleDTO(MyEntity1 entity) {
+        public MyExampleDTO(MyEntity entity) {
             this.customField = entity.getCustomField();
         }
     }

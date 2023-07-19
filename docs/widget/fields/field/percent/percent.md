@@ -1,6 +1,6 @@
 # Percent
 
-`Percent` is a component for percent editing. It can be used for editing and displaying percentages from 0 to 100
+`Percent` is a component for percent editing. It can be used for editing and displaying percentages
 
 ## Basics
 ### How does it look?
@@ -25,7 +25,7 @@
         @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
         private Long customField;
     
-        public MyExampleDTO(MyEntity1 entity) {
+        public MyExampleDTO(MyEntity entity) {
             this.customField = entity.getCustomField();
         }
     }
@@ -140,6 +140,7 @@
 
 ## Placeholder
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
+### How does it look?
 === "List widget"
     ![img_plchldr_list.png](img_plchldr_list.png) 
 === "Info widget"

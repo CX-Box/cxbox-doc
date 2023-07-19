@@ -22,7 +22,7 @@
         @SearchParameter(name = "customField", provider = BooleanValueProvider.class)
         private Boolean customField;
         
-        public MyExampleDTO(MyEntity1 entity) {
+        public MyExampleDTO(MyEntity entity) {
             this.customField = entity.getCustomField();
         }
     }

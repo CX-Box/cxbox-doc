@@ -519,7 +519,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     NumberDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/Number/view/Numberinfo/" + TeslerNumberController.myBcNumber + "/" + id
+                    "/screen/Number/view/Numberinfo/" + PlatformNumberController.myBcNumber + "/" + id
             );
     ```
     === "List widget"

@@ -18,7 +18,96 @@
 ??? Example
     Need to define storage for files.In the example file storage is minio.
 
-    **Step1** Add field **Long** to corresponding **DataResponseDTO**.
+    **Step1 FileStorage** Add file storage.
+
+    **Step1.0 FileStorage** Add config file.
+    ```java
+    @Configuration
+    public class PlatformFileMinioConfig {
+        @Bean
+        public MinioClient minioClient(
+                @Value("${minio.access.name}") String accessKey,
+                @Value("${minio.access.secret}") String accessSecret,
+                @Value("${minio.url}") String minioUrl) {
+            return MinioClient.builder()
+                    .endpoint(minioUrl)
+                    .credentials(accessKey, accessSecret)
+                    .build();
+        }    
+    }
+    ```
+
+    **Step1.1 FileStorage** Add Controller  for file storage.
+    ```java
+    public class PlatformMinioFileController {
+    public static final String FILENAME_FIELD = "filename";
+    public static final	int FIVE_MIB = 5242880;
+    private final MinioClient minioClient;
+    private final String defaultBucketName;
+    
+        public PlatformDemoMinioFileController(
+                MinioClient minioClient,
+                @Value("${minio.bucket.name}") String defaultBucketName
+        ) {
+            this.minioClient = minioClient;
+            this.defaultBucketName = defaultBucketName;
+        }
+    
+        @SneakyThrows
+        @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+        public PlatformResponseDTO<FileUploadDto> upload(MultipartFile file, String source) {
+            String contentType = file.getContentType();
+            String name = file.getOriginalFilename();
+            ObjectWriteResponse objectWriteResponse = minioClient.putObject(PutObjectArgs
+                    .builder()
+                    .bucket(defaultBucketName)
+                    .object(UUID.randomUUID().toString())
+                    .contentType(contentType)
+                    .userMetadata(Collections.singletonMap(FILENAME_FIELD, name))
+                    .stream(file.getInputStream(), -1, FIVE_MIB)
+                    .build()
+            );
+            String id = objectWriteResponse.object();
+            return new PlatformResponseDTO<FileUploadDto>()
+                    .setData(new FileUploadDto(id, name, contentType));
+        }
+    
+        @SneakyThrows
+        @GetMapping
+        public ResponseEntity<StreamingResponseBody> download(String id, String source, boolean preview) {
+            GetObjectResponse getObjectResponse = minioClient.getObject(GetObjectArgs
+                    .builder()
+                    .bucket(defaultBucketName)
+                    .object(id)
+                    .build()
+            );
+            StatObjectResponse statObjectResponse = minioClient.statObject(StatObjectArgs
+                    .builder()
+                    .bucket(defaultBucketName)
+                    .object(id)
+                    .build()
+            );
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=\"" + statObjectResponse.userMetadata().get(FILENAME_FIELD) + "\"")
+                    .contentLength(statObjectResponse.size()) //
+                    .body(outputStream -> IOUtils.copy(getObjectResponse, outputStream, FIVE_MIB));
+        }
+    
+        @SneakyThrows
+        @DeleteMapping
+        public PlatformResponseDTO<Void> remove(String id, String source) {
+            minioClient.removeObject(RemoveObjectArgs
+                    .builder()
+                    .bucket(defaultBucketName)
+                    .object(id)
+                    .build()
+            );
+            return new PlatformResponseDTO<>();
+        }
+    
+    }
+    ```
+    **Step2** Add field **Long** to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -35,7 +124,7 @@
     }
     ```
 
-    **Step2** Add field **Long** to corresponding **BaseEntity**.
+    **Step3** Add field **Long** to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -45,7 +134,7 @@
     }
     ```
     === "List widget"
-        **Step3** Add to **_.widget.json_**.
+        **Step4** Add to **_.widget.json_**.
 
         ```json
         {
@@ -67,7 +156,7 @@
         }
         ```
     === "Info widget"
-        **Step3** Add to **_.widget.json_**.
+        **Step4** Add to **_.widget.json_**.
         
         ```json
         {
@@ -105,7 +194,7 @@
 
     === "Form widget"
 
-        **Step3** Add to **_.widget.json_**.
+        **Step4** Add to **_.widget.json_**.
 
         ```json
         {

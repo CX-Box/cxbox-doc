@@ -16,85 +16,8 @@
 ### How to add?
 
 ??? Example
-    **Step 1.AssocListPopup**
 
-    **Step 1.0.AssocListPopup** Create link table for ManyToMany.
-
-    **Step 1.1.AssocListPopup** Create entity. Add field **String** to corresponding **BaseEntity**.
-
-    ```java
-    public class MyEntityMultivalue extends BaseEntity {
-    
-        private String customField;
-    }
-    ```
-    **Step 1.2.AssocListPopup** Add field,for example, **String** to corresponding **DataResponseDTO**.
-
-    ```java
-    public class MyEntityMultivalueDTO extends DataResponseDTO {
-   
-        @SearchParameter(name = "customField")
-        private String customField;
-    
-        public MyEntityMultivalueDTO(MyEntityMultivalue entity) {
-        this.customField = entity.getCustomField();
-        }
-    }
-    ```
-    **Step 1.4.AssocListPopup** Create corresponding **FieldMetaBuilder**.
-    ```java
-    public class MyEntityMultivalueMeta extends FieldMetaBuilder<MyEntityMultivalueDTO> {
-
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-         }
-    
-        @Override
-        public void buildIndependentMeta(FieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
-                                         Long parentId) {
-    
-        }
-
-    }
-    ```
-    **Step 1.5.AssocListPopup** Create corresponding **VersionAwareResponseService**.
-    ```java
-    public class MyEntityMultivalueService extends VersionAwareResponseService<MyEntityMultivalueDTO, MyEntity> {
-
-        public MyEntityMultivalueService() {
-            super(MyEntityMultivalueDTO.class, MyEntity.class, null, MyEntityMultivalueMeta.class);
-        }
-    
-        @Override
-        protected CreateResult<MyEntityMultivalueDTO> doCreateEntity(MyEntity entity, BusinessComponent bc) {
-            return null;
-        }
-    
-        @Override
-        protected ActionResultDTO<MyEntityMultivalueDTO> doUpdateEntity(MyEntity entity, MyEntityMultivalueDTO data,
-                                                                           BusinessComponent bc) {
-            return null;
-        }
-    }
-    ```
-    **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
-    ```json
-    {
-      "title": "MyEntityMultivalueAssocListPopup title",
-      "name": "MyEntityMultivalueAssocListPopup",
-      "type": "AssocListPopup",
-      "bc": "MyEntityMultivalueAssocListPopup",
-      "fields": [
-        {
-          "title": "id",
-          "key": "id",
-          "type": "text"
-        }
-      ]
-    }
-    ```
-    **Step2** Add field **List** to corresponding **BaseEntity**.
+    **Step1** Add field **List** to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -109,7 +32,7 @@
         }
     ```
 
-    **Step 2** Add field **MultivalueField** to corresponding **DataResponseDTO**.
+    **Step 3** Add field **MultivalueField** to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {

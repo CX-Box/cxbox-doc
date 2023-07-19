@@ -197,7 +197,6 @@ Use for growing entities more than 1000 lines.For small entities use dictionary.
             private Long customFieldId;
             private String customFieldColor;
             public MyExampleDTO(MyEntity entity) {
-                this.id = entity.getId().toString();
                 this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
                         .map(BaseEntity::getId)
                         .orElse(null);

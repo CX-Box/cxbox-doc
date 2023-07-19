@@ -42,7 +42,7 @@
         @SearchParameter(name = "customField", provider = EnumValueProvider.class)
         private CustomFieldEnum customField;
     
-        public MyExampleDTO(MyEntity1 entity) {
+        public MyExampleDTO(MyEntity entity) {
             this.customField = entity.getCustomField();
         }
     }

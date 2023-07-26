@@ -555,6 +555,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_list](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"

@@ -2,6 +2,12 @@
 
 `PickList` is a component that allows to select a value from Popup list of entities
 
+Use if:
+
+1) Users need to open the detail view for a related entity instance.
+
+2) The field value is a reference to an entity instance.
+
 ## Basics
 ### How does it look?
 
@@ -371,6 +377,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_list](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -380,7 +388,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"

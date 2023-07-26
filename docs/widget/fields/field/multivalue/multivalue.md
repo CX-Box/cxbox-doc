@@ -457,6 +457,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -466,7 +468,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"

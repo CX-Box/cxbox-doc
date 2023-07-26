@@ -448,6 +448,21 @@ Use for growing entities more than 1000 lines.For small entities use dictionary.
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @NotNull(message = "Custom message about required field")
+                private String customField;
+            }
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
 
 ## Sorting
 **_not applicable_**

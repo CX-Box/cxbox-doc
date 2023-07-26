@@ -1,169 +1,177 @@
 # Dictionary
 
 `Dictionary` is a component that allows to select value from dropdown list of predefined values.
-Use for directory or non-growing entities no more than 1000 lines(data are loaded into memory).
-For large entities use inlinePickList.`see more` [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
+
+Use if:
+
+1) Users need to select a single item
+
+2) For directory or non-growing entities no more than 1000 lines(data are loaded into memory).For large entities use inlinePickList.`see more` [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
+
 ## Basics
 ### How does it look?
 
 === "List widget"
-    ![img_list.png](img_list.png)
+    ![img_list.gif](img_list.gif)
 === "Info widget"
     ![img_info.png](img_info.png)
 === "Form widget"
-    ![img_form.png](img_form.png)
+    ![img_form.gif](img_form.gif)
 
 
 ### How to add?
-
+Dictionary can be to create
+1) an entity instance
 ??? Example
-    **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
+    === "Enum"
+
+        **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
+            ```java
+            public enum CustomFieldEnum {
+                HIGH("High"),
+                MIDDLE("Middle"),
+                LOW("Low");
+            
+                @JsonValue
+                private final String value;
+            
+                public static CustomFieldEnum getByValue(@NonNull String value) {
+                    return Arrays.stream(CustomFieldEnum.values())
+                            .filter(enm -> Objects.equals(enm.getValue(), value))
+                            .findFirst()
+                            .orElse(null);
+                }
+            }
+            ```
+        **Step2** Add field **Custom Field Enum** to corresponding **DataResponseDTO**.
+    
         ```java
-        public enum CustomFieldEnum {
-            HIGH("High"),
-            MIDDLE("Middle"),
-            LOW("Low");
+        public class MyExampleDTO extends DataResponseDTO {
         
-            @JsonValue
-            private final String value;
+            @SearchParameter(name = "customField", provider = EnumValueProvider.class)
+            private CustomFieldEnum customField;
         
-            public static CustomFieldEnum getByValue(@NonNull String value) {
-                return Arrays.stream(CustomFieldEnum.values())
-                        .filter(enm -> Objects.equals(enm.getValue(), value))
-                        .findFirst()
-                        .orElse(null);
+            public MyExampleDTO(MyEntity entity) {
+                this.customField = entity.getCustomField();
             }
         }
         ```
-    **Step2** Add field **Custom Field Enum** to corresponding **DataResponseDTO**.
-
-    ```java
-    public class MyExampleDTO extends DataResponseDTO {
     
-        @SearchParameter(name = "customField", provider = EnumValueProvider.class)
-        private CustomFieldEnum customField;
+        **Step3** Add field **Custom Field Enum** to corresponding **BaseEntity**.
     
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
-    ```
-
-    **Step3** Add field **Custom Field Enum** to corresponding **BaseEntity**.
-
-    ```java
-    public class MyExampleEntity extends BaseEntity {
-   
-        @Enumerated(value = EnumType.STRING)
-        @Column
-        private CustomFieldEnum customField;
-    }
-    ```
-    **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
-
-    ```java
-    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample26DTO> fields, InnerBcDescription bcDescription,
-                                      Long id, Long parentId) {
-        fields.setEnumValues(MyExampleDTO_.customField, CustomFieldEnum.values());
-    }
-    ```
-
-    === "List widget"
-        **Step5** Add to **_.widget.json_**.
-        ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "dictionary"
-            }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+        ```java
+        public class MyExampleEntity extends BaseEntity {
+       
+            @Enumerated(value = EnumType.STRING)
+            @Column
+            private CustomFieldEnum customField;
         }
         ```
-
-    === "Info widget"
-        **Step5** Add to **_.widget.json_**.
-
-        ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
+        **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
+    
+        ```java
+        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample26DTO> fields, InnerBcDescription bcDescription,
+                                          Long id, Long parentId) {
+            fields.setEnumValues(MyExampleDTO_.customField, CustomFieldEnum.values());
+        }
+        ```
+    
+        === "List widget"
+            **Step5** Add to **_.widget.json_**.
+            ```json
             {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "dictionary"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
+              "name": "MyExampleList",
+              "title": "List title",
+              "type": "List",
+              "bc": "myExampleBc",
+              "fields": [
                 {
-                  "cols": [
+                  "title": "Custom Field",
+                  "key": "customField",
+                  "type": "dictionary"
+                }
+              ],
+              "options": {
+                "actionGroups": {
+                }
+              }
+            }
+            ```
+    
+        === "Info widget"
+            **Step5** Add to **_.widget.json_**.
+    
+            ```json
+            {
+              "name": "MyExampleInfo",
+              "title": "Info title",
+              "type": "Info",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "label": "Custom Field",
+                  "key": "customField",
+                  "type": "dictionary"
+                }
+              ],
+              "options": {
+                "layout": {
+                  "rows": [
                     {
-                      "fieldKey": "customField",
-                      "span": 12
+                      "cols": [
+                        {
+                          "fieldKey": "customField",
+                          "span": 12
+                        }
+                      ]
+                    },
+                    {
+                      "cols": [
+                      ]
                     }
                   ]
-                },
-                {
-                  "cols": [
-                  ]
                 }
-              ]
+              }
             }
-          }
-        }
-        ```
-
-    === "Form widget"
-
-        **Step5** Add to **_.widget.json_**.
-
-        ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
+            ```
+    
+        === "Form widget"
+    
+            **Step5** Add to **_.widget.json_**.
+    
+            ```json
             {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "dictionary"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
+              "name": "MyExampleForm",
+              "title": "Form title",
+              "type": "Form",
+              "bc": "myExampleBc",
+              "fields": [
                 {
-                  "cols": [
+                  "label": "Custom Field",
+                  "key": "customField",
+                  "type": "dictionary"
+                }
+              ],
+              "options": {
+                "layout": {
+                  "rows": [
                     {
-                      "fieldKey": "customField",
-                      "span": 12
+                      "cols": [
+                        {
+                          "fieldKey": "customField",
+                          "span": 12
+                        }
+                      ]
+                    },
+                    {
+                      "cols": [
+                      ]
                     }
                   ]
-                },
-                {
-                  "cols": [
-                  ]
                 }
-              ]
+              }
             }
-          }
-        }
-        ```
+            ```
 ## Placeholder
 **_not applicable_**
 
@@ -626,8 +634,18 @@ Also, it optionally allows you to filter data on target view before it will be o
                     .add()
                     .build();
                 }
+            }![img_runtime_error.png](..%2FdateTime%2Fimg_runtime_error.png)
+        ```
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @NotNull(message = "Custom message about required field")
+                private CustomFieldEnum customField
             }
         ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"

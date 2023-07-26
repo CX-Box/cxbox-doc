@@ -122,9 +122,8 @@
                     e -> String.valueOf(e.getId()),
                     MyEntityMultivalue::getCustomField
             ));
-            this.customFieldCalc = entity.getCustomFieldList().stream()
-                        .map(obj -> obj.getCustomField())
-                        .collect(Collectors.joining(", "));
+            this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
+              ).collect(Collectors.joining(",")), 12);
     }
     ```
 
@@ -304,9 +303,8 @@
                         MyEntityMultivalue::getCustomField
                 ));
                 this.customFieldColor = "#eda6a6";
-                this.customFieldCalc = entity.getCustomFieldList().stream()
-                        .map(obj -> obj.getCustomField())
-                        .collect(Collectors.joining(", "));
+                this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
+                ).collect(Collectors.joining(",")), 12);
         }
 
         ```
@@ -459,6 +457,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -468,7 +468,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"

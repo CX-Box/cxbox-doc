@@ -351,6 +351,22 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @AssertTrue(message = "The field 'customField' can contain only 'True'")
+                private Boolean customField;
+            }
+        ```
+
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
 
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.

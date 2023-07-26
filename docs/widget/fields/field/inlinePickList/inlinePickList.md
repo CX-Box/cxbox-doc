@@ -1,7 +1,9 @@
 # InlinePickList
 
 `InlinePickList` is component similar to PickList, but with drop-down instead of popup to select values
-Use for growing entities more than 1000 lines.For small entities use dictionary.`see more` [dictionary](/widget/fields/field/dictionary/dictionary)
+Use if:
+
+1) Use for growing entities more than 1000 lines. For small entities use dictionary.`see more` [dictionary](/widget/fields/field/dictionary/dictionary)
 
 ## Basics
 ### How does it look?
@@ -355,6 +357,8 @@ Use for growing entities more than 1000 lines.For small entities use dictionary.
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -364,7 +368,8 @@ Use for growing entities more than 1000 lines.For small entities use dictionary.
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"
@@ -440,6 +445,21 @@ Use for growing entities more than 1000 lines.For small entities use dictionary.
                     .add()
                     .build();
                 }
+            }
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @NotNull(message = "Custom message about required field")
+                private String customField;
             }
         ```
         === "List widget"

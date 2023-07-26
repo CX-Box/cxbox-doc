@@ -567,6 +567,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_list](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_ 
 === "Form widget"
@@ -576,7 +578,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"
@@ -656,7 +659,21 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
+                private String customField;
+            }
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 `Input field` is a text field, so lexicographic sorting is used for it

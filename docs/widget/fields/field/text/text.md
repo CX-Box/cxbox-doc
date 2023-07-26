@@ -534,6 +534,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_ 
 === "Form widget"
@@ -543,7 +545,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"
@@ -617,6 +620,22 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
             }
         ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @NotNull(message = "Custom message about required field")
+                private CustomFieldEnum customField
+            }
+        ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"

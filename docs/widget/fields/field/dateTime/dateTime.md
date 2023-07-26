@@ -611,6 +611,22 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
 
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @Future(message = "The field 'customField' cannot be less than the current date")
+                private LocalDateTime customField;
+            }
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 

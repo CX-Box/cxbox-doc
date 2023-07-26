@@ -49,11 +49,7 @@
               "key": "customField",
               "type": "dateTime"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
     === "Info widget"
@@ -174,7 +170,7 @@
     === "Calculated color"
         
     
-        **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
     
         ```java
         public class DateTimeDTO extends DataResponseDTO {
@@ -203,11 +199,7 @@
                   "type": "dateTime",
                   "bgColorKey": "customFieldColor"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
         === "Info widget"
@@ -247,7 +239,7 @@
 
     === "Constant color"
         === "List widget" 
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "DateTimerList",
@@ -261,16 +253,12 @@
                   "type": "dateTime",
                   "bgColor": "#eda6a6"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
 
         === "Info widget"
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "DateTimerInfo",
@@ -371,11 +359,11 @@
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **Works for Info.**
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria.Search by range current day . 
+`Filtering` allows you to search data based on criteria. Search checks equality of only date parts (ignoring time). 
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -387,7 +375,7 @@
 ### How to add?
 ??? Example
     === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration)
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
 
         ```java
         public class DateTimeDTO extends DataResponseDTO {
@@ -448,7 +436,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             );
     ```
     === "List widget"
-        `Step 2` For visual add **"drillDown": "true"**  to .widget.json.
+        `Step 2` Add **"drillDown": "true"**  to .widget.json.
             ```json
             {
               "name": "DateTimeList",
@@ -462,21 +450,17 @@ Also, it optionally allows you to filter data on target view before it will be o
                   "type": "dateTime",
                   "drillDown": "true"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
 
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Info widget"
 
-        `Step 2` For visual add **"drillDown": "true"**  to .widget.json.
+        `Step 2` Add **"drillDown": "true"**  to .widget.json.
 
         ```json
         {
@@ -509,7 +493,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         }
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Form widget"
         _not applicable_
@@ -566,7 +550,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         
@@ -639,7 +623,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     _not applicable_
 ### How to add?
 === "List widget"
-    Enabled on default.
+    Enabled by default.
 === "Info widget"
     _not applicable_
 === "Form widget"

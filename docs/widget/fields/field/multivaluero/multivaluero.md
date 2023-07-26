@@ -80,11 +80,7 @@
               "assocValueKey": "customField",
               "displayedKey": "customFieldCalc"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }      
         ```
 
@@ -211,7 +207,7 @@
     === "Calculated color"
 
 
-        **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -249,11 +245,7 @@
                   "displayedKey": "customFieldCalc",
                   "bgColorKey": "customFieldColor"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
         === "Info widget"
@@ -263,7 +255,7 @@
 
     === "Constant color"
         === "List widget" 
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "MyExampleList",
@@ -280,11 +272,7 @@
                   "bgColor": "#eda6a6",
                   "displayedKey": "customFieldCalc"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
 
@@ -423,7 +411,7 @@
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         

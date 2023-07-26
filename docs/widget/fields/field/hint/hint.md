@@ -59,11 +59,7 @@
               "type": "hint",
               "showLength": 100
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
     === "Info widget"
@@ -105,10 +101,6 @@
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -157,10 +149,6 @@
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]

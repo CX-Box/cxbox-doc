@@ -154,11 +154,7 @@ Peculiarities:
               "key": "customField",
               "type": "percent"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
     === "Info widget"
@@ -186,10 +182,6 @@ Peculiarities:
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -224,10 +216,6 @@ Peculiarities:
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -300,7 +288,7 @@ Peculiarities:
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **Works for Info.**
         === "Form widget"
             **Works for Form.**
 ## Filtration
@@ -366,7 +354,7 @@ Peculiarities:
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         

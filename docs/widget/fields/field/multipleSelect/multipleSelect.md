@@ -84,11 +84,7 @@
               "key": "customField",
               "type": "multipleSelect"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
 
@@ -259,7 +255,7 @@ _not applicable_
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **Works for Info.**
         === "Form widget"
             **Works for Form.**
 ## Filtration
@@ -333,7 +329,7 @@ _not applicable_
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         

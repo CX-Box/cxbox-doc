@@ -68,11 +68,7 @@
               "type": "multivalueHover",
               "displayedKey": "customFieldCalc"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }      
         ```
 
@@ -168,7 +164,7 @@
     === "Calculated color"
 
 
-        **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -203,11 +199,7 @@
                   "type": "multivalueHover",
                   "displayedKey": "customFieldCalc"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
         === "Info widget"
@@ -236,10 +228,6 @@
                           "fieldKey": "customField",
                           "span": 12
                         }
-                      ]
-                    },
-                    {
-                      "cols": [
                       ]
                     }
                   ]
@@ -274,10 +262,6 @@
                           "span": 12
                         }
                       ]
-                    },
-                    {
-                      "cols": [
-                      ]
                     }
                   ]
                 }
@@ -286,7 +270,7 @@
             ```
     === "Constant color"
         === "List widget" 
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "MyExampleList",
@@ -301,16 +285,12 @@
                   "displayedKey": "customFieldCalc",
                   "bgColor": "#eda6a6"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
 
         === "Info widget"
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "MyExampleInfo",
@@ -336,10 +316,6 @@
                           "span": 12
                         }
                       ]
-                    },
-                    {
-                      "cols": [
-                      ]
                     }
                   ]
                 }
@@ -347,7 +323,7 @@
             }
             ```
         === "Form widget"
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "MyExample227Form",
@@ -372,10 +348,6 @@
                           "fieldKey": "customField",
                           "span": 12
                         }
-                      ]
-                    },
-                    {
-                      "cols": [
                       ]
                     }
                   ]

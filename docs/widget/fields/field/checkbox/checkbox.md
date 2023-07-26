@@ -52,11 +52,7 @@
               "key": "customField",
               "type": "checkbox"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
     === "Info widget"
@@ -84,10 +80,6 @@
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -122,10 +114,6 @@
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -202,7 +190,7 @@
 
 ## Filtration
 ### How does it look?
-`Filtering` allows you to search data based on criteria.Search by range current day .
+`Filtering` allows you to search data based on criteria. Search uses `in` operator.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -214,7 +202,7 @@
 ### How to add?
 ??? Example
     === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration)
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
 
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -303,7 +291,7 @@
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         
@@ -381,7 +369,7 @@
 ### How to add?
 ??? Example
     === "List widget"
-        Enabled on default.
+        Enabled by default.
     === "Info widget"
         _not applicable_
     === "Form widget"

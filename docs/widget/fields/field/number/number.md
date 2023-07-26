@@ -1,7 +1,6 @@
 # Number
 
-`Number` is a component for numbers editing. It can be used for editing and displaying numbers
-Restricts input to numbers.
+`Number` is a component for numbers editing. It is used to input and present numbers and automatically restricts user input to numeric values only.
 
 ## Basics
 ### How does it look?
@@ -15,9 +14,12 @@ Restricts input to numbers.
 
 
 ### How to add?
-Long or Double 
 ??? Example
-    **Step1** Add field **Long** to corresponding **DataResponseDTO**.
+    One will usually use  **Long**,  **Double** or  **BigDecimal** java types in DTO and Entity for storing this field type. 
+
+    Next example shows  **Long ** usage:
+
+    **Step1** Add **Long** field to corresponding **DataResponseDTO**.
 
     ```java
     public class NumberDTO extends DataResponseDTO {
@@ -31,7 +33,7 @@ Long or Double
     }
     ```
 
-    **Step2** Add field **Long** to corresponding **BaseEntity**.
+    **Step2** Add **Long** field to corresponding **BaseEntity**.
 
     ```java
     public class NumberEntity extends BaseEntity {
@@ -51,15 +53,11 @@ Long or Double
           "bc": "myBcNumber",,
           "fields": [
             {
-              "title": "custom Field",
+              "title": "Custom Field",
               "key": "customField",
               "type": "number"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
     === "Info widget"
@@ -73,7 +71,7 @@ Long or Double
           "bc": "myBcNumber",,
           "fields": [
             {
-              "label": "custom Field",
+              "label": "Custom Field",
               "key": "customField",
               "type": "number"
             }
@@ -87,10 +85,6 @@ Long or Double
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -111,7 +105,7 @@ Long or Double
           "bc": "myBcNumber",,
           "fields": [
             {
-              "label": "custom Field",
+              "label": "Custom Field",
               "key": "customField",
               "type": "number"
             }
@@ -125,10 +119,6 @@ Long or Double
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -157,7 +147,7 @@ Long or Double
       @Override
       public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setPlaceholder(NumberDTO_.customField, "1456"));
+        fields.setPlaceholder(NumberDTO_.customField, "123456"));
       }
     ```
     === "List widget"
@@ -184,7 +174,7 @@ Long or Double
     === "Calculated color"
         
     
-        **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
         public class NumberDTO extends DataResponseDTO {
@@ -213,11 +203,7 @@ Long or Double
                   "type": "number",
                   "bgColorKey": "customFieldColor"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
         === "Info widget"
@@ -245,10 +231,6 @@ Long or Double
                           "fieldKey": "customField",
                           "span": 12
                         }
-                      ]
-                    },
-                    {
-                      "cols": [
                       ]
                     }
                   ]
@@ -282,10 +264,6 @@ Long or Double
                           "span": 12
                         }
                       ]
-                    },
-                    {
-                      "cols": [
-                      ]
                     }
                   ]
                 }
@@ -294,7 +272,7 @@ Long or Double
             ```
     === "Constant color"
         === "List widget" 
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "NumberList",
@@ -308,18 +286,13 @@ Long or Double
                   "type": "number",
                   "bgColor": "#eda6a6"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
-
         === "Info widget"
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-           {
+            {
               "name": "NumberInfo",
               "title": "Info title",
               "type": "Info",
@@ -342,10 +315,6 @@ Long or Double
                           "span": 12
                         }
                       ]
-                    },
-                    {
-                      "cols": [
-                      ]
                     }
                   ]
                 }
@@ -354,7 +323,7 @@ Long or Double
             ```
 
         === "Form widget"
-            Add **"bgColor"** :  `custom color`  to .widget.json.  
+            Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             {
               "name": "NumberForm",
@@ -379,10 +348,6 @@ Long or Double
                           "span": 12
                         }
                       ]
-                    },
-                    {
-                      "cols": [
-                      ]
                     }
                   ]
                 }
@@ -393,13 +358,20 @@ Long or Double
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_edit_list.png](img_edit_list.png)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_edit_form.png](img_edit_form.png)
-
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
 
 ### How to add?
 ??? Example
@@ -444,11 +416,11 @@ Long or Double
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **Works for Info.**
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria.Search by range current day . 
+`Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -460,7 +432,7 @@ Long or Double
 ### How to add?
 ??? Example
     === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration)
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration)))
 
         ```java
         public class NumberDTO extends DataResponseDTO {
@@ -523,7 +495,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             );
     ```
     === "List widget"
-        `Step 2` For visual add **"drillDown": "true"**  to .widget.json.
+        `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         {
           "name": "NumberList",
@@ -537,21 +509,17 @@ Also, it optionally allows you to filter data on target view before it will be o
               "type": "number",
               "drillDown": "true"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
 
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Info widget"
 
-        `Step 2` For visual add **"drillDown": "true"**  to .widget.json.
+        `Step 2` Add **"drillDown": "true"**  to .widget.json.
 
         ```json
         {
@@ -577,10 +545,6 @@ Also, it optionally allows you to filter data on target view before it will be o
                       "span": 12
                     }
                   ]
-                },
-                {
-                  "cols": [
-                  ]
                 }
               ]
             }
@@ -588,7 +552,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         }
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. see more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Form widget"
         _not applicable_
@@ -651,7 +615,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         
@@ -696,7 +660,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **_Fields cannot be changed on this widget type, so "Confirm" is not applicable for field validation_**
         === "Form widget"
             **Works for Form.**
     === "Javax static"
@@ -728,15 +692,14 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     === "List widget"
-        Enabled on default.
+        Enabled by default.
     === "Info widget"
         _not applicable_
     === "Form widget"
         _not applicable_
 
 ## Required
-`Required` allows you to denote, that this field must have a value provided. By default, `Number` is 0.
-But can use `nullable`. see more `Additional properties-nullable`
+`Required` allows you to denote, that this field must have a value provided. By default, UI sets `Number` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
 
 ### How does it look?
 === "List widget"
@@ -768,9 +731,9 @@ But can use `nullable`. see more `Additional properties-nullable`
         **Works for Form.**
 
 ## Additional properties
-`digits`
-
-### How does it look?
+### <a id="digits">digits</a>
+Property denotes number of digits after the decimal point. Additionally, UI will not show digits after comma if property is not set
+#### How does it look?
 === "List widget"
     ![img_digits_list.png](img_digits_list.png)
 === "Info widget"
@@ -778,7 +741,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 === "Form widget"
     ![img_digits_form.png](img_digits_form.png)
 
-### How to add?
+#### How to add?
 ??? Example
     === "List widget"
         Add **digits** to **_.widget.json_**.
@@ -805,10 +768,6 @@ But can use `nullable`. see more `Additional properties-nullable`
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -842,10 +801,6 @@ But can use `nullable`. see more `Additional properties-nullable`
                       "span": 12
                     }
                   ]
-                },
-                {
-                  "cols": [
-                  ]
                 }
               ]
             }
@@ -867,16 +822,13 @@ But can use `nullable`. see more `Additional properties-nullable`
               "type": "number",
               "digits": 2
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
 
-`nullable`
-### How does it look?
+### <a id="nullable">nullable</a>
+By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
+#### How does it look?
 === "List widget"
     ![img_nullable_list.png](img_nullable_list.png)
 === "Info widget"
@@ -884,7 +836,7 @@ But can use `nullable`. see more `Additional properties-nullable`
 === "Form widget"
     ![img_nullable_form.png](img_nullable_form.png)
 
-### How to add?
+#### How to add?
 ??? Example
     === "List widget"
         Add **nullable** to **_.widget.json_**.
@@ -901,11 +853,7 @@ But can use `nullable`. see more `Additional properties-nullable`
               "type": "number",
               "nullable": true
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         } 
         ```  
 
@@ -935,10 +883,6 @@ But can use `nullable`. see more `Additional properties-nullable`
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]

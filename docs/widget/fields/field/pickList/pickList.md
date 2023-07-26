@@ -129,11 +129,7 @@ Use if:
                 "customField": "customField"
               }
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }        
         ```
 
@@ -161,11 +157,7 @@ Use if:
                 "customField": "customField"
               }
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
 
@@ -216,7 +208,7 @@ Use if:
     === "Calculated color"
 
 
-        **Step 1**   Add `custom field` for color to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -250,11 +242,7 @@ Use if:
                   },
                   "bgColorKey": "customFieldColor"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             }
             ```
         === "Info widget"
@@ -264,7 +252,7 @@ Use if:
 
     === "Constant color"
         === "List widget" 
-            Add **"bgColor"** :  `custom color`  to .widget.json.
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
               "name": "MyExampleList",
@@ -283,11 +271,7 @@ Use if:
                   },
                   "bgColor": "#eda6a6"
                 }
-              ],
-              "options": {
-                "actionGroups": {
-                }
-              }
+              ]
             } 
             ```
 
@@ -352,7 +336,7 @@ Use if:
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **Works for Info.**
         === "Form widget"
             **Works for Form.**
 
@@ -423,7 +407,7 @@ Use if:
             **Works for Form.**
     === "RuntimeException"
 
-        `RuntimeException` describes an error  within a business process.
+        `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         

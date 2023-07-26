@@ -49,11 +49,7 @@
               "key": "customField",
               "type": "input"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
     === "Info widget"

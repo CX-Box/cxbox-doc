@@ -58,11 +58,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
               "key": "newCustomField",
               "type": "input"
             }
-          ],
-          "options": {
-            "actionGroups": {
-            }
-          }
+          ]
         }
         ```
 
@@ -117,10 +113,6 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                       "fieldKey": "customField",
                       "span": 12
                     }
-                  ]
-                },
-                {
-                  "cols": [
                   ]
                 }
               ]
@@ -182,10 +174,6 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                       "span": 12
                     }
                   ]
-                },
-                {
-                  "cols": [
-                  ]
                 }
               ]
             }
@@ -203,7 +191,7 @@ _not applicable_
 _not applicable_
 
 ## Filtration
-`Filtering` allows you to search data based on criteria.Search by =.
+`Filtering` allows you to search data based on criteria. Search ???.
 ### How does it look?
 Block containing
 === "List widget"
@@ -218,7 +206,7 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
 ### How to add?
 ??? Example
     === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration)
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
 
 
         ```java

@@ -360,6 +360,8 @@
 
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+3) Field level validation: shows error next to all fields, that validation failed for
+
 ### How does it look?
 === "List widget"
     === "BusinessException"

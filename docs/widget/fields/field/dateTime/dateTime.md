@@ -505,6 +505,8 @@ Also, it optionally allows you to filter data on target view before it will be o
 1) Exception: Displays a message to notify users about technical or business errors.
 
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
+
+3) Field level validation: shows error next to all fields, that validation failed for
 ### How does it look?
 === "List widget"
     === "BusinessException"
@@ -595,7 +597,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
 
-    === "Javax static"
+    === "Field level validation"
         Add javax.validation to corresponding **DataResponseDTO**.
         ```java
      

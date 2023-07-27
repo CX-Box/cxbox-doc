@@ -534,6 +534,8 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+3) Field level validation: shows error next to all fields, that validation failed for
+
 ### How does it look?
 === "List widget"
     === "BusinessException"
@@ -542,7 +544,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
-    === "Javax static"
+    === "Field level validation"
         ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_ 
@@ -553,7 +555,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![img_confirm_form](img_confirm_form.png)
-    === "Javax static"
+    === "Field level validation"
         ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
@@ -634,7 +636,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-    === "Javax static"
+    === "Field level validation"
         Add javax.validation to corresponding **DataResponseDTO**.
         ```java
      

@@ -272,6 +272,8 @@ _not applicable_
 
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+3) Field level validation: shows error next to all fields, that validation failed for
+
 ### How does it look?
 === "List widget"
     === "BusinessException"
@@ -280,7 +282,7 @@ _not applicable_
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-    === "Javax static"
+    === "Field level validation"
         ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_
@@ -291,7 +293,7 @@ _not applicable_
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-    === "Javax static"
+    === "Field level validation"
         ![img_javax_stat_form](img_javax_stat_form.png)
 
 ### How to add?

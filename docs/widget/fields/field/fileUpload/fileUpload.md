@@ -302,7 +302,7 @@ Peculiarities:
 
 1) Exception: Displays a message to notify users about technical or business errors.
 
-2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
+Field level validation
 
 ### How does it look?
 === "List widget"
@@ -312,7 +312,7 @@ Peculiarities:
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-    === "Javax static"
+    === "Field level validation"
         ![img_javax_stat_form](img_javax_stat_form.png)
 === "Info widget"
     _not applicable_
@@ -323,7 +323,7 @@ Peculiarities:
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-    === "Javax static"
+    === "Field level validation"
         ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
@@ -403,7 +403,7 @@ Peculiarities:
         === "Form widget"
             **Works for Form.**
 
-    === "Javax static"
+    === "Field level validation"
         Add javax.validation to corresponding **DataResponseDTO**.
         ```java
      

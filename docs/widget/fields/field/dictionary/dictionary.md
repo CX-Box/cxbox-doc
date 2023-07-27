@@ -43,7 +43,7 @@ Dictionary can be to create
                 }
             }
             ```
-        **Step2** Add field **Custom Field Enum** to corresponding **DataResponseDTO**.
+        **Step2** Add  **Custom Field Enum** field to corresponding **DataResponseDTO**.
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -57,7 +57,7 @@ Dictionary can be to create
         }
         ```
     
-        **Step3** Add field **Custom Field Enum** to corresponding **BaseEntity**.
+        **Step3** Add  **Custom Field Enum** field to corresponding **BaseEntity**.
     
         ```java
         public class MyExampleEntity extends BaseEntity {
@@ -180,7 +180,7 @@ Dictionary can be to create
     === "Calculated color"
         
     
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {

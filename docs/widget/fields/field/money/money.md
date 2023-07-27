@@ -17,7 +17,7 @@
 
 ??? Example
     **Option1**
-    **Step1** Add field **Double** to corresponding **DataResponseDTO**.
+    **Step1** Add **Double** field  to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -31,7 +31,7 @@
     }
     ```
 
-    **Step2** Add field **Double** to corresponding **BaseEntity**.
+    **Step2** Add **Double** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -175,7 +175,7 @@
     === "Calculated color"
         
     
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -696,8 +696,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
-`Required` allows you to denote, that this field must have a value provided. By default, `Money` is 0.
-But can use `nullable`. See more `Additional properties-nullable`
+`Required` allows you to denote, that this field must have a value provided. 
+By default, UI sets `Money` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
 
 ### How does it look?
 === "List widget"
@@ -729,10 +729,9 @@ But can use `nullable`. See more `Additional properties-nullable`
         **Works for Form.**
 
 ## Additional properties
-
-`nullable`
-
-### How does it look?
+### <a id="nullable">nullable</a>
+By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
+####How does it look?
 === "List widget"
     ![img_nullable_list.png](img_nullable_list.png)
 === "Info widget"

@@ -20,7 +20,7 @@
 
     **Step 1.0.AssocListPopup** Create link table for ManyToMany.
 
-    **Step 1.1.AssocListPopup** Create entity. Add field **String** to corresponding **BaseEntity**.
+    **Step 1.1.AssocListPopup** Create entity. Add **String** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyEntityMultivalue extends BaseEntity {
@@ -284,7 +284,7 @@
     === "Calculated color"
 
 
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {

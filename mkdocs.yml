@@ -3,7 +3,7 @@ site_name: Cxbox Documentation
 # Структура навигации генерируемого сайта.
 nav:
   - Home: index.md
-  - Visual components:
+  - Field types:
       - Field input: widget/fields/field/input/input.md
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md
@@ -24,6 +24,8 @@ nav:
       - Field multivalue: widget/fields/field/multivalue/multivalue.md
       - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
+  - Widget types:
+      - Widget Form: widget/type/Form/form.md
   - Features:
       - DrillDown: features/element/drillDown/drillDown.md
       - Filtration: features/element/filtration/filtration.md
@@ -31,7 +33,11 @@ nav:
       - DrillDown: advancedCustomization/element/drillDown/drillDown.md
       - Validation: advancedCustomization/element/validation/validation.md
       - Filtration: advancedCustomization/element/filtration/filtration.md
+
 markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -79,6 +85,7 @@ plugins:
         'advancedCustomization_drillDown.md': 'advancedCustomization/element/drillDown/drillDown.md'
         'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
         'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
+        'form.md': 'widget/type/Form/form.md'
 
 repo_url: https://github.com/CX-Box/cxbox-doc
 edit_uri: edit/main/docs/

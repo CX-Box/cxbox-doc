@@ -35,7 +35,7 @@ Use if:
 
     }
     ```
-    **Step 1.2.Popup** Add field **String** to corresponding **BaseEntity**.
+    **Step 1.2.Popup** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyEntityPickEntity extends BaseEntity {
@@ -181,7 +181,7 @@ Use if:
     === "Calculated color"
 
 
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {

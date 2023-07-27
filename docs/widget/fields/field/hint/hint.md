@@ -16,7 +16,7 @@
 ### How to add?
 
 ??? Example
-    **Step1** Add field **String** to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field  to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -29,7 +29,7 @@
     }
     ```
 
-    **Step2** Add field **String** to corresponding **BaseEntity**.
+    **Step2** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {

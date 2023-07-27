@@ -14,7 +14,7 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **String** to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field  to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -27,7 +27,7 @@
         }
     }
     ```
-    **Step2** Add field **String** to corresponding **BaseEntity**.
+    **Step2** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -166,7 +166,7 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**.                    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
         ```java
         public class MyExampleDTO extends DataResponseDTO {
         
@@ -317,6 +317,22 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+### How does it look?
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
+
 ### How to add?
 ??? Example
     === "Editable"
@@ -371,7 +387,7 @@
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+             **Works for Info.**
         === "Form widget"
             **Works for Form.**
 
@@ -624,7 +640,7 @@ Also, it optionally allows you to filter data on target view before it will be o
      
             public class MyExampleDTO extends DataResponseDTO {
                 @NotNull(message = "Custom message about required field")
-                private CustomFieldEnum customField
+                private String customField
             }
         ```
 
@@ -656,7 +672,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
-`Required` allows you to denote, that this field must have a value provided. By default, `MyExample field` is not required
+`Required` allows you to denote, that this field must have a value provided. By default, `Text field` is not required
 
 ### How does it look?
 === "List widget"

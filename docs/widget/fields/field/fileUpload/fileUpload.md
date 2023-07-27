@@ -113,7 +113,7 @@ Peculiarities:
     
     }
     ```
-    **Step2** Add field **Long** to corresponding **DataResponseDTO**.
+    **Step2** Add **Long** field  to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -130,7 +130,7 @@ Peculiarities:
     }
     ```
 
-    **Step3** Add field **Long** to corresponding **BaseEntity**.
+    **Step3** Add **Long** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {

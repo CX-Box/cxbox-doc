@@ -13,7 +13,7 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **String** to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field  to corresponding **DataResponseDTO**.
 
     ```java
     public class InputDTO extends DataResponseDTO {
@@ -26,7 +26,7 @@
         }
     }
     ```
-    **Step2** Add field **String** to corresponding **BaseEntity**.
+    **Step2** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
     public class InputEntity extends BaseEntity {
@@ -165,7 +165,7 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**.                    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
         ```java
         public class InputDTO extends DataResponseDTO {
         

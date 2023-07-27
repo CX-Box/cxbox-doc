@@ -174,7 +174,7 @@
     === "Calculated color"
         
     
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. The field can contain a HEX color or be null. 
     
         ```java
         public class NumberDTO extends DataResponseDTO {

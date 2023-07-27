@@ -17,7 +17,7 @@
 
 ??? Example
     **Option1**
-    **Step1** Add field **Long** to corresponding **DataResponseDTO**.
+    **Step1** Add **Long** field  to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
@@ -31,7 +31,7 @@
     }
     ```
 
-    **Step2** Add field **Long** to corresponding **BaseEntity**.
+    **Step2** Add **Long** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
@@ -124,7 +124,7 @@
           }
         }
         ```
-    **Option2** Add field **Double** to corresponding **DataResponseDTO** in Step1.
+    **Option2** Add **Double** field  to corresponding **DataResponseDTO** in Step1.
 
 ## Placeholder
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
@@ -173,7 +173,7 @@
     === "Calculated color"
         
     
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -359,12 +359,20 @@
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_edit_list.png](img_edit_list.png)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_edit_form.png](img_edit_form.png)
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
 
 
 ### How to add?
@@ -692,8 +700,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
-`Required` allows you to denote, that this field must have a value provided. By default, `Percent` is 0.
-But can use `nullable`. See more `Additional properties-nullable`
+`Required` allows you to denote, that this field must have a value provided. 
+By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
 
 ### How does it look?
 === "List widget"
@@ -725,9 +733,104 @@ But can use `nullable`. See more `Additional properties-nullable`
         **Works for Form.**
 
 ## Additional properties
+### <a id="digits">digits</a>
+Property denotes number of digits after the decimal point. Additionally, UI will not show digits after comma if property is not set
+#### How does it look?
+=== "List widget"
+    ![img_digits_list.png](img_digits_list.png)
+=== "Info widget"
+    ![img_digits_info.png](img_digits_info.png)
+=== "Form widget"
+    ![img_digits_form.png](img_digits_form.png)
 
-`nullable`
-### How does it look?
+#### How to add?
+??? Example
+    === "List widget"
+        Add **digits** to **_.widget.json_**.
+        ```json
+        {
+          "name": "MyExampleList",
+          "title": "List title",
+          "type": "List",
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "title": "Custom Field",
+              "key": "customField",
+              "type": "percent",
+              "digits": 2
+            }
+          ]
+        } 
+        ```  
+    === "Info widget"
+        Add **digits** to **_.widget.json_**.
+        ```json
+        {
+          "name": "MyExampleInfo",
+          "title": "Info title",
+          "type": "Info",
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "label": "Custom Field",
+              "key": "customField",
+              "type": "percent",
+              "digits": 2
+            }
+          ],
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }    
+        ```
+    === "Form widget"
+        Add **digits** to **_.widget.json_**.
+        ```json
+        {
+          "bc": "myExampleBc",
+          "title": "Form title",
+          "type": "Form"
+          "fields": [
+            {
+              "label": "Custom Field",
+              "key": "customField",
+              "type": "percent",
+              "digits": 2
+            }
+          ],
+          "name": "MyExampleForm",
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+        ```    
+
+### <a id="nullable">nullable</a>
+By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
+#### How does it look?
 === "List widget"
     ![img_nullable_list.png](img_nullable_list.png)
 === "Info widget"
@@ -735,7 +838,7 @@ But can use `nullable`. See more `Additional properties-nullable`
 === "Form widget"
     ![img_nullable_form.png](img_nullable_form.png)
 
-### How to add?
+#### How to add?
 ??? Example
     === "List widget"
         Add **nullable** to **_.widget.json_**.
@@ -763,6 +866,8 @@ But can use `nullable`. See more `Additional properties-nullable`
         ```json
         {
           "bc": "myExampleBc",
+          "title": "Form title",
+          "type": "Form"
           "fields": [
             {
               "label": "Custom Field",
@@ -785,9 +890,7 @@ But can use `nullable`. See more `Additional properties-nullable`
                 }
               ]
             }
-          },
-          "title": "Form title",
-          "type": "Form"
+          }
         }
         ```
 

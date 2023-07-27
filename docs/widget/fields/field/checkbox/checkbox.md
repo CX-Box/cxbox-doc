@@ -253,6 +253,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
+    === "Javax static"
+        ![img_javax_stat_list](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -262,7 +264,8 @@
         ![img_runtime_error](img_runtime_error.png)
     === "Confirm"
         ![confirm_form](confirm_form.png)
-
+    === "Javax static"
+        ![img_javax_stat_form](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"
@@ -355,7 +358,22 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+    === "Javax static"
+        Add javax.validation to corresponding **DataResponseDTO**.
+        ```java
+     
+            public class MyExampleDTO extends DataResponseDTO {
+                @NotNull(message = "Custom message about required field")
+                private CustomFieldEnum customField
+            }
+        ```
 
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 

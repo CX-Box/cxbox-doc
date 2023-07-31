@@ -6,8 +6,10 @@
 ### How does it look?
 
 === "List widget"
+    Looks same as dictionary type. Differs only, when editing
     ![img_list.png](img_list.png)
 === "Info widget"
+    Looks same as dictionary type. Differs only, when editing in list/form widgets
     ![img_info.png](img_info.png)
 === "Form widget"
     ![img_form.png](img_form.png)

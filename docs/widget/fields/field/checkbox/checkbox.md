@@ -360,22 +360,6 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-    === "Field level validation"
-        Add javax.validation to corresponding **DataResponseDTO**.
-        ```java
-     
-            public class MyExampleDTO extends DataResponseDTO {
-                @NotNull(message = "Custom message about required field")
-                private CustomFieldEnum customField
-            }
-        ```
-
-        === "List widget"
-            **Works for List.**
-        === "Info widget"
-            **_not applicable_**
-        === "Form widget"
-            **Works for Form.**
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 

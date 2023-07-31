@@ -158,7 +158,7 @@
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
-    _not applicable_
+    ![img_plchldr_list.png](img_plchldr_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -182,7 +182,7 @@
       }
     ```
     === "List widget"
-        **_not applicable_**
+        **Works for List.**
     === "Info widget"
         **_not applicable_**
     === "Form widget"

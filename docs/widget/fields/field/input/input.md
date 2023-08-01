@@ -389,7 +389,7 @@
             **Works for Form.**
 
 ## Filtering
-`Filtering allows you to search data based on criteria.
+`Filtering` allows you to search data based on criteria.
 For `Input field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ). 
 ### How does it look?
 === "List widget"

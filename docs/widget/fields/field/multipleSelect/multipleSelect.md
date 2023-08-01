@@ -195,6 +195,7 @@ _not applicable_
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+### How does it look?
 === "Editable"
     === "List widget"
         ![img_list.gif](img_list.gif)
@@ -266,19 +267,61 @@ _not applicable_
         === "Form widget"
             **Works for Form.**
 ## Filtration
-**_not applicable_**
-public void buildIndependentMeta(FieldsMeta<MyExample256DTO>       fields, InnerBcDescription bcDescription, Long parentId) {
-if (configuration.getForceActiveEnabled()){
-fields.setForceActive(MyExample256DTO_.customField);
-}
 
-        fields.setConcreteFilterValues(MyExample256DTO_.customField, Arrays
-                .stream(CustomFieldEnum.values())
-                .map(en -> new SimpleDictionary(en.name(), en.getValue()))
-                .collect(Collectors.toList())
-        );
-        fields.enableFilter(MyExample256DTO_.customField);
-    }
+## Filtration
+`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+### How does it look?
+=== "List widget"
+    ![img_filtr_list.png](img_filtr_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+### How to add?
+??? Example
+    === "List widget"
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+
+        ```java
+            @SearchParameter(name = "customFieldEntity.customField")
+            private String customField;
+        
+            @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
+            private Long customFieldId;
+        
+            public MyExampleDTO(MyEntity entity) {
+                
+                this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
+                        .map(e -> e.getId())
+                        .orElse(null);
+                this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
+                        .map(e -> e.getCustomField())
+                        .orElse(null);
+            }
+        }
+        ```
+
+        **Step 2**  Add **fields.enableFilter** and **fields.setConcreteFilterValues** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
+                fields.setConcreteFilterValues(MyExampleDTO_.customField, Arrays
+                        .stream(CustomFieldEnum.values())
+                        .map(en -> new SimpleDictionary(en.name(), en.getValue()))
+                        .collect(Collectors.toList())
+                );
+            }
+        
+        }
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Drilldown
 **_not applicable_**
@@ -422,10 +465,10 @@ fields.setForceActive(MyExample256DTO_.customField);
 
     ```java
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
     
       @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
         fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
                 .map(CustomFieldEnum::getValue)

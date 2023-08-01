@@ -191,7 +191,7 @@ _not applicable_
 _not applicable_
 
 ## Filtration
-`Filtering allows you to search data based on criteria. Search ???.
+`Filtering` allows you to search data based on criteria. Search ???.
 ### How does it look?
 Block containing
 === "List widget"
@@ -223,10 +223,10 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
 
         ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExample>  {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
         
-            public void buildIndependentMeta(FieldsMeta<MyExample> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExample_.customField);
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
             }
         
         }

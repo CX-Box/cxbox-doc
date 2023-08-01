@@ -371,7 +371,7 @@
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering allows you to search data based on criteria. Search checks equality of only date parts (ignoring time). 
+`Filtering` allows you to search data based on criteria. Search checks equality of only date parts (ignoring time). 
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

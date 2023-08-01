@@ -499,7 +499,7 @@ Use if:
             **Works for Form.**
 
 ## Filtration
-`Filtering allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.gif](img_filtr_list.gif)
@@ -535,10 +535,10 @@ Use if:
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
 
         ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExample>  {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
         
-            public void buildIndependentMeta(FieldsMeta<MyExample> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExample_.customField);
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
             }
         
         }
@@ -822,13 +822,13 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     ```java
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
     
       @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setEnabled(MyExample_.customField);
-        fields.setRequired(MyExample_.customField);
+        fields.setEnabled(MyExampleDTO_.customField);
+        fields.setRequired(MyExampleDTO_.customField);
       }
     ```
     === "List widget"

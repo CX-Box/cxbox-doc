@@ -300,8 +300,53 @@ Peculiarities:
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
+
 ## Filtration
-**_not applicable_**
+`Filtering` allows you to search data based on criteria.
+For `FileUpload field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ).
+
+### How does it look?
+=== "List widget"
+    ![img_filtr_list.gif](img_filtr_list.gif)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+### How to add?
+??? Example
+    === "List widget"
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+
+        ```java
+            @SearchParameter(name = "customField")
+            private String customField;
+            @SearchParameter(name = "customFieldId")
+            private String customFieldId;
+                
+            public MyExampleDTO(MyEntity entity) {
+                
+                this.customField = entity.getCustomField();
+                this.customFieldId = entity.getCustomFieldId();
+            }
+        }
+        ```
+
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
+            }
+        
+        }
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Drilldown
 **_not applicable_**

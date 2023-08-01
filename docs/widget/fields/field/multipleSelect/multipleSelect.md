@@ -266,7 +266,6 @@ _not applicable_
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtration
 
 ## Filtration
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator.

@@ -145,6 +145,8 @@ Use if:
     === "List widget"
         **Step5** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
+        
+        If the set of fields is different from popupBcName, then create Assoc widget and add Assoc widget to **_.widget.json_**. 
 
         ```json
         {

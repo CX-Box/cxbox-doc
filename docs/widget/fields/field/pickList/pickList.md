@@ -14,7 +14,7 @@ Use if:
 === "List widget"
     ![img_list.gif](img_list.gif)
 === "Info widget"
-    _not applicable_
+    ![img_info.png](img_info.png)
 === "Form widget"
     ![img_form.gif](img_form.gif)
 
@@ -22,7 +22,8 @@ Use if:
 ### How to add?
 
 ??? Example
-    **Step1.Popup** Add field,for example, **String** to corresponding **DataResponseDTO**.
+    **Step 1.Popup**
+    **Step 1.1.Popup** Add field,for example,Add field,for example, **String** to corresponding **DataResponseDTO**.
 
     ```java
     public class MyEntityPickDTO extends DataResponseDTO {
@@ -35,7 +36,7 @@ Use if:
         }
     }
     ```
-    **Step2.Popup** Add **String** field  to corresponding **BaseEntity**.
+    **Step 1.2.Popup** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
     public class MyEntityPickEntity extends BaseEntity {
@@ -43,7 +44,7 @@ Use if:
         private String customField;
     }
     ```
-    **Step3.Popup**  Create Popup List to **_.widget.json_**.
+    **Step 1.3.Popup**  Create Popup List to **_.widget.json_**.
     ```json
     {
       "title": "myEntityPickListPopup title",
@@ -64,7 +65,7 @@ Use if:
       ]
     }
     ```
-    **Step 4.Popup** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    **Step 1.4.Popup** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
 
     ```java
 
@@ -78,7 +79,7 @@ Use if:
     }
     ```
 
-    **Step 5** Add **Popup** to **_.view.json_**.
+    **Step 2** Add **Popup** to **_.view.json_**.
 
     ```json
     {
@@ -108,8 +109,41 @@ Use if:
     }
     ```
 
+    **Step3** Add **String** field  to corresponding **DataResponseDTO**.
+
+    ```java
+    public class MyExampleDTO extends DataResponseDTO {
+    
+    @SearchParameter(name = "customFieldEntity.customField")
+    private String customField;
+
+    @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
+    private Long customFieldId;
+
+    public MyExampleDTO(MyEntity entity) {
+        this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
+                .map(BaseEntity::getId)
+                .orElse(null);
+        this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
+                .map(MyEntityPickDTO_::getCustomField)
+                .orElse(null);
+    }
+    }
+    ```
+
+    **Step4** Add **MyEntityPick** field  to corresponding **BaseEntity**.
+
+    ```java
+    public class MyExampleEntity extends BaseEntity {
+   
+        @JoinColumn(name = "CUSTOM_FIELD_ID")
+        @ManyToOne
+        private MyEntityPick customFieldEntity;
+    }
+    ```
+
     === "List widget"
-        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -134,10 +168,46 @@ Use if:
         ```
 
     === "Info widget"
-        _not applicable_
+        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        `pickMap` - maping for field Picklist to MyEntity
+
+        ```json
+        {
+          "name": "MyExampleInfo",
+          "title": "Info title",
+          "type": "Info",
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "label": "Custom Field",
+              "key": "customField",
+              "type": "pickList",
+              "popupBcName": "myEntityPickListPopup",
+              "pickMap": {
+                "customFieldId": "id",
+                "customField": "customField"
+              }
+            }
+          ],
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+        ```
     === "Form widget"
 
-        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -198,7 +268,7 @@ Use if:
 === "List widget"
     ![img_color_list.png](img_color_list.png)
 === "Info widget"
-    _not applicable_
+    ![img_color_info.png](img_color_info.png)
 === "Form widget"
     _not applicable_
 
@@ -213,17 +283,27 @@ Use if:
         ```java
         public class MyExampleDTO extends DataResponseDTO {
         
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Long customField;
-            private String customFieldColor;
-        
-            public MyExampleDTO(MyExampleEntity entity) {
-                this.customField = entity.getCustomField();
+                @SearchParameter(name = "customFieldEntity.customField")
+                private String customField;
+            
+                @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
+                private Long customFieldId;
+                public MyExample154DTO(MyEntity154 entity) {
+                    
+                    this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
+                            .map(BaseEntity::getId)
+                            .orElse(null);
+                    this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
+                            .map(MyEntity155::getCustomField)
+                            .orElse(null);
                 this.customFieldColor = "#eda6a6";
             }
         ```
-        === "List widget"   
+
+        === "List widget"  
+
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
+
             ```json
             {
               "name": "MyExampleList",
@@ -235,7 +315,7 @@ Use if:
                   "title": "Custom Field",
                   "key": "customField",
                   "type": "pickList",
-                  "popupBcName": "myEntity121PickListPopup",
+                  "popupBcName": "myEntityPickListPopup",
                   "pickMap": {
                     "customFieldId": "id",
                     "customField": "customField"
@@ -245,8 +325,44 @@ Use if:
               ]
             }
             ```
+
         === "Info widget"
-            _not applicable_
+            **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
+            ```json
+            {
+              "name": "MyExampleInfo",
+              "title": "Info title",
+              "type": "Info",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "label": "Custom Field",
+                  "key": "customField",
+                  "type": "pickList",
+                  "popupBcName": "myEntityPickListPopup",
+                  "pickMap": {
+                    "customField": "customField",
+                    "customFieldId": "id"
+                  },
+                  "bgColorKey": "customFieldColor"
+                }
+              ],
+              "options": {
+                "layout": {
+                  "rows": [
+                    {
+                      "cols": [
+                        {
+                          "fieldKey": "customField",
+                          "span": 12
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+            ```
         === "Form widget"
             _not applicable_
 
@@ -276,20 +392,62 @@ Use if:
             ```
 
         === "Info widget"
-            _not applicable_
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
+            ```json
+            {
+              "name": "MyExampleInfo",
+              "title": "Info title",
+              "type": "Info",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "label": "Custom Field",
+                  "key": "customField",
+                  "type": "pickList",
+                  "popupBcName": "myEntityPickListPopup",
+                  "pickMap": {
+                    "customField": "customField",
+                    "customFieldId": "id"
+                  },
+                  "bgColor": "#eda6a6"
+                }
+              ],
+              "options": {
+                "layout": {
+                  "rows": [
+                    {
+                      "cols": [
+                        {
+                          "fieldKey": "customField",
+                          "span": 12
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+            ```
         === "Form widget"
             _not applicable_
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_list.gif](img_list.gif)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_form.gif](img_form.gif)
-
+=== "Editable"
+    === "List widget"
+        ![img_list.gif](img_list.gif)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_form.gif](img_form.gif)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
 
 ### How to add?
 ??? Example
@@ -341,10 +499,163 @@ Use if:
             **Works for Form.**
 
 ## Filtration
-**_not applicable_**
+`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+### How does it look?
+=== "List widget"
+    ![img_filtr_list.gif](img_filtr_list.gif)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+### How to add?
+??? Example
+    === "List widget"
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+
+        ```java
+            @SearchParameter(name = "customFieldEntity.customField")
+            private String customField;
+        
+            @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
+            private Long customFieldId;
+        
+            public MyExampleDTO(MyEntity entity) {
+                
+                this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
+                        .map(e -> e.getId())
+                        .orElse(null);
+                this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
+                        .map(e -> e.getCustomField())
+                        .orElse(null);
+            }
+        }
+        ```
+
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
+            }
+        
+        }
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Drilldown
-**_not applicable_**
+`DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
+
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+
+
+### How does it look?
+=== "List widget"
+    ![img_drilldown_list](img_drilldown_list.png)
+=== "Info widget"
+    ![img_drilldown_info](img_drilldown_info.png)
+=== "Form widget"
+    _not applicable_
+
+### How to add?
+??? Example
+
+    **Option 1**
+
+    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    ```java
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+    
+        @Override
+        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+                                          Long id, Long parentId) {
+            fields.setDrilldown(
+                    MyExampleDTO_.customField,
+                    DrillDownType.INNER,
+                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+            );
+    ```
+
+    === "List widget"
+
+        `Step 2` Add **"drillDown": "true"**  to .widget.json.
+
+        ```json
+        {
+          "name": "MyExampleList",
+          "title": "List title",
+          "type": "List",
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "title": "Custom Field",
+              "key": "customField",
+              "type": "pickList",
+              "popupBcName": "myEntityPickListPopup",
+              "pickMap": {
+                "customFieldId": "id",
+                "customField": "customField"
+              },
+              "drillDown": "true"
+            }
+          ]
+        }
+        ```
+
+        **Option 2**
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+ 
+    === "Info widget"
+
+        `Step 2` Add **"drillDown": "true"**  to .widget.json.
+
+        ```json
+        {
+          "name": "MyExampleInfo",
+          "title": "Info title",
+          "type": "Info",
+          "bc": "myExampleBc",
+          "fields": [
+            {
+              "label": "Custom Field",
+              "key": "customField",
+              "type": "pickList",
+              "popupBcName": "myEntityPickListPopup",
+              "pickMap": {
+                "customField": "customField",
+                "customFieldId": "id"
+              },
+              "drillDown": "true"
+            }
+          ],
+          "options": {
+            "layout": {
+              "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customField",
+                      "span": 12
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }        
+        ```
+
+        **Option 2**
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+ 
+    === "Form widget"
+        _not applicable_
+[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are two types of validation:
@@ -475,11 +786,25 @@ Use if:
         === "Form widget"
             **Works for Form.**
 
-## Drilldown
-**_not applicable_**
-
 ## Sorting
-**_not applicable_**
+`Sorting` allows you to sort data in ascending or descending order. Sort by value join field.
+
+### How does it look?
+=== "List widget"
+    ![img_sort_list](img_sort_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+### How to add?
+??? Example
+    === "List widget"
+        Enabled by default.
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+
 
 ## Required
 `Required` allows you to denote, that this field must have a value provided. 
@@ -497,13 +822,13 @@ Use if:
 
     ```java
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
     
       @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setEnabled(MyExample_.customField);
-        fields.setRequired(MyExample_.customField);
+        fields.setEnabled(MyExampleDTO_.customField);
+        fields.setRequired(MyExampleDTO_.customField);
       }
     ```
     === "List widget"

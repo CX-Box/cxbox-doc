@@ -453,10 +453,10 @@
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
 
         ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExample>  {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
         
-            public void buildIndependentMeta(FieldsMeta<MyExample> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExample_.customField);
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
             }
         
         }
@@ -721,13 +721,13 @@ By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is 
 
     ```java
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
     
       @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setEnabled(MyExample_.customField);
-        fields.setRequired(MyExample_.customField);
+        fields.setEnabled(MyExampleDTO_.customField);
+        fields.setRequired(MyExampleDTO_.customField);
       }
     ```
     === "List widget"

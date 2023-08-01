@@ -234,12 +234,21 @@ Peculiarities:
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_edit_list.png](img_edit_list.png)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_edit_form.png](img_edit_form.png)
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
+
 
 
 ### How to add?
@@ -438,13 +447,13 @@ Field level validation
 
     ```java
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
     
       @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setEnabled(MyExample_.customField);
-        fields.setRequired(MyExample_.customField);
+        fields.setEnabled(MyExampleDTO_.customField);
+        fields.setRequired(MyExampleDTO_.customField);
       }
     ```
     === "List widget"

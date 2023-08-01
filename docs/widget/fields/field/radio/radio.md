@@ -300,13 +300,20 @@
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_edit_list.png](img_edit_list.png)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_edit_form.png](img_edit_form.png)
-
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
 
 ### How to add?
 ??? Example
@@ -388,10 +395,10 @@
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
 
         ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExample>  {
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
         
-            public void buildIndependentMeta(FieldsMeta<MyExample> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExample_.customField);
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
             }
         
         }
@@ -657,10 +664,10 @@ Lexicographic sorting is used for it.
 
     ```java
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExample> {
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
     
       @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample> fields, InnerBcDescription bcDescription,
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
         fields.setEnumValues(MyExampleDTO_.customField, CustomFieldEnum.values());
         fields.setEnabled(MyExampleDTO_.customField);

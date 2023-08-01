@@ -191,7 +191,7 @@ _not applicable_
 _not applicable_
 
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search ???.
+`Filtering allows you to search data based on criteria. Search ???.
 ### How does it look?
 Block containing
 === "List widget"

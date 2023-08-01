@@ -302,12 +302,21 @@
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_edit_list.png](img_edit_list.png)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_edit_form.png](img_edit_form.png)
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
+
 
 ### How to add?
 ??? Example
@@ -366,7 +375,7 @@
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering allows you to search data based on criteria. Search uses equals (=) operator.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

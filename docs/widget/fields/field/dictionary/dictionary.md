@@ -160,8 +160,37 @@ Dictionary can be to create
               }
             }
             ```
+
 ## Placeholder
-**_not applicable_**
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
+### How does it look?
+=== "List widget"
+    ![img_plchldr_list.png](img_plchldr_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_plchldr_form.png](img_plchldr_form.png)
+### How to add?
+??? Example
+    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
+
+    ```java
+
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setPlaceholder(MyExampleDTO_.customField, "17"));
+      }
+    ```
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**
+    === "Form widget"
+        **Works for Form.**
+
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -307,12 +336,20 @@ Dictionary can be to create
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    ![img_edit_list.png](img_edit_list.png)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_edit_form.png](img_edit_form.png)
+=== "Editable"
+    === "List widget"
+        ![img_edit_list.png](img_edit_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
 
 
 ### How to add?
@@ -365,7 +402,7 @@ Dictionary can be to create
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search uses `in` operator.
+`Filtering allows you to search data based on criteria. Search uses `in` operator.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

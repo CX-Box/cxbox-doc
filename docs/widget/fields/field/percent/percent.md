@@ -425,7 +425,7 @@
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
+`Filtering allows you to search data based on criteria. Search uses equals (=) operator. 
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

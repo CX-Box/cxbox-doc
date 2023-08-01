@@ -195,14 +195,21 @@ _not applicable_
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
-### How does it look?
-=== "Editable List widget"
-    ![img_list.gif](img_list.gif)
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_form.gif](img_form.gif)
- 
+=== "Editable"
+    === "List widget"
+        ![img_list.gif](img_list.gif)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_form.gif](img_form.gif)
+=== "Readonly"
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        ![img_ro_info.png](img_ro_info.png)
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
+     
 ### How to add?
 ??? Example
     === "Editable" 
@@ -260,6 +267,18 @@ _not applicable_
             **Works for Form.**
 ## Filtration
 **_not applicable_**
+public void buildIndependentMeta(FieldsMeta<MyExample256DTO>       fields, InnerBcDescription bcDescription, Long parentId) {
+if (configuration.getForceActiveEnabled()){
+fields.setForceActive(MyExample256DTO_.customField);
+}
+
+        fields.setConcreteFilterValues(MyExample256DTO_.customField, Arrays
+                .stream(CustomFieldEnum.values())
+                .map(en -> new SimpleDictionary(en.name(), en.getValue()))
+                .collect(Collectors.toList())
+        );
+        fields.enableFilter(MyExample256DTO_.customField);
+    }
 
 ## Drilldown
 **_not applicable_**

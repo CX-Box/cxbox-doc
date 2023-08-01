@@ -361,12 +361,21 @@
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 ### How does it look?
-=== "Editable List widget"
-    _not applicable_
-=== "Editable Info widget"
-    _not applicable_
-=== "Editable Form widget"
-    ![img_form.gif](img_form.gif)
+=== "Editable"
+    === "List widget"
+        _not applicable_
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_edit_form.png](img_edit_form.png)
+=== "Readonly"
+    === "List widget"
+        _not applicable_
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
+
 
 
 ### How to add?

@@ -190,7 +190,7 @@
 
 ## Filtration
 ### How does it look?
-`Filtering` allows you to search data based on criteria. Search uses `in` operator.
+`Filtering allows you to search data based on criteria. Search uses `in` operator.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

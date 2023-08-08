@@ -371,7 +371,7 @@
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search is carried out between 00.00 and 23:59.
+`Filtering` allows you to search data based on criteria. Search is carried out between 00:00 and 23:59.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

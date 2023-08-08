@@ -36,7 +36,7 @@
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField.customField", multiFieldKey = MultiFieldValueProvider.class)
+       @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
         private MultivalueField customField;
         private String customFieldCalc;
 
@@ -212,7 +212,7 @@
         ```java
         public class MyExampleDTO extends DataResponseDTO {
 
-            @SearchParameter(name = "customField.customField", multiFieldKey = MultiFieldValueProvider.class)
+           @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
             private MultivalueField customField;
             private String customFieldColor;
             private String customFieldCalc;

@@ -113,7 +113,7 @@
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField.customField", multiFieldKey = MultiFieldValueProvider.class)
+       @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
         private MultivalueField customField;
         private String customFieldCalc;
 
@@ -289,7 +289,7 @@
         ```java
         public class MyExampleDTO extends DataResponseDTO {
 
-            @SearchParameter(name = "customField.customField", multiFieldKey = MultiFieldValueProvider.class)
+           @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
             private MultivalueField customField;
             private String customFieldColor;
             private String customFieldCalc;
@@ -434,7 +434,50 @@
             **Works for Form.**
 
 ## Filtration
-**_not applicable_**
+`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+### How does it look?
+=== "List widget"
+    ![img_filtr_list.gif](img_filtr_list.gif)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+
+### How to add?
+??? Example
+    === "List widget"
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+
+        ```java           
+        @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
+        private MultivalueField customField;
+        private String customFieldCalc;
+        public MyExampleDTO(MyEntity entity) {
+            this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
+                    e -> String.valueOf(e.getId()),
+                    MyEntityMultivalue::getCustomField
+            ));
+            this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntityMultivalue::getCustomField
+            ).collect(Collectors.joining(",")), 12);
+        }
+        ```
+
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
+            }
+        
+        }
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Drilldown
 **_not applicable_**

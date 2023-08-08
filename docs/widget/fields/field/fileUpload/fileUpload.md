@@ -474,7 +474,25 @@ Field level validation
             **Works for Form.**
 
 ## Sorting
-**_not applicable_**
+`Sorting` allows you to sort data in ascending or descending order.
+`FileUpload field` is a text field, so lexicographic sorting is used for it
+
+### How does it look?
+=== "List widget"
+    ![img_sort_list](img_sort_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+### How to add?
+??? Example
+    === "List widget"
+        Enabled by default.
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+
 
 ## Required
 `Required` allows you to denote, that this field must have a value provided. 

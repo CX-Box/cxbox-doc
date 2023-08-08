@@ -362,7 +362,8 @@ Use if:
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering` allows you to search data based on criteria.
+For `InlinePickList field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ).
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)

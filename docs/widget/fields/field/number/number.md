@@ -666,31 +666,174 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
     === "Field level validation"
-        **Option 1**
+        === "Option 1"
+            Use if:
 
-        Add javax.validation to corresponding **DataResponseDTO**.
-        ```java
-     
-            public class MyExampleDTO extends DataResponseDTO {
-                    @DecimalMin(value = "100000.00", message = "The field 'customField' cannot be less than 100 000.00.")
-                    private Long customField;
-            }
-        ```
+            Requires a simple fields check (javax validation)
+
+            Add javax.validation to corresponding **DataResponseDTO**.
+            ```java
+         
+                public class MyExampleDTO extends DataResponseDTO {
+                        @Min(value = 100000, message = "The field 'customField' cannot be less than 100 000.")
+                        private Long customField;
+                }
+            ```
         
-        **Option 2**
+        === "Option 2"
+            Create сustom service for business logic check.
 
-        Add ?? to corresponding ??.
-        ```java
-     
-            TODO
-        ```
+            Use if:
 
-        === "List widget"
-            **Works for List.**
-        === "Info widget"
-            **_not applicable_**
-        === "Form widget"
-            **Works for Form.**
+            Business logic check required for fields
+
+            `Step 1`  Create сustom method for check.
+            ```java
+            private void validate(BusinessComponent bc, MyExampleDTO dto) {
+                BusinessError.Entity entity = new BusinessError.Entity(bc);
+                if (dto.getCustomField() < 100000)  {
+                    entity.addField(MyExample2337DTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
+                }
+                if  (dto.getCustomField() < 100000)  {
+                    entity.addField(MyExample2337DTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
+                }
+                if (entity.getFields().size() > 0) {
+                    throw new BusinessException().setEntity(entity);
+                }
+            }
+            ```
+            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            ```java
+        
+              public Actions<MyExampleDTO> getActions() {
+                return Actions.<MyExampleDTO>builder()
+                        .newAction()
+                        .action("save", "save")
+                        .add()
+                        .action("check", "Check")
+                        .invoker((bc, dto) -> {
+                            validate(bc, dto);
+                            return new ActionResultDTO<>();
+                        })
+                        .add()
+                        .build();
+            }
+            ```
+            === "List widget"
+                Add custom action check to **_.widget.json_**.
+                ```json
+                {
+                  "name": "MyExampleList",
+                  "title": "List title",
+                  "type": "List",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "title": "Custom Field",
+                      "key": "customField",
+                      "type": "number"
+                    },
+                    {
+                      "title": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "number"
+                    }
+                  ],
+                  "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    }
+                  }
+                }
+                ```               
+            === "Info widget"
+                ```json
+                {
+                  "name": "MyExampleInfo",
+                  "title": "Info title",
+                  "type": "Info",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "label": "Custom Field",
+                      "key": "customField",
+                      "type": "number"
+                    },
+                    {
+                      "label": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "number"
+                    }
+                  ],
+                  "options": {
+                    "layout": {
+                      "rows": [
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customFieldAdditional",
+                              "span": 12
+                            }
+                          ]
+                        },
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customField",
+                              "span": 12
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+                ```   
+            === "Form widget"
+                ```json
+                {
+                  "name": "MyExampleForm",
+                  "title": "Form title",
+                  "type": "Form",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "label": "Custom Field",
+                      "key": "customField",
+                      "type": "number"
+                    },
+                    {
+                      "label": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "number"
+                    }
+                  ],
+                  "options": {
+                    "layout": {
+                      "rows": [
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customFieldAdditional",
+                              "span": 12
+                            }
+                          ]
+                        },
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customField",
+                              "span": 12
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+                ```
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 

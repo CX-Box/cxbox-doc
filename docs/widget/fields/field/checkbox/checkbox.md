@@ -362,21 +362,179 @@
         === "Form widget"
             **Works for Form.**
     === "Field level validation"
-        Add javax.validation to corresponding **DataResponseDTO**.
-        ```java
-     
-            public class MyExampleDTO extends DataResponseDTO {
-                @AssertTrue(message = "The field 'customField' can contain only 'True'")
-                private Boolean customField;
-            }
-        ```
+        === "Option 1"
+            Use if:
 
-        === "List widget"
-            **Works for List.**
-        === "Info widget"
-            **_not applicable_**
-        === "Form widget"
-            **Works for Form.**
+            Requires a simple fields check (javax validation)
+
+            ```java
+         
+                public class MyExampleDTO extends DataResponseDTO {
+                    @AssertTrue(message = "The field 'customField' can contain only 'True'")
+                    private Boolean customField;
+                }
+            ```
+    
+            === "List widget"
+                **Works for List.**
+            === "Info widget"
+                **_not applicable_**
+            === "Form widget"
+                **Works for Form.**
+        === "Option 2"
+            Create сustom service for business logic check.
+
+            Use if:
+
+            Business logic check required for fields
+
+            `Step 1`  Create сustom method for check.
+            ```java
+            private void validate(BusinessComponent bc, MyExampleDTO dto) {
+                BusinessError.Entity entity = new BusinessError.Entity(bc);
+                if (Boolean.FALSE.equals(dto.getCustomField())) {
+                    entity.addField(MyExample289DTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'True"));
+                }
+                if (Boolean.FALSE.equals(dto.getCustomFieldAdditional())) {
+                    entity.addField(MyExample289DTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' can contain only 'True"));
+                }
+                if (entity.getFields().size() > 0) {
+                    throw new BusinessException().setEntity(entity);
+                }
+            }
+            ```
+            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            ```java
+        
+              public Actions<MyExampleDTO> getActions() {
+                return Actions.<MyExampleDTO>builder()
+                        .newAction()
+                        .action("save", "save")
+                        .add()
+                        .action("check", "Check")
+                        .invoker((bc, dto) -> {
+                            validate(bc, dto);
+                            return new ActionResultDTO<>();
+                        })
+                        .add()
+                        .build();
+            }
+            ```
+            === "List widget"
+                Add custom action check to **_.widget.json_**.
+                ```json
+                {
+                  "name": "MyExampleList",
+                  "title": "List title",
+                  "type": "List",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "title": "Custom Field",
+                      "key": "customField",
+                      "type": "checkbox"
+                    },
+                    {
+                      "title": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "checkbox"
+                    }
+                  ],
+                  "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    }
+                  }
+                }
+                ```               
+            === "Info widget"
+                ```json
+                {
+                  "name": "MyExampleInfo",
+                  "title": "Info title",
+                  "type": "Info",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "label": "Custom Field",
+                      "key": "customField",
+                      "type": "checkbox"
+                    },
+                    {
+                      "label": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "checkbox"
+                    }
+                  ],
+                  "options": {
+                    "layout": {
+                      "rows": [
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customFieldAdditional",
+                              "span": 12
+                            }
+                          ]
+                        },
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customField",
+                              "span": 12
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                } 
+                ```   
+            === "Form widget"
+                ```json
+                {
+                  "name": "MyExampleForm",
+                  "title": "Form title",
+                  "type": "Form",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "label": "Custom Field",
+                      "key": "customField",
+                      "type": "checkbox"
+                    },
+                    {
+                      "label": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "checkbox"
+                    }
+                  ],
+                  "options": {
+                    "layout": {
+                      "rows": [
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customFieldAdditional",
+                              "span": 12
+                            }
+                          ]
+                        },
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customField",
+                              "span": 12
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+                ```
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 

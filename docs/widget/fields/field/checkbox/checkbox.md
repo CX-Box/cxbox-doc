@@ -450,48 +450,7 @@
                 }
                 ```               
             === "Info widget"
-                ```json
-                {
-                  "name": "MyExampleInfo",
-                  "title": "Info title",
-                  "type": "Info",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "checkbox"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "checkbox"
-                    }
-                  ],
-                  "options": {
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                } 
-                ```   
+                **_not applicable_**
             === "Form widget"
                 ```json
                 {
@@ -512,6 +471,11 @@
                     }
                   ],
                   "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    },
                     "layout": {
                       "rows": [
                         {

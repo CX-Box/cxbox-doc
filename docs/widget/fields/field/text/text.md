@@ -727,48 +727,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```               
             === "Info widget"
-                ```json
-                {
-                  "name": "MyExampleInfo",
-                  "title": "Info title",
-                  "type": "Info",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "text"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "text"
-                    }
-                  ],
-                  "options": {
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
-                ```   
+                **_not applicable_**
             === "Form widget"
                 ```json
                 {
@@ -789,6 +748,11 @@ Also, it optionally allows you to filter data on target view before it will be o
                     }
                   ],
                   "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    },
                     "layout": {
                       "rows": [
                         {

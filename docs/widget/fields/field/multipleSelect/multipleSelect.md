@@ -344,7 +344,7 @@ _not applicable_
     === "Confirm"
         ![confirm_form](confirm_form.png)
     === "Field level validation"
-        ![img_javax_stat_form](img_javax_stat_form.png)
+        ![img_javax_stat_list](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -444,7 +444,156 @@ _not applicable_
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+    === "Field level validation"
+        === "Option 1"
+            Add javax.validation to corresponding **DataResponseDTO**.
 
+            Use if:
+
+            Requires a simple fields check (javax validation)
+            ```java
+         
+                public class MyExampleDTO extends DataResponseDTO {
+                    @NotNull(message = "Custom message about required field")
+                    @SearchParameter(name = "customField.value", multiFieldKey = StringValueProvider.class)
+                    private MultivalueField customField;
+                }
+            ```
+            === "List widget"
+                **Works for List.**
+            === "Info widget"
+                **_not applicable_**
+            === "Form widget"
+                **Works for Form.**
+        === "Option 2"
+            Create сustom service for business logic check.
+
+            Use if:
+
+            Business logic check required for fields
+
+            `Step 1`  Create сustom method for check.
+            ```java
+            private void validate(BusinessComponent bc, MyExampleDTO dto) {
+                BusinessError.Entity entity = new BusinessError.Entity(bc);
+                Boolean castomFieldFlg = dto.getCustomField().getValues()
+                        .stream()
+                        .anyMatch(val->
+                                val.getValue().equals(CustomFieldEnum.HIGH.getValue()));
+                Boolean castomFieldAdditionalFlg = dto.getCustomFieldAdditional().getValues()
+                        .stream()
+                        .anyMatch(val->
+                                val.getValue().equals(CustomFieldEnum.HIGH.getValue()));
+                if (castomFieldFlg)  {
+                    entity.addField(MyExampleDTO_.customField.getName(),
+                            errorMessage("The field 'customField' cannot contain 'High'"));
+                }
+                if (castomFieldAdditionalFlg)  {
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(),
+                            errorMessage("The field 'customField' cannot contain 'High'"));
+                }
+                if (entity.getFields().size() > 0) {
+                    throw new BusinessException().setEntity(entity);
+                }
+            }
+            ```
+            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            ```java
+        
+              public Actions<MyExampleDTO> getActions() {
+                return Actions.<MyExampleDTO>builder()
+                        .newAction()
+                        .action("save", "save")
+                        .add()
+                        .action("check", "Check")
+                        .invoker((bc, dto) -> {
+                            validate(bc, dto);
+                            return new ActionResultDTO<>();
+                        })
+                        .add()
+                        .build();
+            }
+            ```
+            === "List widget"
+                Add custom action check to **_.widget.json_**.
+                ```json
+                {
+                  "name": "MyExampleList",
+                  "title": "List title",
+                  "type": "List",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "title": "Custom Field",
+                      "key": "customField",
+                      "type": "multipleSelect"
+                    },
+                    {
+                      "title": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "multipleSelect"
+                    }
+                  ],
+                  "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    }
+                  }
+                }
+ 
+                ```               
+            === "Info widget"
+                **_not applicable_**
+            === "Form widget"
+                ```json
+                {
+                  "name": "MyExampleForm",
+                  "title": "Form title",
+                  "type": "Form",
+                  "bc": "myExampleBc334",
+                  "fields": [
+                    {
+                      "label": "Custom Field",
+                      "key": "customField",
+                      "type": "multipleSelect"
+                    },
+                    {
+                      "label": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "multipleSelect"
+                    }
+                  ],
+                  "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    },
+                    "layout": {
+                      "rows": [
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customFieldAdditional",
+                              "span": 12
+                            }
+                          ]
+                        },
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customField",
+                              "span": 12
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+                ```
 ## Sorting
 **_not applicable_**
 

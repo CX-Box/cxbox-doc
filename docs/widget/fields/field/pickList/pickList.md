@@ -773,21 +773,164 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
     === "Field level validation"
-        Add javax.validation to corresponding **DataResponseDTO**.
-        ```java
-     
-            public class MyExampleDTO extends DataResponseDTO {
-                @NotNull(message = "Custom message about required field")
-                private String customField;
-            }
-        ```
-        === "List widget"
-            **Works for List.**
-        === "Info widget"
-            **_not applicable_**
-        === "Form widget"
-            **Works for Form.**
+        === "Option 1"
+            Add javax.validation to corresponding **DataResponseDTO**.
 
+            Use if:
+
+            Requires a simple fields check (javax validation)
+
+            ```java
+         
+                public class MyExampleDTO extends DataResponseDTO {
+                    @NotNull(message = "Custom message about required field")
+                    private String customField;
+                }
+            ```
+            === "List widget"
+                **Works for List.**
+            === "Info widget"
+                **_not applicable_**
+            === "Form widget"
+                **Works for Form.**
+        === "Option 2"
+            Create сustom service for business logic check.
+
+            Use if:
+
+            Business logic check required for fields
+
+            `Step 1`  Create сustom method for check.
+            ```java
+            private void validate(BusinessComponent bc, MyExampleDTO dto) {
+                BusinessError.Entity entity = new BusinessError.Entity(bc);
+                if (String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
+                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
+                }
+                if (String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                }
+                if (entity.getFields().size() > 0) {
+                    throw new BusinessException().setEntity(entity);
+                }
+            }
+            ```
+            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            ```java
+        
+              public Actions<MyExampleDTO> getActions() {
+                return Actions.<MyExampleDTO>builder()
+                        .newAction()
+                        .action("save", "save")
+                        .add()
+                        .action("check", "Check")
+                        .invoker((bc, dto) -> {
+                            validate(bc, dto);
+                            return new ActionResultDTO<>();
+                        })
+                        .add()
+                        .build();
+            }
+            ```
+            === "List widget"
+                Add custom action check to **_.widget.json_**.
+                ```json
+                {
+                  "name": "MyExampleList",
+                  "title": "List title",
+                  "type": "List",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "title": "Custom Field",
+                      "key": "customField",
+                      "type": "pickList",
+                      "popupBcName": "myEntityPickListPopup",
+                      "pickMap": {
+                        "customFieldId": "id",
+                        "customField": "customField"
+                      }
+                    },
+                    {
+                      "title": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "pickList",
+                      "popupBcName": "myEntityPickListPopup",
+                      "pickMap": {
+                        "customFieldId": "id",
+                        "customFieldAdditional": "customFieldAdditional"
+                      }
+                    }
+                  ],
+                  "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    }
+                  }
+                }
+                ```               
+            === "Info widget"
+                 **_not applicable_**
+            === "Form widget"
+                ```json
+                {
+                  "name": "MyExampleForm",
+                  "title": "Form title",
+                  "type": "Form",
+                  "bc": "myExampleBc",
+                  "fields": [
+                    {
+                      "label": "Custom Field",
+                      "key": "customField",
+                      "type": "pickList",
+                      "popupBcName": "myEntityPickListPopup",
+                      "pickMap": {
+                        "customFieldId": "id",
+                        "customField": "customField"
+                      }
+                    },
+                    {
+                      "label": "Custom Field Additional",
+                      "key": "customFieldAdditional",
+                      "type": "pickList",
+                      "popupBcName": "myEntityPickListPopup",
+                      "pickMap": {
+                        "customFieldId": "id",
+                        "customFieldAdditional": "customFieldAdditional"
+                      }
+                    }
+                  ],
+                  "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    },
+                    "layout": {
+                      "rows": [
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customFieldAdditional",
+                              "span": 12
+                            }
+                          ]
+                        },
+                        {
+                          "cols": [
+                            {
+                              "fieldKey": "customField",
+                              "span": 12
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+                ```
 ## Sorting
 `Sorting` allows you to sort data in ascending or descending order. Sort by value join field.
 

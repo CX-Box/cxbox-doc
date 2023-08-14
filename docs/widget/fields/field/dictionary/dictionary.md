@@ -677,12 +677,11 @@ Also, it optionally allows you to filter data on target view before it will be o
             ```java
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
-                LocalDate sysdate = LocalDate.now();
-                if ( sysdate.compareTo(dto.getCustomField()) > 0) {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than the current date"));
+                if(!dto.getCustomField().getValue().equals(CustomFieldEnum.HIGH.getValue())) {
+                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'High'"));
                 }
-                if (sysdate.compareTo(dto.getCustomFieldAdditional()) > 0) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' cannot be less than the current date"));
+                if (!dto.getCustomFieldAdditional().getValue().equals(CustomFieldEnum.HIGH.getValue())) {
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only 'High'"));
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
@@ -718,12 +717,12 @@ Also, it optionally allows you to filter data on target view before it will be o
                     {
                       "title": "Custom Field",
                       "key": "customField",
-                      "type": "dateTimeWithSeconds"
+                      "type": "dictionary"
                     },
                     {
                       "title": "Custom Field Additional",
                       "key": "customFieldAdditional",
-                      "type": "dateTimeWithSeconds"
+                      "type": "dictionary"
                     }
                   ],
                   "options": {
@@ -736,48 +735,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```               
             === "Info widget"
-                ```json
-                {
-                  "name": "MyExampleInfo",
-                  "title": "Info title",
-                  "type": "Info",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "dateTimeWithSeconds"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "dateTimeWithSeconds"
-                    }
-                  ],
-                  "options": {
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
-                ```   
+                 **_not applicable_**
             === "Form widget"
                 ```json
                 {
@@ -789,15 +747,20 @@ Also, it optionally allows you to filter data on target view before it will be o
                     {
                       "label": "Custom Field",
                       "key": "customField",
-                      "type": "dateTimeWithSeconds"
+                      "type": "dictionary"
                     },
                     {
                       "label": "Custom Field Additional",
                       "key": "customFieldAdditional",
-                      "type": "dateTimeWithSeconds"
+                      "type": "dictionary"
                     }
                   ],
                   "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    },
                     "layout": {
                       "rows": [
                         {

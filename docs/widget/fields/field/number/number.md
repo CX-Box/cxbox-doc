@@ -692,10 +692,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (dto.getCustomField() < 100000)  {
-                    entity.addField(MyExample2337DTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
+                    entity.addField(MyExample2DTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
                 }
                 if  (dto.getCustomField() < 100000)  {
-                    entity.addField(MyExample2337DTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
+                    entity.addField(MyExample2DTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
@@ -749,48 +749,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```               
             === "Info widget"
-                ```json
-                {
-                  "name": "MyExampleInfo",
-                  "title": "Info title",
-                  "type": "Info",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "number"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "number"
-                    }
-                  ],
-                  "options": {
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
-                ```   
+                **_not applicable_** 
             === "Form widget"
                 ```json
                 {
@@ -811,6 +770,11 @@ Also, it optionally allows you to filter data on target view before it will be o
                     }
                   ],
                   "options": {
+                    "actionGroups": {
+                      "include": [
+                        "check"
+                      ]
+                    },
                     "layout": {
                       "rows": [
                         {

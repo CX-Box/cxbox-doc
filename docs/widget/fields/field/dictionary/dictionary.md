@@ -672,10 +672,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             ```java
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if(!dto.getCustomField().getValue().equals(CustomFieldEnum.HIGH.getValue())) {
+                if(!CustomFieldEnum.HIGH.getValue().equals(dto.getCustomField().getValue())) {
                     entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'High'"));
                 }
-                if (!dto.getCustomFieldAdditional().getValue().equals(CustomFieldEnum.HIGH.getValue())) {
+                if (!CustomFieldEnum.HIGH.getValue().equals(dto.getCustomFieldAdditional().getValue()))  {
                     entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only 'High'"));
                 }
                 if (entity.getFields().size() > 0) {

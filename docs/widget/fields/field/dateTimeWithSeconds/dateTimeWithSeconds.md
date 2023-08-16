@@ -550,11 +550,11 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<DateTimeWithSecondsDTO> doUpdateEntity(DateTimeWithSecondsEntity entity, DateTimeWithSecondsDTO data, BusinessComponent bc) {
             if (data.isFieldChanged(DateTimeWithSecondsDTO_.customField)) {
-                entity.setCustomField(data.getCustomField());
                 LocalDate sysdate = LocalDate.now();
                 if (sysdate.compareTo(data.getCustomField().toLocalDate()) > 0) {
                     throw new BusinessException().addPopup("The field 'customField' cannot be less than the current date");
                 }
+                entity.setCustomField(data.getCustomField());
             }
             return new ActionResultDTO<>(entityToDto(bc, entity));          
         ```
@@ -644,7 +644,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 LocalDate sysdate = LocalDate.now();
-                if ( sysdate.compareTo(dto.getCustomField()) > 0) {
+                if (sysdate.compareTo(dto.getCustomField()) > 0) {
                     entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than the current date"));
                 }
                 if (sysdate.compareTo(dto.getCustomFieldAdditional()) > 0) {

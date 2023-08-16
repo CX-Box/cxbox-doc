@@ -299,7 +299,7 @@
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomField(data.getCustomField());
-                if (data.getCustomField().equals(Boolean.FALSE)) {
+                if (Boolean.FALSE.equals(data.getCustomField())) {
                     throw new BusinessException().addPopup("The field 'customField' can contain only 'True'");
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));

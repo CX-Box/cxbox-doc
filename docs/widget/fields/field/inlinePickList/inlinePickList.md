@@ -89,17 +89,17 @@ Use if:
       "widgets": [
         {
           "widgetName": "myEntityPickListPopup",
-          "position": 2,
+          "position": 0,
           "gridWidth": 24
         },
         {
           "widgetName": "SecondLevelMenu",
-          "position": 0,
-          "gridWidth": 1
+          "position": 10,
+          "gridWidth": 24
         },
         {
           "widgetName": "MyExampleForm/List",
-          "position": 2,
+          "position": 20,
           "gridWidth": 24
         }
       ],

@@ -3,7 +3,7 @@
 `Dictionary` is a component that allows to select single value from dropdown.
 
 !!! tip
-    For dictionaries or slowly-growing entities, e.g. no more than 1000 values (all values are loaded in memory). Otherwise, use [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
+    Use for dictionaries or slowly-growing entities, e.g. no more than 1000 values (all values are loaded in memory). Otherwise, use [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 
 ## Basics
 ### How does it look?
@@ -389,7 +389,7 @@
         }
         ```
     
-        **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enable field if you use after property fields.setEnabled.
+        **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -582,7 +582,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     if (!CustomFieldEnum.HIGH.getValue()equals(data.getCustomField().getValue())) {
-                        throw new BusinessException().addPopup("The field 'customField' can contain only 'High'");
+                        throw new BusinessException().addPopup("Custom message about error");
                     }
                     entity.setCustomField(data.getCustomField());
                 }

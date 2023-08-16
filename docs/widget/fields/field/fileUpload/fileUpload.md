@@ -2,11 +2,9 @@
 
 `FileUpload` is a component that allows to view and attach single file
 
-Peculiarities:
-
-1) The file is stored in the file storage until the save button is clicked.
-
-2) Modified file be saving how new file.
+!!! info
+    * When a file is selected, it is stored in the storage system immediately, which then generates a unique "file ID". When the save button is clicked, only this "file ID" is sent to the backend
+    * If a new file is selected, it will be saved as a new file in storage. Previous file remains untouched (e.g. one is free to implement custom deletion logic)
 
 ## Basics
 ### How does it look?
@@ -22,7 +20,7 @@ Peculiarities:
 ### How to add?
 
 ??? Example
-    Need to define storage for files.In the example file storage is minio.
+    For the entire application, a single file storage solution needs to be defined.  In this example file storage is minio.
 
     **Step1 FileStorage** Add file storage.
 
@@ -113,14 +111,14 @@ Peculiarities:
     
     }
     ```
-    **Step2** Add **Long** field  to corresponding **DataResponseDTO**.
+    **Step2** Add two **String** fields (for file name and id)  to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
     
     @SearchParameter(name = "customField")
     private String customField;
-    @SearchParameter(name = "customFieldId")
+   
     private String customFieldId;
 
     public MyExampleDTO(MyEntity entity) {
@@ -130,13 +128,16 @@ Peculiarities:
     }
     ```
 
-    **Step3** Add **Long** field  to corresponding **BaseEntity**.
+    **Step3** Add same **String** fields  to corresponding **BaseEntity**.
 
     ```java
     public class MyExampleEntity extends BaseEntity {
    
         @Column
-        private Long customField;
+        private String customField;
+
+        @Column
+        private String customFieldId;
     }
     ```
     === "List widget"
@@ -150,9 +151,10 @@ Peculiarities:
           "bc": "myExampleBc",
           "fields": [
             {
-              "title": "custom Field",
+              "title": "Custom Field",
               "key": "customField",
-              "type": "percent"
+              "type": "fileUpload",
+              "fileIdKey": "customFieldId"
             }
           ]
         }
@@ -167,11 +169,12 @@ Peculiarities:
           "type": "Info",
           "bc": "myExampleBc",
           "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "percent"
-            }
+             {
+                "label": "Custom Field",
+                "key": "customField",
+                "type": "fileUpload",
+                "fileIdKey": "customFieldId"
+             }
           ],
           "options": {
             "layout": {
@@ -201,11 +204,12 @@ Peculiarities:
           "type": "Form",
           "bc": "myExampleBc",
           "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "percent"
-            }
+             {
+               "label": "Custom Field",
+               "key": "customField",
+               "type": "fileUpload",
+               "fileIdKey": "customFieldId"
+             }
           ],
           "options": {
             "layout": {
@@ -293,7 +297,7 @@ Peculiarities:
         }
         ```
     
-        **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enable field if you use after property fields.setEnabled.
+        **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -303,7 +307,7 @@ Peculiarities:
 
 ## Filtration
 `Filtering` allows you to search data based on criteria.
-For `FileUpload field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ).
+For `FileUpload field` filtering is case-insensitive and retrieves records containing the specified value at any position of file name (similar to SQL ```Like %value%``` ).
 
 ### How does it look?
 === "List widget"
@@ -321,7 +325,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         ```java
             @SearchParameter(name = "customField")
             private String customField;
-            @SearchParameter(name = "customFieldId")
+            
             private String customFieldId;
                 
             public MyExampleDTO(MyEntity entity) {
@@ -356,7 +360,9 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
 1) Exception: Displays a message to notify users about technical or business errors.
 
-Field level validation
+2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
+
+3) Field level validation: shows error next to all fields, that validation failed for
 
 ### How does it look?
 === "List widget"
@@ -394,7 +400,7 @@ Field level validation
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomField(data.getCustomField());
                     if (data.getCustomField() < 10) {
-                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 10.");
+                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 10%.");
                     }
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));

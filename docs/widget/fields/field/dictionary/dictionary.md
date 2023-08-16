@@ -1,12 +1,9 @@
 # Dictionary
 
-`Dictionary` is a component that allows to select value from dropdown list of predefined values.
+`Dictionary` is a component that allows to select single value from dropdown.
 
-Use if:
-
-1) Users need to select a single item
-
-2) For directory or non-growing entities no more than 1000 lines(data are loaded into memory).For large entities use inlinePickList.`see more` [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
+!!! tip
+    For dictionaries or slowly-growing entities, e.g. no more than 1000 values (all values are loaded in memory). Otherwise, use [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 
 ## Basics
 ### How does it look?
@@ -20,12 +17,10 @@ Use if:
 
 
 ### How to add?
-Dictionary can be to create
-1) an entity instance
 ??? Example
     === "Enum"
 
-        **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
+        **Step1** Create Enum. Best practice: storing enum name in the Database and using a separate field for displayed UI values
             ```java
             public enum CustomFieldEnum {
                 HIGH("High"),
@@ -43,7 +38,7 @@ Dictionary can be to create
                 }
             }
             ```
-        **Step2** Add  **Custom Field Enum** field to corresponding **DataResponseDTO**.
+        **Step2** Add  **Enum** field to corresponding **DataResponseDTO**.
     
         ```java
         public class MyExampleDTO extends DataResponseDTO {
@@ -57,7 +52,7 @@ Dictionary can be to create
         }
         ```
     
-        **Step3** Add  **Custom Field Enum** field to corresponding **BaseEntity**.
+        **Step3** Add  **Enum** field to corresponding **BaseEntity**.
     
         ```java
         public class MyExampleEntity extends BaseEntity {
@@ -181,7 +176,7 @@ Dictionary can be to create
       @Override
       public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
         Long id, Long parentId) {
-        fields.setPlaceholder(MyExampleDTO_.customField, "17"));
+        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
       }
     ```
     === "List widget"
@@ -586,10 +581,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
-                    if (!data.getCustomField().getValue().equals(CustomFieldEnum.HIGH.getValue())) {
+                    if (!CustomFieldEnum.HIGH.getValue()equals(data.getCustomField().getValue())) {
                         throw new BusinessException().addPopup("The field 'customField' can contain only 'High'");
                     }
+                    entity.setCustomField(data.getCustomField());
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -642,7 +637,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                     .add()
                     .build();
                 }
-            }![img_runtime_error.png](..%2FdateTime%2Fimg_runtime_error.png)
+            }
         ```
     === "Field level validation"
         === "Option 1"

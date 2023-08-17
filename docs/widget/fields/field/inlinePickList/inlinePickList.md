@@ -319,7 +319,7 @@ Use if:
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                    ? entityManager.getReference(MyEntity122.class, data.getCustomFieldId())
+                    ? entityManager.getReference(MyEntity.class, data.getCustomFieldId())
                     : null);
                 }
             return new ActionResultDTO<>(entityToDto(bc, entity));

@@ -287,13 +287,14 @@
             
                 @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
                 private Long customFieldId;
-                public MyExample154DTO(MyEntity154 entity) {
+
+                public MyExampleDTO(MyEntity entity) {
                     
                     this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
                             .map(BaseEntity::getId)
                             .orElse(null);
                     this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
-                            .map(MyEntity155::getCustomField)
+                            .map(e -> e.getCustomField())
                             .orElse(null);
                 this.customFieldColor = "#eda6a6";
             }
@@ -456,7 +457,7 @@
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                    ? entityManager.getReference(MyEntity122.class, data.getCustomFieldId())
+                    ? entityManager.getReference(MyEntityPickEntity.class, data.getCustomFieldId())
                     : null);
                 }
             return new ActionResultDTO<>(entityToDto(bc, entity));
@@ -498,7 +499,7 @@
             **Works for Form.**
 
 ## Filtration
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.gif](img_filtr_list.gif)
@@ -698,9 +699,9 @@ Also, it optionally allows you to filter data on target view before it will be o
  
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExample114DTO_.customFieldId)) {
+                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
+                            ? entityManager.getReference(MyEntityPickEntity.class, data.getCustomFieldId())
                             : null);
                     if (StringUtils.isNotEmpty(data.getCustomField())
                             && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
@@ -728,7 +729,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity131.class, data.getCustomFieldId())
+                            ? entityManager.getReference(MyEntityPickEntity.class, data.getCustomFieldId())
                             : null);
                    try {
                        //call custom function

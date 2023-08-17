@@ -524,7 +524,7 @@
  
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExample114DTO_.customFieldId)) {
+                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
                             ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
                             : null);

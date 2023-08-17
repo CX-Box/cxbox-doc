@@ -32,7 +32,7 @@
     **Step2** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
    
         @Column
         private String customField;

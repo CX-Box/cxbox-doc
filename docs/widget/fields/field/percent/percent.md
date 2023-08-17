@@ -37,7 +37,7 @@
     **Step2** Add **Long** field  to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
    
         @Column
         private Long customField;
@@ -185,7 +185,7 @@
             private Long customField;
             private String customFieldColor;
         
-            public MyExampleDTO(MyExampleEntity entity) {
+            public MyExampleDTO(MyEntity entity) {
                 this.customField = entity.getCustomField();
                 this.customFieldColor = "#eda6a6";
             }
@@ -383,7 +383,7 @@
     === "Editable" 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomField(data.getCustomField());
                 }
@@ -445,7 +445,7 @@
             @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
             private Long customField;
         
-            public MyExampleDTO(MyExampleEntity entity) {
+            public MyExampleDTO(MyEntity entity) {
                 this.customField = entity.getCustomField();
             }
         }
@@ -496,7 +496,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
             );
     ```
     === "List widget"
@@ -506,7 +506,7 @@ Also, it optionally allows you to filter data on target view before it will be o
           "name": "MyExampleList",
           "title": "List title",
           "type": "List",
-          "bc": "myBcMyExample",
+          "bc": "myExampleBc",
           "fields": [
             {
               "title": "custom Field",
@@ -531,7 +531,7 @@ Also, it optionally allows you to filter data on target view before it will be o
           "name": "MyExampleInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "myBcMyExample",
+          "bc": "myExampleBc",
           "fields": [
             {
               "label": "custom Field",
@@ -601,15 +601,15 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
 
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
  
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                     if (data.getCustomField() < 10) {
                         throw new BusinessException().addPopup("The field 'customField' cannot be less than 10.");
                     }
+                    entity.setCustomField(data.getCustomField());
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -628,9 +628,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         
         ```java
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                    try {
                        //call custom function
                    }
@@ -651,7 +650,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
      
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
 
                 @Override
                 public Actions<MyExampleDTO> getActions() {

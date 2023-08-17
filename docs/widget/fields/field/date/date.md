@@ -578,7 +578,6 @@ Also, it optionally allows you to filter data on target view before it will be o
         @Override
         protected ActionResultDTO<DateDTO> doUpdateEntity(DateEntity entity, DateDTO data, BusinessComponent bc) {
             if (data.isFieldChanged(DateDTO_.customField)) {
-                entity.setCustomField(data.getCustomField());
                 try {
                     //call custom function
                  }

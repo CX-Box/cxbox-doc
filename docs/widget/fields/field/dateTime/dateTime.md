@@ -549,11 +549,11 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<DateTimeDTO> doUpdateEntity(DateTimeEntity entity, DateTimeDTO data, BusinessComponent bc) {
             if (data.isFieldChanged(DateTimeDTO_.customField)) {
-                entity.setCustomField(data.getCustomField());
                 LocalDate sysdate = LocalDate.now();
                 if (sysdate.compareTo(data.getCustomField().toLocalDate()) > 0) {
                     throw new BusinessException().addPopup("The field 'customField' cannot be less than the current date");
                 }
+                entity.setCustomField(data.getCustomField());
             }
             return new ActionResultDTO<>(entityToDto(bc, entity));          
         ```
@@ -579,7 +579,6 @@ Also, it optionally allows you to filter data on target view before it will be o
                 catch(Exception e){
                     throw new RuntimeException("An unexpected error has occurred.");
                 }
-                entity.setCustomField(data.getCustomField());
             }
              return new ActionResultDTO<>(entityToDto(bc, entity));
         }

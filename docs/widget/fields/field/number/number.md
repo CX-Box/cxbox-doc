@@ -601,10 +601,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(NumberDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                     if (data.getCustomField() < 20000) {
                         throw new BusinessException().addPopup("The field 'customField' cannot be less than 20 000.");
                     }
+                    entity.setCustomField(data.getCustomField());
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -625,7 +625,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(NumberDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                    try {
                        //call custom function
                    }

@@ -691,10 +691,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (dto.getCustomField() < 100000)  {
-                    entity.addField(MyExample2DTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
+                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
                 }
                 if  (dto.getCustomField() < 100000)  {
-                    entity.addField(MyExample2DTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' cannot be less than 100 000."));
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

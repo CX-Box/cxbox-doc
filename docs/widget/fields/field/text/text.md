@@ -669,10 +669,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExample332DTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
                 }
                 if (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExample332DTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

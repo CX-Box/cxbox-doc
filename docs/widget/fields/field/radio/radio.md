@@ -63,7 +63,7 @@
     **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
 
     ```java
-    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample26DTO> fields, InnerBcDescription bcDescription,
+    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
                                       Long id, Long parentId) {
         fields.setEnumValues(MyExampleDTO_.customField, CustomFieldEnum.values());
     }

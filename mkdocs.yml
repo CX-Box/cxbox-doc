@@ -39,9 +39,14 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
   - pymdownx.snippets:
       url_download: true
-  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true

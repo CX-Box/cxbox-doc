@@ -14,13 +14,16 @@
 
 
 ### How to add?
+```java
 --8<--
-https://raw.githubusercontent.com/CX-Box/cxbox-doc-code-samples/main/src/main/java/io/demo/documentation/picklist/validationbusinessex/MyExample114Service.java
+https://raw.githubusercontent.com/CX-Box/cxbox-doc-code-samples/main/src/main/java/io/demo/documentation/picklist/validationbusinessex/MyExample114Service.java:documentation
 --8<--
 ```
---8<-- 
-https://raw.githubusercontent.com/CX-Box/cxbox-doc-code-samples/main/src/main/java/io/demo/documentation/picklist/validationbusinessex/MyExample114Service.java
---8<-- 
+
+```json
+--8<--
+https://raw.githubusercontent.com/CX-Box/cxbox-doc-code-samples/main/src/main/java/io/demo/documentation/picklist/validationbusinessex/MyExample114List.widget.json
+--8<--
 ```
 ??? Example
     - **Step 1. Popup**

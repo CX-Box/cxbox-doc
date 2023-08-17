@@ -39,6 +39,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - admonition
+  - pymdownx.snippets:
+      url_download: true
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:

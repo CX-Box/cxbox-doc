@@ -499,7 +499,8 @@
 ## Filtration
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 !!! tip
-    Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
+     By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets). 
+     Optionally, a separate filtration widget can still be provided.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.gif](img_filtr_list.gif)
@@ -547,6 +548,29 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+    !!! tip
+        Optionally, a separate filtration widget can still be provided. Create Assoc widget and add it to corresponding view
+        Create Assoc List **_.widget.json_**.
+           ```json
+           {
+             "title": "myEntityAssocListPopup title",
+             "name": "myEntityAssocListPopup",
+             "type": "AssocListPopup",
+             "bc": "myEntityPickListPopup",
+             "fields": [
+               {
+                 "title": "id",
+                 "key": "id",
+                 "type": "text"
+               },
+               {
+                 "title": "Custom Field",
+                 "key": "customField",
+                 "type": "text"
+               }
+             ]
+           }
+           ```
 
 ## Drilldown
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application

@@ -31,7 +31,7 @@
     **Step2** Add field **Boolean** to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
    
         @Column
         private Boolean customField;
@@ -153,10 +153,10 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
  
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomField(data.getCustomField());
                 }
@@ -228,7 +228,7 @@
             private Boolean customField;
 
         
-            public MyExampleDTO(MyExampleEntity entity) {
+            public MyExampleDTO(MyEntity entity) {
                 this.customField = entity.getCustomField();
             }
         }
@@ -293,14 +293,15 @@
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
 
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
  
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
-                if (Boolean.FALSE.equals(data.getCustomField())) {
-                    throw new BusinessException().addPopup("The field 'customField' can contain only 'True'");
+                       if (Boolean.FALSE.equals(data.getCustomField())) {
+                        throw new BusinessException().addPopup("The field 'customField' can contain only 'True'");
+                    }
+                  entity.setCustomField(data.getCustomField());
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -319,7 +320,7 @@
         
         ```java
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomField(data.getCustomField());
                    try {
@@ -342,7 +343,7 @@
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
      
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
 
                 @Override
                 public Actions<MyExampleDTO> getActions() {
@@ -393,10 +394,10 @@
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (Boolean.FALSE.equals(dto.getCustomField())) {
-                    entity.addField(MyExample289DTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'True"));
+                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'True"));
                 }
                 if (Boolean.FALSE.equals(dto.getCustomFieldAdditional())) {
-                    entity.addField(MyExample289DTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' can contain only 'True"));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' can contain only 'True"));
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

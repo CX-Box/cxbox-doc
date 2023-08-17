@@ -602,12 +602,12 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(InputDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                     if (StringUtils.isNotEmpty(data.getCustomField())
                             && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
                     ) {
                         throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
                     }
+                    entity.setCustomField(data.getCustomField());
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -628,7 +628,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(InputDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                    try {
                        //call custom function
                    }

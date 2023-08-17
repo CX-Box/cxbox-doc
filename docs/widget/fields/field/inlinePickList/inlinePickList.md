@@ -18,7 +18,7 @@
 ??? Example
     - **Step 1. Popup**
 
-        In the following example, **MyExampleEntity** entity has a **OneToOne/ManyToOne** reference to the **MyEntityPick** entity. Link is made by id, e.g. **MyEntity.customFieldId** = **MyEntityPick.id**. Also, is this example we will use one `additional field` **MyEntityPick.customField**, that will be shown on MyEntity widget
+        In the following example, **MyEntity** entity has a **OneToOne/ManyToOne** reference to the **MyEntityPick** entity. Link is made by id, e.g. **MyEntity.customFieldId** = **MyEntityPick.id**. Also, is this example we will use one `additional field` **MyEntityPick.customField**, that will be shown on MyEntity widget
 
         +  **Step 1.1** Add **String** `additional field` to corresponding **DataResponseDTO**.
            ```java
@@ -115,7 +115,7 @@
         @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
         private Long customFieldId;
     
-        public MyExampleDTO(MyExampleEntity entity) {
+        public MyExampleDTO(MyEntity entity) {
             this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
                     .map(BaseEntity::getId)
                     .orElse(null);
@@ -128,7 +128,7 @@
 
     -   **Step4** Add **MyEntityPick** field to corresponding **BaseEntity**.
         ```java
-        public class MyExampleEntity extends BaseEntity {
+        public class MyEntity extends BaseEntity {
     
             @JoinColumn(name = "CUSTOM_FIELD_ID")
             @ManyToOne
@@ -259,7 +259,7 @@
                         .map(BaseEntity::getId)
                         .orElse(null);
                 this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
-                        .map(MyEntity135::getCustomField)
+                        .map(myEntityPick::getCustomField)
                         .orElse(null);
                 this.customFieldColor = "#eda6a6";
         }
@@ -347,7 +347,7 @@
     === "Editable" 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
                     ? entityManager.getReference(MyEntity.class, data.getCustomFieldId())
@@ -473,7 +473,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
             );
     ```
 
@@ -593,10 +593,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
 
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
  
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
                             ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
@@ -624,7 +624,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         
         ```java
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
                             ? entityManager.getReference(MyEntity131.class, data.getCustomFieldId())
@@ -649,7 +649,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
      
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
 
                 @Override
                 public Actions<MyExampleDTO> getActions() {

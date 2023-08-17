@@ -97,7 +97,7 @@
     **Step2** Add field **List** to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
    
         @Column
             @JoinTable(name = "MyEntity_MyEntityMultivalue",
@@ -383,7 +383,7 @@
     === "Editable" 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.getCustomFieldList().clear();
                     entity.getCustomFieldList().addAll(data.getCustomField().getValues().stream()
@@ -520,10 +520,10 @@
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
 
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
  
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
                             ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
@@ -551,7 +551,7 @@
         
         ```java
             @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExampleEntity entity, MyExampleDTO data, BusinessComponent bc) {
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
                             ? entityManager.getReference(MyEntity131.class, data.getCustomFieldId())
@@ -576,7 +576,7 @@
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
      
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
 
                 @Override
                 public Actions<MyExampleDTO> getActions() {

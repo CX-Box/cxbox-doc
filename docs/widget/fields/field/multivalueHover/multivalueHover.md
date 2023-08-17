@@ -20,7 +20,7 @@
     **Step1** Add field **List** to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
    
         @Column
             @JoinTable(name = "MyEntity_MyEntityMultivalue",

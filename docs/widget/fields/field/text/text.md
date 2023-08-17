@@ -22,7 +22,7 @@
         @SearchParameter(name = "customField")
         private String customField;
     
-        public MyExampleDTO(MyExampleEntity entity) {
+        public MyExampleDTO(MyEntity entity) {
         this.customField = entity.getCustomField();
         }
     }
@@ -30,7 +30,7 @@
     **Step2** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
     
         private String customField;
     }
@@ -339,7 +339,7 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
      
                 @Override
                 protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
@@ -462,7 +462,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         fields.setDrilldown(
           MyExampleDTO_.customField,
           DrillDownType.INNER,
-          "/screen/input/view/inputinfo/" + PlatformMyExampleController.myBcMyExample + "/" + id
+          "/screen/input/view/inputinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
         );
       }            
     }
@@ -565,17 +565,17 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
 
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
  
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                     if (StringUtils.isNotEmpty(data.getCustomField())
                             && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
                     ) {
                         throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
                     }
+                    entity.setCustomField(data.getCustomField());
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -596,7 +596,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                    try {
                        //call custom function
                    }
@@ -617,7 +616,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
      
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyExample> {
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
 
                 @Override
                 public Actions<MyExampleDTO> getActions() {

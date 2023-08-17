@@ -215,7 +215,7 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
             @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
             private Long customField;
         
-            public MyExampleDTO(MyExampleEntity entity) {
+            public MyExampleDTO(MyEntity entity) {
                 this.customField = entity.getCustomField();
             }
         }

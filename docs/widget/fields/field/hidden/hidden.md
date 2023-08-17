@@ -13,24 +13,24 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalMyExample** to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field to corresponding **DataResponseDTO**.
 
     ```java
     public class MyExampleDTO extends DataResponseDTO {
         @SearchParameter(name = "customField")   
-        private LocalMyExample customField;
+        private String customField;
     
-        public MyExampleDTO(MyExampleEntity entity) {
+        public MyExampleDTO(MyEntity entity) {
             this.customField = entity.getCustomField();
         }
     }
     ```
-    **Step2** Add field **LocalMyExample** to corresponding **BaseEntity**.
+    **Step2** Add **String** field to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
     
-        private LocalMyExample customField;
+        private String customField;
     
     }
     ```
@@ -42,12 +42,12 @@
           "name": "MyExampleList",
           "title": "List title",
           "type": "List",
-          "bc": "myBcMyExample",
+          "bc": "myExampleBc",
           "fields": [
             {
               "title": "custom Field",
               "key": "customField",
-              "type": "input"
+              "type": "hidden"
             }
           ]
         }
@@ -60,12 +60,12 @@
           "name": "MyExampleInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "myBcMyExample",
+          "bc": "myExampleBc",
           "fields": [
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "input"
+              "type": "hidden"
             }
           ],
           "options": {
@@ -94,12 +94,12 @@
           "name": "MyExampleForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "myBcMyExample",
+          "bc": "myExampleBc",
           "fields": [
             {
               "label": "custom Field",
               "key": "customField",
-              "type": "input"
+              "type": "hidden"
             }
           ],
           "options": {

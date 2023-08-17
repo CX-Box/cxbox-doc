@@ -22,7 +22,7 @@
         @SearchParameter(name = "customField")
         private String customField;
     
-        public MyExampleDTO(MyExampleEntity entity) {
+        public MyExampleDTO(MyEntity entity) {
         this.customField = entity.getCustomField();
         }
     }
@@ -30,7 +30,7 @@
     **Step2** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleEntity extends BaseEntity {
+    public class MyEntity extends BaseEntity {
     
         private String customField;
     }

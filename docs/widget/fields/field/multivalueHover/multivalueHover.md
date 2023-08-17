@@ -326,7 +326,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             {
-              "name": "MyExample227Form",
+              "name": "MyExampleForm",
               "title": "Form title",
               "type": "Form",
               "bc": "myExampleBc227",

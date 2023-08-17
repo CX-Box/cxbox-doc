@@ -322,7 +322,6 @@
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
                    try {
                        //call custom function
                    }

@@ -626,9 +626,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity131.class, data.getCustomFieldId())
-                            : null);
                    try {
                        //call custom function
                    }

@@ -62,9 +62,9 @@
     **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
 
     ```java
-    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExample26DTO> fields, InnerBcDescription bcDescription,
+    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
                                       Long id, Long parentId) {
-            fields.setDictionaryTypeWithCustomValues(MyExample251DTO_.customField, Arrays.stream(CustomFieldEnum.values())
+            fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
             .map(CustomFieldEnum::getValue)
             .toArray(String[]::new));
     }
@@ -399,12 +399,7 @@ _not applicable_
         ```java
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExample249DTO_.customField)) {
-                    entity.setCustomField(
-                            data.getCustomField().getValues()
-                                    .stream()
-                                    .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                                    .collect(Collectors.toSet()));
+                if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     try {
                         //call custom function
                         throw new Exception("Error");
@@ -454,7 +449,7 @@ _not applicable_
             ```java
          
                 public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about required field")
+                    @NotNull(message = "Custom message about error")
                     @SearchParameter(name = "customField.value", multiFieldKey = StringValueProvider.class)
                     private MultivalueField customField;
                 }
@@ -486,11 +481,11 @@ _not applicable_
                                 val.getValue().equals(CustomFieldEnum.HIGH.getValue()));
                 if (castomFieldFlg)  {
                     entity.addField(MyExampleDTO_.customField.getName(),
-                            errorMessage("The field 'customField' cannot contain 'High'"));
+                           "Custom message about error");
                 }
                 if (castomFieldAdditionalFlg)  {
                     entity.addField(MyExampleDTO_.customFieldAdditional.getName(),
-                            errorMessage("The field 'customField' cannot contain 'High'"));
+                            "Custom message about error");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
@@ -552,7 +547,7 @@ _not applicable_
                   "name": "MyExampleForm",
                   "title": "Form title",
                   "type": "Form",
-                  "bc": "myExampleBc334",
+                  "bc": "myExampleBc",
                   "fields": [
                     {
                       "label": "Custom Field",

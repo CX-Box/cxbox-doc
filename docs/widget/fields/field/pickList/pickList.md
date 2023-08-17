@@ -3,7 +3,7 @@
 `PickList` is a component that allows to select a value from Popup list of entities
 
 !!! tip 
-    Use if user needs to open a detailed view of related entities
+    Use if user needs to open a detailed view of related entities. Feel free to use this field type for large entities of any size (only one page is loaded in memory)
 
 ## Basics
 ### How does it look?
@@ -142,8 +142,6 @@
     === "List widget"
         **Step5** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
-        
-        If the set of fields is different from popupBcName, then create Assoc widget and add Assoc widget to **_.widget.json_**. 
 
         ```json
         {
@@ -500,6 +498,8 @@
 
 ## Filtration
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
+!!! tip
+    Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
 ### How does it look?
 === "List widget"
     ![img_filtr_list.gif](img_filtr_list.gif)

@@ -393,32 +393,20 @@
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (Boolean.FALSE.equals(dto.getCustomField())) {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'True"));
+                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only 'True");
                 }
                 if (Boolean.FALSE.equals(dto.getCustomFieldAdditional())) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' can contain only 'True"));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customField' can contain only 'True");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -439,14 +427,7 @@
                       "key": "customFieldAdditional",
                       "type": "checkbox"
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -470,12 +451,6 @@
                       "type": "checkbox"
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

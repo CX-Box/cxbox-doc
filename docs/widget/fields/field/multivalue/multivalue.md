@@ -625,7 +625,7 @@
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
                 }
                 if (String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
                     entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
@@ -635,22 +635,10 @@
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -677,14 +665,7 @@
                       "assocValueKey": "customFieldAdditional",
                       "displayedKey": "customFieldCalc"
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -714,12 +695,6 @@
                       "displayedKey": "customFieldCalc"
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

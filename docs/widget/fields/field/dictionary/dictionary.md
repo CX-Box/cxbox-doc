@@ -682,22 +682,10 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -718,14 +706,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                       "key": "customFieldAdditional",
                       "type": "dictionary"
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -749,12 +730,6 @@ Also, it optionally allows you to filter data on target view before it will be o
                       "type": "dictionary"
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

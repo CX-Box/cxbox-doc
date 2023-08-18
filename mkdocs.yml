@@ -64,7 +64,7 @@ plugins:
         'widget_field_input.md': 'widget/fields/field/input/input.md'
         'widget_field_dictionary.md': 'widget/fields/field/dictionary/dictionary.md'
         'widget_field_hidden.md': 'widget/fields/field/hidden/hidden.md'
-        'widget_field_text.md': 'widget/fields/field/text/percent.md'
+        'widget_field_text.md': 'widget/fields/field/text/text.md'
         'widget_field_date.md': 'widget/fields/field/date/date.md'
         'widget_field_dateTime.md': 'widget/fields/field/dateTime/dateTime.md'
         'widget_field_dateTimeWithSeconds.md': 'widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md'

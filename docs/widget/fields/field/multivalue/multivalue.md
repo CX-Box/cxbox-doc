@@ -606,7 +606,7 @@
             ```java
          
                 public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about required field")
+                    @NotNull(message = "Custom message about error")
                     @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
                     private MultivalueField customField;
                 }
@@ -629,10 +629,10 @@
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
+                    entity.addField(MyExampleDTO_.customField.getName(), "Custom message about error");
                 }
                 if (String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters."))
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "Custom message about error"))
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

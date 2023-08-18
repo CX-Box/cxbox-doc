@@ -350,7 +350,7 @@
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                    ? entityManager.getReference(MyEntity.class, data.getCustomFieldId())
+                    ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
                     : null);
                 }
             return new ActionResultDTO<>(entityToDto(bc, entity));
@@ -393,8 +393,11 @@
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria.
-For `InlinePickList field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ).
+`Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
+!!! tip
+By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
+Optionally, a separate filtration widget can still be provided.
+
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -599,7 +602,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
+                            ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
                             : null);
                     if (StringUtils.isNotEmpty(data.getCustomField())
                             && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")

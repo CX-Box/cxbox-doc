@@ -649,7 +649,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             ```java
          
                 public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about required field")
+                    @NotNull(message = "Custom message about error")
                     private CustomFieldEnum customField
                 }
             ```
@@ -672,10 +672,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if(!CustomFieldEnum.HIGH.getValue().equals(dto.getCustomField().getValue())) {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only 'High'"));
+                    entity.addField(MyExampleDTO_.customField.getName(), "Custom message about error");
                 }
                 if (!CustomFieldEnum.HIGH.getValue().equals(dto.getCustomFieldAdditional().getValue()))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only 'High'"));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "Custom message about error");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

@@ -370,18 +370,17 @@ _not applicable_
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
             if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                entity.setCustomField(
-                        data.getCustomField().getValues()
+
+               data.getCustomField().getValues()
+                .stream()
+                .filter(val->val.getValue().equals(CustomFieldEnum.HIGH.getValue()))
+                .findFirst()
+                .orElseThrow( () -> new BusinessException().addPopup("The field 'customField' can contain 'High'"));
+
+                entity.setCustomField(data.getCustomField().getValues()
                                 .stream()
                                 .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                                .collect(Collectors.toSet()));
-                        if(data.getCustomField().getValues()
-                        .stream()
-                        .filter(val->val.getValue().equals(CustomFieldEnum.HIGH.getValue()))
-                        .findFirst().equals(true))
-                        {
-                            throw new BusinessException().addPopup("The field 'customField' cannot contain 'High'");
-                        }
+                                .collect(Collectors.toSet()));  
              }             
         ```
         === "List widget"

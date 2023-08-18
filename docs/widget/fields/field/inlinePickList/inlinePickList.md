@@ -601,14 +601,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
-                            : null);
                     if (StringUtils.isNotEmpty(data.getCustomField())
-                            && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
+                            && !data.getCustomField().matches("[A-Za-z]+")
                     ) {
                         throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
                     }
+                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
+                            ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
+                            : null);
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -678,7 +678,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             ```java
          
                 public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about required field")
+                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
                     private String customField;
                 }
             ```
@@ -703,7 +703,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                     entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
                 }
                 if (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

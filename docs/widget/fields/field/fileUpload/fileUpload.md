@@ -473,8 +473,10 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
          
                 public class MyExampleDTO extends DataResponseDTO {
                     @SearchParameter(name = "customField")
-                    @NotNull(message = "Custom message about required field")
+                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
                     private String customField;
+                    @SearchParameter(name = "customFieldId")
+                    private String customFieldId;
                 }
             ```
             === "List widget"
@@ -498,7 +500,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
                     entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
                 }
                 if  (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);

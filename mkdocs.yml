@@ -29,6 +29,7 @@ nav:
   - Features:
       - DrillDown: features/element/drillDown/drillDown.md
       - Filtration: features/element/filtration/filtration.md
+      - FileStorage: features/element/fileStorage/fileStorage.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drillDown/drillDown.md
       - Validation: advancedCustomization/element/validation/validation.md

@@ -484,7 +484,7 @@
 **_not applicable_**
 
 ## Validation
-`Validation` allows you to check any business rules for user-entered value. There are two types of validation:
+`Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
 1) Exception: Displays a message to notify users about technical or business errors.
 
@@ -536,7 +536,7 @@
                         .map(MultivalueFieldSingleValue::getId)
                         .filter(Objects::nonNull)
                         .map(Long::parseLong)
-                        .map(e -> entityManager.getReference(MyEntityPick.class, e))
+                        .map(e -> entityManager.getReference(MyEntityMultivalue.class, e))
                         .collect(Collectors.toList()));
                     }
                 return new ActionResultDTO<>(entityToDto(bc, entity));

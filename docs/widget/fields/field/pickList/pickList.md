@@ -463,7 +463,7 @@
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                    ? entityManager.getReference(MyEntityPickEntity.class, data.getCustomFieldId())
+                    ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
                     : null);
                 }
             return new ActionResultDTO<>(entityToDto(bc, entity));
@@ -666,7 +666,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 [Advanced customization](/advancedCustomization/element/drillDown/drillDown)
 
 ## Validation
-`Validation` allows you to check any business rules for user-entered value. There are two types of validation:
+`Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
 1) Exception: Displays a message to notify users about technical or business errors.
 
@@ -714,7 +714,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 if (data.isFieldChanged(MyExample114DTO_.customFieldId)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
+                            ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
                             : null);
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));

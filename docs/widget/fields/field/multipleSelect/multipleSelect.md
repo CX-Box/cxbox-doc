@@ -327,7 +327,7 @@ _not applicable_
 
 
 ## Validation
-`Validation` allows you to check any business rules for user-entered value. There are two types of validation:
+`Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
 1) Exception: Displays a message to notify users about technical or business errors.
 

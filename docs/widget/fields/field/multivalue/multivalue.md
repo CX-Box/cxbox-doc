@@ -525,15 +525,19 @@
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
-                            : null);
-                    if (StringUtils.isNotEmpty(data.getCustomField())
-                            && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
-                    ) {
-                        throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
+                data.getCustomField().getValues()
+                        .stream()
+                        .filter(val-> val.getValue().matches("[A-Za-z]+")==false)
+                        .findFirst()
+                        .orElseThrow( () -> new BusinessException().addPopup("The field 'customField' can contain only letters."));
+                entity.getCustomFieldList().clear();
+                entity.getCustomFieldList().addAll(data.getCustomField().getValues().stream()
+                        .map(MultivalueFieldSingleValue::getId)
+                        .filter(Objects::nonNull)
+                        .map(Long::parseLong)
+                        .map(e -> entityManager.getReference(MyEntityPick.class, e))
+                        .collect(Collectors.toList()));
                     }
-                }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
         ```
@@ -602,7 +606,7 @@
             ```java
          
                 public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about required field")
+                    @NotNull(message = "Custom message about error")
                     @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
                     private MultivalueField customField;
                 }
@@ -625,32 +629,20 @@
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customField.getName(), "Custom message about error");
                 }
                 if (String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "Custom message about error"))
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -677,14 +669,7 @@
                       "assocValueKey": "customFieldAdditional",
                       "displayedKey": "customFieldCalc"
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -714,12 +699,6 @@
                       "displayedKey": "customFieldCalc"
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

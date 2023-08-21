@@ -473,8 +473,10 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
          
                 public class MyExampleDTO extends DataResponseDTO {
                     @SearchParameter(name = "customField")
-                    @NotNull(message = "Custom message about required field")
+                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
                     private String customField;
+                    @SearchParameter(name = "customFieldId")
+                    private String customFieldId;
                 }
             ```
             === "List widget"
@@ -495,32 +497,20 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if  (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")){
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
                 }
                 if  (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -543,14 +533,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
                       "type": "fileUpload",
                       "fileIdKey": "customFieldId"
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -576,12 +559,6 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
                       "fileIdKey": "customFieldAdditionalId"
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

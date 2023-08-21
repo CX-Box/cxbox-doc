@@ -702,32 +702,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
                 if (dto.getCustomField() < 5)  {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' cannot be less than 5%"));
+                    entity.addField(MyExampleDTO_.customField.getName(),"The field 'customField' cannot be less than 5%");
                 }
                 if  (dto.getCustomField() < 5)  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customField' cannot be less than 5%"));
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customField' cannot be less than 5%");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -748,14 +736,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                       "key": "customFieldAdditional",
                       "type": "percent"
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -779,12 +760,6 @@ Also, it optionally allows you to filter data on target view before it will be o
                       "type": "percent"
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

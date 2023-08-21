@@ -350,7 +350,7 @@
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customField)) {
                     entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                    ? entityManager.getReference(MyEntity.class, data.getCustomFieldId())
+                    ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
                     : null);
                 }
             return new ActionResultDTO<>(entityToDto(bc, entity));
@@ -393,8 +393,11 @@
         === "Form widget"
             **Works for Form.**
 ## Filtration
-`Filtering` allows you to search data based on criteria.
-For `InlinePickList field` filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL ```Like %value%``` ).
+`Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
+!!! tip
+By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
+Optionally, a separate filtration widget can still be provided.
+
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -598,14 +601,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             @Override
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                 if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntity129.class, data.getCustomFieldId())
-                            : null);
                     if (StringUtils.isNotEmpty(data.getCustomField())
-                            && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
+                            && !data.getCustomField().matches("[A-Za-z]+")
                     ) {
                         throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
                     }
+                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
+                            ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
+                            : null);
                 }
                 return new ActionResultDTO<>(entityToDto(bc, entity));
             }              
@@ -675,7 +678,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             ```java
          
                 public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about required field")
+                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
                     private String customField;
                 }
             ```
@@ -696,33 +699,21 @@ Also, it optionally allows you to filter data on target view before it will be o
             ```java
             private void validate(BusinessComponent bc, MyExampleDTO dto) {
                 BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), errorMessage("The field 'customField' can contain only letters."));
+                if (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
+                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
                 }
-                if (String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), errorMessage("The field 'customFieldAdditional' can contain only letters."));
+                if (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
+                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
                 }
                 if (entity.getFields().size() > 0) {
                     throw new BusinessException().setEntity(entity);
                 }
             }
             ```
-            `Step 2` Add new Action to corresponding **VersionAwareResponseService**.
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-        
-              public Actions<MyExampleDTO> getActions() {
-                return Actions.<MyExampleDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .add()
-                        .action("check", "Check")
-                        .invoker((bc, dto) -> {
-                            validate(bc, dto);
-                            return new ActionResultDTO<>();
-                        })
-                        .add()
-                        .build();
-            }
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    validateFields(bc, data);
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
@@ -753,14 +744,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                         "customFieldAdditional": "customFieldAdditional"
                       }
                     }
-                  ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    }
-                  }
+                  ]
                 }
                 ```               
             === "Info widget"
@@ -794,12 +778,6 @@ Also, it optionally allows you to filter data on target view before it will be o
                       }
                     }
                   ],
-                  "options": {
-                    "actionGroups": {
-                      "include": [
-                        "check"
-                      ]
-                    },
                     "layout": {
                       "rows": [
                         {

@@ -135,9 +135,17 @@
             private MyEntityPick customFieldEntity;
         }
         ```
+    -   **Step5** Add bc myEntityPickListPopup to corresponding **EnumBcIdentifier**.
+        ```java
+        public enum PlatformMyExampleController implements EnumBcIdentifier {
+        
+            // @formatter:on
+            myExampleBc(MyExampleService.class), myEntityPickListPopup(myExampleBc, MyEntityPickListService.class);
+
+        ```
 
     === "List widget"
-        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -162,7 +170,7 @@
         ```
 
     === "Info widget"
-        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -201,7 +209,7 @@
         ```
     === "Form widget"
 
-        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json

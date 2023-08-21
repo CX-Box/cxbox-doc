@@ -23,7 +23,15 @@
 
         In the following example, **MyEntity** entity has a **OneToOne/ManyToOne** reference to the **MyEntityPick** entity. Link is made by id, e.g. **MyEntity.customFieldId** = **MyEntityPick.id**. Also, is this example we will use one `additional field` **MyEntityPick.customField**, that will be shown on MyEntity widget
 
-        +  **Step 1.1** Add **String** `additional field` to corresponding **DataResponseDTO**.
+        +  **Step 1.1** Add **String** `additional field`  to corresponding **BaseEntity**.
+           ```java
+           public class MyEntityPickEntity extends BaseEntity {
+           
+               private String customField;
+           }
+           ```
+
+        +  **Step 1.2** Add **String** `additional field` to corresponding **DataResponseDTO**.
            ```java
            public class MyEntityPickDTO extends DataResponseDTO {
            
@@ -33,14 +41,6 @@
                public MyEntityPickDTO(MyEntityPickEntity entity) {
                this.customField = entity.getCustomField();
                }
-           }
-           ```
-
-        +  **Step 1.2** Add **String** `additional field`  to corresponding **BaseEntity**.
-           ```java
-           public class MyEntityPickEntity extends BaseEntity {
-           
-               private String customField;
            }
            ```
 
@@ -138,9 +138,17 @@
             private MyEntityPick customFieldEntity;
         }
         ```
+    -   **Step5** Add bc myEntityPickListPopup to corresponding **EnumBcIdentifier**.
+        ```java
+        public enum PlatformMyExampleController implements EnumBcIdentifier {
+        
+            // @formatter:on
+            myExampleBc(MyExampleService.class), myEntityPickListPopup(myExampleBc, MyEntityPickListService.class);
+
+        ```
 
     === "List widget"
-        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -165,7 +173,7 @@
         ```
 
     === "Info widget"
-        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
@@ -204,7 +212,7 @@
         ```
     === "Form widget"
 
-        **Step5** Add popupBcName and pickMap to **_.widget.json_**.
+        **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json

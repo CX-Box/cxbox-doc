@@ -16,223 +16,224 @@
 ### How to add?
 
 ??? Example
-    **Step 1.AssocListPopup**
+    - **Step 1. AssocListPopup**
 
-    **Step 1.0.AssocListPopup** Create link table for ManyToMany.
+        +  **Step 1.1** Create link table for ManyToMany (MyEntity_MyEntityMultivalue).
 
-    **Step 1.1.AssocListPopup** Create entity. Add **String** field  to corresponding **BaseEntity**.
+        +  **Step 1.2** Add **String** `additional field`  to corresponding **BaseEntity**.
 
-    ```java
-    public class MyEntityMultivalue extends BaseEntity {
-    
-        private String customField;
-    }
-    ```
-    **Step 1.2.AssocListPopup** Add field,for example, **String** to corresponding **DataResponseDTO**.
+           ```java
+           public class MyEntityMultivalue extends BaseEntity {
+           
+               private String customField;
+           }
+           ```
 
-    ```java
-    public class MyEntityMultivalueDTO extends DataResponseDTO {
-   
-        @SearchParameter(name = "customField")
-        private String customField;
-    
-        public MyEntityMultivalueDTO(MyEntityMultivalue entity) {
-        this.customField = entity.getCustomField();
-        }
-    }
-    ```
-    **Step 1.4.AssocListPopup** Create corresponding **FieldMetaBuilder**.
-    ```java
-    public class MyEntityMultivalueMeta extends FieldMetaBuilder<MyEntityMultivalueDTO> {
+        +  **Step 1.3** Add **String** `additional field` to corresponding **DataResponseDTO**.
 
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-         }
-    
-        @Override
-        public void buildIndependentMeta(FieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
-                                         Long parentId) {
-    
-        }
-
-    }
-    ```
-    **Step 1.5.AssocListPopup** Create corresponding **VersionAwareResponseService**.
-    ```java
-    public class MyEntityMultivalueService extends VersionAwareResponseService<MyEntityMultivalueDTO, MyEntity> {
-
-        public MyEntityMultivalueService() {
-            super(MyEntityMultivalueDTO.class, MyEntity.class, null, MyEntityMultivalueMeta.class);
-        }
-    
-        @Override
-        protected CreateResult<MyEntityMultivalueDTO> doCreateEntity(MyEntity entity, BusinessComponent bc) {
-            return null;
-        }
-    
-        @Override
-        protected ActionResultDTO<MyEntityMultivalueDTO> doUpdateEntity(MyEntity entity, MyEntityMultivalueDTO data,
-                                                                           BusinessComponent bc) {
-            return null;
-        }
-    }
-    ```
-    **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
-    ```json
-    {
-      "title": "MyEntityMultivalueAssocListPopup title",
-      "name": "MyEntityMultivalueAssocListPopup",
-      "type": "AssocListPopup",
-      "bc": "MyEntityMultivalueAssocListPopup",
-      "fields": [
-        {
-          "title": "id",
-          "key": "id",
-          "type": "text"
-        }
-      ]
-    }
-    ```
-    **Step2** Add field **List** to corresponding **BaseEntity**.
-
-    ```java
-    public class MyEntity extends BaseEntity {
-   
-        @Column
-            @JoinTable(name = "MyEntity_MyEntityMultivalue",
-            joinColumns = @JoinColumn(name = "MyEntity_id"),
-            inverseJoinColumns = @JoinColumn(name = "MyEntityMultivalue_id")
-        )
-        @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-        private List<MyEntityMultivalue> customFieldList = new ArrayList<>();
-        }
-    ```
-
-    **Step 2** Add field **MultivalueField** to corresponding **DataResponseDTO**.
-
-    ```java
-    public class MyExampleDTO extends DataResponseDTO {
-       @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-        private MultivalueField customField;
-        private String customFieldCalc;
-
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                    e -> String.valueOf(e.getId()),
-                    MyEntityMultivalue::getCustomField
-            ));
-            this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
-              ).collect(Collectors.joining(",")), 12);
-    }
-    ```
-
-    **Step4** Add bc **MyEntityMultivalueAssocListPopup** to corresponding **EnumBcIdentifier**.
-
-    ```java
-    public enum PlatformMyExampleController implements EnumBcIdentifier {
-        myExampleBc(MyExampleService.class), myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
-    ```
-    === "List widget"
-        **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
-
-        `popupBcName` - name bc Step 1.6.AssocListPopup
-
-        `assocValueKey` - field for opening AssocListPopup
-
-        `displayedKey` - calculated field for displaing data on List widget
-
-        ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "multivalue",
-              "popupBcName": "myEntityMultivalueAssocListPopup",
-              "assocValueKey": "customField",
-              "displayedKey": "customFieldCalc"
+            ```java
+            public class MyEntityMultivalueDTO extends DataResponseDTO {
+           
+                @SearchParameter(name = "customField")
+                private String customField;
+            
+                public MyEntityMultivalueDTO(MyEntityMultivalue entity) {
+                this.customField = entity.getCustomField();
+                }
             }
-          ]
-        }      
-        ```
-
-    === "Info widget"
-        **Step 5** Add to **_.widget.json_**.
-        ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "multivalue",
-              "popupBcName": "myEntityAssocListPopup",
-              "assocValueKey": "customField"
+            ```
+        +  **Step 1.4** Create corresponding **FieldMetaBuilder**.
+            ```java
+            public class MyEntityMultivalueMeta extends FieldMetaBuilder<MyEntityMultivalueDTO> {
+        
+                @Override
+                public void buildRowDependentMeta(RowDependentFieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
+                                                  Long id, Long parentId) {
+                 }
+            
+                @Override
+                public void buildIndependentMeta(FieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
+                                                 Long parentId) {
+            
+                }
+        
             }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
+            ```
+        +  **Step 1.5** Create corresponding **VersionAwareResponseService**.
+            ```java
+            public class MyEntityMultivalueService extends VersionAwareResponseService<MyEntityMultivalueDTO, MyEntity> {
+        
+                public MyEntityMultivalueService() {
+                    super(MyEntityMultivalueDTO.class, MyEntity.class, null, MyEntityMultivalueMeta.class);
+                }
+            
+                @Override
+                protected CreateResult<MyEntityMultivalueDTO> doCreateEntity(MyEntity entity, BusinessComponent bc) {
+                    return null;
+                }
+            
+                @Override
+                protected ActionResultDTO<MyEntityMultivalueDTO> doUpdateEntity(MyEntity entity, MyEntityMultivalueDTO data,
+                                                                                   BusinessComponent bc) {
+                    return null;
+                }
+            }
+            ```
+        +  **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
+            ```json
+            {
+              "title": "MyEntityMultivalueAssocListPopup title",
+              "name": "MyEntityMultivalueAssocListPopup",
+              "type": "AssocListPopup",
+              "bc": "MyEntityMultivalueAssocListPopup",
+              "fields": [
                 {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
+                  "title": "id",
+                  "key": "id",
+                  "type": "text"
                 }
               ]
             }
-          }
+            ```
+        +  **Step2** Add **List** field to corresponding **BaseEntity**.
+
+            ```java
+            public class MyEntity extends BaseEntity {
+           
+
+                @JoinTable(name = "MyEntity_MyEntityMultivalue",
+                    joinColumns = @JoinColumn(name = "MyEntity_id"),
+                    inverseJoinColumns = @JoinColumn(name = "MyEntityMultivalue_id")
+                )
+                @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+                private List<MyEntityMultivalue> customFieldList = new ArrayList<>();
+            }
+            ```
+
+        +  **Step 3** Add **MultivalueField** field to corresponding **DataResponseDTO**.
+
+        ```java
+        public class MyExampleDTO extends DataResponseDTO {
+           @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
+            private MultivalueField customField;
+            private String customFieldCalc;
+    
+            public MyExampleDTO(MyEntity entity) {
+                this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
+                        e -> String.valueOf(e.getId()),
+                        MyEntityMultivalue::getCustomField
+                ));
+                this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
+                  ).collect(Collectors.joining(",")), 12);
         }
         ```
-    === "Form widget"
-        **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
 
-        `popupBcName` - name bc Step 1.6.AssocListPopup
-
-        `assocValueKey' - field for open AssocListPopup
-
-        ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
+        +  **Step4** Add bc **MyEntityMultivalueAssocListPopup** to corresponding **EnumBcIdentifier**.
+    
+        ```java
+        public enum PlatformMyExampleController implements EnumBcIdentifier {
+            myExampleBc(MyExampleService.class), myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
+        ```
+        === "List widget"
+            **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
+    
+            `popupBcName` - name bc Step 1.6.AssocListPopup
+    
+            `assocValueKey` - field for opening AssocListPopup
+    
+            `displayedKey` - calculated field for displaing data on List widget
+    
+            ```json
             {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "multivalue",
-              "popupBcName": "myEntityMultivalueAssocListPopup",
-              "assocValueKey": "customField"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
+              "name": "MyExampleList",
+              "title": "List title",
+              "type": "List",
+              "bc": "myExampleBc",
+              "fields": [
                 {
-                  "cols": [
+                  "title": "Custom Field",
+                  "key": "customField",
+                  "type": "multivalue",
+                  "popupBcName": "myEntityMultivalueAssocListPopup",
+                  "assocValueKey": "customField",
+                  "displayedKey": "customFieldCalc"
+                }
+              ]
+            }      
+            ```
+    
+        === "Info widget"
+            **Step 5** Add to **_.widget.json_**.
+            ```json
+            {
+              "name": "MyExampleInfo",
+              "title": "Info title",
+              "type": "Info",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "label": "Custom Field",
+                  "key": "customField",
+                  "type": "multivalue",
+                  "popupBcName": "myEntityAssocListPopup",
+                  "assocValueKey": "customField"
+                }
+              ],
+              "options": {
+                "layout": {
+                  "rows": [
                     {
-                      "fieldKey": "customField",
-                      "span": 12
+                      "cols": [
+                        {
+                          "fieldKey": "customField",
+                          "span": 12
+                        }
+                      ]
                     }
                   ]
                 }
-              ]
+              }
             }
-          }
-        }
-        ```
-
+            ```
+        === "Form widget"
+            **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
+    
+            `popupBcName` - name bc Step 1.6.AssocListPopup
+    
+            `assocValueKey' - field for open AssocListPopup
+    
+            ```json
+            {
+              "name": "MyExampleForm",
+              "title": "Form title",
+              "type": "Form",
+              "bc": "myExampleBc",
+              "fields": [
+                {
+                  "label": "Custom Field",
+                  "key": "customField",
+                  "type": "multivalue",
+                  "popupBcName": "myEntityMultivalueAssocListPopup",
+                  "assocValueKey": "customField"
+                }
+              ],
+              "options": {
+                "layout": {
+                  "rows": [
+                    {
+                      "cols": [
+                        {
+                          "fieldKey": "customField",
+                          "span": 12
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+            ```
+    
 
 ## Placeholder
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application

@@ -1,4 +1,4 @@
-site_name: Cxbox Documentation
+site_name: CXBOX Documentation
 
 # Структура навигации генерируемого сайта.
 nav:
@@ -46,6 +46,23 @@ markdown_extensions:
       alternate_style: true
 
 theme:
+  font:
+    text: Roboto
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: black
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  favicon: assets/logo.svg
+  logo: assets/logo.svg
   name: material
   highlightjs: true
   hljs_languages:

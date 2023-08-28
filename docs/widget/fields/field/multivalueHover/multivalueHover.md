@@ -3,6 +3,8 @@
 `MultivalueHover` is a component that allows to view multiple values on mouse hover
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -145,10 +147,20 @@
 
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/placeholder){:target="_blank"}
 **_not applicable_** 
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
+
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -162,6 +174,9 @@
 ### How to add?
 ??? Example
     === "Calculated color"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
 
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
@@ -269,6 +284,9 @@
             }
             ```
     === "Constant color"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
+
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
@@ -358,7 +376,7 @@
 ## Readonly/Editable
 **_not applicable_**
 
-## Filtration
+## Filtering
 **_not applicable_**
 
 ## Drilldown

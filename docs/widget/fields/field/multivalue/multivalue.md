@@ -1,8 +1,14 @@
 # Multivalue
 
 `Multivalue` is a component that allows to select multiple values from Popup List of entities
+!!! Tip
+For this field type we need to talk about number of rows in popup and number of selected rows.
+Number of rows in popup: Feel free to use this field type for large entities of any size (only one page is loaded in memory)
+Number of selected rows: should be <1000-10000, because selected rows are stored in memory
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -42,43 +48,7 @@
                 }
             }
             ```
-        +  **Step 1.4** Create corresponding **FieldMetaBuilder**.
-            ```java
-            public class MyEntityMultivalueMeta extends FieldMetaBuilder<MyEntityMultivalueDTO> {
-        
-                @Override
-                public void buildRowDependentMeta(RowDependentFieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
-                                                  Long id, Long parentId) {
-                 }
-            
-                @Override
-                public void buildIndependentMeta(FieldsMeta<MyEntityMultivalueDTO> fields, InnerBcDescription bcDescription,
-                                                 Long parentId) {
-            
-                }
-        
-            }
-            ```
-        +  **Step 1.5** Create corresponding **VersionAwareResponseService**.
-            ```java
-            public class MyEntityMultivalueService extends VersionAwareResponseService<MyEntityMultivalueDTO, MyEntity> {
-        
-                public MyEntityMultivalueService() {
-                    super(MyEntityMultivalueDTO.class, MyEntity.class, null, MyEntityMultivalueMeta.class);
-                }
-            
-                @Override
-                protected CreateResult<MyEntityMultivalueDTO> doCreateEntity(MyEntity entity, BusinessComponent bc) {
-                    return null;
-                }
-            
-                @Override
-                protected ActionResultDTO<MyEntityMultivalueDTO> doUpdateEntity(MyEntity entity, MyEntityMultivalueDTO data,
-                                                                                   BusinessComponent bc) {
-                    return null;
-                }
-            }
-            ```
+
         +  **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
             ```json
             {
@@ -132,10 +102,14 @@
     
         ```java
         public enum PlatformMyExampleController implements EnumBcIdentifier {
-            myExampleBc(MyExampleService.class), myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
+            myExampleBc(MyExampleService.class), 
+            myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
+
         ```
+        +  **Step5** Add widget to view.
+
         === "List widget"
-            **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
+            **Step 6** Add popupBcName and assocValueKey to **_.widget.json_**.
     
             `popupBcName` - name bc Step 1.6.AssocListPopup
     
@@ -163,7 +137,7 @@
             ```
     
         === "Info widget"
-            **Step 5** Add to **_.widget.json_**.
+            **Step 6** Add to **_.widget.json_**.
             ```json
             {
               "name": "MyExampleInfo",
@@ -196,7 +170,7 @@
             }
             ```
         === "Form widget"
-            **Step 5** Add popupBcName and assocValueKey to **_.widget.json_**.
+            **Step 6** Add popupBcName and assocValueKey to **_.widget.json_**.
     
             `popupBcName` - name bc Step 1.6.AssocListPopup
     
@@ -236,6 +210,8 @@
     
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/placeholder){:target="_blank"}
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 
 ### How does it look?
@@ -271,6 +247,14 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     ![img_color_list.png](img_color_list.png)
@@ -283,6 +267,9 @@
 ### How to add?
 ??? Example
     === "Calculated color"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
 
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
@@ -332,6 +319,9 @@
             _not applicable_
 
     === "Constant color"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
+
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
@@ -361,8 +351,19 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputCreateEdit){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/ro){:target="_blank"}
+
+
 ### How does it look?
 === "Editable"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
     === "List widget"
         _not applicable_
     === "Info widget"
@@ -381,7 +382,9 @@
 
 ### How to add?
 ??? Example
-    === "Editable" 
+    === "Editable"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"} 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
@@ -434,8 +437,11 @@
         === "Form widget"
             **Works for Form.**
 
-## Filtration
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration){:target="_blank"}
+
+`Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 ### How does it look?
 === "List widget"
     ![img_filtr_list.gif](img_filtr_list.gif)
@@ -486,11 +492,31 @@
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67/view/myexample67list){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 
 ### How does it look?
 === "List widget"
@@ -727,6 +753,9 @@
 **_not applicable_**
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided. 
 
 ### How does it look?

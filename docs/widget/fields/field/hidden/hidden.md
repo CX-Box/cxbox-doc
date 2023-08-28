@@ -1,6 +1,8 @@
 # Hidden
 `Hidden` is invisible technical component that allows to send field value to frontend
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -127,7 +129,7 @@ _not applicable_
 ## Readonly/Editable
 _not applicable_
 
-## Filtration
+## Filtering
 _not applicable_
 
 ## Drilldown

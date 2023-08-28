@@ -3,6 +3,8 @@
 `Percent` is a component for percent editing. It can be used for editing and displaying percentages
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -130,6 +132,8 @@
     **Option2** Add **Double** field  to corresponding **DataResponseDTO** in Step1.
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/placeholder){:target="_blank"}
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
@@ -162,6 +166,14 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     ![img_color_list.png](img_color_list.png)
@@ -174,6 +186,9 @@
 ### How to add?
 ??? Example
     === "Calculated color"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
         
     
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
@@ -273,6 +288,9 @@
             }
             ```
     === "Constant color"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
+
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
@@ -361,8 +379,17 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputCreateEdit){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/ro){:target="_blank"}
+
+
 ### How does it look?
-=== "Editable"
+=== "Readonly"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -380,7 +407,9 @@
 
 ### How to add?
 ??? Example
-    === "Editable" 
+    === "Editable"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"} 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
@@ -424,7 +453,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
 ### How does it look?
 === "List widget"
@@ -468,6 +500,9 @@
         _not applicable_
 
 ## Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/drilldown){:target="_blank"}
+
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
@@ -566,11 +601,31 @@ Also, it optionally allows you to filter data on target view before it will be o
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67/view/myexample67list){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 
 ### How does it look?
 === "List widget"
@@ -784,6 +839,9 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/sorting){:target="_blank"}
+
 `Sorting` allows you to sort data in ascending or descending order.
 
 ### How does it look?
@@ -803,6 +861,9 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided. 
 By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
 

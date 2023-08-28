@@ -7,6 +7,8 @@
     * If a new file is selected, it will be saved as a new file in storage. Previous file remains untouched (e.g. one is free to implement custom deletion logic)
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -142,6 +144,8 @@
         ```
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/placeholder){:target="_blank"}
 **_not applicable_**
 
 ## Color
@@ -150,8 +154,17 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputCreateEdit){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/ro){:target="_blank"}
+
+
 ### How does it look?
-=== "Editable"
+=== "Readonly"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -170,7 +183,9 @@
 
 ### How to add?
 ??? Example
-    === "Editable" 
+    === "Editable"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"} 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
@@ -218,7 +233,10 @@
         === "Form widget"
             **Works for Form.**
 
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria.
 For `FileUpload field` filtering is case-insensitive and retrieves records containing the specified value at any position of file name (similar to SQL ```Like %value%``` ).
 
@@ -271,11 +289,31 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67/view/myexample67list){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 
 ### How does it look?
 === "List widget"
@@ -519,6 +557,9 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided. 
 
 ### How does it look?

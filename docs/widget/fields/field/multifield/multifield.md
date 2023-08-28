@@ -1,8 +1,10 @@
 # Multifield
 
 `Multifield` is a logical block containing any number of other field types. All fields in a logical block is readonly.
-
+The typical scenario involves using a common field type (e.g., input, date) for 'main' data and a hint field type for 'secondary' data
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 Block containing 
@@ -190,7 +192,10 @@ _not applicable_
 ## Readonly/Editable
 _not applicable_
 
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria. Search ???.
 ### How does it look?
 Block containing

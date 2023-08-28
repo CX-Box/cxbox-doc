@@ -2,7 +2,14 @@ version: '3.6'
 
 services:
   mkdocs-material:
-    build: ./
+    build:
+      context: "./"
+      no_cache: true
+    environment:
+      - GITHUB_UI=https://github.com/CX-Box/cxbox-code-samples/tree
+      - GITHUB_RAW=http://code-samples.cxbox.org/api/v1/sources
+      - GITHUB_BRANCH=feature/doc_comments
+      - CODE_SAMPLES=http://code-samples.cxbox.org
     ports:
       - "8000:8000"
     volumes:

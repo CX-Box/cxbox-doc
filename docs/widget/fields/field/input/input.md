@@ -593,6 +593,7 @@ Also, it optionally allows you to filter data on target view before it will be o
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
 [Advanced customization](/advancedCustomization_drillDown)
+
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 

@@ -3,6 +3,8 @@
 `Radio` is a component that allows to select one of predefined values visualized as radio buttons
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample20){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -159,6 +161,14 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample21){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample22){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/colorconst){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     ![img_color_list.png](img_color_list.png)
@@ -171,8 +181,7 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        
-    
+ 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
@@ -299,8 +308,17 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample20){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample23){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/ro){:target="_blank"}
+
+
 ### How does it look?
-=== "Editable"
+=== "Readonly"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -317,7 +335,7 @@
 
 ### How to add?
 ??? Example
-    === "Editable" 
+    === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
@@ -365,7 +383,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample25){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria. Search uses `in` operator. 
 ### How does it look?
 === "List widget"
@@ -410,6 +431,9 @@
         _not applicable_
 
 ## Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample24){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/drilldown){:target="_blank"}
+
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
@@ -438,7 +462,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     MyExampleDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
+                    "/screen/myexample/view/myexampleform/" + PlatformMyExampleController.myExampleBc + "/" + id
             );
     ```
     === "List widget"
@@ -508,11 +532,31 @@ Also, it optionally allows you to filter data on target view before it will be o
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample29){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample31){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample30){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample294){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample340){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationdynamic){:target="_blank"}
+
 
 ### How does it look?
 === "List widget"
@@ -726,6 +770,9 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample28){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/sorting){:target="_blank"}
+
 `Sorting` allows you to sort data in ascending or descending order.
 Lexicographic sorting is used for it.
 
@@ -746,6 +793,9 @@ Lexicographic sorting is used for it.
         _not applicable_
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample27){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided.
 
 ### How does it look?

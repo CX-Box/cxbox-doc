@@ -3,6 +3,8 @@
 `Number` is a component for numbers editing. It is used to input and present numbers and automatically restricts user input to numeric values only.
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -128,6 +130,9 @@
         ```
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/placeholder){:target="_blank"}
+
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
@@ -160,6 +165,14 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColorConst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/colorconst){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     ![img_color_list.png](img_color_list.png)
@@ -172,8 +185,7 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        
-    
+
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. The field can contain a HEX color or be null. 
     
         ```java
@@ -357,8 +369,17 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberCreateEdit){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/ro){:target="_blank"}
+
+
 ### How does it look?
-=== "Editable"
+=== "Readonly"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -375,7 +396,7 @@
 
 ### How to add?
 ??? Example
-    === "Editable" 
+    === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
@@ -419,7 +440,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberFiltration){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
 ### How does it look?
 === "List widget"
@@ -463,6 +487,9 @@
         _not applicable_
 
 ## Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberDrillDown){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/drilldown){:target="_blank"}
+
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
@@ -491,7 +518,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             fields.setDrilldown(
                     NumberDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/Number/view/Numberinfo/" + PlatformNumberController.myBcNumber + "/" + id
+                    "/screen/Number/view/Numberform/" + PlatformNumberController.myBcNumber + "/" + id
             );
     ```
     === "List widget"
@@ -561,11 +588,31 @@ Also, it optionally allows you to filter data on target view before it will be o
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBusinessEx){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberRuntimeEx){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberConfirm){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample290){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2337){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationdynamic){:target="_blank"}
+
 
 ### How does it look?
 === "List widget"
@@ -773,6 +820,9 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberSorting){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/sorting){:target="_blank"}
+
 `Sorting` allows you to sort data in ascending or descending order.
 
 ### How does it look?
@@ -792,6 +842,9 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberRequired){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided. By default, UI sets `Number` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
 
 ### How does it look?
@@ -825,6 +878,9 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Additional properties
 ### <a id="digits">digits</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DigitsNumber){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/digits){:target="_blank"}
+
 Property denotes number of digits after the decimal point. Additionally, UI will not show digits after comma if property is not set
 #### How does it look?
 === "List widget"
@@ -920,6 +976,9 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         ```
 
 ### <a id="nullable">nullable</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample57){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/nullable){:target="_blank"}
+
 By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
 #### How does it look?
 === "List widget"

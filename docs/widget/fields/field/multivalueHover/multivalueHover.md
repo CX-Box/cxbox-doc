@@ -3,6 +3,8 @@
 `MultivalueHover` is a component that allows to view multiple values on mouse hover
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample224){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -150,6 +152,14 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample225){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample227){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     ![img_color_list.png](img_color_list.png)
@@ -162,8 +172,6 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-
-
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
@@ -358,7 +366,7 @@
 ## Readonly/Editable
 **_not applicable_**
 
-## Filtration
+## Filtering
 **_not applicable_**
 
 ## Drilldown

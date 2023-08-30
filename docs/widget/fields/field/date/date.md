@@ -2,6 +2,8 @@
 `Date`  is a component for date with time editing. It can be used for editing and displaying dates.
 
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -123,6 +125,10 @@
         ```
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DatePlaceholder){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/placeholder){:target="_blank"}
+
+
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
 ### How does it look?
 === "List widget"
@@ -139,7 +145,7 @@
     
     ```java
     
-    public class InputMeta extends FieldMetaBuilder<DateDTO> {
+    public class DateMeta extends FieldMetaBuilder<DateDTO> {
     
       @Override
       public void buildRowDependentMeta(RowDependentFieldsMeta<DateDTO> fields, InnerBcDescription bcDescription,
@@ -157,6 +163,13 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateColor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateColorConst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/colorconst){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -172,8 +185,6 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        
-
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
@@ -301,8 +312,17 @@
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateCreateEdit){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/ro){:target="_blank"}
+
+
 ### How does it look?
-=== "Editable"
+=== "Readonly"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -321,6 +341,8 @@
 ### How to add?
 ??? Example
     === "Editable"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic){:target="_blank"}
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             
@@ -374,7 +396,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateFiltration){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
 ### How does it look?
 === "List widget"
@@ -417,6 +442,9 @@
         _not applicable_
 
 ## Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateDrillDown){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/drilldown){:target="_blank"}
+
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
@@ -515,11 +543,31 @@ Also, it optionally allows you to filter data on target view before it will be o
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationRuntimeExEntity){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateConfirm){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample165){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample320){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationdynamic){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     === "BusinessException"
@@ -730,6 +778,9 @@ Also, it optionally allows you to filter data on target view before it will be o
                 ```
 
 ## Sorting
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/sorting){:target="_blank"}
+
 `Sorting` allows you to sort data in ascending or descending order.
 
 ### How does it look?
@@ -748,7 +799,11 @@ Also, it optionally allows you to filter data on target view before it will be o
     _not applicable_
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateRequired){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided.
+
 ### How does it look?
 === "List widget"
     ![img_req_list.png](img_req_list.png)

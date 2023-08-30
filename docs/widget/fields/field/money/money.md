@@ -1,10 +1,10 @@
 # Money
 
 `Money` is a component for showing and editing fields containing money
-
 ## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
-
 === "List widget"
     ![img_list.png](img_list.png)
 === "Info widget"
@@ -12,128 +12,56 @@
 === "Form widget"
     ![img_form.png](img_form.png)
 
-
 ### How to add?
 
 ??? Example
     **Option1**
-
+    
+    
     One will usually use Long, Double or BigDecimal java types in DTO and Entity for storing this field type.
-
+    
+    
     Next example shows Long usage:
-
     **Step1** Add **Double** field  to corresponding **DataResponseDTO**.
-
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-        private Double customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56DTO.java
+    --8<--
     ```
-
     **Step2** Add **Double** field  to corresponding **BaseEntity**.
-
     ```java
-    public class MyEntity extends BaseEntity {
-   
-        @Column
-        private Double customField;
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyEntity56.java
+    --8<--
     ```
     === "List widget"
         **Step3** Add to **_.widget.json_**.
-
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56List.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
-        
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Info.widget.json
+        --8<--
         ```
-
     === "Form widget"
-
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Form.widget.json
+        --8<--
         ```
 
 ## Placeholder
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample64){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.gi_branch }}/src/main/java/org/demo/documentation/money/placeholder){:target="_blank"}
+
+
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
@@ -145,16 +73,10 @@
 ### How to add?
 ??? Example
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(MyExampleDTO_.customField, "100000.00"));
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/placeholder/MyExample64Meta.java:documentation
+    --8<--
     ```
     === "List widget"
         **Works for List.**
@@ -165,6 +87,14 @@
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
+
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample59){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color){:target="_blank"}
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -178,192 +108,67 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        
-    
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Double customField;
-            private String customFieldColor;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomField();
-                this.customFieldColor = "#eda6a6";
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color/MyExample59DTO.java
+        --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "money",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color/MyExample59List.widget.json
+            --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "money",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }       
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color/MyExample59Info.widget.json
+            --8<--
             ```
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "money",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/color/MyExample59Form.widget.json
+            --8<--
             ```
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "money",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst/MyExample60List.widget.json
+            --8<--
             ```
-
         === "Info widget"
-
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "money",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst/MyExample60Info.widget.json
+            --8<--
             ```
-
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "money",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/colorconst/MyExample60Form.widget.json
+            --8<--
             ```
+
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
+
+`Editable`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
+
+`Readonly`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/ro){:target="_blank"}
+
 
 ### How does it look?
 === "Editable"
@@ -387,22 +192,16 @@
 ??? Example
     === "Editable" 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
-
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-                fields.setEnabled(MyExampleDTO_.customField);
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Service.java:editable
+        --8<--
+        ```
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Meta.java:editable
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -410,18 +209,13 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-   
     === "Readonly"
-    
         **Option 1** Enabled by default.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/ro/MyExample61Meta.java:ro
+        --8<--
         ```
-    
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
@@ -429,7 +223,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtration
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration){:target="_blank"}
+
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
 ### How does it look?
 === "List widget"
@@ -443,36 +240,26 @@
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
-
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Double customField;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration/MyExample63DTO.java
+        --8<--
         ```
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration/MyExample63Meta.java:filtration
+        --8<--
         ```
-
     === "Info widget"
         _not applicable_
     === "Form widget"
         _not applicable_
 
 ## Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/drilldown){:target="_blank"}
+
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
@@ -493,75 +280,25 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setDrilldown(
-                    MyExampleDTO_.customField,
-                    DrillDownType.INNER,
-                    "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
-            );
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/drilldown/MyExample62Meta.java:drilldown
+    --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2,
-              "drillDown": "true"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/drilldown/MyExample62List.widget.json
+        --8<--
         ```
-
-
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
- 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown)
     === "Info widget"
-
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2,
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/drilldown/MyExample62Info.widget.json
+        --8<--
         ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
@@ -573,11 +310,31 @@ Also, it optionally allows you to filter data on target view before it will be o
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
-1) Exception: Displays a message to notify users about technical or business errors.
+1) Exception:Displays a message to notify users about technical or business errors.
 
+   `Business Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationbusinessex){:target="_blank"}
+
+   `Runtime Exception`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationruntimeex){:target="_blank"}
+   
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm){:target="_blank"}
+
 3) Field level validation: shows error next to all fields, that validation failed for
+
+   `Option 1`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample271){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationannotation){:target="_blank"}
+
+   `Option 2`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample333){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationdynamic){:target="_blank"}
+
 
 ### How does it look?
 === "List widget"
@@ -791,6 +548,9 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample66){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/sorting){:target="_blank"}
+
 `Sorting` allows you to sort data in ascending or descending order.
 
 ### How does it look?
@@ -810,6 +570,9 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample65){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/required){:target="_blank"}
+
 `Required` allows you to denote, that this field must have a value provided. 
 By default, UI sets `Money` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
 
@@ -844,6 +607,9 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
 
 ## Additional properties
 ### <a id="nullable">nullable</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample307){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/nullable){:target="_blank"}
+
 By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
 ####How does it look?
 === "List widget"

@@ -193,7 +193,55 @@ _not applicable_
 _not applicable_
 
 ## Filtering
-_not applicable_
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample160){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/filtration){:target="_blank"}
+
+`Filtering` allows you to search data based on criteria. Search ???.
+### How does it look?
+Block containing
+=== "List widget"
+    ![img_filtr_list.png](img_filtr_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+Filter not working with field type hint. `see more` [hint](/features/element/hint/hint)
+ 
+### How to add?
+??? Example
+    === "List widget"
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+
+
+        ```java
+        public class MyExampleDTO extends DataResponseDTO {
+        
+            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
+            private Long customField;
+        
+            public MyExampleDTO(MyEntity entity) {
+                this.customField = entity.getCustomField();
+            }
+        }
+        ```
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
+            }
+        
+        }
+        ```
+
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+
 
 ## Drilldown
 _not applicable_

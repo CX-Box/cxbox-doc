@@ -494,7 +494,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         fields.setDrilldown(
           MyExampleDTO_.customField,
           DrillDownType.INNER,
-          "/screen/text/view/textinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
+          "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
         );
       }            
     }
@@ -826,7 +826,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample47){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided. By default, `Text field` is not required

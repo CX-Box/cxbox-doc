@@ -170,7 +170,7 @@
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/color){:target="_blank"}
 
 `Constant color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColorConst){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/colorconst){:target="_blank"}
 
 ### How does it look?
@@ -371,11 +371,11 @@
 
 `Editable`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic){:target="_blank"}
 
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberCreateEdit){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/ro){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/ro){:target="_blank"}
 
 
 ### How does it look?
@@ -878,6 +878,9 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Additional properties
 ### <a id="digits">digits</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DigitsNumber){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/digits){:target="_blank"}
+
 Property denotes number of digits after the decimal point. Additionally, UI will not show digits after comma if property is not set
 #### How does it look?
 === "List widget"
@@ -973,6 +976,9 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         ```
 
 ### <a id="nullable">nullable</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample57){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/nullable){:target="_blank"}
+
 By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
 #### How does it look?
 === "List widget"

@@ -124,6 +124,7 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimePlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/placeholder){:target="_blank"}
 
+
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
 ### How does it look?
 === "List widget"

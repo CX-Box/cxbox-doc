@@ -8,7 +8,7 @@ Number of rows in popup: Use for dictionaries or slowly-growing entities, e.g. n
 Number of selected rows: same limits as for 'Number of rows in popup'
 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample251){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic){:target="_blank"}
 ### How does it look?
 
@@ -162,7 +162,7 @@ Number of selected rows: same limits as for 'Number of rows in popup'
         }
         ```
 ## Placeholder
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample257){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
@@ -206,18 +206,16 @@ _not applicable_
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 `Editable`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample251){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic){:target="_blank"}
 
 `Readonly`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputCreateEdit){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample253){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/ro){:target="_blank"}
 
 
 ### How does it look?
 === "Editable"
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic){:target="_blank"}
     === "List widget"
         ![img_list.gif](img_list.gif)
     === "Info widget"
@@ -301,26 +299,26 @@ _not applicable_
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample248){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample249){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample260){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample345){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationannotation){:target="_blank"}
 
    `Option 2`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample334){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic){:target="_blank"}
 
 
@@ -556,7 +554,7 @@ _not applicable_
 **_not applicable_**
 
 ## Required
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample247){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided.

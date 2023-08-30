@@ -349,7 +349,7 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic){:target="_blank"}
 
 `Readonly`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample180){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample180/view/myexample180form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/ro){:target="_blank"}
 
 

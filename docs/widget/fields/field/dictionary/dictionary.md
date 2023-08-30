@@ -6,7 +6,7 @@
     Use for dictionaries or slowly-growing entities, e.g. no more than 1000 values (all values are loaded in memory). Otherwise, use [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic){:target="_blank"}
 ### How does it look?
 
@@ -159,7 +159,7 @@
             ```
 
 ## Placeholder
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
@@ -196,11 +196,11 @@
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
 `Calculated color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample71){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/color){:target="_blank"}
 
 `Constant color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample84){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/colorconst){:target="_blank"}
 
 ### How does it look?
@@ -343,11 +343,11 @@
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 `Editable`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic){:target="_blank"}
 
 `Readonly`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputCreateEdit){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample85){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/ro){:target="_blank"}
 
 
@@ -418,7 +418,7 @@
         === "Form widget"
             **Works for Form.**
 ## Filtering
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses `in` operator.
@@ -465,7 +465,7 @@
         _not applicable_
 
 ## Drilldown
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
@@ -569,26 +569,26 @@ Also, it optionally allows you to filter data on target view before it will be o
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample91){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample93){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample92){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample293){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationannotation){:target="_blank"}
 
    `Option 2`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample323){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic){:target="_blank"}
 
 
@@ -801,7 +801,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order.
@@ -824,7 +824,7 @@ Sort by key value.
         _not applicable_
 
 ## Required
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample89){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided.

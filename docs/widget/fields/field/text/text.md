@@ -180,8 +180,6 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/color){:target="_blank"}
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
         ```java
@@ -494,7 +492,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         fields.setDrilldown(
           MyExampleDTO_.customField,
           DrillDownType.INNER,
-          "/screen/myexample/view/myexampleinfo/" + PlatformMyExampleController.myExampleBc + "/" + id
+          "/screen/myexample/view/myexampleform/" + PlatformMyExampleController.myExampleBc + "/" + id
         );
       }            
     }

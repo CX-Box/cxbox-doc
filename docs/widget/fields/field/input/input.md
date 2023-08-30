@@ -493,7 +493,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         fields.setDrilldown(
           InputDTO_.customField,
           DrillDownType.INNER,
-          "/screen/input/view/inputinfo/" + PlatformInputController.myBcInput + "/" + id
+          "/screen/input/view/inputform/" + PlatformInputController.myBcInput + "/" + id
         );
       }            
     }

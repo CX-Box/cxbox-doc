@@ -467,7 +467,7 @@ Also, it optionally allows you to filter data on target view before it will be o
               fields.setDrilldown(
                     DateTimeDTO_.customField,
                     DrillDownType.INNER,
-                    "/screen/DateTime/view/DateTimeinfo/" + PlatformDateTimeController.myBcDateTime + "/" + id
+                    "/screen/DateTime/view/DateTimeform/" + PlatformDateTimeController.myBcDateTime + "/" + id
             );
     ```
     === "List widget"

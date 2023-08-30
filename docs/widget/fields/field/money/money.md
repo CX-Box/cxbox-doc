@@ -59,7 +59,6 @@
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample64){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.githubrPlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.gi_branch }}/src/main/java/org/demo/documentation/money/placeholder){:target="_blank"}
 
 
@@ -173,7 +172,7 @@
 
 ### How does it look?
 === "Editable"
-     === "List widget"
+    === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
         _not applicable_

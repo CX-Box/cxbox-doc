@@ -580,7 +580,7 @@
         _not applicable_
 
 ## Drilldown
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample110){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
@@ -697,26 +697,26 @@ Also, it optionally allows you to filter data on target view before it will be o
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample114){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample116){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample115){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample296){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationannotation){:target="_blank"}
 
    `Option 2`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample400){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationdynamic){:target="_blank"}
 
 
@@ -956,7 +956,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample113){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order. Sort by value join field.
@@ -979,7 +979,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 
 ## Required
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample112){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided. 

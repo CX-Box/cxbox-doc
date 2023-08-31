@@ -65,7 +65,7 @@
 
         `assocValueKey` - field for opening AssocListPopup
 
-        `displayedKey` - calculated field for displaing data on List widget
+        `displayedKey` - text field usually containing contcatenated values from linked rows on List widget
 
         ```json
         {

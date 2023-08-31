@@ -24,9 +24,13 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
 ??? Example
     - **Step 1. AssocListPopup**
 
+        In the following example, MyEntity entity has a ManyToMany reference to the MyEntityMultivalue entity. 
+        Link is made by id in table MyEntity_MyEntityMultivalue, e.g. MyEntity.id = MyEntity_MyEntityMultivalue.MyEntityId, MyEntityMultivalue.id = MyEntity_MyEntityMultivalue.MyEntityMultivalueId.
+       
         +  **Step 1.1** Create link table for ManyToMany (MyEntity_MyEntityMultivalue).
-
-        +  **Step 1.2** Add **String** `additional field`  to corresponding **BaseEntity**.
+        +  **Step 1.2** Create Entity MyEntityMultivalue.
+        +  **Step 1.3** Create DTO MyEntityMultivalueDTO.
+        +  **Step 1.4** Add **String** `additional field`  to corresponding **BaseEntity**.
 
            ```java
            public class MyEntityMultivalue extends BaseEntity {
@@ -35,7 +39,7 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
            }
            ```
 
-        +  **Step 1.3** Add **String** `additional field` to corresponding **DataResponseDTO**.
+        +  **Step 1.5** Add **String** `additional field` to corresponding **DataResponseDTO**.
 
             ```java
             public class MyEntityMultivalueDTO extends DataResponseDTO {
@@ -58,9 +62,14 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
               "bc": "MyEntityMultivalueAssocListPopup",
               "fields": [
                 {
+                  "title": "Custom Field",
+                  "key": "customField",
+                  "type": "input"
+                },
+                {
                   "title": "id",
                   "key": "id",
-                  "type": "text"
+                  "type": "input"
                 }
               ]
             }
@@ -106,7 +115,8 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
             myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
 
         ```
-        +  **Step5** Add widget to view.
+
+        +  **Step5** Add AssocListPopup widget to view.
 
         === "List widget"
             **Step 6** Add popupBcName and assocValueKey to **_.widget.json_**.
@@ -115,7 +125,7 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
     
             `assocValueKey` - field for opening AssocListPopup
     
-            `displayedKey` - calculated field for displaing data on List widget
+            `displayedKey` - text field usually containing contcatenated values from linked rows on List widget
     
             ```json
             {
@@ -443,7 +453,7 @@ Number of selected rows: should be <1000-10000, because selected rows are stored
 ### How to add?
 ??? Example
     === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
 
         ```java           
         @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)

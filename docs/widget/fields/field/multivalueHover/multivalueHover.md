@@ -55,7 +55,7 @@
     === "List widget"
         **Step 3** Add to **_.widget.json_**.
 
-        `displayedKey` - calculated field for displaing data
+        `displayedKey` - text field usually containing contcatenated values from linked rows
 
         ```json
         {
@@ -77,7 +77,7 @@
     === "Info widget"
         **Step 3** Add to **_.widget.json_**.
 
-        `displayedKey` - calculated field for displaing data
+        `displayedKey` - text field usually containing contcatenated values from linked rows
 
         ```json
         {
@@ -112,7 +112,7 @@
     === "Form widget"
         **Step 5** Add to **_.widget.json_**.
  
-        `displayedKey` - calculated field for displaing data
+        `displayedKey` - text field usually containing contcatenated values from linked rows
 
         ```json
         {
@@ -383,7 +383,7 @@
 ### How to add?
 ??? Example
 === "List widget"
-    **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+    **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
 
         ```java
             @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)

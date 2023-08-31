@@ -2,6 +2,7 @@
 
 `Multifield` is a logical block containing any number of other field types. All fields in a logical block is readonly.
 The typical scenario involves using a common field type (e.g., input, date) for 'main' data and a hint field type for 'secondary' data
+
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample160){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/basic){:target="_blank"}
@@ -32,14 +33,32 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         Add `fields` and `style` to **_.widget.json_**.
         ```json
         {
-          "name": "MyExampleList",
+          "name": "MyExample160List",
           "title": "List title",
           "type": "List",
-          "bc": "myExampleBc",
+          "bc": "myExampleBc160",
           "fields": [
             {
               "title": "Custom multifield",
-              "key": "customField",
+              "key": "customFieldMulti",
+              "type": "multifield",
+              "style": "list",
+              "fields": [
+                {
+                  "title": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                },
+                {
+                  "title": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            {
+              "title": "Custom multifield hint",
+              "key": "customFieldMultiHint",
               "type": "multifield",
               "style": "list",
               "fields": [
@@ -56,13 +75,13 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
               ]
             },
             {
-              "title": "New Custom Field",
-              "key": "newCustomField",
+              "title": "Custom Field Additional",
+              "key": "customFieldAdditional",
               "type": "input"
             }
           ]
         }
-        ```
+        ```        
 
     === "Info widget"
         Add `fields` and `style` to **_.widget.json_**.
@@ -70,14 +89,32 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
         ```json
         {
-          "name": "MyExampleInfo",
+          "name": "MyExample160Info",
           "title": "Info title",
           "type": "Info",
-          "bc": "myExampleBc",
+          "bc": "myExampleBc160",
           "fields": [
             {
               "label": "Custom multifield",
-              "key": "customField",
+              "key": "customFieldMultiField",
+              "type": "multifield",
+              "style": "list",
+              "fields": [
+                {
+                  "label": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                },
+                {
+                  "label": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            {
+              "label": "Custom multifield hint",
+              "key": "customFieldMultifieldHint",
               "type": "multifield",
               "style": "list",
               "fields": [
@@ -93,8 +130,8 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
               ]
             },
             {
-              "label": "New Custom Field",
-              "key": "newCustomField",
+              "label": "Custom Field Additional",
+              "key": "customFieldAdditional",
               "type": "input"
             }
           ],
@@ -104,7 +141,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "newCustomField",
+                      "fieldKey": "customFieldMultiField",
                       "span": 12
                     }
                   ]
@@ -112,7 +149,15 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "customField",
+                      "fieldKey": "customFieldMultifieldHint",
+                      "span": 12
+                    }
+                  ]
+                },
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customFieldAdditional",
                       "span": 12
                     }
                   ]
@@ -130,14 +175,32 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
         ```json
         {
-          "name": "MyExampleForm",
+          "name": "MyExample160Form",
           "title": "Form title",
           "type": "Form",
-          "bc": "myExampleBc",
+          "bc": "myExampleBc160",
           "fields": [
             {
               "label": "Custom multifield",
-              "key": "customField",
+              "key": "customFieldMulti",
+              "type": "multifield",
+              "style": "list",
+              "fields": [
+                {
+                  "label": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                },
+                {
+                  "label": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            {
+              "label": "Custom multifield hint",
+              "key": "customFieldMultiHint",
               "type": "multifield",
               "style": "list",
               "fields": [
@@ -153,8 +216,8 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
               ]
             },
             {
-              "label": "New Custom Field",
-              "key": "newCustomField",
+              "label": "Custom Field Additional",
+              "key": "customFieldAdditional",
               "type": "input"
             }
           ],
@@ -164,7 +227,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "newCustomField",
+                      "fieldKey": "customFieldMulti",
                       "span": 12
                     }
                   ]
@@ -172,7 +235,15 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "customField",
+                      "fieldKey": "customFieldMultiHint",
+                      "span": 12
+                    }
+                  ]
+                },
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customFieldAdditional",
                       "span": 12
                     }
                   ]
@@ -192,8 +263,79 @@ _not applicable_
 ## Readonly/Editable
 _not applicable_
 
+
 ## Filtering
-_not applicable_
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample360){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/filtration){:target="_blank"}
+
+`Filtering` allows you to search data based on criteria. Search by =
+### How does it look?
+ 
+=== "List widget"
+    ![img_filtr_list.png](img_filtr_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+Filter not working with field type hint. `see more` [hint](/features/element/hint/hint)
+
+### How to add?
+??? Example
+    === "List widget"
+
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+
+        ```java
+        public class MyExampleDTO extends DataResponseDTO {
+        
+            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
+            private Long customField;
+        
+            public MyExampleDTO(MyEntity entity) {
+                this.customField = entity.getCustomField();
+            }
+        }
+        ```
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.enableFilter(MyExampleDTO_.customField);
+            }
+        
+        }
+        ```
+        **Step 3**  Add field for block filter in parameter `key`. 
+
+        For example, for filtering on field  "customFieldAdditionalMulti" -  "key" = "customFieldAdditionalMulti"
+            ```json
+            {
+              "title": "Custom multifield",
+              "key": "customFieldAdditionalMulti",
+              "type": "multifield",
+              "style": "list",
+              "fields": [
+                {
+                  "title": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                },
+                {
+                  "title": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+
 
 ## Drilldown
 _not applicable_

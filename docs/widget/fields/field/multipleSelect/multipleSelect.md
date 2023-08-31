@@ -286,8 +286,58 @@ _not applicable_
         === "Form widget"
             **Works for Form.**
 
+
 ## Filtering
-**_not applicable_**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample250){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/filtration){:target="_blank"}
+
+`Filtering` allows you to search data based on criteria. Search uses `in` operator.
+
+### How does it look?
+=== "List widget"
+    ![img_filtr_list.gif](img_filtr_list.gif)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+### How to add?
+??? Example
+    === "List widget"
+        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization_filtration))
+
+        ```java
+        @EnumValueProvider.BaseEnum(value = CustomFieldEnum.class)
+        @SearchParameter(name = "customField", multiFieldKey = EnumValueProvider.class, provider = MultiFieldValueProvider.class)
+        private MultivalueField customField;
+    
+        private String customFieldColor;
+    
+        public MyExampleDTO(MyEntity entity) {
+            this.id = entity.getId().toString();
+            this.customField = entity.getCustomField().stream()
+                    .collect(MultivalueField.toMultivalueField(Enum::name, CustomFieldEnum::getValue));
+        }
+        ```
+
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        ```java 
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
+        
+            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
+                fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
+                        .map(CustomFieldEnum::getValue)
+                        .toArray(String[]::new));
+                fields.setEnabled(MyExampleDTO_.customField);
+            }
+        
+        }
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Drilldown
 **_not applicable_**

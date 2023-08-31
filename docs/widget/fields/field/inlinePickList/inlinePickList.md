@@ -853,7 +853,27 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
                 ```
 ## Sorting
-**_not applicable_**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample148/view/myexample148list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/sorting){:target="_blank"}
+
+`Sorting` allows you to sort data in ascending or descending order.
+
+### How does it look?
+=== "List widget"
+    ![img_sort_list](img_sort_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    _not applicable_
+
+### How to add?
+??? Example
+    === "List widget"
+        Enabled by default.
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample146){:target="_blank"} ·

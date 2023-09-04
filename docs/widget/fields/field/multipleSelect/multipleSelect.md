@@ -2,8 +2,8 @@
 
 `MultipleSelect` is a component that allows to select multiple values from dropdown list of predefined values
 
-!!! Tip
-For this field type let's talk about number of rows in popup and number of selected rows.
+!!! tip
+    For this field type let's talk about number of rows in popup and number of selected rows.
 Number of rows in popup: Use for dictionaries or slowly-growing entities, e.g. no more than 1000 values (all values are loaded in memory). Otherwise, use multivalue
 Number of selected rows: same limits as for 'Number of rows in popup'
 

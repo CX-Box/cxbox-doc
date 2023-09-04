@@ -937,10 +937,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Works for Form.**
 
 ## Additional properties
-`maxInput`:
+### <a id="maxInput">maxInput</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MaxInput){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/additionalproperties){:target="_blank"}
-
+Specifies the maximum number of characters to enter
 
 ### How does it look?
 === "List widget"

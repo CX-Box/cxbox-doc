@@ -1,4 +1,6 @@
 # Filtration
+!!! warning line end "Work in progress"
+<!-- 
 ## Filter
 
 
@@ -85,3 +87,4 @@ Example widget field meta that has filter by multivalue field:
   "options": {}
 }
 ```
+ -->

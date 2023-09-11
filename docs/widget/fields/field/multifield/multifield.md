@@ -4,11 +4,16 @@
 The typical scenario involves using a common field type (e.g., input, date) for 'main' data and a hint field type for 'secondary' data
 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample160){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/basic){:target="_blank"}
 ### How does it look?
 
-Block containing 
+Logical blocks can be shown in different styles
+
+1) Style 'list' is displaying each entry on its own line
+
+2) Style 'inline' is displaying all data on the same line
+
 === "List widget"
     ![img_list.png](img_list.png)
 === "Info widget"
@@ -33,13 +38,13 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         Add `fields` and `style` to **_.widget.json_**.
         ```json
         {
-          "name": "MyExample160List",
+          "name": "MyExampleList",
           "title": "List title",
           "type": "List",
-          "bc": "myExampleBc160",
+          "bc": "myExampleBc",
           "fields": [
             {
-              "title": "Custom multifield",
+              "title": "Custom multifield Style 'List'",
               "key": "customFieldMulti",
               "type": "multifield",
               "style": "list",
@@ -55,6 +60,29 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                   "type": "input"
                 }
               ]
+            },
+            {
+              "title": "Custom multifield Style 'Inline'",
+              "key": "customFieldAdditionalMulti",
+              "type": "multifield",
+              "style": "inline",
+              "fields": [
+                {
+                  "title": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                },
+                {
+                  "title": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            {
+              "title": "Custom Field Additional",
+              "key": "customFieldAdditional",
+              "type": "input"
             },
             {
               "title": "Custom multifield hint",
@@ -73,11 +101,6 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                   "showLength": 100
                 }
               ]
-            },
-            {
-              "title": "Custom Field Additional",
-              "key": "customFieldAdditional",
-              "type": "input"
             }
           ]
         }
@@ -85,17 +108,18 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
     === "Info widget"
         Add `fields` and `style` to **_.widget.json_**.
+
         Multifield key use for to determine the order in which fields are displayed in the interface("options.layout").
 
         ```json
         {
-          "name": "MyExample160Info",
+          "name": "MyExampleInfo",
           "title": "Info title",
           "type": "Info",
-          "bc": "myExampleBc160",
+          "bc": "myExampleBc",
           "fields": [
             {
-              "label": "Custom multifield",
+              "label": "Custom multifield style 'List'",
               "key": "customFieldMultiField",
               "type": "multifield",
               "style": "list",
@@ -113,6 +137,29 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
               ]
             },
             {
+              "label": "Custom multifield style 'Inline'",
+              "key": "customFieldAdditionalMulti",
+              "type": "multifield",
+              "style": "inline",
+              "fields": [
+                {
+                  "label": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                },
+                {
+                  "label": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            {
+              "label": "Custom Field Additional",
+              "key": "customFieldAdditional",
+              "type": "input"
+            },
+            {
               "label": "Custom multifield hint",
               "key": "customFieldMultifieldHint",
               "type": "multifield",
@@ -128,16 +175,19 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                   "showLength": 100
                 }
               ]
-            },
-            {
-              "label": "Custom Field Additional",
-              "key": "customFieldAdditional",
-              "type": "input"
             }
           ],
           "options": {
             "layout": {
               "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customFieldAdditionalMulti",
+                      "span": 12
+                    }
+                  ]
+                },
                 {
                   "cols": [
                     {
@@ -149,7 +199,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "customFieldMultifieldHint",
+                      "fieldKey": "customFieldAdditional",
                       "span": 12
                     }
                   ]
@@ -157,7 +207,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "customFieldAdditional",
+                      "fieldKey": "customFieldMultifieldHint",
                       "span": 12
                     }
                   ]
@@ -171,14 +221,15 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
     === "Form widget"
 
         Add `fields` and `style` to **_.widget.json_**.
+
         Multifield key use for to determine the order in which fields are displayed in the interface("options.layout").
 
         ```json
         {
-          "name": "MyExample160Form",
+          "name": "MyExampleForm",
           "title": "Form title",
           "type": "Form",
-          "bc": "myExampleBc160",
+          "bc": "myExampleBc",
           "fields": [
             {
               "label": "Custom multifield",
@@ -199,6 +250,29 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
               ]
             },
             {
+              "label": "Custom multifield style 'Inline'",
+              "key": "customFieldAdditionalMulti",
+              "type": "multifield",
+              "style": "inline",
+              "fields": [
+                {
+                  "label": "New Custom Field Multi",
+                  "key": "customFieldAdditionalMulti",
+                  "type": "input"
+                },
+                {
+                  "label": "Custom Field Multi",
+                  "key": "customFieldMulti",
+                  "type": "input"
+                }
+              ]
+            },
+            {
+              "label": "Custom Field Additional",
+              "key": "customFieldAdditional",
+              "type": "input"
+            },
+            {
               "label": "Custom multifield hint",
               "key": "customFieldMultiHint",
               "type": "multifield",
@@ -214,16 +288,19 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                   "showLength": 100
                 }
               ]
-            },
-            {
-              "label": "Custom Field Additional",
-              "key": "customFieldAdditional",
-              "type": "input"
             }
           ],
           "options": {
             "layout": {
               "rows": [
+                {
+                  "cols": [
+                    {
+                      "fieldKey": "customFieldAdditionalMulti",
+                      "span": 12
+                    }
+                  ]
+                },
                 {
                   "cols": [
                     {
@@ -235,7 +312,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "customFieldMultiHint",
+                      "fieldKey": "customFieldAdditional",
                       "span": 12
                     }
                   ]
@@ -243,7 +320,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
                 {
                   "cols": [
                     {
-                      "fieldKey": "customFieldAdditional",
+                      "fieldKey": "customFieldMultiHint",
                       "span": 12
                     }
                   ]

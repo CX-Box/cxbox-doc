@@ -242,25 +242,26 @@
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
-![img_plchldr_list.png](img_plchldr_list.png)
+    ![img_plchldr_list.png](img_plchldr_list.png)
 === "Info widget"
-_not applicable_
+    _not applicable_
 === "Form widget"
-![img_plchldr_form.png](img_plchldr_form.png)
+    ![img_plchldr_form.png](img_plchldr_form.png)
+
 ### How to add?
-??? Example
-Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
+    ??? Example
+        Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
 
-    ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+        ```java
     
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
-      }
-    ```
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+        
+          @Override
+          public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+            Long id, Long parentId) {
+            fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
+          }
+        ```
     === "List widget"
         **Works for List.**
     === "Info widget"

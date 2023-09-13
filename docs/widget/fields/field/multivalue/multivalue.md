@@ -369,7 +369,7 @@
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![img_edit_form.png](img_edit_form.png)
+        ![img_form.png](img_form.png)
 === "Readonly"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)

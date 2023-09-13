@@ -1,6 +1,6 @@
 # MultivalueHover
 
-`MultivalueHover` is a component that allows to view multiple values on mouse hover
+`MultivalueHover` is a component that allows to view multiple values on mouse hover. All fields are readonly.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample224){:target="_blank"} ·
@@ -364,7 +364,7 @@
             }
             ```
 ## Readonly/Editable
-**_not applicable_**
+All fields are readonly.
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample233){:target="_blank"} ·

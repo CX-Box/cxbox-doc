@@ -1,6 +1,6 @@
 # Multifield
 
-`Multifield` is a logical block containing any number of other field types. All fields in a logical block is readonly.
+`Multifield` is a logical block containing any number of other field types. All fields in a logical block are readonly.
 The typical scenario involves using a common field type (e.g., input, date) for 'main' data and a hint field type for 'secondary' data
 
 ## Basics
@@ -338,7 +338,7 @@ _not applicable_
 _not applicable_
 
 ## Readonly/Editable
-_not applicable_
+All fields in a logical block are readonly.
 
 
 ## Filtering

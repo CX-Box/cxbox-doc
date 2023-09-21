@@ -19,15 +19,9 @@
     **Step1** Add field **Boolean** to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField", provider = BooleanValueProvider.class)
-        private Boolean customField;
-        
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56DTO.java
+    --8<--
     ```
 
     **Step2** Add field **Boolean** to corresponding **BaseEntity**.

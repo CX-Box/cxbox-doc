@@ -249,19 +249,21 @@
     ![img_plchldr_form.png](img_plchldr_form.png)
 
 ### How to add?
-    ??? Example
-        Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
+??? Example
 
-        ```java
+    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-        
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-            Long id, Long parentId) {
-            fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
-          }
-        ```
+    ```java
+    
+    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+    
+      @Override
+      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+        Long id, Long parentId) {
+        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
+      }
+    ```
+    
     === "List widget"
         **Works for List.**
     === "Info widget"
@@ -454,7 +456,7 @@
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 !!! tip
-By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
+    By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
 Optionally, a separate filtration widget can still be provided.
 
 ### How does it look?
@@ -887,7 +889,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample148/view/myexample148list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/sorting){:target="_blank"}
 
-`Sorting` allows you to sort data in ascending or descending order.
+`Sorting` allows you to sort data in ascending or descending order. Field has lexicographic sorting.
 
 ### How does it look?
 === "List widget"

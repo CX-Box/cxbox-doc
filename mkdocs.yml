@@ -3,6 +3,9 @@ site_name: CXBox Documentation
 # Структура навигации генерируемого сайта.
 nav:
   - Home: index.md
+  - What’s new: new/what’snew.md
+  - Guide for analysts: guide/analystguide/analystguide.md
+  - Guide for developers: guide/developerguide/developerguide.md
   - Field types:
       - Field input: widget/fields/field/input/input.md
       - Field date: widget/fields/field/date/date.md
@@ -38,6 +41,7 @@ nav:
 
 markdown_extensions:
   - attr_list
+  - md_in_html
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -90,6 +94,7 @@ theme:
 plugins:
   - search
   - markdownextradata
+  - glightbox
   - redirects:
       redirect_maps:
         'widget_field_input.md': 'widget/fields/field/input/input.md'

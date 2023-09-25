@@ -161,39 +161,38 @@
 ### How to add?
 ??? Example
     === "Editable"
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic){:target="_blank"}
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-        ```java
-        
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
+            
+            ```java
+            
+            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
+     
+                @Override
+                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                    if (data.isFieldChanged(MyExampleDTO_.customField)) {
+                        entity.setCustomField(data.getCustomField());
+                    }
+                    return new ActionResultDTO<>(entityToDto(bc, entity));
                 }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
+          
+            ```
+            **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    
+            ```java
+            public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+              @Override
+              public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+                                                Long id, Long parentId) {
+                fields.setEnabled(MyExampleDTO_.customField);
+              }
             }
-      
-        ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-
-        ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-            fields.setEnabled(MyExampleDTO_.customField);
-          }
-        }
-        ```
-        === "List widget"
-            **Works for List.**
-        === "Info widget"
-            **_not applicable_**
-        === "Form widget"
-            **Works for Form.**
+            ```
+            === "List widget"
+                **Works for List.**
+            === "Info widget"
+                **_not applicable_**
+            === "Form widget"
+                **Works for Form.**
 
     === "Readonly"
 
@@ -214,15 +213,14 @@
         === "List widget"
             **Works for List.**
         === "Info widget"
-            **_not applicable_**
+            **Works for Info.**
         === "Form widget"
             **Works for Form.**
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample53){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/filtration){:target="_blank"}
-
-### How does it look?
+ 
 `Filtering` allows you to search data based on criteria. Search uses `in` operator.
 ### How does it look?
 === "List widget"

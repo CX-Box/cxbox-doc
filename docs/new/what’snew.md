@@ -1,21 +1,121 @@
-# What’s New in cxbox community
+# What’s New in cxbox
+
+## Key updates v1.0.0
+[Project to start](https://github.com/CX-Box/cxbox-demo)
+
+[Documentation](https://doc.cxbox.org/o)
+
+### Red-black theme
+ ![red-black.png](v1.0.0/red-black.png){width="600"}
+ 
+The release has updated the theme of a certain project or software. 
+The chosen theme is a classic combination of red and black, which symbolizes aristocratic taste and dignity.
+If you want to see the new theme, you can click on the provided
+[link](http://code-samples.cxbox.org/ui/#/screen/InputBasic)
+
+### Added plugin for Intellij Plugin 
+![plugin_fields.png](v1.0.0/plugin_fields.png){width="800"}
+
+Added plugin for autocomplete, validation, navigation and code generation for fields specific to the Intellij Plugin platform.
+Code generation for types of fields:
+    input,
+    date,
+    dateTime,
+    dateTimeWithSeconds,
+    number,
+    percent,
+    hidden,
+    text,
+    radio,
+    checkbox,
+    money,
+    dictionary,
+    fileUpload,
+    pickList,
+    inlinePickList,
+    hint,multifield,
+    multivalueHover,
+    multivalue,
+    multipleSelect
+
+[Platform Tools](https://plugins.jetbrains.com/plugin/19523-platform-tools)
+
+### Added creation examples for fields
+![field_documentation.png](v1.0.0/field_documentation.png){width="600"}
+
+We've introduced a new documentation section that details the core functionality for all field types.
+Each section of the documentation contains a detailed description of the main operations, placeholders,
+sorting methods, coloring options, filtering, detailing, checking, compulsory filling, filtering by a specific field type.
+Additionally, we've included links to live examples for hands-on demonstrations and access to code samples for reference.  
+[input](https://doc.cxbox.org/widget/fields/field/input/input/),
+[date](https://doc.cxbox.org/widget/fields/field/date/date/),
+[dateTime](https://doc.cxbox.org/widget/fields/field/dateTime/dateTime/),
+[dateTimeWithSeconds](https://doc.cxbox.org/widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/),
+[number](https://doc.cxbox.org/widget/fields/field/number/number/),
+[percent](https://doc.cxbox.org/widget/fields/field/percent/percent/),
+[hidden](https://doc.cxbox.org/widget/fields/field/hidden/hidden/),
+[text](https://doc.cxbox.org/widget/fields/field/text/text/),
+[radio](https://doc.cxbox.org/widget/fields/field/radio/radio/),
+[checkbox](https://doc.cxbox.org/widget/fields/field/checkbox/checkbox/),
+[money](https://doc.cxbox.org/widget/fields/field/money/money/),
+[dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/),
+[fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/),
+[pickList](https://doc.cxbox.org/widget/fields/field/pickList/pickList/),
+[inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/),
+[hint](https://doc.cxbox.org/widget/fields/field/hint/hint/),
+[multifield](https://doc.cxbox.org/widget/fields/field/multifield/multifield/),
+[multivalueHover](https://doc.cxbox.org/widget/fields/field/multivalueHover/multivalueHover/),
+[multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/),
+[multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/)
+
+### Added search for screens by name in menu
+![search_for_screens.gif](v1.0.0/search_for_screens.gif){width="300" }
+
+The update includes a new and convenient search feature specifically designed for screens  by name in the menu.
+This will make it easier for users to search and locate specific screens quickly and efficiently.
+Filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL Like %value% )
+[link](http://code-samples.cxbox.org/ui/#/screen/InputBasic).
+
+###  Added scroll for screens in menu
+![scroll_for_screens.gif](v1.0.0/scroll_for_screens.gif){width="500" }
+
+Added scrolling function in a menu. 
+It feature that allows users to view the full list of screens or options within a limited space. 
+When the list of items exceeds the available space, the user can scroll up or down to see more options.
+[link](http://code-samples.cxbox.org/ui/#/screen/InputBasic)
+
+### Added sort for fields FileUpload,InlinePicklist
+![img_sort_list_inline.png](v1.0.0/img_sort_list_inline.png){ width="800" }
+![img_sort_list_fileupload.png](v1.0.0/img_sort_list_fileupload.png){ width="800" }
+
+Added sort for field FileUpload,InlinePicklist. Fields has lexicographic sorting.
+This sorting method is based on the order of characters in the field, where letters and numbers are organized according to their respective positions in the alphabet or numeric sequence.
+If you want to see 
+[InlinePicklist](http://code-samples.cxbox.org/ui/#/screen/InputBasic),
+[FileUpload](http://code-samples.cxbox.org/ui/#/screen/InputBasic).
+
+### Fix filtration 
+![filtration.gif](v1.0.0/filtration.gif){width="600" }
+
+We've resolved filtering issues across types of fields:
+    [InlinePickList](http://code-samples.cxbox.org/ui/#/screen/myexample142/view/myexample142list),
+    [PickList](http://code-samples.cxbox.org/ui/#/screen/myexample111/view/myexample111list),
+    [MultipleSelect](http://code-samples.cxbox.org/ui/#/screen/myexample256/view/myexample256list),
+    [Radio](http://code-samples.cxbox.org/ui/#/screen/myexample25/view/myexample25list),
+    [Money](http://code-samples.cxbox.org/ui/#/screen/myexample63/view/myexample63list),
+    [Number](http://code-samples.cxbox.org/ui/#/screen/NumberFiltration/view/NumberFiltrationlist),
+    [DateTime](http://code-samples.cxbox.org/ui/#/screen//screen/DateTimeFiltration/view/DateTimeFiltrationlist),
+    [DateTimeWithSeconds](http://code-samples.cxbox.org/ui/#/screen/DateTimeWithSecondsFiltration/view/DateTimeWithSecondsFiltrationlist),
+    [FileUpload](http://code-samples.cxbox.org/ui/#/screen/myexample99/view/myexample99list),
+    [Checkbox](http://code-samples.cxbox.org/ui/#/screen/myexample53/view/myexample53list)
 
 
-![red-black.png](red-black.png){  align=left }
-рпалрподлжжэ
-<figcaption>Image caption</figcaption>
+### Added worked with file store Minio
+![filestorageminio.png](v1.0.0/filestorageminio.png)
 
+We've expanded the documentation by including a comprehensive example demonstrating how to work with Minio file storage. 
+This addition offers users practical insights into utilizing Minio for their file storage needs with cxbox.
+[FileStorage.Minio](https://doc.cxbox.org/features/element/fileStorage/fileStorage/)
 
-<figure markdown>
-  ![red-black.png](red-black.png){  align=left }
-  <figcaption>Image caption</figcaption>
-</figure>
-
-
-<div class="grid cards" markdown>
-
-- :fontawesome-brands-js: __JavaScript__ for interactivity
-- :fontawesome-brands-css3: __CSS__ for text running out of boxes
-- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
-
-</div>
+### Other Changes
+[demo](https://github.com/CX-Box/cxbox-demo/releases/tag/v1.0.0)

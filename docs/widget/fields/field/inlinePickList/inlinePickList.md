@@ -456,7 +456,7 @@
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 !!! tip
-By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
+    By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
 Optionally, a separate filtration widget can still be provided.
 
 ### How does it look?

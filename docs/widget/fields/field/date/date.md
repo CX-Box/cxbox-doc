@@ -341,8 +341,6 @@
 ### How to add?
 ??? Example
     === "Editable"
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateBasic){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic){:target="_blank"}
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             

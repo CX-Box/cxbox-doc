@@ -1,47 +1,79 @@
 # What’s New in cxbox
 
-## Key updates v1.0.0
-[Project to start](https://github.com/CX-Box/cxbox-demo)
+## **Key updates September 21, 2023**
 
-[Documentation](https://doc.cxbox.org/o)
-
-### Red-black theme
- ![red-black.png](v1.0.0/red-black.png){width="600"}
- 
-The release has updated the theme of a certain project or software. 
-The chosen theme is a classic combination of red and black, which symbolizes aristocratic taste and dignity.
-If you want to see the new theme, you can click on the provided
-[link](http://code-samples.cxbox.org/ui/#/screen/InputBasic)
-
-### Added plugin for Intellij Plugin 
-![plugin_fields.png](v1.0.0/plugin_fields.png){width="800"}
+###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
+We've updated the plugin from version 1.5 to version 1.7.1.You have the latest features and improvements available.
+#### Added code generation for creating fields 
+![create_field.gif](v1.0.0/create_field.gif){width="500"}
 
 Added plugin for autocomplete, validation, navigation and code generation for fields specific to the Intellij Plugin platform.
 Code generation for types of fields:
-    input,
-    date,
-    dateTime,
-    dateTimeWithSeconds,
-    number,
-    percent,
-    hidden,
-    text,
-    radio,
-    checkbox,
-    money,
-    dictionary,
-    fileUpload,
-    pickList,
-    inlinePickList,
-    hint,multifield,
-    multivalueHover,
-    multivalue,
-    multipleSelect
+input,
+date,
+dateTime,
+dateTimeWithSeconds,
+number,
+percent,
+hidden,
+text,
+radio,
+checkbox,
+money,
+dictionary,
+fileUpload,
+pickList,
+inlinePickList,
+hint,
+multifield,
+multivalueHover,
+multivalue,
+multipleSelect
 
+#### Added code generation for adding fields
+![add_field.gif](v1.0.0/add_field.gif){width="500"}
+
+Added plugin for autocomplete, validation, navigation and code generation for fields specific to the Intellij Plugin platform.
+Code generation for types of fields:
+input,
+date,
+dateTime,
+dateTimeWithSeconds,
+number,
+percent,
+hidden,
+text,
+radio,
+checkbox,
+money,
+dictionary,
+fileUpload,
+pickList,
+inlinePickList,
+hint,
+multifield,
+multivalueHover,
+multivalue,
+multipleSelect
 [Platform Tools](https://plugins.jetbrains.com/plugin/19523-platform-tools)
 
-### Added creation examples for fields
-![field_documentation.png](v1.0.0/field_documentation.png){width="600"}
+#### Added multi-module projects  
+Multi-module projects (e.g. also multiple projects in same IDE window) support added
+
+#### Added support Intellij Community
+Both Intellij Ultimate and Intellij Community are now supported
+
+#### Other Changes
+see [cxbox-plugin changelog](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions)
+
+### CXBOX [documetation](https://doc.cxbox.org/)
+
+We've created this website with user-friendly documentation to help you effectively utilize CXBox.
+Added [guide for analysts](https://doc.cxbox.org/guide/analystguide/analystguide/)
+Added [guide for developers](https://doc.cxbox.org/guide/developerguide/developerguide/)
+
+#### Added creation examples for fields
+![field_documentation.png](v1.0.0/field_documentation.png){width="800"}
 
 We've introduced a new documentation section that details the core functionality for all field types.
 Each section of the documentation contains a detailed description of the main operations, placeholders,
@@ -68,7 +100,22 @@ Additionally, we've included links to live examples for hands-on demonstrations 
 [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/),
 [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/)
 
-### Added search for screens by name in menu
+#### Other Changes
+see [cxbox-doc changelog](https://github.com/CX-Box/cxbox-doc/releases/tag/v1.0.0)
+
+### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo), [Code Samples](https://github.com/CX-Box/cxbox-code-samples))
+
+#### Red-black theme
+![red-black.png](v1.0.0/red-black.png){width="800"}
+
+The release has updated the theme of a certain project or software.
+The chosen theme is a classic combination of red and black, which symbolizes aristocratic taste and dignity)
+
+If you want to see the new theme, you can click on the provided
+[link](http://demo.cxbox.org/ui/)
+
+
+#### Added search for screens by name in menu
 ![search_for_screens.gif](v1.0.0/search_for_screens.gif){width="300" }
 
 The update includes a new and convenient search feature specifically designed for screens  by name in the menu.
@@ -76,7 +123,7 @@ This will make it easier for users to search and locate specific screens quickly
 Filtering is case-insensitive and retrieves records containing the specified value at any position (similar to SQL Like %value% )
 [link](http://code-samples.cxbox.org/ui/#/screen/InputBasic).
 
-###  Added scroll for screens in menu
+####  Added scroll for screens in menu
 ![scroll_for_screens.gif](v1.0.0/scroll_for_screens.gif){width="500" }
 
 Added scrolling function in a menu. 
@@ -84,7 +131,7 @@ It feature that allows users to view the full list of screens or options within 
 When the list of items exceeds the available space, the user can scroll up or down to see more options.
 [link](http://code-samples.cxbox.org/ui/#/screen/InputBasic)
 
-### Added sort for fields FileUpload,InlinePicklist
+#### Added sort for fields FileUpload,InlinePicklist
 ![img_sort_list_inline.png](v1.0.0/img_sort_list_inline.png){ width="800" }
 ![img_sort_list_fileupload.png](v1.0.0/img_sort_list_fileupload.png){ width="800" }
 
@@ -94,7 +141,7 @@ If you want to see
 [InlinePicklist](http://code-samples.cxbox.org/ui/#/screen/InputBasic),
 [FileUpload](http://code-samples.cxbox.org/ui/#/screen/InputBasic).
 
-### Fix filtration 
+#### Fix filtration 
 ![filtration.gif](v1.0.0/filtration.gif){width="600" }
 
 We've resolved filtering issues across types of fields:
@@ -110,12 +157,14 @@ We've resolved filtering issues across types of fields:
     [Checkbox](http://code-samples.cxbox.org/ui/#/screen/myexample53/view/myexample53list)
 
 
-### Added worked with file store Minio
+#### Added worked with file store Minio
 ![filestorageminio.png](v1.0.0/filestorageminio.png)
 
 We've expanded the documentation by including a comprehensive example demonstrating how to work with Minio file storage. 
 This addition offers users practical insights into utilizing Minio for their file storage needs with cxbox.
 [FileStorage.Minio](https://doc.cxbox.org/features/element/fileStorage/fileStorage/)
 
-### Other Changes
-[demo](https://github.com/CX-Box/cxbox-demo/releases/tag/v1.0.0)
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v1.0.0)
+
+see [cxbox-code-samples changelog](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v1.0.0)

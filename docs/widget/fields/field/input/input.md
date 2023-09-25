@@ -180,7 +180,7 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-       **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
         ```java
         public class InputDTO extends DataResponseDTO {
         
@@ -261,9 +261,6 @@
             _not applicable_    
     
     === "Constant color"
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/colorconst){:target="_blank"}
-
         === "List widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json

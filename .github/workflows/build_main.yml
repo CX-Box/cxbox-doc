@@ -16,4 +16,5 @@ jobs:
           python-version: 3.x
       - run: pip install --force-reinstall -v "mkdocs-material==9.2.5"
       - run: pip install --no-cache-dir mkdocs-redirects
+      - run: pip install --no-cache-dir mkdocs-markdownextradata-plugin
       - run: mkdocs gh-deploy --force

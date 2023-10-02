@@ -4,8 +4,33 @@
 
 ###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
 We've updated the plugin from version 1.5 to version 1.7.1.You have the latest features and improvements available.
+#### Added autocomplete attributes for creating fields
+![autocomplete_field.gif](v1.0.0/autocomplete_field.gif){width="500"}
+
+Added plugin for autocomplete for fields specific to the Intellij Plugin platform.
+input,
+date,
+dateTime,
+dateTimeWithSeconds,
+number,
+percent,
+hidden,
+text,
+radio,
+checkbox,
+money,
+dictionary,
+fileUpload,
+pickList,
+inlinePickList,
+hint,
+multifield,
+multivalueHover,
+multivalue,
+multipleSelect
+
 #### Added code generation for creating fields 
-![create_field.gif](v1.0.0/create_field.gif){width="500"}
+![create_field.gif](v1.0.0/create_field.gif)
 
 Added plugin for autocomplete, validation, navigation and code generation for fields specific to the Intellij Plugin platform.
 Code generation for types of fields:
@@ -69,7 +94,9 @@ see [cxbox-plugin changelog](https://plugins.jetbrains.com/plugin/19523-platform
 ### CXBOX [documetation](https://doc.cxbox.org/)
 
 We've created this website with user-friendly documentation to help you effectively utilize CXBox.
+
 Added [guide for analysts](https://doc.cxbox.org/guide/analystguide/analystguide/)
+
 Added [guide for developers](https://doc.cxbox.org/guide/developerguide/developerguide/)
 
 #### Added creation examples for fields

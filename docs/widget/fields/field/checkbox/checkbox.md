@@ -161,38 +161,39 @@
 ### How to add?
 ??? Example
     === "Editable"
+
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             
-            ```java
-            
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-     
-                @Override
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                        entity.setCustomField(data.getCustomField());
-                    }
-                    return new ActionResultDTO<>(entityToDto(bc, entity));
+        ```java
+        
+        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
+        
+            @Override
+            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
+                if (data.isFieldChanged(MyExampleDTO_.customField)) {
+                    entity.setCustomField(data.getCustomField());
                 }
-          
-            ```
-            **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
-            ```java
-            public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-              @Override
-              public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                                Long id, Long parentId) {
-                fields.setEnabled(MyExampleDTO_.customField);
-              }
-            }
-            ```
-            === "List widget"
-                **Works for List.**
-            === "Info widget"
-                **_not applicable_**
-            === "Form widget"
-                **Works for Form.**
+                return new ActionResultDTO<>(entityToDto(bc, entity));
+            }        
+        ```
+
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        
+        ```java
+        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
+          @Override
+          public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
+                                            Long id, Long parentId) {
+            fields.setEnabled(MyExampleDTO_.customField);
+          }
+        }
+        ```
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
 
     === "Readonly"
 

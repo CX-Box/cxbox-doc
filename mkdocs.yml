@@ -3,7 +3,7 @@ site_name: CXBox Documentation
 # Структура навигации генерируемого сайта.
 nav:
   - Home: index.md
-  - What’s new: new/what’snew.md
+  - What’s new: new/whatsnew.md
   - Guide for analysts: guide/analystguide/analystguide.md
   - Guide for developers: guide/developerguide/developerguide.md
   - Field types:

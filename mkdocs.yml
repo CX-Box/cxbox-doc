@@ -94,7 +94,6 @@ theme:
 plugins:
   - search
   - markdownextradata
-  - glightbox
   - redirects:
       redirect_maps:
         'widget_field_input.md': 'widget/fields/field/input/input.md'

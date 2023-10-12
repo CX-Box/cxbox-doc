@@ -16,75 +16,37 @@
 ### How to add?
 ??? Example
     **Step1** Add field **LocalDateTime** to corresponding **DataResponseDTO**.
+Add field **LocalDateTime** to corresponding **BaseEntity**.
 
     ```java
-    public class DateTimeDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField", provider = DateTimeValueProvider.class)   
-        private LocalDateTime customField;
-    
-        public DateTimeDTO(DateTimeEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasic.java
+    --8<--
     ```
-    **Step2** Add field **LocalDateTime** to corresponding **BaseEntity**.
 
+    **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
+    
     ```java
-    public class DateTimeEntity extends BaseEntity {
-    
-        private LocalDateTime customField;
-    
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasicDTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "DateTimeList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myBcDateTime",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "dateTime"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasicList.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
-
+        
         ```json
-        {
-          "name": "DateTimeInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcDateTime",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "dateTime"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasicInfo.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -92,34 +54,10 @@
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "DateTimeForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myBcDateTime",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "dateTime"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasicForm.widget.json
+        --8<--
+        ```    
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimePlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/placeholder){:target="_blank"}

@@ -21,78 +21,37 @@
 
     Next example shows  **Long ** usage:
 
-    **Step1** Add **Long** field to corresponding **DataResponseDTO**.
+    **Step1**  Add **Long** field to corresponding **BaseEntity**.
 
     ```java
-    public class NumberDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-        private Long customField;
-    
-        public NumberDTO(NumberEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicEntity.java
+    --8<--
     ```
 
-    **Step2** Add **Long** field to corresponding **BaseEntity**.
+    **Step2** Add **Long** field to corresponding **DataResponseDTO**.
 
     ```java
-    public class NumberEntity extends BaseEntity {
-   
-        @Column
-        private Long customField;
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicDTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "NumberList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myBcNumber",,
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "number"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicList.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
         
         ```json
-        {
-          "name": "NumberInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcNumber",,
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "number"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicInfo.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -100,34 +59,10 @@
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "NumberForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myBcNumber",,
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "number"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicForm.widget.json
+        --8<--
+        ```    
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·

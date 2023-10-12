@@ -18,97 +18,36 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
 ### How to add?
 
 ??? Example
-    **Step1** Add **String** field  to corresponding **DataResponseDTO**.
-
+    **Step1** Add **String** field  to corresponding **BaseEntity**.
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        private String customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyEntity156.java
+    --8<--
     ```
 
-    **Step2** Add **String** field  to corresponding **BaseEntity**.
+    **Step2** Add **String** field  to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-   
-        @Column
-        private String customField;
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156DTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Text Field",
-              "key": "textField",
-              "type": "input"
-            },
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "hint",
-              "showLength": 100
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156List.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
-
+        
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Text Field",
-              "key": "textField",
-              "type": "input"
-            },
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "hint",
-              "showLength": 100
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "textField",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156Info.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -116,48 +55,10 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Text Field",
-              "key": "textField",
-              "type": "input"
-            },
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "hint",
-              "showLength": 100
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "textField",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156Form.widget.json
+        --8<--
+        ```    
 
 ## Placeholder
 _not applicable_

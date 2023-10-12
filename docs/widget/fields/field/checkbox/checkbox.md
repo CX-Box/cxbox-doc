@@ -16,78 +16,37 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **Boolean** to corresponding **DataResponseDTO**.
+    **Step1** Add field **Boolean** to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField", provider = BooleanValueProvider.class)
-        private Boolean customField;
-        
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyEntity82.java
+    --8<--
     ```
 
-    **Step2** Add field **Boolean** to corresponding **BaseEntity**.
+    **Step2** Add field **Boolean** to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-   
-        @Column
-        private Boolean customField;
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82DTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "checkbox"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82List.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
         
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "checkbox"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82Info.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -95,34 +54,11 @@
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "checkbox"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        } 
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82Form.widget.json
+        --8<--
+        ```        
+
 ## Placeholder
 **_not applicable_**
 

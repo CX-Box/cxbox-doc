@@ -16,112 +16,49 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add **String** field  to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field  to corresponding **BaseEntity**.
+
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField")
-        private String customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-        this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyEntity40.java
+    --8<--
     ```
-    **Step2** Add **String** field  to corresponding **BaseEntity**.
+
+    **Step2** Add field **String** to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-    
-        private String customField;
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyExample40DTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info Title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "text"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyExample40List.widget.json
+        --8<--
         ```
-
-
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
-
+        
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List Title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "text"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyExample40Info.widget.json
+        --8<--
         ```
 
     === "Form widget"
+
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form Title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField", 
-              "type": "text"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyExample40Form.widget.json
+        --8<--
+        ```    
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample46){:target="_blank"} ·

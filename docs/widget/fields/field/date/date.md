@@ -16,113 +16,46 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDate** to corresponding **DataResponseDTO**.
-
+    **Step1** Add field **LocalDate** to corresponding **BaseEntity**.
     ```java
-    public class DateDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField", provider = DateValueProvider.class)   
-        private LocalDate customField;
-    
-        public DateDTO(DateEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasic.java
+    --8<--
     ```
 
-    **Step2** Add field **LocalDate** to corresponding **BaseEntity**.
-    
+    **Step2**  Add field **LocalDate** to corresponding **DataResponseDTO**.
     ```java
-    public class DateEntity extends BaseEntity {
-    
-        private LocalDate customField;
-    
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasicDTO.java
+    --8<--
     ```
+
     === "List widget"
-  
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "DateList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myBcDate",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "date"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasicList.widget.json
+        --8<--
         ```
     === "Info widget"
- 
         **Step3** Add to **_.widget.json_**.
-
+        
         ```json
-        {
-          "name": "DateInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcDate",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "date"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasicInfo.widget.json
+        --8<--
         ```
 
     === "Form widget"
-         **Step3** Add to **_.widget.json_**.
+
+        **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "DateForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myBcDate",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "date"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasicForm.widget.json
+        --8<--
+        ```    
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DatePlaceholder){:target="_blank"} ·

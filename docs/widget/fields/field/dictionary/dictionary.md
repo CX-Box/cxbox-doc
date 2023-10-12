@@ -24,105 +24,52 @@
 
         - **Step1** Create Enum. Best practice: storing enum name in the Database and using a separate field for displayed UI values
             ```java
-            public enum CustomFieldEnum {
-                HIGH("High"),
-                MIDDLE("Middle"),
-                LOW("Low");
-            
-                @JsonValue
-                private final String value;
-            
-                public static CustomFieldEnum getByValue(@NonNull String value) {
-                    return Arrays.stream(CustomFieldEnum.values())
-                            .filter(enm -> Objects.equals(enm.getValue(), value))
-                            .findFirst()
-                            .orElse(null);
-                }
-            }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/enums/CustomFieldEnum.java
+a
+                --8<--
             ```
-        - **Step2** Add  **Enum** field to corresponding **DataResponseDTO**.
+        - **Step2** Add  **Enum** field to corresponding **BaseEntity**.
     
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = EnumValueProvider.class)
-            private CustomFieldEnum customField;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyEntity70.java
+            --8<--
         ```
-    
-        - **Step3** Add  **Enum** field to corresponding **BaseEntity**.
+   
+        - **Step3** Add  **Enum** field to corresponding **DataResponseDTO**.
     
         ```java
-        public class MyEntity extends BaseEntity {
-       
-            @Enumerated(value = EnumType.STRING)
-            @Column
-            private CustomFieldEnum customField;
-        }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70DTO.java
+            --8<--
         ```
 
         - **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
-    
+
         ```java
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setEnumValues(MyExampleDTO_.customField, CustomFieldEnum.values());
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Meta.java:buildRowDependentMeta
+        --8<--
         ```
+
 
         === "List widget"
             - **Step5** Add to **_.widget.json_**.
+
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "dictionary"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Info.widget.json
+            --8<--
             ```
         
         === "Info widget"
             - **Step5** Add to **_.widget.json_**.
         
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "dictionary"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Info.widget.json
+            --8<--
             ```
     
         === "Form widget"
@@ -130,34 +77,10 @@
             - **Step5** Add to **_.widget.json_**.
         
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "dictionary"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Form.widget.json
+            --8<--
+            ```  
 
     === "LOV"
 
@@ -169,7 +92,7 @@
                 ID;TYPE;TYPE_DESC
                 200;REGIONS;Regions
                 ```
-            +  **Step 1.2** Add description and value LOV to **CXBOX-DICTIONARY_ITEM.csvv**.
+            +  **Step 1.2** Add description and value LOV to **CXBOX-DICTIONARY_ITEM.csv**.
 
                 ```csv
                 "300";200;"REGIONS";"MOSCOW";"Moscow";true;0;null
@@ -180,14 +103,9 @@
             +  **Step 1.3** Add in project AdministeredDictionary
     
                 ```java
-                @Target(FIELD)
-                @Retention(RUNTIME)
-                @BaseLov(type = AdministeredDictionaryType.class)
-                public @interface AdministeredDictionary {
-                
-                    AdministeredDictionaryType value();
-                
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/AdministeredDictionary.java
+                --8<--
                 ```
             +  **Step 1.4**  Add in project AdministeredDictionaryType
     
@@ -247,122 +165,57 @@
                 }
                 ```
 
-        - **Step2** Add  **String** field to corresponding **DataResponseDTO**.
+        - **Step2**  Add  **LOV** field to corresponding **BaseEntity**. 
     
         ```java
-              
-        @SearchParameter(provider = LovValueProvider.class)
-        @AdministeredDictionary(REGIONS)
-        private String customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = REGIONS.lookupValue(entity.getCustomField());
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyEntity350.java
+        --8<--
         ```
     
-        - **Step3** Add  **LOV** field to corresponding **BaseEntity**.
+        - **Step3**Add  **String** field to corresponding **DataResponseDTO**.
     
         ```java
-        public class MyEntity extends BaseEntity {
-       
-            @Column
-            private LOV customField;
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350DTO.java
+        --8<--
         ```
 
         - **Step4** Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
-    
+
         ```java
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setEnabled(MyExampleDTO_.customField);
-            fields.setDictionaryTypeWithAllValues(MyExampleDTO_.customField, REGIONS);
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Meta.java:buildRowDependentMeta
+        --8<--
         ```
     
         === "List widget"
             - **Step5** Add to **_.widget.json_**.
+
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "dictionary"
-                }
-              ]
-            }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Info.widget.json
+                --8<--
             ```
         
         === "Info widget"
             - **Step5** Add to **_.widget.json_**.
         
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "dictionary"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Info.widget.json
+            --8<--
             ```
+    
         === "Form widget"
     
             - **Step5** Add to **_.widget.json_**.
         
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "dictionary"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Form.widget.json
+            --8<--
+            ```  
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·

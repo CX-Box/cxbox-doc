@@ -22,128 +22,68 @@
 
         In the following example, **MyEntity** entity has a **OneToOne/ManyToOne** reference to the **MyEntityPick** entity. Link is made by id, e.g. **MyEntity.customFieldId** = **MyEntityPick.id**. Also, is this example we will use one `additional field` **MyEntityPick.customField**, that will be shown on MyEntity widget
 
-        +  **Step 1.1** Add **String** `additional field` to corresponding **DataResponseDTO**.
-           ```java
-           public class MyEntityPickDTO extends DataResponseDTO {
-           
-               @SearchParameter(name = "customField")
-               private String customField;
-           
-               public MyEntityPickDTO(MyEntityPickEntity entity) {
-               this.customField = entity.getCustomField();
-               }
-           }
-           ```
+        +  **Step 1.1** Add **String** `additional field`  to corresponding **BaseEntity**.
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyEntity132Pick.java
+            --8<--
+            ```
 
-        +  **Step 1.2** Add **String** `additional field`  to corresponding **BaseEntity**.
-           ```java
-           public class MyEntityPickEntity extends BaseEntity {
-           
-               private String customField;
-           }
-           ```
+        +  **Step 1.2** Add **String** `additional field` to corresponding **DataResponseDTO**.
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyEntity132PickDTO.java
+            --8<--
+            ```
 
         +  **Step 1.3**  Create Popup List **_.widget.json_**.
-           ```json
-           {
-             "title": "myEntityPickListPopup title",
-             "name": "myEntityPickListPopup",
-             "type": "PickListPopup",
-             "bc": "myEntityPickListPopup",
-             "fields": [
-               {
-                 "title": "id",
-                 "key": "id",
-                 "type": "text"
-               },
-               {
-                 "title": "Custom Field",
-                 "key": "customField",
-                 "type": "text"
-               }
-             ]
-           }
-           ```
-        +  **Step 1.4** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+       
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/myEntity132PickListPopupPickListPopup.widget.json
+            --8<--
+            ```
+        +  **Step 1.4** Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
             ```java
-        
-            public class MyExamplePickMeta extends FieldMetaBuilder<MyEntityPickDTO> {
-        
-            @Override
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyEntityPickDTO> fields, InnerBcDescription bcDescription,
-                                              Long id, Long parentId) {
-                fields.setEnabled(MyEntityPickDTO_.id);
-                fields.setEnabled(MyEntityPickDTO_.customField);
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyEntity132PickPickListMeta.java:buildIndependentMeta
+            --8<--
             ```
         
     -   **Step 2** Add **Popup** to **_.view.json_**.
-        ```json
-        {
-          "name": "myexampleform",
-          "title": "My Example Form",
-          "template": "DashboardView",
-          "url": "/screen/myexample/view/myexampleform",
-          "widgets": [
-            {
-              "widgetName": "myEntityPickListPopup",
-              "position": 0,
-              "gridWidth": 24
-            },
-            {
-              "widgetName": "SecondLevelMenu",
-              "position": 10,
-              "gridWidth": 24
-            },
-            {
-              "widgetName": "MyExampleForm",
-              "position": 20,
-              "gridWidth": 24
-            }
-          ],
-          "rolesAllowed": [
-            "CXBOX_USER"
-          ]
-        }
+
+        === "list.view.json"
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/myexample133list.view.json
+            --8<--
+            ```
+        === "form.view.json"
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/myexample133form.view.json
+            --8<--
+            ```
+
+    -   **Step3** Add **MyEntityPick** field to corresponding **BaseEntity**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyEntity133.java
+        --8<--
         ```
 
-    -   **Step3** Add two **String** fields (for id and for `additional field`) to corresponding **DataResponseDTO**.
+    -   **Step4** Add two fields (for id and for `additional field`) to corresponding **DataResponseDTO**.
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-        @SearchParameter(name = "customFieldEntity.customField")
-        private String customField;
-    
-        @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
-        private Long customFieldId;
-    
-        public MyExampleDTO(MyEntity entity) {
-            this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
-                    .map(BaseEntity::getId)
-                    .orElse(null);
-            this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
-                    .map(e -> e.getCustomField())
-                    .orElse(null);
-        }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133DTO.java
+        --8<--
         ```
 
-    -   **Step4** Add **MyEntityPick** field to corresponding **BaseEntity**.
-        ```java
-        public class MyEntity extends BaseEntity {
-    
-            @JoinColumn(name = "CUSTOM_FIELD_ID")
-            @ManyToOne
-            private MyEntityPick customFieldEntity;
-        }
-        ```
     -   **Step5** Add bc myEntityPickListPopup to corresponding **EnumBcIdentifier**.
         ```java
-        public enum PlatformMyExampleController implements EnumBcIdentifier {
-        
-            // @formatter:on
-            myExampleBc(MyExampleService.class), myEntityPickListPopup(myExampleBc, MyEntityPickListService.class);
-
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/PlatformMyExample133Controller.java:bc
+        --8<--
         ```
 
     === "List widget"
@@ -151,89 +91,31 @@
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "inline-pickList",
-              "popupBcName": "myEntityPickListPopup",
-              "pickMap": {
-                "customFieldId": "id",
-                "customField": "customField"
-              }
-            }
-          ]
-        }        
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133List.widget.json
+        --8<--
+        ``` 
 
     === "Info widget"
         **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "inline-pickList",
-              "popupBcName": "myEntityPickListPopup",
-              "pickMap": {
-                "customFieldId": "id",
-                "customField": "customField"
-              }
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133Info.widget.json
+        --8<--
+        ``` 
+
     === "Form widget"
 
         **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "inline-pickList",
-              "popupBcName": "myEntityPickListPopup",
-              "pickMap": {
-                "customFieldId": "id",
-                "customField": "customField"
-              }
-            }
-          ]
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133Form.widget.json
+        --8<--
+        ``` 
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample144){:target="_blank"} ·

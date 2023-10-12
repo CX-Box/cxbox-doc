@@ -26,86 +26,38 @@
 
     **Step1 FileStorage** Add file storage. `see more` [FileStorage](/features/element/fileStorage/fileStorage)
 
-    **Step2** Add two **String** fields (for file name and id)  to corresponding **DataResponseDTO**.
+
+    **Step2** Add same **String** fields  to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-    @SearchParameter(name = "customField")
-    private String customField;
-   
-    private String customFieldId;
-
-    public MyExampleDTO(MyEntity entity) {
-        this.customField = entity.getCustomField();
-        this.customFieldId = entity.getCustomFieldId();
-    }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyEntity94.java
+    --8<--
     ```
 
-    **Step3** Add same **String** fields  to corresponding **BaseEntity**.
+    **Step3** Add two **String** fields (for file name and id)  to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-   
-        @Column
-        private String customField;
-
-        @Column
-        private String customFieldId;
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94DTO.java
+    --8<--
     ```
+ 
     === "List widget"
         **Step4** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "fileUpload",
-              "fileIdKey": "customFieldId"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94List.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step4** Add to **_.widget.json_**.
         
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-             {
-                "label": "Custom Field",
-                "key": "customField",
-                "type": "fileUpload",
-                "fileIdKey": "customFieldId"
-             }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94Info.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -113,35 +65,10 @@
         **Step4** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-             {
-               "label": "Custom Field",
-               "key": "customField",
-               "type": "fileUpload",
-               "fileIdKey": "customFieldId"
-             }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94Form.widget.json
+        --8<--
+        ```    
 
 
 ## Placeholder

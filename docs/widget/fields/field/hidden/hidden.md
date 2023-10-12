@@ -18,73 +18,34 @@
     **Step1** Add **String** field to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField")   
-        private String customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hidden/basic/HiddenBasic.java
+    --8<--
     ```
+
     **Step2** Add **String** field to corresponding **BaseEntity**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-    
-        private String customField;
-    
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hidden/basic/HiddenBasicDTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "hidden"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hidden/basic/HiddenBasicList.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
-
+        
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "hidden"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hidden/basic/HiddenBasicInfo.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -92,34 +53,10 @@
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "hidden"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hidden/basic/HiddenBasicForm.widget.json
+        --8<--
+        ```      
 ## Placeholder
 _not applicable_
 

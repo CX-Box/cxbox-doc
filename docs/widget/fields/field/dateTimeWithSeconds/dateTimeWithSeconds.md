@@ -19,73 +19,34 @@
     **Step1** Add field **LocalDateTimeWithSeconds** to corresponding **DataResponseDTO**.
 
     ```java
-    public class DateTimeWithSecondsDTO extends DataResponseDTO {
-        @SearchParameter(name = "customField", provider = DateTimeValueProvider.class)   
-        private LocalDateTime customField;
-    
-        public DateTimeWithSecondsDTO(DateTimeWithSecondsEntity entity) {
-            this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic/DateTimeWithSecondsEntity.java
+    --8<--
     ```
-    **Step2** Add field **LocalDateTimeWithSeconds** to corresponding **BaseEntity**.
 
+    **Step2** Add field **LocalDateTimeWithSeconds** to corresponding **BaseEntity**.
+   
     ```java
-    public class DateTimeWithSecondsEntity extends BaseEntity {
-    
-        private LocalDateTime customField;
-    
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic/DateTimeWithSecondsDTO.java
+    --8<--
     ```
+
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "DateTimeWithSecondsList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myBcDateTimeWithSeconds",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "dateTimeWithSeconds"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic/DateTimeWithSecondsList.widget.json
+        --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
-
+        
         ```json
-        {
-          "name": "DateTimeWithSecondsInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcDateTimeWithSeconds",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "dateTimeWithSeconds"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic/DateTimeWithSecondsInfo.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -93,34 +54,11 @@
         **Step3** Add to **_.widget.json_**.
 
         ```json
-        {
-          "name": "DateTimeWithSecondsForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myBcDateTimeWithSeconds",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "dateTimeWithSeconds"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic/DateTimeWithSecondsForm.widget.json
+        --8<--
+        ```    
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeWithSecondsPlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/placeholder){:target="_blank"}

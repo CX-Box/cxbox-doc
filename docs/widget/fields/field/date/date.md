@@ -77,15 +77,11 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     
     ```java
-    
-    public class DateMeta extends FieldMetaBuilder<DateDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<DateDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(DateDTO_.customField, LocalDate.now().toString());
-      }
-    ```
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/placeholder/DatePlaceholderMeta.java:buildRowDependentMeta
+    --8<--
+    ```   
+
     === "List widget"
         **Works for List.**
     === "Info widget"

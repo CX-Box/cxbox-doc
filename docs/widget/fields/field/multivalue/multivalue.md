@@ -31,89 +31,49 @@
         +  **Step 1.3** Create DTO MyEntityMultivalueDTO.
         +  **Step 1.4** Add **String** `additional field`  to corresponding **BaseEntity**.
 
-           ```java
-           public class MyEntityMultivalue extends BaseEntity {
-           
-               private String customField;
-           }
-           ```
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyEntityMultivalue177.java
+            --8<--
+            ```
 
         +  **Step 1.5** Add **String** `additional field` to corresponding **DataResponseDTO**.
 
             ```java
-            public class MyEntityMultivalueDTO extends DataResponseDTO {
-           
-                @SearchParameter(name = "customField")
-                private String customField;
-            
-                public MyEntityMultivalueDTO(MyEntityMultivalue entity) {
-                this.customField = entity.getCustomField();
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyEntity177MultivalueDTO.java
+            --8<--
             ```
 
         +  **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
             ```json
-            {
-              "title": "MyEntityMultivalueAssocListPopup title",
-              "name": "MyEntityMultivalueAssocListPopup",
-              "type": "AssocListPopup",
-              "bc": "MyEntityMultivalueAssocListPopup",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "input"
-                },
-                {
-                  "title": "id",
-                  "key": "id",
-                  "type": "input"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/myEntity177AssocListPopup.widget.json
+            --8<--
             ```
         +  **Step2** Add **List** field to corresponding **BaseEntity**.
 
             ```java
-            public class MyEntity extends BaseEntity {
-           
-
-                @JoinTable(name = "MyEntity_MyEntityMultivalue",
-                    joinColumns = @JoinColumn(name = "MyEntity_id"),
-                    inverseJoinColumns = @JoinColumn(name = "MyEntityMultivalue_id")
-                )
-                @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-                private List<MyEntityMultivalue> customFieldList = new ArrayList<>();
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyEntity176.java
+            --8<--
             ```
 
         +  **Step 3** Add **MultivalueField** field to corresponding **DataResponseDTO**.
 
-        ```java
-        public class MyExampleDTO extends DataResponseDTO {
-           @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-            private MultivalueField customField;
-            private String customFieldCalc;
-    
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                        e -> String.valueOf(e.getId()),
-                        MyEntityMultivalue::getCustomField
-                ));
-                this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
-                  ).collect(Collectors.joining(",")), 12);
-        }
-        ```
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176DTO.java
+            --8<--
+            ```
 
         +  **Step4** Add bc **MyEntityMultivalueAssocListPopup** to corresponding **EnumBcIdentifier**.
     
-        ```java
-        public enum PlatformMyExampleController implements EnumBcIdentifier {
-            myExampleBc(MyExampleService.class), 
-            myEntityMultivalueAssocListPopup(myExampleBc, MyEntityMultivalueService.class);
-
-        ```
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/PlatformMyExample176Controller.java:bc
+            --8<--
+            ```
 
         +  **Step5** Add AssocListPopup widget to view.
 
@@ -125,58 +85,19 @@
             `assocValueKey` - field for opening AssocListPopup
     
             `displayedKey` - text field usually containing contcatenated values from linked rows on List widget
-    
+            
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalue",
-                  "popupBcName": "myEntityMultivalueAssocListPopup",
-                  "assocValueKey": "customField",
-                  "displayedKey": "customFieldCalc"
-                }
-              ]
-            }      
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176List.widget.json
+            --8<--
             ```
     
         === "Info widget"
             **Step 6** Add to **_.widget.json_**.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalue",
-                  "popupBcName": "myEntityAssocListPopup",
-                  "assocValueKey": "customField"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Info.widget.json
+            --8<--
             ```
         === "Form widget"
             **Step 6** Add popupBcName and assocValueKey to **_.widget.json_**.
@@ -186,37 +107,10 @@
             `assocValueKey' - field for open AssocListPopup
     
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalue",
-                  "popupBcName": "myEntityMultivalueAssocListPopup",
-                  "assocValueKey": "customField"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Form.widget.json
+            --8<--
             ```
-    
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample186){:target="_blank"} ·
@@ -237,15 +131,10 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
 
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
-      }
-    ```
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/placeholder/MyExample186Meta.java:buildRowDependentMeta
+    --8<--
+    ```  
     === "List widget"
         **_not applicable_**
     === "Info widget"

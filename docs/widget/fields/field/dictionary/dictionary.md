@@ -24,10 +24,9 @@
 
         - **Step1** Create Enum. Best practice: storing enum name in the Database and using a separate field for displayed UI values
             ```java
-                --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/enums/CustomFieldEnum.java
-a
-                --8<--
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/enums/CustomFieldEnum.java
+            --8<--
             ```
         - **Step2** Add  **Enum** field to corresponding **BaseEntity**.
     
@@ -234,15 +233,10 @@ a
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
 
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
-      }
-    ```
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/placeholder/MyExample88Meta.java:buildRowDependentMeta
+    --8<--
+    ```  
     === "List widget"
         **Works for List.**
     === "Info widget"

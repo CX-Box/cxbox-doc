@@ -135,15 +135,10 @@
 
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     
-    ```java
-    
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
-      }
+     ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/placeholder/MyExample144Meta.java:buildRowDependentMeta
+    --8<--
     ```
     
     === "List widget"

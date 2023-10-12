@@ -74,15 +74,10 @@
 
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     
-    ```java
-    
-    public class InputMeta extends FieldMetaBuilder<InputDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setPlaceholder(InputDTO_.customField, "placeholder text");
-      }
+     ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/placeholder/InputPlaceholder.java:buildRowDependentMeta
+    --8<--
     ```
     === "List widget"
         **Works for List.**

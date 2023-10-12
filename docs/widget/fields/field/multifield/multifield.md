@@ -37,74 +37,10 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
     === "List widget"
         Add `fields` and `style` to **_.widget.json_**.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom multifield Style 'List'",
-              "key": "customFieldMulti",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "title": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                },
-                {
-                  "title": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                }
-              ]
-            },
-            {
-              "title": "Custom multifield Style 'Inline'",
-              "key": "customFieldAdditionalMulti",
-              "type": "multifield",
-              "style": "inline",
-              "fields": [
-                {
-                  "title": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                },
-                {
-                  "title": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                }
-              ]
-            },
-            {
-              "title": "Custom Field Additional",
-              "key": "customFieldAdditional",
-              "type": "input"
-            },
-            {
-              "title": "Custom multifield hint",
-              "key": "customFieldMultiHint",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "key": "customField",
-                  "type": "input"
-                },
-                {
-                  "title": "Information Field",
-                  "key": "informationField",
-                  "type": "hint",
-                  "showLength": 100
-                }
-              ]
-            }
-          ]
-        }
-        ```        
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/basic/MyExample160List.widget.json
+        --8<--
+        ```     
 
     === "Info widget"
         Add `fields` and `style` to **_.widget.json_**.
@@ -112,110 +48,9 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         Multifield key use for to determine the order in which fields are displayed in the interface("options.layout").
 
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom multifield style 'List'",
-              "key": "customFieldMultiField",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "label": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                },
-                {
-                  "label": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                }
-              ]
-            },
-            {
-              "label": "Custom multifield style 'Inline'",
-              "key": "customFieldAdditionalMulti",
-              "type": "multifield",
-              "style": "inline",
-              "fields": [
-                {
-                  "label": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                },
-                {
-                  "label": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                }
-              ]
-            },
-            {
-              "label": "Custom Field Additional",
-              "key": "customFieldAdditional",
-              "type": "input"
-            },
-            {
-              "label": "Custom multifield hint",
-              "key": "customFieldMultifieldHint",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "key": "customField",
-                  "type": "input"
-                },
-                {
-                  "key": "informationField",
-                  "type": "hint",
-                  "showLength": 100
-                }
-              ]
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldAdditionalMulti",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldMultiField",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldAdditional",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldMultifieldHint",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/basic/MyExample160Info.widget.json
+        --8<--
         ```
 
     === "Form widget"
@@ -225,110 +60,9 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         Multifield key use for to determine the order in which fields are displayed in the interface("options.layout").
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom multifield",
-              "key": "customFieldMulti",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "label": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                },
-                {
-                  "label": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                }
-              ]
-            },
-            {
-              "label": "Custom multifield style 'Inline'",
-              "key": "customFieldAdditionalMulti",
-              "type": "multifield",
-              "style": "inline",
-              "fields": [
-                {
-                  "label": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                },
-                {
-                  "label": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                }
-              ]
-            },
-            {
-              "label": "Custom Field Additional",
-              "key": "customFieldAdditional",
-              "type": "input"
-            },
-            {
-              "label": "Custom multifield hint",
-              "key": "customFieldMultiHint",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "key": "customField",
-                  "type": "input"
-                },
-                {
-                  "key": "informationField",
-                  "type": "hint",
-                  "showLength": 100
-                }
-              ]
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldAdditionalMulti",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldMulti",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldAdditional",
-                      "span": 12
-                    }
-                  ]
-                },
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customFieldMultiHint",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/basic/MyExample160Form.widget.json
+        --8<--
         ```
 
 ## Placeholder

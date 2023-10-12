@@ -21,144 +21,59 @@
 
 ??? Example
     **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
-        ```java
-        public enum CustomFieldEnum {
-            HIGH("High"),
-            MIDDLE("Middle"),
-            LOW("Low");
-        
-            @JsonValue
-            private final String value;
-        
-            public static CustomFieldEnum getByValue(@NonNull String value) {
-                return Arrays.stream(CustomFieldEnum.values())
-                        .filter(enm -> Objects.equals(enm.getValue(), value))
-                        .findFirst()
-                        .orElse(null);
-            }
-        }
-        ```
-    **Step2** Add field **Custom Field** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/enums/CustomFieldEnum.java
+    --8<--
+    ```
+    **Step2** Add field **Custom Field** to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField.value", multiFieldKey = StringValueProvider.class)
-        private MultivalueField customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-           this.customField = entity.getCustomField().stream().collect(MultivalueField.toMultivalueField(Enum::name, CustomFieldEnum::getValue));
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyEntity251.java
+    --8<--
     ```
 
-    **Step3** Add field **Custom Field** to corresponding **BaseEntity**.
+    **Step3**  Add field **Custom Field** to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-   
-            @Enumerated(value = EnumType.STRING)
-            @CollectionTable(name = "CUSTOM_FIELD", joinColumns = @JoinColumn(name = "MyEntity_ID"))
-            @ElementCollection(targetClass = CustomFieldEnum.class)
-            @Column(name = "VALUE", nullable = false)
-            private Set<CustomFieldEnum> customField = new HashSet<>();
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251DTO.java
+    --8<--
     ```
-    **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
+
+    **Step4** Add **fields.setDictionaryTypeWithCustomValues** to corresponding **FieldMetaBuilder**.
 
     ```java
-    public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                      Long id, Long parentId) {
-            fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-            .map(CustomFieldEnum::getValue)
-            .toArray(String[]::new));
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251Meta.java:buildRowDependentMeta
+    --8<--
     ```
 
     === "List widget"
         **Step5** Add to **_.widget.json_**.
+
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "multipleSelect"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251List.widget.json
+        --8<--
         ```
 
     === "Info widget"
         **Step5** Add to **_.widget.json_**.
-
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "multipleSelect"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }       
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251Info.widget.json
+        --8<--
         ```
-
     === "Form widget"
 
-        **Step5** Add to **_.widget.json_**.
-
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "multipleSelect"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251Form.widget.json
+        --8<--
         ```
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample257){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/placeholder){:target="_blank"}
@@ -176,19 +91,11 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
 
     ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/placeholder/MyExample257Meta.java:buildRowDependentMeta
+    --8<--
+    ```  
 
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                .map(CustomFieldEnum::getValue)
-                .toArray(String[]::new));
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setPlaceholder(MyExampleDTO_.customField, "Placeholder text"));
-      }
-    ```
     === "List widget"
         **Works for List.**
     === "Info widget"

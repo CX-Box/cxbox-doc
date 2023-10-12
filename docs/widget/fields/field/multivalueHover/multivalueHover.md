@@ -22,34 +22,17 @@
     **Step1** Add field **List** to corresponding **BaseEntity**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-   
-        @Column
-            @JoinTable(name = "MyEntity_MyEntityMultivalue",
-            joinColumns = @JoinColumn(name = "MyEntity_id"),
-            inverseJoinColumns = @JoinColumn(name = "MyEntityMultivalue_id")
-        )
-        @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-        private List<MyEntityMultivalue> customFieldList = new ArrayList<>();
-        }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyEntity224.java
+    --8<--
     ```
 
     **Step 2** Add field **MultivalueField** to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-       @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-        private MultivalueField customField;
-        private String customFieldCalc;
-
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                    e -> String.valueOf(e.getId()),
-                    MyEntityMultivalue::getCustomField
-            ));
-            this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
-              ).collect(Collectors.joining(",")), 12);
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224DTO.java
+    --8<--
     ```
 
     === "List widget"
@@ -58,93 +41,30 @@
         `displayedKey` - text field usually containing contcatenated values from linked rows
 
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "multivalueHover",
-              "displayedKey": "customFieldCalc"
-            }
-          ]
-        }      
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224List.widget.json
+        --8<--
         ```
 
     === "Info widget"
         **Step 3** Add to **_.widget.json_**.
 
-        `displayedKey` - text field usually containing contcatenated values from linked rows
-
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "multivalueHover",
-              "displayedKey": "customFieldCalc"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224Info.widget.json
+        --8<--
         ```
+
     === "Form widget"
         **Step 5** Add to **_.widget.json_**.
  
         `displayedKey` - text field usually containing contcatenated values from linked rows
 
         ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "multivalueHover",
-              "displayedKey": "customFieldCalc"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224Form.widget.json
+        --8<--
         ```
-
 
 ## Placeholder
 **_not applicable_** 

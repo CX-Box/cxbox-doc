@@ -15,8 +15,7 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDateTime** to corresponding **DataResponseDTO**.
-Add field **LocalDateTime** to corresponding **BaseEntity**.
+    **Step1** Add field **LocalDateTime** to corresponding **BaseEntity**.
 
     ```java
     --8<--
@@ -117,68 +116,25 @@ Add field **LocalDateTime** to corresponding **BaseEntity**.
     === "Calculated color"
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
         ```java
-        public class DateTimeDTO extends DataResponseDTO {
-        
-                  private LocalDateTime customField;    
-                  private String customFieldColor;
-                
-                  public DateTimeDTO(DateTimeEntity entity) {
-                    this.customField = entity.getCustomField();
-                    this.customFieldColor = "#eda6a6";
-                  }        
-                }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcDTO.java
+        --8<--
         ```
+
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimeList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcDateTime",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "dateTime",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcList.widget.json
+            --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimeInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myBcDateTime",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "dateTime",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcList.widget.json
+            --8<--
             ```
         === "Form widget"
             _not applicable_   
@@ -187,55 +143,18 @@ Add field **LocalDateTime** to corresponding **BaseEntity**.
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimerList",
-              "title": "List title",
-              "type": "List",
-              "bc": "DateTimer",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "dateTime",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcForm.widget.json
+            --8<--
             ```
 
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimerInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "DateTimer",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "dateTime",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcInfo.widget.json
+            --8<--
             ```
-
         === "Form widget"
            _not applicable_    
 
@@ -273,30 +192,20 @@ Add field **LocalDateTime** to corresponding **BaseEntity**.
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            
-            public class DateTimeService extends VersionAwareResponseService<DateTimeDTO, DateTime> {
-     
-                @Override
-                protected ActionResultDTO<DateTimeDTO> doUpdateEntity(DateTimeEntity entity, DateTimeDTO data, BusinessComponent bc) {
-                    if (data.isFieldChanged(DateTimeDTO_.customField)) {
-                        entity.setCustomField(data.getCustomField());
-                    }
-                    return new ActionResultDTO<>(entityToDto(bc, entity));
-                }
-          
-            ```
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
+
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-            fields.setEnabled(DateTimeDTO_.customField);
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/ro/DateTimeEditService.java:doUpdateEntity
+        --8<--
         ```
+
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/ro/DateTimeEditMeta.java:buildRowDependentMeta
+        --8<--
+        ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -306,7 +215,7 @@ Add field **LocalDateTime** to corresponding **BaseEntity**.
    
     === "Readonly"
         **Option 1** Enabled by default.
-    
+
         ```java
         public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
           @Override
@@ -343,24 +252,16 @@ Add field **LocalDateTime** to corresponding **BaseEntity**.
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
 
         ```java
-        public class DateTimeDTO extends DataResponseDTO {
-        
-          @SearchParameter(name = "customField", provider = DateTimeValueProvider.class) 
-          private LocalDateTime customField;
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/filtration/DateTimeFiltrationDTO.java
+        --8<--
         ```
-
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
 
         ```java
- 
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
-        
-          @Override
-            public void buildIndependentMeta(FieldsMeta<DateTimeDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-             fields.enableFilter(DateTimeDTO_.customField);
-          }
-        
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/filtration/DateTimeFiltrationMeta.java:buildIndependentMeta
+        --8<--
         ```
 
     === "Info widget"
@@ -391,37 +292,19 @@ Also, it optionally allows you to filter data on target view before it will be o
     **Option 1**
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
-    ```java
-    public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
- 
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-              fields.setDrilldown(
-                    DateTimeDTO_.customField,
-                    DrillDownType.INNER,
-                    "/screen/DateTime/view/DateTimeform/" + PlatformDateTimeController.myBcDateTime + "/" + id
-            );
-    ```
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownMeta.java:buildRowDependentMeta
+        --8<--
+        ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-            ```json
-            {
-              "name": "DateTimeList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcDateTime",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "dateTime",
-                  "drillDown": "true"
-                }
-              ]
-            }
-            ```
 
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownList.widget.json
+            --8<--
+            ```
 
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
@@ -430,41 +313,17 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
 
-        ```json
-        {
-          "name": "DateTimeInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcDateTime",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "dateTime",
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownInfo.widget.json
+            --8<--
+            ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Form widget"
         _not applicable_
+
 [Advanced customization](/advancedCustomization/element/drillDown/drillDown)
 
 ## Validation
@@ -524,18 +383,11 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
     
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-    
+
         ```java
-            @Override
-            protected ActionResultDTO<DateTimeDTO> doUpdateEntity(DateTimeEntity entity, DateTimeDTO data, BusinessComponent bc) {
-            if (data.isFieldChanged(DateTimeDTO_.customField)) {
-                LocalDate sysdate = LocalDate.now();
-                if (sysdate.compareTo(data.getCustomField().toLocalDate()) > 0) {
-                    throw new BusinessException().addPopup("The field 'customField' cannot be less than the current date");
-                }
-                entity.setCustomField(data.getCustomField());
-            }
-            return new ActionResultDTO<>(entityToDto(bc, entity));          
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationbusinessex/DateTimeValidationBusinessExService.java:doUpdateEntity
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -548,21 +400,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
+ 
         ```java
-        @Override
-        protected ActionResultDTO<DateTimeDTO> doUpdateEntity(DateTimeEntity entity, DateTimeDTO data, BusinessComponent bc) {
-            if (data.isFieldChanged(DateTimeDTO_.customField)) {
-                try {
-                    //call custom function
-                 }
-                catch(Exception e){
-                    throw new RuntimeException("An unexpected error has occurred.");
-                }
-            }
-             return new ActionResultDTO<>(entityToDto(bc, entity));
-        }
-        ```                   
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationruntimeex/DateTimeValidationRuntimeExService.java:doUpdateEntity
+        --8<--
+        ```
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -572,15 +415,9 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
-            @Override
-            public Actions<DateTimeValidationDTO> getActions() {
-                return Actions.<DateTimeValidationDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                        .add()
-                        .build();
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationconfirm/DateTimeValidationService.java:getActions
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -596,13 +433,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             Use if:
 
             Requires a simple fields check (javax validation)
-            
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @Future(message = "The field 'customField' cannot be less than the current date")
-                    private LocalDateTime customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationannotation/MyExample166DTO.java
+            --8<--
             ```
             === "List widget"
                 **Works for List.**
@@ -618,93 +452,35 @@ Also, it optionally allows you to filter data on target view before it will be o
             Business logic check required for fields
 
             `Step 1`  Create сustom method for check.
+
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                LocalDate sysdate = LocalDate.now();
-                if (sysdate.compareTo(dto.getCustomField()) > 0) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' cannot be less than the current date");
-                }
-                if (sysdate.compareTo(dto.getCustomFieldAdditional()) > 0) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' cannot be less than the current date");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationdynamic/MyExample321Service.java:validateFields
+            --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationdynamic/MyExample321Service.java:doUpdateEntity
+            --8<--
             ```
+
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "dateTime"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "dateTime"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationdynamic/MyExample321List.widget.json
+                --8<--
+                ```
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "dateTime"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "dateTime"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationdynamic/MyExample321Form.widget.json
+                --8<--
                 ```
-
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeSort){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/sorting){:target="_blank"}
@@ -741,17 +517,12 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-    
-    ```java    
-    public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(DateTimeDTO_.customField);
-        fields.setRequired(DateTimeDTO_.customField);
-      }
-    ```
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/required/RequiredDateTimeMeta.java:buildRowDependentMeta
+    --8<--
+    ```    
+
     === "List widget"
         **Works for List.**
     === "Info widget"

@@ -117,184 +117,59 @@
     === "Calculated color"
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. The field can contain a HEX color or be null. 
-    
         ```java
-        public class NumberDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Long customField;
-            private String customFieldColor;
-        
-            public NumberDTO(NumberEntity entity) {
-                this.customField = entity.getCustomField();
-                this.customFieldColor = "#eda6a6";
-            }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/color/NumberColorDTO.java
+        --8<--
+        ```    
+ 
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "NumberList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcNumber",,
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "number",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/color/NumberColorList.widget.json
+            --8<--
             ```
+ 
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "NumberInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myBcNumber",,
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "number",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }       
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/color/NumberColorInfo.widget.json
+            --8<--
             ```
+ 
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "NumberForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myBcNumber",,
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "number",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/color/NumberColorForm.widget.json
+            --8<--
             ```
+ 
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "NumberList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcNumber",,
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "number",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/colorconst/NumberColorConstList.widget.json
+            --8<--
             ```
+ 
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "NumberInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myBcNumber",,
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "number",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/colorconst/NumberColorConstInfo.widget.json
+            --8<--
             ```
 
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
-            {
-              "name": "NumberForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myBcNumber",,
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "number",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/colorconst/NumberColorConstForm.widget.json
+            --8<--
             ```
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
@@ -328,23 +203,19 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(NumberDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
-
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class NumberMeta extends FieldMetaBuilder<NumberDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-                fields.setEnabled(NumberDTO_.customField);
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicService.java:doUpdateEntity
+        --8<--
         ```
+ 
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/basic/NumberBasicMeta.java:buildRowDependentMeta
+        --8<--
+        ```    
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -355,13 +226,11 @@
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class NumberMeta extends FieldMetaBuilder<NumberDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/ro/NumberCreateEditMeta.java
+        --8<--
+        ```    
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
@@ -387,29 +256,19 @@
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter)))
-
         ```java
-        public class NumberDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Long customField;
-        
-            public NumberDTO(NumberEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/filtration/NumberFiltrationDTO.java
+        --8<--
         ```
+ 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class NumberFiltrationMeta extends FieldMetaBuilder<NumberFiltrationDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<NumberFiltrationDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(NumberFiltrationDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/filtration/NumberFiltrationMeta.java
+        --8<--
         ```
+ 
 
     === "Info widget"
         _not applicable_
@@ -440,73 +299,29 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class NumberMeta extends FieldMetaBuilder<NumberDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<NumberDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setDrilldown(
-                    NumberDTO_.customField,
-                    DrillDownType.INNER,
-                    "/screen/Number/view/Numberform/" + PlatformNumberController.myBcNumber + "/" + id
-            );
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/drilldown/NumberDrillDownMeta.java:buildRowDependentMeta
+    --8<--
     ```
+ 
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
-        {
-          "name": "NumberList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myBcNumber",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "number",
-              "drillDown": "true"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/drilldown/NumberDrillDownList.widget.json
+        --8<--
         ```
-
-
+ 
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-
         ```json
-        {
-          "name": "NumberInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcNumber",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "number",
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/drilldown/NumberDrillDownInfo.widget.json
+        --8<--
         ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
@@ -571,21 +386,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class NumberService extends VersionAwareResponseService<NumberDTO, Number> {
- 
-            @Override
-            protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(NumberDTO_.customField)) {
-                    if (data.getCustomField() < 20000) {
-                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 20 000.");
-                    }
-                    entity.setCustomField(data.getCustomField());
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationbusinessex/NumberBusinessExService.java:doUpdateEntity
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -597,21 +403,11 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<NumberDTO> doUpdateEntity(NumberEntity entity, NumberDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(NumberDTO_.customField)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationruntimeex/NumberRuntimeExService.java:doUpdateEntity
+        --8<--
+        ```
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -621,20 +417,11 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class NumberService extends VersionAwareResponseService<NumberDTO, Number> {
-
-                @Override
-                public Actions<NumberDTO> getActions() {
-                    return Actions.<NumberDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationconfirm/NumberConfirmService.java:getActions
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -649,13 +436,11 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             Add javax.validation to corresponding **DataResponseDTO**.
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                        @Min(value = 100000, message = "The field 'customField' cannot be less than 100 000.")
-                        private Long customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationannotation/MyExample290DTO.java
+            --8<--
             ```
-        
+ 
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -665,89 +450,32 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (dto.getCustomField() < 100000)  {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' cannot be less than 100 000.");
-                }
-                if  (dto.getCustomField() < 100000)  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customField' cannot be less than 100 000.");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationdynamic/MyExample2337Service.java:validateFields
+            --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+ 
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationdynamic/MyExample2337Service.java:doUpdateEntity
+            --8<--
             ```
+ 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "number"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "number"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationdynamic/MyExample2337List.widget.json
+                --8<--
+                ```
             === "Info widget"
                 **_not applicable_** 
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "number"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "number"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationdynamic/MyExample2337Form.widget.json
+                --8<--
                 ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberSorting){:target="_blank"} ·
@@ -787,19 +515,12 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/required/NumberRequiredMeta.java:buildRowDependentMeta
+    --8<--
     ```
-    === "List widget"
+     === "List widget"
         **Works for List.**
     === "Info widget"
         **_not applicable_**
@@ -825,84 +546,24 @@ Property denotes number of digits after the decimal point. Additionally, UI will
     === "List widget"
         Add **digits** to **_.widget.json_**.
         ```json
-        {
-          "name": "NumberForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "myBcNumber",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "number",
-              "digits": 2
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```  
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/digits/DigitsNumberList.widget.json
+        --8<--
+        ```
+  
     === "Info widget"
         Add **digits** to **_.widget.json_**.
         ```json
-         {
-          "name": "NumberInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcNumber",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "number",
-              "digits": 2
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/digits/DigitsNumberInfo.widget.json
+        --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
-        {
-          "name": "NumberList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myBcNumber",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "number",
-              "digits": 2
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/digits/DigitsNumberForm.widget.json
+        --8<--
         ```
 
 ### <a id="nullable">nullable</a>
@@ -923,56 +584,20 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
     === "List widget"
         Add **nullable** to **_.widget.json_**.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "number",
-              "nullable": true
-            }
-          ]
-        } 
-        ```  
-
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/nullable/MyExample57List.widget.json
+        --8<--
+        ```
+ 
     === "Info widget"
         _not applicable_  
 
     === "Form widget"
-        Add **nullable** to **_.widget.json_**.
+        Add **nullable** to **_.widget.json_**.        
         ```json
-        {
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "number",
-              "nullable": true
-            }
-          ],
-          "name": "MyExampleForm",
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "title": "Form title",
-          "type": "Form"
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/additionalproperties/nullable/MyExample57Form.widget.json
+        --8<--
         ```
 
 

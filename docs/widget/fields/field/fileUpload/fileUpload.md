@@ -136,25 +136,17 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94Service.java:doUpdateEntity
+        --8<--
+        ```
 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-        
-            @Override
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                              Long id, Long parentId) {
-              fields.setEnabled(MyExampleDTO_.customFieldId);
-              fields.setEnabled(MyExampleDTO_.customField);
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94DTO.java
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -166,14 +158,12 @@
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/ro/MyExample97Meta.java:buildRowDependentMeta
+        --8<--
         ```
-    
+
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
@@ -201,32 +191,20 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-            @SearchParameter(name = "customField")
-            private String customField;
-            
-            private String customFieldId;
-                
-            public MyExampleDTO(MyEntity entity) {
-                
-                this.customField = entity.getCustomField();
-                this.customFieldId = entity.getCustomFieldId();
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/filtration/MyExample99DTO.java
+        --8<--
         ```
+
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/filtration/MyExample99Meta.java:buildIndependentMeta
+        --8<--
         ```
+
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -291,20 +269,10 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    if (data.getCustomField() < 10) {
-                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 10%.");
-                    }
-                    entity.setCustomField(data.getCustomField());
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationbusinessex/MyExample103Service.java:doUpdateEntity
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -317,21 +285,12 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationruntimeex/MyExample105Service.java:doUpdateEntity
+        --8<--
+        ```
+    
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -341,19 +300,9 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationconfirm/MyExample104Service.java:getActions
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -370,15 +319,11 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
             Requires a simple fields check (javax validation)
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @SearchParameter(name = "customField")
-                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
-                    private String customField;
-                    @SearchParameter(name = "customFieldId")
-                    private String customFieldId;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationannotation/MyExample170DTO.java
+            --8<--
             ```
+	 
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -394,95 +339,35 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if  (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")){
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
-                }
-                if  (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationdynamic/MyExample324Service.java:validateFields
+            --8<--
             ```
+ 
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationdynamic/MyExample324Service.java:doUpdateEntity
+            --8<--
             ```
+ 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "fileUpload",
-                      "fileIdKey": "customFieldAdditionalId"
-                    },
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "fileUpload",
-                      "fileIdKey": "customFieldId"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationdynamic/MyExample324List.widget.json
+                --8<--
+                ```
+		    
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "fileUpload",
-                      "fileIdKey": "customFieldId"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "fileUpload",
-                      "fileIdKey": "customFieldAdditionalId"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationdynamic/MyExample324Form.widget.json
+                --8<--
                 ```
-
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample102){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/sorting){:target="_blank"}
@@ -523,17 +408,10 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/required/MyExample101Meta.java:buildRowDependentMeta
+    --8<--
     ```
     === "List widget"
         **Works for List.**

@@ -133,7 +133,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcList.widget.json
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/color/DateTimeColorCalcInfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -195,14 +195,14 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/ro/DateTimeEditService.java:doUpdateEntity
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasicService.java:doUpdateEntity
         --8<--
         ```
 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/ro/DateTimeEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/basic/DateTimeBasicMeta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -217,13 +217,9 @@
         **Option 1** Enabled by default.
 
         ```java
-        public class DateTimeMeta extends FieldMetaBuilder<DateTimeDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<DateTimeDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-        
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/ro/DateTimeEditMeta.java:buildRowDependentMeta
+        --8<--
         ```
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -292,19 +288,19 @@ Also, it optionally allows you to filter data on target view before it will be o
     **Option 1**
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownMeta.java:buildRowDependentMeta
-        --8<--
-        ```
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownMeta.java:buildRowDependentMeta
+    --8<--
+    ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
 
-            ```json
-            --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownList.widget.json
-            --8<--
-            ```
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownList.widget.json
+        --8<--
+        ```
 
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
@@ -313,11 +309,12 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
 
-            ```json
-            --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownInfo.widget.json
-            --8<--
-            ```
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/drilldown/DateTimeDrilldownInfo.widget.json
+        --8<--
+        ```
+
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  

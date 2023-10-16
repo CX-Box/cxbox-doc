@@ -92,196 +92,58 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-
-           @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-            private MultivalueField customField;
-            private String customFieldColor;
-            private String customFieldCalc;
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                        e -> String.valueOf(e.getId()),
-                        MyEntityMultivalue::getCustomField
-                ));
-                this.customFieldColor = "#eda6a6";
-                this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
-              ).collect(Collectors.joining(",")), 12);
-        }
-
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225DTO.java
+        --8<--
+        ```   
+ 
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalueHover",
-                  "displayedKey": "customFieldCalc"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225List.widget.json
+            --8<--
             ```
+ 
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
+ 
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalueHover",
-                  "displayedKey": "customFieldCalc",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225Info.widget.json
+            --8<--
             ```
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalueHover",
-                  "displayedKey": "customFieldCalc",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225Form.widget.json
+            --8<--
             ```
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalueHover",
-                  "displayedKey": "customFieldCalc",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst/MyExample227List.widget.json
+            --8<--
             ```
 
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalueHover",
-                  "displayedKey": "customFieldCalc",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst/MyExample227Info.widget.json
+            --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc227",
-              "fields": [
-                {
-                  "label": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalueHover",
-                  "displayedKey": "customFieldCalc",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst/MyExample227Form.widget.json
+            --8<--
             ```
 ## Readonly/Editable
 All fields are readonly.
@@ -304,35 +166,19 @@ All fields are readonly.
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-            @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-            private MultivalueField customField;
-        
-            private String customFieldCalc;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.id = entity.getId().toString();
-                this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                        e -> String.valueOf(e.getId()),
-                        MyEntityMultivalue::getCustomField
-                ));
-                this.customFieldCalc = StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntityMultivalue::getCustomField
-                ).collect(Collectors.joining(",")), 12);
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/filtration/MyEntity234DTO.java
+        --8<--
         ```
-
+ 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/filtration/MyExample233Meta.java:buildIndependentMeta
+        --8<--
         ```
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"

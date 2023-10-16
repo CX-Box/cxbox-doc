@@ -96,32 +96,23 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
     === "List widget"
 
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Long customField;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/filtration/MyExample360DTO.java
+        --8<--
         ```
+ 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multifield/filtration/MyExample360Meta.java
+        --8<--
         ```
+ 
         **Step 3**  Add field for block filter in parameter `key`. 
 
         For example, for filtering on field  "customFieldAdditionalMulti" -  "key" = "customFieldAdditionalMulti"
+		
             ```json
             {
               "title": "Custom multifield",

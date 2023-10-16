@@ -109,82 +109,26 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.   
         ```java
-        public class InputDTO extends DataResponseDTO {
-        
-                  private String customField;    
-                  private String customFieldColor;
-                
-                  public InputDTO(Input entity) {
-                    this.customField = entity.getCustomField();
-                    this.customFieldColor = "#eda6a6";
-                  }        
-                }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/color/InputColorDTO.java
+        --8<--
         ```
+
         === "List widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "InputInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/color/InputColorList.widget.json
+            --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "InputInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/color/InputColorInfo.widget.json
+            --8<--
             ```
         === "Form widget"
             _not applicable_    
@@ -193,66 +137,16 @@
         === "List widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "InputInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/colorconst/InputColorConstList.widget.json
+            --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "InputInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/colorconst/InputColorConstInfo.widget.json
+            --8<--
             ```
         === "Form widget"
             _not applicable_        
@@ -288,29 +182,18 @@
     === "Editable"
           **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
-            
-            public class InputService extends VersionAwareResponseService<InputDTO, Input> {
-     
-                @Override
-                protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
-                    if (data.isFieldChanged(InputDTO_.customField)) {
-                        entity.setCustomField(data.getCustomField());
-                    }
-                    return new ActionResultDTO<>(entityToDto(bc, entity));
-                }
-          
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicService.java:doUpdateEntity
+            --8<--
             ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+ 
+          **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+           ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicMeta.java:buildRowDependentMeta
+            --8<--
+            ```
 
-        ```java
-        public class InputMeta extends FieldMetaBuilder<InputDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-            fields.setEnabled(InputDTO_.customField);
-          }
-        }
-        ```
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -321,15 +204,10 @@
     === "Readonly"
 
         **Option 1** Enabled by default.
-
         ```java
-        public class InputMeta extends FieldMetaBuilder<InputDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-        
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/ro/InputCreateEditMeta.java:buildRowDependentMeta
+        --8<--
         ```
 
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -359,26 +237,17 @@ For `Input field` filtering is case-insensitive and retrieves records containing
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-        public class InputDTO extends DataResponseDTO {
-        
-          @SearchParameter(name = "customField")
-          private String customField;
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/filtration/InputFiltrationDTO.java
+        --8<--
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
         ```java
- 
-        public class InputMeta extends FieldMetaBuilder<InputDTO> {
-        
-          @Override
-          public void buildIndependentMeta(FieldsMeta<InputDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-            fields.enableFilter(InputDTO_.customField);
-          }
-        
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/filtration/InputFiltrationMeta.java
+        --8<--
         ```
 
     === "Info widget"
@@ -410,38 +279,19 @@ Also, it optionally allows you to filter data on target view before it will be o
     
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class InputMeta extends FieldMetaBuilder<InputDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-       
-        fields.setDrilldown(
-          InputDTO_.customField,
-          DrillDownType.INNER,
-          "/screen/input/view/inputform/" + PlatformInputController.myBcInput + "/" + id
-        );
-      }            
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownMeta.java:buildRowDependentMeta
+    --8<--
     ```
+
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-            ```json
-            {
-              "name": "InputList",
-              "title": "List Title",
-              "type": "List",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "drillDown": "true"
-                }
-              ]
-            }
-            ```
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownList.widget.json
+        --8<--
+        ```
+ 
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
@@ -449,70 +299,20 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         
         ```json
-        {
-          "name": "InputInfo",
-          "title": "Info Title",
-          "type": "Info",
-          "bc": "myBcInput",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "input",
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownInfo.widget.json
+        --8<--
         ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
     === "Form widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-            ```json
-            {
-              "name": "InputForm",
-              "title": "Form Title",
-              "type": "Form",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "drillDown": "true"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownForm.widget.json
+        --8<--
+        ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
@@ -575,22 +375,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class InputService extends VersionAwareResponseService<InputDTO, Input> {
- 
-            @Override
-            protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(InputDTO_.customField)) {
-                    if (StringUtils.isNotEmpty(data.getCustomField())
-                            && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
-                    ) {
-                        throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
-                    }
-                    entity.setCustomField(data.getCustomField());
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationbusinessex/InputValidationBusinessExceptionService.java:doUpdateEntity
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -603,21 +391,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<InputDTO> doUpdateEntity(Input entity, InputDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(InputDTO_.customField)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationruntimeex/InputValidationRuntimeExceptionService.java:doUpdateEntity
+        --8<--
+        ```
+  
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -627,20 +406,11 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class InputService extends VersionAwareResponseService<InputDTO, Input> {
-
-                @Override
-                public Actions<InputDTO> getActions() {
-                    return Actions.<InputDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationconfirm/InputValidationService.java:getActions
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -654,14 +424,12 @@ Also, it optionally allows you to filter data on target view before it will be o
             Use if:
 
             Requires a simple fields check (javax validation)
-
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
-                    private String customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationannotation/MyExample163DTO.java
+            --8<--
             ```
+ 
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -677,133 +445,38 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
-                }
-                if (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'CustomFieldAdditional' can contain only letters.");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Service.java:validateFields
+            --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+ 
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Service.java:doUpdateEntity
+            --8<--
             ```
+ 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "input"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "input"
-                    }
-                  ]
-                }
-                ```               
-            === "Info widget"
-                ```json
-                {
-                  "name": "MyExampleInfo",
-                  "title": "Info title",
-                  "type": "Info",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "input"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "input"
-                    }
-                  ],
-                  "options": {
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
-                ```   
-            === "Form widget"
-                ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "input"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "input"
-                    }
-                  ],
-                  "options": {
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326List.widget.json
+                --8<--
                 ```
- 
+                
+            === "Info widget"
+                 ```json
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Info.widget.json
+                --8<--
+                ```
+            === "Form widget"
+                 ```json
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Form.widget.json
+                --8<--
+                ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/sorting){:target="_blank"}
@@ -842,19 +515,13 @@ Also, it optionally allows you to filter data on target view before it will be o
     ![img_req_form.png](img_req_form.png)
 ### How to add?
 ??? Example
-     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
+    Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
-
-    public class InputMeta extends FieldMetaBuilder<InputDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<InputDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(InputDTO_.customField);
-        fields.setRequired(InputDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/required/InputRequiredMeta.java:buildRowDependentMeta
+    --8<--
     ```
+ 
     === "List widget"
         **Works for List.**
     === "Info widget"
@@ -868,7 +535,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/additionalproperties){:target="_blank"}
 Specifies the maximum number of characters to enter
 
-### How does it look?
+#### How does it look?
 === "List widget"
     ![max_input_list.png](max_input_list.png)
 === "Info widget"
@@ -876,57 +543,22 @@ Specifies the maximum number of characters to enter
 === "Form widget"
     ![max_input_form.png](max_input_form.png)
 
-### How to add?
+#### How to add?
 ??? Example
     === "List widget"
         Add **maxInput** to **_.widget.json_**.
         ```json
-            {
-              "name": "InputList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcInput",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "input",
-                  "maxInput" : 2
-                }
-              ]
-            }
-        ```  
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/additionalproperties/MaxInputList.widget.json
+        --8<--
+        ```
+  
     === "Info widget"
         **_not applicable_**
     === "Form widget"
         Add **maxInput** to **_.widget.json_**.
         ```json
-        {
-          "name": "MaxInputForm",
-          "title": "Form title",
-          "type": "Form",
-          "bc": "maxInput",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "input",
-              "maxInput" : 2
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ``` 
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/additionalproperties/MaxInputForm.widget.json
+        --8<--
+        ```

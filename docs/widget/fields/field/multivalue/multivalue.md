@@ -166,47 +166,21 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-
-           @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-            private MultivalueField customField;
-            private String customFieldColor;
-            private String customFieldCalc;
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                        e -> String.valueOf(e.getId()),
-                        MyEntityMultivalue::getCustomField
-                ));
-                this.customFieldColor = "#eda6a6";
-                this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntity::getCustomField
-                ).collect(Collectors.joining(",")), 12);
-        }
-
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/color/MyEntity175MultivalueDTO.java
+        --8<--
+        ```    
+ 
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalue",
-                  "popupBcName": "myEntityAssocListPopup",
-                  "assocValueKey": "customField",
-                  "displayedKey": "customFieldCalc",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/color/MyExample174List.widget.json
+            --8<--
+            ``` 
+ 
         === "Info widget"
             _not applicable_
         === "Form widget"
@@ -216,25 +190,10 @@
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "multivalue",
-                  "popupBcName": "myEntityAssocListPopup",
-                  "assocValueKey": "customField",
-                  "bgColor": "#eda6a6",
-                  "displayedKey": "customFieldCalc"
-                }
-              ]
-            }
-            ```
-
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/colorconst/MyExample178List.widget.json
+            --8<--
+            ``` 
         === "Info widget"
             _not applicable_
         === "Form widget"
@@ -273,31 +232,20 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.getCustomFieldList().clear();
-                    entity.getCustomFieldList().addAll(data.getCustomField().getValues().stream()
-                    .map(MultivalueFieldSingleValue::getId)
-                    .filter(Objects::nonNull)
-                    .map(Long::parseLong)
-                    .map(e -> entityManager.getReference(MyEntityMultivalue.class, e))
-                    .collect(Collectors.toList()));
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Service.java:doUpdateEntity
+        --8<--
+        ```
+
 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-          fields.setEnabled(MyExampleDTO_.customField);
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Meta.java:buildRowDependentMeta
+        --8<--
+        ```    
+ 
         === "List widget"
             **_not applicable_**
         === "Info widget"
@@ -308,13 +256,12 @@
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/ro/MyExample180Meta.java:buildRowDependentMeta
+        --8<--
+        ```    
+ 
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
@@ -342,32 +289,19 @@
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
-        ```java           
-        @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-        private MultivalueField customField;
-        private String customFieldCalc;
-        public MyExampleDTO(MyEntity entity) {
-            this.customField = entity.getCustomFieldList().stream().collect(MultivalueField.toMultivalueField(
-                    e -> String.valueOf(e.getId()),
-                    MyEntityMultivalue::getCustomField
-            ));
-            this.customFieldCalc =  StringUtils.abbreviate(entity.getCustomFieldList().stream().map(MyEntityMultivalue::getCustomField
-            ).collect(Collectors.joining(",")), 12);
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/filtration/MyExample184DTO.java
+        --8<--
         ```
-
+      
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/filtration/MyExample184Meta.java:buildIndependentMeta
+        --8<--
         ```
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -432,29 +366,12 @@
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                data.getCustomField().getValues()
-                        .stream()
-                        .filter(val-> val.getValue().matches("[A-Za-z]+")==false)
-                        .findFirst()
-                        .orElseThrow( () -> new BusinessException().addPopup("The field 'customField' can contain only letters."));
-                entity.getCustomFieldList().clear();
-                entity.getCustomFieldList().addAll(data.getCustomField().getValues().stream()
-                        .map(MultivalueFieldSingleValue::getId)
-                        .filter(Objects::nonNull)
-                        .map(Long::parseLong)
-                        .map(e -> entityManager.getReference(MyEntityMultivalue.class, e))
-                        .collect(Collectors.toList()));
-                    }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationbusinessex/MyEntity193MultivalueService.java:doUpdateEntity
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -466,21 +383,12 @@
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationruntimeex/MyEntity197MultivalueService.java:doUpdateEntity
+        --8<--
+        ```        
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -490,20 +398,11 @@
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationconfirm/MyEntity195MultivalueService.java:getActions
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -518,13 +417,11 @@
 
             Requires a simple fields check (javax validation)
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about error")
-                    @SearchParameter(name = "customFieldList.id", provider = LongValueProvider.class)
-                    private MultivalueField customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationannotation/MyEntity199MultivalueDTO.java
+            --8<--
             ```
+ 
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -540,102 +437,33 @@
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "Custom message about error");
-                }
-                if (String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "Custom message about error"))
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Service.java:validateFields
+            --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+ 
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Service.java:doUpdateEntity
+            --8<--
             ```
+ 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "multivalue",
-                      "popupBcName": "myEntityAssocListPopup",
-                      "assocValueKey": "customField",
-                      "displayedKey": "customFieldCalc"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "multivalue",
-                      "popupBcName": "myEntityAssocListPopup",
-                      "assocValueKey": "customFieldAdditional",
-                      "displayedKey": "customFieldCalc"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335List.widget.json
+                --8<--
+                ``` 
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "multivalue",
-                      "popupBcName": "myEntityAssocListPopup",
-                      "assocValueKey": "customField",
-                      "displayedKey": "customFieldCalc"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "multivalue",
-                      "popupBcName": "myEntityAssocListPopup",
-                      "assocValueKey": "customField",
-                      "displayedKey": "customFieldCalc"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
-                ```
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Form.widget.json
+                --8<--
+                ``` 
 ## Sorting
 **_not applicable_**
 
@@ -655,18 +483,12 @@
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/required/MyExample188Service.java:buildRowDependentMeta
+    --8<--
     ```
+ 
     === "List widget"
         **_not applicable_**
     === "Info widget"

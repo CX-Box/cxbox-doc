@@ -344,7 +344,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             ```java
             --8<--

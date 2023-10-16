@@ -363,21 +363,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    if (data.getCustomField() < 100000) {
-                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 100 000.00.");
-                    }
-                    entity.setCustomField(data.getCustomField());
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationbusinessex/MyExample67Service.java:doUpdateEntity
+        --8<--
         ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -389,21 +380,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationruntimeex/MyExample69Service.java:doUpdateEntity
+        --8<--
+        ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -413,19 +395,9 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm/MyExample68Service.java
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -440,14 +412,12 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
 
             Add javax.validation to corresponding **DataResponseDTO**.
-
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @DecimalMin(value = "100000.00", message = "The field 'customField' cannot be less than 100 000.00.")
-                    private Double customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationannotation/MyExample271DTO.java
+            --8<--
             ```
+ 
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -463,89 +433,33 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (dto.getCustomField() < 100000) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' cannot be less than 100 000.00");
-                }
-                if (dto.getCustomField() < 100000) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' cannot be less than 100 000.00");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationdynamic/MyExample333Service.java:validateFields
+            --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+ 
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationdynamic/MyExample333Service.java:doUpdateEntity
+            --8<--
             ```
+ 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "money"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "money"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationdynamic/MyExample333List.widget.json
+                --8<--
+                ```
+             
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "money"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "money"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationdynamic/MyExample333Form.widget.json
+                --8<--
                 ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample66){:target="_blank"} ·
@@ -586,18 +500,12 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/required/MyExample65Meta.java:buildRowDependentMeta
+    --8<--
     ```
+ 
     === "List widget"
         **Works for List.**
     === "Info widget"
@@ -624,57 +532,19 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
     === "List widget"
         Add **nullable** to **_.widget.json_**.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2,
-              "nullable": true
-            }
-          ]
-        } 
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/nullable/MyExample307List.widget.json
+        --8<--
         ```
+  
     === "Info widget"
         _not applicable_  
 
     === "Form widget"
         Add **nullable** to **_.widget.json_**.
         ```json
-        {
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "money",
-              "digits": 2,
-              "nullable": true
-            }
-          ],
-          "name": "MyExampleForm",
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "title": "Form title",
-          "type": "Form"
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/nullable/MyExample307Form.widget.json
+        --8<--
         ```
-
 

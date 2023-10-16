@@ -455,7 +455,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetime/validationdynamic/MyExample321Service.java:validateFields
             --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
 
             ```java
             --8<--

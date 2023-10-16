@@ -661,7 +661,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 }
             }
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
                 protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
                     validateFields(bc, data);

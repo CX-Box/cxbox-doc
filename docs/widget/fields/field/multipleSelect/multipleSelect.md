@@ -139,32 +139,18 @@ _not applicable_
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(
-                    data.getCustomField().getValues()
-                    .stream()
-                    .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                    .collect(Collectors.toSet()));
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
-
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-        
-            @Override
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                              Long id, Long parentId) {
-                fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                .map(CustomFieldEnum::getValue)
-                .toArray(String[]::new));
-                fields.setEnabled(MyExampleDTO_.customField);
-            }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251Service.java:doUpdateEntity
+        --8<--
+        ``` 
+         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251Meta.java:buildRowDependentMeta
+        --8<--
+        ```   
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -175,13 +161,12 @@ _not applicable_
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/ro/MyExample253Meta.java:buildRowDependentMeta
+        --8<--
+        ``    
+ 
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
@@ -210,35 +195,19 @@ _not applicable_
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-        @EnumValueProvider.BaseEnum(value = CustomFieldEnum.class)
-        @SearchParameter(name = "customField", multiFieldKey = EnumValueProvider.class, provider = MultiFieldValueProvider.class)
-        private MultivalueField customField;
-    
-        private String customFieldColor;
-    
-        public MyExampleDTO(MyEntity entity) {
-            this.id = entity.getId().toString();
-            this.customField = entity.getCustomField().stream()
-                    .collect(MultivalueField.toMultivalueField(Enum::name, CustomFieldEnum::getValue));
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/filtration/MyExample256DTO.java
+        --8<--
         ```
-
+ 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                        .map(CustomFieldEnum::getValue)
-                        .toArray(String[]::new));
-                fields.setEnabled(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/filtration/MyExample256Meta.java:buildIndependentMeta
+        --8<--
         ```
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -305,26 +274,12 @@ _not applicable_
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-            if (data.isFieldChanged(MyExampleDTO_.customField)) {
-
-               data.getCustomField().getValues()
-                .stream()
-                .filter(val->val.getValue().equals(CustomFieldEnum.HIGH.getValue()))
-                .findFirst()
-                .orElseThrow( () -> new BusinessException().addPopup("The field 'customField' can contain 'High'"));
-
-                entity.setCustomField(data.getCustomField().getValues()
-                                .stream()
-                                .map(v -> CustomFieldEnum.getByValue(v.getValue()))
-                                .collect(Collectors.toSet()));  
-             }             
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationbusinessex/MyExample248Service.java:doUpdateEntity
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -336,21 +291,12 @@ _not applicable_
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    try {
-                        //call custom function
-                        throw new Exception("Error");
-                    }
-                    catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationruntimeex/MyExample249Service.java:doUpdateEntity
+        --8<--
+        ```        
+   
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -360,20 +306,11 @@ _not applicable_
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationconfirm/MyExample260Service.java:getActions
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -387,14 +324,12 @@ _not applicable_
             Use if:
 
             Requires a simple fields check (javax validation)
-            ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @NotNull(message = "Custom message about error")
-                    @SearchParameter(name = "customField.value", multiFieldKey = StringValueProvider.class)
-                    private MultivalueField customField;
-                }
+           ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationannotation/MyExample345DTO.java
+            --8<--
             ```
+             
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -410,100 +345,33 @@ _not applicable_
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                Boolean castomFieldFlg = dto.getCustomField().getValues()
-                        .stream()
-                        .anyMatch(val->
-                                val.getValue().equals(CustomFieldEnum.HIGH.getValue()));
-                Boolean castomFieldAdditionalFlg = dto.getCustomFieldAdditional().getValues()
-                        .stream()
-                        .anyMatch(val->
-                                val.getValue().equals(CustomFieldEnum.HIGH.getValue()));
-                if (castomFieldFlg)  {
-                    entity.addField(MyExampleDTO_.customField.getName(),
-                           "Custom message about error");
-                }
-                if (castomFieldAdditionalFlg)  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(),
-                            "Custom message about error");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic/MyExample334Service.java:validateFields
+            --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
+ 
+            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic/MyExample334Service.java:doUpdateEntity
+            --8<--
             ```
+ 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "multipleSelect"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "multipleSelect"
-                    }
-                  ]
-                }
- 
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic/MyExample334List.widget.json
+                --8<--
+                ```
+               
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "multipleSelect"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "multipleSelect"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic/MyExample334Form.widget.json
+                --8<--
                 ```
 ## Sorting
 **_not applicable_**
@@ -524,20 +392,12 @@ _not applicable_
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setDictionaryTypeWithCustomValues(MyExampleDTO_.customField, Arrays.stream(CustomFieldEnum.values())
-                .map(CustomFieldEnum::getValue)
-                .toArray(String[]::new));
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/required/MyExample247Service.java:buildRowDependentMeta
+    --8<--
     ```
+  
     === "List widget"
         **Works for List.**
     === "Info widget"

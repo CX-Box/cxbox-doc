@@ -16,7 +16,7 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDateTimeWithSeconds** to corresponding **DataResponseDTO**.
+    **Step1** Add field **LocalDateTimeWithSeconds** to corresponding **BaseEntity**.
 
     ```java
     --8<--
@@ -24,7 +24,7 @@
     --8<--
     ```
 
-    **Step2** Add field **LocalDateTimeWithSeconds** to corresponding **BaseEntity**.
+    **Step2** Add field **LocalDateTimeWithSeconds** to corresponding **DataResponseDTO**.
    
     ```java
     --8<--
@@ -120,66 +120,23 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
     
         ```java
-        public class DateTimeWithSecondsDTO extends DataResponseDTO {
-        
-                  private LocalDateTime customField;    
-                  private String customFieldColor;
-                
-                  public DateTimeWithSecondsDTO(DateTimeWithSecondsEntity entity) {
-                    this.customField = entity.getCustomField();
-                    this.customFieldColor = "#eda6a6";
-                  }        
-                }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/color/DateTimeWithSecondsColorDTO.java
+        --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimeWithSecondsList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcDateTimeWithSeconds",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "dateTimeWithSeconds",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/color/DateTimeWithSecondsColorList.widget.json
+            --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimeWithSecondsInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myBcDateTimeWithSeconds",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "dateTimeWithSeconds",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/color/DateTimeWithSecondsColorInfo.widget.json
+            --8<--
             ```
         === "Form widget"
             _not applicable_   
@@ -188,55 +145,18 @@
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimeWithSecondsrList",
-              "title": "List title",
-              "type": "List",
-              "bc": "DateTimeWithSecondsr",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "dateTimeWithSeconds",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstList.widget.json
+            --8<--
             ```
 
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "DateTimeWithSecondsrInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "DateTimeWithSecondsr",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "dateTimeWithSeconds",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstInfo.widget.json
+            --8<--
             ```
-
         === "Form widget"
            _not applicable_    
 

@@ -115,69 +115,26 @@
 ??? Example
     === "Calculated color"
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
+
         ```java
-        public class DateDTO extends DataResponseDTO {
-        
-                  private LocalDate customField;    
-                  private String customFieldColor;
-                
-                  public DateDTO(DateEntity entity) {
-                    this.customField = entity.getCustomField();
-                    this.customFieldColor = "#eda6a6";
-                  }        
-                }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/color/DateColorDTO.java
+        --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "DateList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcDate",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "date",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/color/DateColorList.widget.json
+            --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "DateInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myBcDate",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "date",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/color/DateColorInfo.widget.json
+            --8<--
+            ```   
         === "Form widget"
             _not applicable_   
 
@@ -185,54 +142,18 @@
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "DaterList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcDate",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "date",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/colorconst/DateColorConstList.widget.json
+            --8<--
             ```
 
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "DaterInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myBcDate",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "date",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/colorconst/DateColorConstInfo.widget.json
+            --8<--
+            ```   
 
         === "Form widget"
             _not applicable_    

@@ -172,47 +172,18 @@
 ??? Example
     === "Calculated color"
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField")
-            private String customField;
-            private Long customFieldId;
-            private String customFieldColor;
-            public MyExampleDTO(MyEntity entity) {
-                this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
-                        .map(BaseEntity::getId)
-                        .orElse(null);
-                this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
-                        .map(myEntityPick::getCustomField)
-                        .orElse(null);
-                this.customFieldColor = "#eda6a6";
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/color/MyExample134DTO.java
+        --8<--
+        ```    
 
-        ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "inline-pickList",
-                  "popupBcName": "myEntityPickListPopup",
-                  "pickMap": {
-                    "customFieldId": "id",
-                    "customField": "customField"
-                  },
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/color/MyExample134List.widget.json
+            --8<--
             ```
         === "Info widget"
             _not applicable_
@@ -222,26 +193,10 @@
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
-            ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "Custom Field",
-                  "key": "customField",
-                  "type": "inline-pickList",
-                  "popupBcName": "myEntityPickListPopup",
-                  "pickMap": {
-                    "customFieldId": "id",
-                    "customField": "customField"
-                  },
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            } 
+            ```java
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/colorconst/MyExample136List.widget.json
+            --8<--
             ```
 
         === "Info widget"
@@ -281,27 +236,19 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                    ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
-                    : null);
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
-
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-          fields.setEnabled(MyExampleDTO_.customField);
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133Service.java:doUpdateEntity
+        --8<--
         ```
+r
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133Meta.java:buildRowDependentMeta
+        --8<--
+        ```    
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -312,13 +259,11 @@
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/ro/MyExample139Meta.java:buildRowDependentMeta
+        --8<--
+        ```    
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
@@ -348,37 +293,19 @@ Optionally, a separate filtration widget can still be provided.
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-            @SearchParameter(name = "customFieldEntity.customField")
-            private String customField;
-        
-            @SearchParameter(name = "customFieldEntity.id", provider = LongValueProvider.class)
-            private Long customFieldId;
-        
-            public MyExampleDTO(MyEntity entity) {
-                
-                this.customFieldId = Optional.ofNullable(entity.getCustomFieldEntity())
-                        .map(e -> e.getId())
-                        .orElse(null);
-                this.customField = Optional.ofNullable(entity.getCustomFieldEntity())
-                        .map(e -> e.getCustomField())
-                        .orElse(null);
-            }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/filtration/MyExample142DTO.java
+        --8<--
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/filtration/MyExample142Meta.java:buildIndependentMeta
+        --8<--
         ```
+
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -409,42 +336,18 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setDrilldown(
-                    MyExampleDTO_.customField,
-                    DrillDownType.INNER,
-                    "/screen/myexample/view/myexampleform/" + PlatformMyExampleController.myExampleBc + "/" + id
-            );
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/drilldown/MyExample140Meta.java:buildRowDependentMeta
+    --8<--
     ```
 
     === "List widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "inline-pickList"
-              "popupBcName": "myEntityPickListPopup",
-              "pickMap": {
-                "customFieldId": "id",
-                "customField": "customField"
-              },
-              "drillDown": "true"
-            }
-          ]
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/drilldown/MyExample140List.widget.json
+        --8<--
         ```
 
         **Option 2**
@@ -455,41 +358,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
 
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "inline-pickList"
-              "popupBcName": "myEntityPickListPopup",
-              "pickMap": {
-                "customField": "customField",
-                "customFieldId": "id"
-              },
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }        
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/drilldown/MyExample140Info.widget.json
+        --8<--
         ```
-
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
@@ -555,25 +427,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                    if (StringUtils.isNotEmpty(data.getCustomField())
-                            && !data.getCustomField().matches("[A-Za-z]+")
-                    ) {
-                        throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
-                    }
-                    entity.setCustomFieldEntity(data.getCustomFieldId() != null
-                            ? entityManager.getReference(MyEntityPick.class, data.getCustomFieldId())
-                            : null);
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationbusinessex/MyExample150Service.java:doUpdateEntity
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -585,21 +444,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customFieldId)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationruntimeex/MyExample154Service.java:doUpdateEntity
+        --8<--
+        ```        
+  
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -609,20 +459,11 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationconfirm/MyExample152Service.java:getActions
+        --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -637,12 +478,11 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             Requires a simple fields check (javax validation)
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
-                    private String customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationannotation/MyExample281DTO.java
+            --8<--
             ```
+
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -658,109 +498,33 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
-                }
-                if (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationdynamic/MyExample325Service.java:validateFields
+            --8<--
             ```
+
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**..
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationdynamic/MyExample325Service.java:doUpdateEntity
+            --8<--
             ```
+
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "inline-pickList",
-                      "popupBcName": "myEntityPickListPopup",
-                      "pickMap": {
-                        "customFieldId": "id",
-                        "customField": "customField"
-                      }
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "inline-pickList",
-                      "popupBcName": "myEntityPickListPopup",
-                      "pickMap": {
-                        "customFieldId": "id",
-                        "customFieldAdditional": "customFieldAdditional"
-                      }
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationdynamic/MyExample325List.widget.json
+                --8<--
+                ```
+               
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "inline-pickList",
-                      "popupBcName": "myEntityPickListPopup",
-                      "pickMap": {
-                        "customFieldId": "id",
-                        "customField": "customField"
-                      }
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "inline-pickList",
-                      "popupBcName": "myEntityPickListPopup",
-                      "pickMap": {
-                        "customFieldId": "id",
-                        "customFieldAdditional": "customFieldAdditional"
-                      }
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationdynamic/MyExample325Form.widget.json
+                --8<--
                 ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample148/view/myexample148list){:target="_blank"} ·
@@ -801,18 +565,12 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/required/MyExample146Meta.java:buildRowDependentMeta
+    --8<--
     ```
+ 
     === "List widget"
         **Works for List.**
     === "Info widget"

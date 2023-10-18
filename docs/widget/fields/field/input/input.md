@@ -73,8 +73,7 @@
 ??? Example
 
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
-    
-     ```java
+    ```java
     --8<--
     {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/placeholder/InputPlaceholder.java:buildRowDependentMeta
     --8<--
@@ -188,7 +187,8 @@
             ```
  
           **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-           ```java
+
+            ```java
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicMeta.java:buildRowDependentMeta
             --8<--
@@ -246,7 +246,7 @@ For `Input field` filtering is case-insensitive and retrieves records containing
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/filtration/InputFiltrationMeta.java
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/filtration/InputFiltrationMeta.java:buildIndependentMeta   
         --8<--
         ```
 
@@ -466,13 +466,14 @@ Also, it optionally allows you to filter data on target view before it will be o
                 ```
                 
             === "Info widget"
-                 ```json
+                ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Info.widget.json
                 --8<--
                 ```
+
             === "Form widget"
-                 ```json
+                ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Form.widget.json
                 --8<--

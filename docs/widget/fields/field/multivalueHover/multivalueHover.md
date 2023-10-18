@@ -56,7 +56,7 @@
         ```
 
     === "Form widget"
-        **Step 5** Add to **_.widget.json_**.
+        **Step 3** Add to **_.widget.json_**.
  
         `displayedKey` - text field usually containing contcatenated values from linked rows
 

@@ -58,7 +58,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Info.widget.json
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70List.widget.json
             --8<--
             ```
         
@@ -526,13 +526,15 @@ Also, it optionally allows you to filter data on target view before it will be o
 ??? Example
     === "BusinessException"
         `BusinessException` describes an error  within a business process.
-
+        
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationbusinessex/MyExample91Service.java:doUpdateEntity
         --8<--
         ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -563,7 +565,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationconfirm/MyExample92Service.java:getActions
         --8<--
         ```
- 
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
+
     === "Field level validation"
         === "Option 1"
             Add javax.validation to corresponding **DataResponseDTO**.
@@ -604,7 +612,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Service.java:doUpdateEntity
             --8<--
             ```
-            === "List widget"
+           === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
@@ -612,10 +620,12 @@ Also, it optionally allows you to filter data on target view before it will be o
                 --8<--
                 ```
              
-            === "Info widget"
+           === "Info widget"
                  **_not applicable_**
-            === "Form widget"
-                 ```json
+
+           === "Form widget"
+                Add custom action check to **_.widget.json_**.
+                ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Form.widget.json
                 --8<--

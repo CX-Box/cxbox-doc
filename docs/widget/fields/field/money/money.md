@@ -192,17 +192,21 @@
 ??? Example
     === "Editable" 
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Service.java:editable
         --8<--
         ```
+
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Meta.java:editable
         --8<--
         ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -396,7 +400,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm/MyExample68Service.java
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationconfirm/MyExample68Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -456,6 +460,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/validationdynamic/MyExample333Form.widget.json

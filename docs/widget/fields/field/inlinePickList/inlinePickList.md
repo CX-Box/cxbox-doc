@@ -133,9 +133,8 @@
 ### How to add?
 ??? Example
 
-    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
-    
-     ```java
+    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.    
+    ```java
     --8<--
     {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/placeholder/MyExample144Meta.java:buildRowDependentMeta
     --8<--
@@ -241,14 +240,13 @@
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133Service.java:doUpdateEntity
         --8<--
         ```
-r
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/basic/MyExample133Meta.java:buildRowDependentMeta
         --8<--
         ```    
-
+        
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -521,6 +519,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/validationdynamic/MyExample325Form.widget.json

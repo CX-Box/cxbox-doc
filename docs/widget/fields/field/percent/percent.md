@@ -157,18 +157,18 @@
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3Info.widget.json
-        --8<--
-        ```
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3Info.widget.json
+            --8<--
+            ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3Form.widget.json
-        --8<--
-        ```
+            ```json
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3Form.widget.json
+            --8<--
+            ```
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 

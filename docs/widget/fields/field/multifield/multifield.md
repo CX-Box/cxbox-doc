@@ -110,29 +110,29 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
         ```
  
         **Step 3**  Add field for block filter in parameter `key`. 
-
+        
         For example, for filtering on field  "customFieldAdditionalMulti" -  "key" = "customFieldAdditionalMulti"
-		
-            ```json
+        
+        ```json
+        {
+          "title": "Custom multifield",
+          "key": "customFieldAdditionalMulti",
+          "type": "multifield",
+          "style": "list",
+          "fields": [
             {
-              "title": "Custom multifield",
-              "key": "customFieldAdditionalMulti",
-              "type": "multifield",
-              "style": "list",
-              "fields": [
-                {
-                  "title": "Custom Field Multi",
-                  "key": "customFieldMulti",
-                  "type": "input"
-                },
-                {
-                  "title": "New Custom Field Multi",
-                  "key": "customFieldAdditionalMulti",
-                  "type": "input"
-                }
-              ]
+              "title": "Custom Field Multi",
+              "key": "customFieldMulti",
+              "type": "input"
             },
-            ```
+            {
+              "title": "New Custom Field Multi",
+              "key": "customFieldAdditionalMulti",
+              "type": "input"
+            }
+          ]
+        }
+        ```
     === "Info widget"
         _not applicable_
     === "Form widget"

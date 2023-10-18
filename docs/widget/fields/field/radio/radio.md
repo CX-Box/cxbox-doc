@@ -60,13 +60,13 @@
         ``` 
 
     === "Info widget"
+        **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Info.widget.json
         --8<--
         ``` 
     === "Form widget"
-
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
@@ -113,14 +113,17 @@
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color/MyExample21List.widget.json
             --8<--
             ```
+
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color/MyExample21Info.widget.json
             --8<--
             ```
+
         === "Form widget"
             _not applicable_
+
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -130,7 +133,6 @@
             --8<--
             ```   
         === "Info widget"
-
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
@@ -175,7 +177,7 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Service.java
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Service.java:doUpdateEntity
         --8<--
         ```   
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
@@ -437,6 +439,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             === "Info widget"
                 **_not applicable_** 
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationdynamic/MyExample340Form.widget.json
@@ -481,11 +484,13 @@ Lexicographic sorting is used for it.
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+
     ```java
     --8<--
     {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/required/MyExample27Service.java:buildRowDependentMeta
     --8<--
     ```
+
     === "List widget"
         **Works for List.**
     === "Info widget"

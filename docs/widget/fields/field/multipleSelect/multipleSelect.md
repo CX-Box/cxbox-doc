@@ -67,7 +67,7 @@
         --8<--
         ```
     === "Form widget"
-
+        **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic/MyExample251Form.widget.json
@@ -165,8 +165,7 @@ _not applicable_
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/ro/MyExample253Meta.java:buildRowDependentMeta
         --8<--
-        ``    
- 
+        ```     
     
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
@@ -320,11 +319,12 @@ _not applicable_
     === "Field level validation"
         === "Option 1"
             Add javax.validation to corresponding **DataResponseDTO**.
-
+            
             Use if:
-
+            
             Requires a simple fields check (javax validation)
-           ```java
+
+            ```java
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationannotation/MyExample345DTO.java
             --8<--
@@ -336,13 +336,14 @@ _not applicable_
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
         === "Option 2"
             Create сustom service for business logic check.
-
+            
             Use if:
-
+            
             Business logic check required for fields
-
+            
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
@@ -368,6 +369,7 @@ _not applicable_
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic/MyExample334Form.widget.json
@@ -392,12 +394,13 @@ _not applicable_
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+
     ```java
     --8<--
     {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/required/MyExample247Service.java:buildRowDependentMeta
     --8<--
     ```
-  
+
     === "List widget"
         **Works for List.**
     === "Info widget"

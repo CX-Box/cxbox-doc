@@ -228,7 +228,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/ro/NumberCreateEditMeta.java
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/ro/NumberCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```    
     
@@ -472,6 +472,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             === "Info widget"
                 **_not applicable_** 
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/validationdynamic/MyExample2337Form.widget.json

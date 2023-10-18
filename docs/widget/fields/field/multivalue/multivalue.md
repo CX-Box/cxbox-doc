@@ -363,15 +363,17 @@
 ### How to add?
 ??? Example
     === "BusinessException"
-        `BusinessException` describes an error  within a business process.
 
+        `BusinessException` describes an error  within a business process.
+        
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationbusinessex/MyEntity193MultivalueService.java:doUpdateEntity
         --8<--
         ```
- 
+        
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -387,7 +389,7 @@
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationruntimeex/MyEntity197MultivalueService.java:doUpdateEntity
         --8<--
-        ```        
+        ```     
  
         === "List widget"
             **Works for List.**
@@ -396,7 +398,9 @@
         === "Form widget"
             **Works for Form.**
     === "Confirm"
+
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationconfirm/MyEntity195MultivalueService.java:getActions
@@ -459,6 +463,7 @@
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Form.widget.json
@@ -483,6 +488,7 @@
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
+
     ```java
     --8<--
     {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/required/MyExample188Service.java:buildRowDependentMeta

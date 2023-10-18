@@ -145,7 +145,7 @@
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94DTO.java
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/basic/MyExample94Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -346,7 +346,6 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-            ```java
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationdynamic/MyExample324Service.java:doUpdateEntity
             --8<--
@@ -363,6 +362,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fileupload/validationdynamic/MyExample324Form.widget.json

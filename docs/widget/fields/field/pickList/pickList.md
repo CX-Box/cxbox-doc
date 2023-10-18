@@ -422,6 +422,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationbusinessex/MyExample114Meta.java:doUpdateEntity
@@ -438,11 +439,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationruntimeex/MyExample116Meta.java:doUpdateEntity
         --8<--
         ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -451,6 +454,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             **Works for Form.**
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
+
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationconfirm/MyExample115Meta.java:getActions
@@ -509,6 +513,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             === "Info widget"
                  **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationdynamic/MyExample400Form.widget.json

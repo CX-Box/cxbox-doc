@@ -144,6 +144,7 @@
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
+            
             ```json
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstList.widget.json
@@ -152,13 +153,15 @@
 
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
+
             ```json
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstInfo.widget.json
             --8<--
             ```
+
         === "Form widget"
-           _not applicable_    
+            _not applicable_    
 
 
 ## Readonly/Editable
@@ -292,7 +295,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownMeta.java
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownMeta.java:buildRowDependentMeta
     --8<--
     ``` 
 
@@ -391,6 +394,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -473,6 +477,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
+                Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
                 {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/validationdynamic/MyExample322Form.widget.json

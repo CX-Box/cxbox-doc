@@ -192,29 +192,16 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            
-            public class DateService extends VersionAwareResponseService<DateDTO, Date> {
-     
-                @Override
-                protected ActionResultDTO<DateDTO> doUpdateEntity(DateEntity entity, DateDTO data, BusinessComponent bc) {
-                    if (data.isFieldChanged(DateDTO_.customField)) {
-                        entity.setCustomField(data.getCustomField());
-                    }
-                    return new ActionResultDTO<>(entityToDto(bc, entity));
-                }
-          
-            ```
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    
         ```java
-        public class DateMeta extends FieldMetaBuilder<DateDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<DateDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-            fields.setEnabled(DateDTO_.customField);
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasicService.java:doUpdateEntity
+        --8<--
+        ```
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic/DateBasicMeta.java:buildRowDependentMeta
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -226,17 +213,11 @@
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class DateMeta extends FieldMetaBuilder<DateDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<DateDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-        
-          }
-        }
-        ```
-    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/ro/DateCreateEditMeta.java:buildRowDependentMeta
+        --8<--
+        ```    
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
@@ -261,29 +242,17 @@
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-        
         ```java
-        public class DateDTO extends DataResponseDTO {
-        
-          @SearchParameter(name = "customField", provider = DateValueProvider.class)
-          private LocalDate customField;
-
-        ```
-        
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/filtration/DateFiltrationDTO.java
+        --8<--
+        ```        
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-        
         ```java
-        
-            public class DateMeta extends FieldMetaBuilder<DateDTO> {
-            
-              @Override
-                public void buildIndependentMeta(FieldsMeta<DateDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                 fields.enableFilter(DateDTO_.customField);
-              }
-            
-            }
-        ```
-
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/filtration/DateFiltrationMeta.java:buildIndependentMeta
+        --8<--
+        ```        
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -313,73 +282,27 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class DateMeta extends FieldMetaBuilder<DateDTO> {
- 
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<DateDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-              fields.setDrilldown(
-                    DateDTO_.customField,
-                    DrillDownType.INNER,
-                    "/screen/Date/view/Dateform/" + PlatformDateController.myBcDate + "/" + id
-            );
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/drilldown/DateDrillDownMeta.java:buildRowDependentMeta
+    --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-            ```json
-            {
-              "name": "DateList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myBcDate",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "date",
-                  "drillDown": "true"
-                }
-              ]
-            }
-            ```
-
-
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/drilldown/DateDrillDownList.widget.json
+        --8<--
+        ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-
         ```json
-        {
-          "name": "DateInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myBcDate",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "date",
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/drilldown/DateDrillDownInfo.widget.json
+        --8<--
         ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
@@ -445,18 +368,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
     
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-    
         ```java
-            @Override
-            protected ActionResultDTO<DateDTO> doUpdateEntity(DateEntity entity, DateDTO data, BusinessComponent bc) {
-            if (data.isFieldChanged(DateDTO_.customField)) {
-                LocalDate sysdate = LocalDate.now();
-                if (sysdate.compareTo(data.getCustomField().toLocalDate()) > 0) {
-                    throw new BusinessException().addPopup("The field 'customField' cannot be less than the current date");
-                }
-                entity.setCustomField(data.getCustomField());
-            }
-            return new ActionResultDTO<>(entityToDto(bc, entity));          
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationbusinessex/DateValidationBusinessExService.java:doUpdateEntity
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -469,21 +384,11 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-        @Override
-        protected ActionResultDTO<DateDTO> doUpdateEntity(DateEntity entity, DateDTO data, BusinessComponent bc) {
-            if (data.isFieldChanged(DateDTO_.customField)) {
-                try {
-                    //call custom function
-                 }
-                catch(Exception e){
-                    throw new RuntimeException("An unexpected error has occurred.");
-                }
-            }
-             return new ActionResultDTO<>(entityToDto(bc, entity));
-        }
-        ```                   
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationruntimeex/DateValidationRuntimeExEntityService.java:doUpdateEntity
+        --8<--
+        ```         
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -493,15 +398,9 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
-            @Override
-            public Actions<DateValidationDTO> getActions() {
-                return Actions.<DateValidationDTO>builder()
-                        .newAction()
-                        .action("save", "save")
-                        .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                        .add()
-                        .build();
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationconfirm/DateConfirmService.java:getActions
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -516,13 +415,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             Use if:
 
             Requires a simple fields check (javax validation)
-            
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @Future(message = "The field 'customField' cannot be less than the current date")
-                    private LocalDate customField;
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationannotation/MyExample165DTO.java
+            --8<--
             ```
             === "List widget"
                 **Works for List.**
@@ -539,92 +435,32 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                LocalDate sysdate = LocalDate.now();
-                if (sysdate.compareTo(dto.getCustomField()) > 0) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' cannot be less than the current date");
-                }
-                if (sysdate.compareTo(dto.getCustomFieldAdditional()) > 0) {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' cannot be less than the current date");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationdynamic/MyExample320Service.java:validateFields
+            --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationdynamic/MyExample320Service.java:doUpdateEntity
+            --8<--
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "date"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "date"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationdynamic/MyExample320List.widget.json
+                --8<--
+                ```
+
             === "Info widget"
                 **_not applicable_** 
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "date"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "date"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationdynamic/MyExample320Form.widget.json
+                --8<--
                 ```
-
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/sorting){:target="_blank"}
@@ -662,16 +498,10 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-    
-    ```java    
-    public class DateMeta extends FieldMetaBuilder<DateDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<DateDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setEnabled(DateDTO_.customField);
-            fields.setRequired(DateDTO_.customField);
-        }
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/required/DateRequiredMeta.java:buildRowDependentMeta
+    --8<--
     ```
     === "List widget"
         **Works for List.**

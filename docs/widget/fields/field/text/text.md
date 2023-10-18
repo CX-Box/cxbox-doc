@@ -113,82 +113,25 @@
 ??? Example
     === "Calculated color"
 
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.                    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.   
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-                  private String customField;    
-                  private String customFieldColor;
-                
-                  public MyExampleDTO(MyExample entity) {
-                    this.customField = entity.getCustomField();
-                    this.customFieldColor = "#eda6a6";
-                  }        
-                }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/color/MyExample41DTO.java
+        --8<--
         ```
         === "List widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "text",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/color/MyExample41List.widget.json
+            --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "text",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/color/MyExample41fORM.widget.json
+            --8<--
             ```
         === "Form widget"
             _not applicable_    
@@ -197,66 +140,16 @@
         === "List widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "text",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/colorconst/MyExample42List.widget.json
+            --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info Title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "text",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/colorconst/MyExample42Info.widget.json
+            --8<--
             ```
         === "Form widget"
             _not applicable_        
@@ -293,29 +186,16 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-     
-                @Override
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
-                    if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                        entity.setCustomField(data.getCustomField());
-                    }
-                    return new ActionResultDTO<>(entityToDto(bc, entity));
-                }
-          
-            ```
-        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-            fields.setEnabled(MyExampleDTO_.customField);
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyExample40Service.java:doUpdateEntity
+        --8<--
+        ```
+        **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/basic/MyExample40Meta.java:buildRowDependentMeta
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -327,17 +207,11 @@
     === "Readonly"
 
         **Option 1** Enabled by default.
-
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-          @Override
-          public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                            Long id, Long parentId) {
-        
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/ro/MyExample43Meta.java:buildRowDependentMeta
+        --8<--
         ```
-
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
 
         === "List widget"
@@ -365,28 +239,17 @@ For `MyExample field` filtering is case-insensitive and retrieves records contai
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-          @SearchParameter(name = "customField")
-          private String customField;
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/filtration/MyExample45DTO.java
+        --8<--
         ```
-
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
         ```java
- 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-        
-          @Override
-          public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-            fields.enableFilter(MyExampleDTO_.customField);
-          }
-        
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/filtration/MyExample45Meta.java:buildIndependentMeta
+        --8<--
         ```
-
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -410,78 +273,30 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ### How to add?
 ??? Example
-    **Option 1**
-    
+    **Option 1**  
     
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-       
-        fields.setDrilldown(
-          MyExampleDTO_.customField,
-          DrillDownType.INNER,
-          "/screen/myexample/view/myexampleform/" + PlatformMyExampleController.myExampleBc + "/" + id
-        );
-      }            
-    }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/drilldown/MyExample44Meta.java:buildRowDependentMeta
+    --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-            ```json
-            {
-              "name": "MyExampleList",
-              "title": "List Title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "text",
-                  "drillDown": "true"
-                }
-              ]
-            }
-            ```
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/drilldown/MyExample44List.widget.json
+        --8<--
+        ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
     === "Info widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-        
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info Title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "text",
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/drilldown/MyExample44Info.widget.json
+        --8<--
         ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
@@ -545,22 +360,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    if (StringUtils.isNotEmpty(data.getCustomField())
-                            && !String.valueOf(data.getCustomField()).matches("[A-Za-z]+")
-                    ) {
-                        throw new BusinessException().addPopup("The field 'customField' can contain only letters.");
-                    }
-                    entity.setCustomField(data.getCustomField());
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationbusinessex/MyExample49Service.java:doUpdateEntity
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -573,21 +376,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyExample entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationruntimeex/MyExample51Service.java:doUpdateEntity
+        --8<--
+        ```        
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -597,19 +391,9 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationconfirm/MyExample50Service.java:getActions
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -624,15 +408,11 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
 
             Add javax.validation to corresponding **DataResponseDTO**.
-
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @Pattern(regexp="[A-Za-z]+", message = "The field 'customField' can contain only letters.")
-                    private String customField
-                }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationannotation/MyExample295DTO.java
+            --8<--
             ```
-    
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -648,89 +428,30 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (!String.valueOf(dto.getCustomField()).matches("[A-Za-z]+")) {
-                    entity.addField(MyExampleDTO_.customField.getName(), "The field 'customField' can contain only letters.");
-                }
-                if (!String.valueOf(dto.getCustomFieldAdditional()).matches("[A-Za-z]+"))  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customFieldAdditional' can contain only letters.");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationdynamic/MyExample332Service.java:validateFields
+            --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationdynamic/MyExample332Service.java:doUpdateEntity
+            --8<--
+            ``` 
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "text"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "text"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationdynamic/MyExample332List.widget.json
+                --8<--
+                ``` 
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "text"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "text"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/validationdynamic/MyExample332Form.widget.json
+                --8<--
                 ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample48){:target="_blank"} ·
@@ -770,18 +491,11 @@ Also, it optionally allows you to filter data on target view before it will be o
     ![img_req_form.png](img_req_form.png)
 ### How to add?
 ??? Example
-     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
+    Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/text/required/MyExample47Meta.java:buildRowDependentMeta
+    --8<--
     ```
     === "List widget"
         **Works for List.**

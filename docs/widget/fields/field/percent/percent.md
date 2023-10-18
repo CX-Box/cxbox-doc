@@ -117,188 +117,58 @@
 ### How to add?
 ??? Example
     === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-    
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/color/MyExample73DTO.java
+        --8<--
+        ```    
         
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Long customField;
-            private String customFieldColor;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomField();
-                this.customFieldColor = "#eda6a6";
-            }
-        ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "percent",
-                  "bgColorKey": "customFieldColor"
-                }
-              ]
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/color/MyExample73List.widget.json
+            --8<--
+            ```   
+
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "percent",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }       
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/color/MyExample73Info.widget.json
+            --8<--
+            ```  
+
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "percent",
-                  "bgColorKey": "customFieldColor"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/color/MyExample73Form.widget.json
+            --8<--
+            ```  
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
-            {
-              "name": "MyExampleList",
-              "title": "List title",
-              "type": "List",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "title": "custom Field",
-                  "key": "customField",
-                  "type": "percent",
-                  "bgColor": "#eda6a6"
-                }
-              ]
-            }
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3List.widget.json
+            --8<--
             ```
-
         === "Info widget"
-
             Add **"bgColor"** :  `HEX color`  to .widget.json.
-            ```json
-            {
-              "name": "MyExampleInfo",
-              "title": "Info title",
-              "type": "Info",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "percent",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
-
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3Info.widget.json
+        --8<--
+        ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
-            ```json
-            {
-              "name": "MyExampleForm",
-              "title": "Form title",
-              "type": "Form",
-              "bc": "myExampleBc",
-              "fields": [
-                {
-                  "label": "custom Field",
-                  "key": "customField",
-                  "type": "percent",
-                  "bgColor": "#eda6a6"
-                }
-              ],
-              "options": {
-                "layout": {
-                  "rows": [
-                    {
-                      "cols": [
-                        {
-                          "fieldKey": "customField",
-                          "span": 12
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-            ```
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst/MyExample3Form.widget.json
+        --8<--
+        ```
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -332,23 +202,17 @@
 ??? Example
     === "Editable"
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    entity.setCustomField(data.getCustomField());
-                }
-            return new ActionResultDTO<>(entityToDto(bc, entity));
-            ```
-        
-        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-        
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-                fields.setEnabled(MyExampleDTO_.customField);
-            }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/basic/MyExample1Service.java:doUpdateEntity
+        --8<--
+        ```   
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/basic/MyExample1Meta.java:buildRowDependentMeta
+        --8<--
+        ```          
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -359,14 +223,12 @@
     === "Readonly"
     
         **Option 1** Enabled by default.
-    
         ```java
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-            public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long id, Long parentId) {
-            }
-        }
-        ```
-    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/ro/MyExample4Meta.java:buildRowDependentMeta
+        --8<--
+        ```       
+
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
@@ -391,29 +253,18 @@
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-
         ```java
-        public class MyExampleDTO extends DataResponseDTO {
-        
-            @SearchParameter(name = "customField", provider = BigDecimalValueProvider.class)
-            private Long customField;
-        
-            public MyExampleDTO(MyEntity entity) {
-                this.customField = entity.getCustomField();
-            }
-        }
-        ```
-        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/filtration/MyExample6DTO.java
+        --8<--
+        ```   
 
-        ```java 
-        public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO>  {
-        
-            public void buildIndependentMeta(FieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription, Long parentId) {
-                fields.enableFilter(MyExampleDTO_.customField);
-            }
-        
-        }
-        ```
+        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/filtration/MyExample6Meta.java:buildIndependentMeta
+        --8<--
+        ```   
 
     === "Info widget"
         _not applicable_
@@ -444,74 +295,28 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-        @Override
-        public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-                                          Long id, Long parentId) {
-            fields.setDrilldown(
-                    MyExampleDTO_.customField,
-                    DrillDownType.INNER,
-                    "/screen/myexample/view/myexampleform/" + PlatformMyExampleController.myExampleBc + "/" + id
-            );
-    ```
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/drilldown/MyExample5Meta.java:buildRowDependentMeta
+    --8<--
+    ```   
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "percent",
-              "drillDown": "true"
-            }
-          ]
-        }
-        ```
-
-
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/drilldown/MyExample5List.widget.json
+        --8<--
+        ```   
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
-
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "percent",
-              "drillDown": "true"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/drilldown/MyExample5Info.widget.json
+        --8<--
+        ``` 
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
  
@@ -575,20 +380,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
-        public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
- 
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                    if (data.getCustomField() < 10) {
-                        throw new BusinessException().addPopup("The field 'customField' cannot be less than 10.");
-                    }
-                    entity.setCustomField(data.getCustomField());
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }              
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationbusinessex/MyExample10Service.java:doUpdateEntity
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -601,21 +396,11 @@ Also, it optionally allows you to filter data on target view before it will be o
         `RuntimeException` describes technical error  within a business process.
         
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
-        
         ```java
-            @Override
-            protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                if (data.isFieldChanged(MyExampleDTO_.customField)) {
-                   try {
-                       //call custom function
-                   }
-                   catch(Exception e){
-                        throw new RuntimeException("An unexpected error has occurred.");
-                    }
-                }
-                return new ActionResultDTO<>(entityToDto(bc, entity));
-            }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationruntimeex/MyExample12Service.java:doUpdateEntity
+        --8<--
+        ```
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -625,19 +410,9 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
-     
-            public class MyExampleService extends VersionAwareResponseService<MyExampleDTO, MyEntity> {
-
-                @Override
-                public Actions<MyExampleDTO> getActions() {
-                    return Actions.<MyExampleDTO>builder()
-                    .newAction()
-                    .action("save", "save")
-                    .withPreAction(PreAction.confirm("You want to save the value 'customField'?"))
-                    .add()
-                    .build();
-                }
-            }
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationconfirm/MyExample11Service.java:getActions
+        --8<--
         ```
         === "List widget"
             **Works for List.**
@@ -652,14 +427,11 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
 
             Add javax.validation to corresponding **DataResponseDTO**.
-            
             ```java
-         
-                public class MyExampleDTO extends DataResponseDTO {
-                    @Min(value = 5, message = "The field 'customField' cannot be less than 5%.")
-                    private Double customField;
-                }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationannotation/MyExample292DTO.java
+            --8<--
+            ```               
             === "List widget"
                 **Works for List.**
             === "Info widget"
@@ -675,89 +447,30 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `Step 1`  Create сustom method for check.
             ```java
-            private void validate(BusinessComponent bc, MyExampleDTO dto) {
-                BusinessError.Entity entity = new BusinessError.Entity(bc);
-                if (dto.getCustomField() < 5)  {
-                    entity.addField(MyExampleDTO_.customField.getName(),"The field 'customField' cannot be less than 5%");
-                }
-                if  (dto.getCustomField() < 5)  {
-                    entity.addField(MyExampleDTO_.customFieldAdditional.getName(), "The field 'customField' cannot be less than 5%");
-                }
-                if (entity.getFields().size() > 0) {
-                    throw new BusinessException().setEntity(entity);
-                }
-            }
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationdynamic/MyExample328Service.java:validateFields
+            --8<--
+            ```   
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
-                protected ActionResultDTO<MyExampleDTO> doUpdateEntity(MyEntity entity, MyExampleDTO data, BusinessComponent bc) {
-                    validateFields(bc, data);
-            ```
+            --8<--
+            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationdynamic/MyExample328Service.java:doUpdateEntity
+            --8<--
+            ```   
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
-                {
-                  "name": "MyExampleList",
-                  "title": "List title",
-                  "type": "List",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "title": "Custom Field",
-                      "key": "customField",
-                      "type": "percent"
-                    },
-                    {
-                      "title": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "percent"
-                    }
-                  ]
-                }
-                ```               
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationdynamic/MyExample328List.widget.json
+                --8<--
+                ```
             === "Info widget"
                 **_not applicable_** 
             === "Form widget"
                 ```json
-                {
-                  "name": "MyExampleForm",
-                  "title": "Form title",
-                  "type": "Form",
-                  "bc": "myExampleBc",
-                  "fields": [
-                    {
-                      "label": "Custom Field",
-                      "key": "customField",
-                      "type": "percent"
-                    },
-                    {
-                      "label": "Custom Field Additional",
-                      "key": "customFieldAdditional",
-                      "type": "percent"
-                    }
-                  ],
-                    "layout": {
-                      "rows": [
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customFieldAdditional",
-                              "span": 12
-                            }
-                          ]
-                        },
-                        {
-                          "cols": [
-                            {
-                              "fieldKey": "customField",
-                              "span": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                }
+                --8<--
+                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationdynamic/MyExample328Form.widget.json
+                --8<--
                 ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample9){:target="_blank"} ·
@@ -798,18 +511,11 @@ By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is 
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
-
     ```java
-
-    public class MyExampleMeta extends FieldMetaBuilder<MyExampleDTO> {
-    
-      @Override
-      public void buildRowDependentMeta(RowDependentFieldsMeta<MyExampleDTO> fields, InnerBcDescription bcDescription,
-        Long id, Long parentId) {
-        fields.setEnabled(MyExampleDTO_.customField);
-        fields.setRequired(MyExampleDTO_.customField);
-      }
-    ```
+    --8<--
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/required/MyExample8Meta.java:buildRowDependentMeta
+    --8<--
+    ```   
     === "List widget"
         **Works for List.**
     === "Info widget"
@@ -836,85 +542,24 @@ Property denotes number of digits after the decimal point. Additionally, UI will
     === "List widget"
         Add **digits** to **_.widget.json_**.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "percent",
-              "digits": 2
-            }
-          ]
-        } 
-        ```  
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/digits/MyExample310List.widget.json
+        --8<--
+        ```
     === "Info widget"
         Add **digits** to **_.widget.json_**.
         ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "percent",
-              "digits": 2
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/digits/MyExample310Info.widget.json
+        --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
-        {
-          "bc": "myExampleBc",
-          "title": "Form title",
-          "type": "Form"
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "percent",
-              "digits": 2
-            }
-          ],
-          "name": "MyExampleForm",
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```    
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/digits/MyExample310Form.widget.json
+        --8<--
+        ```
 
 ### <a id="nullable">nullable</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample58){:target="_blank"} ·
@@ -934,55 +579,19 @@ By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equ
     === "List widget"
         Add **nullable** to **_.widget.json_**.
         ```json
-        {
-          "name": "MyExampleList",
-          "title": "List title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "Custom Field",
-              "key": "customField",
-              "type": "percent",
-              "nullable": true
-            }
-          ]
-        } 
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/nullable/MyExample58List.widget.json
+        --8<--
+        ```   
     === "Info widget"
         _not applicable_  
 
     === "Form widget"
         Add **nullable** to **_.widget.json_**.
         ```json
-        {
-          "bc": "myExampleBc",
-          "title": "Form title",
-          "type": "Form"
-          "fields": [
-            {
-              "label": "Custom Field",
-              "key": "customField",
-              "type": "percent",
-              "nullable": true
-            }
-          ],
-          "name": "MyExampleForm",
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+        --8<--
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/nullable/MyExample58Form.widget.json
+        --8<--
+        ```  
 
 

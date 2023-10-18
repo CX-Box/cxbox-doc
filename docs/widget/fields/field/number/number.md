@@ -265,7 +265,7 @@
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/filtration/NumberFiltrationMeta.java
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/filtration/NumberFiltrationMeta.java:buildIndependentMeta
         --8<--
         ```
  
@@ -520,7 +520,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/number/required/NumberRequiredMeta.java:buildRowDependentMeta
     --8<--
     ```
-     === "List widget"
+    === "List widget"
         **Works for List.**
     === "Info widget"
         **_not applicable_**

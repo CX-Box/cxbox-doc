@@ -116,6 +116,7 @@
 
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
+            ```json
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color/MyExample21Info.widget.json
             --8<--
@@ -198,7 +199,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/ro/MyExample23Service.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/ro/MyExample23Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -487,7 +488,7 @@ Lexicographic sorting is used for it.
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/required/MyExample27Service.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/required/MyExample27Meta.java:buildRowDependentMeta
     --8<--
     ```
 

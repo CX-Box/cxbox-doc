@@ -397,7 +397,7 @@ _not applicable_
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/required/MyExample247Service.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/required/MyExample247Meta.java:buildRowDependentMeta
     --8<--
     ```
 

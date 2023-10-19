@@ -367,10 +367,9 @@
         `BusinessException` describes an error  within a business process.
         
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationbusinessex/MyEntity193MultivalueService.java:doUpdateEntity
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationbusinessex/MyExample192Service.java:doUpdateEntity
         --8<--
         ```
         
@@ -387,7 +386,7 @@
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationruntimeex/MyEntity197MultivalueService.java:doUpdateEntity
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationruntimeex/MyExample196Service.java:doUpdateEntity
         --8<--
         ```     
  
@@ -403,7 +402,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationconfirm/MyEntity195MultivalueService.java:getActions
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationconfirm/MyExample194Service.java:getActions
         --8<--
         ```
  
@@ -491,7 +490,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/required/MyExample188Service.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/required/MyExample188Meta.java:buildRowDependentMeta
     --8<--
     ```
  

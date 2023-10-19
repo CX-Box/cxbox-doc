@@ -422,10 +422,9 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
 
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationbusinessex/MyExample114Meta.java:doUpdateEntity
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationbusinessex/MyExample114Service.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -442,7 +441,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationruntimeex/MyExample116Meta.java:doUpdateEntity
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationruntimeex/MyExample116Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -457,7 +456,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationconfirm/MyExample115Meta.java:getActions
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationconfirm/MyExample115Service.java:getActions
         --8<--
         ```
         === "List widget"

@@ -195,7 +195,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Service.java:editable
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -203,7 +203,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Meta.java:editable
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic/MyExample56Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -252,7 +252,7 @@
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration/MyExample63Meta.java:filtration
+        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/filtration/MyExample63Meta.java:buildIndependentMeta
         --8<--
         ```
     === "Info widget"

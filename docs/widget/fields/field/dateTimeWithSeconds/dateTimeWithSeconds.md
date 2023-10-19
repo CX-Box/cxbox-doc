@@ -381,13 +381,14 @@ Also, it optionally allows you to filter data on target view before it will be o
 ??? Example
     === "BusinessException"
         `BusinessException` describes an error  within a business process.
-    
+        
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/validationbusinessex/MyExample300Service.java:doUpdateEntity
         --8<--
         ```
+
         === "List widget"
             **Works for List.**
         === "Info widget"

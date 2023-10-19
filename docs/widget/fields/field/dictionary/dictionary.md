@@ -528,7 +528,6 @@ Also, it optionally allows you to filter data on target view before it will be o
         `BusinessException` describes an error  within a business process.
         
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
-
         ```java
         --8<--
         {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationbusinessex/MyExample91Service.java:doUpdateEntity
@@ -592,27 +591,29 @@ Also, it optionally allows you to filter data on target view before it will be o
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
         === "Option 2"
             Create сustom service for business logic check.
-
+            
             Use if:
-
+            
             Business logic check required for fields
-
+            
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Service.java:validateFields
             --8<--
             ```
-
+            
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Service.java:doUpdateEntity
             --8<--
             ```
-           === "List widget"
+
+            === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
@@ -620,10 +621,10 @@ Also, it optionally allows you to filter data on target view before it will be o
                 --8<--
                 ```
              
-           === "Info widget"
+            === "Info widget"
                  **_not applicable_**
-
-           === "Form widget"
+            
+            === "Form widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--

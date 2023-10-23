@@ -1,14 +1,14 @@
 # Form
 !!! warning line end "Work in progress"
-
+<!-- 
 `Form` widget is a component for data viewing and editing. Usually it shows multiple fields. Also, it can show available actions.
 
 !!! danger
 
     This page is a Draft. Wait till page will be completed before using it
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
 ### How does it look?
 
 === "Form widget"
@@ -16,6 +16,12 @@
 
 ### How to add?
 ??? Example
+    **Step1** Create file  **_.widget.json_**.
+    * name - (can be empty string) static
+    * title - (optional) static
+    * type 
+    * bc  
+    * fields - (required). can change data. can additionally return
     **Step1** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
@@ -31,7 +37,6 @@
     {{ external_links.github_raw }}/widgets/form/base/MyExample3000DTO.java
     --8<--
     ```
-  
     **Step3** Add to **_.widget.json_**.
 
     ```json

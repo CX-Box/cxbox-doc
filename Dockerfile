@@ -8,4 +8,4 @@ RUN chmod -R 777 /documentation/cleardocumentation
 RUN pip install --no-cache-dir mkdocs-redirects
 RUN pip install --no-cache-dir mkdocs-markdownextradata-plugin
 ENTRYPOINT ["mkdocs"]
-CMD ["serve", "--dev-addr=0.0.0.0:8000"]
+CMD ["serve", "--dev-addr=0.0.0.0:8030"]

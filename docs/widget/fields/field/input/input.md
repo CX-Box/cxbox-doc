@@ -179,20 +179,21 @@
 ### How to add?
 ??? Example
     === "Editable"
-          **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-            ```java
-            --8<--
-            {{ external_links.github_raw }}/input/basic/InputBasicService.java:doUpdateEntity
-            --8<--
-            ```
- 
-          **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
 
-            ```java
-            --8<--
-            {{ external_links.github_raw }}/input/basic/InputBasicMeta.java:buildRowDependentMeta
-            --8<--
-            ```
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/input/basic/InputBasicService.java:doUpdateEntity
+        --8<--
+        ```
+ 
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/input/basic/InputBasicMeta.java:buildRowDependentMeta
+        --8<--
+        ```
 
         === "List widget"
             **Works for List.**

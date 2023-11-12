@@ -125,6 +125,10 @@ plugins:
 copyright: Copyright &copy; 2023 (Version 1.0)
 repo_url: https://github.com/CX-Box/cxbox-doc
 edit_uri: edit/main/docs/
+
+hooks:
+  - logging/log_manager.py
+
 extra:
   external_links:
     github_ui: !ENV [GITHUB_UI, 'https://github.com/CX-Box/cxbox-code-samples/tree']

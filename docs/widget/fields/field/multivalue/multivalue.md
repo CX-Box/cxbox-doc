@@ -33,7 +33,7 @@
 
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyEntityMultivalue177.java
+            {{ external_links.github_raw }}/multivalue/basic/MyEntityMultivalue177.java
             --8<--
             ```
 
@@ -41,21 +41,21 @@
 
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyEntity177MultivalueDTO.java
+            {{ external_links.github_raw }}/multivalue/basic/MyEntity177MultivalueDTO.java
             --8<--
             ```
 
         +  **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/myEntity177AssocListPopup.widget.json
+            {{ external_links.github_raw }}/multivalue/basic/myEntity177AssocListPopup.widget.json
             --8<--
             ```
         +  **Step2** Add **List** field to corresponding **BaseEntity**.
 
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyEntity176.java
+            {{ external_links.github_raw }}/multivalue/basic/MyEntity176.java
             --8<--
             ```
 
@@ -63,7 +63,7 @@
 
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176DTO.java
+            {{ external_links.github_raw }}/multivalue/basic/MyExample176DTO.java
             --8<--
             ```
 
@@ -71,7 +71,7 @@
     
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/PlatformMyExample176Controller.java:bc
+            {{ external_links.github_raw }}/multivalue/basic/PlatformMyExample176Controller.java:bc
             --8<--
             ```
 
@@ -88,7 +88,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176List.widget.json
+            {{ external_links.github_raw }}/multivalue/basic/MyExample176List.widget.json
             --8<--
             ```
     
@@ -96,7 +96,7 @@
             **Step 6** Add to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Info.widget.json
+            {{ external_links.github_raw }}/multivalue/basic/MyExample176Info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -108,7 +108,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Form.widget.json
+            {{ external_links.github_raw }}/multivalue/basic/MyExample176Form.widget.json
             --8<--
             ```
 
@@ -132,7 +132,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/placeholder/MyExample186Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/multivalue/placeholder/MyExample186Meta.java:buildRowDependentMeta
     --8<--
     ```  
     === "List widget"
@@ -169,7 +169,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/color/MyEntity175MultivalueDTO.java
+        {{ external_links.github_raw }}/multivalue/color/MyEntity175MultivalueDTO.java
         --8<--
         ```    
  
@@ -177,7 +177,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/color/MyExample174List.widget.json
+            {{ external_links.github_raw }}/multivalue/color/MyExample174List.widget.json
             --8<--
             ``` 
  
@@ -191,7 +191,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/colorconst/MyExample178List.widget.json
+            {{ external_links.github_raw }}/multivalue/colorconst/MyExample178List.widget.json
             --8<--
             ``` 
         === "Info widget"
@@ -234,7 +234,7 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/multivalue/basic/MyExample176Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -242,7 +242,7 @@
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/basic/MyExample176Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/multivalue/basic/MyExample176Meta.java:buildRowDependentMeta
         --8<--
         ```    
  
@@ -258,7 +258,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/ro/MyExample180Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/multivalue/ro/MyExample180Meta.java:buildRowDependentMeta
         --8<--
         ```    
  
@@ -291,14 +291,14 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/filtration/MyExample184DTO.java
+        {{ external_links.github_raw }}/multivalue/filtration/MyExample184DTO.java
         --8<--
         ```
       
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/filtration/MyExample184Meta.java:buildIndependentMeta
+        {{ external_links.github_raw }}/multivalue/filtration/MyExample184Meta.java:buildIndependentMeta
         --8<--
         ```
  
@@ -369,7 +369,7 @@
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationbusinessex/MyExample192Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/multivalue/validationbusinessex/MyExample192Service.java:doUpdateEntity
         --8<--
         ```
         
@@ -386,7 +386,7 @@
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationruntimeex/MyExample196Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/multivalue/validationruntimeex/MyExample196Service.java:doUpdateEntity
         --8<--
         ```     
  
@@ -402,7 +402,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationconfirm/MyExample194Service.java:getActions
+        {{ external_links.github_raw }}/multivalue/validationconfirm/MyExample194Service.java:getActions
         --8<--
         ```
  
@@ -421,7 +421,7 @@
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationannotation/MyEntity199MultivalueDTO.java
+            {{ external_links.github_raw }}/multivalue/validationannotation/MyEntity199MultivalueDTO.java
             --8<--
             ```
  
@@ -441,14 +441,14 @@
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Service.java:validateFields
+            {{ external_links.github_raw }}/multivalue/validationdynamic/MyExample335Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Service.java:doUpdateEntity
+            {{ external_links.github_raw }}/multivalue/validationdynamic/MyExample335Service.java:doUpdateEntity
             --8<--
             ```
  
@@ -456,7 +456,7 @@
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335List.widget.json
+                {{ external_links.github_raw }}/multivalue/validationdynamic/MyExample335List.widget.json
                 --8<--
                 ``` 
             === "Info widget"
@@ -465,7 +465,7 @@
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/validationdynamic/MyExample335Form.widget.json
+                {{ external_links.github_raw }}/multivalue/validationdynamic/MyExample335Form.widget.json
                 --8<--
                 ``` 
 ## Sorting
@@ -490,7 +490,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/required/MyExample188Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/multivalue/required/MyExample188Meta.java:buildRowDependentMeta
     --8<--
     ```
  

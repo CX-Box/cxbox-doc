@@ -21,7 +21,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
     **Step1** Add **String** field  to corresponding **BaseEntity**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyEntity156.java
+    {{ external_links.github_raw }}/hint/basic/MyEntity156.java
     --8<--
     ```
 
@@ -29,7 +29,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156DTO.java
+    {{ external_links.github_raw }}/hint/basic/MyExample156DTO.java
     --8<--
     ```
 
@@ -38,7 +38,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156List.widget.json
+        {{ external_links.github_raw }}/hint/basic/MyExample156List.widget.json
         --8<--
         ```
     === "Info widget"
@@ -46,7 +46,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156Info.widget.json
+        {{ external_links.github_raw }}/hint/basic/MyExample156Info.widget.json
         --8<--
         ```
 
@@ -56,7 +56,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/hint/basic/MyExample156Form.widget.json
+        {{ external_links.github_raw }}/hint/basic/MyExample156Form.widget.json
         --8<--
         ```    
 

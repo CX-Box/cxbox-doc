@@ -75,7 +75,7 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/input/placeholder/InputPlaceholder.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/input/placeholder/InputPlaceholderMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

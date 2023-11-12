@@ -18,14 +18,14 @@
     **Step1**  Add **String** field  to corresponding **BaseEntity**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasic.java
+    {{ external_links.github_raw }}/input/basic/InputBasic.java
     --8<--
     ```
 
     **Step2** Add **String** field  to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicDTO.java
+    {{ external_links.github_raw }}/input/basic/InputBasicDTO.java
     --8<--
     ```
 
@@ -34,7 +34,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicList.widget.json
+        {{ external_links.github_raw }}/input/basic/InputBasicList.widget.json
         --8<--
         ```
     === "Info widget"
@@ -42,7 +42,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicInfo.widget.json
+        {{ external_links.github_raw }}/input/basic/InputBasicInfo.widget.json
         --8<--
         ```
 
@@ -52,7 +52,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicForm.widget.json
+        {{ external_links.github_raw }}/input/basic/InputBasicForm.widget.json
         --8<--
         ```    
 
@@ -75,7 +75,7 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/placeholder/InputPlaceholder.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/input/placeholder/InputPlaceholder.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
@@ -111,7 +111,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.   
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/color/InputColorDTO.java
+        {{ external_links.github_raw }}/input/color/InputColorDTO.java
         --8<--
         ```
 
@@ -119,14 +119,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/color/InputColorList.widget.json
+            {{ external_links.github_raw }}/input/color/InputColorList.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/color/InputColorInfo.widget.json
+            {{ external_links.github_raw }}/input/color/InputColorInfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -137,14 +137,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/colorconst/InputColorConstList.widget.json
+            {{ external_links.github_raw }}/input/colorconst/InputColorConstList.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/colorconst/InputColorConstInfo.widget.json
+            {{ external_links.github_raw }}/input/colorconst/InputColorConstInfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -182,7 +182,7 @@
           **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicService.java:doUpdateEntity
+            {{ external_links.github_raw }}/input/basic/InputBasicService.java:doUpdateEntity
             --8<--
             ```
  
@@ -190,7 +190,7 @@
 
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/basic/InputBasicMeta.java:buildRowDependentMeta
+            {{ external_links.github_raw }}/input/basic/InputBasicMeta.java:buildRowDependentMeta
             --8<--
             ```
 
@@ -206,7 +206,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/ro/InputCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/input/ro/InputCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -239,14 +239,14 @@ For `Input field` filtering is case-insensitive and retrieves records containing
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/filtration/InputFiltrationDTO.java
+        {{ external_links.github_raw }}/input/filtration/InputFiltrationDTO.java
         --8<--
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/filtration/InputFiltrationMeta.java:buildIndependentMeta   
+        {{ external_links.github_raw }}/input/filtration/InputFiltrationMeta.java:buildIndependentMeta   
         --8<--
         ```
 
@@ -280,7 +280,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/input/drilldown/InputDrilldownMeta.java:buildRowDependentMeta
     --8<--
     ```
 
@@ -288,7 +288,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownList.widget.json
+        {{ external_links.github_raw }}/input/drilldown/InputDrilldownList.widget.json
         --8<--
         ```
  
@@ -300,7 +300,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownInfo.widget.json
+        {{ external_links.github_raw }}/input/drilldown/InputDrilldownInfo.widget.json
         --8<--
         ```
         **Option 2**
@@ -310,7 +310,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/drilldown/InputDrilldownForm.widget.json
+        {{ external_links.github_raw }}/input/drilldown/InputDrilldownForm.widget.json
         --8<--
         ```
         **Option 2**
@@ -377,7 +377,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationbusinessex/InputValidationBusinessExceptionService.java:doUpdateEntity
+        {{ external_links.github_raw }}/input/validationbusinessex/InputValidationBusinessExceptionService.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -393,7 +393,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationruntimeex/InputValidationRuntimeExceptionService.java:doUpdateEntity
+        {{ external_links.github_raw }}/input/validationruntimeex/InputValidationRuntimeExceptionService.java:doUpdateEntity
         --8<--
         ```
   
@@ -407,7 +407,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationconfirm/InputValidationService.java:getActions
+        {{ external_links.github_raw }}/input/validationconfirm/InputValidationService.java:getActions
         --8<--
         ```
  
@@ -426,7 +426,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationannotation/MyExample163DTO.java
+            {{ external_links.github_raw }}/input/validationannotation/MyExample163DTO.java
             --8<--
             ```
  
@@ -446,14 +446,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Service.java:validateFields
+            {{ external_links.github_raw }}/input/validationdynamic/MyExample326Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Service.java:doUpdateEntity
+            {{ external_links.github_raw }}/input/validationdynamic/MyExample326Service.java:doUpdateEntity
             --8<--
             ```
  
@@ -461,21 +461,21 @@ Also, it optionally allows you to filter data on target view before it will be o
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326List.widget.json
+                {{ external_links.github_raw }}/input/validationdynamic/MyExample326List.widget.json
                 --8<--
                 ```
                 
             === "Info widget"
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Info.widget.json
+                {{ external_links.github_raw }}/input/validationdynamic/MyExample326Info.widget.json
                 --8<--
                 ```
 
             === "Form widget"
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/validationdynamic/MyExample326Form.widget.json
+                {{ external_links.github_raw }}/input/validationdynamic/MyExample326Form.widget.json
                 --8<--
                 ```
 ## Sorting
@@ -519,7 +519,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/required/InputRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/input/required/InputRequiredMeta.java:buildRowDependentMeta
     --8<--
     ```
  
@@ -550,7 +550,7 @@ Specifies the maximum number of characters to enter
         Add **maxInput** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/additionalproperties/MaxInputList.widget.json
+        {{ external_links.github_raw }}/input/additionalproperties/MaxInputList.widget.json
         --8<--
         ```
   
@@ -560,6 +560,6 @@ Specifies the maximum number of characters to enter
         Add **maxInput** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/input/additionalproperties/MaxInputForm.widget.json
+        {{ external_links.github_raw }}/input/additionalproperties/MaxInputForm.widget.json
         --8<--
         ```

@@ -20,7 +20,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyEntity82.java
+    {{ external_links.github_raw }}/checkbox/basic/MyEntity82.java
     --8<--
     ```
 
@@ -28,7 +28,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82DTO.java
+    {{ external_links.github_raw }}/checkbox/basic/MyExample82DTO.java
     --8<--
     ```
 
@@ -37,7 +37,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82List.widget.json
+        {{ external_links.github_raw }}/checkbox/basic/MyExample82List.widget.json
         --8<--
         ```
     === "Info widget"
@@ -45,7 +45,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82Info.widget.json
+        {{ external_links.github_raw }}/checkbox/basic/MyExample82Info.widget.json
         --8<--
         ```
 
@@ -55,7 +55,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82Form.widget.json
+        {{ external_links.github_raw }}/checkbox/basic/MyExample82Form.widget.json
         --8<--
         ```        
 
@@ -101,13 +101,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/checkbox/basic/MyExample82Service.java:doUpdateEntity
         --8<--
         ```            
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/basic/MyExample82Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/checkbox/basic/MyExample82Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -122,7 +122,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/ro/MyExample79Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/checkbox/ro/MyExample79Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -148,19 +148,28 @@
 === "Form widget"
     _not applicable_
 
+TEST6
+TEST6
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/checkbox/basic/MyEntity82.java
+    --8<-
+    ```
+
+
 ### How to add?
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/filtration/MyExample53DTO.java
+        {{ external_links.github_raw }}/checkbox/filtration/MyExample53DTO.java
         --8<--
         ```
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/filtration/MyExample53Meta.java:buildIndependentMeta
+        {{ external_links.github_raw }}/checkbox/filtration/MyExample53Meta.java:buildIndependentMeta
         --8<--
         ```
     === "Info widget"
@@ -231,7 +240,7 @@
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationbusinessex/MyExample77Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/checkbox/validationbusinessex/MyExample77Service.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -247,7 +256,7 @@
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationruntimeex/MyExample80Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/checkbox/validationruntimeex/MyExample80Service.java:doUpdateEntity
         --8<--
         ```        
         === "List widget"
@@ -260,7 +269,7 @@
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationconfirm/MyExample78Service.java:getActions
+        {{ external_links.github_raw }}/checkbox/validationconfirm/MyExample78Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -276,7 +285,7 @@
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationannotation/MyExample168DTO.java
+            {{ external_links.github_raw }}/checkbox/validationannotation/MyExample168DTO.java
             --8<--
             ```
             === "List widget"
@@ -295,20 +304,20 @@
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationdynamic/MyExample289Service.java:validateFields
+            {{ external_links.github_raw }}/checkbox/validationdynamic/MyExample289Service.java:validateFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationdynamic/MyExample289Service.java:doUpdateEntity
+            {{ external_links.github_raw }}/checkbox/validationdynamic/MyExample289Service.java:doUpdateEntity
             --8<--
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationdynamic/MyExample289List.widget.json
+                {{ external_links.github_raw }}/checkbox/validationdynamic/MyExample289List.widget.json
                 --8<--
                 ``` 
             === "Info widget"
@@ -317,7 +326,7 @@
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/validationdynamic/MyExample289Form.widget.json
+                {{ external_links.github_raw }}/checkbox/validationdynamic/MyExample289Form.widget.json
                 --8<--
                 ```
 ## Sorting
@@ -360,7 +369,7 @@
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/checkbox/required/MyExample75Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/checkbox/required/MyExample75Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

@@ -23,7 +23,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyEntity224.java
+    {{ external_links.github_raw }}/multivaluehover/basic/MyEntity224.java
     --8<--
     ```
 
@@ -31,7 +31,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224DTO.java
+    {{ external_links.github_raw }}/multivaluehover/basic/MyExample224DTO.java
     --8<--
     ```
 
@@ -42,7 +42,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224List.widget.json
+        {{ external_links.github_raw }}/multivaluehover/basic/MyExample224List.widget.json
         --8<--
         ```
 
@@ -51,7 +51,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224Info.widget.json
+        {{ external_links.github_raw }}/multivaluehover/basic/MyExample224Info.widget.json
         --8<--
         ```
 
@@ -62,7 +62,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/basic/MyExample224Form.widget.json
+        {{ external_links.github_raw }}/multivaluehover/basic/MyExample224Form.widget.json
         --8<--
         ```
 
@@ -95,7 +95,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225DTO.java
+        {{ external_links.github_raw }}/multivaluehover/color/MyExample225DTO.java
         --8<--
         ```   
  
@@ -103,7 +103,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225List.widget.json
+            {{ external_links.github_raw }}/multivaluehover/color/MyExample225List.widget.json
             --8<--
             ```
  
@@ -112,14 +112,14 @@
  
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225Info.widget.json
+            {{ external_links.github_raw }}/multivaluehover/color/MyExample225Info.widget.json
             --8<--
             ```
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/color/MyExample225Form.widget.json
+            {{ external_links.github_raw }}/multivaluehover/color/MyExample225Form.widget.json
             --8<--
             ```
     === "Constant color"
@@ -127,7 +127,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst/MyExample227List.widget.json
+            {{ external_links.github_raw }}/multivaluehover/colorconst/MyExample227List.widget.json
             --8<--
             ```
 
@@ -135,14 +135,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst/MyExample227Info.widget.json
+            {{ external_links.github_raw }}/multivaluehover/colorconst/MyExample227Info.widget.json
             --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/colorconst/MyExample227Form.widget.json
+            {{ external_links.github_raw }}/multivaluehover/colorconst/MyExample227Form.widget.json
             --8<--
             ```
 ## Readonly/Editable
@@ -168,14 +168,14 @@ All fields are readonly.
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/filtration/MyEntity234DTO.java
+        {{ external_links.github_raw }}/multivaluehover/filtration/MyEntity234DTO.java
         --8<--
         ```
  
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivaluehover/filtration/MyExample233Meta.java:buildIndependentMeta
+        {{ external_links.github_raw }}/multivaluehover/filtration/MyExample233Meta.java:buildIndependentMeta
         --8<--
         ```
  

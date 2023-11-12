@@ -25,14 +25,14 @@
         - **Step1** Create Enum. Best practice: storing enum name in the Database and using a separate field for displayed UI values
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/enums/CustomFieldEnum.java
+            {{ external_links.github_raw }}/dictionary/basic/enums/CustomFieldEnum.java
             --8<--
             ```
         - **Step2** Add  **Enum** field to corresponding **BaseEntity**.
     
         ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyEntity70.java
+            {{ external_links.github_raw }}/dictionary/basic/MyEntity70.java
             --8<--
         ```
    
@@ -40,7 +40,7 @@
     
         ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70DTO.java
+            {{ external_links.github_raw }}/dictionary/basic/MyExample70DTO.java
             --8<--
         ```
 
@@ -48,7 +48,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/dictionary/basic/MyExample70Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -58,7 +58,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70List.widget.json
+            {{ external_links.github_raw }}/dictionary/basic/MyExample70List.widget.json
             --8<--
             ```
         
@@ -67,7 +67,7 @@
         
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Info.widget.json
+            {{ external_links.github_raw }}/dictionary/basic/MyExample70Info.widget.json
             --8<--
             ```
     
@@ -77,7 +77,7 @@
         
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Form.widget.json
+            {{ external_links.github_raw }}/dictionary/basic/MyExample70Form.widget.json
             --8<--
             ```  
 
@@ -103,7 +103,7 @@
     
                 ```java
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/AdministeredDictionary.java
+                {{ external_links.github_raw }}/dictionary/dictionarylov/AdministeredDictionary.java
                 --8<--
                 ```
             +  **Step 1.4**  Add in project AdministeredDictionaryType
@@ -168,7 +168,7 @@
     
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyEntity350.java
+        {{ external_links.github_raw }}/dictionary/dictionarylov/MyEntity350.java
         --8<--
         ```
     
@@ -176,7 +176,7 @@
     
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350DTO.java
+        {{ external_links.github_raw }}/dictionary/dictionarylov/MyExample350DTO.java
         --8<--
         ```
 
@@ -184,7 +184,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/dictionary/dictionarylov/MyExample350Meta.java:buildRowDependentMeta
         --8<--
         ```
     
@@ -193,7 +193,7 @@
 
             ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Info.widget.json
+                {{ external_links.github_raw }}/dictionary/dictionarylov/MyExample350Info.widget.json
                 --8<--
             ```
         
@@ -202,7 +202,7 @@
         
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Info.widget.json
+            {{ external_links.github_raw }}/dictionary/dictionarylov/MyExample350Info.widget.json
             --8<--
             ```
     
@@ -212,7 +212,7 @@
         
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/dictionarylov/MyExample350Form.widget.json
+            {{ external_links.github_raw }}/dictionary/dictionarylov/MyExample350Form.widget.json
             --8<--
             ```  
 
@@ -234,7 +234,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/placeholder/MyExample88Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/dictionary/placeholder/MyExample88Meta.java:buildRowDependentMeta
     --8<--
     ```  
     === "List widget"
@@ -272,7 +272,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/color/MyExample71DTO.java
+        {{ external_links.github_raw }}/dictionary/color/MyExample71DTO.java
         --8<--
         ```    
  
@@ -280,14 +280,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/color/MyExample71List.widget.json
+            {{ external_links.github_raw }}/dictionary/color/MyExample71List.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/color/MyExample71Info.widget.json
+            {{ external_links.github_raw }}/dictionary/color/MyExample71Info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -297,7 +297,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/colorconst/MyExample84List.widget.json
+            {{ external_links.github_raw }}/dictionary/colorconst/MyExample84List.widget.json
             --8<--
             ```
         === "Info widget"
@@ -305,7 +305,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/colorconst/MyExample84Info.widget.json
+            {{ external_links.github_raw }}/dictionary/colorconst/MyExample84Info.widget.json
             --8<--
             ```
 
@@ -347,14 +347,14 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/dictionary/basic/MyExample70Service.java:doUpdateEntity
         --8<--
         ```
 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/basic/MyExample70Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/dictionary/basic/MyExample70Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -370,7 +370,7 @@
     
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/ro/MyExample85Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/dictionary/ro/MyExample85Meta.java:buildRowDependentMeta
         --8<--
         ```
     
@@ -400,14 +400,14 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/filtration/MyExample87DTO.java
+        {{ external_links.github_raw }}/dictionary/filtration/MyExample87DTO.java
         --8<--
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/filtration/MyExample87Meta.java:buildIndependentMeta
+        {{ external_links.github_raw }}/dictionary/filtration/MyExample87Meta.java:buildIndependentMeta
         --8<--
         ```
 
@@ -441,14 +441,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/drilldown/MyExample86Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/dictionary/drilldown/MyExample86Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/drilldown/MyExample86List.widget.json
+        {{ external_links.github_raw }}/dictionary/drilldown/MyExample86List.widget.json
         --8<--
         ```
     
@@ -460,7 +460,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/drilldown/MyExample86Info.widget.json
+        {{ external_links.github_raw }}/dictionary/drilldown/MyExample86Info.widget.json
         --8<--
         ```
         **Option 2**
@@ -530,7 +530,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationbusinessex/MyExample91Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/dictionary/validationbusinessex/MyExample91Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -547,7 +547,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationruntimeex/MyExample93Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/dictionary/validationruntimeex/MyExample93Service.java:doUpdateEntity
         --8<--
         ```       
      
@@ -561,7 +561,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationconfirm/MyExample92Service.java:getActions
+        {{ external_links.github_raw }}/dictionary/validationconfirm/MyExample92Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -581,7 +581,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Add javax.validation to corresponding **DataResponseDTO**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationannotation/MyExample293DTO.java
+            {{ external_links.github_raw }}/dictionary/validationannotation/MyExample293DTO.java
             --8<--
             ```
     
@@ -602,14 +602,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Service.java:validateFields
+            {{ external_links.github_raw }}/dictionary/validationdynamic/MyExample323Service.java:validateFields
             --8<--
             ```
             
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Service.java:doUpdateEntity
+            {{ external_links.github_raw }}/dictionary/validationdynamic/MyExample323Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -617,7 +617,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323List.widget.json
+                {{ external_links.github_raw }}/dictionary/validationdynamic/MyExample323List.widget.json
                 --8<--
                 ```
              
@@ -628,7 +628,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/validationdynamic/MyExample323Form.widget.json
+                {{ external_links.github_raw }}/dictionary/validationdynamic/MyExample323Form.widget.json
                 --8<--
                 ```
 ## Sorting
@@ -672,7 +672,7 @@ Sort by key value.
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/dictionary/required/MyExample89Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/dictionary/required/MyExample89Meta.java:buildRowDependentMeta
     --8<--
     ```
 

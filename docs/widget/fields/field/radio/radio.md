@@ -23,7 +23,7 @@
     **Step1** Create Enum. Recommend that use additional variable for visual display.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/enums/CustomFieldEnum.java
+    {{ external_links.github_raw }}/radio/basic/enums/CustomFieldEnum.java
     --8<--
     ```
  
@@ -31,7 +31,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyEntity20.java
+    {{ external_links.github_raw }}/radio/basic/MyEntity20.java
     --8<--
     ``` 
 
@@ -39,7 +39,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20DTO.java
+    {{ external_links.github_raw }}/radio/basic/MyExample20DTO.java
     --8<--
     ``` 
 
@@ -47,7 +47,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/radio/basic/MyExample20Meta.java:buildRowDependentMeta
     --8<--
     ``` 
 
@@ -55,7 +55,7 @@
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20List.widget.json
+        {{ external_links.github_raw }}/radio/basic/MyExample20List.widget.json
         --8<--
         ``` 
 
@@ -63,14 +63,14 @@
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Info.widget.json
+        {{ external_links.github_raw }}/radio/basic/MyExample20Info.widget.json
         --8<--
         ``` 
     === "Form widget"
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Form.widget.json
+        {{ external_links.github_raw }}/radio/basic/MyExample20Form.widget.json
         --8<--
         ``` 
 
@@ -103,14 +103,14 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color/MyExample21DTO.java
+        {{ external_links.github_raw }}/radio/color/MyExample21DTO.java
         --8<--
         ```    
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color/MyExample21List.widget.json
+            {{ external_links.github_raw }}/radio/color/MyExample21List.widget.json
             --8<--
             ```
 
@@ -118,7 +118,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/color/MyExample21Info.widget.json
+            {{ external_links.github_raw }}/radio/color/MyExample21Info.widget.json
             --8<--
             ```
 
@@ -130,14 +130,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/colorconst/MyExample22List.widget.json
+            {{ external_links.github_raw }}/radio/colorconst/MyExample22List.widget.json
             --8<--
             ```   
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/colorconst/MyExample22Info.widget.json
+            {{ external_links.github_raw }}/radio/colorconst/MyExample22Info.widget.json
             --8<--
             ```   
 
@@ -178,13 +178,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/radio/basic/MyExample20Service.java:doUpdateEntity
         --8<--
         ```   
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/basic/MyExample20Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/radio/basic/MyExample20Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -199,7 +199,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/ro/MyExample23Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/radio/ro/MyExample23Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -229,13 +229,13 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/filtration/MyExample25DTO.java
+        {{ external_links.github_raw }}/radio/filtration/MyExample25DTO.java
         --8<--
         ```
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/filtration/MyExample25Meta.java:buildIndependentMeta
+        {{ external_links.github_raw }}/radio/filtration/MyExample25Meta.java:buildIndependentMeta
         --8<--
         ```
     === "Info widget"
@@ -268,14 +268,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/drilldown/MyExample24Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/radio/drilldown/MyExample24Meta.java:buildRowDependentMeta
     --8<--
     ``` 
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/drilldown/MyExample24List.widget.json
+        {{ external_links.github_raw }}/radio/drilldown/MyExample24List.widget.json
         --8<--
         ``` 
 
@@ -287,7 +287,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/drilldown/MyExample24Info.widget.json
+        {{ external_links.github_raw }}/radio/drilldown/MyExample24Info.widget.json
         --8<--
         ``` 
         **Option 2**
@@ -355,7 +355,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationbusinessex/MyExample29Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/radio/validationbusinessex/MyExample29Service.java:doUpdateEntity
         --8<--
         ``` 
         === "List widget"
@@ -371,7 +371,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationruntimeex/MyExample31Service.java:doUpdateEntity
+        {{ external_links.github_raw }}/radio/validationruntimeex/MyExample31Service.java:doUpdateEntity
         --8<--
         ```         
         === "List widget"
@@ -384,7 +384,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationconfirm/MyExample30Service.java:getActions
+        {{ external_links.github_raw }}/radio/validationconfirm/MyExample30Service.java:getActions
         --8<--
         ``` 
         === "List widget"
@@ -402,7 +402,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Add javax.validation to corresponding **DataResponseDTO**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationannotation/MyExample294DTO.java
+            {{ external_links.github_raw }}/radio/validationannotation/MyExample294DTO.java
             --8<--
             ``` 
             === "List widget"
@@ -421,20 +421,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationdynamic/MyExample340Service.java:validateFields
+            {{ external_links.github_raw }}/radio/validationdynamic/MyExample340Service.java:validateFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationdynamic/MyExample340Service.java:doUpdateEntity
+            {{ external_links.github_raw }}/radio/validationdynamic/MyExample340Service.java:doUpdateEntity
             --8<--
             ```
             === "List widget"
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationdynamic/MyExample340List.widget.json
+                {{ external_links.github_raw }}/radio/validationdynamic/MyExample340List.widget.json
                 --8<--
                 ```  
             === "Info widget"
@@ -443,7 +443,7 @@ Also, it optionally allows you to filter data on target view before it will be o
                 Add custom action check to **_.widget.json_**.
                 ```json
                 --8<--
-                {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/validationdynamic/MyExample340Form.widget.json
+                {{ external_links.github_raw }}/radio/validationdynamic/MyExample340Form.widget.json
                 --8<--
                 ``` 
 ## Sorting
@@ -488,7 +488,7 @@ Lexicographic sorting is used for it.
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/radio/required/MyExample27Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/radio/required/MyExample27Meta.java:buildRowDependentMeta
     --8<--
     ```
 

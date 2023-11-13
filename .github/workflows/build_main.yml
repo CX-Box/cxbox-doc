@@ -24,5 +24,5 @@ jobs:
       - run: pip install --no-cache-dir mkdocs-redirects
       - run: pip install --no-cache-dir mkdocs-markdownextradata-plugin
       - run: ls
-      - run: ls -al documentation\checkbox\filtration
+      - run: ls -al documentation/checkbox/filtration
       - run: mkdocs gh-deploy --force

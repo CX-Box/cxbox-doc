@@ -15,7 +15,8 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install --force-reinstall -v "mkdocs-material==9.2.5"
-      - run: apt-get update && apt-get install -y tini
+      - run: apt-get update
+      - run: apt-get install sudo
       - run: curl "http://code-samples.cxbox.org/api/v1/githubcode/" >/docs/githubcode.zip
       - run: unzip /docs/githubcode.zip -d /docs/
       - run: chmod -R 777 /docs/documentation

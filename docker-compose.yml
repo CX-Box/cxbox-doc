@@ -7,7 +7,7 @@ services:
       no_cache: true
     environment:
       - GITHUB_UI=https://github.com/CX-Box/cxbox-code-samples/tree
-      - GITHUB_RAW=documentation
+      - GITHUB_RAW=/documentation
       - GITHUB_BRANCH=main
       - CODE_SAMPLES=http://code-samples.cxbox.org
     ports:

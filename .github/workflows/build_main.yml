@@ -8,7 +8,7 @@ permissions:
   contents: write
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest AS sudo
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -17,7 +17,8 @@ jobs:
       - run: pip install --force-reinstall -v "mkdocs-material==9.2.5"
       - run: sudo apt-get update
       - run: sudo apt-get install
-      - run: sudo curl "http://code-samples.cxbox.org/api/v1/githubcode/" >/docs/githubcode.zip
+      - run: chmod -R 777 /docs
+      - run: curl "http://code-samples.cxbox.org/api/v1/githubcode/" >/docs/githubcode.zip
       - run: unzip /docs/githubcode.zip -d /docs/
       - run: chmod -R 777 /docs/documentation
       - run: pip install --no-cache-dir mkdocs-redirects

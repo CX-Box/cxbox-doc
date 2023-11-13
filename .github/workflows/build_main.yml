@@ -17,12 +17,9 @@ jobs:
       - run: pip install --force-reinstall -v "mkdocs-material==9.2.5"
       - run: sudo apt-get update
       - run: sudo apt-get install
-      - run: ls
       - run: curl "http://code-samples.cxbox.org/api/v1/githubcode/" >githubcode.zip
       - run: unzip githubcode.zip
-      - run: chmod -R 777  documentation
+      - run: chmod -R 777 documentation
       - run: pip install --no-cache-dir mkdocs-redirects
       - run: pip install --no-cache-dir mkdocs-markdownextradata-plugin
-      - run: ls
-      - run: ls -al documentation/checkbox/filtration
       - run: mkdocs gh-deploy --force

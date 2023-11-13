@@ -23,5 +23,6 @@ jobs:
       - run: chmod -R 777  documentation
       - run: pip install --no-cache-dir mkdocs-redirects
       - run: pip install --no-cache-dir mkdocs-markdownextradata-plugin
+      - run: ls
       - run: ls -al docs
       - run: mkdocs gh-deploy --force

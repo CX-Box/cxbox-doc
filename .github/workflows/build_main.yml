@@ -17,7 +17,7 @@ jobs:
       - run: pip install --force-reinstall -v "mkdocs-material==9.2.5"
       - run: sudo apt-get update
       - run: sudo apt-get install
-      - run: curl "http://code-samples.cxbox.org/api/v1/githubcode/" >/docs/githubcode.zip
+      - run: sudo curl "http://code-samples.cxbox.org/api/v1/githubcode/" >/docs/githubcode.zip
       - run: unzip /docs/githubcode.zip -d /docs/
       - run: chmod -R 777 /docs/documentation
       - run: pip install --no-cache-dir mkdocs-redirects

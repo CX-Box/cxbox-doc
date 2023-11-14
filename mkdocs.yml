@@ -28,7 +28,7 @@ nav:
       - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Widget types:
-      - Widget Form: widget/type/Form/form.md
+      - Widget Form: widget/type/form/form.md
   - Features:
       - DrillDown: features/element/drillDown/drillDown.md
       - Filtration: features/element/filtration/filtration.md

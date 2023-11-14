@@ -1,145 +1,63 @@
 # Form
 !!! warning line end "Work in progress"
-<!-- 
+
 `Form` widget is a component for data viewing and editing. Usually it shows multiple fields. Also, it can show available actions.
 
 !!! danger
 
     This page is a Draft. Wait till page will be completed before using it
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/money/basic){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
 ### How does it look?
 
 === "Form widget"
-    ![form.png](img_form.png)
-
+    ![formwidget.png](formwidget.png)
 
 ### How to add?
 ??? Example
-    **Step1** Add **String** field  to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field  to corresponding **BaseEntity**.
 
     ```java
-    public class MyExampleDTO extends DataResponseDTO {
-    
-        @SearchParameter(name = "customField")
-        private String customField;
-    
-        public MyExampleDTO(MyEntity entity) {
-        this.customField = entity.getCustomField();
-        }
-    }
+    --8<--
+    {{ external_links.github_raw }}/widgets/form/base/MyEntity3000.java
+    --8<--
     ```
-    **Step2** Add **String** field  to corresponding **BaseEntity**.
+
+    **Step2** Add **String** field  to corresponding **DataResponseDTO**.
 
     ```java
-    public class MyEntity extends BaseEntity {
-    
-        private String customField;
-    }
+    --8<--
+    {{ external_links.github_raw }}/widgets/form/base/MyExample3000DTO.java
+    --8<--
     ```
-    === "List widget"
-        **Step3** Add to **_.widget.json_**.
+  
+    **Step3** Add to **_.widget.json_**.
 
-        ```json
-        {
-          "name": "MyExampleInfo",
-          "title": "Info Title",
-          "type": "Info",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField",
-              "type": "text"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
+    ```json
+    --8<--
+    {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
+    --8<--
+    ```
 
-
-    === "Info widget"
-        **Step3** Add to **_.widget.json_**.
-
-        ```json
-        {
-          "name": "MyExampleList",
-          "title": "List Title",
-          "type": "List",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "title": "custom Field",
-              "key": "customField",
-              "type": "text"
-            }
-          ]
-        }
-        ```
-
-    === "Form widget"
-        **Step3** Add to **_.widget.json_**.
-
-        ```json
-        {
-          "name": "MyExampleForm",
-          "title": "Form Title",
-          "type": "Form",
-          "bc": "myExampleBc",
-          "fields": [
-            {
-              "label": "custom Field",
-              "key": "customField", 
-              "type": "text"
-            }
-          ],
-          "options": {
-            "layout": {
-              "rows": [
-                {
-                  "cols": [
-                    {
-                      "fieldKey": "customField",
-                      "span": 12
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-        ```
 ## Main visual parts
 Title, fields block in grid, actions block
+<!-- 
 ### How does it look?
 === "Main visual parts"
 * original picture
 * picture with red squares on main elements
-
+--->
 ## Title
 * `constant title`: shows constant text. can be empty
 * `calculated title`: shows value provided in hidden text field, e.g. it can be calculated based on business logic of application
 ### How does it look?
 === "constant title empty"
-    ![form_label.png](img_plchldr_form.png)
+    ![formwidget.png](formwidget.png)
 === "constant title filled"
-    ![form_label.png](img_plchldr_form.png)
+    ![formwidget.png](formwidget.png)
 === "calculated title"
-    ![form_label.png](img_plchldr_form.png)
+    ![formwidget.png](formwidget.png)   
 ### How to add?
 ??? Example
 
@@ -286,4 +204,3 @@ any custom business logic
 ##### How to add?
 ??? Example
 
- -->

@@ -7,6 +7,7 @@ nav:
   - Guide for analysts: guide/analystguide/analystguide.md
   - Guide for developers: guide/developerguide/developerguide.md
   - Field types:
+      - Fields: widget/fields/fieldtypes.md
       - Field input: widget/fields/field/input/input.md
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md

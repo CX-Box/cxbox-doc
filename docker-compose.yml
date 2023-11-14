@@ -13,7 +13,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./:/documentation
+      - ./:/docs
     expose:
       -  8000
 

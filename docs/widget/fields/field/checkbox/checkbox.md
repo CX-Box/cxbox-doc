@@ -13,7 +13,19 @@
     ![img_checkBox_info.PNG](img_checkBox_info.png)
 === "Formwidget"
     ![img_checkBox_form.PNG](img_checkBox_form.png)
-
+ 
+TEST3
+    ```java
+    --8<--
+    /codesamples/documentation/checkbox/basic/MyEntity82.java
+    --8<--
+    ```
+TEST43
+    ```java
+    --8<--
+    /codesamples/documentation/checkbox/basic/MyEntity82.java
+    --8<--
+    ```
 ### How to add?
 ??? Example
     **Step1** Add field **Boolean** to corresponding **BaseEntity**.

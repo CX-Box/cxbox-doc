@@ -101,7 +101,13 @@ There are types of:
 
 !!! tip
     It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
- 
+
+!!! info
+    The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
+    
+    For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
+
+
 #### How does it look?
 === "Single column layout - recommended"
     ![singlecolumlayout.png](singlecolumlayout.png) 
@@ -158,6 +164,7 @@ There are types of:
 
         === "Only button 'Save'"
             On default 
+
             ```java
             --8<--
             {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json

@@ -117,7 +117,7 @@ There are types of:
 
         **Step2** Add fields to **"options": {"layout": {}}**
 
-        Forming a row:
+        Forming rows:
 
         * Open `cols` : "cols": [
         * Add All fields(customField,customField2,customField3) with span from 1 to 24.
@@ -132,9 +132,9 @@ There are types of:
     === "Multi column layout"
         **Step1** Create **"options": {"layout": {}}**.
 
-        **Step2** Add fields to **"options": {"layout": {}}**.\
+        **Step2** Add fields to **"options": {"layout": {}}**.
 
-        Forming a row1 : 
+        Forming row1 : 
 
         * Open `cols` : "cols": [ 
         * Add All filed(customField,customField2,customField3)

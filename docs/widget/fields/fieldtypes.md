@@ -1,4 +1,14 @@
-In cxbox add standard types:
+Block   "fields": [ ]:
+
+{
+  "label": "Custom Field",
+  "key": "customField",
+  "type": "input"
+}
+
+label - title field (optional)
+key - name field in DTO (required)
+type -  in cxbox add standard types:
 
 * input
 * date

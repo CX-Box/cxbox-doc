@@ -13,7 +13,7 @@
     
     **Step1** Create file **_.widget.json_**.
 
-    * name - (can be empty string) static
+    * name -  static (unique within the project)
     * [title](#Title) - (optional) 
     * type = "Form" (required)
     * bc - (required)
@@ -25,17 +25,20 @@
     {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
     --8<--
     ```
-    **Step2** Add name widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
     {{ external_links.github_raw }}/widgets/form/base/myexample3000form.view.json
     --8<--
     ```
-<!-- //описать про  появлении кнопки save--->
+
+<!-- //Добавить
+"position": 2,
+"gridWidth": 12--->
 
 ## Main visual parts
-[Title](#Title), fields block in grid, actions block
+[Title](#Title), [fields block](#Fieldslayout) in grid, [actions block](#Showcondition)
 <!-- 
 ### How does it look?
 === "Main visual parts"
@@ -50,7 +53,8 @@ Title - (optional)
 
 There are types of:
 
-* `constant title`: shows constant text. can be empty
+* `constant title`: shows constant text.
+* `constant title empty`: if you want to visually connect widgets by  them to be placed one under another
 * `calculated title`: shows value provided in hidden text field, e.g. it can be calculated based on business logic of application
 
 #### How does it look?
@@ -78,7 +82,8 @@ There are types of:
         --8<--
         ```
     === "Calculated title"
-        **Step1** Add filed to corresponding **DataResponseDTO**.
+        **Step1** Add filed to corresponding **DataResponseDTO**. 
+        <!--родитель??-->
         ```java
         --8<--
         {{ external_links.github_raw }}/widgets/form/title/MyExample3003DTO.java
@@ -143,8 +148,8 @@ There are types of:
         Forming row1 : 
 
         * Open `cols` : "cols": [ 
-        * Add All filed(customField,customField2,customField3)
-        * Check sum span <= 24 (customField span = 12,customField2 = 6, customField3 = 6 : sum 24)
+        * Add all feild : customField,customField2,customField3
+        * Check sum span <= 24: customField (span = 12),customField2 = 6, customField3 = 6 : sum 24)
         * Close `cols` : ]
 
         Forming a row2 : 
@@ -161,9 +166,7 @@ There are types of:
         ```
     === "Empty only buttons"
          **Step1** Create **"options": {"layout": {}}**.
-
-        === "Only button 'Save'"
-            On default 
+            Button "Create" - On default
 
             ```java
             --8<--
@@ -171,126 +174,57 @@ There are types of:
             --8<--
             ```
 
-        === "Without button 'Save'" 
-            see [Action groups](#Actionsgroups)
-
-        === "Other button" 
-            see [Custom actions](#CustomActions)
-        
-### Show condition
+###  <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+
 !!! tip
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
-<!--
+
+
 #### How does it look?
 === "no show condition"
-    ![img_edit_form.png](img_edit_form.png)
+    ![formwidget.png](formwidget.png)
 === "show condition by current entity"
-    TODO>>add gif
+    ![show_cond_current.gif](show_cond_current.gif)
 === "show condition by parent entity"
-    TODO>>add gif
+    ![show_cond.gif](show_cond.gif)
 
 #### How to add?
 ??? Example
     === "no show condition"
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
+        --8<--
+        ```
     === "show condition by current entity"
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/myexample3005showcondform.view.json
+        --8<--
+        ```
     === "show condition by parent entity"
--->
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
+        --8<--
+        ```
 
 ### Actions
 `Actions` show available actions as separate buttons
+see [Actions](/features/element/actions/actions)
 
-<!--
-### How does it look?
-=== "actions"
-##### How to add?
-??? Example
-
-### Standard actions
-#### create
-##### How does it look?
-=== "Form widget"
-##### How to add?
-??? Example
-
-#### cancel-create
-##### How does it look?
-=== "Form widget"
-##### How to add?
-??? Example
-
-#### save
-##### How does it look?
-=== "Form widget"
-##### How to add?
-??? Example
-
-#### delete
-##### How does it look?
-=== "Form widget"
-##### How to add?
-??? Example
-
-#### copy
-##### How does it look?
-=== "Form widget"
-##### How to add?
-??? Example
--->
-
-####  <a id="CustomActions">Custom actions</a>
-Any custom business logic
-
-<!--
-##### features
-* text - (can be empty string) static 
-* icon - (optional) static
-* availability condition (optional)
-* preAction - (optional) CONFIRMATION,INFORMATION,ERROR,CUSTOM
-* invoker - (required). can change data. can additionally return
-* postAction - (optional) REFRESH_BC, DOWNLOAD_FILE, DOWNLOAD_FILE_BY_URL, OPEN_PICK_LIST, DRILL_DOWN, DELAYED_REFRESH_BC, SHOW_MESSAGE, POST_DELETE
-* fields validation results
-* business and other exceptions
-* scope - (required) bc, record
-* AutoSaveBefore (optional)
  
-### How does it look?
-=== "text"
-    === "empty"
-    === "filled"
-=== "icon"
-    === "only icon"
-    === "icon and text"
-=== "availability"
-    === "false"
-    === "true"
-=== "preAction"
-    === "CONFIRMATION"
-    === "INFORMATION"
-    === "ERROR"
-=== "postAction"
-    === "DRILL_DOWN"
-    === "DOWNLOAD_FILE"
-    === "SHOW_MESSAGE"
-    === "REFRESH_BC"
-    === "...Deprecated"
-        === "DOWNLOAD_FILE_BY_URL"
-        === "OPEN_PICK_LIST"
-        === "DELAYED_REFRESH_BC"
-        === "POST_DELETE"
-=== "scope bc"
-    === "bc"
-    === "record"
--->
-#### <a id="Actionsgroups">Actions groups</a>
-`Actions groups` group subset of available actions into a single button with drop down
-
-<!--
-##### How does it look?
-=== "Form widget"
-##### How to add?
-??? Example
-
--->

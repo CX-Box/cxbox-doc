@@ -1,32 +1,48 @@
-Block   "fields": [ ]:
+# Fields
+!!! warning line end "Work in progress"
 
-{
-  "label": "Custom Field",
-  "key": "customField",
-  "type": "input"
-}
+## How properties?
+In cxbox add standard types
+ 
+|          Type          | Placeholder | Color | RO/Edit | Filter | Drilldown | Validation | Sort | Required |   
+|:----------------------:|-------------|-------|---------|--------|-----------|------------|------|----------|
+|        `input`         | +           | +     | +       | +      | +         | +          | +    | +        |                     
+|         `date`         | +           | +     | +       | +      | +         | +          | +    | +        |                   
+|       `dateTime`       | +           | +     | +       | +      | +         | +          | +    | +        |                 
+| `dateTimeWithSeconds`  | +           | +     | +       | +      | +         | +          | +    | +        |                          
+|        `number`        | +           | +     | +       | +      | +         | +          | +    | +        |            
+|       `percent`        | +           | +     | +       | +      | +         | +          | +    | +        |             
+|        `hidden`        | -           | -     | -       | -      | -         | -          | -    | -        |             
+|         `text`         | +           | +     | +       | +      | +         | +          | +    | +        |             
+|        `radio`         | -           | +     | +       | +      | +         | +          | +    | +        |             
+|       `checkbox`       | -           | +     | +       | +      | -         | +          | +    | +        |            
+|        `money`         | +           | +     | +       | +      | +         | +          | +    | +        |              
+|      `dictionary`      | +           | +     | +       | +      | +         | +          | +    | +        |            
+|      `fileUpload`      | +           | -     | +       | +      | -         | +          | +    | +        |            
+|       `pickList`       | +           | +     | +       | +      | +         | +          | +    | +        |           
+|    `inlinePickList`    | +           | +     | +       | +      | +         | +          | +    | +        |             
+|         `hint`         | -           | -     | -       | -      | -         | -          | -    | -        |                 
+|      `multifield`      | -           | -     | -       | +      | -         | -          | -    | -        |           
+|   `multivalueHover`    | -           | +     | -       | +      | -         | -          | -    | -        |                
+|      `multivalue`      | +           | +     | +       | +      | +         | +          | -    | +        |                
+|    `multipleSelect`    | +           | -     | +       | +      | -         | +          | +    | +        |
 
-label - title field (optional)
-key - name field in DTO (required)
-type -  in cxbox add standard types:
+## How to add block fields?
+??? Example
 
-* input
-* date
-* dateTime
-* dateTimeWithSeconds
-* number
-* percent
-* hidden
-* text
-* radio
-* checkbox
-* money
-* dictionary
-* fileUpload
-* pickList
-* inlinePickList
-* hint
-* multifield
-* multivalueHover
-* multivalue
-* multipleSelect
+    **Step1** Add Block   "fields": [ ]: in json
+    
+    label - title field (optional)
+    key - name field in DTO (required)
+    type -  see standard types (required)
+
+    ```json
+    "fields": [  
+        {
+            "label": "Custom Field",
+            "key": "customField",
+            "type": "input"
+        }
+    ]
+    ```
+ 

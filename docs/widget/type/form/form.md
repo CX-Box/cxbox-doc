@@ -213,7 +213,7 @@ There are types of:
     === "show condition by current entity"
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/myexample3005showcondform.view.json
+        {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
         --8<--
         ```
     === "show condition by parent entity"

@@ -31,6 +31,7 @@ nav:
   - Widget types:
       - Widget Form: widget/type/form/form.md
   - Features:
+      - Actions: features/element/actions/actions.md
       - DrillDown: features/element/drillDown/drillDown.md
       - Filtration: features/element/filtration/filtration.md
       - FileStorage: features/element/fileStorage/fileStorage.md
@@ -41,6 +42,7 @@ nav:
       - SearchParameter: advancedCustomization/element/searchparameter/searchparameter.md
 
 markdown_extensions:
+  - tables
   - attr_list
   - md_in_html
   - pymdownx.emoji:
@@ -121,7 +123,7 @@ plugins:
         'advancedCustomization_drillDown.md': 'advancedCustomization/element/drillDown/drillDown.md'
         'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
         'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
-        'form.md': 'widget/type/Form/form.md'
+        'form.md': 'widget/type/form/form.md'
 
 copyright: Copyright &copy; 2023 (Version 1.0)
 repo_url: https://github.com/CX-Box/cxbox-doc

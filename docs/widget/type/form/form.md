@@ -1,5 +1,4 @@
 # Form
-!!! warning line end "Work in progress"
  
 `Form` widget is a component for data viewing and editing. Usually it shows multiple fields. Also, it can show available actions.
 ## Basics

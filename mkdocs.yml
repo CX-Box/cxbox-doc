@@ -140,7 +140,7 @@ plugins:
         'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
         'form.md': 'widget/type/form/form.md'
 
-copyright: Copyright &copy; 2023 (Version 1.0)
+copyright: Copyright &copy; 2023 (Version 1.1)
 repo_url: https://github.com/CX-Box/cxbox-doc
 edit_uri: edit/main/docs/
 

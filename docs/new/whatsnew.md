@@ -24,10 +24,6 @@ see [cxbox-doc changelog](https://github.com/CX-Box/cxbox-doc/releases/tag/v1.0.
 ![dev_tool.png](v1.0.1/dev_tool.png){width="800"}
 
 We have made improvements to the debug panel by making more convenient. This redesign allows users to view all the essential information of a widget in a single line. If users require more detailed information, they can simply click on an arrow to expand and access the additional details. This enhancement provides a more streamlined and user-friendly experience when interacting with the debug panel.
-We've introduced a new documentation section that details the core functionality for all field types.
-Each section of the documentation contains a detailed description of the main operations, placeholders,
-sorting methods, coloring options, filtering, detailing, checking, compulsory filling, filtering by a specific field type.
-Additionally, we've included links to live examples for hands-on demonstrations and access to code samples for reference.
 
 #### Oracle support
 Added the ability to deploy an application to an oracle database using settings.

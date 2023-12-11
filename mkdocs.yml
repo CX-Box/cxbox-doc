@@ -4,8 +4,12 @@ site_name: CXBox Documentation
 nav:
   - Home: index.md
   - What’s new: new/whatsnew.md
-  - Guide for analysts: guide/analystguide/analystguide.md
-  - Guide for developers: guide/developerguide/developerguide.md
+  - Versions :
+      - v1.0.1: new/version101.md
+      - v1.0.0: new/version100.md
+  - Guides:
+    - Guide for analysts: guide/analystguide/analystguide.md
+    - Guide for developers: guide/developerguide/developerguide.md
   - Field types:
       - Fields: widget/fields/fieldtypes.md
       - Field input: widget/fields/field/input/input.md
@@ -35,6 +39,17 @@ nav:
       - DrillDown: features/element/drillDown/drillDown.md
       - Filtration: features/element/filtration/filtration.md
       - FileStorage: features/element/fileStorage/fileStorage.md
+      - Database:
+        - Oracle: features/element/database/oracle/oraclebd.md
+        - Postgres: features/element/database/postgres/postgresbd.md
+      - Monitoring tools:
+        - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
+      - Notifications:
+        - Sent to email: features/element/notifications/email/email.md
+        - Push: features/element/notifications/push/websocket.md
+      - Authorization:
+        - Basic Authorization: features/element/authorization/basic/basicauthorization.md
+        - Keycloak Authorization: features/element/authorization/keycloak/keycloakauthorization.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drillDown/drillDown.md
       - Validation: advancedCustomization/element/validation/validation.md

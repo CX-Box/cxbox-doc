@@ -10,6 +10,7 @@ services:
       - GITHUB_RAW=documentation/documentation
       - GITHUB_BRANCH=main
       - CODE_SAMPLES=http://code-samples.cxbox.org
+      - DEMO=http://demo.cxbox.org
     ports:
       - "8000:8000"
     volumes:

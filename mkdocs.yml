@@ -153,7 +153,7 @@ extra:
     github_raw: !ENV [GITHUB_RAW, 'documentation']
     github_branch: !ENV [GITHUB_BRANCH, 'main']
     code_samples: !ENV [CODE_SAMPLES, 'http://code-samples.cxbox.org']
-    demo: : !ENV [DEMO, 'http://demo.cxbox.org']
+    demo: !ENV [DEMO, 'http://demo.cxbox.org']
   analytics:
     provider: google
     property: G-SEVVVTLFB8

@@ -53,6 +53,6 @@ We added push notifications
 see more [WebSocket and Long Pooling](/features/element/notifications/push/websocket)
 
 #### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v1.0.1)
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.1.0.1)
 
 see [cxbox-code-samples changelog](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v1.0.1)

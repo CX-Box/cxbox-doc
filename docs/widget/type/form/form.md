@@ -50,6 +50,8 @@
 
 Title - (optional)
 
+![formwidgetinf.png](formwidgetinf.png)    
+
 There are types of:
 
 * `constant title`: shows constant text.
@@ -133,7 +135,7 @@ There are types of:
         * Add All fields(customField,customField2,customField3) with span from 1 to 24.
         * Close `cols` : ]
 
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
         --8<--
@@ -158,20 +160,21 @@ There are types of:
         * Check sum span <= 24 (customField4 span = 12 : sum 12)
         * Close 'cols' : ]
  
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
     === "Empty only buttons"
-         **Step1** Create **"options": {"layout": {}}**.
-            Button "Create" - On default
+        **Step1** Create **"options": {"layout": {}}**.
 
-            ```java
-            --8<--
-            {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
-            --8<--
-            ```
+        Button "Create" - On default
+
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
+        --8<--
+        ```
 
 ###  <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible

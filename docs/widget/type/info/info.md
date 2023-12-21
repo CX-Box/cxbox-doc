@@ -20,14 +20,14 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/form/base/MyExample3001Info.widget.json
+    {{ external_links.github_raw }}/widgets/info/base/MyExample3001Info.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/form/base/myexample3001info.view.json
+    {{ external_links.github_raw }}/widgets/info/base/myexample3001info.view.json
     --8<--
     ```
 
@@ -58,31 +58,26 @@ There are types of:
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3102Info.widget.json
+        {{ external_links.github_raw }}/widgets/info/title/MyExample3102Info.widget.json
         --8<--
         ```
     
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3102EmptyTitle.widget.json
+        {{ external_links.github_raw }}/widgets/info/title/MyExample3102EmptyTitle.widget.json
         --8<--
         ```
     === "Calculated title"
-        **Step1** Add filed to corresponding **DataResponseDTO**. 
         <!--родитель??-->
         ```java
+        **Step1** Add ${customField} for **title** to **_.widget.json_**.
+        ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3102DTO.java
-        --8<--
-        ```
-        **Step2** Add ${customTitleField} for **title** to **_.widget.json_**.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3102CustomTitle.widget.json
+        {{ external_links.github_raw }}/widgets/info/title/MyExample3102CustomTitle.widget.json
         --8<--
         ```   
 
@@ -124,9 +119,9 @@ There are types of:
         * Add All fields(customField,customField2,customField3) with span from 1 to 24.
         * Close `cols` : ]
 
-        ```java
+        ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
+        {{ external_links.github_raw }}/widgets/info/fieldslayoute/MyExample3008Info.widget.json
         --8<--
         ```
 
@@ -149,20 +144,21 @@ There are types of:
         * Check sum span <= 24 (customField4 span = 12 : sum 12)
         * Close 'cols' : ]
  
-        ```java
+        ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw }}/widgets//info/fieldslayoute/MyExample3008MultiColumn.widget.json
         --8<--
         ```
     === "Empty only buttons"
-         **Step1** Create **"options": {"layout": {}}**.
-            Button "Create" - On default
+        **Step1** Create **"options": {"layout": {}}**.
 
-            ```java
-            --8<--
-            {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
-            --8<--
-            ```
+        Button "Create" - On default
+        
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/info/fieldslayoute/MyExample3008EmptyOnlyButtons.widget.json
+        --8<--
+        ```
 
 ###  <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible
@@ -186,7 +182,7 @@ There are types of:
 
 #### How does it look?
 === "no show condition"
-    ![formwidget.png](formwidget.png)
+    ![info.png](info.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 === "show condition by parent entity"
@@ -197,19 +193,19 @@ There are types of:
     === "no show condition"
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
+        {{ external_links.github_raw }}/widgets/info/base/myexample3001info.view.json
         --8<--
         ```
     === "show condition by current entity"
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
+        {{ external_links.github_raw }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
         --8<--
         ```
     === "show condition by parent entity"
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
+        {{ external_links.github_raw }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
 

@@ -7,7 +7,7 @@
 ### How does it look?
 ![formwidget.png](formwidget.png)
 
-### How to add?
+###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
     
     **Step1** Create file **_.widget.json_**.
@@ -83,14 +83,8 @@ There are types of:
         --8<--
         ```
     === "Calculated title"
-        **Step1** Add filed to corresponding **DataResponseDTO**. 
         <!--родитель??-->
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003DTO.java
-        --8<--
-        ```
-        **Step2** Add ${customTitleField} for **title** to **_.widget.json_**.
+        **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```java
         --8<--
         {{ external_links.github_raw }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
@@ -207,18 +201,16 @@ There are types of:
 #### How to add?
 ??? Example
     === "no show condition"
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
-        --8<--
-        ```
+        see [Basics](#Howtoaddbacis)
     === "show condition by current entity"
+        **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
         --8<--
         ```
     === "show condition by parent entity"
+        **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json

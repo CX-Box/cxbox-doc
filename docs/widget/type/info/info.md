@@ -7,7 +7,7 @@
 ### How does it look?
 ![info.png](info.png)
 
-### How to add?
+###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
     **Step1** Create file **_.widget.json_**.
 
@@ -73,7 +73,6 @@ There are types of:
         ```
     === "Calculated title"
         <!--родитель??-->
-        ```java
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
@@ -191,18 +190,16 @@ There are types of:
 #### How to add?
 ??? Example
     === "no show condition"
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/info/base/myexample3001info.view.json
-        --8<--
-        ```
+        see [Basics](#Howtoaddbacis)
     === "show condition by current entity"
+        **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
         --8<--
         ```
     === "show condition by parent entity"
+        **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json

@@ -34,6 +34,7 @@ nav:
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Widget types:
       - Widget Form: widget/type/form/form.md
+      - Widget Info: widget/type/info/info.md
   - Features:
       - Actions: features/element/actions/actions.md
       - DrillDown: features/element/drillDown/drillDown.md
@@ -139,6 +140,7 @@ plugins:
         'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
         'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
         'form.md': 'widget/type/form/form.md'
+        'info.md': 'widget/type/info/info.md'
 
 copyright: Copyright &copy; 2023 (Version 1.1)
 repo_url: https://github.com/CX-Box/cxbox-doc

@@ -38,12 +38,7 @@
 
 ## Main visual parts
 [Title](#Title), [fields block](#Fieldslayout) in grid, [actions block](#Showcondition)
-<!-- 
-### How does it look?
-=== "Main visual parts"
-* original picture
-* picture with red squares on main elements
---->
+
 ### <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
@@ -200,6 +195,13 @@ There are types of:
 
 #### How to add?
 ??? Example
+
+    * key -  static  
+    * sequence -  
+    * bcName - (required)
+    * params { fieldKey } - (required) name field with show condition
+    * params { value } - (required)  show condition
+
     === "no show condition"
         see [Basics](#Howtoaddbacis)
     === "show condition by current entity"

@@ -49,7 +49,7 @@ There are types of:
 
 #### How does it look?
 === "Constant title"
-    ![.png](consttitle.png)
+    ![consttitle.png](consttitle.png)
 === "Constant title empty"
     ![empytitle.png](empytitle.png)
 === "Calculated title"
@@ -189,6 +189,12 @@ There are types of:
 
 #### How to add?
 ??? Example
+    * key -  static  
+    * sequence -  
+    * bcName - (required)
+    * params { fieldKey } - (required) name field with show condition
+    * params { value } - (required)  show condition
+
     === "no show condition"
         see [Basics](#Howtoaddbacis)
     === "show condition by current entity"

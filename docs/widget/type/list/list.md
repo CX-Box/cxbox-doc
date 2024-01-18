@@ -45,15 +45,13 @@ There are types of:
 
 * `constant title`: shows constant text.
 * `constant title empty`: if you want to visually connect widgets by  them to be placed one under another
-* `calculated title`: shows value provided in hidden text field, e.g. it can be calculated based on business logic of application
-
+ 
 #### How does it look?
 === "Constant title"
     ![consttitle.png](consttitle.png)
 === "Constant title empty"
     ![empytitle.png](empytitle.png)
-=== "Calculated title"
-    ![calctitle.png](calctitle.png)
+ 
 #### How to add?
 ??? Example
     === "Constant title"
@@ -71,14 +69,7 @@ There are types of:
         {{ external_links.github_raw }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
         --8<--
         ```
-    === "Calculated title"
-        <!--родитель??-->
-        **Step1** Add ${customField} for **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/list/title/MyExample3104CustomTitle.widget.json
-        --8<--
-
+ 
 <!-- 
 ###  <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible

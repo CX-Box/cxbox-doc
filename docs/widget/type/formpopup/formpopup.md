@@ -1,52 +1,46 @@
 # FormPopup
-<<<<<<< HEAD
-!!! warning line end "Work in progress"
-<!--
+ 
 `FormPopup` widget is a component for confirmation text.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3400){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/base){:target="_blank"}
 ### How does it look?
-![formpopup.png](formpopup.png)
-=======
- 
-`FormPopup` widget is a component for data viewing and editing. Usually it shows multiple fields. Also, it can show available actions.
-## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
-### How does it look?
 ![formwidget.png](formwidget.png)
->>>>>>> CXBOX-217
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
     
-    **Step1** Create file **_.widget.json_**.
-
-    * name -  static (unique within the project)
-    * [title](#Title) - (optional) 
-    * type = "Form" (required)
-    * bc - (required)
-    * fields- (required) see  [field types](/widget/fields/fieldtypes/)  
-    * [options](#Fieldslayout)  
-
-    ```json
+    **Step1**  Add type **"FormPopup"** to **BaseFieldExtractor**.
+    ```java
     --8<--
-    {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
+    {{ external_links.github_raw }}/FieldExtractor.java
     --8<--
     ```
-    **Step2** Add widget to corresponding ****_.view.json_** **.
-
-    ```json
+    **Step2**  Add file **"ActionsExt"**.
+    ```java
     --8<--
-    {{ external_links.github_raw }}/widgets/form/base/myexample3000form.view.json
+    {{ external_links.github_raw }}/action/ActionsExt.java
     --8<--
     ```
-
-<!-- //Добавить
-"position": 2,
-"gridWidth": 12--->
+    **Step3** Add a button **"save-send"** that raises the widget Popup
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400FormButton.widget.json
+    --8<--
+    ```
+    **Step4** Add widget with type **FormPopup**
+    ```json
+    --8<--
+    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400Formpopup.widget.json
+    --8<--
+    ```
+    **Step5** Add **withPreAction** with action **confirmWithCommentwith**
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400Service.java
+    --8<--
+    ```
 
 ## Main visual parts
 [Title](#Title), [fields block](#Fieldslayout) in grid, [actions block](#Showcondition)
@@ -90,22 +84,14 @@ There are types of:
         --8<--
         ```
     === "Calculated title"
-<<<<<<< HEAD
- 
-=======
         <!--родитель??-->
->>>>>>> CXBOX-217
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```java
         --8<--
         {{ external_links.github_raw }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
         ```   
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> CXBOX-217
 ###  <a id="Fieldslayout">Fields layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
@@ -243,8 +229,5 @@ There are types of:
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
 
-<<<<<<< HEAD
--->
-=======
  
->>>>>>> CXBOX-217
+ 

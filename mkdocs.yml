@@ -36,6 +36,7 @@ nav:
       - Widget Form: widget/type/form/form.md
       - Widget Info: widget/type/info/info.md
       - Widget List: widget/type/list/list.md
+      - Widget Form Popup: widget/type/formpopup/formpopup.md
   - Features:
       - Actions: features/element/actions/actions.md
       - DrillDown: features/element/drillDown/drillDown.md
@@ -143,13 +144,14 @@ plugins:
         'form.md': 'widget/type/form/form.md'
         'info.md': 'widget/type/info/info.md'
         'list.md': 'widget/type/list/list.md'
+        'formpopup.md': 'widget/type/formpopup/formpopup.md'
 
 copyright: Copyright &copy; 2023 (Version 1.1)
 repo_url: https://github.com/CX-Box/cxbox-doc
 edit_uri: edit/main/docs/
 
-hooks:
-  - logging/log_manager.py
+#hooks:
+#  - logging/log_manager.py
 
 extra:
   external_links:

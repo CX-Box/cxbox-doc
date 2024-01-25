@@ -1,13 +1,12 @@
 # FormPopup
-!!! warning line end "Work in progress"
-<!--
+ 
 `FormPopup` widget is a component for confirmation text.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3400){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/base){:target="_blank"}
 ### How does it look?
-![formpopup.png](formpopup.png)
+![formwidget.png](formwidget.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
@@ -85,14 +84,14 @@ There are types of:
         --8<--
         ```
     === "Calculated title"
- 
+        <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```java
         --8<--
         {{ external_links.github_raw }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
         ```   
- 
+
 ###  <a id="Fieldslayout">Fields layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
@@ -230,4 +229,5 @@ There are types of:
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
 
--->
+ 
+ 

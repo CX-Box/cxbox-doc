@@ -1,6 +1,5 @@
 # FormPopup
-!!! warning line end "Work in progress"
-<!--
+
 `FormPopup` widget is a component for confirmation text.
 
 ## Basics
@@ -14,15 +13,37 @@
     
     **Step1**  Add type **"FormPopup"** to **BaseFieldExtractor**.
     ```java
-    --8<--
-    {{ external_links.github_raw }}/FieldExtractor.java
-    --8<--
+	@Override
+	public List<String> getSupportedTypes() {
+		return Lists.newArrayList(
+				"Funnel",
+				"RingProgress",
+				"DashboardList",
+				"FormPopup"
+		);
+	}
     ```
     **Step2**  Add file **"ActionsExt"**.
     ```java
-    --8<--
-    {{ external_links.github_raw }}/action/ActionsExt.java
-    --8<--
+    @UtilityClass
+    public class ActionsExt {
+
+        public static PreAction confirmWithCustomWidget(@Nullable String message, @Nullable String widget, @Nullable String yesButton, @Nullable String noButton) {
+            Map<String, String> customParameters = new HashMap<>();
+            customParameters.put("subtype", "confirmWithCustomWidget");
+            if (widget != null) {
+                customParameters.put("widget", widget);
+            }
+            if (yesButton != null) {
+                customParameters.put("yesText", yesButton);
+            }
+            if (noButton != null) {
+                customParameters.put("noText", noButton);
+            }
+            return PreAction.custom(message, customParameters);
+        }
+    
+    }
     ```
     **Step3** Add a button **"save-send"** that raises the widget Popup
     ```java
@@ -36,13 +57,19 @@
     {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400Formpopup.widget.json
     --8<--
     ```
-    **Step5** Add **withPreAction** with action **confirmWithCommentwith**
+    **Step5** Add widget **FormPopup** on view
+    ```json
+    --8<--
+    {{ external_links.github_raw }}/widgets/formpopup/base/myexample3400formpopup.view.json
+    --8<--
+    ```
+    **Step6** Add **withPreAction** with action **confirmWithCommentwith**
     ```java
     --8<--
     {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400Service.java
     --8<--
     ```
-
+<!-- 
 ## Main visual parts
 [Title](#Title), [fields block](#Fieldslayout) in grid, [actions block](#Showcondition)
 
@@ -52,19 +79,16 @@
 
 Title - (optional)
 
-![formwidgetinf.png](formwidgetinf.png)    
+![widgetinf.png](widgetinf.png)    
 
 There are types of:
 
 * `constant title`: shows constant text.
-* `constant title empty`: if you want to visually connect widgets by  them to be placed one under another
 * `calculated title`: shows value provided in hidden text field, e.g. it can be calculated based on business logic of application
 
 #### How does it look?
 === "Constant title"
     ![consttitle.png](consttitle.png)
-=== "Constant title empty"
-    ![empytitle.png](empytitle.png)
 === "Calculated title"
     ![calctitle.png](calctitle.png)
 #### How to add?
@@ -76,14 +100,7 @@ There are types of:
         {{ external_links.github_raw }}/widgets/form/title/MyExample3003Form.widget.json
         --8<--
         ```
-    
-    === "Constant title empty"
-        **Step1** Delete parameter **title** to **_.widget.json_**.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
-        --8<--
-        ```
+
     === "Calculated title"
  
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
@@ -172,62 +189,7 @@ There are types of:
         --8<--
         ```
 
-###  <a id="Showcondition">Show condition</a> 
-* `no show condition - recommended`: widget always visible
-
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
-
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
-
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
-
-* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
-
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
-
-!!! tip
-    It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
-
-
-#### How does it look?
-=== "no show condition"
-    ![formwidget.png](formwidget.png)
-=== "show condition by current entity"
-    ![show_cond_current.gif](show_cond_current.gif)
-=== "show condition by parent entity"
-    ![show_cond.gif](show_cond.gif)
-
-#### How to add?
-??? Example
-
-    * key -  static  
-    * sequence -  
-    * bcName - (required)
-    * params { fieldKey } - (required) name field with show condition
-    * params { value } - (required)  show condition
-
-    === "no show condition"
-        see [Basics](#Howtoaddbacis)
-    === "show condition by current entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
-        --8<--
-        ```
-    === "show condition by parent entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
-        --8<--
-        ```
-
 ### Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
-
--->
+<--

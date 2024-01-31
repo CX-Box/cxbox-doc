@@ -192,4 +192,4 @@ There are types of:
 ### Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
-<--
+-->

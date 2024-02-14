@@ -2,7 +2,7 @@
 `DateTimeWithSeconds` is a component for date with time editing. It can be used for editing and displaying dates with time and with seconds.
 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeWithSecondsBasic){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeWithSeconds){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic){:target="_blank"}
 ### How does it look?
 

@@ -168,7 +168,7 @@
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 `Editable`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeWithSecondsBasic){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeWithSeconds){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/datetimewithseconds/basic){:target="_blank"}
 
 `Readonly`

@@ -28,6 +28,6 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/additionalinfo/base/myexample3001info.view.json
+    {{ external_links.github_raw }}/widgets/additionalinfo/base/MyExample3600List.widget.json
     --8<--
     ```

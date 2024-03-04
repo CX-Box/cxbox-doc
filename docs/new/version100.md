@@ -139,7 +139,7 @@ The release has updated the theme of a certain project or software.
 The chosen theme is a classic combination of red and black, which symbolizes aristocratic taste and dignity)
 
 If you want to see the new theme, you can click on the provided
-[link](http://demo.cxbox.org/ui/)
+[link]({{ external_links.demo }}/ui/)
 
 
 #### Added search for screens by name in menu

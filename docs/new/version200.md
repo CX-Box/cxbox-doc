@@ -132,6 +132,7 @@ Fixed all github security alert currently.
 
 #### Removed from the core of the table
 Removed from the core of the table:
+
     * User
     * User_Role
     * USER_DIVISIONS
@@ -140,6 +141,8 @@ Removed from the core of the table:
     * DEPT
 
 #### Removed the starters
+Removed the starters:
+
     * cxbox notifications starter(the example has been moved to demo and implemented on web sockets for the possibility of deep customization on projects)
     * cxbox quartz starter (removed)
     * cxbox workflow starter (removed)

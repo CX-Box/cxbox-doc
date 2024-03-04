@@ -501,7 +501,7 @@
     === "Form widget"
         **Works for Form.**
 
-
+<!--
 ## Additional properties
 ### <a id="Primary">Primary</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2000/view/myexample2000form){:target="_blank"} ·
@@ -530,3 +530,4 @@
         ```
         `Step 2` Add **primaryId** to MyEntity.
         
+-->

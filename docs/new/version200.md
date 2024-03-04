@@ -1,6 +1,6 @@
 # v2.0.0
 
-cxbox/core 3.0.6-SNAPSHOT
+cxbox/core 4.0.0
 
 cxbox-ui/core 2.0.0-alpha.4
 

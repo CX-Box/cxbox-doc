@@ -67,7 +67,7 @@ Live sample [Filter group setting]({{ external_links.demo }}/ui/#/screen/client)
 #### Added new type widget - StatsBlock
 ![statisticsformbar.gif](v2.0.0/statisticsformbar.gif)
 
-Widget allows you to display in the form of a bar. Only for data viewing.
+Widget allows to display statistics in the form of a bar. Only for data viewing.
  
 Live sample [StatsBlock]({{ external_links.demo }}/ui/#/screen/client).
 #### Added new type widget - suggestionPickList
@@ -87,7 +87,7 @@ Live sample [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/)
 #### Added new type widget -  AdditionalInfo
 ![additionalinfo.png](v2.0.0/additionalinfo.png)
 
-Added new type widget only for data viewing. Widget is always located on the
+Added new type widget only for data viewing. Widget is always located on the right.
 
 Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
 #### Other Changes

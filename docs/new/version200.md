@@ -32,14 +32,14 @@ The images will be downloaded to the file storage system selected in the current
 once the upload process is complete. This feature makes it easy to upload multiple documents at once,streamlining the process and saving time for the user.
 It also ensures that all necessary documents are uploaded to the page in one go, eliminating the need for multiple uploads of individual documents.
 
-see more [Add files](  {{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
+Live sample [Add files](  {{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
 
 #### Added full text search
 ![fulltextsearch.gif](v2.0.0/fulltextsearch.gif)
  
 Added the ability for List widgets to support fullText Search. When the user types in the search input field, the widget filters the rows that match the search query. This feature makes it easier for users to quickly find the information they are looking for within a table widget.
 
-see more [Full text search]({{ external_links.demo }}/ui/#/screen/meeting)
+Live sample [Full text search]({{ external_links.demo }}/ui/#/screen/meeting)
 
 #### Customization of displayed columns
 ![customizationcolumns.gif](v2.0.0/customizationcolumns.gif)
@@ -47,7 +47,7 @@ see more [Full text search]({{ external_links.demo }}/ui/#/screen/meeting)
 If you'd like to change the composition or sequence of the columns displayed, you can do so by customizing your preferences in the settings menu.
 These changes will be saved for your account only, so you can view the columns in a way that suits your preferences.
 
-see more [Customization of displayed columns]({{ external_links.demo }}/ui/#/screen/meeting)
+Live sample [Customization of displayed columns]({{ external_links.demo }}/ui/#/screen/meeting)
 
 #### New pickList filter
 ![picklistfiltr.gif](v2.0.0/picklistfiltr.gif)
@@ -55,41 +55,41 @@ see more [Customization of displayed columns]({{ external_links.demo }}/ui/#/scr
 New filtering allows users to search for picklist entries by either their ID or text, providing a more flexible and efficient way to find the desired information. The filtering modes are mutually exclusive, meaning that users can only use one mode at a time to search for entries within the picklist.
 This enhancement improves the user experience and accelerates the process of selecting entries from picklists.
 
-see more [Customization of displayed columns]({{ external_links.demo }}/ui/#/screen/meeting)
+Live sample [New pickList filter]({{ external_links.demo }}/ui/#/screen/meeting)
 
 #### Filter group setting
 ![filtrgroup.gif](v2.0.0/filtrgroup.gif)
 
 The user filter can be is saved for this user and can be selected from the drop-down list.This allows to easily access their preferred filters save without having to re-enter them each time. These changes will be saved for your account only.
 
-see more [Customization of displayed columns]({{ external_links.demo }}/ui/#/screen/client).
+Live sample [Filter group setting]({{ external_links.demo }}/ui/#/screen/client).
 
 #### Added new type widget - StatsBlock
 ![statisticsformbar.gif](v2.0.0/statisticsformbar.gif)
 
-Widget allows you to display  in the form of a bar. Only for data viewing.
-see more [StatsBlock](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
-
+Widget allows you to display in the form of a bar. Only for data viewing.
+ 
+Live sample [StatsBlock]({{ external_links.demo }}/ui/#/screen/client).
 #### Added new type widget - suggestionPickList
 ![suggestionpiclist.gif](v2.0.0/suggestionpiclist.gif)
  
 The new widget type allows you to search for data in other systems by specific fields. The current release provides an example with hints dadata.
 
-see more [suggestionPickList]({{ external_links.demo }}/ui/#/screen/client)
+Live sample [suggestionPickList]({{ external_links.demo }}/ui/#/screen/client)
 
 #### Added new type widget -  FormPopup
 ![formpopup.png](v2.0.0/formpopup.png)
 
 Added new type widget for additional field checks in popup and the ability to add information inside the popup.
 
-see more [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/)
+Live sample [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/)
 
 #### Added new type widget -  AdditionalInfo
 ![additionalinfo.png](v2.0.0/additionalinfo.png)
 
 Added new type widget only for data viewing. Widget is always located on the
 
-see more [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
+Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.0)
 

@@ -7,6 +7,7 @@ nav:
   - Versions :
       - v1.0.1: new/version101.md
       - v1.0.0: new/version100.md
+      - v2.0.0: new/version200.md
   - Guides:
     - Guide for analysts: guide/analystguide/analystguide.md
     - Guide for developers: guide/developerguide/developerguide.md

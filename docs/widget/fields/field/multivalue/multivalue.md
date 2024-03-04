@@ -501,3 +501,32 @@
     === "Form widget"
         **Works for Form.**
 
+
+## Additional properties
+### <a id="Primary">Primary</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2000/view/myexample2000form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/primary){:target="_blank"}
+
+#### How does it look?
+=== "List widget"
+    _not applicable_
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![multivalue_primary.png](multivalue_primary.png)
+
+#### How to add?
+??? Example
+=== "List widget"
+        **_not applicable_**
+=== "Info widget"
+        **_not applicable_**
+=== "Form widget"
+        `Step 1` Add **primaryId** to MyEntity.
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/multivalue/primary/MyEntity2000.java
+        --8<--
+        ```
+        `Step 2` Add **primaryId** to MyEntity.
+        

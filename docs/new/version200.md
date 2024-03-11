@@ -1,11 +1,11 @@
 # v2.0.0
 
-cxbox/core 4.0.0
+cxbox/core 4.0.0-M2
 
-cxbox-ui/core 2.0.0-alpha.4
+cxbox-ui/core 2.0.0-alpha.6
 
 
-## **Key updates March 4, 2024**
+## **Key updates March 11, 2024**
 
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
 
@@ -92,9 +92,7 @@ Added new widget type only for data viewing. Widget is always located on the rig
 Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
 
 #### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.0)
-
-see [cxbox-code-samples changelog](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v2.0.0)
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.0)
 
 ### <a id="CXBOXUI">CXBOX</a> ([Core Ui](https://github.com/CX-Box/cxbox-ui))
 
@@ -151,3 +149,6 @@ Removed the starters:
 
 #### Made FieldExtractors spring service
 Deleloper do not need to register them in META-INF.services any more - @Service annotation is enough now
+
+#### Other Changes
+see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M2)

@@ -99,14 +99,30 @@
                 "302";200;"REGIONS";"KOSTROMA";"Kostroma";true;2;null
                 "303";200;"REGIONS";"SYKTYVKAR";"Syktyvkar";true;3;null
                 ```
-            +  **Step 1.3** Add in project AdministeredDictionary
+            +  **Step 1.3** Add corresponding launguage to database change management **DICTIONARY_ITEM_TR**.
+            
+                  ```xml
+                  <changeSet id="ADD LANGUAGE DICTIONARY_ITEM_TR" author="initial">
+                    <sql>
+                      insert into DICTIONARY_ITEM_TR (ID, LANGUAGE, VALUE)
+                      select ID, 'en' as LANGUAGE, VALUE as VALUE
+                      from DICTIONARY_ITEM;
+                    </sql>
+                    <sql>
+                      insert into DICTIONARY_ITEM_TR (ID, LANGUAGE, VALUE)
+                      select ID, 'ru' as LANGUAGE, VALUE as VALUE
+                      from DICTIONARY_ITEM;
+                    </sql>
+                  </changeSet>
+                  ```
+            +  **Step 1.4** Add in project AdministeredDictionary
     
                 ```java
                 --8<--
                 {{ external_links.github_raw }}/dictionary/dictionarylov/AdministeredDictionary.java
                 --8<--
                 ```
-            +  **Step 1.4**  Add in project AdministeredDictionaryType
+            +  **Step 1.5**  Add in project AdministeredDictionaryType
     
                 ```java
                 @Getter
@@ -134,7 +150,7 @@
                 
                 }
                 ```
-            + **Step 1.5**  Add  **LOV** (REGIONS) in AdministeredDictionaryType
+            + **Step 1.6**  Add  **LOV** (REGIONS) in AdministeredDictionaryType
                 ```java
                 @Getter
                 @RequiredArgsConstructor

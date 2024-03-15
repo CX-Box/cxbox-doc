@@ -24,7 +24,7 @@ Added the ability to work not only with data from the database, but also with da
 
 see more [Improved work with microservices](#Microservices)
 
-#### Added multi-download for files
+#### Added multi-upload for files
 ![multidown.gif](v2.0.0/multidown.gif)
 
 Multi-upload of files. To upload several files, you need to select them in popup, wait for loading and click the "Save" button.

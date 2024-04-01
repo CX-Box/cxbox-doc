@@ -40,6 +40,9 @@ nav:
       - Widget List: widget/type/list/list.md
       - Widget Form Popup: widget/type/formpopup/formpopup.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
+  - Repository elements:
+      - How create standard repository elements?: repository/repository
+      - Meta builder: repository/meta/metabuilder
   - Features:
       - Actions: features/element/actions/actions.md
       - Authorization:
@@ -54,7 +57,6 @@ nav:
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
       - Microservices:
-        - Basic: features/element/microservices/microservices.md
         - Get started:
             - Connecting an existing microservices: features/element/microservices/existingmicroservices.md
             - Create microservices with data: features/element/microservices/createmicroservices.md

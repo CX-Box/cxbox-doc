@@ -34,27 +34,35 @@ nav:
       - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Widget types:
+      - Widgets: widget/type/widget.md
       - Widget Form: widget/type/form/form.md
       - Widget Info: widget/type/info/info.md
       - Widget List: widget/type/list/list.md
       - Widget Form Popup: widget/type/formpopup/formpopup.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
+  - Repository elements:
+      - How create standard repository elements?: repository/repository
+      - Meta builder: repository/meta/metabuilder
   - Features:
       - Actions: features/element/actions/actions.md
-      - DrillDown: features/element/drillDown/drillDown.md
-      - Filtration: features/element/filtration/filtration.md
-      - FileStorage: features/element/fileStorage/fileStorage.md
-      - Database:
-        - Oracle: features/element/database/oracle/oraclebd.md
-        - Postgres: features/element/database/postgres/postgresbd.md
-      - Monitoring tools:
-        - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
-      - Notifications:
-        - Sent to email: features/element/notifications/email/email.md
-        - Push: features/element/notifications/push/websocket.md
       - Authorization:
         - Basic Authorization: features/element/authorization/basic/basicauthorization.md
         - Keycloak Authorization: features/element/authorization/keycloak/keycloakauthorization.md
+      - Database:
+        - Oracle: features/element/database/oracle/oraclebd.md
+        - Postgres: features/element/database/postgres/postgresbd.md
+      - DrillDown: features/element/drillDown/drillDown.md
+      - Filtration: features/element/filtration/filtration.md
+      - FileStorage: features/element/fileStorage/fileStorage.md
+      - Monitoring tools:
+        - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
+      - Microservices:
+        - Get started:
+            - Connecting an existing microservices: features/element/microservices/existingmicroservices.md
+            - Create microservices with data: features/element/microservices/createmicroservices.md
+      - Notifications:
+        - Sent to email: features/element/notifications/email/email.md
+        - Push: features/element/notifications/push/websocket.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drillDown/drillDown.md
       - Validation: advancedCustomization/element/validation/validation.md

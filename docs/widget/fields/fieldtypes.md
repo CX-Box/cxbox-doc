@@ -3,30 +3,56 @@
 
 ## How properties?
 In cxbox add standard types
- 
-|          Type          | Placeholder | Color | RO/Edit | Filter | Drilldown | Validation | Sort | Required |   
-|:----------------------:|-------------|-------|---------|--------|-----------|------------|------|----------|
-|        `input`         | +           | +     | +       | +      | +         | +          | +    | +        |                     
-|         `date`         | +           | +     | +       | +      | +         | +          | +    | +        |                   
-|       `dateTime`       | +           | +     | +       | +      | +         | +          | +    | +        |                 
-| `dateTimeWithSeconds`  | +           | +     | +       | +      | +         | +          | +    | +        |                          
-|        `number`        | +           | +     | +       | +      | +         | +          | +    | +        |            
-|       `percent`        | +           | +     | +       | +      | +         | +          | +    | +        |             
-|        `hidden`        | -           | -     | -       | -      | -         | -          | -    | -        |             
-|         `text`         | +           | +     | +       | +      | +         | +          | +    | +        |             
-|        `radio`         | -           | +     | +       | +      | +         | +          | +    | +        |             
-|       `checkbox`       | -           | +     | +       | +      | -         | +          | +    | +        |            
-|        `money`         | +           | +     | +       | +      | +         | +          | +    | +        |              
-|      `dictionary`      | +           | +     | +       | +      | +         | +          | +    | +        |            
-|      `fileUpload`      | +           | -     | +       | +      | -         | +          | +    | +        |            
-|       `pickList`       | +           | +     | +       | +      | +         | +          | +    | +        |           
-|    `inlinePickList`    | +           | +     | +       | +      | +         | +          | +    | +        |             
-|         `hint`         | -           | -     | -       | -      | -         | -          | -    | -        |                 
-|      `multifield`      | -           | -     | -       | +      | -         | -          | -    | -        |           
-|   `multivalueHover`    | -           | +     | -       | +      | -         | -          | -    | -        |                
-|      `multivalue`      | +           | +     | +       | +      | +         | +          | -    | +        |                
-|    `multipleSelect`    | +           | -     | +       | +      | -         | +          | +    | +        |
 
+|     Type      | input | text | date | dateTime | dateTimeWithSeconds |
+|:-------------:|-------|------|------|----------|---------------------|
+| `Placeholder` | +     | +    | +    | +        | +                   |
+|    `Color`    | +     | +    | +    | +        | +                   |
+|   `RO/Edit`   | +     | +    | +    | +        | +                   |
+|   `Filter`    | +     | +    | +    | +        | +                   |
+|  `Drilldown`  | +     | +    | +    | +        | +                   |
+| `Validation`  | +     | +    | +    | +        | +                   |
+|    `Sort`     | +     | +    | +    | +        | +                   |
+|  `Required`   | +     | +    | +    | +        | +                   |
+                                                                                         
+                                                                                  
+|     Type      | number | percent | money | radio | checkbox | hidden |      
+|:-------------:|--------|---------|-------|-------|----------|--------|     
+| `Placeholder` | +      | +       | +     | -     | -        | -      |        
+|    `Color`    | +      | +       | +     | +     | +        | -      |        
+|   `RO/Edit`   | +      | +       | +     | +     | +        | -      |        
+|   `Filter`    | +      | +       | +     | +     | +        | -      |        
+|  `Drilldown`  | +      | +       | +     | +     | -        | -      |        
+| `Validation`  | +      | +       | +     | +     | +        | -      |        
+|    `Sort`     | +      | +       | +     | +     | +        | -      |        
+|  `Required`   | +      | +       | +     | +     | +        | -      |        
+                                                                               
+                                                                                   
+|     Type      | dictionary | fileUpload | pickList | inlinePickList |           
+|:-------------:|------------|------------|----------|----------------|
+| `Placeholder` | +          | +          | +        | +              |  
+|    `Color`    | +          | -          | +        | +              |  
+|   `RO/Edit`   | +          | +          | +        | +              |  
+|   `Filter`    | +          | +          | +        | +              |  
+|  `Drilldown`  | +          | -          | +        | +              |  
+| `Validation`  | +          | +          | +        | +              |  
+|    `Sort`     | +          | +          | +        | +              |  
+|  `Required`   | +          | +          | +        | +              |  
+                                                                         
+
+|     Type      | hint | multifield | multivalueHover | multivalue | multipleSelect |    
+|:-------------:|------|------------|-----------------|------------|----------------|    
+| `Placeholder` | -    | -          | -               | +          | +              |    
+|    `Color`    | -    | -          | +               | +          | -              |    
+|   `RO/Edit`   | -    | -          | -               | +          | +              |    
+|   `Filter`    | -    | +          | +               | +          | +              |    
+|  `Drilldown`  | -    | -          | -               | +          | -              |    
+| `Validation`  | -    | -          | -               | +          | +              |    
+|    `Sort`     | -    | -          | -               | -          | +              |    
+|  `Required`   | -    | -          | -               | +          | +              |    
+                                                                           
+   
+ 
 ## How to add block fields?
 ??? Example
 

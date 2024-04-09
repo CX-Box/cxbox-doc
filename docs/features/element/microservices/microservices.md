@@ -1,0 +1,157 @@
+# Microservices 
+
+Within our system, five main types of operations occur:
+
+* Creation: This involves creating new records by sending data to the microservice for processing and storage.
+
+* Deletion: Deleting existing records. This typically involves interacting with the microservice to remove specific records.
+
+* Update of existing entries: This refers to making changes by sending data to the microservice for processing and storage.
+
+* Getting all data: This operation involves retrieving all available data from the microservice.
+
+* Getting data by ID: This operation involves retrieving specific data entries from the microservice based on their unique identifier (ID). This allows for the retrieval of individual records as needed.
+
+## Basics
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/microservice){:target="_blank"}
+
+When creating entities for microservices, the process is largely similar to creating entities for database access, with a few notable exceptions.
+
+1) Instead of creating an entity, we establish a mapping entity through which data will be sent to the microservice.
+
+2) Instead of using FieldMetaBuilder, we utilize AnySourceFieldMetaBuilder._
+_
+3) Instead of using VersionAwareResponseService, we utilize AnySourceVersionAwareResponseService.
+
+4) Create extends AbstractAnySourceBaseDAO  implements AnySourceBaseDAO service
+
+??? Example
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
+
+    - **Step1.1** Create **DTO** extends **DataResponseDTO**
+        Creating fields in DTO with the necessary properties, such as, for example,filtering is described in the article
+        [field types](/widget/fields/fieldtypes/) 
+
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+        --8<--
+        ```
+    - **Step1.2** Create mapping entity through which data will be sent to the microservice 
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/microservice/MyEntity3800OutServiceDTO.java
+        --8<--
+        ```
+    - **Step1.3** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
+    
+         see more [Meta builder](/repository/meta/metabuilder)
+        
+         ```java
+         --8<--
+         {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+         --8<--
+         ```
+    - **Step1.4** Create **Service** extends **AnySourceVersionAwareResponseService**
+    
+         ```java
+         --8<--
+         {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+         --8<--
+         ```
+    
+    - **Step1.5** Create **PlatformController** implements **EnumBcIdentifier**
+    
+         ```java
+         --8<--
+         {{ external_links.github_raw }}/microservice/PlatformMyExample3800Controller.java
+         --8<--
+         ```
+    - **Step1.6** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
+    
+         ```java
+         --8<--
+         {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java
+         --8<--
+         ```
+
+###  Getting data by ID (getByIdIgnoringFirstLevelCache)
+
+!!! tip
+    In this example, we're addressing the scenario where the service obtaining data only by ID.
+    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
+
+??? Example
+
+    **Step1** Method getByIdIgnoringFirstLevelCache takes a BusinessComponent as input.
+
+    When calling the service, it's essential to provide theId  record as a parameter for which data will be returned.
+
+        Long Id  = bc.getIdAsLong().
+
+    Example of fetching data using REST:
+
+     ```java
+     --8<--
+     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
+     --8<--
+     ```
+
+###  Getting data all (getList)
+
+This method incorporates additional peculiaritys such as filtering, sorting, record limits, and page numbers.
+
+* Page size: This parameter  refers to the number of items or records displayed on a single page of a user interface or returned in a single response from an API. It's  used in pagination systems to control how much data is fetched or displayed at once.
+
+* Limit: This parameter sets a maximum limit on the number of items or records that can be returned or processed by the service. It's a way to prevent overloading the system with too much data at once.
+
+* Filter: This parameter allows users to specify criteria for filtering the data they want to retrieve or process. Filters could be based on various attributes or properties of the data, allowing users to narrow down their results to only the items that meet specific conditions.
+
+* Sorting: This parameter would involve specifying the order in which the results are presented. Might want to sort data based on certain attributes, such as alphabetical order, numerical order, date, etc. Sorting can typically be done in ascending or descending order.
+
+Combining these parameters allows users to control and customize the behavior of the service according to their needs, enabling efficient data retrieval and processing.
+??? Example
+
+    **Step1** Page size.Method getList takes a BusinessComponent as input.
+
+        String page = bc.getParameters().getParameter("_page");
+
+    **Step2** Limit. Method getList takes a BusinessComponent as input.
+
+        String limit = bc.getParameters().getParameter("_limit");
+
+    **Step3** Sorting. Method getList takes a BusinessComponent as input.
+
+
+        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();
+
+    In the map key, receive the sorting direction: 'desc' for descending or 'asc' for ascending
+
+    For example, map key = `_sort.0.desc`
+
+    In the map value, obtain the name of the filtered field specified in to corresponding field "key" to corresponding file widget.json
+
+    For example, map value = `customField` 
+
+    **Step4** Filter.Method getList takes a BusinessComponent as input.
+   
+    This example demonstrates how to select filtering conditions for a field with the String type. For comprehensive information on all fields available for filtering, please refer to the article
+    
+        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("contains")).toList();
+
+    In the map key, receive the sorting direction:  `desc`  for descending or `asc` for ascending
+
+    For example, map key = `customField.contains`
+
+    In the map value, obtain the filtering criteria for selecting specific data
+
+    For example, map value = `Test data`
+ 
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:getList
+    --8<--
+    ```
+ 

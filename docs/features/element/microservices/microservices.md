@@ -30,7 +30,20 @@ _
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
 
-    - **Step1.1** Create **DTO** extends **DataResponseDTO**
+    - **Step1.1** Create mapping entity through which data will be sent to the microservice 
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/microservice/MyEntity3800OutServiceDTO.java
+        --8<--
+        ```
+    - **Step1.2** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
+
+         ```java
+         --8<--
+         {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java
+         --8<--
+         ```
+    - **Step1.3** Create **DTO** extends **DataResponseDTO**
         Creating fields in DTO with the necessary properties, such as, for example,filtering is described in the article
         [field types](/widget/fields/fieldtypes/) 
 
@@ -39,45 +52,33 @@ _
         {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
         --8<--
         ```
-    - **Step1.2** Create mapping entity through which data will be sent to the microservice 
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/microservice/MyEntity3800OutServiceDTO.java
-        --8<--
-        ```
-    - **Step1.3** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
+    - **Step1.4** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
     
          see more [Meta builder](/repository/meta/metabuilder)
         
          ```java
          --8<--
-         {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+         {{ external_links.github_raw }}/microservice/MyExample3800Meta.java
          --8<--
          ```
-    - **Step1.4** Create **Service** extends **AnySourceVersionAwareResponseService**
+    - **Step1.5** Create **Service** extends **AnySourceVersionAwareResponseService**
     
          ```java
          --8<--
-         {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+         {{ external_links.github_raw }}/microservice/MyExample3800Service.java
          --8<--
          ```
     
-    - **Step1.5** Create **PlatformController** implements **EnumBcIdentifier**
+    - **Step1.6** Create **PlatformController** implements **EnumBcIdentifier**
     
          ```java
          --8<--
          {{ external_links.github_raw }}/microservice/PlatformMyExample3800Controller.java
          --8<--
          ```
-    - **Step1.6** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
-    
-         ```java
-         --8<--
-         {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java
-         --8<--
-         ```
 
-###  Getting data by ID (getByIdIgnoringFirstLevelCache)
+### <a id="MethodsM">Methods</a>
+#### Getting data by ID (getByIdIgnoringFirstLevelCache)
 
 !!! tip
     In this example, we're addressing the scenario where the service obtaining data only by ID.
@@ -85,9 +86,9 @@ _
 
 ??? Example
 
-    **Step1** Method getByIdIgnoringFirstLevelCache takes a BusinessComponent as input.
+    **Step1** Method `getByIdIgnoringFirstLevelCache` takes a BusinessComponent as input.
 
-    When calling the service, it's essential to provide theId  record as a parameter for which data will be returned.
+    When calling the service, it's essential to provide the Id  record as a parameter for which data will be returned.
 
         Long Id  = bc.getIdAsLong().
 
@@ -99,7 +100,7 @@ _
      --8<--
      ```
 
-###  Getting data all (getList)
+#### Getting data all (getList)
 
 This method incorporates additional peculiaritys such as filtering, sorting, record limits, and page numbers.
 
@@ -112,18 +113,20 @@ This method incorporates additional peculiaritys such as filtering, sorting, rec
 * Sorting: This parameter would involve specifying the order in which the results are presented. Might want to sort data based on certain attributes, such as alphabetical order, numerical order, date, etc. Sorting can typically be done in ascending or descending order.
 
 Combining these parameters allows users to control and customize the behavior of the service according to their needs, enabling efficient data retrieval and processing.
+
 ??? Example
 
-    **Step1** Page size.Method getList takes a BusinessComponent as input.
+    Method `getList` takes a BusinessComponent as input.
+
+    **Step1** Page size.
 
         String page = bc.getParameters().getParameter("_page");
 
-    **Step2** Limit. Method getList takes a BusinessComponent as input.
+    **Step2** Limit.
 
         String limit = bc.getParameters().getParameter("_limit");
 
-    **Step3** Sorting. Method getList takes a BusinessComponent as input.
-
+    **Step3** Sorting. 
 
         queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();
 
@@ -135,7 +138,7 @@ Combining these parameters allows users to control and customize the behavior of
 
     For example, map value = `customField` 
 
-    **Step4** Filter.Method getList takes a BusinessComponent as input.
+    **Step4** Filter.
    
     This example demonstrates how to select filtering conditions for a field with the String type. For comprehensive information on all fields available for filtering, please refer to the article
     
@@ -154,4 +157,46 @@ Combining these parameters allows users to control and customize the behavior of
     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:getList
     --8<--
     ```
- 
+#### Delete 
+
+!!! tip
+    In this example, we're addressing the scenario where the service obtaining data only by ID.
+    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
+
+??? Example
+
+    **Step1** Method `delete` takes a BusinessComponent as input.
+
+    When calling the service, it's essential to provide the Id record as a parameter for which data will be returned.
+
+        Long Id  = bc.getIdAsLong().
+
+    Example of fetching data using REST:
+
+     ```java
+     --8<--
+     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:delete
+     --8<--
+     ```
+
+#### Update
+
+!!! tip
+    In this example, we're addressing the scenario where the service obtaining data only by ID.
+    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
+
+??? Example
+
+    **Step1** Method `update` takes a BusinessComponent as input.
+
+    When calling the service, it's essential to provide theId  record as a parameter for which data will be returned.
+
+        Long Id  = bc.getIdAsLong().
+
+    Example of fetching data using REST:
+
+     ```java
+     --8<--
+     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:update
+     --8<--
+     ```

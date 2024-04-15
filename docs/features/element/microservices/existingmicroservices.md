@@ -2,8 +2,6 @@
 In this example, we're considering the scenario where we need to integrate with an existing microservice responsible for data operations.
 
 ## Architecture existing microservice
-Microservice use REST.
-
 Let's outline the inputs our microservice accepts:
 
 ## How does it look?
@@ -29,13 +27,16 @@ Let's outline the inputs our microservice accepts:
  
 For our service:        
 Page size:        
-        String page = bc.getParameters().getParameter("_page");
+        `String page = bc.getParameters().getParameter("_page");`
+
 Limit:        
-        String limit = bc.getParameters().getParameter("_limit");
+        `String limit = bc.getParameters().getParameter("_limit");`
+
 Sorting:        
-        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();
+        `queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();`
+
 Filter:
-        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("contains")).toList();
+        `queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("contains")).toList();`
 
 ??? Example    
      ```java

@@ -6,24 +6,9 @@ Microservice use REST.
 
 Let's outline the inputs our microservice accepts:
 
-1) **Get a particular record** : entity + "/{id}"  `.../api/v1/myentity3900/1` 
+## How does it look?
 
-2) **Get all record** :  entity + "/"  
-
-**Required parameters**:
-
-* Page size: "_page="  
-
-* Limit:  "&_limit="     
-  
-**Non-Required parameters**:
-
-* Sorting:  "&_sort=" + `field name for sorting`+ "&_order=" + `sorting direction`
-
-    (`.../api/v1/myentity3900?_page=1&_limit=5&_sort=created&_order=desc`)
-
-* Filter:  "&_filter.field." + `field name for filtering`+"."+`operator` + "=" + `value for filtering`
-    (`.../api/v1/myentity3900?_page=1&_limit=5&_filter.field.customField.contains=test`)
+![microservice_swagger.png](microservice_swagger.png)
 
 
 ## Developing a straightforward interaction with the existing microservice architecture.
@@ -41,9 +26,17 @@ Let's outline the inputs our microservice accepts:
     ```
 
 **Step 2** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
-
-Instructions on how to work correctly with each method can be found here: [Methods](/features/element/microservices/microservices#MethodsM)
  
+For our service:        
+Page size:        
+        String page = bc.getParameters().getParameter("_page");
+Limit:        
+        String limit = bc.getParameters().getParameter("_limit");
+Sorting:        
+        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();
+Filter:
+        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("contains")).toList();
+
 ??? Example    
      ```java
      --8<--

@@ -19,7 +19,7 @@ Let's outline the inputs our microservice accepts:
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/microservice/MyEntity3800OutServiceDTO.java
+    {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800OutServiceDTO.java
     --8<--
     ```
 
@@ -41,7 +41,7 @@ Filter:
 ??? Example    
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java
      --8<--
      ```
  
@@ -51,7 +51,7 @@ Filter:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+    {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800DTO.java
     --8<--
     ```
 
@@ -60,7 +60,7 @@ Filter:
 ??? Example   
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyExample3800Meta.java
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Meta.java
      --8<--
      ```
 
@@ -69,7 +69,7 @@ Filter:
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyExample3800Service.java
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Service.java
      --8<--
      ```
 
@@ -78,7 +78,7 @@ Filter:
 ??? Example
     ```java
     --8<--
-     {{ external_links.github_raw }}/microservice/PlatformMyExample3800Controller.java
+     {{ external_links.github_raw }}/microservice/existingmicroservices/PlatformMyExample3800Controller.java
     --8<--
     ```
  

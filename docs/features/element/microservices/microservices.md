@@ -194,7 +194,7 @@ Combining these parameters allows users to control and customize the behavior of
 
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:delete
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:delete
      --8<--
      ```
 
@@ -216,7 +216,7 @@ Combining these parameters allows users to control and customize the behavior of
 
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:update
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:update
      --8<--
      ```
 
@@ -238,6 +238,6 @@ Combining these parameters allows users to control and customize the behavior of
 
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:create
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:create
      --8<--
      ```

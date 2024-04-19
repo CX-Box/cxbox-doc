@@ -508,23 +508,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             --8<--
             ```
 
-            === "List widget"
-                Add custom action check to **_.widget.json_**.
-                ```json
-                --8<--
-                {{ external_links.github_raw }}/inlinepicklist/validationdynamic/MyExample325List.widget.json
-                --8<--
-                ```
-               
-            === "Info widget"
-                **_not applicable_**
-            === "Form widget"
-                Add custom action check to **_.widget.json_**.
-                ```json
-                --8<--
-                {{ external_links.github_raw }}/inlinepicklist/validationdynamic/MyExample325Form.widget.json
-                --8<--
-                ```
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample148/view/myexample148list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/inlinepicklist/sorting){:target="_blank"}

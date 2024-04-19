@@ -457,21 +457,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw }}/percent/validationdynamic/MyExample328Service.java:doUpdateEntity
             --8<--
             ```   
-            === "List widget"
-                Add custom action check to **_.widget.json_**.
-                ```json
-                --8<--
-                {{ external_links.github_raw }}/percent/validationdynamic/MyExample328List.widget.json
-                --8<--
-                ```
-            === "Info widget"
-                **_not applicable_** 
-            === "Form widget"
-                ```json
-                --8<--
-                {{ external_links.github_raw }}/percent/validationdynamic/MyExample328Form.widget.json
-                --8<--
-                ```
+ 
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample9){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/sorting){:target="_blank"}

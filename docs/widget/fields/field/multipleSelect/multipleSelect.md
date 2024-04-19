@@ -357,24 +357,7 @@ _not applicable_
             {{ external_links.github_raw }}/multipleselect/validationdynamic/MyExample334Service.java:doUpdateEntity
             --8<--
             ```
- 
-            === "List widget"
-                Add custom action check to **_.widget.json_**.
-                ```json
-                --8<--
-                {{ external_links.github_raw }}/multipleselect/validationdynamic/MyExample334List.widget.json
-                --8<--
-                ```
-               
-            === "Info widget"
-                **_not applicable_**
-            === "Form widget"
-                Add custom action check to **_.widget.json_**.
-                ```json
-                --8<--
-                {{ external_links.github_raw }}/multipleselect/validationdynamic/MyExample334Form.widget.json
-                --8<--
-                ```
+
 ## Sorting
 **_not applicable_**
 

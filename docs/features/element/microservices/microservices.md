@@ -33,52 +33,64 @@ _
     - **Step1.1** Create mapping entity through which data will be sent to the microservice 
         ```java
         --8<--
-        {{ external_links.github_raw }}/microservice/MyEntity3800OutServiceDTO.java
+        {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800OutServiceDTO.java
         --8<--
         ```
     - **Step1.2** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
-
-         ```java
-         --8<--
-         {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java
-         --8<--
-         ```
-    - **Step1.3** Create **DTO** extends **DataResponseDTO**
-        Creating fields in DTO with the necessary properties, such as, for example,filtering is described in the article
-        [field types](/widget/fields/fieldtypes/) 
-
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
-        --8<--
-        ```
-    - **Step1.4** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
-    
-         see more [Meta builder](/repository/meta/metabuilder)
+        Override methods:  
         
-         ```java
-         --8<--
-         {{ external_links.github_raw }}/microservice/MyExample3800Meta.java
-         --8<--
-         ```
-    - **Step1.5** Create **Service** extends **AnySourceVersionAwareResponseService**
+          * **Create** : method  [create](#create)
+
+          * **Deletion**: method [delete](#delete)
+
+          * **Update of existing entries**:  method [update](#update)
+
+          * **Getting all data**: method [getList](#getList)
+
+          * **Getting data by ID**:  method [getByIdIgnoringFirstLevelCache](#getByIdIgnoringFirstLevelCache)
+
+
+           ```java
+           --8<--
+           {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java
+           --8<--
+           ```
+      - **Step1.3** Create **DTO** extends **DataResponseDTO**
+          Creating fields in DTO with the necessary properties, such as, for example,filtering is described in the article
+          [field types](/widget/fields/fieldtypes/) 
+
+          ```java
+          --8<--
+          {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800DTO.java
+          --8<--
+          ```
+      - **Step1.4** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
     
-         ```java
-         --8<--
-         {{ external_links.github_raw }}/microservice/MyExample3800Service.java
-         --8<--
-         ```
+           see more [Meta builder](/repository/meta/metabuilder)
+        
+           ```java
+           --8<--
+           {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Meta.java
+           --8<--
+           ```
+      - **Step1.5** Create **Service** extends **AnySourceVersionAwareResponseService**
     
-    - **Step1.6** Create **PlatformController** implements **EnumBcIdentifier**
+           ```java
+           --8<--
+           {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Service.java
+           --8<--
+           ```
     
-         ```java
-         --8<--
-         {{ external_links.github_raw }}/microservice/PlatformMyExample3800Controller.java
-         --8<--
-         ```
+      - **Step1.6** Create **PlatformController** implements **EnumBcIdentifier**
+    
+           ```java
+           --8<--
+           {{ external_links.github_raw }}/microservice/existingmicroservices/PlatformMyExample3800Controller.java
+           --8<--
+           ```
 
 ### <a id="MethodsM">Methods</a>
-#### Getting data by ID (getByIdIgnoringFirstLevelCache)
+####  <a id="getByIdIgnoringFirstLevelCache">Getting data by ID (getByIdIgnoringFirstLevelCache)</a>
 
 !!! tip
     In this example, we're addressing the scenario where the service obtaining data only by ID.
@@ -96,11 +108,11 @@ _
 
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
+     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
      --8<--
      ```
 
-#### Getting data all (getList)
+#### <a id="getList">Getting data all (getList)</a>
 
 This method incorporates additional peculiaritys such as filtering, sorting, record limits, and page numbers.
 
@@ -120,15 +132,23 @@ Combining these parameters allows users to control and customize the behavior of
 
     **Step1** Page size.
 
-        String page = bc.getParameters().getParameter("_page");
+    ```java
+    String page = bc.getParameters().getParameter("_page");
+    ```   
 
     **Step2** Limit.
 
-        String limit = bc.getParameters().getParameter("_limit");
+    ```java
+    String limit = bc.getParameters().getParameter("_limit");
+    ```  
 
     **Step3** Sorting. 
 
-        queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();
+    If the application lacks a sorting feature, it implies that the parameter associated with sorting would be absent.
+
+    ```java
+    queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("sort")).toList();
+    ```  
 
     In the map key, receive the sorting direction: 'desc' for descending or 'asc' for ascending
 
@@ -139,25 +159,27 @@ Combining these parameters allows users to control and customize the behavior of
     For example, map value = `customField` 
 
     **Step4** Filter.
-   
+
+    If the application lacks a filtration feature, it implies that the parameter associated with sorting would be absent.
+  
     This example demonstrates how to select filtering conditions for a field with the String type. For comprehensive information on all fields available for filtering, please refer to the article
     
         queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("contains")).toList();
 
-    In the map key, receive the sorting direction:  `desc`  for descending or `asc` for ascending
+    In the map key, receive the filtration type. Can observe the relationship between standard filtering and standard field types [here](/widget/fields/filtersearchoperation/) .
 
     For example, map key = `customField.contains`
 
-    In the map value, obtain the filtering criteria for selecting specific data
+    In the map value, obtain the filtering criteria for selecting specific data.
 
     For example, map value = `Test data`
  
     ```java
     --8<--
-    {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:getList
+    {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:getList
     --8<--
     ```
-#### Delete 
+#### <a id="delete">Delete</a>
 
 !!! tip
     In this example, we're addressing the scenario where the service obtaining data only by ID.
@@ -179,7 +201,7 @@ Combining these parameters allows users to control and customize the behavior of
      --8<--
      ```
 
-#### Update
+#### <a id="update">Update</a>
 
 !!! tip
     In this example, we're addressing the scenario where the service obtaining data only by ID.
@@ -198,5 +220,27 @@ Combining these parameters allows users to control and customize the behavior of
      ```java
      --8<--
      {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:update
+     --8<--
+     ```
+
+#### <a id="create">Create</a>
+
+!!! tip
+In this example, we're addressing the scenario where the service obtaining data only by ID.
+If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
+
+??? Example
+
+    **Step1** Method `create` takes a BusinessComponent as input.
+
+    When calling the service, it's essential to provide the Id record as a parameter for which data will be returned.
+
+        Long Id  = bc.getIdAsLong().
+
+    Example of fetching data using REST:
+
+     ```java
+     --8<--
+     {{ external_links.github_raw }}/microservice/MyEntity3800Dao.java:create
      --8<--
      ```

@@ -8,24 +8,23 @@ Overall, customizing properties in interfaces allows you to tailor the user expe
  
 ??? Example  
     === "database"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
 
         - **Meta** extends **FieldMetaBuilder**
-
-          [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
     
           ```java
           --8<--
           {{ external_links.github_raw }}/input/basic/InputBasicMeta.java
           --8<--
           ```
-    === "get data services REST"
+    === "microcervices"
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
     
         - **Meta** extends **AnySourceFieldMetaBuilder**
           ```java
           --8<--
-          {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+          {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Meta.java
           --8<--
           ```
 

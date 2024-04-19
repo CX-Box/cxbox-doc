@@ -2,15 +2,16 @@
 
 Within our system, five main types of operations occur:
 
-* Creation: This involves creating new records by sending data to the microservice for processing and storage.
+* Getting data by ID: This operation involves retrieving specific data entries from the microservice based on their unique identifier (ID). This allows for the retrieval of individual records as needed.
+
+* Getting all data: This operation involves retrieving all available data from the microservice.
 
 * Deletion: Deleting existing records. This typically involves interacting with the microservice to remove specific records.
 
 * Update of existing entries: This refers to making changes by sending data to the microservice for processing and storage.
 
-* Getting all data: This operation involves retrieving all available data from the microservice.
+* Creation: This involves creating new records by sending data to the microservice for processing and storage.
 
-* Getting data by ID: This operation involves retrieving specific data entries from the microservice based on their unique identifier (ID). This allows for the retrieval of individual records as needed.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
@@ -21,15 +22,12 @@ When creating entities for microservices, the process is largely similar to crea
 1) Instead of creating an entity, we establish a mapping entity through which data will be sent to the microservice.
 
 2) Instead of using FieldMetaBuilder, we utilize AnySourceFieldMetaBuilder._
-_
+
 3) Instead of using VersionAwareResponseService, we utilize AnySourceVersionAwareResponseService.
 
 4) Create extends AbstractAnySourceBaseDAO  implements AnySourceBaseDAO service
 
 ??? Example
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
-
     - **Step1.1** Create mapping entity through which data will be sent to the microservice 
         ```java
         --8<--
@@ -38,17 +36,16 @@ _
         ```
     - **Step1.2** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
         Override methods:  
-        
-          * **Create** : method  [create](#create)
+
+          * **Getting data by ID**:  method [getByIdIgnoringFirstLevelCache](#getByIdIgnoringFirstLevelCache)
+
+          * **Getting all data**: method [getList](#getList)
 
           * **Deletion**: method [delete](#delete)
 
           * **Update of existing entries**:  method [update](#update)
 
-          * **Getting all data**: method [getList](#getList)
-
-          * **Getting data by ID**:  method [getByIdIgnoringFirstLevelCache](#getByIdIgnoringFirstLevelCache)
-
+          * **Create** : method  [create](#create)
 
            ```java
            --8<--
@@ -160,7 +157,7 @@ Combining these parameters allows users to control and customize the behavior of
 
     **Step4** Filter.
 
-    If the application lacks a filtration feature, it implies that the parameter associated with sorting would be absent.
+    If the application lacks a filtration feature, it implies that the parameter associated with filtration would be absent.
   
     This example demonstrates how to select filtering conditions for a field with the String type. For comprehensive information on all fields available for filtering, please refer to the article
     
@@ -226,8 +223,8 @@ Combining these parameters allows users to control and customize the behavior of
 #### <a id="create">Create</a>
 
 !!! tip
-In this example, we're addressing the scenario where the service obtaining data only by ID.
-If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
+    In this example, we're addressing the scenario where the service obtaining data only by ID.
+    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
 ??? Example
 

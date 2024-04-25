@@ -29,5 +29,12 @@ To deploy an application to an basic authorization you need:
   
     `src/main/resources/db/data/CXBOX-USER_ROLE.csv`
 
+* Add parameter in application.yml
+ 
+  ```
+   app:
+      auth-basic:
+        enabled: true
+  ```
 ### Login process
 Type login/password (vanilla/vanilla is available by default)

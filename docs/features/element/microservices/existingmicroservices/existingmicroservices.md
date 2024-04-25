@@ -7,9 +7,15 @@ Let's outline the inputs our microservice accepts:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/microservice/microservicestoringdata/ExistingMicroserviceStoringDataController.java){:target="_blank"}
 
 ![microservice_swagger.png](microservice_swagger.png)
+
+Parameters **get** `/myentity3900`:
 ![exmicrocerviceparameters.png](exmicrocerviceparameters.png)
 
-### How does it look?
+
+[swagger]({{ external_links.code_samples }}/swagger-ui/index.html#/)
+
+The interface that will emerge will resemble the following:
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} 
 
 ![exmicrocervicescreen.png](exmicrocervicescreen.png)
@@ -74,23 +80,14 @@ Override methods:
   
     Sorting for field CustomField:
     ```java
-    List<String> sortCustomField = queryParameters.getParameters().entrySet().stream()
-            .filter(f -> f.getKey().contains("_.sort"))
-            .map(m -> {
-                        String[] splitOperation = m.getKey().split("\\.");
-                        return splitOperation[splitOperation.length - 1];
-                    }
-            ).toList();
-    Optional<String> sort = sortCustomField.isEmpty() ? Optional.empty() : Optional.of(sortCustomField.get(0));
+        List<String> sortCustomField = getSortFieldName(queryParameters, "customField");
+        Optional<String> sort = sortCustomField.isEmpty() ? Optional.empty() : Optional.of(sortCustomField.get(0));
     ```    
     
     Filter for field CustomField:
     ```java
-     List<String> filterCustomField = queryParameters.getParameters().entrySet().stream()
-        .filter(f -> f.getKey().contains("customField.contains"))
-        .map(Map.Entry::getValue)
-        .toList();
-    Optional<String> filter = filterCustomField.isEmpty() ? Optional.empty() : Optional.of(filterCustomField.get(0))
+     List<String> filterCustomField = getFilterFieldName(queryParameters, "customField", "contains");
+     Optional<String> filter = filterCustomField.isEmpty() ? Optional.empty() : Optional.of(filterCustomField.get(0));
     ```  
 
 ??? Example
@@ -99,6 +96,7 @@ Override methods:
      {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:getList
      --8<--
      ```
+
 * **Getting data by ID**:  method getByIdIgnoringFirstLevelCache
 
 ??? Example
@@ -141,9 +139,9 @@ Create **Service** extends **AnySourceVersionAwareResponseService**
      --8<--
      ```
 
-### **Step6** Create **PlatformController**
+### **Step6** Create **Controller**
 
-Create **PlatformController** implements **EnumBcIdentifier**
+Create **Controller** implements **EnumBcIdentifier**
 
 ??? Example
     ```java

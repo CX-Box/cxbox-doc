@@ -21,11 +21,11 @@ The interface that will emerge will resemble the following:
 ![exmicrocervicescreen.png](exmicrocervicescreen.png)
 
 
-## Developing a straightforward interaction with the existing microservice architecture.
+## Steps for developing on cxbox
+Developing a straightforward interaction with the existing microservice architecture.
+### **Step1** Create DTO for integrating with microservice
 
-### **Step1** Create mapping entity
-
-Create mapping entity through which data will be sent to the microservice
+Create DTO for integrating with microservices through which data will be sent to the microservice
 
 ??? Example
 

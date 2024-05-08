@@ -148,7 +148,7 @@ Removed the starters:
     * Changelistener (recommended to use the standard hibernate Listner)
 
 #### Made FieldExtractors spring service
-Deleloper do not need to register them in META-INF.services any more - @Service annotation is enough now
+Developer do not need to register them in META-INF.services any more - @Service annotation is enough now
 
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M2)

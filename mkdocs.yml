@@ -8,9 +8,14 @@ nav:
       - v1.0.1: new/version101.md
       - v1.0.0: new/version100.md
       - v2.0.0: new/version200.md
-  - Guides:
-    - Guide for analysts: guide/analystguide/analystguide.md
-    - Guide for developers: guide/developerguide/developerguide.md
+  - Guides for work with documentation:
+    - For analysts: guide/analystguide/analystguide.md
+    - For developers: guide/developerguide/developerguide.md
+  - Getting started cxbox:
+      - For developers:
+        - Basic: gettingstarted/getstartedfordevelopers.md
+        - Postgres: gettingstarted/postgres/getstartedfordeveloperspostgres.md
+        - Microcervice: gettingstarted/getstartedfordevelopersmicrocervice.md
   - Field types:
       - Fields: widget/fields/fieldtypes.md
       - Fields. SearchOperation for filtering: widget/fields/filtersearchoperation.md
@@ -75,6 +80,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -90,6 +98,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+extra_css:
+  - stylesheets/extra.css
 
 theme:
   font:

@@ -154,7 +154,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
 ??? Example
 
-    ```java
+    ```json
     --8<--
     {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800List.widget.json
     --8<--
@@ -163,7 +163,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
 ??? Example
 
-    ```java
+    ```json
     --8<--
     {{ external_links.github_raw }}/microservice/existingmicroservices/myexample3800list.view.json
     --8<--
@@ -173,7 +173,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
 ??? Example
 
-    ```java
+    ```json
     --8<--
     {{ external_links.github_raw }}/microservice/existingmicroservices/myexample3800.screen.json
     --8<--

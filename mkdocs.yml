@@ -15,7 +15,7 @@ nav:
       - For developers:
         - Basic: gettingstarted/getstartedfordevelopers.md
         - Postgres: gettingstarted/postgres/getstartedfordeveloperspostgres.md
-        - Microcervice: gettingstarted/getstartedfordevelopersmicrocervice.md
+        - Microcervice: gettingstarted/microservice/getstartedfordevelopersmicroservice.md
   - Field types:
       - Fields: widget/fields/fieldtypes.md
       - Fields. SearchOperation for filtering: widget/fields/filtersearchoperation.md

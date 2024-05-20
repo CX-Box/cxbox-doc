@@ -118,7 +118,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/myexample4001form.view.json
+        {{ external_links.github_raw }}/getsatrted/microservice/example/myexample4001form.view.json
     --8<--
     ```
 
@@ -128,19 +128,19 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/example/myexample4002.screen.json
+    {{ external_links.github_raw }}/getsatrted/microservice/example/myexample4001.screen.json
     --8<--
     ```
-
-### Step9.1 Add field to widget
+## **Step10** Add field to corresponding **widget.json**
+### Step10.1 Add field to widget
 
 ![stp1.png](../postgres/stp1.png)
 
-### Step9.2 Add field to entity, DTO
+### Step10.2 Add field to entity, DTO
 
 ![stp2.png](../postgres/stp2.png)
 
-### Step9.3 Add field to layout
+### Step10.3 Add field to layout
 
 ![stp3.png](../postgres/stp3.png)
  

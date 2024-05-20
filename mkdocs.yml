@@ -17,8 +17,9 @@ nav:
         - Postgres: gettingstarted/postgres/getstartedfordeveloperspostgres.md
         - Microcervice: gettingstarted/microservice/getstartedfordevelopersmicroservice.md
   - Field types:
-      - Fields: widget/fields/fieldtypes.md
-      - Fields. SearchOperation for filtering: widget/fields/filtersearchoperation.md
+      - Fields:
+        - Basic: widget/fields/fieldtypes.md
+        - SearchOperation for filtering: widget/fields/filtersearchoperation.md
       - Field input: widget/fields/field/input/input.md
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md

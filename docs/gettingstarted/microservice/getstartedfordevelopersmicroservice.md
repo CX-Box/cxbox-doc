@@ -132,15 +132,26 @@ Create **Controller** implements **EnumBcIdentifier**
     --8<--
     ```
 ## **Step10** Add field to corresponding **widget.json**
-### Step10.1 Add field to widget
+
+
+### Step10.1 Add **String** field  to corresponding **BaseEntity**.
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/input/basic/InputBasic.java
+    --8<--
+    ```
+
+### Step10.2  Add **String** field  to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/input/basic/InputBasicDTO.java
+    --8<--
+    ```
+### Step10.3 Add **Input**  field to widget
 
 ![stp1.png](../postgres/stp1.png)
 
-### Step10.2 Add field to entity, DTO
-
-![stp2.png](../postgres/stp2.png)
-
-### Step10.3 Add field to layout
+### Step10.4 Add field to layout
 
 ![stp3.png](../postgres/stp3.png)
  

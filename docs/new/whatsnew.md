@@ -1,60 +1,155 @@
 # What’s New in cxbox
-# v1.0.1
-cxbox/core 3.0.5
+# v2.0.0
 
-cxbox-ui/core 1.37.1
+cxbox/core 4.0.0-M2
 
-## **Key updates December 7, 2023**
+cxbox-ui/core 2.0.0-alpha.6
 
-### CXBOX [documetation](https://doc.cxbox.org/)
 
-#### Added creation form widget
-![form_widget.png](v1.0.1/form_widget.png){width="500"}
-
-We've introduced a new documentation section that details the core functionality for form widget.
-Section of the documentation contains a detailed description of the basics ,main visual parts,show condition.
-Additionally, we've included links to live examples for hands-on demonstrations and access to code samples for reference.
-
-#### Other Changes
-see [cxbox-doc changelog](https://github.com/CX-Box/cxbox-doc/releases/tag/v1.0.1)
+## **Key updates March 11, 2024**
 
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
 
-#### Development mode redesign
-![dev_tool.png](v1.0.1/dev_tool.png){width="800"}
+#### New version front cxbox
+The release uses new version cxbox front UI.
 
-We have made improvements to the debug panel by making more convenient. This redesign allows users to view all the essential information of a widget in a single line. If users require more detailed information, they can simply click on an arrow to expand and access the additional details. This enhancement provides a more streamlined and user-friendly experience when interacting with the debug panel.
+see more [New ui](#CXBOXUI)
 
-#### Oracle support
-Added the ability to deploy an application to an oracle database using settings.
+#### New version core cxbox
+The release uses new version core cxbox.
 
-see more [Oracle support](/features/element/database/oracle/oraclebd)
+see more [New core](#CXBOXCORE)
 
-#### Added Performance Metrics
-We added monitoring tools in application - performance metrics.
-Performance metrics are utilized to evaluate and monitor the conduct, operations, and effectiveness.
+####  Support for microservice architecture
+Added the ability to work not only with data from the database, but also with data from any source. E.g. support for microservice architecture significantly improved.
 
-see more [Performance Metrics](/features/element/monitoringtools/metrics/performancemetrics)
+see more [Improved work with microservices](#Microservices)
 
-#### Integration with email
-We added  sent to email  in application.
+#### Added multi-download for files
+![multidown.gif](v2.0.0/multidown.gif)
 
-see more [Sent to email](/features/element/notifications/email/email)
+Multi-upload of files. To upload several files, you need to select them in popup, wait for loading and click the "Save" button.
+The files will be downloaded to the storage and will appear on the page once the upload process is complete. This feature makes it easy to upload multiple documents at once, streamlining the process and saving time for the user.
+It also ensures that all necessary files are uploaded to the widget in one go, eliminating the need for multiple uploads of individual files.
 
-#### Basic auth optional support added
-Added the ability storing login and password in a database.
+Live sample [Add files](  {{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
 
-see more [Basic Authorization](/features/element/authorization/basic/basicauthorization)
-#### Push notifications
-We added push notifications
+#### Added full text search
+![fulltextsearch.gif](v2.0.0/fulltextsearch.gif)
 
-see more [WebSocket and Long Pooling](/features/element/notifications/push/websocket)
+Added the ability for List widgets to use fullText Search. When the user types in the full text search input area, then widget filters the rows that match the search query (search criteria is configurable and will usually check if at least one column has corresponding value). This feature makes it easier for users to quickly find the information they are looking for within a List widget.
+
+Live sample [Full text search]({{ external_links.demo }}/ui/#/screen/meeting)
+
+#### Additional columns
+![customizationcolumns.gif](v2.0.0/customizationcolumns.gif)
+
+If you'd like to change the composition or sequence of the columns displayed, you can do so by customizing your preferences in the settings menu, where you can select which columns should be "displayed" and wich are not.
+These changes will be saved for your account only, so you can view the columns in a way that suits your preferences.
+
+Live sample [Customization of displayed columns]({{ external_links.demo }}/ui/#/screen/client)
+
+#### New pickList filtration
+![picklistfiltr.gif](v2.0.0/picklistfiltr.gif)
+
+New filteration allows users to search for picklist entries by either their ID or text, providing a more flexible and efficient way to find the desired information. The filtering modes are mutually exclusive, meaning that users can only use one mode at a time to search for entries within the picklist.
+This enhancement improves the user experience and accelerates the process of selecting entries from picklists.
+
+Live sample [New pickList filter]({{ external_links.demo }}/ui/#/screen/meeting)
+
+#### Filter group setting
+![filtrgroup.gif](v2.0.0/filtrgroup.gif)
+
+The user filters can be saved for this user and can be selected from the drop-down list. This allows to easily access their presonal saved filters without having to re-enter them each time. These changes will be saved for user account only.
+
+Live sample [Filter group setting]({{ external_links.demo }}/ui/#/screen/client).
+
+#### Added new widget type - StatsBlock
+![statisticsformbar.gif](v2.0.0/statisticsformbar.gif)
+
+Widget allows to display statistics in the form of a bar. Only for data viewing.
+
+Live sample [StatsBlock]({{ external_links.demo }}/ui/#/screen/client).
+
+#### Added new widget type - suggestionPickList
+![suggestionpiclist.gif](v2.0.0/suggestionpiclist.gif)
+
+The new widget type allows you to search for data in other systems by specific fields. The current release provides an example with taking data from external rest api (dadata).
+
+Live sample [suggestionPickList]({{ external_links.demo }}/ui/#/screen/client)
+
+#### Added new widget type - FormPopup
+![formpopup.png](v2.0.0/formpopup.png)
+
+Added new widget type - popup with additional fields.
+
+Live sample [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/)
+
+#### Added new widget type - AdditionalInfo
+![additionalinfo.png](v2.0.0/additionalinfo.png)
+
+Added new widget type only for data viewing. Widget is always located on the right side and has gray background.
+
+Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
 
 #### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.1.0.1)
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.0)
 
-see [cxbox-code-samples changelog](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v1.0.1)
+### <a id="CXBOXUI">CXBOX</a> ([Core Ui](https://github.com/CX-Box/cxbox-ui))
 
-Other versions:
+#### Node JS < version 18
+Removed support for Node JS < version 18
 
-[v1.0.0](/new/v1.0.0/version100.md)  **September 21, 2023**
+#### All direct dependencies have been removed
+The changes made it possible to use dependencies within the project that meet the requirements of the version range.
+
+#### UIKit has been separated from ui core
+UIKit has been separated from the ui core, so now insead of using cxbox standart ant-design based UIkit you can implement your own UIKit within the project using your perffered library (material and so on).
+
+#### Replaced custom typescript utilities
+We have replaced custom typescript utilities with well-documented, standardized functions of the Redux-toolkit and the Redux-observable libraries.
+
+#### Change standard actions behavior
+Added the ability to change the behavior of standard actions on project level.
+
+#### Change routing logic on the frontend
+Added the ability to select a library for routing on the frontend.
+
+#### Autotests for asynchronous Marble testing processes
+It is now possible to implement autotests for asynchronous Marble testing processes
+
+### <a id="CXBOXCORE">CXBOX</a>  ([Core](https://github.com/CX-Box/cxbox))
+#### Updated to Springbot 3(java 17+)
+Updated to Springbot 3 (java 17+)
+
+#### <a id="Any source API">Any Source API and improved work with microservices</a>
+The new "Any Source" API allows you to show/edit/update data now from microservices or any other sources.
+The API's feature is complete uniformity with old "inner" API for working in standard mode (e.g. VersionAwareResponseService based api).
+Multi-stage entity creation with force active fields is supported out of the box in new "Any Source" API.
+
+#### Fixed dependency security alert
+Fixed all github ([dependency security alerts](https://github.com/CX-Box/cxbox/security/dependabot)) currently found by github.
+
+#### Removed from the core of the table
+Removed from the core of the table:
+
+    * User
+    * User_Role
+    * USER_DIVISIONS
+    * REVINFO
+    * DIVISION
+    * DEPT
+
+#### Removed the starters
+Removed the starters:
+
+    * cxbox notifications starter(the example has been moved to demo and implemented on web sockets for the possibility of deep customization on projects)
+    * cxbox quartz starter (removed)
+    * cxbox workflow starter (removed)
+    * Changelistener (recommended to use the standard hibernate Listner)
+
+#### Made FieldExtractors spring service
+Deleloper do not need to register them in META-INF.services any more - @Service annotation is enough now
+
+#### Other Changes
+see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M2)

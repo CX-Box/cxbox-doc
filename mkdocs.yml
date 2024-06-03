@@ -14,8 +14,19 @@ nav:
   - Getting started cxbox:
       - For developers:
         - Basic: gettingstarted/getstartedfordevelopers.md
-        - Postgres: gettingstarted/postgres/getstartedfordeveloperspostgres.md
-        - Microcervice: gettingstarted/microservice/getstartedfordevelopersmicroservice.md
+        - Postgres:
+          - Basic: gettingstarted/postgres/getstartedfordeveloperspostgres.md
+          - Add environment: gettingstarted/postgres/addenvironment.md
+          - Add screen: gettingstarted/postgres/addscreen.md
+          - Add view: gettingstarted/postgres/addview.md
+          - Add widget and field: gettingstarted/postgres/addwidget.md
+        - Microservice:
+          - Basic: gettingstarted/microservice/getstartedfordevelopersmicroservice.md
+          - Add environment: gettingstarted/microservice/addenvironment.md
+          - Add screen: gettingstarted/microservice/addscreen.md
+          - Add view: gettingstarted/microservice/addview.md
+          - Add widget: gettingstarted/microservice/addwidget.md
+          - Add field: gettingstarted/microservice/addfield.md
   - Field types:
       - Fields:
         - Basic: widget/fields/fieldtypes.md

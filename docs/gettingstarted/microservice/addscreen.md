@@ -4,8 +4,15 @@ Create file  **screen.json**
 
 ??? Example
 
-    ```json
-    --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/myexample4003.screen.json
-    --8<--
+    ```json 
+    {
+      "name": "myexample",
+      "icon": "calendar",
+      "order": 4002,
+      "title": "Get Started example microservice",
+      "navigation": {
+        "menu": [
+        ]
+      }
+    }
     ```

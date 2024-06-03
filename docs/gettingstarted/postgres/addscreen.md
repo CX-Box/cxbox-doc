@@ -4,8 +4,16 @@ Create file  **screen.json**
 
 ??? Example
 
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/myexample4000.screen.json
-    --8<--
+    ```json 
+    {
+      "name": "myexample",
+      "icon": "calendar",
+      "order": 4002,
+      "title": "Get Started example postgres",
+      "navigation": {
+        "menu": [
+        ]
+      }
+    }
+    ```
     ```

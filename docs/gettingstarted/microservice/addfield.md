@@ -1,5 +1,5 @@
 # Add new field to corresponding **widget.json**
-## **Step1** Add **Input**  field to widget
+## **Step1** Add **Input**  field to form widget  
 
 ![stp1.png](../postgres/stp1.png)
 

@@ -2,17 +2,17 @@
 ## **Step1** Create **view.json**
 
 ??? Example
-
     ```json
     --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/example/myexample4001form.view.json
+    {{ external_links.github_raw }}/getstarted/microservice/example/myexample4001form.view.json
     --8<--
     ```
 
-## **Step9** Add view on **screen.json**
+## **Step2** Add new view to corresponding **screen.json**
 
+??? Example
     ```json
     --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/example/myexample4001.screen.json
+    {{ external_links.github_raw }}/getstarted/microservice/example/myexample4001.screen.json
     --8<--
     ```

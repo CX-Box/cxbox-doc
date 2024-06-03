@@ -1,145 +1,24 @@
-# Add new field to an existing screen
-## **Step1** Create DTO for integrating with microservice
+# Add new field to screen
+The task involves adding a new field to the display.
 
-Create DTO for integrating with microservices through which data will be sent to the microservice
+The screen should be designed to look like this:
 
-??? Example
+![getstartedms.png](getstartedms.png)
 
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/MyEntity4001OutServiceDTO.java
-    --8<--
-    ```
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4001){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/getstarted/microservice/example){:target="_blank"}
 
-## **Step 2** Create **DAO**
+## **Step1** Create  **DAO**, **DTO** , **Service**, **Controller**
+see [Create environment](/gettingstarted/microservice/addenvironment)
 
-Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/microservice/MyEntity4003Dao.java
-    --8<--
-    ```
-Override methods:
+## **Step2** Add **screen**
+see [Add screen](/gettingstarted/microservice/addscreen)
 
-* **Create** : method create
+## **Step3** Add **view** to corresponding **screen.json**
+see [Add view](/gettingstarted/microservice/addview)
 
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyEntity4003Dao.java:create
-    --8<--
-    ```
-* **Deletion**: method delete
+## **Step4** Add **widget** to corresponding **view.json**
+see [Add widget](/gettingstarted/microservice/addwidget)
 
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyEntity4003Dao.java:delete
-    --8<--
-    ```
-* **Update of existing entries**:  method update
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyEntity4003Dao.java:update
-    --8<--
-    ```
-* **Getting all data**: method getList
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyEntity4003Dao.java:getList
-    --8<--
-    ```
-
-* **Getting data by ID**:  method getByIdIgnoringFirstLevelCache
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyEntity4003Dao.java:getByIdIgnoringFirstLevelCache
-    --8<--
-    ```
-
-## **Step 3** Create **DTO**
-
-Create **DTO** extends **DataResponseDTO**
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyExample4003DTO.java
-    --8<--
-    ```
-
-## **Step4** Create **MetaBuilder**
-
-Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyExample4003Meta.java
-    --8<--
-    ```
-
-## **Step5** Create **Service**
-
-Create **Service** extends **AnySourceVersionAwareResponseService**
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyExample4003Service.java
-    --8<--
-    ```
-
-## **Step6** Create **Controller**
-
-Create **Controller** implements **EnumBcIdentifier**
-
-??? Example
-    ```java
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/PlatformMyExample4003Controller.java
-    --8<--
-    ```
-
-## **Step7** Create **widget.json**
-
-??? Example
-
-    ```json
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/document/MyExample4003Form.widget.json
-    --8<--
-    ```
-## **Step8** Create **view.json**
-
-??? Example
-
-    ```json
-    --8<--
-        {{ external_links.github_raw }}/getsatrted/microservice/example/myexample4001form.view.json
-    --8<--
-    ```
-
-## **Step9** Add view on **screen.json**
-
-## **Step10** Add field to corresponding **widget.json**
-### Step10.1 Add **String** field  to corresponding **DataResponseDTO**.
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/input/basic/MyExample4001DTO.java
-    --8<--
-    ```
-### Step10.2 Add **Input**  field to widget
-
-![stp1.png](../postgres/stp1.png)
-
-### Step10.3 Add field to layout
-
-![stp3.png](../postgres/stp3.png)
- 
+## **Step5** Add field to corresponding **widget.json**
+see [Add field](/gettingstarted/microservice/addfield)

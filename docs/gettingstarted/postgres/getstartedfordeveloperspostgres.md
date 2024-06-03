@@ -1,102 +1,21 @@
-# Add new field to an existing screen
+# Add new field to screen
+The task involves adding a new field to the display. 
 
-## **Step1** Create **entity**
+The screen should be designed to look like this:
 
-Create **entity** extends **BaseEntity**
+![getstartedpostgres.png](getstartedpostgres.png)
 
-??? Example
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4002){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/getstarted/postgres/example){:target="_blank"}
 
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/document/MyEntity4000.java
-    --8<--
-    ```
+## **Step1** Create  **DAO**, **DTO** , **Service**, **Controller**
+see [Create environment](/gettingstarted/postgres/addenvironment)
 
-## **Step 2** Create **DTO**
+## **Step2** Add **screen**
+see [Add screen](/gettingstarted/postgres/addscreen)
 
-Create **DTO** extends **DataResponseDTO**
-??? Example
+## **Step3** Add **view** to corresponding **screen.json**
+see [Add view](/gettingstarted/postgres/addview)
 
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/document/MyExample4000DTO.java
-    --8<--
-    ```
-
- 
-## **Step3** Create **MetaBuilder**
-
-Create **MetaBuilder** extends **FieldMetaBuilder**
-
-??? Example   
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/document/MyExample4000Meta.java
-    --8<--
-    ```
-## **Step4** Create **Service**
-
-Create **Service** extends **VersionAwareResponseService**
-
-??? Example
-     ```java
-     --8<--
-     {{ external_links.github_raw }}/getsatrted/postgres/document/MyExample4000Service.java
-     --8<--
-     ```        
-### **Step5** Create **Controller**
-
-Create **Controller** implements **EnumBcIdentifier**
-
-??? Example
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/document/PlatformMyExample4000Controller.java
-    --8<--
-    ```
-
-### **Step6** Create **widget.json**  
-
-??? Example
-    ```json
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/document/MyExample4000Form.widget.json
-    --8<--
-    ```
-
-### **Step7** Create **view.json**
-
-??? Example
-
-    ```json
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/document/myexample4002form.view.json
-    --8<--
-    ```
-
-### **Step8** Add view on **screen.json**
-
-??? Example
-
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/getsatrted/postgres/example/myexample4002.screen.json
-    --8<--
-    ```
-
-### **Step9** Add field to corresponding **widget.json**
-
-#### Step9.1 Add field to widget
-
-   ![stp1.png](stp1.png)     
-
-#### Step9.2 Add field to entity, DTO
-
-   ![stp2.png](stp2.png)   
-
-#### Step9.3 Add field to layout
-
-   ![stp3.png](stp3.png)
-
-#### Example
-   ![addField.gif](addField.gif)  
+## **Step4** Add **widget** and  **field** to corresponding **view.json**
+see [Add widget and field](/gettingstarted/postgres/addwidget)

@@ -6,6 +6,6 @@ Create file  **screen.json**
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/example/myexample4002.screen.json
+    {{ external_links.github_raw }}/getstarted/postgres/document/myexample4000.screen.json
     --8<--
     ```

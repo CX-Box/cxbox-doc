@@ -2,8 +2,25 @@
 `Time`  is a component for time editing. It can be used for editing and displaying time.
 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateBasic){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/base){:target="_blank"}
+
+The time type supports various formats for representing and manipulating time values. These formats include:
+
+* 24-hour clock format (hh:mm,hh: mm:ss): For example, 14:30, 14:30:00.
+* 12-hour clock format with AM/PM (hh:mm AM/PM,hh: mm:ss AM/PM): For example, 02:30 PM,02:30:45 PM.
+* The time type also supports representing hours, minutes, and seconds separately. For example:
+    
+    Hours(h): 13 (13 Hours or 1PM).
+
+    Minutes(mm): 55 (55 minutes).
+
+    Seconds(ss): 30 (30 seconds).
+
+    Minutes and seconds(mm:ss) : 55:30 (55 minutes and 30 seconds).
+
+These formats ensure that the time type can be utilized effectively in various contexts and applications, from simple time displays to complex time computations and data interchange. 
+
 ### How does it look?
 
 === "List widget"
@@ -16,26 +33,31 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDate** to corresponding **BaseEntity**.
+    **Step1** Add field **LocalDateTime** to corresponding **BaseEntity**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/basic/DateBasic.java
+    {{ external_links.github_raw }}/time/base/MyEntity3500.java
     --8<--
     ```
 
     **Step2**  Add field **LocalDate** to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/basic/DateBasicDTO.java
+    {{ external_links.github_raw }}/time/base/myexample3500DTO.java
     --8<--
     ```
 
     === "List widget"
         **Step3** Add to **_.widget.json_**.
 
+        To set the format, add  "format". For example:
+
+        "format": "h:mm"
+
+        By default, there will be a standard format applied: "h: mm:ss"
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicList.widget.json
+        {{ external_links.github_raw }}/time/base/MyExample3500List.widget.json
         --8<--
         ```
     === "Info widget"
@@ -43,7 +65,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicInfo.widget.json
+        {{ external_links.github_raw }}/time/base/MyExample3500Info.widget.json
         --8<--
         ```
 
@@ -53,14 +75,13 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicForm.widget.json
+        {{ external_links.github_raw }}/time/base/MyExample3500Form.widget.json
         --8<--
         ```    
 
 ## Placeholder
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DatePlaceholder){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/placeholder){:target="_blank"}
-
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3505){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
 ### How does it look?
@@ -78,7 +99,7 @@
     
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/placeholder/DatePlaceholderMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/time/placeholder/MyExample3505Meta.java:buildRowDependentMeta
     --8<--
     ```   
 
@@ -93,12 +114,12 @@
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
 `Calculated color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateColor){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/color){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3501){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/color){:target="_blank"}
 
 `Constant color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateColorConst){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/colorconst){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3502){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/colorconst){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -118,21 +139,21 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/color/DateColorDTO.java
+        {{ external_links.github_raw }}/time/color/MyEntity3501DTO.java
         --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/color/DateColorList.widget.json
+            {{ external_links.github_raw }}/time/color/MyExample3501List.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/color/DateColorInfo.widget.json
+            {{ external_links.github_raw }}/time/color/MyExample3501Info.widget.json
             --8<--
             ```   
         === "Form widget"
@@ -143,7 +164,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/colorconst/DateColorConstList.widget.json
+            {{ external_links.github_raw }}/time/colorconst/MyExample3502List.widget.json
             --8<--
             ```
 
@@ -151,24 +172,24 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/colorconst/DateColorConstInfo.widget.json
+            {{ external_links.github_raw }}/time/colorconst/MyExample3502Info.widget.json
             --8<--
             ```   
 
         === "Form widget"
             _not applicable_    
 
-
+<!--
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 `Editable`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateBasic){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/basic){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/basic){:target="_blank"}
 
 `Readonly`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateCreateEdit){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/ro){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3507){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/ro){:target="_blank"}
 
 
 ### How does it look?
@@ -194,13 +215,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicService.java:doUpdateEntity
+        {{ external_links.github_raw }}/time/base/myexample3500Service.java:doUptimeEntity
         --8<--
         ```
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/time/base/myexample3500Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -215,7 +236,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/ro/DateCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw }}/time/ro/DateCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```    
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -226,8 +247,9 @@
         === "Form widget"
             **Works for Form.**
 ## Filtering
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateFiltration){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/filtration){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
 ### How does it look?
@@ -244,23 +266,26 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/filtration/DateFiltrationDTO.java
+        {{ external_links.github_raw }}/time/filtration/DateFiltrationDTO.java
         --8<--
         ```        
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/filtration/DateFiltrationMeta.java:buildIndependentMeta
+        {{ external_links.github_raw }}/time/filtration/DateFiltrationMeta.java:buildIndependentMeta
         --8<--
         ```        
     === "Info widget"
         _not applicable_
     === "Form widget"
         _not applicable_
+-->
 
 ## Drilldown
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateDrillDown){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/drilldown){:target="_blank"}
+_not applicable_
+<!--
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
@@ -283,14 +308,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/drilldown/DateDrillDownMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/time/drilldown/MyExample3503Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/drilldown/DateDrillDownList.widget.json
+        {{ external_links.github_raw }}/time/drilldown/MyExample3503List.widget.json
         --8<--
         ```
         **Option 2**
@@ -301,7 +326,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/drilldown/DateDrillDownInfo.widget.json
+        {{ external_links.github_raw }}/time/drilldown/MyExample3503Info.widget.json
         --8<--
         ```
         **Option 2**
@@ -310,34 +335,36 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Form widget"
         _not applicable_
 [Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+-->
 
 ## Validation
+<!--
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationbusinessex){:target="_blank"}
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MyExample3503List){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationRuntimeExEntity){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationruntimeex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateConfirm){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationconfirm){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample165){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationannotation){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/validationannotation){:target="_blank"}
 
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample320){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/validationdynamic){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/validationdynamic){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -370,7 +397,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/validationbusinessex/DateValidationBusinessExService.java:doUpdateEntity
+        {{ external_links.github_raw }}/time/validationbusinessex/DateValidationBusinessExService.java:doUptimeEntity
         --8<--
         ```
         === "List widget"
@@ -386,7 +413,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/validationruntimeex/DateValidationRuntimeExEntityService.java:doUpdateEntity
+        {{ external_links.github_raw }}/time/validationruntimeex/DateValidationRuntimeExEntityService.java:doUptimeEntity
         --8<--
         ```         
         === "List widget"
@@ -399,7 +426,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/validationconfirm/DateConfirmService.java:getActions
+        {{ external_links.github_raw }}/time/validationconfirm/DateConfirmService.java:getActions
         --8<--
         ```
         === "List widget"
@@ -417,7 +444,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/date/validationannotation/MyExample165DTO.java
+            {{ external_links.github_raw }}/time/validationannotation/MyExample165DTO.java
             --8<--
             ```
             === "List widget"
@@ -436,19 +463,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/date/validationdynamic/MyExample320Service.java:validateFields
+            {{ external_links.github_raw }}/time/validationdynamic/MyExample320Service.java:valitimeFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/date/validationdynamic/MyExample320Service.java:doUpdateEntity
+            {{ external_links.github_raw }}/time/validationdynamic/MyExample320Service.java:doUptimeEntity
             --8<--
             ```
- 
+
+
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/sorting){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order.
 
@@ -469,7 +497,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateRequired){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/date/required){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/time/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided.
 
@@ -485,7 +513,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/required/DateRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw }}/time/required/DateRequiredMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
@@ -494,3 +522,5 @@ Also, it optionally allows you to filter data on target view before it will be o
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+-->

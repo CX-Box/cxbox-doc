@@ -35,6 +35,7 @@ nav:
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md
       - Field dateTimeWithSeconds: widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md
+      - Field time: widget/fields/field/time/time.md
       - Field number: widget/fields/field/number/number.md
       - Field percent: widget/fields/field/percent/percent.md
       - Field hidden: widget/fields/field/hidden/hidden.md

@@ -21,4 +21,4 @@ see [Add view](/gettingstarted/postgres/addview)
 see [Add widget and field](/gettingstarted/postgres/addwidget)
 
 #### Example
-![addfieldpostgres.gif](addfieldpostgres.gif)
+![addinputfield.gif](addinputfield.gif)

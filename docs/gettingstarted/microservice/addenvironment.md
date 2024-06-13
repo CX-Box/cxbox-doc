@@ -14,6 +14,8 @@ Create DTO for integrating with microservices through which data will be sent to
 ## **Step 2** Create **DAO**
 
 Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
+
+??? Example
     ```java
     --8<--
     {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java

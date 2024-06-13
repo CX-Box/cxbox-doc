@@ -40,10 +40,10 @@ These formats ensure that the time type can be utilized effectively in various c
     --8<--
     ```
 
-    **Step2**  Add field **LocalDate** to corresponding **DataResponseDTO**.
+    **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/base/MyExample3505DTO.java
+    {{ external_links.github_raw }}/time/base/yExample3500DTO.java
     --8<--
     ```
 

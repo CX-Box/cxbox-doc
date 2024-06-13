@@ -86,7 +86,7 @@
         _not applicable_
     === "Form widget"
         ![img_edit_form.png](img_edit_form.png)
-=== "Readonly"
+=== "Editable"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)
     === "Info widget"

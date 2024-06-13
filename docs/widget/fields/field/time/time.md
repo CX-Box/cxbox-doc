@@ -43,7 +43,7 @@ These formats ensure that the time type can be utilized effectively in various c
     **Step2**  Add field **LocalDate** to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/base/myexample3500DTO.java
+    {{ external_links.github_raw }}/time/base/MyExample3505DTO.java
     --8<--
     ```
 
@@ -139,7 +139,7 @@ These formats ensure that the time type can be utilized effectively in various c
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/color/MyEntity3501DTO.java
+        {{ external_links.github_raw }}/time/color/MyExample3501DTO.java
         --8<--
         ```
         === "List widget"   

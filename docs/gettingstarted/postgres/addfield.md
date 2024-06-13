@@ -99,4 +99,4 @@ Create **Controller** implements **EnumBcIdentifier**
    ![stp3.png](stp3.png)
 
 #### Example
-   ![addField.gif](addField.gif)  
+![addinputfield.gif](addinputfield.gif)

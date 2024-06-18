@@ -59,7 +59,7 @@ nav:
       - Widget List: widget/type/list/list.md
       - Widget Form Popup: widget/type/formpopup/formpopup.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
-      - Statistics blocks:  widget/type/statblocks/statblocks.md
+      - Widget Statistics blocks:  widget/type/statblocks/statblocks.md
   - Features:
       - Actions: features/element/actions/actions.md
       - Authorization:

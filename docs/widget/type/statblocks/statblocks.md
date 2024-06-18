@@ -1,29 +1,32 @@
 # Statistics blocks
 `Statistics blocks`  widget is a  tool designed to display aggregated data in a visually accessible format. This data can be sourced either from a database or from external sources.
 
+## Main visual parts
+We can modify the following parameters on this widget:
+
+* Title - name for block.Not required
+* Value - field that specifies formulas for data aggregation
+* Icon - picture representing a particular function.Not required([example icon](https://3x.ant.design/components/icon/))
+* Color - color for block.Not required
+* Description - comment for field.Not required
+
+![img_stat_description.png](img_stat_description.png)
+
 ## Basics
 You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
 
 `Custom fields`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4200){:target="_blank"}  
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4200){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/customfields){:target="_blank"}
 
 `Default fields`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4203){:target="_blank"} 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4203){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/defaultfields){:target="_blank"}
 
 ### How does it look?
 ![img_stat.png](img_stat.png)
 
-We can modify the following parameters on this widget:
 
-* Title - name for block.Not required
-* Value - field that specifies formulas for data aggregation
-* Icon - picture representing a particular function.Not required( [example icon](https://3x.ant.design/components/icon/))
-* Color - color for block.Not required
-* Description - comment for field.Not required
-
-![img_stat_description.png](img_stat_description.png)
 ### How to add?
 ??? Example
 
@@ -58,15 +61,17 @@ We can modify the following parameters on this widget:
         --8<--
         ```
        **Step5** Create **Widget** with  type **StatsBlock**
+
          "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application
+        
          "options.stats"  - This map how custom fields are matched to standard properties.
           
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200List.json
+        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
         --8<--
         ```  
-
+ 
     === "Default name fields"
  
          You have the option to utilized default  field names for standard properties such as color, icon, etc. When doing so, you'll not need to establish mappings for these fields to standard criteria
@@ -98,10 +103,12 @@ We can modify the following parameters on this widget:
         --8<--
         ```
        **Step5** Create **Widget** with  type **StatsBlock**
-         "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application 
+       
+          "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application 
+      
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203List.json
+        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
         --8<--
         ```
  

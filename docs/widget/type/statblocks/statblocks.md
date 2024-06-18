@@ -62,9 +62,9 @@ You have the option to utilize custom field names for standard properties such a
         ```
        **Step5** Create **Widget** with  type **StatsBlock**
 
-         "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application
+        "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application
         
-         "options.stats"  - This map how custom fields are matched to standard properties.
+        "options.stats"  - This map how custom fields are matched to standard properties.
           
         ```json
         --8<--
@@ -104,7 +104,7 @@ You have the option to utilize custom field names for standard properties such a
         ```
        **Step5** Create **Widget** with  type **StatsBlock**
        
-          "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application 
+        "fields" - We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application 
       
         ```json
         --8<--

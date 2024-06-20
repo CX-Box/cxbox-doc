@@ -229,11 +229,11 @@ For example, if the row has a total width of 24 spans, each widget will take up 
   
 #### How does it look?
 === "view gridWidth 24 - recommended"
-    ![gridWidth24.png](gridWidth24.png)
+    ![gridwidth24.png](gridwidth24.png)
 === "view gridWidth 12"
-    ![gridWidth12.png](gridWidth12.png)
+    ![gridwidth12.png](gridwidth12.png)
 === "view gridWidth 6"
-    ![gridWidth6.png](gridWidth6.png)
+    ![gridwidth6.png](gridwidth6.png)
 #### How to add?
 ??? Example
     === "gridWidth24 - recommended"
@@ -259,3 +259,37 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json
         --8<--
         ```
+
+
+## Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4208){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown){:target="_blank"}
+
+`DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
+
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+
+### How does it look?
+ ![drilldown.gif](drilldown.gif) 
+
+### How to add?
+??? Example
+    **Option 1**  
+    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+ 
+    `Step 2` Add **"drillDown": "true"**  to .widget.json.
+    ```json
+    --8<--
+    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210List.widget.json
+    --8<--
+    ```
+
+    **Option 2**
+       Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+
+[Advanced customization](/advancedCustomization_drillDown)

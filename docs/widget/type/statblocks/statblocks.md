@@ -171,7 +171,7 @@ There are types of:
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/icon/withouticon/MMyExample4224Stat.widget.json
+        {{ external_links.github_raw }}/widgets/statsblock/icon/withouticon/MyExample4224Stat.widget.json
         --8<--
         ```
 
@@ -186,11 +186,11 @@ There are types of:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4206){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/colorconst){:target="_blank"}
 
-### How does it look?
+#### How does it look?
 ![img_color.png](img_color.png)
 
 
-### How to add?
+#### How to add?
 ??? Example
     === "Calculated color"
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
@@ -237,9 +237,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
 #### How to add?
 ??? Example
     === "gridWidth24 - recommended"
-
-        Change **gridWidth**=24  to corresponding **view**
-
+        Change **gridWidth** = 24  to corresponding **view**
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat.view.json
@@ -247,18 +245,15 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         ```
 
     === "gridWidth12"
-
-        Change **gridWidth**=24  to corresponding **view**
-
+        Change **gridWidth** = 12  to corresponding **view**
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat12.view.json
         --8<--
-        ```
+        ``` 
+
     === "gridWidth6"
-
-       Change **gridWidth**=24  to corresponding **view**
-
+        Change **gridWidth** = 6  to corresponding **view**
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json

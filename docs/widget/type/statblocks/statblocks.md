@@ -127,7 +127,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/title/withtitle/MyExample4226List.widget.json
+        {{ external_links.github_raw }}/widgets/statsblock/title/withtitle/MyExample4226Stat.widget.json
         --8<--
         ```
  
@@ -135,7 +135,7 @@ There are types of:
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/title/withouttitle/MyExample4225List.widget.json
+        {{ external_links.github_raw }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
         --8<--
         ```
  
@@ -163,7 +163,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/icon/withicon/MyExample4223List.widget.json
+        {{ external_links.github_raw }}/widgets/statsblock/icon/withicon/MyExample4223Stat.widget.json
         --8<--
         ```
 
@@ -171,7 +171,7 @@ There are types of:
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/icon/withouticon/MyExample4224List.widget.json
+        {{ external_links.github_raw }}/widgets/statsblock/icon/withouticon/MMyExample4224Stat.widget.json
         --8<--
         ```
 
@@ -215,5 +215,52 @@ There are types of:
         ```json
         --8<--
         {{ external_links.github_raw }}/widgets/statsblock/color/colorconst/MyExample4205List.widget.json
+        --8<--
+        ```
+
+###  <a id="Fieldslayout">Fields layout</a>
+**options.layout** - no use in this type.
+
+By default, we use the view gridWidth field to arrange widgets in a row, each occupying 1/3 of the given size. 
+For example, if the row has a total width of 24 spans, each widget will take up 8 spans.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4228){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/fieldslayoute){:target="_blank"}
+  
+#### How does it look?
+=== "view gridWidth 24 - recommended"
+    ![gridWidth24.png](gridWidth24.png)
+=== "view gridWidth 12"
+    ![gridWidth12.png](gridWidth12.png)
+=== "view gridWidth 6"
+    ![gridWidth6.png](gridWidth6.png)
+#### How to add?
+??? Example
+    === "gridWidth24 - recommended"
+
+        Change **gridWidth**=24  to corresponding **view**
+
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat.view.json
+        --8<--
+        ```
+
+    === "gridWidth12"
+
+        Change **gridWidth**=24  to corresponding **view**
+
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat12.view.json
+        --8<--
+        ```
+    === "gridWidth6"
+
+       Change **gridWidth**=24  to corresponding **view**
+
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json
         --8<--
         ```

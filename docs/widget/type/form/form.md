@@ -197,7 +197,7 @@ There are types of:
 ??? Example
 
     * key -  static  
-    * sequence -  
+    * sequence  
     * bcName - (required)
     * params { fieldKey } - (required) name field with show condition
     * params { value } - (required)  show condition

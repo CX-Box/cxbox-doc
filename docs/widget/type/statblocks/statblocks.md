@@ -293,7 +293,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         ```
 
 
-## Drilldown
+### Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4208){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown){:target="_blank"}
 
@@ -301,10 +301,10 @@ For example, if the row has a total width of 24 spans, each widget will take up 
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
 
-### How does it look?
+#### How does it look?
  ![drilldown.gif](drilldown.gif) 
 
-### How to add?
+#### How to add?
 ??? Example
     **Option 1**  
     `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.

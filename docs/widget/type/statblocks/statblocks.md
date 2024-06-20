@@ -54,6 +54,10 @@ You have the option to utilize custom field names for standard properties such a
         {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
         --8<--
         ```
+
+        !!! tip
+            To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
+
     === "Default name fields" 
         You have the option to utilized default  field names for standard properties such as color, icon, etc. When doing so, you'll not need to establish mappings for these fields to standard criteria
 
@@ -92,6 +96,9 @@ You have the option to utilize custom field names for standard properties such a
         {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
         --8<--
         ```
+
+        !!! tip
+            To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
 
 ## Main visual parts
 We can modify the following parameters on this widget:

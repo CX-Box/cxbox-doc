@@ -18,59 +18,6 @@ You have the option to utilize custom field names for standard properties such a
 
 ### How to add?
 ??? Example
-    === "Custom name fields"
-        You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
-
-        **Step1** Create **DataResponseDTO** with custom fields. 
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200DTO.java
-        --8<--
-        ```    
-        **Step2**  Create **DAO** extends AbstractAnySourceBaseDAO<> implements AnySourceBaseDAO.
-
-        [Title](#Title). Optional
-
-        Value - field that specifies formulas for data aggregation
-
-        [Icon](#Icon). Optional
-
-        [Color](#Color). Optional
-
-        Description - comment for field. Optional
-
-        Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
-        
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Dao.java
-        --8<--
-        ```
-        **Step3** Create **Meta** extends AnySourceFieldMetaBuilder.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Meta.java
-        --8<--
-        ``` 
-        **Step4** Create **Service** extends AnySourceVersionAwareResponseService.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Service.java
-        --8<--
-        ```
-        **Step5** Create **Widget** with  type **StatsBlock** 
-        !!! tip
-            **fields**.We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application
-        **options.stats** - This map how custom fields are matched to standard properties.    
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
-        --8<--
-        ```
-
-        !!! tip
-            To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
-
     === "Default name fields" 
         You have the option to utilized default  field names for standard properties such as color, icon, etc. When doing so, you'll not need to establish mappings for these fields to standard criteria
 
@@ -124,38 +71,60 @@ You have the option to utilize custom field names for standard properties such a
 
           !!! tip
               To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
-## Drilldown
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4208){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown){:target="_blank"}
 
-`DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
+    === "Custom name fields"
+        You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+        **Step1** Create **DataResponseDTO** with custom fields. 
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200DTO.java
+        --8<--
+        ```    
+        **Step2**  Create **DAO** extends AbstractAnySourceBaseDAO<> implements AnySourceBaseDAO.
 
-### How does it look?
-![drilldown.gif](drilldown.gif)
+        [Title](#Title). Optional
 
-### How to add?
-??? Example
-    **Option 1**  
-    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
-    ```java
-    --8<--
-    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210Meta.java:buildRowDependentMeta
-    --8<--
-    ```
+        Value - field that specifies formulas for data aggregation
 
-    `Step 2` Add **"drillDown": "true"**  to .widget.json.
-    ```json
-    --8<--
-    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210List.widget.json
-    --8<--
-    ```
+        [Icon](#Icon). Optional
 
-    **Option 2**
-       Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+        [Color](#Color). Optional
 
-[Advanced customization](/advancedCustomization_drillDown)
+        Description - comment for field. Optional
+
+        Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Dao.java
+        --8<--
+        ```
+        **Step3** Create **Meta** extends AnySourceFieldMetaBuilder.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Meta.java
+        --8<--
+        ``` 
+        **Step4** Create **Service** extends AnySourceVersionAwareResponseService.
+        ```java
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Service.java
+        --8<--
+        ```
+        **Step5** Create **Widget** with  type **StatsBlock** 
+        !!! tip
+            **fields**.We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application
+        **options.stats** - This map how custom fields are matched to standard properties.    
+        ```json
+        --8<--
+        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
+        --8<--
+        ```
+
+        !!! tip
+            To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
+
 
 ## Main visual parts
 We can modify the following parameters on this widget:
@@ -285,6 +254,10 @@ There are types of:
 ###  <a id="Fieldslayout">Fields layout</a>
 **options.layout** - no use in this type.
 
+###  <a id="Showcondition">Show condition</a>
+_not applicable_
+
+### <a id="Viewwidgetwight">View widget wight</a>
 By default, we use the view gridWidth field to arrange widgets in a row, each occupying 1/3 of the given size. 
 For example, if the row has a total width of 24 spans, each widget will take up 8 spans.
 
@@ -323,3 +296,35 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json
         --8<--
         ```
+### Drilldown
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4208){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown){:target="_blank"}
+
+`DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
+
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+
+#### How does it look?
+![drilldown.gif](drilldown.gif)
+
+#### How to add?
+??? Example
+    **Option 1**  
+    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+
+    `Step 2` Add **"drillDown": "true"**  to .widget.json.
+    ```json
+    --8<--
+    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210List.widget.json
+    --8<--
+    ```
+
+    **Option 2**
+       Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+
+[Advanced customization](/advancedCustomization_drillDown)

@@ -188,6 +188,10 @@ There are types of:
         {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
         --8<--
         ```
+###  <a id="Fieldslayout">Fields layout</a>
+**options.layout** - no use in this type.
+###  <a id="Showcondition">Show condition</a>
+_not applicable_
 
 ### Actions
 `Actions` show available actions as separate buttons

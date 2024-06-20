@@ -69,7 +69,10 @@ There are types of:
         {{ external_links.github_raw }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
         --8<--
         ```
- 
+###  <a id="Fieldslayout">Fields layout</a>
+**options.layout** - no use in this type.
+###  <a id="Showcondition">Show condition</a>
+_not applicable_
 <!-- 
 ###  <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible

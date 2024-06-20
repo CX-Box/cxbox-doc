@@ -28,6 +28,19 @@ You have the option to utilize custom field names for standard properties such a
         --8<--
         ```    
         **Step2**  Create **DAO** extends AbstractAnySourceBaseDAO<> implements AnySourceBaseDAO.
+
+        [Title](#Title). Optional
+
+        Value - field that specifies formulas for data aggregation
+
+        [Icon](#Icon). Optional
+
+        [Color](#Color). Optional
+
+        Description - comment for field. Optional
+
+        Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
+        
         ```java
         --8<--
         {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Dao.java
@@ -69,36 +82,48 @@ You have the option to utilize custom field names for standard properties such a
         --8<--
         ```
         **Step2**  Create **DAO** extends AbstractAnySourceBaseDAO<> implements AnySourceBaseDAO.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Dao.java
-        --8<--
-        ```
-        **Step3** Create **Meta** extends AnySourceFieldMetaBuilder.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Meta.java
-        --8<--
-        ```
-        **Step4** Create **Service** extends AnySourceVersionAwareResponseService.
-        ```java
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Service.java
-        --8<--
-        ```
- 
-        **Step5** Create **Widget** with  type **StatsBlock**
-        !!! tip
-            **fields**. We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application 
-      
-        ```json
-        --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
-        --8<--
-        ```
 
-        !!! tip
-            To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
+        [Title](#Title). Optional
+
+        Value - field that specifies formulas for data aggregation
+
+        [Icon](#Icon). Optional
+
+        [Color](#Color). Optional
+
+        Description - comment for field. Optional
+
+        Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
+          ```java
+          --8<--
+          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Dao.java
+          --8<--
+          ```
+          **Step3** Create **Meta** extends AnySourceFieldMetaBuilder.
+          ```java
+          --8<--
+          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Meta.java
+          --8<--
+          ```
+          **Step4** Create **Service** extends AnySourceVersionAwareResponseService.
+          ```java
+          --8<--
+          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Service.java
+          --8<--
+          ```
+ 
+          **Step5** Create **Widget** with  type **StatsBlock**
+          !!! tip
+              **fields**. We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application 
+      
+          ```json
+          --8<--
+          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
+          --8<--
+          ```
+
+          !!! tip
+              To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
 
 ## Main visual parts
 We can modify the following parameters on this widget:

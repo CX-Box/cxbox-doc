@@ -14,8 +14,8 @@ This tutorial serves as an introduction to the fundamentals, guiding you through
 ## :material-check-underline: Step 3 Add new field to an existing screen
 Choose datasource:
 
-* [Postgres]()
-* [Microcervicervice]()
+* [Postgres](/gettingstarted/postgres/getstartedfordeveloperspostgres.md)
+* [Microcervicervice](/gettingstarted/microservice/getstartedfordevelopersmicroservice.md)
 
 ## :material-play: Step 4 To deploy an application
 

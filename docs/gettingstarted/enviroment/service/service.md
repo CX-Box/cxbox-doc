@@ -16,13 +16,6 @@ However, if you need to output data from a view, any necessary data transformati
       {{ external_links.github_raw }}/input/basic/InputBasicMeta.java
       --8<--
       ```
-
-####  updateEntity 
-####  preview
-####  loadEntity 
-#### doCreateEntity 
-#### doUpdateEntity 
-#### doPreview 
 }
 
 ### AnySourceVersionAwareResponseService
@@ -38,10 +31,3 @@ For directly outputting data from the database, it is recommended to use Version
       {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
       --8<--
       ```
-####  updateEntity
-####  preview
-####  loadEntity
-#### doCreateEntity
-#### doUpdateEntity
-#### doPreview
-}

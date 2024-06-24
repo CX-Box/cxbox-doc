@@ -2,9 +2,9 @@ How create standard repository elements?
 
 * Entity
 * DTO
-* Service
-* MetaBuilder
-* PlatformController
+* [Service](/gettingstarted/enviroment/service/service.md)
+* [MetaBuilder](/gettingstarted/enviroment/meta/metabuilder.md)
+* [Controller](docs/gettingstarted/enviroment/controller/controller.md)
 
 Visual elements
 * widget

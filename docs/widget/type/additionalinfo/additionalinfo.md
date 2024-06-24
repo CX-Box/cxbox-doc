@@ -10,7 +10,7 @@
 
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
-    **Step1** Create file **_.widget.json_** with  type  ****.
+    **Step1** Create file **_.widget.json_** with  type  **AdditionalInfo**.
 
     * name -  static (unique within the project)
     * [title](#Title) - (optional) 

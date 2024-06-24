@@ -5,9 +5,9 @@ nav:
   - Home: index.md
   - What’s new: new/whatsnew.md
   - Versions :
+      - v2.0.0: new/version200.md
       - v1.0.1: new/version101.md
       - v1.0.0: new/version100.md
-      - v2.0.0: new/version200.md
   - Guides for work with documentation:
     - For analysts: guide/analystguide/analystguide.md
     - For developers: guide/developerguide/developerguide.md
@@ -68,7 +68,9 @@ nav:
       - Database:
         - Oracle: features/element/database/oracle/oraclebd.md
         - Postgres: features/element/database/postgres/postgresbd.md
-      - DrillDown: features/element/drillDown/drillDown.md
+      - DrillDown:
+        - Basic: features/element/drilldown/drilldown.md
+        - DrillDown Types: features/element//drillDown/drilldowntype.md
       - Filtration: features/element/filtration/filtration.md
       - FileStorage: features/element/fileStorage/fileStorage.md
       - Monitoring tools:
@@ -82,7 +84,7 @@ nav:
         - Sent to email: features/element/notifications/email/email.md
         - Push: features/element/notifications/push/websocket.md
   - Advanced customization:
-      - DrillDown: advancedCustomization/element/drillDown/drillDown.md
+      - DrillDown: advancedCustomization/element/drilldown/drilldown.md
       - Validation: advancedCustomization/element/validation/validation.md
       - Filtration: advancedCustomization/element/filtration/filtration.md
       - SearchParameter: advancedCustomization/element/searchparameter/searchparameter.md
@@ -170,8 +172,8 @@ plugins:
         'widget_field_multipleSelect.md': 'widget/fields/field/multipleSelect/multipleSelect.md'
         'widget_field_hint.md': 'widget/fields/field/hint/hint.md'
         'widget_field_multivalueHover.md': 'widget/fields/field/multivalueHover/multivalueHover.md'
-        'features_drillDown.md': 'features/element/drillDown/drillDown.md'
-        'advancedCustomization_drillDown.md': 'advancedCustomization/element/drillDown/drillDown.md'
+        'features_drillDown.md': 'features/element/drilldown/drilldown.md'
+        'advancedCustomization_drillDown.md': 'advancedCustomization/element/drilldown/drilldown.md'
         'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
         'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
         'form.md': 'widget/type/form/form.md'

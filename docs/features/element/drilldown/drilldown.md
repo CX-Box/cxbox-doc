@@ -29,7 +29,7 @@ The operation mechanism of drilldown works as follows:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaINNER
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaINNER
     --8<--
     ```
    
@@ -59,7 +59,7 @@ Example request: `/screen/myexample3611/view/myexample3611list`
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/simple/MyExample3611Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/feature/drilldown/simple/MyExample3611Meta.java:buildRowDependentMeta
     --8<--
     ```
 
@@ -82,7 +82,7 @@ Example request:
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/simple/MyExample3611Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/feature/drilldown/simple/MyExample3611Meta.java:buildRowDependentMeta
     --8<--
     ```
 ### <a id=" AdvanceddrillDown"> Advanced drillDown one bc</a>
@@ -101,7 +101,7 @@ Example request:
     The link consists of two parts:
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:url
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:url
     --8<--
     ```
 
@@ -110,14 +110,14 @@ Example request:
     
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlBC
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlBC
     --8<--
     ```
     `Step 2`  Create a link with filter.
  
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlFilter
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlFilter
     --8<--
     ```
 
@@ -138,7 +138,7 @@ Example request:
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/simple/MyExample3611Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/feature/drilldown/simple/MyExample3611Meta.java:buildRowDependentMeta
     --8<--
     ```
 #### How to add?
@@ -146,7 +146,7 @@ Example request:
     The link consists of two parts:
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:url
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:url
     --8<--
     ```
 
@@ -155,14 +155,14 @@ Example request:
     
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlBC
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlBC
     --8<--
     ```
     `Step 2`  Create a link with filter.
  
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlFilter
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlFilter
     --8<--
     ```
 

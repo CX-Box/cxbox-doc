@@ -7,7 +7,7 @@ Create DTO for integrating with microservices through which data will be sent to
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/MyEntity4001OutServiceDTO.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/MyEntity4001OutServiceDTO.java
     --8<--
     ```
 
@@ -18,7 +18,7 @@ Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDA
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyEntity4003Dao.java
     --8<--
     ```
 
@@ -29,7 +29,7 @@ Override methods:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java:create
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyEntity4003Dao.java:create
     --8<--
     ```
 * **Deletion**: method delete
@@ -37,7 +37,7 @@ Override methods:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java:delete
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyEntity4003Dao.java:delete
     --8<--
     ```
 * **Update of existing entries**:  method update
@@ -45,7 +45,7 @@ Override methods:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java:update
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyEntity4003Dao.java:update
     --8<--
     ```
 * **Getting all data**: method getList
@@ -53,7 +53,7 @@ Override methods:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java:getList
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyEntity4003Dao.java:getList
     --8<--
     ```
 
@@ -62,7 +62,7 @@ Override methods:
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyEntity4003Dao.java:getByIdIgnoringFirstLevelCache
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyEntity4003Dao.java:getByIdIgnoringFirstLevelCache
     --8<--
     ```
 
@@ -73,7 +73,7 @@ Create **DTO** extends **DataResponseDTO**
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyExample4003DTO.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyExample4003DTO.java
     --8<--
     ```
 
@@ -84,7 +84,7 @@ Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyExample4003Meta.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyExample4003Meta.java
     --8<--
     ```
 
@@ -95,7 +95,7 @@ Create **Service** extends **AnySourceVersionAwareResponseService**
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/MyExample4003Service.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyExample4003Service.java
     --8<--
     ```
 
@@ -106,6 +106,6 @@ Create **Controller** implements **EnumBcIdentifier**
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/document/PlatformMyExample4003Controller.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/document/PlatformMyExample4003Controller.java
     --8<--
     ```

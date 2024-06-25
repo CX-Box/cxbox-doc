@@ -25,7 +25,7 @@ You have the option to utilize custom field names for standard properties such a
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203DTO.java
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203DTO.java
         --8<--
         ```
         **Step2**  Create **DAO** extends AbstractAnySourceBaseDAO<> implements AnySourceBaseDAO.
@@ -43,19 +43,19 @@ You have the option to utilize custom field names for standard properties such a
         Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
           ```java
           --8<--
-          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Dao.java
+          {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203Dao.java
           --8<--
           ```
           **Step3** Create **Meta** extends AnySourceFieldMetaBuilder.
           ```java
           --8<--
-          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Meta.java
+          {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203Meta.java
           --8<--
           ```
           **Step4** Create **Service** extends AnySourceVersionAwareResponseService.
           ```java
           --8<--
-          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203Service.java
+          {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203Service.java
           --8<--
           ```
  
@@ -65,7 +65,7 @@ You have the option to utilize custom field names for standard properties such a
       
           ```json
           --8<--
-          {{ external_links.github_raw }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
+          {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
           --8<--
           ```
 
@@ -78,7 +78,7 @@ You have the option to utilize custom field names for standard properties such a
         **Step1** Create **DataResponseDTO** with custom fields. 
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200DTO.java
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200DTO.java
         --8<--
         ```    
         **Step2**  Create **DAO** extends AbstractAnySourceBaseDAO<> implements AnySourceBaseDAO.
@@ -97,19 +97,19 @@ You have the option to utilize custom field names for standard properties such a
         
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Dao.java
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200Dao.java
         --8<--
         ```
         **Step3** Create **Meta** extends AnySourceFieldMetaBuilder.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Meta.java
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200Meta.java
         --8<--
         ``` 
         **Step4** Create **Service** extends AnySourceVersionAwareResponseService.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200Service.java
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200Service.java
         --8<--
         ```
         **Step5** Create **Widget** with  type **StatsBlock** 
@@ -118,7 +118,7 @@ You have the option to utilize custom field names for standard properties such a
         **options.stats** - This map how custom fields are matched to standard properties.    
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
         --8<--
         ```
 
@@ -160,7 +160,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/title/withtitle/MyExample4226Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/title/withtitle/MyExample4226Stat.widget.json
         --8<--
         ```
  
@@ -168,7 +168,7 @@ There are types of:
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
         --8<--
         ```
  
@@ -196,7 +196,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/icon/withicon/MyExample4223Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withicon/MyExample4223Stat.widget.json
         --8<--
         ```
 
@@ -204,7 +204,7 @@ There are types of:
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/icon/withouticon/MyExample4224Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withouticon/MyExample4224Stat.widget.json
         --8<--
         ```
 
@@ -230,14 +230,14 @@ There are types of:
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/color/color/MyExample4206DTO.java
+        {{ external_links.github_raw_doc }}/widgets/statsblock/color/color/MyExample4206DTO.java
         --8<--
         ```
   
         **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/color/color/MyExample4206List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/color/color/MyExample4206List.widget.json
         --8<--
         ```
   
@@ -247,7 +247,7 @@ There are types of:
         Add **"bgColor"** :  `HEX color`  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/color/colorconst/MyExample4205List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/color/colorconst/MyExample4205List.widget.json
         --8<--
         ```
 
@@ -277,7 +277,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         Change **gridWidth** = 24  to corresponding **view**
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat.view.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/fieldslayoute/MyExample4228Stat.view.json
         --8<--
         ```
 
@@ -285,7 +285,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         Change **gridWidth** = 12  to corresponding **view**
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat12.view.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/fieldslayoute/MyExample4228Stat12.view.json
         --8<--
         ``` 
 
@@ -293,7 +293,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         Change **gridWidth** = 6  to corresponding **view**
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json
         --8<--
         ```
 ### Drilldown
@@ -313,14 +313,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/MyExample4210Meta.java:buildRowDependentMeta
     --8<--
     ```
 
     `Step 2` Add **"drillDown": "true"**  to .widget.json.
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/statsblock/drilldown/MyExample4210List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/MyExample4210List.widget.json
     --8<--
     ```
 

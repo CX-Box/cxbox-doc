@@ -31,7 +31,7 @@ Create DTO for integrating with microservices through which data will be sent to
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800OutServiceDTO.java
+    {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800OutServiceDTO.java
     --8<--
     ```
 
@@ -46,7 +46,7 @@ Override methods:
 ??? Example
     ```java
     --8<--
-        {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:create
+        {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:create
     --8<--
     ```
 * **Deletion**: method delete
@@ -54,7 +54,7 @@ Override methods:
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:delete
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:delete
      --8<--
      ```
 * **Update of existing entries**:  method update
@@ -62,7 +62,7 @@ Override methods:
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:update
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:update
      --8<--
      ```
 * **Getting all data**: method getList
@@ -93,7 +93,7 @@ Override methods:
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:getList
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:getList
      --8<--
      ```
 
@@ -102,7 +102,7 @@ Override methods:
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
      --8<--
      ```
 
@@ -113,7 +113,7 @@ Create **DTO** extends **DataResponseDTO**
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800DTO.java
+    {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800DTO.java
     --8<--
     ```
 
@@ -124,7 +124,7 @@ Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
 ??? Example   
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Meta.java
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Meta.java
      --8<--
      ```
 
@@ -135,7 +135,7 @@ Create **Service** extends **AnySourceVersionAwareResponseService**
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Service.java
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Service.java
      --8<--
      ```
 
@@ -146,7 +146,7 @@ Create **Controller** implements **EnumBcIdentifier**
 ??? Example
     ```java
     --8<--
-     {{ external_links.github_raw }}/microservice/existingmicroservices/PlatformMyExample3800Controller.java
+     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/PlatformMyExample3800Controller.java
     --8<--
     ```
 
@@ -156,7 +156,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800List.widget.json
+    {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800List.widget.json
     --8<--
     ```
 ### **Step8** Create **view.json**
@@ -165,7 +165,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/microservice/existingmicroservices/myexample3800list.view.json
+    {{ external_links.github_raw_doc }}/microservice/existingmicroservices/myexample3800list.view.json
     --8<--
     ```
 
@@ -175,6 +175,6 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/microservice/existingmicroservices/myexample3800.screen.json
+    {{ external_links.github_raw_doc }}/microservice/existingmicroservices/myexample3800.screen.json
     --8<--
     ```

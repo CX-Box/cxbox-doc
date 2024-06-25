@@ -20,14 +20,14 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/info/base/MyExample3001Info.widget.json
+    {{ external_links.github_raw_doc }}/widgets/info/base/MyExample3001Info.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/info/base/myexample3001info.view.json
+    {{ external_links.github_raw_doc }}/widgets/info/base/myexample3001info.view.json
     --8<--
     ```
 
@@ -60,7 +60,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/title/MyExample3102Info.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102Info.widget.json
         --8<--
         ```
     
@@ -68,7 +68,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/title/MyExample3102EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102EmptyTitle.widget.json
         --8<--
         ```
     === "Calculated title"
@@ -76,7 +76,7 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/title/MyExample3102CustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102CustomTitle.widget.json
         --8<--
         ```   
 
@@ -120,7 +120,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/fieldslayoute/MyExample3008Info.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008Info.widget.json
         --8<--
         ```
 
@@ -145,7 +145,7 @@ There are types of:
  
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets//info/fieldslayoute/MyExample3008MultiColumn.widget.json
+        {{ external_links.github_raw_doc }}/widgets//info/fieldslayoute/MyExample3008MultiColumn.widget.json
         --8<--
         ```
     === "Empty only buttons"
@@ -155,7 +155,7 @@ There are types of:
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/fieldslayoute/MyExample3008EmptyOnlyButtons.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008EmptyOnlyButtons.widget.json
         --8<--
         ```
 
@@ -201,14 +201,14 @@ There are types of:
         **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
         --8<--
         ```
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
 

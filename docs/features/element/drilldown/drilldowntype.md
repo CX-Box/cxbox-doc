@@ -27,7 +27,7 @@ DrillDownType.INNER - Transition inside the application.
     `Step 1` Add  fields.setDrilldown with type **DrillDownType.INNER** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaINNER
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaINNER
     --8<--
     ```
 ## <a id="EXTERNAL">EXTERNAL</a>
@@ -43,7 +43,7 @@ DrillDownType.EXTERNAL - Transition by an absolute link to an external source. W
     `Step 1` Add  fields.setDrilldown with type **DrillDownType.EXTERNAL** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaEXTERNAL
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaEXTERNAL
     --8<--
     ```
  
@@ -59,7 +59,7 @@ DrillDownType.EXTERNAL_NEW - Transition by an absolute link to an external sourc
     `Step 1` Add  fields.setDrilldown with type **DrillDownType.EXTERNAL_NEW** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaEXTERNAL_NEW
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaEXTERNAL_NEW
     --8<--
     ```
 
@@ -75,7 +75,7 @@ DrillDownType.RELATIVE - Transition by a relative link while keeping the protoco
     `Step 1` Add  fields.setDrilldown with type **DrillDownType.RELATIVE** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaRELATIVE
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaRELATIVE
     --8<--
     ```
 ## <a id="RELATIVE_NEW">RELATIVE_NEW</a>
@@ -91,6 +91,6 @@ DrillDownType.RELATIVE_NEW - Transition by a relative link while keeping the pro
     `Step 1` Add  fields.setDrilldown with type **DrillDownType.RELATIVE_NEW** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaRELATIVE_NEW
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntypes/MyExample3613Meta.java:buildRowDependentMetaRELATIVE_NEW
     --8<--
     ```

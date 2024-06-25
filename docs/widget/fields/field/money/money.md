@@ -25,27 +25,27 @@
     **Step1** Add **Double** field  to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/money/basic/MyExample56DTO.java
+    {{ external_links.github_raw_doc }}/money/basic/MyExample56DTO.java
     --8<--
     ```
     **Step2** Add **Double** field  to corresponding **BaseEntity**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/money/basic/MyEntity56.java
+    {{ external_links.github_raw_doc }}/money/basic/MyEntity56.java
     --8<--
     ```
     === "List widget"
         **Step3** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/basic/MyExample56List.widget.json
+        {{ external_links.github_raw_doc }}/money/basic/MyExample56List.widget.json
         --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/basic/MyExample56Info.widget.json
+        {{ external_links.github_raw_doc }}/money/basic/MyExample56Info.widget.json
         --8<--
         ```
     === "Form widget"
@@ -53,7 +53,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/basic/MyExample56Form.widget.json
+        {{ external_links.github_raw_doc }}/money/basic/MyExample56Form.widget.json
         --8<--
         ```
 
@@ -75,7 +75,7 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/money/placeholder/MyExample64Meta.java:documentation
+    {{ external_links.github_raw_doc }}/money/placeholder/MyExample64Meta.java:documentation
     --8<--
     ```
     === "List widget"
@@ -111,28 +111,28 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/color/MyExample59DTO.java
+        {{ external_links.github_raw_doc }}/money/color/MyExample59DTO.java
         --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/money/color/MyExample59List.widget.json
+            {{ external_links.github_raw_doc }}/money/color/MyExample59List.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/money/color/MyExample59Info.widget.json
+            {{ external_links.github_raw_doc }}/money/color/MyExample59Info.widget.json
             --8<--
             ```
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/money/color/MyExample59Form.widget.json
+            {{ external_links.github_raw_doc }}/money/color/MyExample59Form.widget.json
             --8<--
             ```
     === "Constant color"
@@ -140,21 +140,21 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/money/colorconst/MyExample60List.widget.json
+            {{ external_links.github_raw_doc }}/money/colorconst/MyExample60List.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/money/colorconst/MyExample60Info.widget.json
+            {{ external_links.github_raw_doc }}/money/colorconst/MyExample60Info.widget.json
             --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw }}/money/colorconst/MyExample60Form.widget.json
+            {{ external_links.github_raw_doc }}/money/colorconst/MyExample60Form.widget.json
             --8<--
             ```
 
@@ -195,7 +195,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/basic/MyExample56Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/money/basic/MyExample56Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -203,7 +203,7 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/basic/MyExample56Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/money/basic/MyExample56Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -217,7 +217,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/ro/MyExample61Meta.java:ro
+        {{ external_links.github_raw_doc }}/money/ro/MyExample61Meta.java:ro
         --8<--
         ```
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -246,13 +246,13 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/filtration/MyExample63DTO.java
+        {{ external_links.github_raw_doc }}/money/filtration/MyExample63DTO.java
         --8<--
         ```
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/filtration/MyExample63Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/money/filtration/MyExample63Meta.java:buildIndependentMeta
         --8<--
         ```
     === "Info widget"
@@ -285,14 +285,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drillDown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/money/drilldown/MyExample62Meta.java:drilldown
+    {{ external_links.github_raw_doc }}/money/drilldown/MyExample62Meta.java:drilldown
     --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/drilldown/MyExample62List.widget.json
+        {{ external_links.github_raw_doc }}/money/drilldown/MyExample62List.widget.json
         --8<--
         ```
         **Option 2**
@@ -301,7 +301,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/drilldown/MyExample62Info.widget.json
+        {{ external_links.github_raw_doc }}/money/drilldown/MyExample62Info.widget.json
         --8<--
         ```
         **Option 2**
@@ -369,7 +369,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/validationbusinessex/MyExample67Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/money/validationbusinessex/MyExample67Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -386,7 +386,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/validationruntimeex/MyExample69Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/money/validationruntimeex/MyExample69Service.java:doUpdateEntity
         --8<--
         ```
  
@@ -400,7 +400,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/money/validationconfirm/MyExample68Service.java:getActions
+        {{ external_links.github_raw_doc }}/money/validationconfirm/MyExample68Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -418,7 +418,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Add javax.validation to corresponding **DataResponseDTO**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/money/validationannotation/MyExample271DTO.java
+            {{ external_links.github_raw_doc }}/money/validationannotation/MyExample271DTO.java
             --8<--
             ```
  
@@ -438,14 +438,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/money/validationdynamic/MyExample333Service.java:validateFields
+            {{ external_links.github_raw_doc }}/money/validationdynamic/MyExample333Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/money/validationdynamic/MyExample333Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/money/validationdynamic/MyExample333Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -490,7 +490,7 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/money/required/MyExample65Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/money/required/MyExample65Meta.java:buildRowDependentMeta
     --8<--
     ```
  
@@ -521,7 +521,7 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/nullable/MyExample307List.widget.json
+        {{ external_links.github_raw_doc }}/money/nullable/MyExample307List.widget.json
         --8<--
         ```
   
@@ -532,7 +532,7 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/money/nullable/MyExample307Form.widget.json
+        {{ external_links.github_raw_doc }}/money/nullable/MyExample307Form.widget.json
         --8<--
         ```
 

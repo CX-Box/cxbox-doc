@@ -71,7 +71,9 @@ nav:
       - DrillDown:
         - Basic: features/element/drilldown/drilldown.md
         - DrillDown Types: features/element//drillDown/drilldowntype.md
-      - Filtration: features/element/filtration/filtration.md
+      - Filtration:
+        - Basic: features/element/filtration/filtration.md
+        - FullTextSearch: features/element/filtration/fulltextsearch/fulltextsearch.md
       - FileStorage: features/element/fileStorage/fileStorage.md
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
@@ -192,7 +194,8 @@ edit_uri: edit/main/docs/
 extra:
   external_links:
     github_ui: !ENV [GITHUB_UI, 'https://github.com/CX-Box/cxbox-code-samples/tree']
-    github_raw: !ENV [GITHUB_RAW, 'documentation']
+    github_raw_doc: !ENV [github_raw_doc, 'documentation']
+    github_raw: !ENV [github_raw]
     github_branch: !ENV [GITHUB_BRANCH, 'main']
     code_samples: !ENV [CODE_SAMPLES, 'http://code-samples.cxbox.org']
     demo: !ENV [DEMO, 'http://demo.cxbox.org']

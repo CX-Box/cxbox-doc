@@ -4,7 +4,7 @@
 ??? Example
     ```json
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/example/myexample4001form.view.json
+    {{ external_links.github_raw_doc }}/getstarted/microservice/example/myexample4001form.view.json
     --8<--
     ```
 
@@ -13,6 +13,6 @@
 ??? Example
     ```json
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/example/myexample4001.screen.json
+    {{ external_links.github_raw_doc }}/getstarted/microservice/example/myexample4001.screen.json
     --8<--
     ```

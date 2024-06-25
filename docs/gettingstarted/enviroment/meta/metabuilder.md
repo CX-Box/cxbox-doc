@@ -14,7 +14,7 @@ Overall, customizing properties in interfaces allows you to tailor the user expe
     
           ```java
           --8<--
-          {{ external_links.github_raw }}/input/basic/InputBasicMeta.java
+          {{ external_links.github_raw_doc }}/input/basic/InputBasicMeta.java
           --8<--
           ```
     === "AnySource"
@@ -24,7 +24,7 @@ Overall, customizing properties in interfaces allows you to tailor the user expe
         - **Meta** extends **AnySourceFieldMetaBuilder**
           ```java
           --8<--
-          {{ external_links.github_raw }}/microservice/existingmicroservices/MyExample3800Meta.java
+          {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Meta.java
           --8<--
           ```
 

@@ -8,7 +8,7 @@ Create **entity** extends **BaseEntity**
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/MyEntity4000.java
+    {{ external_links.github_raw_doc }}/getstarted/postgres/document/MyEntity4000.java
     --8<--
     ```
 
@@ -19,7 +19,7 @@ Create **DTO** extends **DataResponseDTO**
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/MyExample4000DTO.java
+    {{ external_links.github_raw_doc }}/getstarted/postgres/document/MyExample4000DTO.java
     --8<--
     ```
 
@@ -31,7 +31,7 @@ Create **MetaBuilder** extends **FieldMetaBuilder**
 ??? Example   
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/MyExample4000Meta.java
+    {{ external_links.github_raw_doc }}/getstarted/postgres/document/MyExample4000Meta.java
     --8<--
     ```
 ## **Step4** Create **Service**
@@ -41,7 +41,7 @@ Create **Service** extends **VersionAwareResponseService**
 ??? Example
      ```java
      --8<--
-     {{ external_links.github_raw }}/getstarted/postgres/document/MyExample4000Service.java
+     {{ external_links.github_raw_doc }}/getstarted/postgres/document/MyExample4000Service.java
      --8<--
      ```        
 ### **Step5** Create **Controller**
@@ -51,7 +51,7 @@ Create **Controller** implements **EnumBcIdentifier**
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/PlatformMyExample4000Controller.java
+    {{ external_links.github_raw_doc }}/getstarted/postgres/document/PlatformMyExample4000Controller.java
     --8<--
     ```
 
@@ -60,7 +60,7 @@ Create **Controller** implements **EnumBcIdentifier**
 ??? Example
     ```json
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/MyExample4000Form.widget.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/document/MyExample4000Form.widget.json
     --8<--
     ```
 
@@ -70,7 +70,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/document/myexample4002form.view.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/document/myexample4002form.view.json
     --8<--
     ```
 
@@ -80,7 +80,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/postgres/example/myexample4002.screen.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/example/myexample4002.screen.json
     --8<--
     ```
 

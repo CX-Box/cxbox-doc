@@ -94,7 +94,7 @@ There are types of:
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
-!!! tip
+!!! tips
     It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
 
 !!! info
@@ -181,7 +181,7 @@ There are types of:
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
-!!! tip
+!!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
 

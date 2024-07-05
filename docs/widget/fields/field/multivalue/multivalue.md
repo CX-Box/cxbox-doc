@@ -2,7 +2,7 @@
 
 `Multivalue` is a component that allows to select multiple values from Popup List of entities
 
-!!! tip
+!!! tips
     For this field type we need to talk about number of rows in popup and number of selected rows.Number of rows in popup: Feel free to use this field type for large entities of any size (only one page is loaded in memory).Number of selected rows: should be <1000-10000, because selected rows are stored in memory
 
 ## Basics

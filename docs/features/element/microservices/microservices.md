@@ -89,7 +89,7 @@ When creating entities for microservices, the process is largely similar to crea
 ### <a id="MethodsM">Methods</a>
 ####  <a id="getByIdIgnoringFirstLevelCache">Getting data by ID (getByIdIgnoringFirstLevelCache)</a>
 
-!!! tip
+!!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
     If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
@@ -178,7 +178,7 @@ Combining these parameters allows users to control and customize the behavior of
     ```
 #### <a id="delete">Delete</a>
 
-!!! tip
+!!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
     If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
@@ -200,7 +200,7 @@ Combining these parameters allows users to control and customize the behavior of
 
 #### <a id="update">Update</a>
 
-!!! tip
+!!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
     If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
@@ -222,7 +222,7 @@ Combining these parameters allows users to control and customize the behavior of
 
 #### <a id="create">Create</a>
 
-!!! tip
+!!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
     If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 

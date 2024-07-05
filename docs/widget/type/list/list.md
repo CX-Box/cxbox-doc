@@ -90,7 +90,7 @@ _not applicable_
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
-!!! tip
+!!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
 
@@ -129,7 +129,7 @@ _not applicable_
 -->
 ### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
-see [FullTextSearch](/features/element/filtration/fulltextsearch)
+see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
 
 ### Actions

@@ -2,7 +2,7 @@
 
 `Dictionary` is a component that allows to select single value from dropdown.
 
-!!! tip
+!!! tips
     Use for dictionaries or slowly-growing entities, e.g. no more than 1000 values (all values are loaded in memory). Otherwise, use [inlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 
 ## Basics

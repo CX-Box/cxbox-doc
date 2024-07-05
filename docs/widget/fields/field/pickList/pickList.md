@@ -2,7 +2,7 @@
 
 `PickList` is a component that allows to select a value from Popup list of entities
 
-!!! tip 
+!!! tips 
     Use if user needs to open a detailed view of related entities. Feel free to use this field type for large entities of any size (only one page is loaded in memory)
 
 ## Basics
@@ -282,7 +282,7 @@
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
-!!! tip
+!!! tips
     Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
 ### How does it look?
 === "List widget"

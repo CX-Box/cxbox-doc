@@ -262,7 +262,7 @@ For `Input field` filtering is case-insensitive and retrieves records containing
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
 ### How does it look?
 === "List widget"
@@ -278,7 +278,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     **Option 1**
     
     
-    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drillDown) to corresponding **FieldMetaBuilder**.
+    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/input/drilldown/InputDrilldownMeta.java:buildRowDependentMeta

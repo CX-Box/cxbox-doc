@@ -13,9 +13,9 @@ The following transition formats are possible:
 
 * Advanced drillDown
 
-      [One BC](AdvanceddrillDownOneBC) Apply a filter using additional fields (visually visible).
+      [One BC](#AdvanceddrillDownOneBC) Apply a filter using additional fields (visually visible).
 
-      [Multiple BC](AdvanceddrillDownmMultiBC)Apply a filter using additional fields (visually visible) to multiple entities simultaneously.
+      [Multiple BC](#AdvanceddrillDownmMultiBC)Apply a filter using additional fields (visually visible) to multiple entities simultaneously.
 
 ## Basics
 The operation mechanism of drilldown works as follows:
@@ -106,7 +106,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     --8<--
     ```
  
-### <a id="AdvanceddrillDownOneBC"> Advanced drillDown one bc</a>
+### <a id="AdvanceddrillDownOneBC"> Advanced drillDown filtration one bc</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3612){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/advancedoneview){:target="_blank"}
 

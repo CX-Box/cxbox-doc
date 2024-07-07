@@ -13,16 +13,9 @@ However, if you need to output data from a view, any necessary data transformati
 
       ```java
       --8<--
-      {{ external_links.github_raw }}/input/basic/InputBasicMeta.java
+      {{ external_links.github_raw_doc }}/input/basic/InputBasicMeta.java
       --8<--
       ```
-
-####  updateEntity 
-####  preview
-####  loadEntity 
-#### doCreateEntity 
-#### doUpdateEntity 
-#### doPreview 
 }
 
 ### AnySourceVersionAwareResponseService
@@ -35,13 +28,6 @@ For directly outputting data from the database, it is recommended to use Version
     - **Step1** Create **Service**  extends **AnySourceVersionAwareResponseService**
       ```java
       --8<--
-      {{ external_links.github_raw }}/microservice/MyExample3800DTO.java
+      {{ external_links.github_raw_doc }}/microservice/MyExample3800DTO.java
       --8<--
       ```
-####  updateEntity
-####  preview
-####  loadEntity
-#### doCreateEntity
-#### doUpdateEntity
-#### doPreview
-}

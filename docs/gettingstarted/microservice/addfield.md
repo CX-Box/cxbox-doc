@@ -5,7 +5,7 @@
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/example/MyExample4001DTO.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/example/MyExample4001DTO.java
     --8<--
     ```
  
@@ -15,7 +15,7 @@
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/example/MyExample4001Meta.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/example/MyExample4001Meta.java
     --8<--
     ```
 ## **Step3**  Add  field to corresponding **AnySourceVersionAwareResponseService**
@@ -23,7 +23,7 @@
 ??? Example
     ```java
     --8<--
-    {{ external_links.github_raw }}/getstarted/microservice/example/MyExample4001Service.java
+    {{ external_links.github_raw_doc }}/getstarted/microservice/example/MyExample4001Service.java
     --8<--
     ```
 

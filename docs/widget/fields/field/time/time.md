@@ -36,14 +36,14 @@ These formats ensure that the time type can be utilized effectively in various c
     **Step1** Add field **LocalDateTime** to corresponding **BaseEntity**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/base/MyEntity3500.java
+    {{ external_links.github_raw_doc }}/time/base/MyEntity3500.java
     --8<--
     ```
 
     **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/base/yExample3500DTO.java
+    {{ external_links.github_raw_doc }}/time/base/yExample3500DTO.java
     --8<--
     ```
 
@@ -57,7 +57,7 @@ These formats ensure that the time type can be utilized effectively in various c
         By default, there will be a standard format applied: "h: mm:ss"
         ```json
         --8<--
-        {{ external_links.github_raw }}/time/base/MyExample3500List.widget.json
+        {{ external_links.github_raw_doc }}/time/base/MyExample3500List.widget.json
         --8<--
         ```
     === "Info widget"
@@ -65,7 +65,7 @@ These formats ensure that the time type can be utilized effectively in various c
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/time/base/MyExample3500Info.widget.json
+        {{ external_links.github_raw_doc }}/time/base/MyExample3500Info.widget.json
         --8<--
         ```
 
@@ -75,7 +75,7 @@ These formats ensure that the time type can be utilized effectively in various c
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/time/base/MyExample3500Form.widget.json
+        {{ external_links.github_raw_doc }}/time/base/MyExample3500Form.widget.json
         --8<--
         ```    
 
@@ -99,7 +99,7 @@ These formats ensure that the time type can be utilized effectively in various c
     
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/placeholder/MyExample3505Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/time/placeholder/MyExample3505Meta.java:buildRowDependentMeta
     --8<--
     ```   
 
@@ -139,21 +139,21 @@ These formats ensure that the time type can be utilized effectively in various c
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/color/MyExample3501DTO.java
+        {{ external_links.github_raw_doc }}/time/color/MyExample3501DTO.java
         --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/time/color/MyExample3501List.widget.json
+            {{ external_links.github_raw_doc }}/time/color/MyExample3501List.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/time/color/MyExample3501Info.widget.json
+            {{ external_links.github_raw_doc }}/time/color/MyExample3501Info.widget.json
             --8<--
             ```   
         === "Form widget"
@@ -164,7 +164,7 @@ These formats ensure that the time type can be utilized effectively in various c
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/time/colorconst/MyExample3502List.widget.json
+            {{ external_links.github_raw_doc }}/time/colorconst/MyExample3502List.widget.json
             --8<--
             ```
 
@@ -172,7 +172,7 @@ These formats ensure that the time type can be utilized effectively in various c
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/time/colorconst/MyExample3502Info.widget.json
+            {{ external_links.github_raw_doc }}/time/colorconst/MyExample3502Info.widget.json
             --8<--
             ```   
 
@@ -215,13 +215,13 @@ These formats ensure that the time type can be utilized effectively in various c
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/base/myexample3500Service.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/time/base/myexample3500Service.java:doUptimeEntity
         --8<--
         ```
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/base/myexample3500Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/time/base/myexample3500Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -236,7 +236,7 @@ These formats ensure that the time type can be utilized effectively in various c
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/ro/DateCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/time/ro/DateCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```    
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -266,13 +266,13 @@ These formats ensure that the time type can be utilized effectively in various c
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/filtration/DateFiltrationDTO.java
+        {{ external_links.github_raw_doc }}/time/filtration/DateFiltrationDTO.java
         --8<--
         ```        
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/filtration/DateFiltrationMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/time/filtration/DateFiltrationMeta.java:buildIndependentMeta
         --8<--
         ```        
     === "Info widget"
@@ -289,7 +289,7 @@ _not applicable_
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
 
 ### How does it look?
@@ -305,36 +305,36 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     **Option 1**
 
-    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/drilldown/MyExample3503Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/time/drilldown/MyExample3503Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/time/drilldown/MyExample3503List.widget.json
+        {{ external_links.github_raw_doc }}/time/drilldown/MyExample3503List.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/time/drilldown/MyExample3503Info.widget.json
+        {{ external_links.github_raw_doc }}/time/drilldown/MyExample3503Info.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 -->
 
 ## Validation
@@ -397,7 +397,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/validationbusinessex/DateValidationBusinessExService.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/time/validationbusinessex/DateValidationBusinessExService.java:doUptimeEntity
         --8<--
         ```
         === "List widget"
@@ -413,7 +413,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/validationruntimeex/DateValidationRuntimeExEntityService.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/time/validationruntimeex/DateValidationRuntimeExEntityService.java:doUptimeEntity
         --8<--
         ```         
         === "List widget"
@@ -426,7 +426,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/time/validationconfirm/DateConfirmService.java:getActions
+        {{ external_links.github_raw_doc }}/time/validationconfirm/DateConfirmService.java:getActions
         --8<--
         ```
         === "List widget"
@@ -444,7 +444,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/time/validationannotation/MyExample165DTO.java
+            {{ external_links.github_raw_doc }}/time/validationannotation/MyExample165DTO.java
             --8<--
             ```
             === "List widget"
@@ -463,13 +463,13 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/time/validationdynamic/MyExample320Service.java:valitimeFields
+            {{ external_links.github_raw_doc }}/time/validationdynamic/MyExample320Service.java:valitimeFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/time/validationdynamic/MyExample320Service.java:doUptimeEntity
+            {{ external_links.github_raw_doc }}/time/validationdynamic/MyExample320Service.java:doUptimeEntity
             --8<--
             ```
 
@@ -513,7 +513,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/time/required/DateRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/time/required/DateRequiredMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

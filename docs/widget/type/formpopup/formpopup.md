@@ -48,25 +48,25 @@
     **Step3** Add a button **"save-send"** that raises the widget Popup
     ```java
     --8<--
-    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400FormButton.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400FormButton.widget.json
     --8<--
     ```
     **Step4** Add widget with type **FormPopup**
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400Formpopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400Formpopup.widget.json
     --8<--
     ```
     **Step5** Add widget **FormPopup** on view
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/formpopup/base/myexample3400formpopup.view.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/myexample3400formpopup.view.json
     --8<--
     ```
     **Step6** Add **withPreAction** with action **confirmWithCommentwith**
     ```java
     --8<--
-    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400Service.java
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400Service.java
     --8<--
     ```
 <!-- 
@@ -97,7 +97,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
         --8<--
         ```
 
@@ -106,7 +106,7 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
         ```   
  
@@ -118,7 +118,7 @@ There are types of:
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
-!!! tip
+!!! tips
     It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
 
 !!! info
@@ -150,7 +150,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
         --8<--
         ```
 
@@ -175,7 +175,7 @@ There are types of:
  
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
     === "Empty only buttons"
@@ -185,7 +185,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
         --8<--
         ```
 ###  <a id="Fieldslayout">Fields layout</a>

@@ -20,14 +20,14 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/list/base/MyExample3002List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/base/MyExample3002List.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/list/base/myexample3002list.view.json
+    {{ external_links.github_raw_doc }}/widgets/list/base/myexample3002list.view.json
     --8<--
     ```
 
@@ -58,7 +58,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/list/title/MyExample3104List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104List.widget.json
         --8<--
         ```
     
@@ -66,7 +66,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
         --8<--
         ```
 ###  <a id="Fieldslayout">Fields layout</a>
@@ -90,7 +90,7 @@ _not applicable_
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
-!!! tip
+!!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
 
@@ -116,17 +116,21 @@ _not applicable_
         **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/list/showcondition/bycurrententity/MyExample31012.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/showcondition/bycurrententity/MyExample31012.widget.json
         --8<--
         ```
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/list/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
 -->
+### FullTextSearch
+`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
+see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
+
 
 ### Actions
 `Actions` show available actions as separate buttons

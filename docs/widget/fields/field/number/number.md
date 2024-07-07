@@ -25,7 +25,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/number/basic/NumberBasicEntity.java
+    {{ external_links.github_raw_doc }}/number/basic/NumberBasicEntity.java
     --8<--
     ```
 
@@ -33,7 +33,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/number/basic/NumberBasicDTO.java
+    {{ external_links.github_raw_doc }}/number/basic/NumberBasicDTO.java
     --8<--
     ```
 
@@ -42,7 +42,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/basic/NumberBasicList.widget.json
+        {{ external_links.github_raw_doc }}/number/basic/NumberBasicList.widget.json
         --8<--
         ```
     === "Info widget"
@@ -50,7 +50,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/basic/NumberBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/number/basic/NumberBasicInfo.widget.json
         --8<--
         ```
 
@@ -60,7 +60,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/basic/NumberBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/number/basic/NumberBasicForm.widget.json
         --8<--
         ```    
 
@@ -82,7 +82,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/number/placeholder/NumberPlaceholderMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/number/placeholder/NumberPlaceholderMeta.java:buildRowDependentMeta
     --8<--
     ``` 
     === "List widget"
@@ -119,7 +119,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. The field can contain a HEX color or be null. 
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/color/NumberColorDTO.java
+        {{ external_links.github_raw_doc }}/number/color/NumberColorDTO.java
         --8<--
         ```    
  
@@ -127,7 +127,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/number/color/NumberColorList.widget.json
+            {{ external_links.github_raw_doc }}/number/color/NumberColorList.widget.json
             --8<--
             ```
  
@@ -135,7 +135,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/number/color/NumberColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/number/color/NumberColorInfo.widget.json
             --8<--
             ```
  
@@ -143,7 +143,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/number/color/NumberColorForm.widget.json
+            {{ external_links.github_raw_doc }}/number/color/NumberColorForm.widget.json
             --8<--
             ```
  
@@ -152,7 +152,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/number/colorconst/NumberColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/number/colorconst/NumberColorConstList.widget.json
             --8<--
             ```
  
@@ -160,7 +160,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/number/colorconst/NumberColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/number/colorconst/NumberColorConstInfo.widget.json
             --8<--
             ```
 
@@ -168,7 +168,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw }}/number/colorconst/NumberColorConstForm.widget.json
+            {{ external_links.github_raw_doc }}/number/colorconst/NumberColorConstForm.widget.json
             --8<--
             ```
 ## Readonly/Editable
@@ -205,14 +205,14 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/basic/NumberBasicService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/number/basic/NumberBasicService.java:doUpdateEntity
         --8<--
         ```
  
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/basic/NumberBasicMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/number/basic/NumberBasicMeta.java:buildRowDependentMeta
         --8<--
         ```    
  
@@ -228,7 +228,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/ro/NumberCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/number/ro/NumberCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```    
     
@@ -258,14 +258,14 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter)))
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/filtration/NumberFiltrationDTO.java
+        {{ external_links.github_raw_doc }}/number/filtration/NumberFiltrationDTO.java
         --8<--
         ```
  
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/filtration/NumberFiltrationMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/number/filtration/NumberFiltrationMeta.java:buildIndependentMeta
         --8<--
         ```
  
@@ -281,7 +281,7 @@
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
 
 ### How does it look?
@@ -297,10 +297,10 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     **Option 1**
 
-    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/number/drilldown/NumberDrillDownMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/number/drilldown/NumberDrillDownMeta.java:buildRowDependentMeta
     --8<--
     ```
  
@@ -308,27 +308,27 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/drilldown/NumberDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/number/drilldown/NumberDrillDownList.widget.json
         --8<--
         ```
  
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/drilldown/NumberDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/number/drilldown/NumberDrillDownInfo.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -388,7 +388,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/validationbusinessex/NumberBusinessExService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/number/validationbusinessex/NumberBusinessExService.java:doUpdateEntity
         --8<--
         ```
  
@@ -405,7 +405,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/validationruntimeex/NumberRuntimeExService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/number/validationruntimeex/NumberRuntimeExService.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -418,7 +418,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/number/validationconfirm/NumberConfirmService.java:getActions
+        {{ external_links.github_raw_doc }}/number/validationconfirm/NumberConfirmService.java:getActions
         --8<--
         ```
  
@@ -437,7 +437,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Add javax.validation to corresponding **DataResponseDTO**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/number/validationannotation/MyExample290DTO.java
+            {{ external_links.github_raw_doc }}/number/validationannotation/MyExample290DTO.java
             --8<--
             ```
  
@@ -451,14 +451,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/number/validationdynamic/MyExample2337Service.java:validateFields
+            {{ external_links.github_raw_doc }}/number/validationdynamic/MyExample2337Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/number/validationdynamic/MyExample2337Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/number/validationdynamic/MyExample2337Service.java:doUpdateEntity
             --8<--
             ```
   
@@ -502,7 +502,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/number/required/NumberRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/number/required/NumberRequiredMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
@@ -532,7 +532,7 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/additionalproperties/digits/DigitsNumberList.widget.json
+        {{ external_links.github_raw_doc }}/number/additionalproperties/digits/DigitsNumberList.widget.json
         --8<--
         ```
   
@@ -540,14 +540,14 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/additionalproperties/digits/DigitsNumberInfo.widget.json
+        {{ external_links.github_raw_doc }}/number/additionalproperties/digits/DigitsNumberInfo.widget.json
         --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/additionalproperties/digits/DigitsNumberForm.widget.json
+        {{ external_links.github_raw_doc }}/number/additionalproperties/digits/DigitsNumberForm.widget.json
         --8<--
         ```
 
@@ -570,7 +570,7 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/additionalproperties/nullable/MyExample57List.widget.json
+        {{ external_links.github_raw_doc }}/number/additionalproperties/nullable/MyExample57List.widget.json
         --8<--
         ```
  
@@ -581,7 +581,7 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         Add **nullable** to **_.widget.json_**.        
         ```json
         --8<--
-        {{ external_links.github_raw }}/number/additionalproperties/nullable/MyExample57Form.widget.json
+        {{ external_links.github_raw_doc }}/number/additionalproperties/nullable/MyExample57Form.widget.json
         --8<--
         ```
 

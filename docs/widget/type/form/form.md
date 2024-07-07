@@ -21,14 +21,14 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/form/base/MyExample3000Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/base/MyExample3000Form.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/form/base/myexample3000form.view.json
+    {{ external_links.github_raw_doc }}/widgets/form/base/myexample3000form.view.json
     --8<--
     ```
 
@@ -66,7 +66,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
         --8<--
         ```
     
@@ -74,7 +74,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
     === "Calculated title"
@@ -82,7 +82,7 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
         ```   
 
@@ -94,7 +94,7 @@ There are types of:
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
-!!! tip
+!!! tips
     It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
 
 !!! info
@@ -126,7 +126,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
         --8<--
         ```
 
@@ -151,7 +151,7 @@ There are types of:
  
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
     === "Empty only buttons"
@@ -161,7 +161,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
         --8<--
         ```
 
@@ -181,7 +181,7 @@ There are types of:
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
-!!! tip
+!!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
 
@@ -208,14 +208,14 @@ There are types of:
         **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
         --8<--
         ```
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
         --8<--
         ```
 

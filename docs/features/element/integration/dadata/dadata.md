@@ -30,7 +30,7 @@ Added integration with dadata on pick list
     Step 2. Add @EnableFeignClients to our main class
     ```java
     --8<--
-    {{ external_links.github_raw }}/widgets/formpopup/base/MyExample3400FormButton.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400FormButton.widget.json
     --8<--
     ```
 

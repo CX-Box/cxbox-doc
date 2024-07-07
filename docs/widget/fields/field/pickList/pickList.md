@@ -2,7 +2,7 @@
 
 `PickList` is a component that allows to select a value from Popup list of entities
 
-!!! tip 
+!!! tips 
     Use if user needs to open a detailed view of related entities. Feel free to use this field type for large entities of any size (only one page is loaded in memory)
 
 ## Basics
@@ -28,7 +28,7 @@
         +  **Step 1.1** Add **String** `additional field`  to corresponding **BaseEntity**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/MyEntityPick120.java
+            {{ external_links.github_raw_doc }}/picklist/basic/MyEntityPick120.java
             --8<--
             ```
 
@@ -36,7 +36,7 @@
 
             ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/MyEntity120PickDTO.java
+            {{ external_links.github_raw_doc }}/picklist/basic/MyEntity120PickDTO.java
             --8<--
             ```
 
@@ -44,14 +44,14 @@
         +  **Step 1.3**  Create Popup List **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/myEntity120PickListPopup.widget.json
+            {{ external_links.github_raw_doc }}/picklist/basic/myEntity120PickListPopup.widget.json
             --8<--
             ```
 
         +  **Step 1.4** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/MyEntity120PickPickListMeta.java:buildIndependentMeta
+            {{ external_links.github_raw_doc }}/picklist/basic/MyEntity120PickPickListMeta.java:buildIndependentMeta
             --8<--
             ```
         
@@ -60,32 +60,32 @@
         === "list.view.json"
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/myexample118list.view.json
+            {{ external_links.github_raw_doc }}/picklist/basic/myexample118list.view.json
             --8<--
             ```
         === "form.view.json"
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/myexample118form.view.json
+            {{ external_links.github_raw_doc }}/picklist/basic/myexample118form.view.json
             --8<--
             ```
     -   **Step3** Add **MyEntityPick** field to corresponding **BaseEntity**.
         ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/basic/MyEntity118.java
+            {{ external_links.github_raw_doc }}/picklist/basic/MyEntity118.java
             --8<--
         ```
 
     -   **Step4** Add two fields (for id and for `additional field`) to corresponding **DataResponseDTO**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/MyExample118DTO.java
+        {{ external_links.github_raw_doc }}/picklist/basic/MyExample118DTO.java
         --8<--
         ```
     -   **Step5** Add bc myEntityPickListPopup to corresponding **EnumBcIdentifier**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/PlatformMyExample118Controller.java:bc
+        {{ external_links.github_raw_doc }}/picklist/basic/PlatformMyExample118Controller.java:bc
         --8<--
         ```
 
@@ -95,7 +95,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/MyExample118List.widget.json
+        {{ external_links.github_raw_doc }}/picklist/basic/MyExample118List.widget.json
         --8<--
         ```    
 
@@ -105,7 +105,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/MyExample118Info.widget.json
+        {{ external_links.github_raw_doc }}/picklist/basic/MyExample118Info.widget.json
         --8<--
         ``` 
 
@@ -116,7 +116,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/MyExample118Form.widget.json
+        {{ external_links.github_raw_doc }}/picklist/basic/MyExample118Form.widget.json
         --8<--
         ``` 
 
@@ -137,7 +137,7 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/picklist/placeholder/MyExample117Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/picklist/placeholder/MyExample117Meta.java:buildRowDependentMeta
     --8<--
     ```  
     === "List widget"
@@ -173,7 +173,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/color/MyExample119DTO.java
+        {{ external_links.github_raw_doc }}/picklist/color/MyExample119DTO.java
         --8<--
         ```    
         === "List widget"  
@@ -181,14 +181,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/color/MyExample119List.widget.json
+            {{ external_links.github_raw_doc }}/picklist/color/MyExample119List.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/color/MyExample119Info.widget.json
+            {{ external_links.github_raw_doc }}/picklist/color/MyExample119Info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -199,14 +199,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/colorconst/MyExample108List.widget.json
+            {{ external_links.github_raw_doc }}/picklist/colorconst/MyExample108List.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/picklist/colorconst/MyExample108Info.widget.json
+            {{ external_links.github_raw_doc }}/picklist/colorconst/MyExample108Info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -245,13 +245,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/MyExample118Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/picklist/basic/MyExample118Service.java:doUpdateEntity
         --8<--
         ```
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/basic/MyExample118Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/picklist/basic/MyExample118Meta.java:buildRowDependentMeta
         --8<--
         ```    
         === "List widget"
@@ -266,7 +266,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/ro/MyExample109Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/picklist/ro/MyExample109Meta.java:buildRowDependentMeta
         --8<--
         ```    
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -282,7 +282,7 @@
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
-!!! tip
+!!! tips
     Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
 ### How does it look?
 === "List widget"
@@ -298,13 +298,13 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/filtration/MyExample111DTO.java
+        {{ external_links.github_raw_doc }}/picklist/filtration/MyExample111DTO.java
         --8<--
         ```
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/filtration/MyExample111Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/picklist/filtration/MyExample111Meta.java:buildIndependentMeta
         --8<--
         ```
     === "Info widget"
@@ -318,7 +318,7 @@
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
 
 ### How does it look?
@@ -334,10 +334,10 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     **Option 1**
 
-    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/picklist/drilldown/MyExample110Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/picklist/drilldown/MyExample110Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
@@ -345,26 +345,26 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/picklist/drilldown/MyExample110List.widget.json
+        {{ external_links.github_raw_doc }}/picklist/drilldown/MyExample110List.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/picklist/drilldown/MyExample110Info.widget.json
+        {{ external_links.github_raw_doc }}/picklist/drilldown/MyExample110Info.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -424,7 +424,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/validationbusinessex/MyExample114Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/picklist/validationbusinessex/MyExample114Service.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -441,7 +441,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/validationruntimeex/MyExample116Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/picklist/validationruntimeex/MyExample116Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -456,7 +456,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/picklist/validationconfirm/MyExample115Service.java:getActions
+        {{ external_links.github_raw_doc }}/picklist/validationconfirm/MyExample115Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -474,7 +474,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/validationannotation/MyExample296DTO.java
+            {{ external_links.github_raw_doc }}/picklist/validationannotation/MyExample296DTO.java
             --8<--
             ```
             === "List widget"
@@ -493,13 +493,13 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/validationdynamic/MyExample400Service.java:validateFields
+            {{ external_links.github_raw_doc }}/picklist/validationdynamic/MyExample400Service.java:validateFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/picklist/validationdynamic/MyExample400Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/picklist/validationdynamic/MyExample400Service.java:doUpdateEntity
             --8<--
             ```
     
@@ -544,7 +544,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/picklist/required/MyExample112Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/picklist/required/MyExample112Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

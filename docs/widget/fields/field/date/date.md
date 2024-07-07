@@ -19,14 +19,14 @@
     **Step1** Add field **LocalDate** to corresponding **BaseEntity**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/basic/DateBasic.java
+    {{ external_links.github_raw_doc }}/date/basic/DateBasic.java
     --8<--
     ```
 
     **Step2**  Add field **LocalDate** to corresponding **DataResponseDTO**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/basic/DateBasicDTO.java
+    {{ external_links.github_raw_doc }}/date/basic/DateBasicDTO.java
     --8<--
     ```
 
@@ -35,7 +35,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicList.widget.json
+        {{ external_links.github_raw_doc }}/date/basic/DateBasicList.widget.json
         --8<--
         ```
     === "Info widget"
@@ -43,7 +43,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/date/basic/DateBasicInfo.widget.json
         --8<--
         ```
 
@@ -53,7 +53,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/date/basic/DateBasicForm.widget.json
         --8<--
         ```    
 
@@ -78,7 +78,7 @@
     
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/placeholder/DatePlaceholderMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/date/placeholder/DatePlaceholderMeta.java:buildRowDependentMeta
     --8<--
     ```   
 
@@ -118,21 +118,21 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/color/DateColorDTO.java
+        {{ external_links.github_raw_doc }}/date/color/DateColorDTO.java
         --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/color/DateColorList.widget.json
+            {{ external_links.github_raw_doc }}/date/color/DateColorList.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/color/DateColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/date/color/DateColorInfo.widget.json
             --8<--
             ```   
         === "Form widget"
@@ -143,7 +143,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/colorconst/DateColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/date/colorconst/DateColorConstList.widget.json
             --8<--
             ```
 
@@ -151,7 +151,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/date/colorconst/DateColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/date/colorconst/DateColorConstInfo.widget.json
             --8<--
             ```   
 
@@ -194,13 +194,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/date/basic/DateBasicService.java:doUpdateEntity
         --8<--
         ```
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/basic/DateBasicMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/date/basic/DateBasicMeta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -215,7 +215,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/ro/DateCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/date/ro/DateCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```    
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
@@ -244,13 +244,13 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/filtration/DateFiltrationDTO.java
+        {{ external_links.github_raw_doc }}/date/filtration/DateFiltrationDTO.java
         --8<--
         ```        
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/filtration/DateFiltrationMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/date/filtration/DateFiltrationMeta.java:buildIndependentMeta
         --8<--
         ```        
     === "Info widget"
@@ -264,7 +264,7 @@
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
 
 ### How does it look?
@@ -280,36 +280,36 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     **Option 1**
 
-    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/drilldown/DateDrillDownMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/date/drilldown/DateDrillDownMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/drilldown/DateDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/date/drilldown/DateDrillDownList.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/date/drilldown/DateDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/date/drilldown/DateDrillDownInfo.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -370,7 +370,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/validationbusinessex/DateValidationBusinessExService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/date/validationbusinessex/DateValidationBusinessExService.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -386,7 +386,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/validationruntimeex/DateValidationRuntimeExEntityService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/date/validationruntimeex/DateValidationRuntimeExEntityService.java:doUpdateEntity
         --8<--
         ```         
         === "List widget"
@@ -399,7 +399,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/date/validationconfirm/DateConfirmService.java:getActions
+        {{ external_links.github_raw_doc }}/date/validationconfirm/DateConfirmService.java:getActions
         --8<--
         ```
         === "List widget"
@@ -417,7 +417,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/date/validationannotation/MyExample165DTO.java
+            {{ external_links.github_raw_doc }}/date/validationannotation/MyExample165DTO.java
             --8<--
             ```
             === "List widget"
@@ -436,13 +436,13 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/date/validationdynamic/MyExample320Service.java:validateFields
+            {{ external_links.github_raw_doc }}/date/validationdynamic/MyExample320Service.java:validateFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/date/validationdynamic/MyExample320Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/date/validationdynamic/MyExample320Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -485,7 +485,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/date/required/DateRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/date/required/DateRequiredMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

@@ -10,7 +10,7 @@
 
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
-    **Step1** Create file **_.widget.json_** with  type  ****.
+    **Step1** Create file **_.widget.json_** with  type  **AdditionalInfo**.
 
     * name -  static (unique within the project)
     * [title](#Title) - (optional) 
@@ -21,13 +21,13 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/additionalinfo/base/MyExample3600Additional.widget.json
+    {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/MyExample3600Additional.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw }}/widgets/additionalinfo/base/MyExample3600List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/MyExample3600List.widget.json
     --8<--
     ```

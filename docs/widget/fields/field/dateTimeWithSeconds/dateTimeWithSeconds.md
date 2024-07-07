@@ -20,7 +20,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsEntity.java
+    {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsEntity.java
     --8<--
     ```
 
@@ -28,7 +28,7 @@
    
     ```java
     --8<--
-    {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsDTO.java
+    {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsDTO.java
     --8<--
     ```
 
@@ -37,7 +37,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsList.widget.json
+        {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsList.widget.json
         --8<--
         ```
     === "Info widget"
@@ -45,7 +45,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsInfo.widget.json
+        {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsInfo.widget.json
         --8<--
         ```
 
@@ -55,7 +55,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsForm.widget.json
+        {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsForm.widget.json
         --8<--
         ```    
 
@@ -80,7 +80,7 @@
     
     ```java
     --8<--
-    {{ external_links.github_raw }}/datetimewithseconds/placeholder/DateTimeWithSecondsPlaceholderMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/datetimewithseconds/placeholder/DateTimeWithSecondsPlaceholderMeta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
@@ -121,21 +121,21 @@
     
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/color/DateTimeWithSecondsColorDTO.java
+        {{ external_links.github_raw_doc }}/datetimewithseconds/color/DateTimeWithSecondsColorDTO.java
         --8<--
         ```
         === "List widget"   
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/color/DateTimeWithSecondsColorList.widget.json
+            {{ external_links.github_raw_doc }}/datetimewithseconds/color/DateTimeWithSecondsColorList.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/color/DateTimeWithSecondsColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/datetimewithseconds/color/DateTimeWithSecondsColorInfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -147,7 +147,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstList.widget.json
             --8<--
             ```
 
@@ -156,7 +156,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstInfo.widget.json
             --8<--
             ```
 
@@ -199,14 +199,14 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsService.java:doUpdateEntity
         --8<--
         ```
 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/basic/DateTimeWithSecondsMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/datetimewithseconds/basic/DateTimeWithSecondsMeta.java:buildRowDependentMeta
         --8<--
         ```    
 
@@ -223,7 +223,7 @@
  
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/ro/DateTimeWithSecondsCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/datetimewithseconds/ro/DateTimeWithSecondsCreateEditMeta.java:buildRowDependentMeta
         --8<--
         ```  
     
@@ -254,14 +254,14 @@
 
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/filtration/DateTimeWithSecondsFiltrationDTO.java
+        {{ external_links.github_raw_doc }}/datetimewithseconds/filtration/DateTimeWithSecondsFiltrationDTO.java
         --8<--
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/filtration/DateTimeWithSecondsFiltrationMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/datetimewithseconds/filtration/DateTimeWithSecondsFiltrationMeta.java:buildIndependentMeta
         --8<--
         ``` 
 
@@ -276,7 +276,7 @@
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
-Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drillDown/drillDown)
+Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
 
 ### How does it look?
@@ -292,10 +292,10 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     **Option 1**
 
-    `Step 1` Add [fields.setDrilldown](/features/element/drillDown/drillDown) to corresponding **FieldMetaBuilder**.
+    `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownMeta.java:buildRowDependentMeta
     --8<--
     ``` 
 
@@ -303,12 +303,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownList.widget.json
         --8<--
         ```
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Info widget"
 
@@ -316,15 +316,15 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownInfo.widget.json
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drillDown/drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drillDown/drillDown)
+[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -385,7 +385,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/validationbusinessex/MyExample300Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/datetimewithseconds/validationbusinessex/MyExample300Service.java:doUpdateEntity
         --8<--
         ```
 
@@ -403,7 +403,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/validationruntimeex/DateTimeWithSecondsValidationRuntimeExEntityService.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/datetimewithseconds/validationruntimeex/DateTimeWithSecondsValidationRuntimeExEntityService.java:doUpdateEntity
         --8<--
         ```        
         === "List widget"
@@ -416,7 +416,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw }}/datetimewithseconds/validationconfirm/DateTimeWithSecondsValidationBusinessExService.java:getActions
+        {{ external_links.github_raw_doc }}/datetimewithseconds/validationconfirm/DateTimeWithSecondsValidationBusinessExService.java:getActions
         --8<--
         ```
 
@@ -436,7 +436,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/validationannotation/MyExample167DTO.java
+            {{ external_links.github_raw_doc }}/datetimewithseconds/validationannotation/MyExample167DTO.java
             --8<--
             ```
 
@@ -456,14 +456,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/validationdynamic/MyExample322Service.java:validateFields
+            {{ external_links.github_raw_doc }}/datetimewithseconds/validationdynamic/MyExample322Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw }}/datetimewithseconds/validationdynamic/MyExample322Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/datetimewithseconds/validationdynamic/MyExample322Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -505,7 +505,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw }}/datetimewithseconds/required/DateTimeWithSecondsRequredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/datetimewithseconds/required/DateTimeWithSecondsRequredMeta.java:buildRowDependentMeta
     --8<--
     ```
 

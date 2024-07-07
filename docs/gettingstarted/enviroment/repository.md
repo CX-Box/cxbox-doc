@@ -2,9 +2,9 @@ How create standard repository elements?
 
 * Entity
 * DTO
-* Service
-* MetaBuilder
-* PlatformController
+* [Service](/gettingstarted/enviroment/service/service.md)
+* [MetaBuilder](/gettingstarted/enviroment/meta/metabuilder.md)
+* [Controller](docs/gettingstarted/enviroment/controller/controller.md)
 
 Visual elements
 * widget
@@ -21,14 +21,14 @@ Visual elements
         - **Step1.1** Create **Entity** 
             ```java
             --8<--
-            {{ external_links.github_raw }}/input/basic/InputBasic.java
+            {{ external_links.github_raw_doc }}/input/basic/InputBasic.java
             --8<--
             ```
     
         - **Step1.2** Create **DTO** extends **DataResponseDTO**
             ```java
             --8<--
-            {{ external_links.github_raw }}/input/basic/InputBasicDTO.java
+            {{ external_links.github_raw_doc }}/input/basic/InputBasicDTO.java
             --8<--
             ```
         - **Step1.3** Create **Meta** extends **FieldMetaBuilder**
@@ -37,21 +37,21 @@ Visual elements
             
             ```java
             --8<--
-            {{ external_links.github_raw }}/input/basic/InputBasicMeta.java
+            {{ external_links.github_raw_doc }}/input/basic/InputBasicMeta.java
             --8<--
             ```
         - **Step1.4** Create **Service** implements **VersionAwareResponseService**
         
              ```java
              --8<--
-             {{ external_links.github_raw }}/input/basic/InputBasicService.java
+             {{ external_links.github_raw_doc }}/input/basic/InputBasicService.java
              --8<--
              ```
         - **Step1.5** Create **PlatformController** implements **EnumBcIdentifier**
         
              ```java
              --8<--
-             {{ external_links.github_raw }}/input/basic/CxboxInputBasicController.java
+             {{ external_links.github_raw_doc }}/input/basic/CxboxInputBasicController.java
              --8<--
              ```
     - **Step2** Create visual elements       

@@ -490,13 +490,21 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2000/view/myexample2000form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multivalue/primary){:target="_blank"}
 
+Add the option to specify the Primary value to the AssocListPopup widget. 
+If this value is specified, display an additional column labeled "Primary" that allows setting a checkbox in only one of the rows.
+
+Title primary field has default title `primary`.
+
 #### How does it look?
 === "List widget"
     _not applicable_
 === "Info widget"
     _not applicable_
 === "Form widget"
-    ![multivalue_primary.gif](multivalue_primary.gif)
+    === "Default title"
+        ![multivalue_primary.gif](multivalue_primary.gif)
+    === "Custom title"
+        ![multivalue_primary_custom.gif](multivalue_primary_custom.gif)
 
 #### How to add?
 ??? Example
@@ -513,7 +521,8 @@
         ```
         `Step 2`Add **primary** to corresponding Assoc **.widget.json**.
 
-        `enabled` true/false  
+        `enabled` - true/false 
+        'title'- Title primary field (Optional. Default title `primary`)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/multivalue/primary/myEntity2001AssocListPopup.widget.json

@@ -1,11 +1,12 @@
-How create standard repository elements?
+Standard repository elements:
 
-* Entity
-* DTO
-* [Service](/gettingstarted/enviroment/service/service.md)
-* [MetaBuilder](/gettingstarted/enviroment/meta/metabuilder.md)
-* [Controller](docs/gettingstarted/enviroment/controller/controller.md)
+* [Entity](/enviroment/entity/entity.md)
+* [DTO](/enviroment/dto/dto.md)
+* [Service](/enviroment/service/service.md)
+* [MetaBuilder](/enviroment/meta/metabuilder.md)
+* [Controller](/enviroment/controller/controller.md)
 
+<!-- 
 Visual elements
 * widget
 * view
@@ -65,3 +66,4 @@ Visual elements
             see more [Screen](screen/screen)
         - **Step2.5** Add view to corresponding  **screen** 
             see more [Screen](screen/screen)
+--->

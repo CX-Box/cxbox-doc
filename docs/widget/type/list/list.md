@@ -131,6 +131,18 @@ _not applicable_
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
+### Filtering
+`Filtering` - when the user types in the filter input area, then widget filters the rows that match the search query.
+#### How does it look?
+=== "List widget"
+![listFilter.png](listFilter.png)
+#### How to add?
+??? Example
+### Clear filtering
+When user choose filter, he can see 'Clear filter(s)'. If he has more then one filter, see number of chosen filters
+#### How does it look?
+=== "List widget"
+![clearFiltering.png](clearFiltering.png)
 
 ### Actions
 `Actions` show available actions as separate buttons

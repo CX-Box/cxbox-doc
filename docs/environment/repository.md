@@ -1,10 +1,10 @@
 Standard repository elements:
 
-* [Entity](/enviroment/entity/entity.md)
-* [DTO](/enviroment/dto/dto.md)
-* [Service](/enviroment/service/service.md)
-* [MetaBuilder](/enviroment/meta/metabuilder.md)
-* [Controller](/enviroment/controller/controller.md)
+* [Entity](/enviroment/entity/entity)
+* [DTO](/enviroment/dto/dto)
+* [Service](/enviroment/service/service)
+* [MetaBuilder](/enviroment/meta/metabuilder)
+* [Controller](/enviroment/controller/controller)
 
 <!-- 
 Visual elements

@@ -97,6 +97,7 @@ Navigate: The system displays file previews in the pop-up from the widget list i
 Download: The system initiates a file download and saves it to the user's standard Download folder.
 
 see more [File preview]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
+
 #### Multi-upload of files without popup.
 
 ![multiupload.gif](v2.0.1/multiupload.gif)
@@ -107,6 +108,7 @@ Added progress bar for download files.
 This improvement simplifies the process of uploading multiple documents simultaneously.
 
 Live sample [Add files]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
+
 #### Added display of the number of applied filters
 ![clearfilter.gif](v2.0.1/clearfilter.gif)
 
@@ -123,17 +125,23 @@ Added the ability to select limits for pagination
 Fundamentally, this widget is a list widget enhanced with a grouping feature.
 Live sample [GroupingHierarchy]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
  
+Added new widget type only for data viewing. Widget is always located on the right side and has gray background.
+
+Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
 #### Add view with responsibility
 ![responsibility.gif](v2.0.1/responsibility.gif)
 
 Added screen with responsivenes. Allows you to add or remove view accessibility.
+![additionalinfo.png](v2.0.0/additionalinfo.png)
 
 Live sample [Responsibility]({{ external_links.demo }}/ui/#/screen/admin/view/resplist)
 
 #### Add filtration by range for Date/DateTime/DateTimeWithSeconds
 
 #### Add support BgColor/BgColorKey of field in Title template
+Added new widget type only for data viewing. Widget is always located on the right side and has gray background.
 
+Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.1)
 
@@ -154,6 +162,9 @@ Add supports additional in meta for file preview
 ### <a id="CXBOXCORE">CXBOX</a>  ([Core](https://github.com/CX-Box/cxbox))
 ####  Updated to Springbot 3.2.4 (java 17+)
 Updated to Springbot 3.2.4
+#### Select Multiple Files
+@cxboxgithub
+fileAccept added to ui meta fields in cxbox core
 #### File preview
 Add supports additional in meta for file preview 
 #### Add filtration by range for Date/DateTime/DateTimeWithSeconds

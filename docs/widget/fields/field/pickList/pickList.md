@@ -7,7 +7,7 @@
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -122,7 +122,7 @@
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample117){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/placeholder){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
@@ -152,11 +152,11 @@
 
 `Calculated color`:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample119){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/color){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/color){:target="_blank"}
 
 `Constant color`:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample108){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/colorconst){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/colorconst){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -216,11 +216,11 @@
 
 `Editable`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/basic){:target="_blank"}
 
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample109){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/ro){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/ro){:target="_blank"}
 
 
 ### How does it look?
@@ -279,7 +279,7 @@
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample111){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/filtration){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 !!! tips
@@ -314,7 +314,7 @@
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample110){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/drilldown){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
@@ -373,26 +373,26 @@ Also, it optionally allows you to filter data on target view before it will be o
 
    `Business Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample114){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationbusinessex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample116){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationruntimeex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample115){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationconfirm){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample296){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationannotation){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationannotation){:target="_blank"}
 
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample400){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/validationdynamic){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationdynamic){:target="_blank"}
 
 
 ### How does it look?
@@ -505,7 +505,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample113){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/sorting){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order. Sort by value join field.
 
@@ -528,7 +528,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample112){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/picklist/required){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided. 
 

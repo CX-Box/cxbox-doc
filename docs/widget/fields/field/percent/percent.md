@@ -4,7 +4,7 @@
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample1){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -68,7 +68,7 @@
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample7){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/placeholder){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
@@ -99,11 +99,11 @@
 
 `Calculated color`:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample73){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/color){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/color){:target="_blank"}
 
 `Constant color`:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/colorconst){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/colorconst){:target="_blank"}
 
 ### How does it look?
 === "List widget"
@@ -174,11 +174,11 @@
 
 `Editable`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample1){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/basic){:target="_blank"}
 
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/ro){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/ro){:target="_blank"}
 
 
 ### How does it look?
@@ -238,7 +238,7 @@
             **Works for Form.**
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/filtration){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
 ### How does it look?
@@ -273,7 +273,7 @@
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/drilldown){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
@@ -331,26 +331,26 @@ Also, it optionally allows you to filter data on target view before it will be o
 
    `Business Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample10){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationbusinessex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample12){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationruntimeex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample11){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationconfirm){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample292){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationannotation){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/validationannotation){:target="_blank"}
 
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample328){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/validationdynamic){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/validationdynamic){:target="_blank"}
 
 
 ### How does it look?
@@ -460,7 +460,7 @@ Also, it optionally allows you to filter data on target view before it will be o
  
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample9){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/sorting){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order.
 
@@ -482,7 +482,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample8){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/required){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided. 
 By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is not set or equals to false. See more [[Additional properties-nullable]](#nullable)
@@ -512,7 +512,7 @@ By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is 
 ## Additional properties
 ### <a id="digits">digits</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample310){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/digits){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/additionalproperties/digits){:target="_blank"}
 
 Property denotes number of digits after the decimal point. Additionally, UI will not show digits after comma if property is not set
 #### How does it look?
@@ -549,7 +549,7 @@ Property denotes number of digits after the decimal point. Additionally, UI will
 
 ### <a id="nullable">nullable</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample58){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/percent/additionalproperties/nullable){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/additionalproperties/nullable){:target="_blank"}
 
 By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
 #### How does it look?

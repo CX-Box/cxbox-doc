@@ -7,7 +7,7 @@
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample251){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/basic){:target="_blank"}
 ### How does it look?
 
 === "List widget"
@@ -76,7 +76,7 @@
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample257){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/placeholder){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
@@ -112,11 +112,11 @@ _not applicable_
 
 `Editable`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample251){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/basic){:target="_blank"}
 
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample253){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/ro){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/ro){:target="_blank"}
 
 
 ### How does it look?
@@ -178,7 +178,7 @@ _not applicable_
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample256/view/myexample256list){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/filtration){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses `in` operator.
 
@@ -223,26 +223,26 @@ _not applicable_
 
    `Business Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample248){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationbusinessex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample249){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationruntimeex){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample260){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationconfirm){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
    `Option 1`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample345){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationannotation){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/validationannotation){:target="_blank"}
 
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample334){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/validationdynamic){:target="_blank"}
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/validationdynamic){:target="_blank"}
 
 
 ### How does it look?
@@ -363,7 +363,7 @@ _not applicable_
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample247){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/multipleselect/required){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided.
 

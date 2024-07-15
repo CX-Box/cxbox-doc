@@ -31,7 +31,7 @@ When creating entities for microservices, the process is largely similar to crea
     - **Step1.1** Create mapping entity through which data will be sent to the microservice 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800OutServiceDTO.java
+        {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800OutServiceDTO.java
         --8<--
         ```
     - **Step1.2** Create **DAO** extends **AbstractAnySourceBaseDAO** implements **AnySourceBaseDAO**
@@ -49,7 +49,7 @@ When creating entities for microservices, the process is largely similar to crea
 
            ```java
            --8<--
-           {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java
+           {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800Dao.java
            --8<--
            ```
       - **Step1.3** Create **DTO** extends **DataResponseDTO**
@@ -58,7 +58,7 @@ When creating entities for microservices, the process is largely similar to crea
 
           ```java
           --8<--
-          {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800DTO.java
+          {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800DTO.java
           --8<--
           ```
       - **Step1.4** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
@@ -67,14 +67,14 @@ When creating entities for microservices, the process is largely similar to crea
         
            ```java
            --8<--
-           {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Meta.java
+           {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800Meta.java
            --8<--
            ```
       - **Step1.5** Create **Service** extends **AnySourceVersionAwareResponseService**
     
            ```java
            --8<--
-           {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Service.java
+           {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800Service.java
            --8<--
            ```
     
@@ -82,7 +82,7 @@ When creating entities for microservices, the process is largely similar to crea
     
            ```java
            --8<--
-           {{ external_links.github_raw_doc }}/microservice/existingmicroservices/PlatformMyExample3800Controller.java
+           {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/PlatformMyExample3800Controller.java
            --8<--
            ```
 
@@ -105,7 +105,7 @@ When creating entities for microservices, the process is largely similar to crea
 
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
+     {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800Dao.java:getByIdIgnoringFirstLevelCache
      --8<--
      ```
 
@@ -173,7 +173,7 @@ Combining these parameters allows users to control and customize the behavior of
  
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:getList
+    {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800Dao.java:getList
     --8<--
     ```
 #### <a id="delete">Delete</a>
@@ -194,7 +194,7 @@ Combining these parameters allows users to control and customize the behavior of
 
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:delete
+     {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800Dao.java:delete
      --8<--
      ```
 
@@ -216,7 +216,7 @@ Combining these parameters allows users to control and customize the behavior of
 
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:update
+     {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800Dao.java:update
      --8<--
      ```
 
@@ -238,6 +238,6 @@ Combining these parameters allows users to control and customize the behavior of
 
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyEntity3800Dao.java:create
+     {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyEntity3800Dao.java:create
      --8<--
      ```

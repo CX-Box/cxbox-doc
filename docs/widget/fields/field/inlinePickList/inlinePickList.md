@@ -25,14 +25,14 @@
         +  **Step 1.1** Add **String** `additional field`  to corresponding **BaseEntity**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyEntity132Pick.java
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyEntity132Pick.java
             --8<--
             ```
 
         +  **Step 1.2** Add **String** `additional field` to corresponding **DataResponseDTO**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyEntity132PickDTO.java
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyEntity132PickDTO.java
             --8<--
             ```
 
@@ -40,13 +40,13 @@
        
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/basic/myEntity132PickListPopupPickListPopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myEntity132PickListPopupPickListPopup.widget.json
             --8<--
             ```
         +  **Step 1.4** Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyEntity132PickPickListMeta.java:buildIndependentMeta
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyEntity132PickPickListMeta.java:buildIndependentMeta
             --8<--
             ```
         
@@ -55,34 +55,34 @@
         === "list.view.json"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/basic/myexample133list.view.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133list.view.json
             --8<--
             ```
         === "form.view.json"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/basic/myexample133form.view.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133form.view.json
             --8<--
             ```
 
     -   **Step3** Add **MyEntityPick** field to corresponding **BaseEntity**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyEntity133.java
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyEntity133.java
         --8<--
         ```
 
     -   **Step4** Add two fields (for id and for `additional field`) to corresponding **DataResponseDTO**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyExample133DTO.java
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133DTO.java
         --8<--
         ```
 
     -   **Step5** Add bc myEntityPickListPopup to corresponding **EnumBcIdentifier**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/PlatformMyExample133Controller.java:bc
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/PlatformMyExample133Controller.java:bc
         --8<--
         ```
 
@@ -92,7 +92,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyExample133List.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133List.widget.json
         --8<--
         ``` 
 
@@ -102,7 +102,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyExample133Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Info.widget.json
         --8<--
         ``` 
 
@@ -113,7 +113,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyExample133Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Form.widget.json
         --8<--
         ``` 
 
@@ -136,7 +136,7 @@
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.    
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/inlinepicklist/placeholder/MyExample144Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/inlinepicklist/placeholder/MyExample144Meta.java:buildRowDependentMeta
     --8<--
     ```
     
@@ -173,7 +173,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/color/MyExample134DTO.java
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/MyExample134DTO.java
         --8<--
         ```    
 
@@ -181,7 +181,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/color/MyExample134List.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/MyExample134List.widget.json
             --8<--
             ```
         === "Info widget"
@@ -194,7 +194,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/colorconst/MyExample136List.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/colorconst/MyExample136List.widget.json
             --8<--
             ```
 
@@ -237,13 +237,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyExample133Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Service.java:doUpdateEntity
         --8<--
         ```
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/basic/MyExample133Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Meta.java:buildRowDependentMeta
         --8<--
         ```    
         
@@ -259,7 +259,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/ro/MyExample139Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/ro/MyExample139Meta.java:buildRowDependentMeta
         --8<--
         ```    
     
@@ -293,14 +293,14 @@ Optionally, a separate filtration widget can still be provided.
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/filtration/MyExample142DTO.java
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/filtration/MyExample142DTO.java
         --8<--
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/filtration/MyExample142Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/filtration/MyExample142Meta.java:buildIndependentMeta
         --8<--
         ```
 
@@ -335,7 +335,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/inlinepicklist/drilldown/MyExample140Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140Meta.java:buildRowDependentMeta
     --8<--
     ```
 
@@ -344,7 +344,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/drilldown/MyExample140List.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140List.widget.json
         --8<--
         ```
 
@@ -357,7 +357,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/drilldown/MyExample140Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140Info.widget.json
         --8<--
         ```
         **Option 2**
@@ -427,7 +427,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/validationbusinessex/MyExample150Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/validationbusinessex/MyExample150Service.java:doUpdateEntity
         --8<--
         ```
  
@@ -444,7 +444,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/validationruntimeex/MyExample154Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/validationruntimeex/MyExample154Service.java:doUpdateEntity
         --8<--
         ```        
   
@@ -458,7 +458,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/inlinepicklist/validationconfirm/MyExample152Service.java:getActions
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/validationconfirm/MyExample152Service.java:getActions
         --8<--
         ```
  
@@ -477,7 +477,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/validationannotation/MyExample281DTO.java
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/validationannotation/MyExample281DTO.java
             --8<--
             ```
 
@@ -497,14 +497,14 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/validationdynamic/MyExample325Service.java:validateFields
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/validationdynamic/MyExample325Service.java:validateFields
             --8<--
             ```
 
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/inlinepicklist/validationdynamic/MyExample325Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/validationdynamic/MyExample325Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -549,7 +549,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/inlinepicklist/required/MyExample146Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/inlinepicklist/required/MyExample146Meta.java:buildRowDependentMeta
     --8<--
     ```
  

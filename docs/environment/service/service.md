@@ -29,6 +29,6 @@ For directly outputting data from the database, it is recommended to use Version
 
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Service.java
+     {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800Service.java
      --8<--
      ```

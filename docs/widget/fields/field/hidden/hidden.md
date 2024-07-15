@@ -19,7 +19,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/hidden/basic/HiddenBasic.java
+    {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasic.java
     --8<--
     ```
 
@@ -27,7 +27,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/hidden/basic/HiddenBasicDTO.java
+    {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicDTO.java
     --8<--
     ```
 
@@ -36,7 +36,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/hidden/basic/HiddenBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicList.widget.json
         --8<--
         ```
     === "Info widget"
@@ -44,7 +44,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/hidden/basic/HiddenBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicInfo.widget.json
         --8<--
         ```
 
@@ -54,7 +54,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/hidden/basic/HiddenBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicForm.widget.json
         --8<--
         ```      
 ## Placeholder

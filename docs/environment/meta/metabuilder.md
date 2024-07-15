@@ -25,7 +25,7 @@
 
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/microservice/existingmicroservices/MyExample3800Meta.java
+     {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800Meta.java
      --8<--
      ```
 To customize properties in interfaces, you can use the following options:

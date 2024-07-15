@@ -31,7 +31,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fileupload/basic/MyEntity94.java
+    {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyEntity94.java
     --8<--
     ```
 
@@ -39,7 +39,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fileupload/basic/MyExample94DTO.java
+    {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94DTO.java
     --8<--
     ```
  
@@ -48,7 +48,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/basic/MyExample94List.widget.json
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94List.widget.json
         --8<--
         ```
     === "Info widget"
@@ -56,7 +56,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/basic/MyExample94Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Info.widget.json
         --8<--
         ```
 
@@ -66,7 +66,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/basic/MyExample94Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Form.widget.json
         --8<--
         ```    
 
@@ -89,7 +89,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fileupload/placeholder/MyExample100Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/fileupload/placeholder/MyExample100Meta.java:buildRowDependentMeta
     --8<--
     ```  
     === "List widget"
@@ -138,14 +138,14 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/basic/MyExample94Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Service.java:doUpdateEntity
         --8<--
         ```
 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/basic/MyExample94Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Meta.java:buildRowDependentMeta
         --8<--
         ```
         === "List widget"
@@ -160,7 +160,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/ro/MyExample97Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/fileupload/ro/MyExample97Meta.java:buildRowDependentMeta
         --8<--
         ```
 
@@ -193,7 +193,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/filtration/MyExample99DTO.java
+        {{ external_links.github_raw_doc }}/fields/fileupload/filtration/MyExample99DTO.java
         --8<--
         ```
 
@@ -201,7 +201,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/filtration/MyExample99Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/fileupload/filtration/MyExample99Meta.java:buildIndependentMeta
         --8<--
         ```
 
@@ -271,7 +271,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/validationbusinessex/MyExample103Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/fileupload/validationbusinessex/MyExample103Service.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -287,7 +287,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/validationruntimeex/MyExample105Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/fileupload/validationruntimeex/MyExample105Service.java:doUpdateEntity
         --8<--
         ```
     
@@ -301,7 +301,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fileupload/validationconfirm/MyExample104Service.java:getActions
+        {{ external_links.github_raw_doc }}/fields/fileupload/validationconfirm/MyExample104Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -320,7 +320,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fileupload/validationannotation/MyExample170DTO.java
+            {{ external_links.github_raw_doc }}/fields/fileupload/validationannotation/MyExample170DTO.java
             --8<--
             ```
 	 
@@ -340,14 +340,14 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fileupload/validationdynamic/MyExample324Service.java:validateFields
+            {{ external_links.github_raw_doc }}/fields/fileupload/validationdynamic/MyExample324Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fileupload/validationdynamic/MyExample324Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/fields/fileupload/validationdynamic/MyExample324Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -393,7 +393,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fileupload/required/MyExample101Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/fileupload/required/MyExample101Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

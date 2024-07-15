@@ -38,7 +38,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         Add `fields` and `style` to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/multifield/basic/MyExample160List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160List.widget.json
         --8<--
         ```     
 
@@ -49,7 +49,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/multifield/basic/MyExample160Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160Info.widget.json
         --8<--
         ```
 
@@ -61,7 +61,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/multifield/basic/MyExample160Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160Form.widget.json
         --8<--
         ```
 
@@ -98,14 +98,14 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multifield/filtration/MyExample360DTO.java
+        {{ external_links.github_raw_doc }}/fields/multifield/filtration/MyExample360DTO.java
         --8<--
         ```
  
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multifield/filtration/MyExample360Meta.java
+        {{ external_links.github_raw_doc }}/fields/multifield/filtration/MyExample360Meta.java
         --8<--
         ```
  

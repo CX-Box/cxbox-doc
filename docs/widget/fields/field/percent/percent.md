@@ -26,7 +26,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/percent/basic/MyEntity1.java
+    {{ external_links.github_raw_doc }}/fields/percent/basic/MyEntity1.java
     --8<--
     ```
 
@@ -34,7 +34,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/percent/basic/MyExample1DTO.java
+    {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1DTO.java
     --8<--
     ```
 
@@ -43,7 +43,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/basic/MyExample1List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1List.widget.json
         --8<--
         ```
     === "Info widget"
@@ -51,7 +51,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/basic/MyExample1Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1Info.widget.json
         --8<--
         ```
 
@@ -61,7 +61,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/basic/MyExample1Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1Form.widget.json
         --8<--
         ```
     **Option2** Add **Double** field  to corresponding **DataResponseDTO** in Step1.
@@ -84,7 +84,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/percent/placeholder/MyExample7Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/percent/placeholder/MyExample7Meta.java:buildRowDependentMeta
     --8<--
     ```  
     === "List widget"
@@ -120,7 +120,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/color/MyExample73DTO.java
+        {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73DTO.java
         --8<--
         ```    
         
@@ -128,7 +128,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/percent/color/MyExample73List.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73List.widget.json
             --8<--
             ```   
 
@@ -136,7 +136,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/percent/color/MyExample73Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73Info.widget.json
             --8<--
             ```  
 
@@ -144,7 +144,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/percent/color/MyExample73Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73Form.widget.json
             --8<--
             ```  
     === "Constant color"
@@ -152,21 +152,21 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/percent/colorconst/MyExample3List.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/colorconst/MyExample3List.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/percent/colorconst/MyExample3Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/colorconst/MyExample3Info.widget.json
             --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/percent/colorconst/MyExample3Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/colorconst/MyExample3Form.widget.json
             --8<--
             ```
 ## Readonly/Editable
@@ -204,13 +204,13 @@
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/basic/MyExample1Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1Service.java:doUpdateEntity
         --8<--
         ```   
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/basic/MyExample1Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1Meta.java:buildRowDependentMeta
         --8<--
         ```          
         === "List widget"
@@ -225,7 +225,7 @@
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/ro/MyExample4Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/percent/ro/MyExample4Meta.java:buildRowDependentMeta
         --8<--
         ```       
 
@@ -255,14 +255,14 @@
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/filtration/MyExample6DTO.java
+        {{ external_links.github_raw_doc }}/fields/percent/filtration/MyExample6DTO.java
         --8<--
         ```   
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/filtration/MyExample6Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/percent/filtration/MyExample6Meta.java:buildIndependentMeta
         --8<--
         ```   
 
@@ -296,14 +296,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/percent/drilldown/MyExample5Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/percent/drilldown/MyExample5Meta.java:buildRowDependentMeta
     --8<--
     ```   
     === "List widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/drilldown/MyExample5List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/drilldown/MyExample5List.widget.json
         --8<--
         ```   
         **Option 2**
@@ -314,7 +314,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/drilldown/MyExample5Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/drilldown/MyExample5Info.widget.json
         --8<--
         ``` 
         **Option 2**
@@ -382,7 +382,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/validationbusinessex/MyExample10Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/percent/validationbusinessex/MyExample10Service.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -398,7 +398,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/validationruntimeex/MyExample12Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/percent/validationruntimeex/MyExample12Service.java:doUpdateEntity
         --8<--
         ```
         === "List widget"
@@ -411,7 +411,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/percent/validationconfirm/MyExample11Service.java:getActions
+        {{ external_links.github_raw_doc }}/fields/percent/validationconfirm/MyExample11Service.java:getActions
         --8<--
         ```
         === "List widget"
@@ -429,7 +429,7 @@ Also, it optionally allows you to filter data on target view before it will be o
             Add javax.validation to corresponding **DataResponseDTO**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/percent/validationannotation/MyExample292DTO.java
+            {{ external_links.github_raw_doc }}/fields/percent/validationannotation/MyExample292DTO.java
             --8<--
             ```               
             === "List widget"
@@ -448,13 +448,13 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/percent/validationdynamic/MyExample328Service.java:validateFields
+            {{ external_links.github_raw_doc }}/fields/percent/validationdynamic/MyExample328Service.java:validateFields
             --8<--
             ```   
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/percent/validationdynamic/MyExample328Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/fields/percent/validationdynamic/MyExample328Service.java:doUpdateEntity
             --8<--
             ```   
  
@@ -499,7 +499,7 @@ By default, UI sets `Percent` value to 0 when user deletes it and `nullable` is 
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/percent/required/MyExample8Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/percent/required/MyExample8Meta.java:buildRowDependentMeta
     --8<--
     ```   
     === "List widget"
@@ -529,21 +529,21 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/additionalproperties/digits/MyExample310List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/MyExample310List.widget.json
         --8<--
         ```
     === "Info widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/additionalproperties/digits/MyExample310Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/MyExample310Info.widget.json
         --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/additionalproperties/digits/MyExample310Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/MyExample310Form.widget.json
         --8<--
         ```
 
@@ -566,7 +566,7 @@ By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equ
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/additionalproperties/nullable/MyExample58List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/nullable/MyExample58List.widget.json
         --8<--
         ```   
     === "Info widget"
@@ -576,7 +576,7 @@ By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equ
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/percent/additionalproperties/nullable/MyExample58Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/nullable/MyExample58Form.widget.json
         --8<--
         ```  
 

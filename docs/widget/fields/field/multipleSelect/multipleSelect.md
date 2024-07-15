@@ -23,14 +23,14 @@
     **Step1** Create Enum. Recommend that use const key value and dynamic value for visual display.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/multipleselect/basic/enums/CustomFieldEnum.java
+    {{ external_links.github_raw_doc }}/fields/multipleselect/basic/enums/CustomFieldEnum.java
     --8<--
     ```
     **Step2** Add field **Custom Field** to corresponding **BaseEntity**.
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/multipleselect/basic/MyEntity251.java
+    {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyEntity251.java
     --8<--
     ```
 
@@ -38,7 +38,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251DTO.java
+    {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251DTO.java
     --8<--
     ```
 
@@ -46,7 +46,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Meta.java:buildRowDependentMeta
     --8<--
     ```
 
@@ -55,7 +55,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251List.widget.json
         --8<--
         ```
 
@@ -63,14 +63,14 @@
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Info.widget.json
         --8<--
         ```
     === "Form widget"
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Form.widget.json
         --8<--
         ```
 
@@ -92,7 +92,7 @@
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/multipleselect/placeholder/MyExample257Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/multipleselect/placeholder/MyExample257Meta.java:buildRowDependentMeta
     --8<--
     ```  
 
@@ -141,13 +141,13 @@ _not applicable_
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Service.java:doUpdateEntity
         --8<--
         ``` 
          **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/basic/MyExample251Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Meta.java:buildRowDependentMeta
         --8<--
         ```   
  
@@ -163,7 +163,7 @@ _not applicable_
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/ro/MyExample253Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/multipleselect/ro/MyExample253Meta.java:buildRowDependentMeta
         --8<--
         ```     
     
@@ -196,14 +196,14 @@ _not applicable_
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/filtration/MyExample256DTO.java
+        {{ external_links.github_raw_doc }}/fields/multipleselect/filtration/MyExample256DTO.java
         --8<--
         ```
  
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/filtration/MyExample256Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/multipleselect/filtration/MyExample256Meta.java:buildIndependentMeta
         --8<--
         ```
  
@@ -275,7 +275,7 @@ _not applicable_
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/validationbusinessex/MyExample248Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/multipleselect/validationbusinessex/MyExample248Service.java:doUpdateEntity
         --8<--
         ```
  
@@ -292,7 +292,7 @@ _not applicable_
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/validationruntimeex/MyExample249Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/multipleselect/validationruntimeex/MyExample249Service.java:doUpdateEntity
         --8<--
         ```        
    
@@ -306,7 +306,7 @@ _not applicable_
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/multipleselect/validationconfirm/MyExample260Service.java:getActions
+        {{ external_links.github_raw_doc }}/fields/multipleselect/validationconfirm/MyExample260Service.java:getActions
         --8<--
         ```
  
@@ -326,7 +326,7 @@ _not applicable_
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/multipleselect/validationannotation/MyExample345DTO.java
+            {{ external_links.github_raw_doc }}/fields/multipleselect/validationannotation/MyExample345DTO.java
             --8<--
             ```
              
@@ -347,14 +347,14 @@ _not applicable_
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/multipleselect/validationdynamic/MyExample334Service.java:validateFields
+            {{ external_links.github_raw_doc }}/fields/multipleselect/validationdynamic/MyExample334Service.java:validateFields
             --8<--
             ```
  
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/multipleselect/validationdynamic/MyExample334Service.java:doUpdateEntity
+            {{ external_links.github_raw_doc }}/fields/multipleselect/validationdynamic/MyExample334Service.java:doUpdateEntity
             --8<--
             ```
 
@@ -380,7 +380,7 @@ _not applicable_
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/multipleselect/required/MyExample247Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/multipleselect/required/MyExample247Meta.java:buildRowDependentMeta
     --8<--
     ```
 

@@ -15,7 +15,7 @@ Within our system, five main types of operations occur:
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/microservice){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice){:target="_blank"}
 
 When creating entities for microservices, the process is largely similar to creating entities for database access, with a few notable exceptions.
 

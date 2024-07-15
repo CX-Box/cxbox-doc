@@ -4,7 +4,7 @@ In this example, we're considering the scenario where we need to integrate with 
 ## Architecture existing microservice
 Let's outline the inputs our microservice accepts:
 
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/microservice/microservicestoringdata/ExistingMicroserviceStoringDataController.java){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/microservicestoringdata/ExistingMicroserviceStoringDataController.java){:target="_blank"}
 
 ![microservice_swagger.png](microservice_swagger.png)
 

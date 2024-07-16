@@ -131,7 +131,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     ```
  
 ### <a id="to_view_with_fields_filtration">To view with fields filtration</a>
-#### Standard filtration (visually visible)
+#### By fields (visually visible)
 [see more about filtration](/features/element/filtration/filtration/filtration)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3612){:target="_blank"}
@@ -186,7 +186,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
         ```
 
 
-#### FullTextSearch
+#### By fulltextsearch
 [see more about FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3615){:target="_blank"}
@@ -243,9 +243,11 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
         --8<--
         ```
 
-#### Filter group
+#### By filter group
     _not applicable_
 <!-- 
+
+#### by personal filter group
 ### <a id=" AdvanceddrillDownmMultiBC"> Advanced drillDown multi bc</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3612){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/advancedoneview){:target="_blank"}

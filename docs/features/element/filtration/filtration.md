@@ -2,7 +2,18 @@
 !!! warning line end "Work in progress"
 <!-- 
 ## Filter
+Filtration
 
+by fields
+
+by fulltextsearch
+
+by filter group
+
+by personal filter group
+
+каждый кейс для ВСЕХ типов виджетов поддерживающих фильтрацию
+List | PickList | Assoc | Grouping Hierarhy
 
 The system has the ability to filter recording by value in the field. For this, it is necessary to indicate that this field is allowed to filter in FieldMetaBuilder, and also indicate in the DTO the @SearchParameter annotation for the field that is being searched.
 

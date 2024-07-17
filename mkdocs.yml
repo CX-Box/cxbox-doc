@@ -68,6 +68,7 @@ nav:
       - Basic: view/view.md
   - Screen:
       - Basic: screen/screen.md
+      - Tabs: tabs/tab.md
   - Repository elements:
       - Basic: environment/repository.md
       - Entity: environment/entity/entity.md

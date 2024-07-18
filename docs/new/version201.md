@@ -18,36 +18,42 @@ Navigate: The system displays file previews in the pop-up from the widget list i
 Download: The system initiates a file download and saves it to the user's standard Download folder.
 
 see more [File preview]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
-
 #### Multi-upload of files without popup.
 
 ![multiupload.gif](v2.0.1/multiupload.gif)
- 
-( попап остался для загрузки?)
-You no longer need a pop-up to upload multiple files.
+
 With the new update, you can use a widget to download the files. 
 After uploading, the files will be stored and displayed on the page once the process is complete.
+Added progress bar for download files.
 This improvement simplifies the process of uploading multiple documents simultaneously.
 
 Live sample [Add files]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
-
 #### Added display of the number of applied filters
-![multiupload.gif](v2.0.1/multiupload.gif)
+![clearfilter.gif](v2.0.1/clearfilter.gif)
+
 If you have filtered by table, the "Clear all filters" button will appear.
 It is suggested to indicate the number of applied filters by displaying "Clear n filters" (where n represents the number of columns being filtered).
 
+Live sample [Add files]({{ external_links.demo }}/ui/#/screen/meeting)
+#### Added the ability to select limits for pagination
+Added the ability to select limits for pagination
 #### Added new widget type - GroupingHierarchy
-![additionalinfo.png](v2.0.0/additionalinfo.png)
+![groupinghierarchy.gif](v2.0.1//groupinghierarchy.gif)
 
-Added new widget type only for data viewing. Widget is always located on the right side and has gray background.
-
-Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
+"Grouping Hierarchy" and "Table" are purely display modes.
+Fundamentally, this widget is a list widget enhanced with a grouping feature.
+Live sample [GroupingHierarchy]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
+ 
 #### Add view with responsibility
-![additionalinfo.png](v2.0.0/additionalinfo.png)
+![responsibility.gif](v2.0.1//responsibility.gif)
 
-Added new widget type only for data viewing. Widget is always located on the right side and has gray background.
+Added screen with responsivenes. Allows you to add or remove view accessibility.
 
-Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
+Live sample [Responsibility]({{ external_links.demo }}/ui/#/screen/admin/view/resplist)
+
+#### Add filtration by range for Date/DateTime/DateTimeWithSeconds
+#### Add support BgColor/BgColorKey of field in Title template
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.1)
 

@@ -131,6 +131,17 @@ _not applicable_
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
+### Pagination
+`Pagination` - user can select the number of records to be displayed. There are four options:
+
+* 5
+* 10 
+* 15 
+* 20
+
+#### How does it look?
+
+![Dropdown_pagination.gif](Dropdown_pagination.gif)
 
 ### Actions
 `Actions` show available actions as separate buttons

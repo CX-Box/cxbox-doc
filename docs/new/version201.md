@@ -17,7 +17,7 @@ Dynamically selects whether to use the Javax library or Jakarta depending on the
 For the "hidden" property in .widget.json, a quick-fix has been implemented, and a check for correct filling has been added.
 
 #### Added a check for correct filling  for the "title" property
-![title.gif](v2.0.1/title.gif)
+![title.png](v2.0.1/title.png)
 Property "title" a check for correct filling in .widget.json for type widget "List" has been added.
  
 #### Other Changes
@@ -123,17 +123,21 @@ Added the ability to select limits for pagination
 Fundamentally, this widget is a list widget enhanced with a grouping feature.
 Live sample [GroupingHierarchy]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
  
-#### Add view with responsibility
+#### Added view with responsibility
 ![responsibility.gif](v2.0.1/responsibility.gif)
 
 Added screen with responsivenes. Allows you to add or remove view accessibility.
 
 Live sample [Responsibility]({{ external_links.demo }}/ui/#/screen/admin/view/resplist)
 
-#### Add filtration by range for Date/DateTime/DateTimeWithSeconds
+#### Added filtration by range for Date/DateTime/DateTimeWithSeconds
+![filtrationdate.gif](v2.0.1/filtrationdate.gif)
+Added filtration by range for Date/DateTime/DateTimeWithSeconds
 
-#### Add support BgColor/BgColorKey of field in Title template
+#### Added support BgColor/BgColorKey of field in Title template
+![titlecolor.gif](v2.0.1/titlecolor.gif)
 
+Added support BgColor/BgColorKey of field in Title template
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.1)
 

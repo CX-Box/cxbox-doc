@@ -17,7 +17,7 @@ Dynamically selects whether to use the Javax library or Jakarta depending on the
 For the "hidden" property in .widget.json, a quick-fix has been implemented, and a check for correct filling has been added.
 
 #### Added a check for correct filling  for the "title" property
-![title.gif](v2.0.1/title.gif)
+![title.png](v2.0.1/title.png)
 Property "title" a check for correct filling in .widget.json for type widget "List" has been added.
  
 #### Other Changes
@@ -145,7 +145,8 @@ see [cxbox-code-samples changelog](https://github.com/CX-Box/cxbox-code-samples/
 
 
 ### <a id="CXBOXUI">CXBOX</a> ([Core Ui](https://github.com/CX-Box/cxbox-ui))
-
+#### Updated to version 2.0.0 
+Updated to version 2.0.0
 #### Add filtration by range for Date/DateTime/DateTimeWithSeconds
 Add filtration by range for Date/DateTime/DateTimeWithSeconds
 #### Add support BgColor/BgColorKey of field in Title template
@@ -159,14 +160,12 @@ Add supports additional in meta for file preview
 ####  Updated to Springbot 3.2.4 (java 17+)
 Updated to Springbot 3.2.4
 #### Add supports File preview
-Add supports additional in meta for file preview 
+Add supports file preview 
 #### Add supports filtration by range for Date/DateTime/DateTimeWithSeconds
 Add supports filtration by range for Date/DateTime/DateTimeWithSeconds
 #### Added sorting in the LOV dictionary
 Added sorting in the LOV dictionary
-#### Added Responsibilities
-Added Responsibilities  
 ####  Add global Bc limit default value is configurable
-Global Bc limit default value is configurable
+Ability to change the default number of lines (if it is not overridden in BC_PROPERTIES.CSV) through the config
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M3)

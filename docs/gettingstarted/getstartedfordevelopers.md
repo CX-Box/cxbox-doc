@@ -15,7 +15,7 @@ This tutorial serves as an introduction to the fundamentals, guiding you through
 Choose datasource:
 
 * [Postgres](/gettingstarted/postgres/getstartedfordeveloperspostgres.md)
-* [Microcervicervice](/gettingstarted/microservice/getstartedfordevelopersmicroservice.md)
+* [Microservices](/gettingstarted/microservice/getstartedfordevelopersmicroservice.md)
 
 ## :material-play: Step 4 To deploy an application
 

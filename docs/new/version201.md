@@ -1,12 +1,12 @@
 # v2.0.1
 
-[cxbox/demo 2.0.1 git](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.1), [release notes](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.1)
+* [cxbox/demo 2.0.1 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.1), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.1)
 
-[cxbox/core 4.0.0-M3 git](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M3), [release notes](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M3), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent)
+* [cxbox/core 4.0.0-M3 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M3), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M3), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent)
 
-[cxbox-ui/core 2.0.0 git](https://github.com/CX-Box/cxbox-ui/releases/tag/2.0.0), [release notes](https://github.com/CX-Box/cxbox-ui/tree/2.0.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core)
+* [cxbox-ui/core 2.0.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.0.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.0.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core)
 
-[cxbox/code-samples 2.0.1 git](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v2.0.1), [release notes](https://github.com/CX-Box/cxbox-code-samples/tree/v2.0.1)
+* [cxbox/code-samples 2.0.1 git](https://github.com/CX-Box/cxbox-code-samples/tree/v2.0.1), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v2.0.1)
 
 ## **Key updates July 2024**
 ###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)

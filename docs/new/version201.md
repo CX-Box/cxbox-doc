@@ -14,11 +14,11 @@ Dynamically selects whether to use the Javax library or Jakarta depending on the
 
 #### Added quick-fix and check for correct filling for the "hidden" property
 ![hidden.gif](v2.0.1/hidden.gif)
-For the "hidden" property in .widget.json, a quick-fix has been implemented, and a check for correct filling has been added.
+For the "hidden" property in .widget.json, a quick-fix has been implemented, and inspection for correct filling has been added.
 
 #### Added a check for correct filling  for the "title" property
 ![title.png](v2.0.1/title.png)
-Property "title" a check for correct filling in .widget.json for type widget "List" has been added.
+Property "title" inspection for correct filling in .widget.json for type widget "List" has been added.
  
 #### Other Changes
 see [cxbox-plugin changelog](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions)
@@ -29,14 +29,14 @@ see [cxbox-plugin changelog](https://plugins.jetbrains.com/plugin/19523-platform
 
 This tutorial serves as an introduction to the fundamentals, guiding you through the creation of standard elements essential for initiating your project promptly.
 
-[Getting started](https://doc.cxbox.org/gettingstarted/getstartedfordevelopers/)
+see more [Getting started](https://doc.cxbox.org/gettingstarted/getstartedfordevelopers/)
 #### Added creation examples for microservice
 ![microservices.png](v2.0.1/microservices.png)
 
 We have included an overview of standard methodologies for working with microservices. 
 Additionally, we have outlined a scenario where it is necessary to integrate with an existing microservice responsible for data operations.
 
-[Microservices](https://doc.cxbox.org/features/element/microservices/microservices/)
+see more [Microservices](https://doc.cxbox.org/features/element/microservices/microservices/)
 #### Added creation examples for widgets
 ![widget.png](v2.0.1/widget.png)
 
@@ -87,7 +87,7 @@ see [cxbox-doc changelog](https://github.com/CX-Box/cxbox-doc/releases/tag/v2.0.
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo), [Code Samples](https://github.com/CX-Box/cxbox-code-samples))
 #### File preview
 
-![multiupload.gif](v2.0.1/preview.gif)
+![preview.gif](v2.0.1/preview.gif)
 
 An eye button has been added. When clicked, the system generates a pop-up displaying a full-screen preview of the file.
 Three types of buttons have been added to the preview:
@@ -114,12 +114,11 @@ If you have filtered by table, the "Clear all filters" button will appear.
 It is suggested to indicate the number of applied filters by displaying "Clear n filters" (where n represents the number of columns being filtered).
 
 Live sample [Add files]({{ external_links.demo }}/ui/#/screen/meeting)
-#### Added the ability to select limits for pagination
-Added the ability to select limits for pagination
+
 #### Added new widget type - GroupingHierarchy
 ![groupinghierarchy.gif](v2.0.1//groupinghierarchy.gif)
 
-"Grouping Hierarchy" and "Table" are purely display modes.
+"Grouping Hierarchy" is purely display modes.
 Fundamentally, this widget is a list widget enhanced with a grouping feature.
 Live sample [GroupingHierarchy]({{ external_links.demo }}/ui/#/screen/meeting/view/meetingview/meeting/1000053)
  
@@ -128,45 +127,44 @@ Live sample [GroupingHierarchy]({{ external_links.demo }}/ui/#/screen/meeting/vi
 
 Added screen with responsivenes. Allows you to add or remove view accessibility.
 
-Live sample [Responsibility]({{ external_links.demo }}/ui/#/screen/admin/view/resplist)
+[Live sample]({{ external_links.demo }}/ui/#/screen/admin/view/resplist)
 
 #### Added filtration by range for Date/DateTime/DateTimeWithSeconds
 ![filtrationdate.gif](v2.0.1/filtrationdate.gif)
-Added filtration by range for Date/DateTime/DateTimeWithSeconds
 
+You can now filter fields Date/DateTime/DateTimeWithSeconds by range. This feature is available for all global construction projects.
 #### Added support BgColor/BgColorKey of field in Title template
 ![titlecolor.gif](v2.0.1/titlecolor.gif)
 
-Added support BgColor/BgColorKey of field in Title template
+Introduced the functionality to highlight portions of the widget title with color.
 #### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.1)
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.1)
 
 see [cxbox-code-samples changelog](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v2.0.1)
 
 
 ### <a id="CXBOXUI">CXBOX</a> ([Core Ui](https://github.com/CX-Box/cxbox-ui))
 
-#### Add filtration by range for Date/DateTime/DateTimeWithSeconds
-Add filtration by range for Date/DateTime/DateTimeWithSeconds
-#### Add support BgColor/BgColorKey of field in Title template
-Add support BgColor/BgColorKey of field in Title template
+#### Added filtration by range  
+Added filtration by range for Date/DateTime/DateTimeWithSeconds
+#### Added support Color in Title template
+Added support BgColor/BgColorKey of field in Title template
 #### Select Multiple Files
-Add supports additional for multiple files
+Added supports additional for multiple files
 #### File preview
-Add supports additional in meta for file preview
+Added supports additional in meta for file preview
 
-### <a id="CXBOXCORE">CXBOX</a>  ([Core](https://github.com/CX-Box/cxbox))
-####  Updated to Springbot 3.2.4 (java 17+)
+### <a id="CXBOXCORE">CXBOX 4.0.0-M3</a>  ([Core](https://github.com/CX-Box/cxbox))
+####  Updated to Springbot 3.2.4
 Updated to Springbot 3.2.4
 #### File preview
-Add supports additional in meta for file preview 
-#### Add filtration by range for Date/DateTime/DateTimeWithSeconds
+Added supports additional in meta for file preview 
+#### Add filtration by range  
 Add supports filtration by range for Date/DateTime/DateTimeWithSeconds
 #### Added sorting in the LOV dictionary
 Added sorting in the LOV dictionary
-#### Added Responsibilities
-Added Responsibilities  
-####  Global Bc limit default value is configurable
-Global Bc limit default value is configurable
+#### Default Bc limit value is configurable
+You can now configure in application.yml (cxbox.meta.bcDefaultPageLimit) default number of rows that will be shown on any widget (it was 5 before). 
+Of course, you can still override this value for exact bc in BC_Properties.csv with PAGE_LIMIT
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M3)

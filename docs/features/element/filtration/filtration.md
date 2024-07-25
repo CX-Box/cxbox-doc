@@ -1,16 +1,17 @@
 # Filtration
 !!! warning line end "Work in progress"
-<!-- 
+<!--
 ## Filter
-Filtration
+`Filtration` is an element that allows users to select and display only those records that meet certain criteria or conditions.
+There are 4 types of filtration.
 
-by fields
+* by fields
 
-by fulltextsearch
+* by [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
-by filter group
+* by [Filter Group](/features/element/filtration/filtergroup/filtergroup/)
 
-by personal filter group
+* by personal filter group
 
 каждый кейс для ВСЕХ типов виджетов поддерживающих фильтрацию
 List | PickList | Assoc | Grouping Hierarhy
@@ -98,4 +99,4 @@ Example widget field meta that has filter by multivalue field:
   "options": {}
 }
 ```
- -->
+-->

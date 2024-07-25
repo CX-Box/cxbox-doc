@@ -131,6 +131,19 @@ _not applicable_
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
+### Filtering
+`Filtering` - the process of searching for records based on selected criteria.
+To see the ability to filter specific fields visit [Field Types](/widget/fields/fieldtypes)
+#### How does it look?
+Looks different for each field type
+
+### Clear filtering
+When a user selects a filter or filters, he can see a "Clear filter(s)" button showing the number of selected filters. By clicking this button, all filters are cleared.
+
+If the user wants to remove a specific filter, he need to open that filter and clear it manually. 
+#### How does it look?
+=== "List widget"
+![ClearFilter(s).gif](ClearFilter(s).gif)
 
 ### Actions
 `Actions` show available actions as separate buttons

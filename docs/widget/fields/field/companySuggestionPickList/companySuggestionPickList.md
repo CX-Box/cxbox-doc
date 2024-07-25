@@ -8,7 +8,7 @@
 ### How does it look?
 
 === "List widget"
-    
+    _not applicable_
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -124,7 +124,7 @@
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
-    ![img_plchldr_list.png](img_plchldr_list.png)
+    _not applicable_
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -147,61 +147,6 @@
     === "Form widget"
         **Works for Form.**
 
-## Color
-`Color` allows you to specify a field color. It can be calculated based on business logic of application
-
-`Calculated color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample134){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/inlinepicklist/color){:target="_blank"}
-
-`Constant color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample136){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/inlinepicklist/colorconst){:target="_blank"}
-
-### How does it look?
-=== "List widget"
-    ![img_color_list.png](img_color_list.png)
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-    _not applicable_
-
-
-### How to add?
-??? Example
-    === "Calculated color"
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null. 
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/MyExample134DTO.java
-        --8<--
-        ```    
-
-        === "List widget"   
-            **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/MyExample134List.widget.json
-            --8<--
-            ```
-        === "Info widget"
-            _not applicable_
-        === "Form widget"
-            _not applicable_
-
-    === "Constant color"
-        === "List widget" 
-            Add **"bgColor"** :  `HEX color`  to .widget.json.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/colorconst/MyExample136List.widget.json
-            --8<--
-            ```
-
-        === "Info widget"
-            _not applicable_
-        === "Form widget"
-            _not applicable_
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -270,45 +215,6 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtering
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample142){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/inlinepicklist/filtration){:target="_blank"}
-
-`Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
-!!! tips
-    By default, filtration popup is auto-generated from field-editing popup (e.g. same fields, filters and so on will appear on both widgets).
-Optionally, a separate filtration widget can still be provided.
-
-### How does it look?
-=== "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-    _not applicable_
-
-### How to add?
-??? Example
-    === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/filtration/MyExample142DTO.java
-        --8<--
-        ```
-
-        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/filtration/MyExample142Meta.java:buildIndependentMeta
-        --8<--
-        ```
-
-    === "Info widget"
-        _not applicable_
-    === "Form widget"
-        _not applicable_
-
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample140){:target="_blank"} ·
@@ -366,7 +272,6 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Form widget"
         _not applicable_
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
-
 
 
 ## Validation
@@ -508,28 +413,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             --8<--
             ```
 
-## Sorting
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample148/view/myexample148list){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/inlinepicklist/sorting){:target="_blank"}
-
-`Sorting` allows you to sort data in ascending or descending order. Field has lexicographic sorting.
-
-### How does it look?
-=== "List widget"
-    ![img_sort_list](img_sort_list.png)
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-    _not applicable_
-
-### How to add?
-??? Example
-    === "List widget"
-        Enabled by default.
-    === "Info widget"
-        _not applicable_
-    === "Form widget"
-        _not applicable_
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample146){:target="_blank"} ·

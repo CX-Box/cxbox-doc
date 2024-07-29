@@ -68,11 +68,17 @@ There are types of:
         --8<--
         {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
         --8<--
-        ```
+### Icon
+_not applicable_
+
+### Color
+_not applicable_
+
 ###  <a id="Fieldslayout">Fields layout</a>
 **options.layout** - no use in this type.
 ###  <a id="Showcondition">Show condition</a>
 _not applicable_
+
 <!-- 
 ###  <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible
@@ -127,13 +133,13 @@ _not applicable_
         --8<--
         ```
 -->
-### FullTextSearch
-`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
-see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
-
 
 ### Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
 
- 
+### Additional properties
+#### FullTextSearch
+`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
+see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
+

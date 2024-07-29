@@ -257,6 +257,13 @@ There are types of:
 ###  <a id="Showcondition">Show condition</a>
 _not applicable_
 
+### Actions
+`Actions` show available actions as separate buttons
+see [Actions](/features/element/actions/actions)
+
+ 
+## Additional properties
+
 ### <a id="Viewwidgetwight">View widget wight</a>
 By default, we use the view gridWidth field to arrange widgets in a row, each occupying 1/3 of the given size. 
 For example, if the row has a total width of 24 spans, each widget will take up 8 spans.

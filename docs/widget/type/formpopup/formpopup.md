@@ -69,6 +69,26 @@
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400Service.java
     --8<--
     ```
+## Main visual parts
+### Title
+_not applicable_
+
+### Icon
+_not applicable_
+
+### Color
+_not applicable_
+
+### Fields layout
+_not applicable_
+
+### Show condition
+_not applicable_
+
+### Actions
+`Actions` show available actions as separate buttons
+see [Actions](/features/element/actions/actions)
+
 <!-- 
 ## Main visual parts
 [Title](#Title), [fields block](#Fieldslayout) in grid, [actions block](#Showcondition)

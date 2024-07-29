@@ -79,6 +79,11 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102CustomTitle.widget.json
         --8<--
         ```   
+### Icon
+_not applicable_
+
+### Color
+_not applicable_
 
 ###  <a id="Fieldslayout">Fields layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·

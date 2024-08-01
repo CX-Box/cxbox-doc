@@ -129,12 +129,10 @@ _not applicable_
 -->
 
 ### Filtering
-`Filtering` - the process of searching for records based on selected criteria.
-To see the ability to filter specific fields visit [Field Types](/widget/fields/fieldtypes)
+`Filtering` - is the process of searching for records based on selected criteria.
+There are various types of filtering available. For more information, visit [Filtration](/features/element/filtration/filtration).
 
-#### FullTextSearch
-`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
-see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
+To see the ability to filter specific fields visit [Field Types](/widget/fields/fieldtypes).
 
 #### Clear filtering
 When a user selects a filter or filters, he can see a "Clear filter(s)" button showing the number of selected filters. By clicking this button, all filters are cleared.

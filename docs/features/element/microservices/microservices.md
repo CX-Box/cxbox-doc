@@ -227,6 +227,8 @@ Combining these parameters allows users to control and customize the behavior of
     In this example, we're addressing the scenario where the service obtaining data only by ID.
     If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
+When creating a record, a temporary ID is assigned, which is replaced by an ID obtained from the microservice after the record is saved.
+
 ??? Example
 
     **Step1** Method `create` takes a BusinessComponent as input.

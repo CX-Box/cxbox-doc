@@ -90,6 +90,9 @@ nav:
         - Minio: features/element/filestorage/minio.md
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
+      - Navigation:
+          - Basic: features/element/navigation/navigation.md
+          - Pagination: features/element/navigation/pagination/pagination.md
       - Microservices:
         - Basic: features/element/microservices/microservices.md
         - Get started:

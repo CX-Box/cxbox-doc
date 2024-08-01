@@ -132,16 +132,10 @@ _not applicable_
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
 ### Pagination
-`Pagination` - user can select the number of records to be displayed. There are four options:
+`Pagination` is a method used to divide a large amount of content into multiple pages to improve usability.
+It allows users to view data in parts using navigation elements.
 
-* 5
-* 10 
-* 15 
-* 20
-
-#### How does it look?
-
-![dropdown_pagination.gif](../../../features/element/navigation/pagination/dropdown_pagination.gif)
+For more information, visit [Pagination](/features/element/navigation/pagination/pagination/)
 
 ### Actions
 `Actions` show available actions as separate buttons

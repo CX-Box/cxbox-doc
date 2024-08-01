@@ -1,26 +1,26 @@
-# Filter group
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/filtergroup){:target="_blank"}
+# Pagination
 
-A user-filled filter can be saved for each individual user.
+`Pagination` is a method used to divide a large amount of content into multiple pages to improve usability. 
+It allows users to view data in parts using navigation elements.
 
 ## Basic
-The "Save Filters" button is located within the gear icon.
-When the "Save Filters" button is clicked, a modal window appears displaying all custom filters, which can be deleted if desired.
+At the bottom of the page, there are "Forward" and "Back" arrows for pagination with page numbers, and an option to select the number of records displayed per page.
+
+When choosing the number of records displayed per page, the following options are available: 
+
+* 5
+* 10
+* 15
+* 20
 
 ### How does it look?
-![filtergroup.gif](filtergroup.gif)
 
-### How to add?
-??? Example
-    The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
+![dropdown_pagination.gif](dropdown_pagination.gif)
 
-    `Step 1` Add **filterSetting** to corresponding **.widget.json**. 
+## Pagination mode
 
-    `enabled` true/false  
-        
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/filtergroup/MyExample3616List.widget.json
-    --8<--
-    ```
+You can set up hiding navigation arrows and row count options if the number of rows on a page is less than the limit.
+
+### How does it look?
+
+![hiding_pagination.gif](hiding_pagination.gif)

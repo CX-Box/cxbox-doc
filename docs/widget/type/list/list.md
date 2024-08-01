@@ -141,7 +141,7 @@ see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/
 
 #### How does it look?
 
-![Dropdown_pagination.gif](Dropdown_pagination.gif)
+![dropdown_pagination.gif](../../../features/element/navigation/pagination/dropdown_pagination.gif)
 
 ### Actions
 `Actions` show available actions as separate buttons

@@ -19,6 +19,9 @@ When choosing the number of records displayed per page, the following options ar
 
 ## Pagination mode
 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandprevioussmart){:target="_blank"}
+
 You can set up hiding navigation arrows and row count options if the number of rows on a page is less than the limit.
 
 ### How does it look?

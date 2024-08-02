@@ -61,6 +61,7 @@ nav:
       - Widget Form Popup: widget/type/formpopup/formpopup.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
       - Widget Statistics blocks:  widget/type/statblocks/statblocks.md
+      - Widget PickListPopup: widget/type/pickListPopup/pickListPopup.md
   - View:
       - Basic: view/view.md
   - Screen:

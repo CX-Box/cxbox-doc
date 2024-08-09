@@ -12,7 +12,7 @@
 === "Info widget"
     _not applicable_
 === "Form widget"
-    ![companySuggestionPickList.gif](companySuggestionPickList.gif)
+    ![companySggstnPickList.gif](companySggstnPickList.gif)
 
 
 ### How to add?
@@ -169,7 +169,7 @@
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![companySuggestionPickList.gif](companySuggestionPickList.gif)
+        ![companySggstnPickList.gif](companySggstnPickList.gif)
 === "Readonly"
     === "List widget"
         _not applicable_

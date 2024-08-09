@@ -282,6 +282,12 @@
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
+
+There are two mutually exclusive filtering methods:
+
+1. A pop up for text input.
+2. A pop up accessible by clicking a button in the popup from point 1.
+
 !!! tips
     Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
 ### How does it look?

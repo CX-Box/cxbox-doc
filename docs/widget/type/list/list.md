@@ -30,6 +30,41 @@
     {{ external_links.github_raw_doc }}/widgets/list/base/myexample3002list.view.json
     --8<--
     ```
+## Export to Excel
+
+`Export to Excel` allows the user to download a .xlsx file of the table.
+Export is available by clicking on the gear.
+
+There are types of export:
+
+* Inner source: data from database.
+
+   `Inner source`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3134){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/excel/inner){:target="_blank"}
+
+*  Any source: data from microservices or other sources.
+
+   `Any source`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3136){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/excel/any){:target="_blank"}
+
+* Filtration: export filtered information.
+
+   `Filtration`:
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3138){:target="_blank"} ·
+   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/excel/filtration){:target="_blank"}
+
+### How does it look?
+=== "List widget"
+    === "Inner source"
+        ![inner_export_excel.gif](inner_export_excel.gif)
+    === "Any source"
+        ![any_export_excel.gif](any_export_excel.gif)
+    === "Filtration"
+        ![fltr_export_excel.gif](fltr_export_excel.gif)
+
+### How to add?
 
 ## Main visual parts
 [Title](#Title), [actions block](#Showcondition)

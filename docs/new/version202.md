@@ -1,4 +1,4 @@
-# v2.0.1
+# v2.0.2
 
 * [cxbox/demo 2.0.2 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.2), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.2)
 

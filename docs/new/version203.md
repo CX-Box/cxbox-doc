@@ -2,17 +2,62 @@
 
 * [cxbox/demo 2.0.3 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.3), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.3)
 
-* [cxbox/core 4.0.0-M4 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M4), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M4), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent)
+* [cxbox/core 4.0.0-M5 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M5), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M5), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent)
 
 * [cxbox-ui/core 2.0.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.0.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.0.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core)
 
 
 ## **Key updates August 2024** 
+### <a id="CXBOXCORE">CXBOX 4.0.0-M5</a>  ([Core](https://github.com/CX-Box/cxbox))
+#### Dependencies have been changed
+* bumped org.springframework.boot/spring-boot-starter-parent to 3.2.5 from 3.2.4
+* removed org.apache.commons/commons-text dependency
+* removed de.odysseus.juel/* dependencies
+* removed commons-io/commons-io dependency
+* removed org.glassfish/javax.el dependency
+* removed java.security.AccessController class usage
+* removed jenkins ci pipeline file (GitHub ci is used instead)
+* removed liquibase-maven-plugin dependency
+* removed com.google.auto.service/auto-service dependency
+* bumped jacoco-maven-plugin to 0.8.11 from 0.8.14
+* removed com.sun.xml.bind/jaxb-impl dependency
+* removed com.sun.xml.bind/jaxb-core dependency
+* removed maven-gpg-plugin dependency and release profile from cxbox-starter-parent (they will no loner be visible in customer projects, so confusion is reduced)
+* fixed dependency-review-config file folder
+* removed com.google/guava dependency
+* removed commons-collections4 dependency
+* change commons-lang3 dependency version to be managed by spring-boot
+
+Only 2 dependencies versions are now explicitly set in cxbox core
+```xml
+    <hibernate-commons-annotations.version>6.0.6.Final</hibernate-commons-annotations.version>
+    <javapoet.version>1.13.0</javapoet.version>
+``` 
+All other dependencies versions are now managed by
+```xml
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.5</version>
+</parent>
+```
+so for all dependencies (except javapoet and hibernate-commons-annotations):
+
+* core level: security issues can now be easily solved with just bumping spring-boot version in core now
+* project level: dependencies versions can be overriden on project level just like in usual spring-boot app ([see](https://docs.spring.io/spring-pulsar/reference/appendix/override-boot-dependencies.html))
+
+#### Other Changes
+see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M5)
+
+
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
 #### Front. Dependencies have been changed
 * axios:   1.6.0
 * rc-select: 14.11.0
 * @types/lodash.debounce: 4.0.9
+
+#### New version core
+New version core  CXBOX 4.0.0-M5
 
 #### Add SIEM integration example
 ![siem.gif](v2.0.3/siem.gif)

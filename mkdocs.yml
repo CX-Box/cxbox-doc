@@ -5,11 +5,13 @@ nav:
   - Home: index.md
   - What’s new: new/whatsnew.md
   - Versions :
-      - v2.0.2: new/version202.md
-      - v2.0.1: new/version201.md
-      - v2.0.0: new/version200.md
-      - v1.0.1: new/version101.md
-      - v1.0.0: new/version100.md
+      - cxbox:
+        - v2.0.3: new/version203.md
+        - v2.0.2: new/version202.md
+        - v2.0.1: new/version201.md
+        - v2.0.0: new/version200.md
+        - v1.0.1: new/version101.md
+        - v1.0.0: new/version100.md
   - Guides for work with documentation:
     - For analysts: guide/analystguide/analystguide.md
     - For developers: guide/developerguide/developerguide.md

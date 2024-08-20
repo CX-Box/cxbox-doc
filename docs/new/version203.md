@@ -59,7 +59,7 @@ see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M
 #### New version core
 New version core  CXBOX 4.0.0-M5
 
-#### Add SIEM integration example
+#### Added SIEM integration example
 ![siem.gif](v2.0.3/siem.gif)
 
 Added an example demonstrating how to log `CrudmaAction` along with the associated data.

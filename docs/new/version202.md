@@ -13,7 +13,7 @@
 ![addpicklist.gif](v2.0.2/addpicklist.gif)
 
 We have added the ability to create a line directly within the picklist popup when clicking "Add" on the sheet.
-####  Add new pagination modes
+#### Added new pagination modes
 The navigation arrows and limit settings block are removed if the number of records is less than the limit.
 Pagination modes:
 

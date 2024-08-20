@@ -14,10 +14,13 @@ However, if you need to output data from a view, any necessary data transformati
 ??? Example 
       ```java
       --8<--
-      {{ external_links.github_raw_doc }}/input/basic/InputBasicService.java
+      {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicService.java
       --8<--
       ```
-
+#### doUpdateEntity
+!!! tips
+      This method should not perform any actions with side effects, as it is invoked multiple times by the kernel.
+      Any calls to external services that modify data or perform actions should be handled in the button invoker.
 
 ### AnySourceVersionAwareResponseService
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
@@ -32,3 +35,8 @@ For directly outputting data from the database, it is recommended to use Version
      {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800Service.java
      --8<--
      ```
+
+#### doUpdateEntity
+!!! tips
+      This method should not perform any actions with side effects, as it is invoked multiple times by the kernel. You are limited to adding actions only to the current transaction.
+      Any calls to external services that modify data or perform actions should be handled in the button invoker.

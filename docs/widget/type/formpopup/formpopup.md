@@ -195,7 +195,7 @@ There are types of:
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3004MultiColumnForm.widget.json
         --8<--
         ```
     === "Empty only buttons"

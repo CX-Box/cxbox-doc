@@ -82,7 +82,7 @@ DrillDown link is an element that lets the user navigate to another view by tapp
 We have included an example demonstrating the possibility of adding a primary attribute to a field type "multivalue".
 
 [Multivalue_primary](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue//):
-Add the option to specify the Primary value to the AssocListPopup widget. If this value is specified, display an additional column labeled "Primary" that allows setting a checkbox in only one of the rows.
+Added the option to specify the Primary value to the AssocListPopup widget. If this value is specified, display an additional column labeled "Primary" that allows setting a checkbox in only one of the rows.
 
 #### Other Changes
 see [cxbox-doc changelog](https://github.com/CX-Box/cxbox-doc/releases/tag/v2.0.1)
@@ -163,8 +163,8 @@ Added supports additional in meta for file preview
 Updated to Springbot 3.2.4
 #### File preview
 Added supports additional in meta for file preview 
-#### Add filtration by range  
-Add supports filtration by range for Date/DateTime/DateTimeWithSeconds
+#### Added filtration by range  
+Added supports filtration by range for Date/DateTime/DateTimeWithSeconds
 #### Added sorting in the LOV dictionary
 Added sorting in the LOV dictionary
 #### Default Bc limit value is configurable

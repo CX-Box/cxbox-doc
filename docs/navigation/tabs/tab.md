@@ -6,7 +6,13 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3122){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/tab/basic){:target="_blank"}
 
-Tab levels:
+Существует 2 варианта добавления типов вью как сингл вью и как агригейт вью
+
+1) Уникальное имя чтобы при дриллдауне можно было воостановить подсветку табов по дерево вверх
+2) Нельзя пустой массив нельзятк что отрисовывать если  мы идем по дереву внизу и рисуем первое вью в массиве
+3) Хотя бы одна вью на уровне с хидден дб изиз пункта 2
+
+   Tab levels:
 
 * [SecondLevelMenu](#SecondLevel)
 * [ThirdLevelMenu](#ThirdLevelMenu)

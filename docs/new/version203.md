@@ -8,11 +8,12 @@
 
 
 ## **Key updates August 2024** 
+
 ### <a id="CXBOXCORE">CXBOX 4.0.0-M5</a>  ([Core](https://github.com/CX-Box/cxbox))
 #### Dependencies have been changed
 * bumped org.springframework.boot/spring-boot-starter-parent to 3.2.5 from 3.2.4
 * removed org.apache.commons/commons-text dependency
-* removed de.odysseus.juel/* dependencies
+* removed de.odysseus.juel/* dependenciesg
 * removed commons-io/commons-io dependency
 * removed org.glassfish/javax.el dependency
 * removed java.security.AccessController class usage

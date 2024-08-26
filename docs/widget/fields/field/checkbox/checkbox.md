@@ -147,14 +147,7 @@
     _not applicable_
 === "Form widget"
     _not applicable_
-
-TEST6
-TEST6
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyEntity82.java
-    --8<-
-    ```
+ `
 
 
 ### How to add?

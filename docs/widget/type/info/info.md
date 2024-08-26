@@ -78,12 +78,30 @@ There are types of:
         --8<--
         {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102CustomTitle.widget.json
         --8<--
-        ```   
-### Icon
-_not applicable_
+        ```
 
-### Color
-_not applicable_
+### Title Color
+`Title Color` allows you to specify a color for a title. It can be constant or calculated.
+
+* *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
+* *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3040/view/myexample3040infocolorconst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]
+
+`Calculated color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3040){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]
+
+!!! info
+    Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+
+#### How does it look?
+
+
+#### How to add?
+
 
 ###  <a id="Fieldslayout">Fields layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·

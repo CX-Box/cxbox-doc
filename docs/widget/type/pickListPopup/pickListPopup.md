@@ -1,14 +1,13 @@
 # PickListPopup
 
-`PickListPopup` is a component that allows not only to select a value from Popup list of entities, but also to create a
-new one with the help of *Create* button. 
+`PickListPopup` is a component that allows the user to select a value from a Popup list of entities.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3067){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]
 
 ### How does it look?
-![pickListPopupBasic.png](pickListPopupBasic.png)
+![pickListPopupBasic.gif](pickListPopupBasic.gif)
 
 ### How to add?
 
@@ -16,17 +15,18 @@ new one with the help of *Create* button.
 
 ### Title
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3068){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]
-
-Title - (optional)
+[:fontawesome-brands-github: GitHub]  
 
 ![pickListPopupTitleGuide.png](pickListPopupTitleGuide.png)
 
 There are 3 types of titles for a Picklist Popup:
 
-* `constant title`: shows constant text in the title
-* `constant title empty`: shows no text (use this if you want to visually connect widgets and place them one under another)
-* `calculated title`: shows value provided in hidden text field, e.g. it can be calculated based on business logic of application
+* `constant title`: displays a fixed piece of text which cannot be changed. 
+* `constant title empty`: shows no text.
+* `calculated title`: displays a dynamic piece of text, meaning it can change based on business logic or data in the application.
+
+!!! tips 
+    Use `constant title empty` if you want to visually connect widgets and place them one under another. 
 
 #### How does it look?
 === "Constant title"
@@ -38,19 +38,22 @@ There are 3 types of titles for a Picklist Popup:
 
 #### How to add?
 
-### Icon 
-*not applicable*
+### Title Color
+`Title Color` allows you to specify a color for a title. It can be constant or calculated.  
 
-### Color
-`Color` allows you to specify a field color. It can be calculated based on business logic of application.
+* *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
+* *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application. 
+
+`Constant color`:
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3060/view/myexample3060formcolorconst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]
 
 `Calculated color`:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3060/view/myexample3060form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]
 
-`Constant color`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3060/view/myexample3060formcolorconst){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]
+!!! info 
+    Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover. 
 
 #### How does it look?
 ![pickListPopupColor.png](pickListPopupColor.png)
@@ -64,12 +67,40 @@ There are 3 types of titles for a Picklist Popup:
 *not applicable* 
 
 ### Actions 
-`Actions` show available actions as separate buttons. As for Picklist Popup, there is a Create button, which enables you to create a new value right in the Popup list of entities.
+`Actions` show available actions as separate buttons. 
+As for PickList Popup, there are several actions.  
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3072){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub] 
+[:fontawesome-brands-github: GitHub]
 
-#### How does it look?
-![pickListPopupCreate.png](pickListPopupCreate.png)
+#### Create
+`Create` button enables you to create a new value right in the Popup List of entities. 
 
-#### How to add? 
+##### How does it look?
+![pickListPopupCreate.gif](pickListPopupCreate.gif)
+
+##### How to add? 
+
+#### Edit
+`Edit` enables you to change the field value by clicking on a *Pencil icon*.
+
+##### How does it look?
+![pickListPopupEdit.gif](pickListPopupEdit.gif)
+
+##### How to add?
+
+#### Filter 
+`Filter` enables you to filter the entities from the Popup list by clicking on a *Filter icon*. 
+
+##### How does it look?
+!![pickListPopupFilter.gif](pickListPopupFilter.gif)
+
+##### How to add?
+
+#### Delete 
+`Delete` enables you to delete the value from the Popup list by clicking on a *Delete option* from the three-dots menu.
+
+##### How does it look?
+!![pickListPopupDelete.gif](pickListPopupDelete.gif)
+
+##### How to add?

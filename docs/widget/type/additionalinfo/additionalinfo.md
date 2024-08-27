@@ -33,7 +33,7 @@
     ```
 ## Main visual parts
 ### Title
-Title - a name displayed above the additional information. 
+<!--Title - a name displayed above the additional information.--->
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.

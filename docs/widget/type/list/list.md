@@ -135,8 +135,52 @@ _not applicable_
 -->
 
 ### Actions
-`Actions` show available actions as separate buttons
-see [Actions](/features/element/actions/actions)
+`Actions` show available actions as separate buttons.
+As for List widget, there are several actions. 
+#### Create 
+`Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:   
+
+**1. Create basic**  
+With `Create basic`, a new empty row is immediately added to the top of the list widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+
+**2. Create with widget**  
+`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the list of entities and the form for adding a new row. 
+After filling the information in and clicking "Save", the new row is added to the List. 
+
+**3. Create with view**  
+With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the list of entities with the new row added. 
+##### How does it look? 
+??? Example 
+    === "Create basic"
+        ![list_create_basic.gif](list_create_basic.gif)
+    
+    === "Create with widget"
+        ![list_create_with_widget.gif](list_create_with_widget.gif)
+    
+    === "Create with view"
+        ![list_create_with_view.gif](list_create_with_view.gif)
+#### Edit 
+`Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action. 
+
+**1. Edit Basic**  
+`Edit Basic` implies inline-edit. Click twice on the value you want to change.
+
+**2. Edit with widget**  
+`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
+
+**3. Edit with view**  
+With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.  
+
+##### How does it look? 
+??? Example 
+    === "Edit basic"
+        ![list_edit_basic.gif](list_edit_basic.gif)
+    
+    === "Edit with widget"
+        ![list_edit_with_widget.gif](list_edit_with_widget.gif)
+    
+    === "Edit with view"
+        ![list_edit_with_view.gif](list_edit_with_view.gif)
 
 ### Additional properties
 #### FullTextSearch

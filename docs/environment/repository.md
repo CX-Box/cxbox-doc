@@ -59,9 +59,9 @@ Visual elements
         - **Step2.1** Create **widget.json** 
             see more [Widget](widget/type/widget)
         - **Step2.2** Create **view.json**      
-            see more [Widget](view/view)
+            see more [Widget](navigation/view/view)
         - **Step2.3** Add widget to corresponding  **view** 
-            see more [Widget](view/view)
+            see more [Widget](navigation/view/view)
         - **Step2.4** Create **screen.json** 
             see more [Screen](screen/screen)
         - **Step2.5** Add view to corresponding  **screen** 

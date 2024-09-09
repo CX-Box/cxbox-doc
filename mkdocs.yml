@@ -64,11 +64,16 @@ nav:
       - Widget Form Popup: widget/type/formpopup/formpopup.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
       - Widget Statistics blocks:  widget/type/statblocks/statblocks.md
-  - View:
-      - Basic: view/view.md
-  - Screen:
-      - Basic: screen/screen.md
-      - Tabs: tabs/tab.md
+  - Navigation:
+      - Tabs:
+        - Standard:
+          - Basic: navigation/tabs/standard/basic/tab.md
+          - Basic for developer: navigation/tabs/standard/basicdevelop/tabfordevelop.md
+      - View:
+          - Basic: navigation/view/view.md
+      - Screen:
+          - Basic: navigation/screen/screen.md
+          - Tabs:  navigation/tabs/tab.md
   - Repository elements:
       - Basic: environment/repository.md
       - Entity: environment/entity/entity.md

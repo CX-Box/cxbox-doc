@@ -89,6 +89,7 @@ To manage a hierarchy of tabs with three levels in a system, follow these steps:
 ![thirdleveltopdev.gif](thirdleveltopdev.gif)
 
 **<a id="add_tab_level_4">Level 4</a>**
+
 * Add widget [FourthLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view.
 * Add [level tab 3](#add_tab_level_3).
 * At level 3 select tag `child` and add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)

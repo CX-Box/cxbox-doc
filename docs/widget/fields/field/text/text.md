@@ -167,7 +167,7 @@
 
 
 ### How does it look?
-=== "Readonly"
+=== "Editable"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"

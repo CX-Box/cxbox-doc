@@ -135,3 +135,18 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
 
 ## Additional properties
 ### <a id="hidden">Hidden</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample32359){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/hidden){:target="_blank"}
+### How does it look?
+![fourthlevel.gif](fourthlevel.gif)
+
+### How to add?
+??? Example
+    **Step1** Add **`hidden`**= true for  view 
+ 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/navigation/tab/typestandard/hidden/myexample32359.screen.json
+    --8<--
+    ```
+ 

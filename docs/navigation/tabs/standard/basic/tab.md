@@ -132,3 +132,6 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
     ```
 
     ![fourthleveldev.gif](fourthleveldev.gif)
+
+## Additional properties
+### <a id="hidden">Hidden</a>

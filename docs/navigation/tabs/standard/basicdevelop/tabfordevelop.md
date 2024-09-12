@@ -15,9 +15,14 @@ These rules are designed to maintain a coherent and functional tab navigation sy
 
  
 ## <a id="option_add_view">How add a view to the screen?</a>
+There are two options for adding a view:
+
+* Single View
+* Aggregate View
+
 !!! advice on adding views
     Add views only with a plugin
-
+ 
 * **Single View**.
     This type allows to add single view on current level
 

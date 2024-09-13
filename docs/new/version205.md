@@ -137,6 +137,16 @@ Inspection  `SearchParameterAnnotationInspection` checks fields annotated with `
 #### Fix for filtering fields of Type Hint
 The `SearchParameter` annotation was added to `Hint` fields in the DTO, enabling proper filtering functionality.
 
+### CXBOX [documetation](https://doc.cxbox.org/)
+#### Added description tabs
+
+Added a description of tab functionality and detailed instructions for creating and organizing different levels of tabs on the screen.
+
+![tabsdoc.png](v2.0.5/tabsdoc.png)
+
+[Basic](https://doc.cxbox.org/navigation/tabs/standard/basic/tab/)
+[Basic for developer](https://doc.cxbox.org/navigation/tabs/standard/basicdevelop/tabfordevelop/)
+
 <!-- 
 ####  Added inspection for widget references
 1. Added references in `.widget.json` for `option.create.widget` and `option.edit.widget` to the `name` field, enabling autocomplete, navigation to usages, definition, and rename refactoring.  

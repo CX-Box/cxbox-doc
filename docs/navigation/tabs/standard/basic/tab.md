@@ -137,12 +137,19 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
 ### <a id="hidden">Hidden</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample32359){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/hidden){:target="_blank"}
-### How does it look?
-![fourthlevel.gif](fourthlevel.gif)
 
-### How to add?
+If a view is marked as hidden, it will not appear in the general hierarchy and can only be accessed through a specific link (e.g., drilldown or button click). When you exit a hidden view, it will disappear.
+
+Rules for working with hidden views:
+
+Hidden views cannot be used by default. You cannot configure the system to switch to a hidden view by default, such as when opening a screen.
+
+#### How does it look?
+ ![hiddenview.gif](hiddenview.gif)
+
+#### How to add?
 ??? Example
-    **Step1** Add **`hidden`**= true for  view 
+    **Step1** Add **hidden** = **true** for  view 
  
     ```json
     --8<--

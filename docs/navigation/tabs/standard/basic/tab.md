@@ -99,7 +99,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
     ```
 
     **Step2** Add view to the **.screen.json** with type [Aggregate](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
-     see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+     see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/thirdlevel/myexample3235.screen.json

@@ -4,7 +4,7 @@ These rules are necessary to ensure that when a tab is selected, there is always
 
 These rules are designed to maintain a coherent and functional tab navigation system, ensuring that users always have a meaningful view and can navigate effectively.
 
-* **Unique view name**: Each tab must have a distinct name. This helps in tracking and restoring the highlighting of tabs when drilling down through different levels.
+* **Unique view name**: Each tab must have a unique name. This helps in tracking and restoring the highlighting of tabs when drilling down through different levels.
   ![uniqueviewname.png](uniqueviewname.png)
 
 * **No empty arrays**: You cannot have a level where the array is empty. This ensures that there is always a view to render when drilling down or navigating through tabs.
@@ -15,9 +15,14 @@ These rules are designed to maintain a coherent and functional tab navigation sy
 
  
 ## <a id="option_add_view">How add a view to the screen?</a>
+There are two options for adding a view:
+
+* Single View
+* Aggregate View
+
 !!! advice on adding views
     Add views only with a plugin
-
+ 
 * **Single View**.
     This type allows to add single view on current level
 
@@ -75,26 +80,58 @@ To manage a hierarchy of tabs with three levels in a system, follow these steps:
 
 **<a id="add_tab_level_2">Level 2</a>**
 
+First view level 2:
+
 * Add widget [SecondLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
 * Add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
-* Name tab = *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+* The name of the level 2 tab = *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+
+Next view level 2:
+
+* Add widget [SecondLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
+* Add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* The name of the level 2 tab = *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+
 ![secondleveltopdev.gif](secondleveltopdev.gif)
 
 **<a id="add_tab_level_3">Level 3</a>**
 
+First view level 3:
+
 * Add widget [ThirdLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
 * Add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
-* Name tab = title view see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+* The name of the level 2 tab on which the level 3 tabs will be located = title view see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+* The name of the level 3 tab = *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
 
 ![thirdleveltopdev.gif](thirdleveltopdev.gif)
 
+Next view level 3:
+
+* Add widget [ThirdLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
+* At level 3 select tag `child` and add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* The name of the level 3 tab =  *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+
+![thirdlevelnextview.gif](thirdlevelnextview.gif)
+
 **<a id="add_tab_level_4">Level 4</a>**
+
+First view level 4:
 
 * Add widget [FourthLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view.
 * Add [level tab 3](#add_tab_level_3).
 * At level 3 select tag `child` and add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* The name of the level 3 tab on which the level 4 tabs will be located = title view see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+* The name of the level 4 tab = *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
 
 ![fourthleveladd.gif](fourthleveladd.gif)
+
+Next view level 4:
+
+* Add widget [FourthLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view.
+* At level 4 select tag `child` and add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* The name of the level 4 tab =  *Title* view. see more [How add name for tab](/navigation/tab/typestandard/basic/tabfordevelop/#how-add-name-for-tab)
+
+![fourthlevelnextview.gif](fourthlevelnextview.gif)
 
 ## How to understand tab levels on the finished screen?
 
@@ -160,15 +197,15 @@ For instance, we selected the view with the highest number of tabs (4) and will 
 
 **View** :
 
-`Level 1`: General list of tasks
+`Level 1`: List Tasks
 
-`Level 2`: Task Info tab, 
+`Level 2`: Task Info   
 
-`Level 3`: Client tab 
+`Level 3`: Client  
 
-`Level 4`: Client Info tab, Additional Info tab
+`Level 4`: Client Info  
 
-**Level 1**:
+**Level 1. List Tasks**:
 
 TaskList widget first level - adds widget first
 ??? Example
@@ -181,7 +218,7 @@ TaskList widget first level - adds widget first
         } 
     ]
     ```
-**Level 2. Info about task**:
+**Level 2. Task Info**:
 
 For the TaskInfoForm widget at the second level, first include the system widget SecondLevelMenu, and then add the TaskInfoForm.
 ??? Example
@@ -204,7 +241,7 @@ For the TaskInfoForm widget at the second level, first include the system widget
         }
     ]
     ```
-**Level 3. Related objects**:
+**Level 3. Client**:
 
 For the ClientsList widget at the third level, first include the system widget ThirdLevelMenu, and then add the ClientsList.
  
@@ -238,7 +275,7 @@ For the ClientsList widget at the third level, first include the system widget T
         } 
     ]
     ```
-**Level 4. Info about client**:
+**Level 4. Client Info**:
 
 For the ClientInformationForm widget at the third level, first include the system widget FourthLevelMenu, and then add the ClientInformationForm.
 
@@ -277,7 +314,7 @@ For the ClientInformationForm widget at the third level, first include the syste
         },
         {
             "widgetName": "ClientInformationForm",
-            "position": 60,
+            "position": 70,
             "gridWidth": 12
         }
     ]
@@ -287,7 +324,7 @@ For the ClientInformationForm widget at the third level, first include the syste
 
 ### 3. Screen Formation
 
-**Level 1**: General list of tasks
+**Level 1. List Tasks**: General list of tasks
 
 **Level 2. Info about task**: Task Info tab, Additional Info tab
 

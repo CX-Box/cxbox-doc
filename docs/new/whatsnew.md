@@ -1,5 +1,6 @@
-# What’s New in cxbox
-## [v2.0.4](/new/version/204)
+# What’s New in cxbox  
+
+## [v2.0.4](/new/version204/)
 ## [v2.0.3](/new/version203/)
 ## [v2.0.2](/new/version202/)
 ## [v2.0.2](/new/version202/)

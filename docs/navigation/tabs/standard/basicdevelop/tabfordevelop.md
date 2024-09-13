@@ -5,13 +5,13 @@ These rules are necessary to ensure that when a tab is selected, there is always
 These rules are designed to maintain a coherent and functional tab navigation system, ensuring that users always have a meaningful view and can navigate effectively.
 
 * **Unique view name**: Each tab must have a unique name. This helps in tracking and restoring the highlighting of tabs when drilling down through different levels.
-  ![uniqueviewname.png](uniqueviewname.png)
-
+  ![uniqueviewname.png](uniqueviewname.png){height=800px width=1000px}
+ 
 * **No empty arrays**: You cannot have a level where the array is empty. This ensures that there is always a view to render when drilling down or navigating through tabs.
-  ![noemptyarrays.png](noemptyarrays.png)
+  ![noemptyarrays.png](noemptyarrays.png){height=800px width=1000px}
 
 * **At least one view per level**: Each level in the tab hierarchy must contain at least one view.
-  ![atleastoneviewperlevel.png](atleastoneviewperlevel.png)
+  ![atleastoneviewperlevel.png](atleastoneviewperlevel.png){height=800px width=1000px}
 
  
 ## <a id="option_add_view">How add a view to the screen?</a>

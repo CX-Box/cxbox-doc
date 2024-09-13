@@ -5,13 +5,13 @@ These rules are necessary to ensure that when a tab is selected, there is always
 These rules are designed to maintain a coherent and functional tab navigation system, ensuring that users always have a meaningful view and can navigate effectively.
 
 * **Unique view name**: Each tab must have a unique name. This helps in tracking and restoring the highlighting of tabs when drilling down through different levels.
-  ![uniqueviewname.png](uniqueviewname.png)
-
+  ![uniqueviewname.png](uniqueviewname.png){height=800px width=1000px}
+ 
 * **No empty arrays**: You cannot have a level where the array is empty. This ensures that there is always a view to render when drilling down or navigating through tabs.
-  ![noemptyarrays.png](noemptyarrays.png)
+  ![noemptyarrays.png](noemptyarrays.png){height=800px width=1000px}
 
 * **At least one view per level**: Each level in the tab hierarchy must contain at least one view.
-  ![atleastoneviewperlevel.png](atleastoneviewperlevel.png)
+  ![atleastoneviewperlevel.png](atleastoneviewperlevel.png){height=800px width=1000px}
 
  
 ## <a id="option_add_view">How add a view to the screen?</a>
@@ -75,7 +75,7 @@ To manage a hierarchy of tabs with three levels in a system, follow these steps:
 
 **<a id="add_tab_level_1">Level 1</a>**
 
-* Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 ![onelevel.gif](onelevel.gif)
 
 **<a id="add_tab_level_2">Level 2</a>**
@@ -83,13 +83,13 @@ To manage a hierarchy of tabs with three levels in a system, follow these steps:
 First view level 2:
 
 * Add widget [SecondLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
-* Add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* Add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 * The name of the level 2 tab = *Title* view. see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 
 Next view level 2:
 
 * Add widget [SecondLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
-* Add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* Add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 * The name of the level 2 tab = *Title* view. see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 
 ![secondleveltopdev.gif](secondleveltopdev.gif)
@@ -99,7 +99,7 @@ Next view level 2:
 First view level 3:
 
 * Add widget [ThirdLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
-* Add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* Add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 * The name of the level 2 tab on which the level 3 tabs will be located = title field see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 * The name of the level 3 tab = *Title* view. see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 
@@ -108,7 +108,7 @@ First view level 3:
 Next view level 3:
 
 * Add widget [ThirdLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view
-* At level 3 select tag `child` and add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* At level 3 select tag `child` and add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 * The name of the level 3 tab =  *Title* view. see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 
 ![thirdlevelnextview.gif](thirdlevelnextview.gif)
@@ -119,7 +119,7 @@ First view level 4:
 
 * Add widget [FourthLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view.
 * Add [level tab 3](#add_tab_level_3).
-* At level 3 select tag `child` and add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* At level 3 select tag `child` and add selected view to the **.screen.json** with type [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 * The name of the level 3 tab on which the level 4 tabs will be located = title field see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 * The name of the level 4 tab = *Title* view. see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 
@@ -128,7 +128,7 @@ First view level 4:
 Next view level 4:
 
 * Add widget [FourthLevelMenu](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels) in selected view.
-* At level 4 select tag `child` and add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+* At level 4 select tag `child` and add selected view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
 * The name of the level 4 tab =  *Title* view. see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
 
 ![fourthlevelnextview.gif](fourthlevelnextview.gif)

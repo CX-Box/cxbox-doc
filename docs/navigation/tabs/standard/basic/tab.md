@@ -22,7 +22,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
     {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/onelevel/myexample32356single.view.json
     --8<--
     ```
-    **Step2** Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+    **Step2** Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/onelevel/myexample32356.screen.json
@@ -55,7 +55,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
         --8<--
         ```
      
-        **Step2** Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+        **Step2** Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/secondlevel/top/myexample32358.screen.json
@@ -74,7 +74,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
         --8<--
         ```
     
-        **Step2** Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+        **Step2** Add view to the **.screen.json** with type [Single](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/secondlevel/down/myexample32358down.screen.json
@@ -98,7 +98,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
     --8<--
     ```
 
-    **Step2** Add view to the **.screen.json** with type [Aggregate](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+    **Step2** Add view to the **.screen.json** with type [Aggregate](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
      see more [How add name for tab](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-name-for-tab)
     ```json
     --8<--
@@ -124,7 +124,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
     --8<--
     ```
 
-    **Step2** Add view to the **.screen.json** with type [Aggregate](/navigation/tabs/standard/basicdevelop/tabfordevelop/#options-for-adding-a-view-to-the-screen)
+    **Step2** Add view to the **.screen.json** with type [Aggregate](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/fourthlevel/myexample32353.screen.json

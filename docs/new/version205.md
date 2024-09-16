@@ -68,7 +68,7 @@ We have added a condition to ensure that hidden fields in hierarchical mode are 
 The `@SuperBuilder` annotation was added to the `BaseEntity` and `AbstractEntity` classes. This change was made to align these classes with the DTO classes, where this annotation had already been introduced.
 
 #### Added the setHidden,setNotHidden, hidden method  
-We standardized the behavior of the `hidden` method to align with how the `required` method works.
+We standardized the behavior of the `hidden` method to align with how the `required` method works.  
    **Before:**  
     ```java
     fields.get(MyDTO_.fullName).setHidden(false);  
@@ -95,7 +95,7 @@ If the class implements the `AnySourceBaseDAO` interface, the return type must b
     this.getBaseDao().flush(bc);
     ```  
    **After:**  
-    ```
+    ```java
     this.getBaseDao().flush();
     ```
 
@@ -120,18 +120,15 @@ The `setCurrentValue` methods in DTOs have been updated to use generics, improvi
 
 The ability to control sorting of table fields has been introduced, allowing sorting to be enabled or disabled on a per-field basis.  
 
+!!! info 
+    By default, `sortEnabledDefault` parameter is set to `false`. If you want sorting to be enabled across the entire project, you need to set `sortEnabledDefault = true` in the `MetaConfigurationProperties`.   
+
 *Changes:*  
-    1. Field-Level Sorting Control: Added the ability to manage sorting for individual fields with a new `sortEnabled` flag. Sorting can be disabled for fields (sortable=false or null) and enabled using the fields.enableSort(...) method on the backend.  
-    2. Default Sorting: Fields with default sorting remain active, even if not sortable. Users can view it but cannot modify or remove it unless the field is sortable.  
+    1. Field-Level Sorting Control: the sorting behavior can be managed for each field independently. You can enable sorting on specific fields using the `fields.enableSort()` method on the backend. If a field is set as sortable=true, the sorting icon will appear, allowing users to add or change sorting. If sortable=false, the icon will either be hidden or inactive.  
+    2. Default Sorting: fields with default sorting remain active, even if not sortable. Users can view it but cannot modify it unless the field is sortable.  
     3. Multi-Field Sorting:  
         - Multiple fields can be sorted via default settings, but in the UI, sorting can only be applied to one sortable field.  
-        - Sorting icons for sortable and non-sortable fields are visually distinct.  
-    4. Resetting Sort: Users can now reset sorting on sortable fields. Non-sortable fields do not allow any sorting changes.  
-    5. Sorting on Actions: Sorting on sortable fields is reset when users interact with sorting on other fields.  
-
-*Not Changed:*  
-    1. Default sorting can be applied to any fields, regardless of whether they are sortable or not.  
-    2. With `sortEnabled` = `true`, all fields remain sortable for backward compatibility.    
+        - Sorting icons for sortable and non-sortable fields are visually distinct.
 
 ![sortEnabled+network.gif](v2.0.5/sortEnabled+network.gif)
 
@@ -169,38 +166,3 @@ Added a description of tab functionality and detailed instructions for creating 
 
 [Basic](https://doc.cxbox.org/navigation/tabs/standard/basic/tab/)  
 [Basic for developer](https://doc.cxbox.org/navigation/tabs/standard/basicdevelop/tabfordevelop/)
-
-
-
-<!--
-####  Added Dictionary Value Sorting to RowDependentFieldsMeta  
-
-Sorting functionality for dictionary values has been added to the `RowDependentFieldsMeta` class. Previously, sorting was implemented only for filters in other classes.  
-**Changes:**  
-1. Removed Methods:  
-   1.1 `setAllFilterValuesByLovTypeOrdered` and `setAllFilterValuesByLovType` from the `FieldsMeta` class have been removed due to duplication of existing methods and issues with handling `null` values.  
-   1.2 `setDictionaryTypeWithAllValuesOrdered` and `setDictionaryTypeWithAllValues` have also been removed from the `FieldsMeta` class due to incorrect placement and function duplication.  
-2. Fixed Methods:  
-   `LOV dictionary loader` now sorts items by `display_order`, then by key. Previously, sorting was only by `display_order`.  
-3. Added Methods and JavaDoc:  
-   3.1 New method in `FieldsMeta`:  
-   ```
-   public final void setAllFilterValuesByLovType(
-   final DtoField<?, ?> field,
-   @NonNull final IDictionaryType type,
-   @NonNull final Comparator<SimpleDictionary> comparator);
-   ```
-    Sorting of filter dropdown values is now performed using the provided comparator.  
-   3.2 New method in `RowDependentFieldsMeta`:
-   ```
-   public final void setAllFilterValuesByLovType(
-   final DtoField<?, ?> field,
-   @NonNull final IDictionaryType type,
-   @NonNull final Comparator<SimpleDictionary> comparator);
-   ```  
-   This method is added to sort field edit values using a comparator.  
-
-    3.3 JavaDoc added and updated:  
-   JavaDoc for `setAllFilterValuesByLovType` and `setDictionaryTypeWithAllValues` has been added, describing that values are sorted by `display_order` first, then by key. JavaDoc also notes that sorting rows in List widgets always ignores `display_order` and is done by `lov.key` lexicographically.  
- -->
- 

@@ -248,10 +248,11 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateFiltration){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/date/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering` allows you to search data based on criteria by range. Search uses `greaterOrEqualThan`(>=) and `lessOrEqualThan`(<=) operators. Data format is YYYY-MM-DD.  
+
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
+    ![dateFilterByRange.gif](dateFilterByRange.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -275,7 +276,10 @@
     === "Info widget"
         _not applicable_
     === "Form widget"
-        _not applicable_
+        _not applicable_  
+
+!!! info  
+    By default, filtration is carried out **by range**. If you want to turn it off, indicate `filter-by-range-enabled-default: false` in meta.  
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateFiltration){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/date/filtration){:target="_blank"}

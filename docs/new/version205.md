@@ -2,11 +2,10 @@
 
 * [cxbox/demo 2.0.5 git](https://github.com/CX-Box/cxbox-demo/tree/v2.0.5), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.5)
 
-* [cxbox/core 4.0.0-M7 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M7), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M7), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M7)
+* [cxbox/core 4.0.0-M8 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M8), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M8), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M8)
 
-* [cxbox-ui/core 2.1.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.1.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.1.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.1.0)
+* [cxbox-ui/core 2.2.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.2.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.2.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.2.0)
 
-* [Platform Tools 1.7.6](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions/stable)  
 ## **Key updates September 2024**
 
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui))
@@ -22,7 +21,7 @@ If the view change was triggered by switching tabs:
 
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
 #### New version core
-New version core  CXBOX 4.0.0-M7
+New version core  CXBOX 4.0.0-M8
 
 #### Fixed User Roles
 Fixed the display of multiple roles and the ability to switch between them.
@@ -63,7 +62,7 @@ We have added a condition to ensure that hidden fields in hierarchical mode are 
 
 ![grouping_columns_display.png](v2.0.5/grouping_columns_display.png)
 
-###  CXBOX 4.0.0-M7  ([Core](https://github.com/CX-Box/cxbox))
+###  CXBOX 4.0.0-M8  ([Core](https://github.com/CX-Box/cxbox))
 #### Added SuperBuilder to BaseEntity  
 The `@SuperBuilder` annotation was added to the `BaseEntity` and `AbstractEntity` classes. This change was made to align these classes with the DTO classes, where this annotation had already been introduced.
 
@@ -132,8 +131,41 @@ The ability to control sorting of table fields has been introduced, allowing sor
 
 ![sortEnabled+network.gif](v2.0.5/sortEnabled+network.gif)
 
+#### Added lambda based action builder api
+
+Using old api users common mistake was to forget .add() method and lose action without any compiler or runtime exception. Also, bad actions visual separation was another common problem. New lambda based api solves both this problems:
+
+**Changes:**  
+*Before:*
+```java
+	@Override
+public Actions<DashboardFilterDTO> getActions() {
+
+	return Actions.<DashboardFilterDTO>builder()
+			.action("filter", "Apply Filters")
+			.invoker((bc, dto) -> new ActionResultDTO<>())
+			.available(bc -> true).withAutoSaveBefore()
+			.add()
+			.build();
+}
+```
+
+*After:*
+```java
+@Override
+public Actions<DashboardFilterDTO> getActions() {
+	return Actions.<DashboardFilterDTO>builder()
+			.action(act -> act
+					.action("filter", "Apply Filters")
+					.invoker((bc, dto) -> new ActionResultDTO<>())
+					.available(bc -> true).withAutoSaveBefore()
+			)
+			.build();
+}
+```
+
 #### Other Changes
-see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M7)
+see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M8)
 
 ###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
 We've updated the plugin to version 1.7.6.
@@ -166,3 +198,7 @@ Added a description of tab functionality and detailed instructions for creating 
 
 [Basic](https://doc.cxbox.org/navigation/tabs/standard/basic/tab/)  
 [Basic for developer](https://doc.cxbox.org/navigation/tabs/standard/basicdevelop/tabfordevelop/)
+
+
+
+ 

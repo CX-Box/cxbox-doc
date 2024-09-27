@@ -21,7 +21,7 @@ If the view change was triggered by switching tabs:
 
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
 #### New version core
-New version core  CXBOX 4.0.0-M7
+New version core  CXBOX 4.0.0-M8
 
 #### Fixed User Roles
 Fixed the display of multiple roles and the ability to switch between them.
@@ -62,7 +62,7 @@ We have added a condition to ensure that hidden fields in hierarchical mode are 
 
 ![grouping_columns_display.png](v2.0.5/grouping_columns_display.png)
 
-###  CXBOX 4.0.0-M7  ([Core](https://github.com/CX-Box/cxbox))
+###  CXBOX 4.0.0-M8  ([Core](https://github.com/CX-Box/cxbox))
 #### Added SuperBuilder to BaseEntity  
 The `@SuperBuilder` annotation was added to the `BaseEntity` and `AbstractEntity` classes. This change was made to align these classes with the DTO classes, where this annotation had already been introduced.
 

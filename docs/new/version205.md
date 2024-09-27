@@ -168,7 +168,7 @@ public Actions<DashboardFilterDTO> getActions() {
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M8)
 
 ###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-We've updated the plugin to version 1.7.6.
+We've updated the plugin to version 1.7.6. Will be available in Intellij public Marketplace in a few days!
 #### Added Inspection for Correct `@SearchParameter` Values in DTO
 We have implemented an inspection feature to ensure that `@SearchParameter` annotations in DTOs have correct values.  
 Inspection  `SearchParameterAnnotationInspection` checks fields annotated with `@SearchParameter(name = "name")`. Validates that a field with the name from `name` exists in the corresponding Entity (name derived from DTO name).

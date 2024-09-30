@@ -11,6 +11,7 @@
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui))
 #### Redesign of saving context for tabs
 If the view change was triggered by switching tabs:
+
 1. Pagination, data, and rowMeta will remain unchanged. Data will only be requested if it hasn’t been loaded yet or if the parent bc cursor has changed. There will no longer be a re-request of data for all bc.
 2. When fetching data for the parent bc, an additional check will remove outdated data for child bookmakers from the store.
 3. The frequency of bcChangeCursors calls has been reduced.

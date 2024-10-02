@@ -135,8 +135,239 @@ _not applicable_
 -->
 
 ### Actions
-`Actions` show available actions as separate buttons
-see [Actions](/features/element/actions/actions)
+`Actions` show available actions as separate buttons.
+As for List widget, there are several actions. 
+#### Create 
+`Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:   
+
+There are three methods to create a record:
+
+1. [Line addition](#createbasic): You can add a line directly.
+
+!!! info
+    Pagination won't function until the page is refreshed after adding records.
+
+2. [With widget](#withwidget): You can add data using a form widget without leaving your current view.
+
+3. [With view](#withview): You can create a record by navigating to a view.
+
+##### <a id="createbasic">Line addition</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/basic){:target="_blank"}
+
+With `Line Addition`, a new empty row is immediately added to the top of the list widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+###### How does it look?
+![list_create_basic.gif](list_create_basic.gif)
+
+###### How to add?
+??? Example
+    
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059Service.java:getActions
+    --8<--
+    ```
+     **Step2** Add button `create` to corresponding **.widget.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059List.widget.json
+    --8<--
+    ```
+     **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059Service.java:buildRowDependentMeta
+    --8<--
+    ```
+##### <a id="withwidget">With widget</a> 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/withwidget){:target="_blank"}
+
+`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the list of entities and the form for adding a new row. 
+After filling the information in and clicking "Save", the new row is added to the List. 
+###### How does it look?
+![list_create_with_widget.gif](list_create_with_widget.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064Service.java:getActions
+    --8<--
+    ```
+    **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064Service.java:buildRowDependentMeta
+    --8<--
+    ```
+
+     **Step3** Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myEntity3064CreateForm.widget.json
+    --8<--
+    ```
+ 
+     **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myexample3064list.view.json
+    --8<--
+    ```
+
+     **Step5** Add button `create` and widget with type `Form` to corresponding **.widget.json**.
+       
+    `options`.`create`: Name widget that appears when you click a button
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064List.widget.json
+    --8<--
+    ```
+
+##### <a id="withview">With view</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/newview){:target="_blank"}
+
+With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the list of entities with the new row added. 
+###### How does it look? 
+![list_create_with_view.gif](list_create_with_view.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:getActions
+    --8<--
+    ```
+     **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:doCreateEntity
+    --8<--
+    ```
+    **Step4** Add button `create` to corresponding **.widget.json**.
+  
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066List.widget.json
+    --8<--
+    ```
+
+
+#### Edit 
+`Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action. 
+
+There are three methods to create a record:
+
+1. [Line edit](#editline): You can edit a line directly.
+
+2. [With widget](#editwithwidget): You can edit data using a form widget without leaving your current view.
+
+3. [With view](#editwithview): You can edit a record by navigating to a view.
+
+##### <a id="editline">Line edit </a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
+
+
+`Edit Basic` implies inline-edit. Click twice on the value you want to change.
+###### How does it look?
+![list_edit_basic.gif](list_edit_basic.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/basic/MyExample3700Service.java:buildRowDependentMeta
+    --8<--
+    ```
+
+##### <a id="editwithwidger">With widget</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/withwidget){:target="_blank"}
+
+`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
+
+###### How does it look?
+![list_edit_with_widget.gif](list_edit_with_widget.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Service.java:getActions
+    --8<--
+    ```
+
+    **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Service.java:buildRowDependentMeta
+    --8<--
+    ```
+ 
+    **Step2**  Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myEntity3065CreateForm.widget.json
+    --8<--
+    ```
+ 
+     **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myexample3065list.view.json
+    --8<--
+    ```
+
+     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+       
+    `options`.`edit`: Name widget that appears when you click a button
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
+    --8<--
+    ```
+##### <a id="editwithview">With view</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
+
+With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.  
+
+###### How does it look? 
+![list_edit_with_view.gif](list_edit_with_view.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *edit* to corresponding **VersionAwareResponseService**. 
+    
+    Add **PostAction.drillDown** to method *edit*
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:getActions
+    --8<--
+    ```
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
+    --8<--
+    ```
 
 ### Additional properties
 #### FullTextSearch

@@ -144,8 +144,8 @@ There are three methods to create a record:
 
 1. [Line addition](#createbasic): You can add a line directly.
 
-   !!! info
-        Pagination won't function until the page is refreshed after adding records.
+!!! info
+    Pagination won't function until the page is refreshed after adding records.
 
 2. [With widget](#withwidget): You can add data using a form widget without leaving your current view.
 

@@ -5,9 +5,7 @@
 * [cxbox-ui/core 2.3.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.3.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.3.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.3.0)  
 
 ## **Key updates September, October 2024**  
-
-### <a id="CXBOXUI">CXBOX</a> ([Core Ui](https://github.com/CX-Box/cxbox-ui))  
-
+### <a id="CXBOXUI">CXBOX</a> ([Core Ui](https://github.com/CX-Box/cxbox-ui))
 #### Changed the editing row format  
 1. **Single-Click Row Editing.** Rows now enter edit mode on a single click (previously, a double-click was required).  
 **All Fields Editable.** When a row enters edit mode, all editable fields in the row are simultaneously placed in edit mode. Previously, only one field could be edited at a time.  
@@ -28,5 +26,11 @@ The specified style will take precedence over the presence of a widget name. It 
 
 ![different_style_for_inlineForm.gif](v2.0.6/different_style_for_inlineForm.gif)
 
-
-
+### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
+#### New version Core UI
+We've updated Core UI to version 2.3.0.
+#### New version keycloak
+We've updated keycloak from version 12.0.3 to version 12.0.4.
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.6)
+  

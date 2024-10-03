@@ -1,6 +1,6 @@
 # 2.0.5
 
-* [cxbox/demo 2.0.5 git](https://github.com/CX-Box/cxbox-demo/tree/v2.0.5), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.5)
+* [cxbox/demo 2.0.5 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.5), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.5)
 
 * [cxbox/core 4.0.0-M8 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M8), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M8), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M8)
 
@@ -170,9 +170,6 @@ see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M
 
 ###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
 We've updated the plugin to version 1.7.6. Will be available in Intellij public Marketplace in a few days!
-#### Added Inspection for Correct `@SearchParameter` Values in DTO
-We have implemented an inspection feature to ensure that `@SearchParameter` annotations in DTOs have correct values.  
-Inspection  `SearchParameterAnnotationInspection` checks fields annotated with `@SearchParameter(name = "name")`. Validates that a field with the name from `name` exists in the corresponding Entity (name derived from DTO name).
 
 #### Fix for filtering fields of Type Hint
 The `SearchParameter` annotation was added to `Hint` fields in the DTO, enabling proper filtering functionality.  

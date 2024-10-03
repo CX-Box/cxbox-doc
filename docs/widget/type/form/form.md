@@ -104,11 +104,43 @@ There are types of:
     Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 #### How does it look?
-
+![formwidget.png](formwidget.png)
 
 #### How to add?
+ 
+??? Example
+    === "Calculated color"
 
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026DTO.java:colorDTO
 
+        --8<--
+        ```  
+ 
+        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+
+        Add in `title` field with `${customField}` 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026dynamic.widget.json
+        --8<--
+        ```       
+
+    === "Constant color"
+ 
+        Add **"bgColor"** :  `HEX color`  to .widget.json.
+
+        Add in `title` field with `${customField}` 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026const.widget.json
+        --8<--
+        ```
+ 
 ###  <a id="Fieldslayout">Fields layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}

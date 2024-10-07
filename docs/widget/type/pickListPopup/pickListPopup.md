@@ -16,7 +16,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3060DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/MyExample3060DTO.java:colorDTO
         --8<--
         ```  
  
@@ -26,7 +26,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3060Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopup.widget.json
         --8<--
         ```       
 
@@ -38,7 +38,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3060FormConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopupColorConst.widget.json
         --8<--
         ```
 

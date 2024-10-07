@@ -57,10 +57,9 @@
 #### How does it look?
 ![colorwidget.png](colorwidget.png)
 
-### How to add?
-
+#### How to add?
 ??? Example
-=== "Calculated color"
+    === "Calculated color"
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java

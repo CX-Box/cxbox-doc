@@ -119,9 +119,8 @@ There are types of:
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026DTO.java:colorDTO
-
         --8<--
-        ```  
+        ```   
  
         **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
 

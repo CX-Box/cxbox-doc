@@ -94,7 +94,7 @@ _not applicable_
 Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 #### How does it look?
-![formwidget.png](formwidget.png)
+![colorwidget.gif](colorwidget.gif)
 
 #### How to add?
 ??? Example

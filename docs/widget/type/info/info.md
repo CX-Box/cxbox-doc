@@ -110,7 +110,7 @@ Title colorization is **applicable** to the following [fields](../../../fields/f
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3040DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/info/colortitle/MyExample3040DTO.java:colorDTO
         --8<--
         ```  
  
@@ -120,7 +120,7 @@ Title colorization is **applicable** to the following [fields](../../../fields/f
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3040.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/colortitle/MyExample3040.widget.json
         --8<--
         ```       
 
@@ -132,7 +132,7 @@ Title colorization is **applicable** to the following [fields](../../../fields/f
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3040ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/colortitle/MyExample3040ColorConst.widget.json
         --8<--
         ```
 

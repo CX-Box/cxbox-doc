@@ -95,11 +95,13 @@
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
-`Calculated color`:
+**Calculated color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/color){:target="_blank"}
 
-`Constant color`:
+**Constant color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColorConst){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/colorconst){:target="_blank"}
 

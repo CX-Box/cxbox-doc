@@ -221,11 +221,13 @@ There are types of:
 ### <a id="ColorField">Color</a>
 `Color` allows you to specify a field block.Optional. It can be calculated based on business logic of application
 
-`Calculated color`:
+**Calculated color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4205){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/color){:target="_blank"}
 
-`Constant color`:
+**Constant color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4206){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/colorconst){:target="_blank"}
 

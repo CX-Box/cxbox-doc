@@ -10,6 +10,37 @@
 ![pickListPopupBasic.gif](pickListPopupBasic.gif)
 
 ### How to add?
+??? Example
+    === "Calculated color"
+
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3060DTO.java:colorDTO
+        --8<--
+        ```  
+ 
+        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+
+        Add in `title` field with `${customField}` 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3060Form.widget.json
+        --8<--
+        ```       
+
+    === "Constant color"
+ 
+        Add **"bgColor"** :  `HEX color`  to .widget.json.
+
+        Add in `title` field with `${customField}` 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3060FormConst.widget.json
+        --8<--
+        ```
 
 ## Main visual parts
 
@@ -44,11 +75,13 @@ There are 3 types of titles for a Picklist Popup:
 * *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 * *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application. 
 
-`Constant color`:
+**Constant color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3060/view/myexample3060formcolorconst){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]
 
-`Calculated color`:
+**Calculated color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3060/view/myexample3060form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]
 

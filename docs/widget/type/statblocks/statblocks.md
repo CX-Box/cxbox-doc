@@ -135,7 +135,8 @@ We can modify the following parameters on this widget:
 
 ![img_stat_description.png](img_stat_description.png)  
  
-### <a id="Title">Title</a>
+## <a id="Title">Title</a>
+### Title Basic
 Title - a name displayed in a block. It is optional.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4209){:target="_blank"} ·
@@ -169,13 +170,20 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
         --8<--
         ```
-###  <a id="Fieldslayout">Fields layout</a>
-**options.layout** - no use in this type.
-
-###  <a id="Showcondition">Show condition</a>
+### Title Color
 _not applicable_
 
-### Actions
+## <a id="bc">Business component</a>
+
+## <a id="Showcondition">Show condition</a>
+_not applicable_
+
+## <a id="bc">Fields</a>
+
+## <a id="Fieldslayout">Options layout</a>
+**options.layout** - no use in this type.
+
+## Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
 

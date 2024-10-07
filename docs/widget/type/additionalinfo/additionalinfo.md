@@ -1,6 +1,6 @@
 # AdditionalInfo
  
-`AdditionalInfo` widget is a component only for data viewing. Widget is always located on the left.
+`AdditionalInfo` widget is a component only for data viewing. Widget is always located **on the left**.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3600){:target="_blank"} ·
@@ -31,9 +31,9 @@
     {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/MyExample3600List.widget.json
     --8<--
     ```
-## Main visual parts
-### Title
+## Title
 <!--Title - a name displayed above the additional information.--->
+### Title Basic
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
@@ -54,10 +54,10 @@
 !!! info
     Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
-#### How does it look?
+##### How does it look?
 ![colorwidget.png](colorwidget.png)
 
-#### How to add?
+##### How to add?
 ??? Example
     === "Calculated color"
 
@@ -91,12 +91,17 @@
         ```
 
 
-### Fields layout
+## <a id="bc">Business component</a>
+
+## <a id="Showcondition">Show condition</a>
 _not applicable_
 
-### Show condition
+## <a id="bc">Fields</a>
+
+## Options layout
 _not applicable_
 
-### Actions
+
+## Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)

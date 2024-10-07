@@ -41,13 +41,11 @@
         {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopupColorConst.widget.json
         --8<--
         ```
-
-## Main visual parts
-
-### Title
+## Title
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3068){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]  
 
+### Title Basic
 ![pickListPopupTitleGuide.png](pickListPopupTitleGuide.png)
 
 There are 3 types of titles for a Picklist Popup:
@@ -93,11 +91,16 @@ There are 3 types of titles for a Picklist Popup:
 
 #### How to add? 
 
-### Fields Layout 
+## <a id="bc">Business component</a>
+
+## <a id="Showcondition">Show condition</a>
+_not applicable_
+
+## <a id="bc">Fields</a>
+
+## Options layout 
 *not applicable* 
 
-### Show condition 
-*not applicable* 
 
 ### Actions 
 `Actions` show available actions as separate buttons. 

@@ -30,13 +30,12 @@
     {{ external_links.github_raw_doc }}/widgets/list/base/myexample3002list.view.json
     --8<--
     ```
-
-## Main visual parts
-[Title](#Title), [actions block](#Showcondition)
-### <a id="Title">Title</a>
+ 
+## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
 
+### Title Basic
 Title - (optional)
 
 ![listwidgetinf.png](listwidgetinf.png)    
@@ -89,10 +88,10 @@ There are types of:
 !!! info
 Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
-#### How does it look?
+##### How does it look?
 ![colorwidget.png](colorwidget.png)
 
-#### How to add?
+##### How to add?
 ??? Example
     === "Calculated color"
 
@@ -124,13 +123,18 @@ Title colorization is **applicable** to the following [fields](../../../fields/f
         {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050ColorConst.widget.json
         --8<--
         ```
-###  <a id="Fieldslayout">Fields layout</a>
-**options.layout** - no use in this type.
-###  <a id="Showcondition">Show condition</a>
+## <a id="bc">Business component</a>
+
+## <a id="Showcondition">Show condition</a>
 _not applicable_
 
+## <a id="bc">Fields</a>
+
+## <a id="Fieldslayout">Options layout</a>
+**options.layout** - no use in this type.
+
 <!-- 
-###  <a id="Showcondition">Show condition</a> 
+## <a id="Showcondition">Show condition</a> 
 * `no show condition - recommended`: widget always visible
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
@@ -184,7 +188,7 @@ _not applicable_
         ```
 -->
 
-### Actions
+## Actions
 `Actions` show available actions as separate buttons.
 As for List widget, there are several actions. 
 #### Create 

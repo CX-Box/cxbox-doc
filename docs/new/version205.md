@@ -164,7 +164,7 @@ public Actions<DashboardFilterDTO> getActions() {
 			.build();
 }
 ```
-
+ 
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M8)
 
@@ -173,6 +173,17 @@ We've updated the plugin to version 1.7.6. Will be available in Intellij public 
 
 #### Fix for filtering fields of Type Hint
 The `SearchParameter` annotation was added to `Hint` fields in the DTO, enabling proper filtering functionality.  
+
+#### Added quick-fix for action builder api
+You can choose to migrate actions either selectively or for the entire project to the new API.
+
+Selectively: 
+
+![quickfixoneaction.gif](v2.0.5/quickfixoneaction.gif)
+
+For the entire project:
+
+![quickfixallaction.gif](..%2F..%2F..%2F..%2FDownloads%2Fquickfixallaction.gif)
 
 ####  Added inspection for widget references
 1. Reference and inspection for `option.create.widget` and `option.edit.widget`  

@@ -113,11 +113,13 @@ These formats ensure that the time type can be utilized effectively in various c
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
-`Calculated color`:
+**Calculated color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3501){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/color){:target="_blank"}
 
-`Constant color`:
+**Constant color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3502){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/colorconst){:target="_blank"}
 

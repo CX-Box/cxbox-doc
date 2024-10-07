@@ -1,6 +1,6 @@
 # FormPopup
 
-`FormPopup`  a component for additional field checks in popup and the ability to add information inside the popup.
+`FormPopup` is a component for additional field checks in popup and the ability to add information inside the popup.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3400){:target="_blank"} ·
@@ -69,31 +69,119 @@
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400Service.java
     --8<--
     ```
-## Main visual parts
-### Title
+
+## <a id="Title">Title</a> 
+### Title Basic
+<!--  
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+
+Title - (optional)
+
+![widgetinf.png](widgetinf.png)
+
+There are types of:
+
+* `constant title`: shows constant text.
+* `calculated title`: shows value provided in hidden text field, e.g. it can be calculated based on business logic of application
+
+#### How does it look?
+=== "Constant title"
+![consttitle.png](consttitle.png)
+=== "Calculated title"
+![calctitle.png](calctitle.png)
+#### How to add?
+??? Example
+=== "Constant title"
+**Step1** Add name for **title** to **_.widget.json_**.
+```java
+--8<--
+{{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
+--8<--
+```
+
+    === "Calculated title"
+ 
+        **Step1** Add ${customField} for **title** to **_.widget.json_**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
+        --8<--
+        ```  
+-->
+
+### Title Color
+`Title Color` allows you to specify a color for a title. It can be constant or calculated.
+
+**Constant color**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/colortitle){:target="_blank"}
+
+*Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
+
+**Calculated color**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/colortitle){:target="_blank"}
+
+*Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
+
+!!! info
+Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+
+#### How does it look?
+![colorwidget.gif](colorwidget.gif)
+
+#### How to add?
+??? Example
+    === "Calculated color"
+
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027DTO.java:colorDTO
+        --8<--
+        ```  
+ 
+        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+
+        Add in `title` field with `${customField}` 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027FormPopup.widget.json
+        --8<--
+        ```       
+
+    === "Constant color"
+ 
+        Add **"bgColor"** :  `HEX color`  to .widget.json.
+
+        Add in `title` field with `${customField}` 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027FormPopupColorConst.widget.json
+        --8<--
+        ```
+
+## <a id="bc">Business component</a>
+
+## <a id="Showcondition">Show condition</a>
 _not applicable_
 
-### Icon
+## <a id="bc">Fields</a>
+
+## Options layout
 _not applicable_
 
-### Color
-_not applicable_
-
-### Fields layout
-_not applicable_
-
-### Show condition
-_not applicable_
-
-### Actions
+## Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
 
 <!-- 
-## Main visual parts
-[Title](#Title), [fields block](#Fieldslayout) in grid, [actions block](#Showcondition)
-
-### <a id="Title">Title</a>
+## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
 
@@ -130,7 +218,7 @@ There are types of:
         --8<--
         ```   
  
-###  <a id="Fieldslayout">Fields layout</a>
+## <a id="Fieldslayout">Options layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
 
@@ -208,12 +296,12 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
         --8<--
         ```
-###  <a id="Fieldslayout">Fields layout</a>
+## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
 ###  <a id="Showcondition">Show condition</a>
 _not applicable_
 
-### Actions
+## Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
 -->

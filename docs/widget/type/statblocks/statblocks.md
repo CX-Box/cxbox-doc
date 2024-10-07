@@ -131,17 +131,16 @@ We can modify the following parameters on this widget:
 
 * [Title](#Title). Optional
 * Value - field that specifies formulas for data aggregation
-* [Icon](#Icon). Optional
-* [Color](#Color). Optional
 * Description - comment for field. Optional
 
 ![img_stat_description.png](img_stat_description.png)  
  
-### <a id="Title">Title</a>
+## <a id="Title">Title</a>
+### Title Basic
+Title - a name displayed in a block. It is optional.
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4209){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/title/withtitle){:target="_blank"}
-
-Title - name for block.Optional
 
 There are types of:
 
@@ -171,7 +170,26 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
         --8<--
         ```
+### Title Color
+_not applicable_
+
+## <a id="bc">Business component</a>
+
+## <a id="Showcondition">Show condition</a>
+_not applicable_
+
+## <a id="bc">Fields</a>
+
+## <a id="Fieldslayout">Options layout</a>
+**options.layout** - no use in this type.
+
+## Actions
+`Actions` show available actions as separate buttons
+see [Actions](/features/element/actions/actions)
+
  
+## Additional properties
+
 ### <a id="Icon">Icon</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4215){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
@@ -211,11 +229,13 @@ There are types of:
 ### <a id="ColorField">Color</a>
 `Color` allows you to specify a field block.Optional. It can be calculated based on business logic of application
 
-`Calculated color`:
+**Calculated color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4205){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/color){:target="_blank"}
 
-`Constant color`:
+**Constant color**
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4206){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/colorconst){:target="_blank"}
 
@@ -251,20 +271,7 @@ There are types of:
         --8<--
         ```
 
-###  <a id="Fieldslayout">Fields layout</a>
-**options.layout** - no use in this type.
-
-###  <a id="Showcondition">Show condition</a>
-_not applicable_
-
-### Actions
-`Actions` show available actions as separate buttons
-see [Actions](/features/element/actions/actions)
-
- 
-## Additional properties
-
-### <a id="Viewwidgetwight">View widget wight</a>
+### <a id="Viewwidgetwidth">View widget width</a>
 By default, we use the view gridWidth field to arrange widgets in a row, each occupying 1/3 of the given size. 
 For example, if the row has a total width of 24 spans, each widget will take up 8 spans.
 

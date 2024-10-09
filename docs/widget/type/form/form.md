@@ -7,37 +7,87 @@
 ### How does it look?
 ![formwidget.png](formwidget.png)
 
+### Structure .widget.json
+
+```json
+{
+  "name": "MyExampleForm",
+  "title": "Title Form",
+  "type": "Form",
+  "bc": "myexample",
+  "showCondition":{},
+  "fields": [],
+  "options": {}
+}
+```
+
+* **"name"**
+
+Description: This is a unique identifier for the show condition within the project.
+
+Type: String(required).
+
+Notes: This value must be unique across the project
+
+* [**"title"**](#Title)
+
+Description: Title for widget
+
+Type: String(optional).
+ 
+* **"type"**
+
+The value for this widget is required to be "Form",
+    
+* [**"bc"**](#bc)
+
+Description: [Business Component](/environment/businesscomponent/businesscomponent/)
+
+Type: String(required).
+   
+*  [**"showCondition"**](#showCondition)
+
+Description: Define the availability or visibility of the widget  dynamically
+
+Type: String(optional).
+
+* [**"fields"**](#fields)
+ 
+Description: Fields Configuration
+
+Type: String(required).
+
+* [**"options"**](#option)
+
+Description:  Defines the structure of the widget using rows and columns.
+
+Type: String(required).
+
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
     
-    **Step1** Create file **_.widget.json_**.
-
-    * name -  static (unique within the project)
-    * [title](#Title) - (optional) 
-    * type = "Form" (required)
-    * bc - (required)
-    * [showCondition](#showCondition) - (optional)
-    * fields- (required) see  [field types](/widget/fields/fieldtypes/)  
-    * [options.layout](#Fieldslayout)  
+    **Step1** Create file **_.widget.json_**. with  type = **"Form"**
 
     ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/base/MyExample3000Form.widget.json
-    --8<--
+       --8<--
+       {{ external_links.github_raw_doc }}/widgets/form/base/MyExample3000Form.widget.json
+       --8<--
     ```
+
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/base/myexample3000form.view.json
-    --8<--
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/base/myexample3000form.view.json
+        --8<--
     ```
+
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
 
 ### Title Basic
-Title - (optional)
+`Title` for widget - (optional)
 
 ![formwidgetinf.png](formwidgetinf.png)    
 
@@ -82,23 +132,19 @@ There are types of:
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
-
-**Constant color**
-
+ 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/colortitle){:target="_blank"}
 
-*Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
-
-**Calculated color**
+* `Constant color*` is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/colortitle){:target="_blank"}
 
-*Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
+* `Calculated color` can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-    Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 
 ##### How does it look?
@@ -137,24 +183,28 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026const.widget.json
         --8<--
         ```
- 
 
 
 ## <a id="Showcondition">Show condition</a> 
-* `no show condition - recommended`: widget always visible
+The `showCondition` is used to define the availability or visibility of the widget dynamically.
+The `showCondition` in configuration represents the condition under which the widge will be made visible to the user. It controls whether the form appears on the user interface based on the value of a specific field in another or currentbusiness component.
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+ 
+* `no show condition - recommended`: widget always visible
 
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
-
+ 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+ 
+* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
-* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
@@ -168,14 +218,45 @@ There are types of:
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
 
+#### Structure showCondition
+
+```json
+"showCondition": {
+    "bcName": "myexample",
+    "key": "myExampleBcShowCondition",
+    "params": {
+        "fieldKey": "customFieldShowCondition",
+        "value": true
+    }
+}
+```
+ 
+* **"bcName"**
+   
+Description:  [BusinessComponent](/environment/businesscomponent/businesscomponent/) that condition described below applies to.
+
+Type: String(required).
+
+* **"key"**
+
+Description: Identifier for the show condition(unique within the project)
+
+Type: String(required).
+
+* **"fieldKey"**
+
+Description: Name field with show condition.
+
+Type: String(required).
+
+* **"value"**
+
+Description:  Value of the field  for the show condition to be met..
+
+Type: String/boolean/number (required).
+ 
 #### How to add?
 ??? Example
-
-    * key -  static  
-    * sequence  
-    * bcName - (required)
-    * params { fieldKey } - (required) name field with show condition
-    * params { value } - (required)  show condition
 
     === "no show condition"
         see [Basics](#Howtoaddbacis)
@@ -195,24 +276,39 @@ There are types of:
         ```
 
 ## <a id="bc">Business component</a>
+This specifies the business component (BC) to which this form belongs.
+A business component represents a specific part of a system that handles a particular business logic or data.
+
+see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="bc">Fields</a>
+Fields Configuration. The fields array defines the individual fields present within the form.
 
-## <a id="Fieldslayout">Options layout</a>
+see more  [Fields](/widget/fields/fieldtypes/)
+## <a id="option">Options</a>
+The options object provides layout details for the widget.
+
+### <a id="Fieldslayout">Options layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
 
+Defines the structure of the widget using rows and columns.
+
 * `single column layout - recommended`: shows each field on new row. Each field can have width from 1 to 24.
+
+    !!! tips
+        Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
+
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
 !!! tips
-It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
+    It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
 
 !!! info
-The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
+    The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
 
-    For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
+For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
 
 
 #### How does it look?
@@ -276,9 +372,133 @@ The line has a size of 24 span, if you define fields on one line with a field wi
         {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
         --8<--
         ```
-
+ 
 ## Actions
-`Actions` show available actions as separate buttons
-see [Actions](/features/element/actions/actions)
+`Actions` show available actions as separate buttons.
+ 
+#### Create
+`Create` button enables you to create a new value by clicking the `Add` button.  
+
+There are two methods to create a record:
+1. [Basic](#createbasic): You can add data using a standard button create without leaving your current view.
+
+2. [With view](#withview): You can create a record by navigating to a view.
+
+##### <a id="createbasic">Basic</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3300){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/basic){:target="_blank"}
+
+With `Basic`, a new empty row is immediately added to the top of the form widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+###### How does it look?
+![form_create_basic.gif](form_create_basic.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/basic/MyExample3300Service.java:getActions
+    --8<--
+    ```
+     **Step2** Add button `create` to corresponding **.widget.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/basic/MyExample3300Form.widget.json
+    --8<--
+    ```
+     **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/basic/MyExample3300Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+ 
+##### <a id="withview">With view</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3302){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formactions/create/withview){:target="_blank"}
+
+With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the form of entities with the new row added.
+###### How does it look?
+![form_create_with_view.gif](form_create_with_view.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:getActions
+    --8<--
+    ```
+     **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:doCreateEntity
+    --8<--
+    ```
+    **Step4** Add button `create` to corresponding **.widget.json**.
+  
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Form.widget.json
+    --8<--
+    ```
+
+#### Edit
+`Edit` enables you to change the field value. 
+
+There are two methods to edit a record:
+1. [Basic](#basic): You can edit data in your current widget.
+
+2. [With view](#withview): You can edit a record by navigating to a view.
+
+##### <a id="editline">Line edit </a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/basic){:target="_blank"}
+
+
+`Edit Basic` implies inline-edit. Click twice on the value you want to change.
+###### How does it look?
+![form_edit_basic.gif](form_edit_basic.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/basic/MyExample3700Service.java:buildRowDependentMeta
+    --8<--
+    ```
+
+##### <a id="editwithview">With view</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/withview){:target="_blank"}
+
+With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.
+
+###### How does it look?
+![form_edit_with_view.gif](form_edit_with_view.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *edit* to corresponding **VersionAwareResponseService**. 
+    
+    Add **PostAction.drillDown** to method *edit*
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3066Service.java:getActions
+    --8<--
+    ```
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withwidget/MyExample3065List.widget.json
+    --8<--
+    ```
 
  

@@ -128,7 +128,7 @@ There are types of:
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 #### How does it look?
 ![colorwidget.gif](colorwidget.gif)
@@ -223,6 +223,10 @@ There are types of:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
 
 * `single column layout - recommended`: shows each field on new row. Each field can have width from 1 to 24.
+
+    !!! tips
+        Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
+
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
@@ -232,7 +236,7 @@ There are types of:
 !!! info
     The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
     
-    For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
+For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
 
 
 #### How does it look?

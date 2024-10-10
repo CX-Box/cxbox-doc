@@ -67,6 +67,8 @@ nav:
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
       - Widget Statistics blocks:  widget/type/statblocks/statblocks.md
       - Widget PickListPopup: widget/type/pickListPopup/pickListPopup.md
+      - Property:
+         - Show condition: widget/type/property/showcondition/showcondition.md
   - Navigation:
       - Tabs:
         - Standard:

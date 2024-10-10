@@ -7,17 +7,11 @@
 ### How does it look?
 ![info.png](info.png)
 
+
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
-    **Step1** Create file **_.widget.json_**.
-
-    * name -  static (unique within the project)
-    * [title](#Title) - (optional) 
-    * type = "Info" (required)
-    * bc - (required)
-    * fields- (required) see  [field types](/widget/fields/fieldtypes/)  
-    * [options](#Fieldslayout)  
-
+    **Step1** Create file **_.widget.json_**. with type = "Info"
+ 
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/info/base/MyExample3001Info.widget.json
@@ -97,7 +91,7 @@ There are types of:
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-Title colorization is **applicable** to the following [fields](../../../fields/fieldtypes): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 ##### How does it look?
 ![colorwidget.png](colorwidget.png)
@@ -135,43 +129,45 @@ Title colorization is **applicable** to the following [fields](../../../fields/f
         --8<--
         ```
 ## <a id="bc">Business component</a>
+This specifies the business component (BC) to which this form belongs.
+A business component represents a specific part of a system that handles a particular business logic or data.
 
+see more  [Business component](/environment/businesscomponent/businesscomponent/)
+ 
 ## <a id="Showcondition">Show condition</a> 
-* `no show condition - recommended`: widget always visible
+The `showCondition` is used to define the availability or visibility of the widget dynamically.
+The `showCondition` in configuration represents the condition under which the widge will be made visible to the user. It controls whether the form appears on the user interface based on the value of a specific field in another or currentbusiness component.
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
 
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
-
+* `no show condition - recommended`: widget always visible
+ 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
 
-* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
+ 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
-
-#### How does it look?
+### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
     ![info.png](info.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
-
-#### How to add?
+ 
+### <a id="howtoadd">How to add?</a>
 ??? Example
-    * key -  static  
-    * sequence -  
-    * bcName - (required)
-    * params { fieldKey } - (required) name field with show condition
-    * params { value } - (required)  show condition
-
+ 
     === "no show condition"
         see [Basics](#Howtoaddbacis)
     === "show condition by current entity"
@@ -189,20 +185,27 @@ Title colorization is **applicable** to the following [fields](../../../fields/f
         --8<--
         ```
 ## <a id="bc">Fields</a>
+Fields Configuration. The fields array defines the individual fields present within the form.
+
+see more  [Fields](/widget/fields/fieldtypes/)
 
 ## <a id="Fieldslayout">Options layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
 
 * `single column layout - recommended`: shows each field on new row. Each field can have width from 1 to 24.
+
+    !!! tips
+        Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
+
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
 !!! tips
-It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
+    It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
 
 !!! info
-The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
+    The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
 
     For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
 

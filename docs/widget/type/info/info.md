@@ -7,62 +7,6 @@
 ### How does it look?
 ![info.png](info.png)
 
-### Structure .widget.json
-
-```json
-{
-  "name": "MyExampleForm",
-  "title": "Title Form",
-  "type": "Form",
-  "bc": "myexample",
-  "showCondition":{},
-  "fields": [],
-  "options": {}
-}
-```
-
-* **"name"**
-
-Description: This is a unique identifier for the show condition within the project.
-
-Type: String(required).
-
-Notes: This value must be unique across the project
-
-* [**"title"**](#Title)
-
-Description: Title for widget
-
-Type: String(optional).
-
-* **"type"**
-
-The value for this widget is required to be "Form",
-
-* [**"bc"**](#bc)
-
-Description: [Business Component](/environment/businesscomponent/businesscomponent/)
-
-Type: String(required).
-
-*  [**"showCondition"**](#showCondition)
-
-Description: Define the availability or visibility of the widget  dynamically
-
-Type: String(optional).
-
-* [**"fields"**](#fields)
-
-Description: Fields Configuration
-
-Type: String(required).
-
-* [**"options"**](#option)
-
-Description:  Defines the structure of the widget using rows and columns.
-
-Type: String(required).
-
 
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
@@ -213,51 +157,15 @@ The `showCondition` in configuration represents the condition under which the wi
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
-### How does it look?
+### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
     ![info.png](info.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
-### Structure showCondition
-
-```json
-"showCondition": {
-    "bcName": "myexample",
-    "key": "myExampleBcShowCondition",
-    "params": {
-        "fieldKey": "customFieldShowCondition",
-        "value": true
-    }
-}
-```
-
-* **"bcName"**
-
-Description:  [BusinessComponent](/environment/businesscomponent/businesscomponent/) that condition described below applies to.
-
-Type: String(required).
-
-* **"key"**
-
-Description: Identifier for the show condition(unique within the project)
-
-Type: String(required).
-
-* **"fieldKey"**
-
-Description: Name field with show condition.
-
-Type: String(required).
-
-* **"value"**
-
-Description:  Value of the field  for the show condition to be met..
-
-Type: String/boolean/number (required).
-
-### How to add?
+ 
+### <a id="howtoadd">How to add?</a>
 ??? Example
  
     === "no show condition"

@@ -1,6 +1,6 @@
 # FormPopup
 
-`FormPopup` is a component for additional field checks in popup and the ability to add information inside the popup.
+`FormPopup` widget is a component for additional field checks in popup and the ability to add information inside the popup.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3400){:target="_blank"} ·

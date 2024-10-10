@@ -7,62 +7,6 @@
 ### How does it look?
 ![formwidget.png](formwidget.png)
 
-### Structure .widget.json
-
-```json
-{
-  "name": "MyExampleForm",
-  "title": "Title Form",
-  "type": "Form",
-  "bc": "myexample",
-  "showCondition":{},
-  "fields": [],
-  "options": {}
-}
-```
-
-* **"name"**
-
-Description: This is a unique identifier for the show condition within the project.
-
-Type: String(required).
-
-Notes: This value must be unique across the project
-
-* [**"title"**](#Title)
-
-Description: Title for widget
-
-Type: String(optional).
- 
-* **"type"**
-
-The value for this widget is required to be "Form",
-    
-* [**"bc"**](#bc)
-
-Description: [Business Component](/environment/businesscomponent/businesscomponent/)
-
-Type: String(required).
-   
-*  [**"showCondition"**](#showCondition)
-
-Description: Define the availability or visibility of the widget  dynamically
-
-Type: String(optional).
-
-* [**"fields"**](#fields)
- 
-Description: Fields Configuration
-
-Type: String(required).
-
-* [**"options"**](#option)
-
-Description:  Defines the structure of the widget using rows and columns.
-
-Type: String(required).
-
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
     
@@ -186,23 +130,22 @@ There are types of:
 
 
 ## <a id="Showcondition">Show condition</a> 
-The `showCondition` is used to define the availability or visibility of the widget dynamically.
-The `showCondition` in configuration represents the condition under which the widge will be made visible to the user. It controls whether the form appears on the user interface based on the value of a specific field in another or currentbusiness component.
+see more [showCondition](/widget/type/property/showcondition/showcondition)
 
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
- 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+
 * `no show condition - recommended`: widget always visible
 
  
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
- 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
 
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
@@ -210,7 +153,7 @@ The `showCondition` in configuration represents the condition under which the wi
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
 
-#### How does it look?
+#### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
     ![formwidget.png](formwidget.png)
 === "show condition by current entity"
@@ -218,44 +161,7 @@ The `showCondition` in configuration represents the condition under which the wi
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
 
-#### Structure showCondition
-
-```json
-"showCondition": {
-    "bcName": "myexample",
-    "key": "myExampleBcShowCondition",
-    "params": {
-        "fieldKey": "customFieldShowCondition",
-        "value": true
-    }
-}
-```
- 
-* **"bcName"**
-   
-Description:  [BusinessComponent](/environment/businesscomponent/businesscomponent/) that condition described below applies to.
-
-Type: String(required).
-
-* **"key"**
-
-Description: Identifier for the show condition(unique within the project)
-
-Type: String(required).
-
-* **"fieldKey"**
-
-Description: Name field with show condition.
-
-Type: String(required).
-
-* **"value"**
-
-Description:  Value of the field  for the show condition to be met..
-
-Type: String/boolean/number (required).
- 
-#### How to add?
+### <a id="howtoadd">How to add?</a>
 ??? Example
 
     === "no show condition"
@@ -283,6 +189,50 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 ## <a id="bc">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
+### How to add?
+??? Example
+
+    === "With plugin"
+        **Step 1** Download plugin
+            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+    
+        **Step 2** Add existing field to an existing form widget
+            ![addfield.gif](addfield.gif)
+    === "Other"
+        Add field to **_.widget.json_**.
+        ```json
+        {
+            "label": "Custom Field",
+            "key": "customField",
+            "type": "input"
+        }
+        ```
+
+        * **"label"**
+        
+        Description:  Field Title.
+        
+        Type: String(optional).
+        
+        * **"key"**
+        
+        Description: Name field to corresponding DataResponseDTO.
+        
+        Type: String(required).
+        
+        * **"type"**
+        
+        Description: [Field types](/widget/fields/fieldtypes/)
+        
+        Type: String(required).
+
+
+        ```json
+           --8<--
+           {{ external_links.github_raw_doc }}/widgets/form/base/MyExample3000Form.widget.json
+           --8<--
+        ```
+
 
 see more  [Fields](/widget/fields/fieldtypes/)
 ## <a id="option">Options</a>
@@ -443,8 +393,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     --8<--
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Form.widget.json
     --8<--
-    ```
-
+ 
 #### Edit
 `Edit` enables you to change the field value. 
 
@@ -453,7 +402,7 @@ There are two methods to edit a record:
 
 2. [With view](#withview): You can edit a record by navigating to a view.
 
-##### <a id="editline">Line edit </a>
+##### <a id="editline">Base edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/basic){:target="_blank"}
 
@@ -468,7 +417,7 @@ There are two methods to edit a record:
     **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/basic/MyExample3700Service.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/basic/MyExample3301Meta.java:buildRowDependentMeta
     --8<--
     ```
 
@@ -490,14 +439,14 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3066Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3033Service.java:getActions
     --8<--
     ```
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withwidget/MyExample3065List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Form.widget.json
     --8<--
     ```
 

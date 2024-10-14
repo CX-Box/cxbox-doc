@@ -317,7 +317,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
         --8<--
         ```
 ## Actions
-`Actions` show available actions as separate buttons
-see [Actions](/features/element/actions/actions)
+This widget type does not support buttons
+
 
  

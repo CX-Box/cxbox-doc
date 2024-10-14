@@ -324,8 +324,8 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         ```
  
 ## Actions
-`Actions` show available actions as separate buttons.
- 
+`Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
+
 #### Create
 `Create` button enables you to create a new value by clicking the `Add` button.  
 
@@ -384,7 +384,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:getActions
     --8<--
     ```
-     **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
+    **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:doCreateEntity
@@ -442,9 +442,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3033Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Service.java.java:getActions
     --8<--
-    ```
+    ``` 
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json

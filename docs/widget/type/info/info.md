@@ -184,8 +184,53 @@ The `showCondition` in configuration represents the condition under which the wi
         {{ external_links.github_raw_doc }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
+
 ## <a id="bc">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
+### How to add?
+??? Example
+
+    === "With plugin"
+        **Step 1** Download plugin
+            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+    
+        **Step 2** Add existing field to an existing form widget
+            ![addfield.gif](addfield.gif)
+    === "Other"
+        Add field to **_.widget.json_**.
+        ```json
+        {
+            "label": "Custom Field",
+            "key": "customField",
+            "type": "input"
+        }
+        ```
+
+        * **"label"**
+        
+        Description:  Field Title.
+        
+        Type: String(optional).
+        
+        * **"key"**
+        
+        Description: Name field to corresponding DataResponseDTO.
+        
+        Type: String(required).
+        
+        * **"type"**
+        
+        Description: [Field types](/widget/fields/fieldtypes/)
+        
+        Type: String(required).
+
+
+        ```json
+           --8<--
+           {{ external_links.github_raw_doc }}/widgets/info/base/MyExample3001Info.widget.json
+           --8<--
+        ```
+
 
 see more  [Fields](/widget/fields/fieldtypes/)
 

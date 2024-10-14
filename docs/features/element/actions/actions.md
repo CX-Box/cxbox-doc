@@ -2,9 +2,8 @@
 `Actions` show available actions as separate buttons
 
 !!! warning line end "Work in progress"
-
-## features
-* text - (can be empty string) static 
+ 
+* [text](#text) - (can be empty string) static 
 * icon - (optional) static
 * availability condition (optional)
 * preAction - (optional) CONFIRMATION,INFORMATION,ERROR,CUSTOM
@@ -13,8 +12,14 @@
 * fields validation results
 * business and other exceptions
 * scope - (required) bc, record
-* AutoSaveBefore (optional)
+
+## <a id="text">Text</a>
+ 
+!!! tips 
+    We recommend always using text with a string. 
+    If text is not specified, localized text will be used by default. see more [Localization](/features/element/localizaton/localization)
 <!--
+
 ### How does it look?
 === "text"
     === "empty"

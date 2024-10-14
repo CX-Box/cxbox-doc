@@ -192,13 +192,13 @@ Fields Configuration. The fields array defines the individual fields present wit
 ### How to add?
 ??? Example
 
-    === "With plugin"
+    === "With plugin(recommended)"
         **Step 1** Download plugin
             [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
-    === "Other"
+    === "Example of writing code"
         Add field to **_.widget.json_**.
         ```json
         {
@@ -329,7 +329,11 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
 #### Create
 `Create` button enables you to create a new value by clicking the `Add` button.  
 
+!!! tips
+    We advise against creating entries in the form widget.
+
 There are two methods to create a record:
+
 1. [Basic](#createbasic): You can add data using a standard button create without leaving your current view.
 
 2. [With view](#withview): You can create a record by navigating to a view.
@@ -338,7 +342,6 @@ There are two methods to create a record:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3300){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/basic){:target="_blank"}
 
-With `Basic`, a new empty row is immediately added to the top of the form widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
 ###### How does it look?
 ![form_create_basic.gif](form_create_basic.gif)
 
@@ -393,7 +396,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     --8<--
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Form.widget.json
     --8<--
- 
+    ``` 
 #### Edit
 `Edit` enables you to change the field value. 
 
@@ -425,7 +428,7 @@ There are two methods to edit a record:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/withview){:target="_blank"}
 
-With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.
+With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option.
 
 ###### How does it look?
 ![form_edit_with_view.gif](form_edit_with_view.gif)

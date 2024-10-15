@@ -178,7 +178,8 @@ _not applicable_
 -->
 
 ## Actions
-`Actions` show available actions as separate buttons.
+`Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
+
 As for List widget, there are several actions. 
 #### Create 
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:   

@@ -323,10 +323,19 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         --8<--
         ```
  
-## Actions
-`Actions` show available actions as separate buttons.
- 
-#### Create
+## Standard Actions
+`Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
+
+**Standard Actions**:
+
+* [`Create`](#standart_create): Action to initialize the process of creating a new record 
+* [`Delete`](#standart_delete): Remove an existing record
+* [`Edit`](#standart_edit): Users to update or correct information
+* [`Save`](#standart_save): Action to store the data entered or modified 
+* [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
+
+
+#### **<a id="standart_create">Create</a>**
 `Create` button enables you to create a new value by clicking the `Add` button.  
 
 !!! tips
@@ -369,7 +378,7 @@ There are two methods to create a record:
  
 ##### <a id="withview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3302){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formactions/create/withview){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/withview){:target="_blank"}
 
 With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the form of entities with the new row added.
 ###### How does it look?
@@ -384,7 +393,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:getActions
     --8<--
     ```
-     **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
+    **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:doCreateEntity
@@ -396,9 +405,37 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     --8<--
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Form.widget.json
     --8<--
+    ```  
+#### **<a id="standart_delete">Delete</a>**
+`Delete` remove an existing record. 
+ 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3180){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/delete){:target="_blank"}
+
+###### How does it look?
+![actiondelete.gif](actiondelete.gif)
+
+###### How to add?
+??? Example
+ 
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3180Service.java.java:getActions
+    --8<--
     ``` 
-#### Edit
-`Edit` enables you to change the field value. 
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3180Form.widget.json
+    --8<--
+    ```
+### **<a id="standart_edit">Edit</a>**
+`Edit` enables you to change the field value.
 
 There are two methods to edit a record:
 1. [Basic](#basic): You can edit data in your current widget.
@@ -406,7 +443,7 @@ There are two methods to edit a record:
 2. [With view](#withview): You can edit a record by navigating to a view.
 
 ##### <a id="editline">Base edit </a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3301){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/basic){:target="_blank"}
 
 
@@ -425,7 +462,7 @@ There are two methods to edit a record:
     ```
 
 ##### <a id="editwithview">With view</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3303){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/withview){:target="_blank"}
 
 With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option.
@@ -442,9 +479,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3033Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Service.java.java:getActions
     --8<--
-    ```
+    ``` 
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json
@@ -453,4 +490,56 @@ With `Edit with view`, you can edit the entity from a separate view that display
     --8<--
     ```
 
+###  **<a id="standart_save">Save</a>**
+`Save` to store the data entered or modified. see [information on autosave](/element/autosave/autosave)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3181){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/save){:target="_blank"}
+
+###### How does it look?
+![actionsave.gif](actionsave.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *save* to corresponding **VersionAwareResponseService**. 
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/save/MyExample3181Service.java.java:getActions
+    --8<--
+    ``` 
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/save/MyExample3181Form.widget.json
+    --8<--
+    ```
+
+### **<a id="standart_cancel_create">Cancel-create</a>**
+`Cancel-create` abort the creation of a new record, discarding any input without saving
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
+
+###### How does it look?
+![actioncancel.gif](actioncancel.gif)
  
+###### How to add?
+??? Example
+
+    **Step1** Add action *save* to corresponding **VersionAwareResponseService**. 
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/MyExample3182Service.java.java:getActions
+    --8<--
+    ``` 
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/MyExample3182Form.widget.json
+    --8<--
+    ```

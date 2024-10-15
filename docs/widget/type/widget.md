@@ -48,7 +48,7 @@ Type: String(required).
 
 *  **"showCondition"**
 
-Description: Define the availability or visibility of the widget  dynamically
+Description: Define the availability or visibility of the widget  dynamically. see more [showCondition](/widget/type/property/showcondition/showcondition)
 
 Type: String(optional).
 

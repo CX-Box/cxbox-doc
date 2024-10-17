@@ -424,14 +424,15 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3180Service.java.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/form/actions/delete/MyExample3180Service.java:getActions
     --8<--
     ``` 
+ 
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3180Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/delete/MyExample3180Form.widget.json
     --8<--
     ```
 ### **<a id="standart_edit">Edit</a>**
@@ -479,7 +480,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Service.java.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Service.java:getActions
     --8<--
     ``` 
     **Step2** Add button ot group button to corresponding **.widget.json**.
@@ -491,7 +492,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
     ```
 
 ###  **<a id="standart_save">Save</a>**
-`Save` to store the data entered or modified. see [information on autosave](/element/autosave/autosave)
+`Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3181){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/save){:target="_blank"}
@@ -506,9 +507,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/save/MyExample3181Service.java.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/form/actions/save/MyExample3181Service.java:getActions
     --8<--
-    ``` 
+    ```  
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json
@@ -528,18 +529,56 @@ With `Edit with view`, you can edit the entity from a separate view that display
  
 ###### How to add?
 ??? Example
+    === "Basic"
 
-    **Step1** Add action *save* to corresponding **VersionAwareResponseService**. 
+        **Step1** Add standart action *cancelCreate* to corresponding **VersionAwareResponseService**. 
+        The interface displays "cancelCreate" as the default option.
 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/MyExample3182Service.java.java:getActions
-    --8<--
-    ``` 
-    **Step2** Add button ot group button to corresponding **.widget.json**.
-   
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/MyExample3182Form.widget.json
-    --8<--
-    ```
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/basic/MyExample3182Service.java:getActions
+        --8<--
+        ```
+
+    === "With postAction"
+        **Step1** Add action *cancel* to corresponding **VersionAwareResponseService** with postAction. 
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/postaction/MyExample3187Service.java:getActions
+        --8<--
+        ```
+
+        **Step2** Add button ot group button to corresponding **.widget.json**.
+       
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/postaction/MyExample3187FormCreate.widget.json
+        --8<--
+        ```
+    === "Method onCancel"
+        !!! info
+            Only for **Inner** Business Component see more [Business Component](/environment/businesscomponent/businesscomponent/)
+
+        **Step1** Add standart action *cancelCreate* to corresponding **VersionAwareResponseService**. 
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/MyExample3186Service.java:getActions
+        --8<--
+        ``` 
+        **Step2** Add method *onCancel* to corresponding **VersionAwareResponseService**. 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/MyExample3186Service.java:onCancel
+        --8<--
+        ``` 
+        **Step3** Add button ot group button to corresponding **.widget.json**.
+       
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/MyExample3186FormCreate.widget.json
+        --8<--
+        ```
+
+ 

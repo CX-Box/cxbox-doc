@@ -171,14 +171,14 @@ The `showCondition` in configuration represents the condition under which the wi
     === "no show condition"
         see [Basics](#Howtoaddbacis)
     === "show condition by current entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
         --8<--
         ```
     === "show condition by parent entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json

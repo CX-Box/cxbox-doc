@@ -167,14 +167,14 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
     === "no show condition"
         see [Basics](#Howtoaddbacis)
     === "show condition by current entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
         --8<--
         ```
     === "show condition by parent entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json

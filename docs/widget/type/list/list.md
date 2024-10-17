@@ -11,7 +11,7 @@
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
     **Step1** Create file **_.widget.json_** with type = **"List"**
-
+    Add existing field to a list widget. see more [Fields](#fields)
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/list/base/MyExample3002List.widget.json
@@ -118,64 +118,88 @@ There are types of:
         --8<--
         ```
 ## <a id="bc">Business component</a>
+This specifies the business component (BC) to which this form belongs.
+A business component represents a specific part of a system that handles a particular business logic or data.
+
+see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="Showcondition">Show condition</a>
-_not applicable_
 
-## <a id="bc">Fields</a>
-
-## <a id="Fieldslayout">Options layout</a>
-**options.layout** - no use in this type.
-
-<!-- 
-## <a id="Showcondition">Show condition</a>
-
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
 
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/showcondition/byparententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
+<!--
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
-
-* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
-
-!!! tips
-    It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
-
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
  
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+-->
+!!! tips
+It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
+
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
     ![list.png](list.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
+<!--
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
+-->
 
 #### <a id="howtoadd">How to add?</a>
 ??? Example
+
     === "no show condition"
         see [Basics](#Howtoaddbacis)
+
     === "show condition by current entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/list/showcondition/bycurrententity/MyExample31012.widget.json
         --8<--
         ```
+<!--
     === "show condition by parent entity"
-        **Step1** Add **showCondition** to **_.widget.json_**.
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
 -->
+
+## <a id="fields">Fields</a>
+Fields Configuration. The fields array defines the individual fields present within the form.
+### How to add?
+??? Example
+
+    === "With plugin(recommended)"
+        **Step 1** Download plugin
+            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+    
+        **Step 2** Add existing field to an existing form widget
+            ![addfield.gif](addfield.gif)
+    === "Example of writing code"
+        Add field to **_.widget.json_**.
+        ```json
+        {
+            "title": "Custom Field",
+            "key": "customField",
+            "type": "input"
+        }
+        ```
+## <a id="Fieldslayout">Options layout</a>
+**options.layout** - no use in this type.
+
 
 ## Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).

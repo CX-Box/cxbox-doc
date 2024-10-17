@@ -174,6 +174,10 @@ There are types of:
 _not applicable_
 
 ## <a id="bc">Business component</a>
+This specifies the business component (BC) to which this form belongs.
+A business component represents a specific part of a system that handles a particular business logic or data.
+
+see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="Showcondition">Show condition</a>
 _not applicable_

@@ -11,6 +11,7 @@
 ??? Example
     
     **Step1** Create file **_.widget.json_**. with  type = **"Form"**
+    Add existing field to a form widget. see more [Fields](#fields)
 
     ```json
        --8<--
@@ -187,7 +188,7 @@ A business component represents a specific part of a system that handles a parti
 
 see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
-## <a id="bc">Fields</a>
+## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
 ### How to add?
 ??? Example

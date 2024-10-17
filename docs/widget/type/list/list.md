@@ -11,7 +11,7 @@
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
     **Step1** Create file **_.widget.json_** with type = **"List"**
-
+    Add existing field to a list widget. see more [Fields](#fields)
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/list/base/MyExample3002List.widget.json
@@ -177,8 +177,26 @@ It is recommended not to use `Show condition` when possible, because wide usage 
         ```
 -->
 
-## <a id="bc">Fields</a>
+## <a id="fields">Fields</a>
+Fields Configuration. The fields array defines the individual fields present within the form.
+### How to add?
+??? Example
 
+    === "With plugin(recommended)"
+        **Step 1** Download plugin
+            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+    
+        **Step 2** Add existing field to an existing form widget
+            ![addfield.gif](addfield.gif)
+    === "Example of writing code"
+        Add field to **_.widget.json_**.
+        ```json
+        {
+            "title": "Custom Field",
+            "key": "customField",
+            "type": "input"
+        }
+        ```
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
 

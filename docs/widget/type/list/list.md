@@ -24,6 +24,10 @@
     {{ external_links.github_raw_doc }}/widgets/list/base/myexample3002list.view.json
     --8<--
     ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
+
  
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
@@ -54,13 +58,20 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104List.widget.json
         --8<--
         ```
-    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
+
+
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
         --8<--
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
+
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
@@ -104,7 +115,10 @@ There are types of:
         --8<--
         {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050.widget.json
         --8<--
-        ```       
+        ``` 
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/colortitle){:target="_blank"}
 
     === "Constant color"
  
@@ -117,6 +131,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050ColorConst.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/colortitle){:target="_blank"}
+
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -197,6 +215,32 @@ Fields Configuration. The fields array defines the individual fields present wit
             "type": "input"
         }
         ```
+        
+        * **"title"**
+        
+          Description:  Field Title.
+          
+          Type: String(required).
+          
+        * **"key"**
+          
+            Description: Name field to corresponding DataResponseDTO.
+          
+            Type: String(required).
+          
+        * **"type"**
+          
+          Description: [Field types](/widget/fields/fieldtypes/)
+          
+          Type: String(required).
+        
+        
+          ```json
+             --8<--
+             {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json
+             --8<--
+          ```
+
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
 
@@ -248,6 +292,9 @@ With `Line Addition`, a new empty row is immediately added to the top of the lis
     {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3700Meta.java:buildRowDependentMeta
     --8<--
     ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/basic){:target="_blank"}
+
 ##### <a id="withwidget">With widget</a> 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/withwidget){:target="_blank"}
@@ -297,6 +344,9 @@ After filling the information in and clicking "Save", the new row is added to th
     --8<--
     ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/withwidget){:target="_blank"}
+
 ##### <a id="withview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/newview){:target="_blank"}
@@ -328,6 +378,9 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     --8<--
     ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/newview){:target="_blank"}
+
 
 #### Edit 
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action. 
@@ -358,6 +411,9 @@ There are three methods to create a record:
     {{ external_links.github_raw_doc }}/widgets/list/actions/edit/basic/MyExample3700Service.java:buildRowDependentMeta
     --8<--
     ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
 
 ##### <a id="editwithwidger">With widget</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
@@ -408,6 +464,10 @@ There are three methods to create a record:
     {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
     --8<--
     ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/withwidget){:target="_blank"}
+
 ##### <a id="editwithview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
@@ -436,6 +496,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
     {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
     --8<--
     ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
+
 
 ### Additional properties
 #### FullTextSearch

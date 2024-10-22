@@ -24,7 +24,10 @@
     {{ external_links.github_raw_doc }}/widgets/info/base/myexample3001info.view.json
     --8<--
     ```
- 
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3001){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base){:target="_blank"}
+     
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
@@ -56,7 +59,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102Info.widget.json
         --8<--
         ```
-    
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
@@ -64,6 +70,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102EmptyTitle.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+
     === "Calculated title"
         <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
@@ -72,6 +82,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102CustomTitle.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
@@ -117,6 +131,9 @@ There are types of:
         --8<--
         ```       
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/colortitle){:target="_blank"}
+
     === "Constant color"
  
         Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -128,6 +145,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/info/colortitle/MyExample3040ColorConst.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/colortitle){:target="_blank"}
+
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -170,6 +191,10 @@ The `showCondition` in configuration represents the condition under which the wi
  
     === "no show condition"
         see [Basics](#Howtoaddbacis)
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -177,6 +202,10 @@ The `showCondition` in configuration represents the condition under which the wi
         {{ external_links.github_raw_doc }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -184,6 +213,9 @@ The `showCondition` in configuration represents the condition under which the wi
         {{ external_links.github_raw_doc }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
 ## <a id="bc">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
@@ -282,6 +314,9 @@ see more  [Fields](/widget/fields/fieldtypes/)
         --8<--
         ```
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+
     === "Multi column layout"
         **Step1** Create **"options": {"layout": {}}**.
 
@@ -303,9 +338,13 @@ see more  [Fields](/widget/fields/fieldtypes/)
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets//info/fieldslayoute/MyExample3008MultiColumn.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008MultiColumn.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+
     === "Empty only buttons"
         **Step1** Create **"options": {"layout": {}}**.
 
@@ -316,6 +355,10 @@ see more  [Fields](/widget/fields/fieldtypes/)
         {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008EmptyOnlyButtons.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+
 ## Actions
 This widget type does not support buttons
 

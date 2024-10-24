@@ -2,8 +2,8 @@
  
 `Form` widget is a component for data viewing and editing. Usually it shows multiple fields. Also, it can show available actions.
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000/view/myexample3000form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
 ### How does it look?
 ![formwidget.png](formwidget.png)
 
@@ -15,7 +15,7 @@
 
     ```json
        --8<--
-       {{ external_links.github_raw_doc }}/widgets/form/base/MyExample3000Form.widget.json
+       {{ external_links.github_raw_doc }}/widgets/form/base/onefield/MyExample3000Form.widget.json
        --8<--
     ```
 
@@ -23,9 +23,12 @@
 
     ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/base/myexample3000form.view.json
+        {{ external_links.github_raw_doc }}/widgets/form/base/onefield/myexample3000form.view.json
         --8<--
     ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
 
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
@@ -58,7 +61,9 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
         --8<--
         ```
-    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```java
@@ -66,6 +71,9 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003/view/myexample3003formemtytitle){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title/myexample3003formemtytitle.view.json){:target="_blank"}
+
     === "Calculated title"
         <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
@@ -74,6 +82,9 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003/view/myexample3003customtitleform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title/MyExample3003FormCustomTitle.widget.json){:target="_blank"}
+
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
@@ -115,7 +126,10 @@ There are types of:
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026dynamic.widget.json
         --8<--
-        ```       
+        ```     
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/colortitle){:target="_blank"}
 
     === "Constant color"
  
@@ -128,22 +142,23 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026const.widget.json
         --8<--
         ```
+        
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/colortitle){:target="_blank"}
 
 
 ## <a id="Showcondition">Show condition</a> 
 see more [showCondition](/widget/type/property/showcondition/showcondition)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
 
- 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
-
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
@@ -167,6 +182,9 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 
     === "no show condition"
         see [Basics](#Howtoaddbacis)
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
+
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -174,6 +192,10 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         {{ external_links.github_raw_doc }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -181,6 +203,8 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
 
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
@@ -190,6 +214,33 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
+
+```json
+{
+    "label": "Custom Field",
+    "key": "customField",
+    "type": "input"
+}
+```
+
+* **"label"**
+
+Description:  Field Title.
+
+Type: String(optional).
+
+* **"key"**
+
+Description: Name field to corresponding DataResponseDTO.
+
+Type: String(required).
+
+* **"type"**
+
+Description: [Field types](/widget/fields/fieldtypes/)
+
+Type: String(required).
+
 ### How to add?
 ??? Example
 
@@ -199,42 +250,16 @@ Fields Configuration. The fields array defines the individual fields present wit
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
+
     === "Example of writing code"
         Add field to **_.widget.json_**.
-        ```json
-        {
-            "label": "Custom Field",
-            "key": "customField",
-            "type": "input"
-        }
-        ```
-
-        * **"label"**
-        
-        Description:  Field Title.
-        
-        Type: String(optional).
-        
-        * **"key"**
-        
-        Description: Name field to corresponding DataResponseDTO.
-        
-        Type: String(required).
-        
-        * **"type"**
-        
-        Description: [Field types](/widget/fields/fieldtypes/)
-        
-        Type: String(required).
-
 
         ```json
            --8<--
-           {{ external_links.github_raw_doc }}/widgets/form/base/MyExample3000Form.widget.json
+           {{ external_links.github_raw_doc }}/widgets/form/base/onefield/MyExample3000Form.widget.json
            --8<--
         ```
-
-
+        
 see more  [Fields](/widget/fields/fieldtypes/)
 ## <a id="option">Options</a>
 The options object provides layout details for the widget.
@@ -289,6 +314,9 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         --8<--
         ```
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004Form.widget.json){:target="_blank"}
+
     === "Multi column layout"
         **Step1** Create **"options": {"layout": {}}**.
 
@@ -313,6 +341,10 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
+        
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004/view/myexample3004multicolumnform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004MultiColumnForm.widget.json){:target="_blank"}
+
     === "Empty only buttons"
         **Step1** Create **"options": {"layout": {}}**.
 
@@ -323,6 +355,10 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004/view/myexample3004emptyonlybuttonsform){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json){:target="_blank"}
+
  
 ## Standard Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
@@ -377,6 +413,9 @@ There are two methods to create a record:
     --8<--
     ```
  
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3300){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/basic){:target="_blank"}
+
 ##### <a id="withview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3302){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/withview){:target="_blank"}
@@ -407,6 +446,10 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Form.widget.json
     --8<--
     ```  
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3302){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/withview){:target="_blank"}
+
 #### **<a id="standart_delete">Delete</a>**
 `Delete` remove an existing record. 
  
@@ -436,10 +479,15 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/form/actions/delete/MyExample3180Form.widget.json
     --8<--
     ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3180){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/delete){:target="_blank"}
+
 ### **<a id="standart_edit">Edit</a>**
 `Edit` enables you to change the field value.
 
 There are two methods to edit a record:
+
 1. [Basic](#basic): You can edit data in your current widget.
 
 2. [With view](#withview): You can edit a record by navigating to a view.
@@ -462,6 +510,9 @@ There are two methods to edit a record:
     {{ external_links.github_raw_doc }}/widgets/form/actions/edit/basic/MyExample3301Meta.java:buildRowDependentMeta
     --8<--
     ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3301){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/basic){:target="_blank"}
 
 ##### <a id="editwithview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3303){:target="_blank"} ·
@@ -492,6 +543,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
     --8<--
     ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3303){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/withview){:target="_blank"}
+
 ###  **<a id="standart_save">Save</a>**
 `Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
 
@@ -519,6 +573,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
     --8<--
     ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3181){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/save){:target="_blank"}
+    
 ### **<a id="standart_cancel_create">Cancel-create</a>**
 `Cancel-create` abort the creation of a new record, discarding any input without saving
 
@@ -540,6 +597,8 @@ With `Edit with view`, you can edit the entity from a separate view that display
         {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/basic/MyExample3182Service.java:getActions
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
 
     === "With postAction"
         **Step1** Add action *cancel* to corresponding **VersionAwareResponseService** with postAction. 
@@ -557,6 +616,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
         {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/postaction/MyExample3187FormCreate.widget.json
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
+
     === "Method onCancel"
         !!! info
             Only for **Inner** Business Component see more [Business Component](/environment/businesscomponent/businesscomponent/)
@@ -581,5 +643,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
         {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/MyExample3186FormCreate.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
+
 
  

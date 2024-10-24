@@ -197,6 +197,35 @@ It is recommended not to use `Show condition` when possible, because wide usage 
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
+
+```json
+{
+    "title": "Custom Field",
+    "key": "customField",
+    "type": "input"
+}
+```
+
+* **"title"**
+
+  Description:  Field Title.
+  
+  Type: String(required).
+  
+* **"key"**
+  
+    Description: Name field to corresponding DataResponseDTO.
+  
+    Type: String(required).
+  
+* **"type"**
+  
+  Description: [Field types](/widget/fields/fieldtypes/)
+  
+  Type: String(required).
+
+
+
 ### How to add?
 ??? Example
 
@@ -208,33 +237,7 @@ Fields Configuration. The fields array defines the individual fields present wit
             ![addfield.gif](addfield.gif)
     === "Example of writing code"
         Add field to **_.widget.json_**.
-        ```json
-        {
-            "title": "Custom Field",
-            "key": "customField",
-            "type": "input"
-        }
-        ```
-        
-        * **"title"**
-        
-          Description:  Field Title.
-          
-          Type: String(required).
-          
-        * **"key"**
-          
-            Description: Name field to corresponding DataResponseDTO.
-          
-            Type: String(required).
-          
-        * **"type"**
-          
-          Description: [Field types](/widget/fields/fieldtypes/)
-          
-          Type: String(required).
-        
-        
+
           ```json
              --8<--
              {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json

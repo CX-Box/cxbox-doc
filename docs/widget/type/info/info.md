@@ -3,7 +3,7 @@
 `Info` widget is a component only for data viewing.
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3001){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base/onefield){:target="_blank"}
 ### How does it look?
 ![info.png](info.png)
 
@@ -14,19 +14,19 @@
  
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/info/base/MyExample3001Info.widget.json
+    {{ external_links.github_raw_doc }}/widgets/info/base/onefield/MyExample3009Info.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/info/base/myexample3001info.view.json
+    {{ external_links.github_raw_doc }}/widgets/info/base/onefield/myexample3009info.view.json
     --8<--
     ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3001){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base/onefield){:target="_blank"}
      
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
@@ -160,7 +160,7 @@ The `showCondition` is used to define the availability or visibility of the widg
 The `showCondition` in configuration represents the condition under which the widge will be made visible to the user. It controls whether the form appears on the user interface based on the value of a specific field in another or currentbusiness component.
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
  
@@ -193,7 +193,7 @@ The `showCondition` in configuration represents the condition under which the wi
         see [Basics](#Howtoaddbacis)
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
 
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
@@ -219,6 +219,33 @@ The `showCondition` in configuration represents the condition under which the wi
 
 ## <a id="bc">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
+
+```json
+{
+    "label": "Custom Field",
+    "key": "customField",
+    "type": "input"
+}
+```
+
+* **"label"**
+
+Description:  Field Title.
+
+Type: String(optional).
+
+* **"key"**
+
+Description: Name field to corresponding DataResponseDTO.
+
+Type: String(required).
+
+* **"type"**
+
+Description: [Field types](/widget/fields/fieldtypes/)
+
+Type: String(required).
+
 ### How to add?
 ??? Example
 
@@ -228,38 +255,13 @@ Fields Configuration. The fields array defines the individual fields present wit
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
+
     === "Other"
         Add field to **_.widget.json_**.
-        ```json
-        {
-            "label": "Custom Field",
-            "key": "customField",
-            "type": "input"
-        }
-        ```
-
-        * **"label"**
-        
-        Description:  Field Title.
-        
-        Type: String(optional).
-        
-        * **"key"**
-        
-        Description: Name field to corresponding DataResponseDTO.
-        
-        Type: String(required).
-        
-        * **"type"**
-        
-        Description: [Field types](/widget/fields/fieldtypes/)
-        
-        Type: String(required).
-
 
         ```json
            --8<--
-           {{ external_links.github_raw_doc }}/widgets/info/base/MyExample3001Info.widget.json
+           {{ external_links.github_raw_doc }}/widgets/info/base/onefield/MyExample3009Info.widget.json
            --8<--
         ```
 

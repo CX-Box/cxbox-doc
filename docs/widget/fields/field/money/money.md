@@ -509,7 +509,7 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/nullable){:target="_blank"}
 
 By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
-####How does it look?
+#### How does it look?
 === "List widget"
     ![img_nullable_list.png](img_nullable_list.png)
 === "Info widget"
@@ -517,7 +517,7 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
 === "Form widget"
     ![img_nullable_form.png](img_nullable_form.png)
 
-### How to add?
+#### How to add?
 ??? Example
     === "List widget"
         Add **nullable** to **_.widget.json_**.
@@ -538,3 +538,93 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
         --8<--
         ```
 
+### <a id="currency">currency</a>
+`Currency` allows you to add and display currency values within the interface."
+
+**Calculated currency**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3151){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/currency/fieldkey){:target="_blank"}
+ 
+The currency value can be dynamically calculated based on the application's business logic.
+
+**Constant currency**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3150){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/currency/constkey){:target="_blank"}
+
+If you only need to display a fixed currency value, you can use a constant currency.
+
+#### How does it look?
+=== "List widget"
+    ![img_currency_list.png](img_currency_list.png)
+=== "Info widget"
+    ![img_currency_info.png](img_currency_info.png)
+=== "Form widget"
+    ![img_currency_form.png](img_currency_form.png)
+=== "AdditionalInfo widget"
+    ![img_currency_addinfo.png](img_currency_addinfo.png)
+=== "GroupingHierarchy widget"
+    ![img_currency_gh.png](img_currency_gh.png) 
+
+
+#### How to add?
+??? Example
+    === "Calculated currency"
+        **Step 1**   Add `custom field for currency` to corresponding **DataResponseDTO**. 
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151DTO.java
+        --8<--
+        ```
+ 
+        === "List widget"   
+
+            **Step 2** Add **"currencyKey"** :  `custom field for currency`  to .widget.json.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151List.widget.json
+            --8<--
+            ```
+        === "Info widget"
+
+            **Step 2** Add **"currencyKey"** :  `custom field for currency`  to .widget.json.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151Info.widget.json
+            --8<--
+            ```
+        === "Form widget"
+
+            **Step 2** Add **"currencyKey"** :  `custom field for currency`  to .widget.json.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151Form.widget.json
+            --8<--
+            ```
+    === "Constant currency"
+        === "List widget"
+
+            Add **"currency"**   to .widget.json.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150List.widget.json
+            --8<--
+            ```
+        === "Info widget"
+
+            Add **"currency"**   to .widget.json.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150Info.widget.json
+            --8<--
+            ```
+        === "Form widget"
+
+            Add **"currency"**   to .widget.json. 
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150Form.widget.json
+            --8<--
+            ```

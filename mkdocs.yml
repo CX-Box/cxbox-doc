@@ -6,6 +6,7 @@ nav:
   - What’s new: new/whatsnew.md
   - Versions :
       - cxbox:
+        - v2.0.7: new/version207.md
         - v2.0.6: new/version206.md
         - v2.0.5: new/version205.md
         - v2.0.4: new/version204.md

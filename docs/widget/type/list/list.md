@@ -14,14 +14,15 @@
     Add existing field to a list widget. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/base/MyExample3002List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json
     --8<--
     ```
+ 
     **Step2** Add widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/base/myexample3002list.view.json
+    {{ external_links.github_raw_doc }}/widgets/list/base/onefield/myexample3189list.view.json
     --8<--
     ```
 
@@ -63,11 +64,13 @@ There are types of:
 
 
     === "Constant title empty"
+
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
         --8<--
+        ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
@@ -160,7 +163,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 -->
 !!! tips
-It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
+    It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
@@ -292,7 +295,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the lis
      **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3700Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059Meta.java:buildRowDependentMeta
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
@@ -319,7 +322,7 @@ After filling the information in and clicking "Save", the new row is added to th
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3065Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064Meta.java:buildRowDependentMeta
     --8<--
     ```
 
@@ -411,10 +414,10 @@ There are three methods to create a record:
     **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/basic/MyExample3700Service.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/basic/MyExample3700Meta.java:buildRowDependentMeta
     --8<--
     ```
-
+ 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
 
@@ -440,14 +443,14 @@ There are three methods to create a record:
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Service.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Meta.java:buildRowDependentMeta
     --8<--
     ```
  
     **Step2**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myEntity3065CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myEntity3065EditForm.widget.json
     --8<--
     ```
  
@@ -476,7 +479,7 @@ There are three methods to create a record:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
 
 With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.  
-!-->"use edit with widget for complex, multi-step edits
+
 ###### How does it look? 
 ![list_edit_with_view.gif](list_edit_with_view.gif)
 

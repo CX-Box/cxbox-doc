@@ -63,9 +63,9 @@ We have added placeholder support for checkbox. The value set for placeholder wi
 
 ![checkboxPlaceholder.gif](v2.0.7/checkboxPlaceholder.gif)
 
-#### Added: [FormPopup](widget_type_form_popup) widget - multiple popups support
+#### Added: [FormPopup](/widget_type_form_popup) widget - multiple popups support
 
-It is now possible to set different [FormPopup](widget_type_form_popup)s for different buttons on the same bc/widget.  
+It is now possible to set different [FormPopup](/widget_type_form_popup) widgets for different buttons on the same bc/widget.  
 
 ![preInvokeWidgetsOnOneBc.gif](v2.0.7/preInvokeWidgetsOnOneBc.gif)  
 
@@ -145,18 +145,6 @@ We've updated the plugin to version 1.7.7. New version of Plugin is currently be
 
 We have added inspections for screens that have explicitly set `"type"="standard"` in .screen.json. These include making sure each `viewName` is unique, detecting empty arrays. We have also improved view generation (triggered by `+` icon click)
 
-1) Singular and Aggregate Generation  
-
-![singularAndAggregateGeneration.gif](v2.0.7/singularAndAggregateGeneration.gif){width="800"}  
-
-2) No Empty Arrays Check  
-
-![noEmptyArrays.png](v2.0.7/noEmptyArrays.png){width="800"}
-
-3) Unique `viewName` Check  
-
-![uniqueViewName.png](v2.0.7/uniqueViewName.png){width="800"}
-
 #### Added: *.widget.json - auto-completion and navigation for `actionKey` 
 
 Previous plugin versions provided navigation for actions referenced in `options->actionGroups` of .widget.json.
@@ -176,11 +164,11 @@ We have added an inspection for `actionGroups` tag in .widget.json to ensure it 
 
 We have added a description of [PickListPopup](/widget_type_pick_list_popup).
 
-#### Added: Widget - showCondition documentation article  
+#### Added: List, Form, Info Widget's - showCondition documentation article  
 
 We have added a full description of [Show Condition](https://doc.cxbox.org/widget/type/property/showcondition/showcondition/) and showCondition option for three main widgets ([Form](https://doc.cxbox.org/widget/type/form/form/#show-condition), [Info](https://doc.cxbox.org/widget/type/info/info/#show-condition), [List](https://doc.cxbox.org/widget/type/list/list/#show-condition)).
 
-#### Added: Field Currency - documentation article  
+#### Added: Money field - currency property section  
 
 We have added a [currency](https://doc.cxbox.org/widget/fields/field/money/money/#currency) property description in Money field.
 

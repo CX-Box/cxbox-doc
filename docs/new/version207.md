@@ -176,11 +176,11 @@ We have added an inspection for `actionGroups` tag in .widget.json to ensure it 
 
 We have added a description of [PickListPopup](/widget_type_pick_list_popup).
 
-#### Added: Widget - showCondition documentation article  
+#### Added: List, Form, Info Widget's - showCondition documentation article  
 
 We have added a full description of [Show Condition](https://doc.cxbox.org/widget/type/property/showcondition/showcondition/) and showCondition option for three main widgets ([Form](https://doc.cxbox.org/widget/type/form/form/#show-condition), [Info](https://doc.cxbox.org/widget/type/info/info/#show-condition), [List](https://doc.cxbox.org/widget/type/list/list/#show-condition)).
 
-#### Added: Field Currency - documentation article  
+#### Added: Field Money - currency property section  
 
 We have added a [currency](https://doc.cxbox.org/widget/fields/field/money/money/#currency) property description in Money field.
 

@@ -12,19 +12,18 @@
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
-#### Grouping Hierarchy Display
+#### Changed: Grouping Hierarchy widget - compact look
 
-We have improved Grouping Hierarchy widget.
-
-1) **Compact Look**. Hierarchies now expand within the same row as grouping fields. If grouping fields are empty or contain a single item, the hierarchy displays as expanded by default, reducing unnecessary clicks.  
+Hierarchies now expanded in a more compact way. If grouping fields are empty or contain a single item, the hierarchy displays as expanded by default, reducing unnecessary clicks.  
 
 === "After"  
     ![groupingHierarchyCompactAfter.png)](v2.0.7/groupingHierarchyCompactAfter.png)
 
 === "Before"
     ![groupingHierarchyCompactBefore.png](v2.0.7/groupingHierarchyCompactBefore.png) 
-  
-2) **Default Hierarchy Setup**. You can now set default hierarchy structure, that will be displayed even, when widget has no data
+
+#### Added: Grouping Hierarchy widget - default hierarchy
+You can now (optionally) provide default hierarchy structure, that will be displayed even, when widget has no data
 
 === "After: with Default Hierarchy"  
     ![defaultHierarchyOn.png](v2.0.7/defaultHierarchyOn.png)
@@ -39,7 +38,7 @@ If data is provided from backend, frontend merges it with the default hierarchy.
     ![defaultHierarchyOffWithBack.png](v2.0.7/defaultHierarchyOffWithBack.png)
 
 
-#### Updated info widget (titleMode left/top)
+#### Added: Info widget - field title mode
 
 We have updated the info widget display options for both single-column and multi-column layouts. You can now set `titleMode` to
 `left` or `top` in the settings. The default is `left` for backward compatibility
@@ -49,28 +48,28 @@ We have updated the info widget display options for both single-column and multi
 === "Title Top"
     ![multiColumnTitleTop.png](v2.0.7/multiColumnTitleTop.png)
 
-#### Added currency support for field Money
+#### Added:  [Money](/widget_field_money) field - [currency](/widget_field_money/#currency) support
 
-The [Money](widget_field_money) field now supports currency. Constant currency value per widget field is supported in this release. Dynamic and editable currency value support will be added in next releases
+The [Money](/widget_field_money) field now supports currency. Constant currency value per widget field is supported in this release. Dynamic and editable currency value support will be added in next releases
 
 === "After"  
     ![moneyCurrency.png](v2.0.7/moneyCurrency.png)
 === "Before"
     ![moneyNoCurrency.png](v2.0.7/moneyNoCurrency.png)
 
-#### Checkbox placeholder support added
+#### Added: Checkbox field - placeholder support
 
 We have added placeholder support for checkbox. The value set for placeholder will be displayed on the right next to the checkbox itself. Note that it will not disappear once you click on the checkbox.  
 
 ![checkboxPlaceholder.gif](v2.0.7/checkboxPlaceholder.gif)
 
-#### [FormPopup](widget_type_formpopup) improvements 
+#### Added: [FormPopup](widget_type_form_popup) widget - multiple popups support
 
-It is now possible to set different [FormPopup](widget_type_formpopup) for different buttons on the same bc/widget.  
+It is now possible to set different [FormPopup](widget_type_form_popup)s for different buttons on the same bc/widget.  
 
 ![preInvokeWidgetsOnOneBc.gif](v2.0.7/preInvokeWidgetsOnOneBc.gif)  
 
-#### Fixed checkbox look
+#### Changed: Checkbox field - uniformed look
 
 We have improved the checkbox look by aligning it with other field types
 
@@ -79,13 +78,13 @@ see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2
 
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.0))
 
-#### Button logic when required fields are left empty  
+#### Changed: Actions logic when required fields are left empty  
 
-We have adjusted the logic of buttons with `withoutAutoSaveBefore()` when required fields are left empty on the form. Now, a notification pop-up will appear and notify about the unsaved changes. 
+We have adjusted the logic of actions with `withoutAutoSaveBefore()` when required fields are left empty. Now, unsaved changes notification pop-up will appear. 
 
 ![buttonLogicAndRequiredFields.gif](v2.0.7/buttonLogicAndRequiredFields.gif)
 
-#### Improved data loading logic for child components with `hidden` parent
+#### Changed: Improved data loading logic for child components with `hidden` parent
 
 We have adjusted the logic of loading data into child business components when their parent widget is `hidden`  
 
@@ -96,11 +95,11 @@ see [cxbox-ui changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.0)
 
 ### CXBOX 4.0.0-M10 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M10))  
 
-#### Added `getParentField()` support in FieldMetaBuilder
+#### Added: FieldMetaBuilder class - `getParentField()` method support
 
-This update makes `getParentField()` method available in FieldMetaBuilder. We have also introduced a new method `getBc()` in FieldMetaBuilder and *ResponseService classes
+This update makes `getParentField()` method available in FieldMetaBuilder. We have also introduced a new method `getBc()` in FieldMetaBuilder and `*ResponseService` classes
 
-#### Added `defaultGroupingHierarchy` method in FieldMetaBuilder
+#### Added: FieldMetaBuilder class - `defaultGroupingHierarchy` method support
 Example 1: <strong>explicitly</strong> provided default hierarchy tree (grouped by two Enum fields <strong>document</strong> and then <strong>briefing</strong>):
 ```java
 fields.defaultGroupingHierarchy(
@@ -118,22 +117,7 @@ lvl -> lvl
   )
 );
 ```
-Resulting "GroupingHierarchy" widget in UI, when NO data came from backend (e.g. only default hierarchy will be shown):
-<pre>
-UI ("default hierarchy")
-_______________________________________
-|Document↓    | Briefing↓   |File     |
-_______________________________________
-|Reference↓(0)| Financial(0)|         |
-|             | Project  (0)|         |
-|Policy    (0)|             |         |
-_______________________________________
-↑ ↑
-Backend data
-_______________________________________
-|Document     | Briefing    |File     |
-_______________________________________
-</pre>
+
 Example 2: <strong>dynamically</strong> provided default hierarchy tree. Can be convenient, when default hierarchy structure is configurable through admin UI, so needed to be loaded from DB/microservice:
 ```java
 Map<Documents, Set<Briefings>> external = Map.of(
@@ -157,7 +141,7 @@ see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M
 
 We've updated the plugin to version 1.7.7. New version of Plugin is currently being reviewed by JetBrains and will be available in a few business days
 
-#### Validation for screens with type "standard"  
+#### Added: *.screen.json - inspection when "type" : "standard"  
 
 We have added inspections for screens that have explicitly set `"type"="standard"` in .screen.json. These include making sure each `viewName` is unique, detecting empty arrays. We have also improved view generation (triggered by `+` icon click)
 
@@ -173,14 +157,14 @@ We have added inspections for screens that have explicitly set `"type"="standard
 
 ![uniqueViewName.png](v2.0.7/uniqueViewName.png){width="800"}
 
-#### Added auto-completion and navigation for `actionKey` 
+#### Added: *.widget.json - auto-completion and navigation for `actionKey` 
 
 Previous plugin versions provided navigation for actions referenced in `options->actionGroups` of .widget.json.
 In this release we added same feature for actions referenced in `options->buttons->actionKey` tag of .widget.json used for files drag-and-drop configuration.  
 
 ![actionKey.gif](v2.0.7/actionKey.gif){width="800"}
 
-#### Added inspection for actionGroups location.  
+#### Added: *.widget.json - inspection for actionGroups location.  
 
 We have added an inspection for `actionGroups` tag in .widget.json to ensure it is located within `options`.  
 
@@ -188,19 +172,15 @@ We have added an inspection for `actionGroups` tag in .widget.json to ensure it 
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
-#### PickListPopup  
+#### Added: [PickListPopup](/widget_type_pick_list_popup) widget - documentation article  
 
-We have added a description of [PickListPopup](https://doc.cxbox.org/widget/type/pickListPopup/pickListPopup/).
+We have added a description of [PickListPopup](/widget_type_pick_list_popup).
 
-#### showCondition for widgets  
+#### Added: Widget - showCondition documentation article  
 
 We have added a full description of [Show Condition](https://doc.cxbox.org/widget/type/property/showcondition/showcondition/) and showCondition option for three main widgets ([Form](https://doc.cxbox.org/widget/type/form/form/#show-condition), [Info](https://doc.cxbox.org/widget/type/info/info/#show-condition), [List](https://doc.cxbox.org/widget/type/list/list/#show-condition)).
 
-![showConditionArticle.png](v2.0.7/showConditionArticle.png){width="800"}
-
-#### Currency  
+#### Added: Field Currency - documentation article  
 
 We have added a [currency](https://doc.cxbox.org/widget/fields/field/money/money/#currency) property description in Money field.
-
-![currencyArticle.png](v2.0.7/currencyArticle.png){width="800"}
 

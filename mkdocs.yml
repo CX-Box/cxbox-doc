@@ -211,7 +211,8 @@ plugins:
         'form.md': 'widget/type/form/form.md'
         'info.md': 'widget/type/info/info.md'
         'list.md': 'widget/type/list/list.md'
-        'widget_type_formpopup.md': 'widget/type/formpopup/formpopup.md'
+        'widget_type_form_popup.md': 'widget/type/formpopup/formpopup.md'
+        'widget_type_pick_list_popup.md': 'widget/type/pickListPopup/pickListPopup/.md'
         'additionalinfo.md': 'widget/type/additionalinfo/additionalinfo.md'
 
 copyright: Copyright &copy; 2023 (Version 1.1)

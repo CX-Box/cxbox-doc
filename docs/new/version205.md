@@ -1,6 +1,6 @@
 # 2.0.5
 
-* [cxbox/demo 2.0.5 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.5), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.5)
+* [cxbox/demo 2.0.5 git](https://github.com/CX-Box/cxbox-demo/tree/v2.0.5), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.5)
 
 * [cxbox/core 4.0.0-M8 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M8), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M8), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M8)
 

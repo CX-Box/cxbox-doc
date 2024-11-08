@@ -18,7 +18,7 @@
     ![img_form.gif](img_form.gif)
 
 
-### How to add?
+### <a id="basics_how_to_add">How to add?</a>
 ??? Example
     === "Enum"
 
@@ -45,10 +45,11 @@
         ```
 
         - **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
-
+        The front-end requires us to display all directory data within the method /row-meta tag values. 
+        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Meta.java:buildIndependentMeta
         --8<--
         ```
 
@@ -61,7 +62,10 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70List.widget.json
             --8<--
             ```
-        
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
+
         === "Info widget"
             - **Step5** Add to **_.widget.json_**.
         
@@ -70,6 +74,9 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Info.widget.json
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
     
         === "Form widget"
     
@@ -80,6 +87,9 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Form.widget.json
             --8<--
             ```  
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
 
     === "LOV"
 
@@ -119,7 +129,7 @@
     
                 ```java
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/AdministeredDictionary.java
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/AdministeredDictionary.java
                 --8<--
                 ```
             +  **Step 1.5**  Add in project AdministeredDictionaryType
@@ -184,7 +194,7 @@
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/MyEntity350.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyEntity350.java
         --8<--
         ```
     
@@ -192,15 +202,18 @@
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/MyExample350DTO.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350DTO.java
         --8<--
         ```
 
         - **Step4** Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
 
+        The front-end requires us to display all directory data within the method /row-meta tag values. 
+        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
+
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/MyExample350Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Meta.java:buildRowDependentMeta
         --8<--
         ```
     
@@ -209,28 +222,37 @@
 
             ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/MyExample350Info.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Info.widget.json
                 --8<--
             ```
-        
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+     
         === "Info widget"
             - **Step5** Add to **_.widget.json_**.
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/MyExample350Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Info.widget.json
             --8<--
             ```
-    
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+         
         === "Form widget"
     
             - **Step5** Add to **_.widget.json_**.
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/MyExample350Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Form.widget.json
             --8<--
             ```  
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
@@ -255,11 +277,16 @@
     ```  
     === "List widget"
         **Works for List.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/placeholder){:target="_blank"}
     === "Info widget"
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/placeholder){:target="_blank"}
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -301,6 +328,10 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/color/MyExample71List.widget.json
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample71){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/color){:target="_blank"}
+
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
@@ -308,6 +339,10 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/color/MyExample71Info.widget.json
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample71){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/color){:target="_blank"}
+
         === "Form widget"
             _not applicable_
     === "Constant color"
@@ -318,6 +353,10 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/colorconst/MyExample84List.widget.json
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample84){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/colorconst){:target="_blank"}
+
         === "Info widget"
 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -326,6 +365,9 @@
             {{ external_links.github_raw_doc }}/fields/dictionary/colorconst/MyExample84Info.widget.json
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample84){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/colorconst){:target="_blank"}
 
         === "Form widget"
             _not applicable_
@@ -377,10 +419,17 @@
         ```
         === "List widget"
             **Works for List.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
         === "Info widget"
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
+
    
     === "Readonly"
     
@@ -395,11 +444,23 @@
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample85){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/ro){:target="_blank"}
+
         === "Info widget"
             **Works for Info.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample85){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/ro){:target="_blank"}
+
         === "Form widget"
             **Works for Form.**
-## Filtering
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample85){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/ro){:target="_blank"}
+
+##  Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/filtration){:target="_blank"}
 
@@ -412,7 +473,7 @@
 === "Form widget"
     _not applicable_
 
-### How to add?
+### <a id="filtering_how_to_add">How to add?</a>
 ??? Example
     === "List widget"
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
@@ -423,11 +484,20 @@
         ```
 
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+
+        Add **fields.setEnumFilterValues** to corresponding **FieldMetaBuilder**.
+
+        The front-end requires us to display all directory data within the method /row-meta tag filterValues. 
+        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
+
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/dictionary/filtration/MyExample87Meta.java:buildIndependentMeta
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/filtration){:target="_blank"}
 
     === "Info widget"
         _not applicable_
@@ -472,7 +542,10 @@ Also, it optionally allows you to filter data on target view before it will be o
     
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
- 
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
+
     === "Info widget"
 
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
@@ -483,7 +556,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
- 
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
+
     === "Form widget"
         _not applicable_
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
@@ -554,10 +630,18 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         === "List widget"
             **Works for List.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample91){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationbusinessex){:target="_blank"}
+
         === "Info widget"
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample91){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -571,10 +655,16 @@ Also, it optionally allows you to filter data on target view before it will be o
      
         === "List widget"
             **Works for List.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample93){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationruntimeex){:target="_blank"}
         === "Info widget"
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample93){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationruntimeex){:target="_blank"}
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
@@ -584,10 +674,16 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
         === "List widget"
             **Works for List.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample92){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationconfirm){:target="_blank"}
         === "Info widget"
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample92){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationconfirm){:target="_blank"}
 
     === "Field level validation"
         === "Option 1"
@@ -605,10 +701,16 @@ Also, it optionally allows you to filter data on target view before it will be o
     
             === "List widget"
                 **Works for List.**
+
+                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample293){:target="_blank"} ·
+                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationannotation){:target="_blank"}
             === "Info widget"
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample293){:target="_blank"} ·
+                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationannotation){:target="_blank"}
 
         === "Option 2"
             Create сustom service for business logic check.
@@ -631,6 +733,9 @@ Also, it optionally allows you to filter data on target view before it will be o
             --8<--
             ```
 
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample323){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationdynamic){:target="_blank"}
+
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
@@ -649,6 +754,10 @@ Sort by key value.
 ??? Example
     === "List widget"
         Enabled by default.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
+
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -678,7 +787,228 @@ Sort by key value.
 
     === "List widget"
         **Works for List.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample89){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/required){:target="_blank"}
+
     === "Info widget"
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample89){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/required){:target="_blank"}
+
+## Additional properties
+### <a id="icon">Icon</a>
+(since [release 2.0.8](https://doc.cxbox.org/new/version208/"))
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon){:target="_blank"}
+
+Icons are small graphic symbols used within a user interface to visually represent certain actions, fields, or data types, making the interface more intuitive and easier to navigate. They serve as visual cues to help users quickly identify the purpose of a field without needing to read a title.
+
+#### Basic
+
+!!! tips
+    We recommend avoiding long values for value fields, as filtering sends a string with vallue to the backend, which may be subject to length limitations.
+
+There are two display types icons:
+
+* [`Standard icons`](#standard_icons)
+* [`Custom icons`](#custom_icons)
+
+There are two display modes:
+
+* [`Default Mode`](#default_mode) (icon and text)
+* [`Icon-Only Mode`](#icon_mode) (only icon)
+
+#### Modes
+##### <a id="default_mode">Default Mode</a>
+Both icon and text are always shown.
+
+Applies to:
+
+* Drop-down directory
+* Edit mode/Creation
+* Filtering
+
+###### How does it look?
+=== "List widget"
+    ![icon_list.gif](icon_list.gif)
+=== "Info widget"
+    ![img_icon_info.png](img_icon_info.png)
+=== "Form widget"
+    ![icon_form.gif](icon_form.gif)
+=== "AdditionalInfo widget"
+    ![img_icon_addinf.png](img_icon_addinf.png)
+=== "GroupingHierarchy widget"
+    ![icon_gh.gif](icon_gh.gif)
+
+###### How to add?
+??? Example
+
+    The frontend display mechanism for icons works as follows:
+    
+    Icon Value Matching: The frontend needs to have all occurrences of the icon values within a comprehensive tag collection (allValues).
+
+    Icon Retrieval: It then takes the specified value from values(see more [how_to_add](#basics_how_to_add))/filterValues(see more [how_to_add](#filtering_how_to_add) and searches for a matching icon value within allValues.
+    This process ensures that icons are displayed based on the specified icon values.
+
+    Step 1
+
+    Add **fields.setAllValuesWithIcons** to buildIndependentMeta to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta
+    --8<--
+    ``` 
+    Step 2 (optional)
+    Missing mod tag = "mode": "default
+
+    Add **"mode": "default"** to corresponding **widget.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011List.widget.json
+    --8<--
+    ```  
+ 
+##### <a id="icon_mode">Icon Mode</a>
+Only the icon is displayed.
+
+When hovering over the icon, a tooltip appears displaying text that is retrieved from the value.
+
+Applies to:
+
+* Drop-down directory
+* Edit mode/Creation
+* For filtering, **icon and text are always shown**.
+
+###### How does it look?
+=== "List widget"
+    ![icon_list_icon_mode.gif](icon_list_icon_mode.gif)
+=== "Info widget"
+    ![img_icon_info_icon.png](img_icon_info_icon.png)    
+=== "Form widget"
+    ![icon_form_mode_icon.gif](icon_form_mode_icon.gif)
+=== "AdditionalInfo widget"
+    ![img_icon_addinf_mode_icon.png](img_icon_addinf_mode_icon.png)
+=== "GroupingHierarchy widget"
+    ![icon_gh_mode_icon.gif](icon_gh_mode_icon.gif)
+
+###### How to add?
+??? Example
+
+    The frontend display mechanism for icons works as follows:
+    
+    Icon Value Matching: The frontend needs to have all occurrences of the icon values within a comprehensive tag collection (allValues).
+
+    Icon Retrieval: It then takes the specified value from values(see more [how_to_add](#basics_how_to_add))/filterValues(see more [how_to_add](#filtering_how_to_add) and searches for a matching icon value within allValues.
+    This process ensures that icons are displayed based on the specified icon values.
+
+    Step 1
+
+    Add **fields.setAllValuesWithIcons** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta
+    --8<--
+    ``` 
+    Step 2  
+    Add **"mode": "icon"** to corresponding **widget.json**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011ListIconMode.widget.json
+    --8<--
+    ```  
+
+#### Types icons
+The workflow logic is to first search for the icon name in the custom icons folder.
+If the icon is found, it will be used from there; if not, the search will continue in the standard Ant icons folder.
+
+Icon selection logic:
+
+* Search by icon name in the custom icons folder.
+* If found, use the custom icon.
+* If not found, look in the standard Ant icons folder and use the icon from there.
+
+##### <a id="standard_icons">Standard icons</a>
+Cxbox-ui already includes this icon library.
+
+[Ant Design icons](https://3x.ant.design/components/icon/)
+You can customize the color of the standard icon using a hex color code.
+
+###### How does it look?
+=== "Basic"
+    ![icon_ant.png](icon_ant.png)
+=== "With Color"
+    ![icon_ant_color.png](icon_ant_color.png)
+
+###### How to add?
+??? Example
+    === "Basic"
+        Simply copy the icon name and pass it to the method—that's all you need.
+        For example, add [<Icon type="arrow-up" />](https://3x.ant.design/components/icon/)
+    
+        Add standart icon  to corresponding **Icon**.
+        **ARROW_UP("arrow-up")**
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
+        --8<--
+        ```
+     
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+    
+    === "With Color"
+        Simply copy the icon name and pass it to the method—that's all you need.
+        For example, add [<Icon type="arrow-up" />](https://3x.ant.design/components/icon/)
+    
+        Add standart icon and hex color code to corresponding **Icon**.
+
+        **ARROW_UP_BLUE("arrow-up #0cbfe9")**
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
+        --8<--
+        ```
+     
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+
+##### <a id="custom_icons">Custom icons</a>
+Custom icons can be uploaded. Icons should be uploaded in SVG format.
+
+###### How does it look?
+![icon_cust.png](icon_cust.png)
+
+###### How to add?
+??? Example    
+
+    `Step 1` Add icon (watermelon.svg) in folder ui/src/assets/icons/dictionaryCustomIcons
+
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/ui/src/assets/icons/dictionaryCustomIcons){:target="_blank"}
+
+    `Step 2` Create a link to the icon file by adding a reference to  ui/src/assets/icons/dictionaryCustomIcons/index.ts
+
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/ui/src/assets/icons/dictionaryCustomIcons/index.ts){:target="_blank"}
+
+    ```java
+        export { ReactComponent as watermelon } from './watermelon.svg'
+    ```
+
+    `Step 3`
+    Add custom icon  to corresponding **Icon**.
+    **WATERMELON("watermelon")**
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
+    --8<--
+    ```
+    
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+
+ 

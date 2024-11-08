@@ -43,42 +43,62 @@ We have updated the style of Additional Info widget.
 
 #### Added: Additional List widget - new widget type!  
 
-We have introduced a new widget type - Additional List. By setting the `read` parameter, you link it to Additional Info widget. With this parameter set, Additional List looks like various Additional Info widgets, displayed one under another with a dividing line.  
+We have introduced a new widget type - Additional List, which can display multiple data rows. By setting the necessary `read` parameter, you link it to Additional Info widget. With this parameter set, Additional List looks like various Additional Info widgets, displayed one under another with a dividing line.  
 
 === "After"
     ![additionalList.png](v2.0.8/additionalList.png)
 === "Before"
     ![noAdditionalList.png](v2.0.8/noAdditionalList.png)  
 
-#### Added: grouping and collapsing widgets  
-
-You can now group multiple widgets together and collapse or expand them as needed. The first widget in the group gets an icon to control collapsing. When collapsed, all widgets in the group become hidden except for the title of the first widget.  
-
-#### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.8)  
-
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.0))  
-
 #### Added: Dictionary field - support for icon
 
 It is now possible to set icon for a Dictionary field. Using the `mode` parameter, you can either set it to `default` (displays both the icon and text) or `icon` (displays only icon).
-When hovering over the icon, a tooltip appears.  
+When hovering over the icon, a tooltip appears.
 
 === "After: default"
     ![](v2.0.8/dictionaryDefault.png)
 === "After: icon"
     ![](v2.0.8/dictionaryIcon.png)
 === "Before"
-    ![](v2.0.8/oldDictionary.png)
+    ![](v2.0.8/oldDictionary.png)  
+
+#### Added: grouping and collapsing widgets  
+
+You can now group multiple widgets together and collapse or expand them as needed. The first widget in the group gets an icon to control collapsing. When collapsed, all widgets in the group become hidden except for the title of the first widget. The group of widgets is displayed as expanded by default.   
+
+=== "Expanded (Default)"
+    ![groupsExpanded.png](v2.0.8/groupsExpanded.png)
+=== "Collapsed"
+    ![groupsCollapsed.png](v2.0.8/groupsCollapsed.png)  
+
+If the title of the first widget is empty, the collapse icon will be displayed above the widget.  
+
+=== "Title" 
+    ![collapseTitle.gif](v2.0.8/collapseTitle.gif)
+=== "No title"
+    ![collapseNoTitle.gif](v2.0.8/collapseNoTitle.gif)
+
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.8)  
+
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.0))  
+
+#### Added: parameter for displaying icon for Dictionary field  
+
+We have added support for icons to Dictionary field under a new `allValues` tag. Each entry in `allValues` includes an `icon` attribute, allowing configuration of the icon`s direction (ANT or custom) and color according to the corresponding value. 
 
 #### Other Changes
 see [cxbox-ui changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.1)  
 
 ### CXBOX 4.0.0-M11 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M11))  
 
-#### Added: `.actionRequired` to lambda based action builder api  
+#### Changed: Icon handling methods for Dictionary field
 
-We have added the `.updateRequired` method to the new API to control backend action behavior. Depending on the value (null, true, or false), `.updateRequired` applies specific handling actions, allowing more flexible updates. Compatibility with the previous `.add(false)` method is maintained for the old API.   
+Such methods as `setIconWithValue()` and `setFilterValuesWithIcons()` are now marked as `@Deprecated`. They have been replaced by a new interface `Icon` and a method `setAllValuedWithIcons()`, which are applicable to both LOV and Enum types.  
+
+#### Added: parameter for managing default display mode for Default Grouping Hierarchy  
+
+A new Boolean `defaultExpanded` has been introduced.
 
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M11)  
@@ -94,5 +114,5 @@ We have updated the plugin's inspection for the Dictionary field to make the tit
 
 #### Added: [Dictionary](/widget_field_dictionary) - Icon section  
 
-We have added a full description of Icon in Dictionary field. 
+We have added a full description of [Icon](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#icon) in Dictionary field. 
 

@@ -32,7 +32,8 @@ It is now possible configure expanded by default (`defaultExpanded` = `true`) no
 === "defaultExpanded: true"  
     ![defaultExpandedTrue.png](v2.0.8/defaultExpandedTrue.png)
 
-_Note!_ To reduce user clicks we always expand groups, that will use only 1 row, when expanded. So, when `defaultExpanded` is `false` or `null`, then nodes are ~~'always'~~ 'smartly' collapsed:
+_Note!_ To reduce user clicks we always expand groups, that will use only 1 row, when expanded. So, when `defaultExpanded` is `false` or `null`, then nodes are by default 'smartly' collapsed:
+
 * groups with 1 or 0 elements are expanded
 * groups with more than 1 element are collapsed.
 

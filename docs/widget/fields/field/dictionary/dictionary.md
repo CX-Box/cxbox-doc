@@ -984,12 +984,12 @@ You can customize the color of the standard icon using a hex color code.
     === "With Color"
         Simply copy the icon name and pass it to the method—that's all you need.
         For example, add [<Icon type="arrow-up" />](https://3x.ant.design/components/icon/)
-    
-        Add standart icon and hex color code to corresponding **Icon**.
-
-        **ARROW_UP_BLUE("arrow-up #0cbfe9")**
 
         === "Enum"
+            Add standart icon and hex color code to corresponding **Icon**.
+    
+            **ARROW_UP_BLUE("arrow-up #0cbfe9")**
+
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
@@ -999,7 +999,7 @@ You can customize the color of the standard icon using a hex color code.
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
         === "LOV"
-            `Step 1` Add standart icon  to corresponding **Enum** with icons.
+            `Step 1` Add standart icon and hex color code to corresponding **Enum** with icons.
 
             **ARROW_UP("arrow-up")**
 

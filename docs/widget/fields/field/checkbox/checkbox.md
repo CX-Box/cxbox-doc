@@ -59,8 +59,38 @@
         --8<--
         ```        
 
+
 ## Placeholder
-**_not applicable_**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/placeholder){:target="_blank"}
+ 
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
+
+### How does it look?
+=== "List widget"
+    ![img_plchldr_list.png](img_plchldr_list.png)
+=== "Info widget"
+    _![img_plchldr_list.png](img_plchldr_list.png)
+=== "Form widget"
+    ![form_label.png](img_plchldr_form.png)
+
+### How to add?
+??? Example
+
+    Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/checkbox/placeholder/MyExample74Meta.java:buildRowDependentMeta
+    --8<--
+    ```   
+
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**
+    === "Form widget"
+        **Works for Form.**
 
 ## Color
 **_not applicable_**

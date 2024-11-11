@@ -855,24 +855,41 @@ Applies to:
     Icon Retrieval: It then takes the specified value from values(see more [how_to_add](#basics_how_to_add))/filterValues(see more [how_to_add](#filtering_how_to_add) and searches for a matching icon value within allValues.
     This process ensures that icons are displayed based on the specified icon values.
 
-    Step 1
+    === "Enum"
+        `Step 1` Add **fields.setAllValuesWithIcons** to buildIndependentMeta to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta
+        --8<--
+        ``` 
 
-    Add **fields.setAllValuesWithIcons** to buildIndependentMeta to corresponding **FieldMetaBuilder**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta
-    --8<--
-    ``` 
-    Step 2 (optional)
-    Missing mod tag = "mode": "default
+        `Step 2` (optional)
 
-    Add **"mode": "default"** to corresponding **widget.json**.
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011List.widget.json
-    --8<--
-    ```  
- 
+        Missing mod tag = "mode": "default
+    
+        Add **"mode": "default"** to corresponding **widget.json**.
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011List.widget.json
+        --8<--
+        ```  
+
+    === "LOV"
+        `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        --8<--
+        ``` 
+
+        `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351List.widget.json
+        --8<--
+        ```
+
 ##### <a id="icon_mode">Icon Mode</a>
 Only the icon is displayed.
 
@@ -906,22 +923,34 @@ Applies to:
     Icon Retrieval: It then takes the specified value from values(see more [how_to_add](#basics_how_to_add))/filterValues(see more [how_to_add](#filtering_how_to_add) and searches for a matching icon value within allValues.
     This process ensures that icons are displayed based on the specified icon values.
 
-    Step 1
+    === "Enum"
+        `Step 1` Add **fields.setAllValuesWithIcons** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta
+        --8<--
+        ``` 
+        `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011ListIconMode.widget.json
+        --8<--
+        ```  
+    === "LOV"
+        `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        --8<--
+        ``` 
 
-    Add **fields.setAllValuesWithIcons** to corresponding **FieldMetaBuilder**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta
-    --8<--
-    ``` 
-    Step 2  
-    Add **"mode": "icon"** to corresponding **widget.json**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011ListIconMode.widget.json
-    --8<--
-    ```  
-
+        `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351ListModeIcon.widget.json
+        --8<--
+        ```  
+ 
 #### Types icons
 The workflow logic is to first search for the icon name in the custom icons folder.
 If the icon is found, it will be used from there; if not, the search will continue in the standard Ant icons folder.
@@ -971,7 +1000,7 @@ You can customize the color of the standard icon using a hex color code.
             --8<--
             ```
             
-            `Step 2` Add standart icon  to corresponding **Enum** with icons.
+            `Step 2` Add standart icon  to corresponding **MetaBuilder**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta

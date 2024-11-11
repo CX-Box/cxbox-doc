@@ -949,18 +949,38 @@ You can customize the color of the standard icon using a hex color code.
     === "Basic"
         Simply copy the icon name and pass it to the method—that's all you need.
         For example, add [<Icon type="arrow-up" />](https://3x.ant.design/components/icon/)
-    
-        Add standart icon  to corresponding **Icon**.
-        **ARROW_UP("arrow-up")**
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
-        --8<--
-        ```
-     
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
-    
+
+        === "Enum"
+            Add standart icon  to corresponding **Icon**.
+            **ARROW_UP("arrow-up")**
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
+            --8<--
+            ```
+         
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+
+        === "LOV"
+            `Step 1` Add standart icon  to corresponding **Enum** with icons.
+            **ARROW_UP("arrow-up")**
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            --8<--
+            ```
+            
+            `Step 2` Add standart icon  to corresponding **Enum** with icons.
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta
+            --8<--
+            ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+
     === "With Color"
         Simply copy the icon name and pass it to the method—that's all you need.
         For example, add [<Icon type="arrow-up" />](https://3x.ant.design/components/icon/)
@@ -969,14 +989,33 @@ You can customize the color of the standard icon using a hex color code.
 
         **ARROW_UP_BLUE("arrow-up #0cbfe9")**
 
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
-        --8<--
-        ```
-     
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+        === "Enum"
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/icon/enums/IconsEnum.java
+            --8<--
+            ```
+         
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+        === "LOV"
+            `Step 1` Add standart icon  to corresponding **Enum** with icons.
+
+            **ARROW_UP("arrow-up")**
+
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            --8<--
+            ```
+            `Step 2` Add standart icon  to corresponding **Enum** with icons.
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta
+            --8<--
+            ```
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
 
 ##### <a id="custom_icons">Custom icons</a>
 Custom icons can be uploaded. Icons should be uploaded in SVG format.

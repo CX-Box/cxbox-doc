@@ -48,25 +48,25 @@
     **Step3** Add a button **"save-send"** that raises the widget Popup
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400FormButton.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400FormButton.widget.json
     --8<--
     ```
     **Step4** Add widget with type **FormPopup**
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400Formpopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400Formpopup.widget.json
     --8<--
     ```
     **Step5** Add widget **FormPopup** on view
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/formpopup/base/myexample3400formpopup.view.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/myexample3400formpopup.view.json
     --8<--
     ```
     **Step6** Add **withPreAction** with action **confirmWithCommentwith**
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/formpopup/base/MyExample3400Service.java
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400Service.java
     --8<--
     ```
 
@@ -128,7 +128,7 @@ There are types of:
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 #### How does it look?
 ![colorwidget.gif](colorwidget.gif)

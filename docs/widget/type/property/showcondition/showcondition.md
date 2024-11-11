@@ -10,6 +10,12 @@ It controls whether the widget appears on the user interface based on the value 
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
+!!! info
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3184/view/myexample3183hiddenparentchild ){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/showcondition/hiddenbc){:target="_blank"}
+ 
+    Child entity data is loaded even when the parent is hidden based on the show condition.
+
 ## Structure showCondition
 
 ```json

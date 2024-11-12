@@ -507,6 +507,16 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
 
 ### Additional properties
+#### Customization of displayed columns
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
+
+To customize the columns displayed on a list widget, you can perform two main actions:
+
+* Hide columns
+* Swap columns
+* 
+
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)

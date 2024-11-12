@@ -1,10 +1,20 @@
 # GroupingHierarchy
  
-`GroupingHierarchy` widget is list the general information for many records and present it in a way that is easily interpretable for users.
+`GroupingHierarchy`  widget presents shared information across multiple records, enabling rows to be grouped by one or more specified fields.
 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
+
+!!! info
+    In `GroupingHierarchy` mode, all data should be sourced from the backend (e.g., with a backend page size set to 1000), 
+    grouping is handled in-memory on the front end.
+
+    If the backend indicates that the total line count exceeds the page size, the widget will switch to "List" mode, and the mode-switching icon will be highlighted in red. 
+    Hovering over the icon will display the message "Warning!Rows were fetched from backend - limit for "Grouping Hierarhical" mode is ...(1000). Only "List" mode is available""
+
+In "Grouping Hierarchy" mode, the number of nesting levels is unlimited.
+
 ### How does it look?
 ![list.png](list.png)
 
@@ -507,6 +517,8 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
 
 ### Additional properties
+
+Alternate Columns (Opening Columns) The columns that organize the group cannot be closed or moved. They are always provided at the beginning of the widget in the specified order, basically blocking the widget fields. When switching to the "Table" mode (table), the restriction is preserved
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)

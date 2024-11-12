@@ -21,75 +21,86 @@
 ### <a id="basics_how_to_add">How to add?</a>
 ??? Example
     === "Enum"
+        === "With plugin(recommended)"
+            **Step 1** Download plugin
+                [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+        
+            **Step 2** Add dictionary field to an existing form widget
+                ![addfield.gif](addfield.gif)
 
-        - **Step1** Create Enum. Best practice: storing enum name in the Database and using a separate field for displayed UI values
+        === "Example of writing code"
+            Add field to **_.widget.json_**.
+
+            - **Step1** Create Enum. Best practice: storing enum name in the Database and using a separate field for displayed UI values
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/enums/CustomFieldEnum.java
+                --8<--
+                ```
+            - **Step2** Add  **Enum** field to corresponding **BaseEntity**.
+        
+            ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyEntity70.java
+                --8<--
+            ```
+       
+            - **Step3** Add  **Enum** field to corresponding **DataResponseDTO**.
+        
+            ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70DTO.java
+                --8<--
+            ```
+    
+            - **Step4** Use **fields.setEnumValues** in the appropriate **FieldMetaBuilder** to ensure the frontend reseives the list of values in the **/row-meta**
+                method under **"values"** tag.
+                
+                If the values list is dependent on a parent field, use fields.setEnumValues within the buildRowDependentMeta 
+                method to dynamically set it based on the parent.
+
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/basic/enums/CustomFieldEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Meta.java:buildIndependentMeta
             --8<--
             ```
-        - **Step2** Add  **Enum** field to corresponding **BaseEntity**.
     
-        ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyEntity70.java
-            --8<--
-        ```
-   
-        - **Step3** Add  **Enum** field to corresponding **DataResponseDTO**.
+            === "List widget"
+                - **Step5** Add to **_.widget.json_**.
     
-        ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70DTO.java
-            --8<--
-        ```
-
-        - **Step4** Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
-        The front-end requires us to display all directory data within the method /row-meta tag values. 
-        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Meta.java:buildIndependentMeta
-        --8<--
-        ```
-
-
-        === "List widget"
-            - **Step5** Add to **_.widget.json_**.
-
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70List.widget.json
-            --8<--
-            ```
-
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
-
-        === "Info widget"
-            - **Step5** Add to **_.widget.json_**.
+                ```json
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70List.widget.json
+                --8<--
+                ```
+    
+                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
+    
+            === "Info widget"
+                - **Step5** Add to **_.widget.json_**.
+            
+                ```json
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Info.widget.json
+                --8<--
+                ```
+    
+                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
         
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Info.widget.json
-            --8<--
-            ```
-
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
-    
-        === "Form widget"
-    
-            - **Step5** Add to **_.widget.json_**.
+            === "Form widget"
         
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Form.widget.json
-            --8<--
-            ```  
-
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
+                - **Step5** Add to **_.widget.json_**.
+            
+                ```json
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Form.widget.json
+                --8<--
+                ```  
+    
+                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
+                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
 
     === "LOV"
 
@@ -487,8 +498,7 @@
 
         Add **fields.setEnumFilterValues** to corresponding **FieldMetaBuilder**.
 
-        The front-end requires us to display all directory data within the method /row-meta tag filterValues. 
-        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
+        The front-end requires us to display all directory data within the method */row-meta* tag **`filterValues`**. 
 
         ```java
         --8<--
@@ -753,7 +763,12 @@ Sort by key value.
 ### How to add?
 ??? Example
     === "List widget"
-        Enabled by default.
+        `Step 1` Add  [fields.enableFilter](/features/element/sorting/sorting) to corresponding buildIndependentMeta **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildIndependentMeta
+        --8<--
+        ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
@@ -879,14 +894,14 @@ Applies to:
         `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
         --8<--
         ``` 
-
+ 
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample351List.widget.json
         --8<--
         ```
 
@@ -917,12 +932,9 @@ Applies to:
 ??? Example
 
     The frontend display mechanism for icons works as follows:
-    
-    Icon Value Matching: The frontend needs to have all occurrences of the icon values within a comprehensive tag collection (allValues).
-
-    Icon Retrieval: It then takes the specified value from values(see more [how_to_add](#basics_how_to_add))/filterValues(see more [how_to_add](#filtering_how_to_add) and searches for a matching icon value within allValues.
-    This process ensures that icons are displayed based on the specified icon values.
-
+         `allValues` tag is filled with values from the icon-to-value mapping directory. 
+    Next, we retrieve the value from either values (see [how_to_add](#basics_how_to_add)) or filterValues (see  [how_to_add](#filtering_how_to_add))
+    and then search for the matching icon in allValues.
     === "Enum"
         `Step 1` Add **fields.setAllValuesWithIcons** to corresponding **FieldMetaBuilder**.
         ```java
@@ -947,7 +959,7 @@ Applies to:
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351ListModeIcon.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample351ListModeIcon.widget.json
         --8<--
         ```  
  
@@ -999,7 +1011,7 @@ You can customize the color of the standard icon using a hex color code.
             {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
             --8<--
             ```
-            
+         
             `Step 2` Add standart icon  to corresponding **MetaBuilder**.
             ```java
             --8<--

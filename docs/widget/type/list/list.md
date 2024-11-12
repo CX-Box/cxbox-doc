@@ -509,13 +509,83 @@ With `Edit with view`, you can edit the entity from a separate view that display
 ### Additional properties
 #### Customization of displayed columns
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
-
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/customizationcolumns){:target="_blank"}
+ 
 To customize the columns displayed on a list widget, you can perform two main actions:
 
 * Hide columns
 * Swap columns
-* 
+ 
+!!! info
+    Currently, table customization data is stored within internal tables, even when microservices are used.
+
+###### How does it look?
+=== "Hide columns"
+    ![customcolumns.gif](customcolumns.gif)
+=== "Swap columns"
+    ![customcolumnsswap.gif](customcolumnsswap.gif)
+###### How to add?
+??? Example
+
+    **Step1** Add action table *ADDITIONAL_FIELDS* for store user-specific settings.
+    
+    ```sql
+    create table if not exists public.additional_fields
+    (
+    id                             numeric(19)                not null
+    constraint "ADDITIONAL_FIELDS_pkey"
+    primary key,
+    user_id                        varchar(255)               not null,
+    view                           varchar(255)               not null,
+    widget                         varchar(255)               not null,
+    order_fields                   varchar(400)               not null,
+    added_to_additional_fields     varchar(4000)              not null,
+    removed_from_additional_fields varchar(4000)              not null,
+    updated_date                   timestamp(6) default now() not null,
+    created_by_user_id             numeric(19)  default 1     not null,
+    last_upd_by_user_id            numeric(19)  default 1     not null,
+    vstamp                         bigint       default 0     not null,
+    created_date                   timestamp(6) default now() not null
+    );
+    
+    comment on table public.additional_fields is 'Добавленные поля';
+    
+    comment on column public.additional_fields.id is 'Идентификатор';
+    
+    comment on column public.additional_fields.user_id is 'Идентификатор пользователя';
+    
+    comment on column public.additional_fields.view is 'Название VIEW';
+    
+    comment on column public.additional_fields.widget is 'Название WIDGET';
+    
+    comment on column public.additional_fields.order_fields is 'Последовательность полей';
+    
+    comment on column public.additional_fields.added_to_additional_fields is 'Добавленные поля';
+    
+    comment on column public.additional_fields.removed_from_additional_fields is 'Скрытые поля';
+    
+    comment on column public.additional_fields.updated_date is 'Дата изменения';
+    
+    comment on column public.additional_fields.created_date is 'Дата создания';
+    ```
+
+    **Step2** Add in **options** parameter **additional** to corresponding **.widget.json**.
+        
+        ```
+        "additional": {
+          "enabled": true
+        }
+        ```
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/MyExample3135List.widget.json
+    --8<--
+    ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/customizationcolumns){:target="_blank"}
+
 
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.

@@ -4,27 +4,27 @@
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
 
 !!! info
     In `GroupingHierarchy` mode, all data should be sourced from the backend (e.g., with a backend page size set to 1000), 
     grouping is handled in-memory on the front end.
 
-    If the backend indicates that the total line count exceeds the page size, the widget will switch to "List" mode, and the mode-switching icon will be highlighted in red. 
-    Hovering over the icon will display the message "Warning!Rows were fetched from backend - limit for "Grouping Hierarhical" mode is ...(1000). Only "List" mode is available""
+    If the backend indicates that the total line count exceeds the page size, the widget will switch to "GroupingHierarchy" mode, and the mode-switching icon will be highlighted in red. 
+    Hovering over the icon will display the message "Warning!Rows were fetched from backend - limit for "Grouping Hierarhical" mode is ...(1000). Only "GroupingHierarchy" mode is available""
 
 In "Grouping Hierarchy" mode, the number of nesting levels is unlimited.
 
 ### How does it look?
-![list.png](list.png)
+![groupinghierarhy.gif](groupinghierarhy.gif)
 
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
-    **Step1** Create file **_.widget.json_** with type = **"List"**
-    Add existing field to a list widget. see more [Fields](#fields)
+    **Step1** Create file **_.widget.json_** with type = **"GroupingHierarchy"**
+    Add existing field to a GroupingHierarchy widget. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/MyExample3121GH.widget.json
     --8<--
     ```
  
@@ -32,22 +32,20 @@ In "Grouping Hierarchy" mode, the number of nesting levels is unlimited.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/base/onefield/myexample3189list.view.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/myexample3121gh.view.json
     --8<--
     ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
 
  
 ## <a id="Title">Title</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3139){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/title){:target="_blank"}
 
 ### Title Basic
 `Title` for widget (optional)
-
-![listwidgetinf.png](listwidgetinf.png)    
 
 There are types of:
 
@@ -66,11 +64,11 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/title/MyExample3139GH.widget.json
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3139){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/title){:target="_blank"}
 
 
     === "Constant title empty"
@@ -78,28 +76,28 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/title/MyExample3139EmptyTitle.widget.json
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
-
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3139){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/title){:target="_blank"}
+        
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3133/view/myexample3133constcolor){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3133/view/myexample3133){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/colortitle){:target="_blank"}
 
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
@@ -116,7 +114,7 @@ There are types of:
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/MyExample3133DTO.java
         --8<--
         ```  
  
@@ -126,12 +124,12 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/MyExample3133.widget.json
         --8<--
         ``` 
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/colortitle){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3133/view/myexample3133){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/colortitle){:target="_blank"}
 
     === "Constant color"
  
@@ -141,12 +139,12 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/MyExample3050ColorConst.widget.json
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/colortitle){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3133/view/myexample3133constcolor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/colortitle){:target="_blank"}
 
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
@@ -157,12 +155,12 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 ## <a id="Showcondition">Show condition</a>
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
 
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/showcondition/byparententity){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/showcondition/byparententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
@@ -177,7 +175,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
-    ![list.png](list.png)
+    ![GroupingHierarchy.png](GroupingHierarchy.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 <!--
@@ -195,7 +193,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/showcondition/bycurrententity/MyExample31012.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/bycurrententity/MyExample31012.widget.json
         --8<--
         ```
 <!--
@@ -203,7 +201,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/byparententity/child/MyExample3107.widget.json
         --8<--
         ```
 -->
@@ -237,8 +235,6 @@ Fields Configuration. The fields array defines the individual fields present wit
   
   Type: String(required).
 
-
-
 ### How to add?
 ??? Example
 
@@ -248,14 +244,15 @@ Fields Configuration. The fields array defines the individual fields present wit
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
+
     === "Example of writing code"
         Add field to **_.widget.json_**.
 
-          ```json
-             --8<--
-             {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json
-             --8<--
-          ```
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/MyExample3121GH.widget.json
+        --8<--
+        ```
 
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
@@ -264,7 +261,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 ## Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
 
-As for List widget, there are several actions. 
+As for GroupingHierarchy widget, there are several actions. 
 #### Create 
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:   
 
@@ -281,11 +278,11 @@ There are three methods to create a record:
 
 ##### <a id="createbasic">Line addition</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 
-With `Line Addition`, a new empty row is immediately added to the top of the list widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+With `Line Addition`, a new empty row is immediately added to the top of the GroupingHierarchy widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
 ###### How does it look?
-![list_create_basic.gif](list_create_basic.gif)
+![GroupingHierarchy_create_basic.gif](GroupingHierarchy_create_basic.gif)
 
 ###### How to add?
 ??? Example
@@ -293,32 +290,32 @@ With `Line Addition`, a new empty row is immediately added to the top of the lis
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/basic/MyExample3059Service.java:getActions
     --8<--
     ```
      **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/basic/MyExample3059GroupingHierarchy.widget.json
     --8<--
     ```
      **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/basic/MyExample3059Meta.java:buildRowDependentMeta
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/basic){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 
 ##### <a id="withwidget">With widget</a> 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/withwidget){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/withwidget){:target="_blank"}
 
-`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the list of entities and the form for adding a new row. 
-After filling the information in and clicking "Save", the new row is added to the List. 
+`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the GroupingHierarchy of entities and the form for adding a new row. 
+After filling the information in and clicking "Save", the new row is added to the GroupingHierarchy. 
 ###### How does it look?
-![list_create_with_widget.gif](list_create_with_widget.gif)
+![GroupingHierarchy_create_with_widget.gif](GroupingHierarchy_create_with_widget.gif)
 
 ###### How to add?
 ??? Example
@@ -326,27 +323,27 @@ After filling the information in and clicking "Save", the new row is added to th
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/MyExample3064Service.java:getActions
     --8<--
     ```
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/MyExample3064Meta.java:buildRowDependentMeta
     --8<--
     ```
 
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myEntity3064CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/myEntity3064CreateForm.widget.json
     --8<--
     ```
  
      **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myexample3064list.view.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/myexample3064GroupingHierarchy.view.json
     --8<--
     ```
 
@@ -356,20 +353,20 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/MyExample3064GroupingHierarchy.widget.json
     --8<--
     ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/withwidget){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/withwidget){:target="_blank"}
 
 ##### <a id="withview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/newview){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/newview){:target="_blank"}
 
-With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the list of entities with the new row added. 
+With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the GroupingHierarchy of entities with the new row added. 
 ###### How does it look? 
-![list_create_with_view.gif](list_create_with_view.gif)
+![GroupingHierarchy_create_with_view.gif](GroupingHierarchy_create_with_view.gif)
 
 ###### How to add?
 ??? Example
@@ -377,25 +374,25 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3066Service.java:getActions
     --8<--
     ```
      **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:doCreateEntity
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3066Service.java:doCreateEntity
     --8<--
     ```
     **Step4** Add button `create` to corresponding **.widget.json**.
   
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3066GroupingHierarchy.widget.json
     --8<--
     ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/newview){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/newview){:target="_blank"}
 
 
 #### Edit 
@@ -411,12 +408,12 @@ There are three methods to create a record:
 
 ##### <a id="editline">Line edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/basic){:target="_blank"}
 
 
 `Edit Basic` implies inline-edit. Click twice on the value you want to change.
 ###### How does it look?
-![list_edit_basic.gif](list_edit_basic.gif)
+![GroupingHierarchy_edit_basic.gif](GroupingHierarchy_edit_basic.gif)
 
 ###### How to add?
 ??? Example
@@ -424,21 +421,21 @@ There are three methods to create a record:
     **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/basic/MyExample3700Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/basic/MyExample3700Meta.java:buildRowDependentMeta
     --8<--
     ```
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/basic){:target="_blank"}
 
 ##### <a id="editwithwidger">With widget</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/withwidget){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/withwidget){:target="_blank"}
 
 `Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
 
 ###### How does it look?
-![list_edit_with_widget.gif](list_edit_with_widget.gif)
+![GroupingHierarchy_edit_with_widget.gif](GroupingHierarchy_edit_with_widget.gif)
 
 ###### How to add?
 ??? Example
@@ -446,28 +443,28 @@ There are three methods to create a record:
     **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3065Service.java:getActions
     --8<--
     ```
 
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3065Meta.java:buildRowDependentMeta
     --8<--
     ```
  
     **Step2**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myEntity3065EditForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/myEntity3065EditForm.widget.json
     --8<--
     ```
  
      **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myexample3065list.view.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/myexample3065GroupingHierarchy.view.json
     --8<--
     ```
 
@@ -477,21 +474,21 @@ There are three methods to create a record:
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3065GroupingHierarchy.widget.json
     --8<--
     ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/withwidget){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/withwidget){:target="_blank"}
 
 ##### <a id="editwithview">With view</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/newview){:target="_blank"}
 
 With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.  
 
 ###### How does it look? 
-![list_edit_with_view.gif](list_edit_with_view.gif)
+![GroupingHierarchy_edit_with_view.gif](GroupingHierarchy_edit_with_view.gif)
 
 ###### How to add?
 ??? Example
@@ -502,18 +499,18 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3066Service.java:getActions
     --8<--
     ```
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3065GroupingHierarchy.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/newview){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/newview){:target="_blank"}
 
 
 ### Additional properties

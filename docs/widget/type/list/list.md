@@ -152,7 +152,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 * `no show condition - recommended`: widget always visible
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/showcondition/byparententity){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
@@ -213,7 +213,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
   Description:  Field Title.
   
-  Type: String(required).
+  Type: String(optional).
   
 * **"key"**
   
@@ -593,3 +593,6 @@ When fields stored in the additional settings table are deleted from the widget,
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
 
+#### Pagination
+`Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
+see [Pagination](/features/element/pagination/pagination)

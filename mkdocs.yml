@@ -104,6 +104,8 @@ nav:
         - Basic: features/element/filtration/filtration.md
         - FullTextSearch: features/element/filtration/fulltextsearch/fulltextsearch.md
         - Filter group: features/element/filtration/filtergroup/filtergroup.md
+      - Pagination:
+        - Basic: features/element/pagination/pagination.md
       - FileStorage:
         - Basic: features/element/filestorage/fileStorage.md
         - Minio: features/element/filestorage/minio.md

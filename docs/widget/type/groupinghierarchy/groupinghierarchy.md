@@ -633,12 +633,12 @@ When fields stored in the additional settings table are deleted from the widget,
 
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
-see [FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch/)
+see [FullTextSearch](/widget/type/property/filtration/fulltextsearch/fulltextsearch/)
 
 #### Pagination
 Pagination in the "Grouping Hierarchy" mode is not functioning. It only works when switched to "Table" mode.
 
-see [Pagination](/features/element/pagination/pagination)
+see [Pagination](/widget/type/property/pagination/pagination)
 
 ####  Sorting
 All queries always start with sorting by grouping columns, followed by user-specified sorting

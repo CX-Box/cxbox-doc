@@ -65,7 +65,7 @@ Statistics blocks widget is a tool designed to display aggregated data in a visu
 
 We have included descriptions of the following filtering methods:
 
-[Fulltextsearch](https://doc.cxbox.org/features/element/filtration/fulltextsearch/fulltextsearch/) :
+[Fulltextsearch](https://doc.cxbox.org/widget/type/property/filtration/fulltextsearch/fulltextsearch/) :
 When the user types in the full text search input area, then widget filters the rows that match the search query (search criteria is configurable and will usually check if at least one column has corresponding value). This feature makes it easier for users to quickly find the information they are looking for within a List widget.
 
 [Filter group](https://doc.cxbox.org/features/element/filtration/filtergroup/filtergroup/):

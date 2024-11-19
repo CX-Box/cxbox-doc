@@ -7,6 +7,7 @@ The navigation arrows and limit settings block are removed if the number of reco
 
 Pagination modes:
 
+* Default [nextAndPreviousWithCount](#nextAndPreviousWithCount)
 * [nextAndPreviousWithHasNext](#nextAndPreviousWithHasNext)
 * [nextAndPreviousSmart](#nextAndPreviousSmart)
 
@@ -54,6 +55,7 @@ Disadvantages of this mode:
 
 * If the number of records is a multiple of _limit, a single jump to a page with no records will occur, since it is impossible to determine whether this is the last page.
 * If the number of records is a multiple of _limit, a request for the next page will be sent even if it does not exist. If this request returns an error, it should be handled with a try {} catch {} block.
+  (For instance, when retrieving data for the next page from a microservice.)
 
 ### How does it look?
 ![nextAndPreviousSmart.gif](nextAndPreviousSmart.gif)

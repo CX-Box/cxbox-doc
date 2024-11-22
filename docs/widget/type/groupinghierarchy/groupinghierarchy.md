@@ -2,20 +2,28 @@
  
 `GroupingHierarchy`  widget presents shared information across multiple records, enabling rows to be grouped by one or more specified fields.
 
+
+The availability of this function depends on the type:
+
+This function is available for: MultivalueHover,Hint,Multivalue,MultipleSelect,Inline,PickList,Radio,Money,Number,Dictionary,DateTimeWithSeconds,Date,Checkbox,DateTime,Text,FileUpload.
+
+See more [field types](/widget/fields/fieldtypes/)
+
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
 
-!!! info
-    In `GroupingHierarchy` mode, all data should be sourced from the backend (e.g., with a backend page size set to 1000), 
+`Grouping Hierarchy` mode features :
+
+* All data should be sourced from the backend (e.g., with a backend page size set to 1000), 
     grouping is handled in-memory on the front end.
 
-    If the backend indicates that the total line count exceeds the page size, the widget will switch to "GroupingHierarchy" mode, and the mode-switching icon will be highlighted in red. 
-    Hovering over the icon will display the message "Warning!Rows were fetched from backend - limit for "Grouping Hierarhical" mode is ...(1000). Only "GroupingHierarchy" mode is available""
+    If the backend indicates that the total line count exceeds the page size, the widget will switch to GroupingHierarchy mode, and the mode-switching icon will be highlighted in red. 
+    Hovering over the icon will display the message `Warning!Rows were fetched from backend - limit for Grouping Hierarhical mode is ...(1000). Only GroupingHierarchy mode is available.`
 
-In "Grouping Hierarchy" mode, the number of nesting levels is unlimited.
-
-This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
+* The number of nesting levels is unlimited.
+* Fields containing either a single element or no elements are displayed in their expanded form by default.
+* This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
  
 
 ### How does it look?
@@ -298,16 +306,16 @@ As for GroupingHierarchy widget, there are several actions.
 
 There are three methods to create a record:
 
-1. [Line addition](#createbasic): You can add a line directly.
+1. [Inline](#createbasic): You can add a line directly.
 
 !!! info
     Pagination won't function until the page is refreshed after adding records.
 
-2. [With widget](#withwidget): You can add data using a form widget without leaving your current view.
+2. [Inline-form](#withwidget): You can add data using a form widget without leaving your current view.
 
 3. [With view](#withview): You can create a record by navigating to a view.
 
-##### <a id="createbasic">Line addition</a>
+##### <a id="createbasic">Inline</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 
@@ -339,7 +347,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the Gro
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 
-##### <a id="withwidget">With widget</a> 
+##### <a id="withwidget">Inline-form</a> 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3159){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/withwidget){:target="_blank"}
 
@@ -431,13 +439,13 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
 
 There are three methods to create a record:
 
-1. [Line edit](#editline): You can edit a line directly.
+1. [Inline edit](#editline): You can edit a line directly.
 
-2. [With widget](#editwithwidget): You can edit data using a form widget without leaving your current view.
+2. [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 
 3. [With view](#editwithview): You can edit a record by navigating to a view.
 
-##### <a id="editline">Line edit </a>
+##### <a id="editline">Inline edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/basic){:target="_blank"}
 
@@ -459,7 +467,7 @@ There are three methods to create a record:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/basic){:target="_blank"}
 
-##### <a id="editwithwidget">With widget</a>
+##### <a id="editwithwidget">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3168){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/withwidget){:target="_blank"}
 
@@ -640,12 +648,246 @@ Pagination in the "Grouping Hierarchy" mode is not functioning. It only works wh
 
 see [Pagination](/widget/type/property/pagination/pagination)
 
-####  Sorting
+#### Sorting
 All queries always start with sorting by grouping columns, followed by user-specified sorting
-
+##### How does it look?
+ ![sorting.gif](sorting.gif)
+ 
 #### Collapse all button
 Added a button with the ability to collapse all
 ##### How does it look?
 ![collapse_all.gif](collapse_all.gif)
 ##### How to add?
 By default
+
+#### Counter
+`Counter` tracks the number of nested elements at each level of a tree.
+
+It operates in three modes:
+
+* none (default): The counter is not displayed.
+* collapsed: The counter appears only for grouping fields in their collapsed state. It disappears when the grouping field is expanded.
+* always: The counter is shown regardless of the grouping field's state, both when collapsed and expanded.
+
+
+##### How does it look?
+=== "always"
+    ![counter_always.gif](counter_always.gif)
+=== "collapsed"
+    ![counter_collapsed.gif](counter_collapsed.gif)
+=== "none"
+    ![counter_none.gif](counter_none.gif)
+
+##### How to add?
+??? Example
+    === "always"
+        Add in **groupingHierarchy**  **counterMode** to corresponding **.widget.json**.
+            
+        ```
+        "groupingHierarchy": {
+          "counterMode": "always",
+          "fields": [
+
+          ]
+        }
+        ```
+        
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/MyExample3201GHAlways.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3201/view/myexample3201ghalways){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter){:target="_blank"}
+    === "collapsed"
+        Add in **groupingHierarchy**  **counterMode** to corresponding **.widget.json**.
+            
+        ```
+        "groupingHierarchy": {
+          "counterMode": "collapsed",
+          "fields": [
+
+          ]
+        }
+        ```
+        
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/MyExample3201GHCollapsed.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3201/view/myexample3201ghalways){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter){:target="_blank"}
+
+    === "none"
+        On default or add in **groupingHierarchy**  **counterMode** to corresponding **.widget.json**.
+            
+        ```
+        "groupingHierarchy": {
+          "counterMode": "none",
+          "fields": [
+
+          ]
+        }
+        ```
+        
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/MyExample3201GH.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3201/view/myexample3201gh){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter){:target="_blank"}
+
+#### Quick Transition to "Unallocated Rows"
+After mass loading, grouping columns are populated by editing individual rows. 
+Once a row is updated, the user is automatically "transferred" to the same row within the hierarchy.
+
+To enable quick navigation back to unallocated records, a "floating" icon is displayed above the table on the right. 
+Clicking this icon takes the user directly to the unallocated rows. If no unallocated rows are present, the icon remains hidden.
+
+##### How does it look?
+![bulk_upload.gif](bulk_upload.gif) 
+##### How to add?
+By default
+
+
+#### Default GroupingHierarchy
+This function can be used to display the grouping structure in advance, even when no data is available.
+The number of nesting levels is unlimited.
+
+`Level 1`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3164){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/onelevel){:target="_blank"}
+
+`Level 2`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3157){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/twolevel){:target="_blank"}
+
+`Level 3`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3165){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/threelevel){:target="_blank"}
+
+`Level 4`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3155){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fourlevel){:target="_blank"}
+
+`Level 5`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3158){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fivelevel){:target="_blank"}
+
+###### How does it look?
+=== "Level 1"
+    ![level_1.gif](level_1.gif)
+=== "Level 2"
+    ![level_2.gif](level_2.gif)
+=== "Level 3"
+    ![level_3.gif](level_3.gif)
+=== "Level 4"
+    ![level_4.gif](level_4.gif)
+=== "Level 5"
+    ![level_5.gif](level_5.gif)
+
+###### How to add?
+??? Example
+    === "Level 1,2,3,4"
+    
+        `Step 1` Add  **groupingHierarchy** to corresponding **.widget.json**.
+            
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fourlevel/MyExample3155GH.widget.json
+        --8<--
+        ```
+        `Step 2` Add  **defaultGroupingHierarchy** to corresponding `buildIndependentMeta` **FieldMetaBuilder**.
+         
+         [defaultGroupingHierarchy()](/environment/meta/buildindependentmeta/defaultgh)
+ 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fourlevel/MyExample3155Meta.java:buildIndependentMeta
+        --8<--
+        ```
+        `Level 1`
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3164){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/onelevel){:target="_blank"}
+        
+        `Level 2`
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3157){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/twolevel){:target="_blank"}
+        
+        `Level 3`
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3165){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/threelevel){:target="_blank"}
+        
+        `Level 4`
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3155){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fourlevel){:target="_blank"}
+
+    === "Level >=5"
+
+        `Step 1` Add  **groupingHierarchy** to corresponding **.widget.json**.
+            
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fivelevel/MyExample3158GH.widget.json
+        --8<--
+        ```
+        `Step 2` Add  **defaultGroupingHierarchy** to corresponding `buildIndependentMeta` **FieldMetaBuilder**.
+         
+         [defaultGroupingHierarchy()](/environment/meta/buildindependentmeta/defaultgh)
+    
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fivelevel/MyExample3158Meta.java:buildIndependentMeta
+        --8<--
+        ```
+
+        `Level 5`
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3158){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fivelevel){:target="_blank"}
+
+
+##### DefaultExpanded
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3203){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}
+
+only Default GroupingHierarchy
+
+The defaultExpanded parameter determines whether a group in the hierarchy is expanded or collapsed by default.
+
+* true:
+  The group is expanded by default, regardless of the number of elements nested in it. All levels are fully visible immediately.
+* false:
+  Collapsed when the group contains more than one element.
+* null or missing:
+  Default (same as false)
+
+##### How does it look?
+=== "true"
+
+##### How to add?
+??? Example
+    === "true"
+
+    Add in **groupingHierarchy**  **addWithCfg** to corresponding **FieldMetaBuilder**.
+
+    Add **defaultExpanded** to corresponding **addWithCfg**.
+        ```
+        .addWithCfg(
+                    CustomFieldDictionaryEnum.LEVEL_1_HIGH,
+                    cfg -> cfg.defaultExpanded(true),
+        ```
+        
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/MyExample3203.widget.json
+        --8<--
+        ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3203){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}

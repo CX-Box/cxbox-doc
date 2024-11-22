@@ -260,16 +260,16 @@ As for List widget, there are several actions.
 
 There are three methods to create a record:
 
-1. [Line addition](#createbasic): You can add a line directly.
+1. [Inline](#createbasic): You can add a line directly.
 
 !!! info
     Pagination won't function until the page is refreshed after adding records.
 
-2. [With widget](#withwidget): You can add data using a form widget without leaving your current view.
+2. [Inline-form](#withwidget): You can add data using a form widget without leaving your current view.
 
 3. [With view](#withview): You can create a record by navigating to a view.
 
-##### <a id="createbasic">Line addition</a>
+##### <a id="createbasic">Inline</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/basic){:target="_blank"}
 
@@ -301,7 +301,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the lis
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/basic){:target="_blank"}
 
-##### <a id="withwidget">With widget</a> 
+##### <a id="withwidget">Inline-form</a> 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/create/withwidget){:target="_blank"}
 
@@ -393,13 +393,13 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
 
 There are three methods to create a record:
 
-1. [Line edit](#editline): You can edit a line directly.
+1. [Inline edit](#editline): You can edit a line directly.
 
-2. [With widget](#editwithwidget): You can edit data using a form widget without leaving your current view.
+2. [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 
 3. [With view](#editwithview): You can edit a record by navigating to a view.
 
-##### <a id="editline">Line edit </a>
+##### <a id="editline">Inline edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
 
@@ -421,7 +421,7 @@ There are three methods to create a record:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/basic){:target="_blank"}
 
-##### <a id="editwithwidger">With widget</a>
+##### <a id="editwithwidger">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/withwidget){:target="_blank"}
 

@@ -7,10 +7,51 @@ The navigation arrows and limit settings block are removed if the number of reco
 
 Pagination modes:
 
-* Default [nextAndPreviousWithCount](#nextAndPreviousWithCount)
-* [nextAndPreviousWithHasNext](#nextAndPreviousWithHasNext)
-* [nextAndPreviousSmart](#nextAndPreviousSmart)
+1. **Default (`nextAndPreviousWithCount`)**
 
+  API Calls (Frontend to Backend):
+
+    * `/meta`
+    * `/count`
+    * `/data`
+
+  Frontend Behavior:
+
+  * All three responses are utilized, including the /count result.
+  * This mode is best suited for backends that rely on database sources.
+
+2. **`nextAndPreviousWithHasNext`**
+
+   API Calls (Frontend to Backend):
+
+    * `/meta`
+    * `/count` (response is ignored)
+    * `/data`
+   
+    Frontend Behavior:
+
+    * The /count endpoint is called, but its result is not used.
+    * Instead, pagination is based on metadata that indicates whether there is a next or previous page (hasNext/hasPrevious).
+ 
+3. **`nextAndPreviousSmart`**
+
+   API Calls (Frontend to Backend):
+
+   * `/meta`
+   * `/count` (response is ignored)
+   * `/data`
+
+  Frontend Behavior:
+
+  * The /count endpoint is called, but its result is not used.
+  * Instead, pagination is based on metadata that indicates whether there is a next or previous page (hasNext/hasPrevious).
+
+** Use Cases** :
+
+* **`nextAndPreviousWithCount`**: Ideal for backends that leverage database sources.
+* **`nextAndPreviousWithHasNext`**: Designed for microservice-based backends where the presence of the next page can be determined, allowing the `hasNext` flag to be populated.
+* **`nextAndPreviousSmart`**: Suitable for microservice-based backends where it is not possible to determine if there is a next page, and the `hasNext` flag cannot be populated.  
+ 
 ## <a id="nextAndPreviousWithHasNext">nextAndPreviousWithHasNext</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3860){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandpreviouswihhasnext){:target="_blank"}

@@ -76,8 +76,7 @@ nav:
            - Basic: widget/type/property/filtration/filtration.md
            - FullTextSearch: widget/type/property/filtration/fulltextsearch/fulltextsearch.md
            - Filter group: widget/type/property/filtration/filtergroup/filtergroup.md
-         - Pagination:
-             - Basic: widget/type/property/pagination/pagination.md
+         - Pagination: widget/type/property/pagination/pagination.md
   - Navigation:
       - Tabs:
         - Standard:
@@ -93,7 +92,10 @@ nav:
       - Entity: environment/entity/entity.md
       - DTO: environment/dto/dto.md
       - Service: environment/service/service.md
-      - MetaBuilder: environment/meta/metabuilder.md
+      - MetaBuilder:
+          - Basic: environment/meta/metabuilder.md
+          - buildIndependentMeta:
+            - defaultGroupingHierarchy: environment/meta/buildindependentmeta/defaultgh.md
       - Controller: environment/controller/controller.md
   - Features:
       - Actions: features/element/actions/actions.md

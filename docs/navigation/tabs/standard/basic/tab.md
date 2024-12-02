@@ -140,10 +140,6 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
 
 If a view is marked as hidden, it will not appear in the general hierarchy and can only be accessed through a specific link (e.g., drilldown or button click). When you exit a hidden view, it will disappear.
 
-Rules for working with hidden views:
-
-Hidden views cannot be used by default. You cannot configure the system to switch to a hidden view by default, such as when opening a screen.
-
 #### How does it look?
  ![hiddenview.gif](hiddenview.gif)
 
@@ -156,4 +152,70 @@ Hidden views cannot be used by default. You cannot configure the system to switc
     {{ external_links.github_raw_doc }}/navigation/tab/typestandard/hidden/myexample32359.screen.json
     --8<--
     ```
- 
+### defaultView 
+(since [release 2.0.5](https://doc.cxbox.org/new/version205/"))
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235defaultview){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/defaultview){:target="_blank"}
+The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
+
+
+#### How does it look?
+![hiddenview.gif](hiddenview.gif)
+
+#### How to add?
+??? Example
+    **Step1** Add **defaultView** for [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen)
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/navigation/tab/typestandard/defaultview/myexample3235defaultview.screen.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235defaultview){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/defaultview){:target="_blank"}
+
+#### Typical Use Case
+1) Navigate to the Client List tab within the main Task entity.
+2) Select the Create button to open a new tab for entering client details.
+3) After completing the details, click the Save button to return to the Client List.
+
+###  primaryViewName
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235primaryview){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/primaryviewname){:target="_blank"}
+The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
+
+
+#### How does it look?
+![hiddenview.gif](hiddenview.gif)
+
+#### How to add?
+??? Example
+    **Step1** Add **primaryViewName**  for  screen
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/navigation/tab/typestandard/primaryviewname/myexample3235primaryview.screen.json
+    --8<--
+    ```
+
+### primaryViews
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235primaryviews){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/primaryviews){:target="_blank"}
+The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
+
+
+#### How does it look?
+![hiddenview.gif](hiddenview.gif)
+
+#### How to add?
+??? Example
+**Step1** Add **hidden** = **true** for  view
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/navigation/tab/typestandard/primaryviews/myexample3235primaryviews.screen.json
+    --8<--
+    ```

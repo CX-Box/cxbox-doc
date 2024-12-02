@@ -8,6 +8,9 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
+
+Enum если справочник будет завязан на бизнес-логику - то рекомендуем использовать енам, тогда не возможно будет убрать 
+
 ### How does it look?
 
 === "List widget"
@@ -140,7 +143,7 @@
     
                 ```java
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/AdministeredDictionary.java
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/AdministeredDictionary.java
                 --8<--
                 ```
             +  **Step 1.5**  Add in project AdministeredDictionaryType

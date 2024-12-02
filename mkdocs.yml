@@ -72,6 +72,11 @@ nav:
       - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
       - Property:
          - Show condition: widget/type/property/showcondition/showcondition.md
+         - Filtration:
+           - Basic: widget/type/property/filtration/filtration.md
+           - FullTextSearch: widget/type/property/filtration/fulltextsearch/fulltextsearch.md
+           - Filter group: widget/type/property/filtration/filtergroup/filtergroup.md
+         - Pagination: widget/type/property/pagination/pagination.md
   - Navigation:
       - Tabs:
         - Standard:
@@ -87,7 +92,10 @@ nav:
       - Entity: environment/entity/entity.md
       - DTO: environment/dto/dto.md
       - Service: environment/service/service.md
-      - MetaBuilder: environment/meta/metabuilder.md
+      - MetaBuilder:
+          - Basic: environment/meta/metabuilder.md
+          - buildIndependentMeta:
+            - defaultGroupingHierarchy: environment/meta/buildindependentmeta/defaultgh.md
       - Controller: environment/controller/controller.md
   - Features:
       - Actions: features/element/actions/actions.md
@@ -100,12 +108,6 @@ nav:
       - DrillDown:
         - Basic: features/element/drilldown/drilldown.md
         - DrillDown Types: features/element/drilldown/drilldowntype.md
-      - Filtration:
-        - Basic: features/element/filtration/filtration.md
-        - FullTextSearch: features/element/filtration/fulltextsearch/fulltextsearch.md
-        - Filter group: features/element/filtration/filtergroup/filtergroup.md
-      - Pagination:
-        - Basic: features/element/pagination/pagination.md
       - FileStorage:
         - Basic: features/element/filestorage/fileStorage.md
         - Minio: features/element/filestorage/minio.md

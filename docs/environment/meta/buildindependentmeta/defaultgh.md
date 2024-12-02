@@ -269,3 +269,18 @@ Example Hierarchy Structure:
     Level 1 (Middle).
         Level 2 (Middle):
             Level 3 (Middle).
+
+
+
+## Add with cfg
+###  Default Expanded
+The defaultExpanded parameter determines whether a group in the hierarchy is expanded or collapsed by default.
+
+* true:
+  The group is expanded by default, regardless of the number of elements nested in it. All levels are fully visible immediately.
+* false:
+  Collapsed when the group contains more than one element.
+* null or missing:
+  Default (same as false)
+
+ see more [GroupingHierarchy.defaultExpanded](/widget/type/groupinghierarchy/groupinghierarchy/#default-groupinghierarchy)

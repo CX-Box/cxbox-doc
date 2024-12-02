@@ -5,7 +5,7 @@
 
 The availability of this function depends on the type:
 
-This function is available for: MultivalueHover,Hint,Multivalue,MultipleSelect,Inline,PickList,Radio,Money,Number,Dictionary,DateTimeWithSeconds,Date,Checkbox,DateTime,Text,FileUpload.
+This function is available for: MultivalueHover, Hint, Multivalue, MultipleSelect, Inline, PickList, Radio, Money, Number, Dictionary, DateTimeWithSeconds, Date, Checkbox, DateTime, Text, FileUpload.
 
 See more [field types](/widget/fields/fieldtypes/)
 
@@ -22,7 +22,7 @@ See more [field types](/widget/fields/fieldtypes/)
     Hovering over the icon will display the message `Warning!Rows were fetched from backend - limit for Grouping Hierarhical mode is ...(1000). Only GroupingHierarchy mode is available.`
 
 * The number of nesting levels is unlimited.
-* Fields containing either a single element or no elements are displayed in their expanded form by default.
+* Fields containing either a single element or no elements are displayed in their expanded form by default.The line is expanded by default if the expanded branch occupies the same amount of space as it does when collapsed.
 * This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
  
 
@@ -852,8 +852,8 @@ The number of nesting levels is unlimited.
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fivelevel){:target="_blank"}
 
 
-##### DefaultExpanded
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3203){:target="_blank"} ·
+#### <a id="default_expanded ">Default GroupingHierarchy. Default Expanded </a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3203){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}
 
 only Default GroupingHierarchy
@@ -868,11 +868,10 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
   Default (same as false)
 
 ##### How does it look?
-=== "true"
+![default_expanded.png](default_expanded.png)
 
 ##### How to add?
 ??? Example
-    === "true"
 
     Add in **groupingHierarchy**  **addWithCfg** to corresponding **FieldMetaBuilder**.
 
@@ -885,9 +884,9 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/MyExample3203.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/MyExample3203GH.widget.json
         --8<--
         ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3203){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3203){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}

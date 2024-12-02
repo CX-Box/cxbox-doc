@@ -154,10 +154,13 @@ If a view is marked as hidden, it will not appear in the general hierarchy and c
     ```
 ### defaultView 
 (since [release 2.0.5](https://doc.cxbox.org/new/version205/"))
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235defaultview){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/defaultview){:target="_blank"}
-The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
+The "defaultView" for [Aggregate view](/navigation/tabs/standard/basicdevelop/tabfordevelop/#how-add-a-view-to-the-screen) 
+
+The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
 #### How does it look?
 ![hiddenview.gif](hiddenview.gif)
@@ -184,8 +187,10 @@ The "defaultView" feature lets you set a default view to open when navigating th
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235primaryview){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/primaryviewname){:target="_blank"}
-The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
+The "primaryViewName" for screen.
+
+The "primaryViewName" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
 #### How does it look?
 ![hiddenview.gif](hiddenview.gif)
@@ -204,15 +209,19 @@ The "defaultView" feature lets you set a default view to open when navigating th
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235primaryviews){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/primaryviews){:target="_blank"}
-The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
+The "primaryViews" for screen.
+
+The "primaryViews" feature lets you set a default views to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
+
+The "primaryViews" feature lets you define a sequence of views. If a user's role restricts access to the first view, the system automatically displays the next available view from the list. If none of the views are accessible, the default will be the first view specified on the screen.
 
 #### How does it look?
 ![hiddenview.gif](hiddenview.gif)
 
 #### How to add?
 ??? Example
-**Step1** Add **hidden** = **true** for  view
+    **Step1** Add **primaryViews**  for screen
 
     ```json
     --8<--

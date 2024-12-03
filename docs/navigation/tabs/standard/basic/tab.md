@@ -163,7 +163,10 @@ The "defaultView" for [Aggregate view](/navigation/tabs/standard/basicdevelop/ta
 The "defaultView" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
 #### How does it look?
-![hiddenview.gif](hiddenview.gif)
+=== "basic"
+    ![defaultview.gif](defaultview.gif)
+=== "with hidden"
+    ![defaultviewhidden.gif](defaultviewhidden.gif)
 
 #### How to add?
 ??? Example
@@ -179,11 +182,14 @@ The "defaultView" feature lets you set a default view to open when navigating th
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/defaultview){:target="_blank"}
 
 #### Typical Use Case
+
 1) Navigate to the Client List tab within the main Task entity.
+
 2) Select the Create button to open a new tab for entering client details.
+
 3) After completing the details, click the Save button to return to the Client List.
 
-###  primaryViewName
+### primaryViewName
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235primaryview){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/primaryviewname){:target="_blank"}
@@ -193,7 +199,7 @@ The "primaryViewName" for screen.
 The "primaryViewName" feature lets you set a default view to open when navigating through drilldowns on a screen or selecting an option from the left-hand menu. You can also configure it to open a hidden view if needed.
 
 #### How does it look?
-![hiddenview.gif](hiddenview.gif)
+![primaryviewname.gif](primaryviewname.gif) 
 
 #### How to add?
 ??? Example

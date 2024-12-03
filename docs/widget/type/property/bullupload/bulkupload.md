@@ -1,7 +1,6 @@
 # Bulk upload
 !!! warning line end "Work in progress"
-
-
+ 
 ## <a id="nextAndPreviousWithHasNext">nextAndPreviousWithHasNext</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3860){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandpreviouswihhasnext){:target="_blank"}
@@ -11,8 +10,6 @@
 
 ### How to add?
 ??? Example
-
-
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3860){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandpreviouswihhasnext){:target="_blank"}

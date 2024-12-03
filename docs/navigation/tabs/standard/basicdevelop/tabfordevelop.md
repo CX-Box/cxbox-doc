@@ -156,7 +156,7 @@ To ensure correct screen assembly at each level, use the collapse function in Id
 
 ![tabsstep3.gif](tabsstep3.gif)
 
-## Business example
+## Typical Use Case
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3428){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/businessexample){:target="_blank"}
 

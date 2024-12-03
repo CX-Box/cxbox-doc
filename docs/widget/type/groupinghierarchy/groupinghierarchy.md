@@ -876,17 +876,18 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
     Add in **groupingHierarchy**  **addWithCfg** to corresponding **FieldMetaBuilder**.
 
     Add **defaultExpanded** to corresponding **addWithCfg**.
-        ```
-        .addWithCfg(
-                    CustomFieldDictionaryEnum.LEVEL_1_HIGH,
-                    cfg -> cfg.defaultExpanded(true),
-        ```
+
+    ```
+    .addWithCfg(
+                CustomFieldDictionaryEnum.LEVEL_1_HIGH,
+                cfg -> cfg.defaultExpanded(true),
+    ```
         
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/MyExample3203GH.widget.json
-        --8<--
-        ```
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/MyExample3203GH.widget.json
+    --8<--
+    ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3203){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}

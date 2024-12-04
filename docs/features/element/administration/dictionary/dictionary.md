@@ -3,135 +3,99 @@
 
 cxbox/core 4.0.0-M12 
 
-[:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/meeting){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
 
 ## How does it look?
 ![email.gif](email.gif) 
 
 ## How to add?
 ??? Example
-    Step 1. Add pom.xml  new dependency.
-    ```xml
-    <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-mail</artifactId>
-    </dependency>
-    ```
-    Step 2. Add new environment to  application.yml
-    ```
-    spring:
-        mail:
-            host: ${MAIL_HOST:false}  
-            port: 587
-            username: ${MAIL_USER:}  
-            password: ${MAIL_PASSWORD:} 
-            properties:
-                mail:
-                    smtp:
-                        auth: true
-                    starttls:
-                        enable: true
-    ```
-    Step 3. Add service MailSendingService
- 
+    **Step 1.**  Add DTO with entity **DictionaryItem**
     ```java
-    package org.demo.service;
-    
-    import static org.cxbox.api.service.session.InternalAuthorizationService.VANILLA;
-    
-    import java.time.LocalDateTime;
-    import java.util.Optional;
-    import lombok.RequiredArgsConstructor;
-    import org.cxbox.api.service.session.InternalAuthorizationService;
-    import org.cxbox.core.dto.DrillDownType;
-    import org.cxbox.model.core.entity.User;
-    import org.demo.dto.SocketNotificationDTO;
-    import org.demo.dto.SocketNotificationErrorDTO;
-    import org.demo.dto.enums.SocketNotificationErrorType;
-    import org.springframework.boot.autoconfigure.mail.MailProperties;
-    import org.springframework.mail.MailException;
-    import org.springframework.mail.MailParseException;
-    import org.springframework.mail.MailPreparationException;
-    import org.springframework.mail.SimpleMailMessage;
-    import org.springframework.mail.javamail.JavaMailSender;
-    import org.springframework.scheduling.annotation.Async;
-    import org.springframework.stereotype.Service;
-    
-    @Service
-    @RequiredArgsConstructor
-    public class MailSendingService {
-    
-        private final Optional<JavaMailSender> javaMailSender;
-    
-        private final Optional<MailProperties> mailProperties;
-    
-        private final NotificationService notificationService;
-    
-        private final InternalAuthorizationService authzService;
-    
-        private static final String HTTP = "http://";
-    
-        @Async
-        public void send(Optional<String> mailTo, String subject, String message, User currentUser) {
-            if (mailTo.isPresent() && mailSenderEnabled()) {
-                try {
-                    SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-                    simpleMailMessage.setFrom(mailProperties.get().getUsername());
-                    simpleMailMessage.setText(message);
-                    simpleMailMessage.setTo(mailTo.get());
-                    simpleMailMessage.setSubject(subject);
-    
-                    javaMailSender.get().send(simpleMailMessage);
-    
-                    authzService.loginAs(authzService.createAuthentication(VANILLA));
-    
-                    String link = mailTo.map(mail -> mail.substring(mail.indexOf("@") + 1)).orElse("");
-    
-                    notificationService.sendAndSave(SocketNotificationDTO.builder()
-                            .title("Successful")
-                            .text("Email sent to " + mailTo.orElse(""))
-                            .drillDownType(DrillDownType.EXTERNAL_NEW.getValue())
-                            .drillDownLabel(link)
-                            .drillDownLink(HTTP + link)
-                            .time(LocalDateTime.now())
-                            .build(), currentUser);
-    
-                } catch (MailParseException | MailPreparationException e) {
-                    notificationService.sendAndSave(
-                            getSocketNotificationDTOWithError(SocketNotificationErrorType.BusinessError, e.getMessage(),
-                                    mailTo.orElse("")
-                            ),
-                            currentUser
-                    );
-    
-                } catch (MailException e) {
-                    notificationService.sendAndSave(
-                            getSocketNotificationDTOWithError(SocketNotificationErrorType.SystemError, e.getMessage(),
-                                    mailTo.orElse("")
-                            ),
-                            currentUser
-                    );
-                }
-            }
-        }
-    
-        private boolean mailSenderEnabled() {
-            return javaMailSender.isPresent()
-                    && mailProperties.isPresent()
-                    && mailProperties.get().getHost() != null
-                    && !mailProperties.get().getHost().isBlank();
-        }
-    
-        private SocketNotificationDTO getSocketNotificationDTOWithError(SocketNotificationErrorType type,
-                String message, String mailTo) {
-            return SocketNotificationDTO.builder()
-                    .title("Not Successful")
-                    .text("Email not sent to " + mailTo)
-                    .time(LocalDateTime.now())
-                    .error(new SocketNotificationErrorDTO(type, message))
-                    .build();
-        }
-    
-    }
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/administration/DictionaryItemDTO.java
+    --8<--
     ```
  
+    **Step 2.**  Create record = name type dictionary **implements Dictionary** (If a dictionary type includes underscores, 
+            its name is transformed into CamelCase by removing the underscores and capitalizing the first letter of each word.)  
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/Regions.java
+    --8<--
+    ```
+        
+        **Step 3.** Add field with new record to corresponding **BaseEntity**.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyEntity352.java
+        --8<--
+        ```
+        
+        **Step 4.** Add field with new record to corresponding **DataResponseDTO**.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352DTO.java
+         --8<--
+        ```
+            
+        **Step 5.** Use **fields.setDictionaryValues** in the appropriate **FieldMetaBuilder** to ensure the frontend reseives the list of values in the **/row-meta**
+                method under **"values"** tag.
+
+        If the values list is dependent on a parent field, use fields.setEnumValues within the buildRowDependentMeta 
+                method to dynamically set it based on the parent.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildIndependentMeta
+        --8<--
+        ```
+            
+        **Step 6.** Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
+        
+        The front-end requires us to display all directory data within the method /row-meta tag values. 
+        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildRowDependentMeta
+        --8<--
+        ```
+        
+        === "List widget"
+            **Step 7.** Add to **_.widget.json_**.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352List.widget.json
+            --8<--
+            ```
+        
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+        
+        === "Info widget"
+            **Step 7.** Add to **_.widget.json_**.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Info.widget.json
+            --8<--
+            ```
+        
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+         
+        === "Form widget"
+        
+            **Step 7.** Add to **_.widget.json_**.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Form.widget.json
+            --8<--
+            ```  
+        

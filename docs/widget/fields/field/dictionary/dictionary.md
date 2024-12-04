@@ -164,24 +164,23 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         If the values list is dependent on a parent field, use fields.setEnumValues within the buildRowDependentMeta 
                 method to dynamically set it based on the parent.
-        
+
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildRowDependentMeta
         --8<--
         ```
             
         **Step 6.** Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
         
         The front-end requires us to display all directory data within the method /row-meta tag values. 
-        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
-        
+        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.        
+
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildIndependentMeta
         --8<--
         ```
-        
         === "List widget"
             **Step 7.** Add to **_.widget.json_**.
         
@@ -594,7 +593,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/filtration){:target="_blank"}
 
-**LOV**
+**Dictionary**
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/filtration){:target="_blank"}
 
@@ -659,7 +658,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/filtration/MyExample358Meta.java:buildIndependentMeta
             --8<--
             ```
-    
+   
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/filtration){:target="_blank"}
     
@@ -721,8 +720,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
 
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
 
     === "Form widget"
         _not applicable_
@@ -1127,10 +1126,10 @@ Applies to:
         --8<--
         ```  
     === "Dictionary"
-        `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
+        `Step 1` Add **fields.setDictionaryIcons** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample355Meta.java:buildIndependentMeta
         --8<--
         ``` 
 
@@ -1205,13 +1204,6 @@ You can customize the color of the standard icon using a hex color code.
             --8<--
             ```
          
-            `Step 2` Add standart icon  to corresponding **MetaBuilder**.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/MyExample351Meta.java:buildIndependentMeta
-            --8<--
-            ```
-
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
 
@@ -1224,13 +1216,6 @@ You can customize the color of the standard icon using a hex color code.
             --8<--
             ```
  
-            `Step 2` Add standart icon  to corresponding **MetaBuilder**.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/MyExample351Meta.java:buildIndependentMeta
-            --8<--
-            ```
-
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
 
@@ -1255,38 +1240,28 @@ You can customize the color of the standard icon using a hex color code.
         === "Dictionary"
             `Step 1` Add standart icon and hex color code to corresponding **Enum** with icons.
 
-            **ARROW_UP("arrow-up")**
+            **ARROW_UP_BLUE("arrow-up #0cbfe9")**
 
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
             --8<--
             ```
-            `Step 2` Add standart icon  to corresponding **Enum** with icons.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta
-            --8<--
-            ```
+
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
 
         === "LOV deprecated recommended use Dictionary"
             `Step 1` Add standart icon and hex color code to corresponding **Enum** with icons.
 
-            **ARROW_UP("arrow-up")**
+            **ARROW_UP_BLUE("arrow-up #0cbfe9")**
 
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
             --8<--
             ```
-            `Step 2` Add standart icon  to corresponding **Enum** with icons.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta
-            --8<--
-            ```
+
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
 

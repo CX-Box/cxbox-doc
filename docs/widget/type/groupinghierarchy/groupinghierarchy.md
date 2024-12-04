@@ -20,7 +20,7 @@ See more [field types](/widget/fields/fieldtypes/)
 
     If the backend indicates that the total line count exceeds the page size, the widget will switch to GroupingHierarchy mode, and the mode-switching icon will be highlighted in red. 
     Hovering over the icon will display the message `Warning!Rows were fetched from backend - limit for Grouping Hierarhical mode is ...(1000). Only GroupingHierarchy mode is available.`
-
+    see more [Default limit page](/widget/type/property/defaultlimitpage/defaultlimitpage)
 * The number of nesting levels is unlimited.
 * Fields containing either a single element or no elements are displayed in their expanded form by default.The line is expanded by default if the expanded branch occupies the same amount of space as it does when collapsed.
 * This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
@@ -63,11 +63,12 @@ See more [field types](/widget/fields/fieldtypes/)
     --8<--
     ```
 
-    **Step3** Add bc to **BC_PROPERTIES.csv**.
-        ```csv
-        ID;BC;PAGE_LIMIT;SORT;FILTER
-        1;'myexample';1000;NULL;'""'
-        ```
+    **Step3** Add bc to **BC_PROPERTIES.csv**. see more [Default limit page](/widget/type/property/defaultlimitpage/defaultlimitpage)
+
+    ```csv
+    ID;BC;PAGE_LIMIT;SORT;FILTER
+    1;'myexample';1000;NULL;'""'
+    ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}

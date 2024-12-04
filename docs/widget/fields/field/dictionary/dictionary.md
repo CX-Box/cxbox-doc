@@ -9,7 +9,15 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
 
-Enum если справочник будет завязан на бизнес-логику - то рекомендуем использовать енам, тогда не возможно будет убрать 
+Dictionary can configurable:
+
+* Enum
+* Dictionary (since [release 2.0.9](https://doc.cxbox.org/new/version209/"))
+* `Not recommended.` LOV deprecated (since [release 2.0.9](https://doc.cxbox.org/new/version209/")) 
+
+`Dictionary` enables adding, deleting, and modifying its values through the administrative interface, so it should remain independent of business logic.
+
+If the dictionary is tied to business logic, it is recommended to use `Enum` to prevent modifications or deletions via the administration panel.
 
 ### How does it look?
 
@@ -104,8 +112,107 @@ Enum если справочник будет завязан на бизнес-�
     
                 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample70){:target="_blank"} ·
                 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/basic){:target="_blank"}
+    
+    === "Dictionary" 
+        (since [release 2.0.9](https://doc.cxbox.org/new/version209/"))
+    
+        **Step 1.**  Configurable dictionary. Add description and value dictionary to **DICTIONARY.csv**.
 
-    === "LOV"
+        ```csv
+        TYPE;KEY;VALUE;DISPLAY_ORDER;DESCRIPTION;ACTIVE;ID
+        REGIONS;MOSCOW;Moscow;;;;
+        REGIONS;SAINT PETERBURG;St. Petersburg;;;;
+        REGIONS;KOSTROMA;Kostroma;1;;;
+        REGIONS;SYKTYVKAR;Syktyvkar;2;;;
+        REGIONS;NewYork;New York;3;;;
+        ```
+ 
+        **Step 2.**  Create record = name type dictionary **implements Dictionary** (If a dictionary type includes underscores, 
+                its name is transformed into CamelCase by removing the underscores and capitalizing the first letter of each word.)  
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/Regions.java
+        --8<--
+        ```
+        
+        **Step 3.** Add field with new record to corresponding **BaseEntity**.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyEntity352.java
+        --8<--
+        ```
+        
+        **Step 4.** Add field with new record to corresponding **DataResponseDTO**.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352DTO.java
+         --8<--
+        ```
+            
+        **Step 5.** Use **fields.setDictionaryValues** in the appropriate **FieldMetaBuilder** to ensure the frontend reseives the list of values in the **/row-meta**
+                method under **"values"** tag.
+
+        If the values list is dependent on a parent field, use fields.setEnumValues within the buildRowDependentMeta 
+                method to dynamically set it based on the parent.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildIndependentMeta
+        --8<--
+        ```
+            
+        **Step 6.** Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
+        
+        The front-end requires us to display all directory data within the method /row-meta tag values. 
+        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
+        
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildRowDependentMeta
+        --8<--
+        ```
+        
+        === "List widget"
+            **Step 7.** Add to **_.widget.json_**.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352List.widget.json
+            --8<--
+            ```
+        
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+        
+        === "Info widget"
+            **Step 7.** Add to **_.widget.json_**.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Info.widget.json
+            --8<--
+            ```
+        
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+         
+        === "Form widget"
+        
+            **Step 7.** Add to **_.widget.json_**.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Form.widget.json
+            --8<--
+            ```  
+        
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+
+    === "LOV deprecated recommended use Dictionary"
 
         - **Step 1. LOV** Create LOV
 
@@ -143,7 +250,7 @@ Enum если справочник будет завязан на бизнес-�
     
                 ```java
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/AdministeredDictionary.java
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/AdministeredDictionary.java
                 --8<--
                 ```
             +  **Step 1.5**  Add in project AdministeredDictionaryType
@@ -208,7 +315,7 @@ Enum если справочник будет завязан на бизнес-�
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyEntity350.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyEntity350.java
         --8<--
         ```
     
@@ -216,7 +323,7 @@ Enum если справочник будет завязан на бизнес-�
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350DTO.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyExample350DTO.java
         --8<--
         ```
 
@@ -227,7 +334,7 @@ Enum если справочник будет завязан на бизнес-�
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyExample350Meta.java:buildRowDependentMeta
         --8<--
         ```
     
@@ -236,12 +343,12 @@ Enum если справочник будет завязан на бизнес-�
 
             ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Info.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyExample350Info.widget.json
                 --8<--
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/old/basic){:target="_blank"}
      
         === "Info widget"
             - **Step5** Add to **_.widget.json_**.
@@ -253,7 +360,7 @@ Enum если справочник будет завязан на бизнес-�
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/old/basic){:target="_blank"}
          
         === "Form widget"
     
@@ -266,7 +373,8 @@ Enum если справочник будет завязан на бизнес-�
             ```  
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/old/basic){:target="_blank"}
+
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
@@ -475,8 +583,14 @@ Enum если справочник будет завязан на бизнес-�
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/ro){:target="_blank"}
 
 ##  Filtering
+**Enum**
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/filtration){:target="_blank"}
+
+**LOV**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/filtration){:target="_blank"}
+
 
 `Filtering` allows you to search data based on criteria. Search uses `in` operator.
 ### How does it look?
@@ -489,33 +603,63 @@ Enum если справочник будет завязан на бизнес-�
 
 ### <a id="filtering_how_to_add">How to add?</a>
 ??? Example
-    === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/filtration/MyExample87DTO.java
-        --8<--
-        ```
+    === "Enum"
+        === "List widget"
+            **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/filtration/MyExample87DTO.java
+            --8<--
+            ```
+    
+            **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    
+            Add **fields.setEnumFilterValues** to corresponding **FieldMetaBuilder**.
+    
+            The front-end requires us to display all directory data within the method */row-meta* tag **`filterValues`**. 
+    
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/filtration/MyExample87Meta.java:buildIndependentMeta
+            --8<--
+            ```
+    
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/filtration){:target="_blank"}
+    
+        === "Info widget"
+            _not applicable_
+        === "Form widget"
+            _not applicable_
 
-        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-
-        Add **fields.setEnumFilterValues** to corresponding **FieldMetaBuilder**.
-
-        The front-end requires us to display all directory data within the method */row-meta* tag **`filterValues`**. 
-
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/filtration/MyExample87Meta.java:buildIndependentMeta
-        --8<--
-        ```
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample87){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/filtration){:target="_blank"}
-
-    === "Info widget"
-        _not applicable_
-    === "Form widget"
-        _not applicable_
+    === "Dictionary"
+        === "List widget"
+            **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/filtration/MyExample358DTO.java
+            --8<--
+            ```
+    
+            **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    
+            Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
+    
+            The front-end requires us to display all directory data within the method */row-meta* tag **`filterValues`**. 
+    
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/filtration/MyExample358Meta.java:buildIndependentMeta
+            --8<--
+            ```
+    
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/filtration){:target="_blank"}
+    
+        === "Info widget"
+            _not applicable_
+        === "Form widget"
+            _not applicable_
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
@@ -893,18 +1037,42 @@ Applies to:
         --8<--
         ```  
 
-    === "LOV"
-        `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
+    === "Dictionary"
+
+        `Step 1` Add **fields.setDictionaryValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355Meta.java:buildIndependentMeta
         --8<--
         ``` 
  
-        `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
+        `Step 2` (optional)
+
+        Missing mod tag = "mode": "default
+    
+        Add **"mode": "default"** to corresponding **widget.json**.
+
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample351List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355List.widget.json
+        --8<--
+        ```
+
+    === "LOV deprecated recommended use Dictionary""
+
+        `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/icon/MyExample351Meta.java:buildIndependentMeta
+        --8<--
+        ``` 
+ 
+        `Step 2 ` Missing mod tag = "mode": "default
+    
+        Add **"mode": "default"** to corresponding **widget.json**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/icon/MyExample351List.widget.json
         --8<--
         ```
 
@@ -951,7 +1119,22 @@ Applies to:
         {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011ListIconMode.widget.json
         --8<--
         ```  
-    === "LOV"
+    === "Dictionary"
+        `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        --8<--
+        ``` 
+
+        `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355ListOnlyIcon.widget.json
+        --8<--
+        ```  
+
+    === "LOV deprecated recommended use Dictionary"
         `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
@@ -1006,7 +1189,7 @@ You can customize the color of the standard icon using a hex color code.
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
 
-        === "LOV"
+        === "Dictionary"
             `Step 1` Add standart icon  to corresponding **Enum** with icons.
             **ARROW_UP("arrow-up")**
             ```java
@@ -1018,7 +1201,26 @@ You can customize the color of the standard icon using a hex color code.
             `Step 2` Add standart icon  to corresponding **MetaBuilder**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/MyExample351Meta.java:buildIndependentMeta
+            --8<--
+            ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+
+        === "LOV deprecated recommended use Dictionary"
+            `Step 1` Add standart icon  to corresponding **Enum** with icons.
+            **ARROW_UP("arrow-up")**
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            --8<--
+            ```
+ 
+            `Step 2` Add standart icon  to corresponding **MetaBuilder**.
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/MyExample351Meta.java:buildIndependentMeta
             --8<--
             ```
 
@@ -1042,7 +1244,27 @@ You can customize the color of the standard icon using a hex color code.
          
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
-        === "LOV"
+
+        === "Dictionary"
+            `Step 1` Add standart icon and hex color code to corresponding **Enum** with icons.
+
+            **ARROW_UP("arrow-up")**
+
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            --8<--
+            ```
+            `Step 2` Add standart icon  to corresponding **Enum** with icons.
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/FieldMetaBuilder.java:buildIndependentMeta
+            --8<--
+            ```
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+
+        === "LOV deprecated recommended use Dictionary"
             `Step 1` Add standart icon and hex color code to corresponding **Enum** with icons.
 
             **ARROW_UP("arrow-up")**

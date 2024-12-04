@@ -275,7 +275,7 @@ There are types of:
         --8<--
         ```
 
-### <a id="Viewwidgetwidth">View widget width</a>
+### <a id="Viewwidgetwidth">Widget size</a>
 By default, we use the view gridWidth field to arrange widgets in a row, each occupying 1/3 of the given size. 
 For example, if the row has a total width of 24 spans, each widget will take up 8 spans.
 

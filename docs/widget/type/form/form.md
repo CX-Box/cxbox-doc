@@ -263,6 +263,7 @@ Type: String(required).
 see more  [Fields](/widget/fields/fieldtypes/)
 ## <a id="option">Options</a>
 The options object provides layout details for the widget.
+ub: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json){:target="_blank"}
 
 ### <a id="Fieldslayout">Options layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
@@ -272,31 +273,31 @@ Defines the structure of the widget using rows and columns.
 
 * `single column layout - recommended`: shows each field on new row. Each field can have width from 1 to 24.
 
-    !!! tips
-        Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
+  !!! tips
+  Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
 
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view
 
 !!! tips
-    It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
+It is recommended to use `single column` layout when possible, because dynamic fields hiding (add link) always works correctly in this case.
 
 !!! info
-    The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
+The line has a size of 24 span, if you define fields on one line with a field width sum exceeding 24 span in total,that field and any subsequent fields will be moved to a new line . This means that each line will accommodate fields until the total width reaches 24 span, and any excess width will continue on the next line.
 
 For example, you have three fields with widths of 12, 8, and 10 characters, respectively. In this case, the first field and two field will fit completely on the first line as it is within the 24-character limit. However, the thirt field's width contributes to the totat.It has finally become more 24. As a result, the third field will be moved to the next line.
 
 
 #### How does it look?
 === "Single column layout - recommended"
-    ![singlecolumlayout.png](singlecolumlayout.png)
+![singlecolumlayout.png](singlecolumlayout.png)
 === "Multi column layout"
-    ![multicolumnbutton.png](multicolumnbutton.png)
+![multicolumnbutton.png](multicolumnbutton.png)
 === "Empty only buttons"
-    ![emptyonlybutton.png](emptyonlybutton.png)
+![emptyonlybutton.png](emptyonlybutton.png)
 #### How to add?
 ??? Example
-    === "Single column layout - recommended"
+=== "Single column layout - recommended"
 
         **Step1** Create **"options": {"layout": {}}**.
 
@@ -357,8 +358,7 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004/view/myexample3004emptyonlybuttonsform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json){:target="_blank"}
-
+        [:fontawesome-brands-gith
  
 ## Standard Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).

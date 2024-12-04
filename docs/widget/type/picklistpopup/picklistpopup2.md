@@ -189,7 +189,7 @@ As for PickList Popup, there are several actions.
 `Filter` enables you to filter the entities from the Popup list by clicking on a *Filter icon*. 
 
 ##### How does it look?
-!![pickListPopupFilter.gif](pickListPopupFilter.gif)
+![pickListPopupFilter.gif](pickListPopupFilter.gif)
 
 ##### How to add?
 
@@ -197,6 +197,6 @@ As for PickList Popup, there are several actions.
 `Delete` enables you to delete the value from the Popup list by clicking on a *Delete option* from the three-dots menu.
 
 ##### How does it look?
-!![pickListPopupDelete.gif](pickListPopupDelete.gif)
+![pickListPopupDelete.gif](pickListPopupDelete.gif)
 
 ##### How to add?

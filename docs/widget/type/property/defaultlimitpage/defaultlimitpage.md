@@ -1,4 +1,4 @@
-# Default limit page
+# Default page limit
 This function is available for: [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy),  [List](/widget/type/list/list),
 
 The page limit can be configured in two ways: 
@@ -12,8 +12,8 @@ The page limit can be configured in two ways:
 
  
 ## <a id="bc-default-page-limit">Only current business component</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample359){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/defaultlimitpage){:target="_blank"}
  
 ### How to add?
 ??? Example

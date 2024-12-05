@@ -71,8 +71,9 @@
     ```
 
 ## <a id="Title">Title</a> 
-### Title Basic
+ 
 <!--  
+### Title Basic
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
 
@@ -227,9 +228,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 ### <a id="Fieldslayout">Options layout</a> 
 _not applicable_
 
-## <a id="Showcondition">Show condition</a>
-_not applicable_
-
+ 
 ## Actions
 `Actions` show available actions as separate buttons
 see [Actions](/features/element/actions/actions)
@@ -241,15 +240,15 @@ see [Actions](/features/element/actions/actions)
 
 Widget size features:
 
-1 The parameter determines the width of the pop-up based on the visible area (viewport) rather than the full screen width.
+* The parameter determines the width of the pop-up based on the visible area (viewport) rather than the full screen width.
 
-1.1 If the view includes additional widgets, the area allocated to these widgets is set to 24.
+    - If the view includes additional widgets, the area allocated to these widgets is set to 24.
 
-1.2 If the view lacks additional widgets, the area without them is also set to 24.
+    - If the view lacks additional widgets, the area without them is also set to 24.
 
-2 The pop-up's width cannot extend across the entire screen.
+* The pop-up's width cannot extend across the entire screen.
 
-3 The pop-up is always centered on the screen.
+* The pop-up is always centered on the screen.
 
 #### How does it look?
 === "view gridWidth 6 - recommended"
@@ -281,7 +280,7 @@ Widget size features:
         Change **gridWidth** = 6  to corresponding **view**
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/widgets/formpopup/widgetsize/myexample3402form.view.json
+        {{ external_links.github_raw_doc }}/widgets/formpopup/widgetsize/myexample3402form.view.json
         --8<--
         ```
 <!-- 

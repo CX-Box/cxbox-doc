@@ -10,16 +10,8 @@ cxbox/core 4.0.0-M12
 
 ## How to add?
 ??? Example
-    **Step 1.**  Add DTO with entity **DictionaryItem**
+    **Step 1.**  Add DTO with core entity **DictionaryItem**
  
-this.dictionaryTypeId = Optional.ofNullable(dictionaryItem.getDictionaryTypeId()).map(BaseEntity::getId).orElse(null);
- key  - key for dictionary 
- value 
-active  
- type 
- displayOrder  
- description  
-
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/administration/DictionaryItemDTO.java
@@ -32,35 +24,7 @@ active
     --8<--
     {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/Regions.java
     --8<--
-    ```
-        
-        **Step 3.** Add field with new record to corresponding **BaseEntity**.
-        
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyEntity352.java
-        --8<--
-        ```
-        
-        **Step 4.** Add field with new record to corresponding **DataResponseDTO**.
-        
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352DTO.java
-         --8<--
-        ```
-            
-        **Step 5.** Use **fields.setDictionaryValues** in the appropriate **FieldMetaBuilder** to ensure the frontend reseives the list of values in the **/row-meta**
-                method under **"values"** tag.
-
-        If the values list is dependent on a parent field, use fields.setEnumValues within the buildRowDependentMeta 
-                method to dynamically set it based on the parent.
-        
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildIndependentMeta
-        --8<--
-        ```
+    `` 
             
         **Step 6.** Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
         

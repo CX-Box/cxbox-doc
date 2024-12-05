@@ -174,7 +174,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         **Step 6.** Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
         
         The front-end requires us to display all directory data within the method /row-meta tag values. 
-        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.        
+        If the values list is dependent on the parent, we should use the buildIndependentMeta method for this purpose.        
 
         ```java
         --8<--

@@ -13,7 +13,7 @@ The page limit can be configured in two ways:
  
 ## <a id="bc-default-page-limit">Only current business component</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandpreviouswihhasnext){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
  
 ### How to add?
 ??? Example

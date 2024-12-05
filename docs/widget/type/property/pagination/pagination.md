@@ -1,5 +1,4 @@
 # Pagination
-!!! warning line end "Work in progress"
 
 Pagination is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 
@@ -7,54 +6,67 @@ The navigation arrows and limit settings block are removed if the number of reco
 
 Pagination modes:
 
-1. **Default (`nextAndPreviousWithCount`)**
+* **Default (nextAndPreviousWithCount)**
+* **nextAndPreviousWithHasNext**
+* **nextAndPreviousSmart**
 
-  API Calls (Frontend to Backend):
-
-    * `/meta`
-    * `/count`
-    * `/data`
-
-  Frontend Behavior:
-
-  * All three responses are utilized, including the /count result.
-  * This mode is best suited for backends that rely on database sources.
-
-2. **`nextAndPreviousWithHasNext`**
-
-   API Calls (Frontend to Backend):
-
-    * `/meta`
-    * `/count` (response is ignored)
-    * `/data`
+| API Calls (Frontend to Backend) | nextAndPreviousWithCount  | nextAndPreviousWithHasNext   | nextAndPreviousSmart    |
+|---------------------------------|---------------------------|------------------------------|-------------------------|
+| /meta                           | +                         | +                            | +                       |
+| /count                          | +                         | + (response is ignored)      | + (response is ignored) | 
+| /data                           | +                         | +                            | +                       | 
    
-    Frontend Behavior:
-
-    * The /count endpoint is called, but its result is not used.
-    * Instead, pagination is based on metadata that indicates whether there is a next or previous page (hasNext/hasPrevious).
  
-3. **`nextAndPreviousSmart`**
-
-   API Calls (Frontend to Backend):
-
-   * `/meta`
-   * `/count` (response is ignored)
-   * `/data`
-
-  Frontend Behavior:
-
-  * The /count endpoint is called, but its result is not used.
-  * Instead, pagination is based on metadata that indicates whether there is a next or previous page (hasNext/hasPrevious).
-
-** Use Cases** :
+**Use Cases** :
 
 * **`nextAndPreviousWithCount`**: Ideal for backends that leverage database sources.
 * **`nextAndPreviousWithHasNext`**: Designed for microservice-based backends where the presence of the next page can be determined, allowing the `hasNext` flag to be populated.
 * **`nextAndPreviousSmart`**: Suitable for microservice-based backends where it is not possible to determine if there is a next page, and the `hasNext` flag cannot be populated.  
+
+## <a id="nextAndPreviousWithCount">Default (nextAndPreviousWithCount)</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount){:target="_blank"}
  
+Frontend Behavior:
+
+* All three responses are utilized, including the /count result.
+* This mode is best suited for backends that rely on database sources.
+
+### How does it look?
+![nextAndPreviousWithCount.gif](nextAndPreviousWithCount.gif)
+
+### How to add?
+??? Example
+    Option 1. By default 
+
+    Option 2. Add in **options** parameter **pagination** to corresponding **.widget.json**.
+
+    ```
+      "pagination": {
+      "type": "nextAndPreviousWithCount"
+      }
+    ```
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/MyExample3862List.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
+
+
 ## <a id="nextAndPreviousWithHasNext">nextAndPreviousWithHasNext</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3860){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandpreviouswihhasnext){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3860list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
+
+Frontend Behavior:
+
+* The `/count` endpoint is called, but its result is not used.
+* Instead, pagination is based `/data` that indicates whether there is a next or previous page (hasNext/hasPrevious).
+
+![hasnext.png](hasnext.png)
 
 Next button availability logic:
 
@@ -77,20 +89,27 @@ Next button availability logic:
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/microservice/nextandpreviouswihhasnext/MyExample3860List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/MyExample3860List.widget.json
     --8<--
     ```
+    !!! info
+          To deactivate the functionality `hasNext=true`add in application.yml `cxbox.api.any-source-has-next-enabled = false`
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3860){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandpreviouswihhasnext){:target="_blank"}
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3860list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
 
 ## <a id="nextAndPreviousSmart">nextAndPreviousSmart</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandprevioussmart){:target="_blank"}
- 
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandprevioussmart){:target="_blank"}
+
+Frontend Behavior:
+
+* The `/count` endpoint is called, but its result is not used. 
+
 Next button availability logic:
-If the number of records received from /data is less than _limit, Next button is disabled.
+If the number of records received from `/data` is less than _limit, Next button is disabled.
 
 Disadvantages of this mode:
 
@@ -112,11 +131,11 @@ Disadvantages of this mode:
     ```
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/feature/microservice/nextandprevioussmart/MyExample3861List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/MyExample3861List.widget.json
       --8<--
     ```
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/microservice/nextandprevioussmart){:target="_blank"}
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandprevioussmart){:target="_blank"}
 
 ## Default limit page
 see more [Default limit page](/widget/type/property/defaultlimitpage/defaultlimitpage)

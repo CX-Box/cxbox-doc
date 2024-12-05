@@ -6,19 +6,27 @@ cxbox/core 4.0.0-M12
 [:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
 
 ## How does it look?
-![email.gif](email.gif) 
+ 
 
 ## How to add?
 ??? Example
     **Step 1.**  Add DTO with entity **DictionaryItem**
+ 
+this.dictionaryTypeId = Optional.ofNullable(dictionaryItem.getDictionaryTypeId()).map(BaseEntity::getId).orElse(null);
+ key  - key for dictionary 
+ value 
+active  
+ type 
+ displayOrder  
+ description  
+
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/administration/DictionaryItemDTO.java
     --8<--
     ```
  
-    **Step 2.**  Create record = name type dictionary **implements Dictionary** (If a dictionary type includes underscores, 
-            its name is transformed into CamelCase by removing the underscores and capitalizing the first letter of each word.)  
+    **Step 2.**  Add DTO with entity **DictionaryItem**
     
     ```java
     --8<--
@@ -57,7 +65,7 @@ cxbox/core 4.0.0-M12
         **Step 6.** Add **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
         
         The front-end requires us to display all directory data within the method /row-meta tag values. 
-        If the values list is dependent on the parent, we should use the buildRowDependentMeta method for this purpose.
+        If the values list is dependent on the parent, we should use the buildIndependentMeta method for this purpose.
         
         ```java
         --8<--

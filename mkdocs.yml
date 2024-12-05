@@ -77,7 +77,7 @@ nav:
            - FullTextSearch: widget/type/property/filtration/fulltextsearch/fulltextsearch.md
            - Filter group: widget/type/property/filtration/filtergroup/filtergroup.md
          - Pagination: widget/type/property/pagination/pagination.md
-         - Default limit page: widget/type/property/defaultlimitpage/defaultlimitpage.md
+         - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
          - Export:
              - Excel: widget/type/property/export/excel/excel.md
 

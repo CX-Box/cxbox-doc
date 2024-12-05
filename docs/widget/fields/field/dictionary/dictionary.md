@@ -115,14 +115,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
     === "Dictionary" 
         (since [release 2.0.9](https://doc.cxbox.org/new/version209/"))
-        **Step 0.**  Add bean DictionaryProvider.
 
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/DictionaryConfig.java
-        --8<--
-        ```
-    
         **Step 1.**  Configurable dictionary. Add description and value dictionary to **DICTIONARY.csv**.
 
         ```csv
@@ -217,7 +210,15 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+        
+        **Step 8.**  Add bean DictionaryProvider. Incorporate it into the application a single time.
 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/DictionaryConfig.java
+        --8<--
+        ```
+    
     === "LOV deprecated recommended use Dictionary"
 
         - **Step 1. LOV** Create LOV
@@ -1129,7 +1130,7 @@ Applies to:
         `Step 1` Add **fields.setDictionaryIcons** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample355Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355Meta.java:buildIndependentMeta
         --8<--
         ``` 
 

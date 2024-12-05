@@ -235,10 +235,10 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeFiltration){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search is carried out between 00:00 and 23:59.
+`Filtering` allows you to search data based on criteria by range. Search uses `greaterOrEqualThan`(>=) and `lessOrEqualThan`(<=) operators. Data format is YYYY-MM-DD HH:MM. When the date is first set in the filter field, the time values will either be 00:00 or 23:59, depending on the date field.
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
+    ![dateTimeFilterByRange.gif](dateTimeFilterByRange.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -266,6 +266,9 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+
+!!! info  
+    By default, filtration is carried out **by range**. If you want to turn it off, indicate `filter-by-range-enabled-default: false` in meta.
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeDrilldown){:target="_blank"} ·

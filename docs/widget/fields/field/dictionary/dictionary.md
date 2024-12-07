@@ -132,7 +132,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/Regions.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/Regions.java
         --8<--
         ```
         
@@ -140,7 +140,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyEntity352.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyEntity352.java
         --8<--
         ```
         
@@ -148,7 +148,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352DTO.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352DTO.java
          --8<--
         ```
             
@@ -160,7 +160,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352Meta.java:buildRowDependentMeta
         --8<--
         ```
             
@@ -171,7 +171,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352Meta.java:buildIndependentMeta
         --8<--
         ```
         === "List widget"
@@ -179,24 +179,24 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352List.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352List.widget.json
             --8<--
             ```
         
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/basic){:target="_blank"}
         
         === "Info widget"
             **Step 7.** Add to **_.widget.json_**.
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352Info.widget.json
             --8<--
             ```
         
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/basic){:target="_blank"}
          
         === "Form widget"
         
@@ -204,18 +204,18 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352Form.widget.json
             --8<--
             ```  
         
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/basic){:target="_blank"}
         
         **Step 8.**  Add bean DictionaryProvider. Incorporate it into the application a single time.
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/DictionaryConfig.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/DictionaryConfig.java
         --8<--
         ```
     
@@ -257,7 +257,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
                 ```java
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/AdministeredDictionary.java
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/AdministeredDictionary.java
                 --8<--
                 ```
             +  **Step 1.5**  Add in project AdministeredDictionaryType
@@ -322,7 +322,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyEntity350.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyEntity350.java
         --8<--
         ```
     
@@ -330,7 +330,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyExample350DTO.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350DTO.java
         --8<--
         ```
 
@@ -341,7 +341,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyExample350Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Meta.java:buildRowDependentMeta
         --8<--
         ```
     
@@ -350,24 +350,24 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
             ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/basic/MyExample350Info.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Info.widget.json
                 --8<--
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/old/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/old/basic){:target="_blank"}
      
         === "Info widget"
             - **Step5** Add to **_.widget.json_**.
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample350Info.widget.json
             --8<--
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/old/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/old/basic){:target="_blank"}
          
         === "Form widget"
     
@@ -375,12 +375,12 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample350Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample350Form.widget.json
             --8<--
             ```  
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/old/basic){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/old/basic){:target="_blank"}
 
 
 ## Placeholder
@@ -596,7 +596,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
 **Dictionary**
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/filtration){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/filtration){:target="_blank"}
 
 
 `Filtering` allows you to search data based on criteria. Search uses `in` operator.
@@ -644,7 +644,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/filtration/MyExample358DTO.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/filtration/MyExample358DTO.java
             --8<--
             ```
     
@@ -656,12 +656,12 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/filtration/MyExample358Meta.java:buildIndependentMeta
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/filtration/MyExample358Meta.java:buildIndependentMeta
             --8<--
             ```
    
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample358){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/filtration){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/filtration){:target="_blank"}
     
         === "Info widget"
             _not applicable_
@@ -1049,7 +1049,7 @@ Applies to:
         `Step 1` Add **fields.setDictionaryValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355Meta.java:buildIndependentMeta
         --8<--
         ``` 
  
@@ -1061,7 +1061,7 @@ Applies to:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355List.widget.json
         --8<--
         ```
 
@@ -1070,7 +1070,7 @@ Applies to:
         `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/icon/MyExample351Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/MyExample351Meta.java:buildIndependentMeta
         --8<--
         ``` 
  
@@ -1079,7 +1079,7 @@ Applies to:
         Add **"mode": "default"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/old/icon/MyExample351List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/MyExample351List.widget.json
         --8<--
         ```
 
@@ -1130,14 +1130,14 @@ Applies to:
         `Step 1` Add **fields.setDictionaryIcons** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355Meta.java:buildIndependentMeta
         --8<--
         ``` 
 
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample355ListOnlyIcon.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355ListOnlyIcon.widget.json
         --8<--
         ```  
 
@@ -1145,14 +1145,14 @@ Applies to:
         `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarylov/icon/MyExample351Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionarydictionary/icon/MyExample351Meta.java:buildIndependentMeta
         --8<--
         ``` 
 
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/MyExample351ListModeIcon.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample351ListModeIcon.widget.json
         --8<--
         ```  
  
@@ -1201,24 +1201,24 @@ You can customize the color of the standard icon using a hex color code.
             **ARROW_UP("arrow-up")**
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/enums/IconsEnum.java
             --8<--
             ```
          
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
         === "LOV deprecated recommended use Dictionary"
             `Step 1` Add standart icon  to corresponding **Enum** with icons.
             **ARROW_UP("arrow-up")**
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/enums/IconsEnum.java
             --8<--
             ```
  
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
     === "With Color"
         === "Enum"
@@ -1246,12 +1246,12 @@ You can customize the color of the standard icon using a hex color code.
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/enums/IconsEnum.java
             --8<--
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
         === "LOV deprecated recommended use Dictionary"
             `Step 1` Add standart icon and hex color code to corresponding **Enum** with icons.
@@ -1262,12 +1262,12 @@ You can customize the color of the standard icon using a hex color code.
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/icon/enums/IconsEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/enums/IconsEnum.java
             --8<--
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/icon/enums){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
 ##### <a id="custom_icons">Custom icons</a>
 Custom icons can be uploaded. Icons should be uploaded in SVG format.
@@ -1309,7 +1309,7 @@ Custom icons can be uploaded. Icons should be uploaded in SVG format.
 cxbox/core 4.0.0-M12
 
 [:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/administrations){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/administrations){:target="_blank"}
 
 This screen allows you to edit and create dictionaries .
 
@@ -1325,7 +1325,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/DictionaryItemDTO.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/DictionaryItemDTO.java
         --8<--
         ```
 
@@ -1333,7 +1333,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Meta.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/MyExample357Meta.java
         --8<--
         ```
 
@@ -1348,7 +1348,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Service.java:toCsv
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/MyExample357Service.java:toCsv
         --8<--
         ```
     
@@ -1356,13 +1356,13 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Service.java:validate
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/MyExample357Service.java:validate
         --8<--
         ```    
     
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Service.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/MyExample357Service.java
         --8<--
         ```
 
@@ -1372,7 +1372,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
          ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/DictionaryTypeDescPickDTO.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/DictionaryTypeDescPickDTO.java
             --8<--
          ```
  
@@ -1380,7 +1380,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/CxboxMyExample357Controller.java:bc
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/CxboxMyExample357Controller.java:bc
             --8<--
             ``` 
  
@@ -1388,7 +1388,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/DictionaryTypeDescPickMeta.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/DictionaryTypeDescPickMeta.java
             --8<--
             ``` 
  
@@ -1396,7 +1396,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/dictionaryTypeDescPickPickListPopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/dictionaryTypeDescPickPickListPopup.widget.json
             --8<--
             ```
 
@@ -1418,21 +1418,21 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
     
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357DictionaryListc
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/MyExample357DictionaryListc
         --8<--
         ``
     - **Step6** Add administration widget to corresponding  **view.json**
     
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/myexample357list.view.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/myexample357list.view.json
         --8<--
         ```
     - **Step7** Add `PickListPopup` widget to corresponding  **view.json**
     
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/myexample357list.view.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/myexample357list.view.json
         --8<--
         ```
 

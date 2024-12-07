@@ -29,7 +29,7 @@ Pagination modes:
  
 Frontend Behavior:
 
-* All three responses are utilized, including the /count result.
+* All three responses are utilized, including the `/count` result.
 * This mode is best suited for backends that rely on database sources.
 
 ### How does it look?

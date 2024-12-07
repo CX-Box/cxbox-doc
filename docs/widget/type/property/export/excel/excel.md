@@ -54,7 +54,7 @@ A custom title can be provided if needed.
       ```
       ```json
       --8<--
-      {{ external_links.github_raw_doc }}/widgets/property/excel/inner/myexample3402form.view.json
+      {{ external_links.github_raw_doc }}/widgets/property/excel/inner/MyExample3134List.widget.json
       --8<--
       ``` 
 

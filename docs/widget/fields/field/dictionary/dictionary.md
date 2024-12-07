@@ -1437,10 +1437,13 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
         ```
 
 ## Release
+
 To ensure that user-made changes are not lost during the release process, follow these steps:
 
 * Upload the Current Reference File with button export:
 Retrieve the format file containing the current reference books from the environment (stand) where the release will be deployed.
+
+![dictionary_export.gif](dictionary_export.gif)
 
 * Match the Files:
 Compare the downloaded reference file with the release file to ensure consistency and identify any discrepancies. This will help preserve user changes.

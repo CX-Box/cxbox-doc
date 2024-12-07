@@ -1309,80 +1309,141 @@ Custom icons can be uploaded. Icons should be uploaded in SVG format.
 cxbox/core 4.0.0-M12
 
 [:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/administrations){:target="_blank"}
 
 This screen allows you to edit and create dictionaries .
 
 To apply the changes, click the "Clear Cache" button  on the administration screen and refresh the page on the user screen to re-request the data.
 
-## How does it look?
+### How does it look?
 ![admin_dict.gif](admin_dict.gif)
 
-## How to add?
+### How to add?
 ??? Example
-    **Step 1.**  Add DTO with core entity **DictionaryItem**
 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/administration/dictionary/DictionaryItemDTO.java
-    --8<--
-    ```
- 
-    **Step 2.**  Add FieldMetaBuilder
-    
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/administration/dictionary/MyExample357Meta.java
-    --8<--
-    `` 
-    **Step 3.**  Add VersionAwareResponseService
-    
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/administration/dictionary/MyExample357Service.java
-    --8<--
-    ``         
-        **Step 6.** /xvcAdd **fields.setDictionaryFilterValues** to corresponding **FieldMetaBuilder**.
-        
-        The front-end requires us to display all directory data within the method /row-meta tag values. 
-        If the values list is dependent on the parent, we should use the buildIndependentMeta method for this purpose.
-        
+    - **Step 1.** Create **DTO** with core entity **DictionaryItem**
+
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/administration/DictionaryItemDTO.java
         --8<--
         ```
-        
-        === "List widget"
-            **Step 7.** Add to **_.widget.json_**.
-        
+
+    - **Step2** Create **FieldMetaBuilder**
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Meta.java
+        --8<--
+        ```
+
+    - **Step3** Create **VersionAwareResponseService**
+
+        Add buttons:
+
+        * `clear-cache` To apply changes to the dictionary clearing the cache is required.
+        This will not work in cluster (>1 app nodes).Please, add scheduler or other mechanism to clear cache in cluster
+    
+        * `export_liquibase` Button that allows users to upload reference books in the csv format.
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Service.java:toCsv
+        --8<--
+        ```
+    
+        Add validate in  `updateEntity` :
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Service.java:validate
+        --8<--
+        ```    
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357Service.java
+        --8<--
+        ```
+
+    - **Step4** Create **PickListPopup** with types for dictionary fields.
+
+        +  **Step 4.1** Create **DTO** with core entity **DictionaryTypeDesc**.
+
+         ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/DictionaryTypeDescPickDTO.java
+            --8<--
+         ```
+ 
+        +  **Step 4.2** Add business component to corresponding **EnumBcIdentifier**.
+
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/CxboxMyExample357Controller.java:bc
+            --8<--
+            ``` 
+ 
+        +  **Step 4.3** Create **FieldMetaBuilder**
+
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/DictionaryTypeDescPickMeta.java
+            --8<--
+            ``` 
+ 
+        +  **Step 4.4**  Create `PickListPopup` **widget.json**
+
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352List.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/dictionaryTypeDescPickPickListPopup.json
             --8<--
-            ```
-        
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
-        
-        === "Info widget"
-            **Step 7.** Add to **_.widget.json_**.
-        
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Info.widget.json
-            --8<--
-            ```
-        
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample352){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarylov/basic){:target="_blank"}
-         
-        === "Form widget"
-        
-            **Step 7.** Add to **_.widget.json_**.
-        
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/basic/MyExample352Form.widget.json
-            --8<--
-            ```  
-        
+            ``` 
+ 
+    - **Step5** Create administration **widget.json**
+
+        ```json
+          {
+              "title": "Type",
+              "key": "type",
+              "type": "pickList",
+              "popupBcName": "dictionaryTypeDescPick",
+              "pickMap": {
+                "type": "type",
+                "id": "id"
+              }
+            }
+        ```
+    
+    
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/MyExample357DictionaryListc
+        --8<--
+        ``
+    - **Step6** Add administration widget to corresponding  **view.json**
+    
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/myexample357list.view.json
+        --8<--
+        ```
+    - **Step7** Add `PickListPopup` widget to corresponding  **view.json**
+    
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/myexample357list.view.json
+        --8<--
+        ```
+
+## Release
+To ensure that user-made changes are not lost during the release process, follow these steps:
+
+* Upload the Current Reference File with button export:
+Retrieve the format file containing the current reference books from the environment (stand) where the release will be deployed.
+
+* Match the Files:
+Compare the downloaded reference file with the release file to ensure consistency and identify any discrepancies. This will help preserve user changes.
+
+* Proceed with Release:
+After verifying that the files align correctly, continue with the deployment process, ensuring that user changes are retained in the updated system.

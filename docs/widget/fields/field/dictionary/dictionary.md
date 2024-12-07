@@ -1325,7 +1325,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/administration/DictionaryItemDTO.java
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/DictionaryItemDTO.java
         --8<--
         ```
 
@@ -1396,10 +1396,10 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/dictionaryTypeDescPickPickListPopup.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarylov/dictionary/dictionaryTypeDescPickPickListPopup.widget.json
             --8<--
-            ``` 
- 
+            ```
+
     - **Step5** Create administration **widget.json**
 
         ```json

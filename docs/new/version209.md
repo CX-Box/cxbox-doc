@@ -12,9 +12,9 @@
 
 #### Added: Additional List widget - new display mode  
 
-Now, `.widget.json -> options -> read` is optional. Thus, Additional List widget now supports two display modes whether `read` is indicated or not.  
+Now, for Additional List widget `.widget.json -> options -> read` is optional. Thus, Additional List widget now supports two display modes whether `read` option is indicated or not.  
 
- * If `read` parameter is not specified: the rows in Additional List are rendered using the default List-like style.  
+ * If `read` parameter is NOT specified: the rows in Additional List are rendered using the default List-like style.  
  * If `read` parameter is specified: each row is displayed as a separate Additional Info widget.  
 
 === "No read option"
@@ -22,7 +22,7 @@ Now, `.widget.json -> options -> read` is optional. Thus, Additional List widget
 === "With read option"
     ![additionalListWithRead.png](v2.0.9/additionalListWithRead.png)
 
-#### Added: Notifications. Drilldown to objects  
+#### Added: Notifications - Drilldown to objects  
 
 We have enhanced the Notifications popup to support a Multiple Select field with drilldown, allowing users to quickly navigate to objects mentioned in notification text. This improvement is specifically designed for the Notifications feature and introduces the following changes:  
 
@@ -44,6 +44,10 @@ Drilldowns now feature a custom menu that appears on hover, offering two options
 
 * Open in a New Tab: Open the drilldown link in a new browser tab.
 * Copy Link Address: Copy the drilldown link to the clipboard.  
+=== "After"  
+    ![drillDownAfter.gif](v2.0.9/drillDownAfter.gif)
+=== "Before"  
+    ![drillDownBefore.gif](v2.0.9/drillDownBefore.gif)
 
 *Limitations*:  
 
@@ -63,7 +67,7 @@ We have added support for Bearer token authentification when connecting to WebSo
 
 #### Fixed: formPopup - width calculation enhancement  
 
-We have improved the width calculation for formPopup. You can now directly indicate the width using `view.json -> dridWidth`. The width now dynamically adjusts based on the following factors:  
+We have improved the width calculation for formPopup. You can now directly indicate the width using `view.json -> dridWidth` and the width now dynamically adjusts based on the following factors:  
 
 * The state of the menu (collapsed or expanded)  
 === "gridWidth12 Menu Expanded"
@@ -87,7 +91,7 @@ We enhanced the behavior of inline creation in List widgets. When adding a new r
 
 #### Fixed: Inline-Picklist - Data fetch on first click  
 
-InlinePickList now fetches the list of values from the backend immediately upon the first click, even if the minimum number of characters has not been typed. This ensures faster and more accurate updates when the field depends on the force-active setting.  
+InlinePickList now fetches the list of values from the backend immediately upon the first click, even if the minimum number of characters has not been typed yet. This ensures faster and more accurate updates when the field depends on the force-active setting.  
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.9)
@@ -101,14 +105,12 @@ This update introduces significant improvements to role-based responsibility man
 
 * View Responsibilities Configuration  
 
-BEFORE:  
-
+**BEFORE:**  
 View responsibilities are configured in `view.json -> rolesAllowed`.
 Database management of the Responsibilities table is only possible through `view.json`.  
 ![RoleViewRolesAllowedTrue.gif](v2.0.9/RoleViewRolesAllowedTrue.gif)  
 
-AFTER:  
-
+**AFTER:**  
 *CSV Integration*: View responsibilities can now be managed in the database by importing data from a CSV file. Any unspecified fields during the CSV import are auto-filled with default values.  
 ![roleViewRolesAllowedFalse.gif](v2.0.9/roleViewRolesAllowedFalse.gif)  
 
@@ -135,16 +137,16 @@ BEFORE:
 AFTER: 
    * Login Behavior. The backend sends activeRole: null, and the UI ignores this value. All roles available to the user are sent in the roles list. The content of requests includes all views accessible by any of the user's roles. 
    * UI Behavior. Checkboxes for all roles are displayed but are disabled, preventing role switching. Requests to the backend for role switching are no longer triggered.  
+-->
 
+#### Added: New Class with Extended Dictionary Support  
 
-#### Added: New Class with Extended Dictionary Suppot  
-
-We have replaced the LOV (List of Values) mechanism with a more flexible Dictionary structure for managing reference data.  
+We have replaced the LOV mechanism with a more flexible Dictionary structure for managing reference data.  
 
 We introduced a new base class to handle dictionaries, with support for specific subclasses to represent different types of dictionaries.
 We have also unified handling of dictionaries across Entity and DTO layers, ensuring consistency.
 Also, we enabled storing constants within subclasses for streamlined use in business logic.  
--->
+All details are provided in the updated [Dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#administration-dictionary) article.
 
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M12)
@@ -152,8 +154,16 @@ see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
 #### Added: [Grouping Hierarchy](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/)  
-#### Added: [Pagination Mode](https://doc.cxbox.org/widget/type/property/pagination/pagination/)  
+We have added a full description of Grouping Hierarchy.  
+
 #### Added: [Export Excel](https://doc.cxbox.org/widget/type/property/export/excel/excel/)  
+We have provided a detailed description of Export to Excel function.  
+
 #### Added: [Page Limit](https://doc.cxbox.org/widget/type/property/defaultlimitpage/defaultlimitpage/)  
+Default limit page (available for List and Grouping Hierarchy) is now described in the article.  
+
 #### Added: [Checkbox - placeholder](https://doc.cxbox.org/widget/fields/field/checkbox/checkbox/?h=check#placeholder)  
-#### Added: [Customization of displayed columns](https://doc.cxbox.org/widget/type/list/list/#customization-of-displayed-columns) 
+See all the details about a Checkbox placeholder in our updated article. 
+
+#### Added: [Customization of displayed columns](https://doc.cxbox.org/widget/type/list/list/#customization-of-displayed-columns)  
+We have described the process of customization of displayed columns.  

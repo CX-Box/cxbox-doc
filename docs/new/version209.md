@@ -12,7 +12,7 @@
 
 #### Added: Additional List widget - new display mode  
 
-Now, for Additional List widget `.widget.json -> options -> read` is optional. Thus, Additional List widget now supports two display modes whether `read` option is indicated or not.  
+Now, Additional List widget supports two display modes whether `read` option is indicated or not.  
 
  * If `read` parameter is NOT specified: the rows in Additional List are rendered using the default List-like style.  
  * If `read` parameter is specified: each row is displayed as a separate Additional Info widget.  
@@ -51,7 +51,7 @@ Drilldowns now feature a custom menu that appears on hover, offering two options
 
 *Limitations*:  
 
-* Drilldowns with built-in filtering (to-view-with-fields-filtration) are currently not supported for the "Open in a New Tab" option.  
+* Drilldowns with [built-in filtering](https://doc.cxbox.org/features/element/drilldown/drilldown/?h=drill#to-view-with-fields-filtration) are currently not supported for the "Open in a New Tab" option.  
 * The custom menu is not yet supported for the Stats Block widget.  
 -->  
 
@@ -82,6 +82,8 @@ We have improved the width calculation for formPopup. You can now directly indic
     ![formPopupGridWidth12WithAdditional.png](v2.0.9/formPopupGridWidth12WithAdditional.png)
 
 These changes ensure that the form is displayed more accurately and flexibly, depending on the view configuration and interface state.  
+
+See the detailed description in the updated [formPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/#widget-size) article. 
 
 #### Fixed: List widget - Improved inline create logic  
 

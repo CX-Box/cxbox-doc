@@ -917,7 +917,9 @@ Sort by key value.
 ### How to add?
 ??? Example
     === "List widget"
-        `Step 1` Add  [fields.enableFilter](/features/element/sorting/sorting) to corresponding buildIndependentMeta **FieldMetaBuilder**.
+        see more [Sorting](/widget/type/property/sorting/sorting)
+
+        **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildIndependentMeta

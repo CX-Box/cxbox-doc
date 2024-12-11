@@ -476,7 +476,18 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     === "List widget"
-        Enabled by default.
+        see more [Sorting](/widget/type/property/sorting/sorting)
+
+        **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/percent/sorting/MyExample9Meta.java:buildIndependentMeta
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample9){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/percent/sorting){:target="_blank"}
+
     === "Info widget"
         _not applicable_
     === "Form widget"

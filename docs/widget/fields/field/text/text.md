@@ -457,7 +457,17 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     === "List widget"
-        Enabled by default.
+        see more [Sorting](/widget/type/property/sorting/sorting)
+
+        **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/text/sorting/MyExample48Meta.java:buildIndependentMeta
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample48){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/text/sorting){:target="_blank"}
+
     === "Info widget"
         _not applicable_
     === "Form widget"

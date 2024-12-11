@@ -22,7 +22,7 @@ Now, Additional List widget supports two display modes whether `read` option is 
 === "With read option"
     ![additionalListWithRead.png](v2.0.9/additionalListWithRead.png)
 
-#### Added: Notifications - Drilldown to objects  
+#### Added: Notifications - drilldown to objects  
 
 We have enhanced the Notifications popup to support a Multiple Select field with drilldown, allowing users to quickly navigate to objects mentioned in notification text. This improvement is specifically designed for the Notifications feature and introduces the following changes:  
 
@@ -60,6 +60,12 @@ We have introduced the `forceActive` feature for formPopup, allowing a backend r
 
 ![formPopupForceActive.gif](v2.0.9/formPopupForceActive.gif){width="900"}  
 
+#### Added: suggestionPickList - backend query on first click  
+
+We have optimized the functionality of `suggestionPickList` by removing the character limit for backend queries. Now, when users click on the field, a request is sent to the backend immediately, displaying all available data without the need to type any characters.  
+
+![suggestionPickListQueryOnFirstClick.gif](v2.0.9/suggestionPickListQueryOnFirstClick.gif){width="900"}  
+
 #### Added: Bearer Token Authentification for WebSocket Notifications  
 
 We have added support for Bearer token authentification when connecting to WebSocket endpoints for notifications. Now, the Bearer token is included in the request header for secure access to the following endpoints: `/api/v1/websocketnotification/` and `/api/v1/notification`.  
@@ -84,15 +90,15 @@ These changes ensure that the form is displayed more accurately and flexibly, de
 
 See the detailed description in the updated [formPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/#widget-size) article. 
 
-#### Fixed: List widget - Improved inline create logic  
+#### Fixed: List widget - improved inline create logic  
 
 We enhanced the behavior of inline creation in List widgets. When adding a new row, it now automatically opens in edit mode, allowing users to immediately input data without extra clicks.  
 
 ![inlineCreate.gif](v2.0.9/inlineCreate.gif){width="900"}  
 
-#### Fixed: Inline-Picklist - Data fetch on first click  
+#### Fixed: inlinePickList and suggestionPickList - changed data source on first click 
 
-InlinePickList now fetches the list of values from the backend immediately upon the first click, even if the minimum number of characters has not been typed yet. This ensures faster and more accurate updates when the field depends on the force-active setting.  
+We have improved both `inlinePickList` and `suggestionPickList` fields by updating the data retrieval process. Previously, data was loaded from cache on the first click. Now, when the field is clicked, a request is sent to the backend, ensuring the most up-to-date values are displayed immediately.  
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.9)
@@ -100,14 +106,13 @@ see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2
 
 ### CXBOX 4.0.0-M12 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M12))   
 
-#### Added: Role-Based Model - View Responsibilities, Action Responsibilities, and Multi-role Configuration  
-
-**1. View Responsibilities Configuration**  
+#### Added: Role-Based Model - View Responsibilities Configuration    
 
 BEFORE:  
 
-View responsibilities are configured in `view.json -> rolesAllowed`.
-Database management of the Responsibilities table is only possible through `view.json`.  
+* View responsibilities are configured in `view.json -> rolesAllowed`.  
+* Database management of the Responsibilities table is only possible through `view.json`.  
+
 ![RoleViewRolesAllowedTrue.gif](v2.0.9/RoleViewRolesAllowedTrue.gif){width="900"}    
 
 AFTER:  
@@ -115,18 +120,18 @@ AFTER:
 We have supported a new view responsibilities configuration under the parameter `view-allowed-roles-enabled: false`. If you indicate `view-allowed-roles-enabled: true`, the behavior is the same as in BEFORE.  
 
 If you indicate `view-allowed-roles-enabled: false` the changes are as follows:  
-    
+
 * CSV Integration: View responsibilities are managed through a CVS file. The database fields are filled according to CVS values and the fields which were not specified in the CVS are auto-filled with the default values.  
 ![roleViewRolesAllowedFalse.gif](v2.0.9/roleViewRolesAllowedFalse.gif){width="900"}  
 * Export Functionality: Now you can work with the database directly from the UI and export data with the help of "Export to CSV" button in the UI. This allows data export for easier management and review.  
 ![RoleViewExportToCSV.gif](v2.0.9/RoleViewExportToCSV.gif){width="900"}    
 
-**2. Action Responsibilities Configuration**  
+#### Added: Role-Based Model - Action Responsibilities Configuration  
 
 BEFORE:  
 
-Security Layer: Action availability is tied only to a business component (BC) and determined by backend logic using `.available(bc -> true/false/any business logic)`.  
-UI Layer: Action visibility (e.g., buttons on widgets) is managed in `widget.json -> include -> actionGroups`.
+* Security Layer: Action availability is tied only to a business component (BC) and determined by backend logic using `.available(bc -> true/false/any business logic)`.  
+* UI Layer: Action visibility (e.g., buttons on widgets) is managed in `widget.json -> include -> actionGroups`.
 ![widgetActionGroupsEnabledTrue.gif](v2.0.9/widgetActionGroupsEnabledTrue.gif){width="900"}  
   
 AFTER:  
@@ -135,33 +140,34 @@ We have introduced a new parameter `widget-action-groups-enabled: true/false`. I
 
 If you indicate `widget-action-groups-enabled: false` the changes are as follows:  
 
-* Database Integration: Action availability for roles is now stored in a new *responsibilities_action* table in the database and displayed in the UI.  
+* Database Integration: Action availability for roles is now stored in a new `*responsibilities_action*` table in the database and displayed in the UI.  
 * Security Layer Update: This layer now consists of two sub-layers, both of which must grant access for an action to be available:
-1) New Layer: Verifies action availability based on settings in the Actions Responsibilities widget in the UI.
+1) ! New Layer: Verifies action availability based on settings in the Actions Responsibilities widget in the UI.
 2) Existing Layer: determined by backend logic using `.available(bc -> true/false/any business logic)`.  
-* UI Layer Update: Action visibility is NO longer configured in `widget.json -> include -> actionGroups`. Instead, action responsibilities are managed through a CVS file. The fields in the *responsibilities_action* table in the database are filled according to CVS values and the fields which were not specified in the CVS are auto-filled with the default values.  
+* UI Layer Update: Action visibility is NO longer configured in `widget.json -> include -> actionGroups`. Instead, action responsibilities are managed through a CVS file. The fields in the `*responsibilities_action*` table in the database are filled according to CVS values and the fields which were not specified in the CVS are auto-filled with the default values.  
 ![widgetActionGroupsEnabledFalse.gif](v2.0.9/widgetActionGroupsEnabledFalse.gif){width="900"}  
 * Export Functionality: Now you can work with the database directly from the UI and export data with the help of "Export to CSV" button in the UI. This allows data export for easier management and review.  
-![exportToCSVActions.gif](v2.0.9/exportToCSVActions.gif){width="900"}
+![exportToCSVActions.gif](v2.0.9/exportToCSVActions.gif){width="900"}  
+
 
 We have introduced another new parameter `widget-action-groups-compact: true/false`. If you indicate `widget-action-groups-compact: true` the responsibilities' data will be displayed in a compact way. Under this parameter, the asterisk (*) means that the responsibility is relevant for all roles and all views. This is especially helpful during migration process so that you don't have to handle with numerous data rows and just display them in a collapsed way instead. If you indicate `widget-action-groups-compact: false` the data will be displayed for each role and each view separately.  
-=== "true"  
+=== "widget-action-groups-compact: true"  
     ![widgetActionGroupsCompactTrue.png](v2.0.9/widgetActionGroupsCompactTrue.png)  
-=== "false"  
-    ![widgetActionGroupsCompactFalse.png](v2.0.9/widgetActionGroupsCompactFalse.png)
+=== "widget-action-groups-compact: false"  
+    ![widgetActionGroupsCompactFalse.png](v2.0.9/widgetActionGroupsCompactFalse.png)  
 
-**3. Multirole Configuration**  
+#### Added: Role-Based Model - Multirole Configuration  
 
 BEFORE:  
 
-Login Behavior. The backend returned an activeRole parameter indicating the user's active role (e.g., "activeRole": "CXBOX_USER").  
-
-UI Behavior. The UI displayed a checkbox for the active role, and users can switch roles. 
+* Login Behavior. The backend returned an activeRole parameter indicating the user's active role (e.g., "activeRole": "CXBOX_USER").  
+* UI Behavior. The UI displayed a checkbox for the active role, and users can switch roles. 
 ![multiRoleEnabledFalse.gif](v2.0.9/multiRoleEnabledFalse.gif){width="900"}  
   
 AFTER:  
 
 We have added a new parameter `multi-role-enabled: true/false`. If you indicate `multi-role-enabled: false` the behavior is the same as in BEFORE.  
+
 If you indicate `multi-role-enabled: true` the changes are as follows:  
 
 * Login Behavior. The backend sends activeRole: null, and the UI ignores this value. All roles available to the user are sent in the roles list. The content of requests includes all views accessible by any of the user's roles. If the view is available for at least one role, it means that the view is available for all the roles in the multirole mode.  

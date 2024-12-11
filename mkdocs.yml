@@ -78,6 +78,7 @@ nav:
            - Filter group: widget/type/property/filtration/filtergroup/filtergroup.md
          - Pagination: widget/type/property/pagination/pagination.md
          - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
+         - Sorting: widget/type/property/sorting/sorting.md
          - Export:
              - Excel: widget/type/property/export/excel/excel.md
 

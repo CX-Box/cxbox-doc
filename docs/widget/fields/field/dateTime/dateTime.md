@@ -479,12 +479,24 @@ Also, it optionally allows you to filter data on target view before it will be o
 === "Form widget"
     _not applicable_
 ### How to add?
-=== "List widget"
-    Enabled by default.
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-    _not applicable_
+??? Example
+    === "List widget"
+        see more [Sorting](/widget/type/property/sorting/sorting)
+
+        **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/datetime/filtration/DateTimeSort.java:buildIndependentMeta
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeSort){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/sorting){:target="_blank"}
+
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/RequiredDateTime){:target="_blank"} ·

@@ -3,6 +3,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/HiddenBasic){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/hidden/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -57,6 +58,10 @@
         {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicForm.widget.json
         --8<--
         ```      
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/HiddenBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/hidden/basic){:target="_blank"}
+
 ## Placeholder
 _not applicable_
 

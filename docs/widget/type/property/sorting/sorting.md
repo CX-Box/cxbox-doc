@@ -4,12 +4,13 @@
 This function is available:
 
 * for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
-* for fields: See more [field types](/widget/fields/fieldtypes/)
+* for fields: See more [field types](/widget/fields/fieldtypes/) 
  
 `Sorting` can be configured in two ways:
 
-* Sorting is enabled by default for all fields in the application. [At the application level](#app-default-sort)
 * Sorting must be enabled explicitly at the field level [On the field](#on_field)
+* `Not recommended.` Sorting is enabled by default for all fields in the application. [At the application level](#app-default-sort)
+ 
  
 ### How does it look?
 ![sorting.gif](sorting.gif)
@@ -39,11 +40,12 @@ This function is available:
         ```
 
 ## <a id="app-default-sort">At the application level</a>
+`Not recommended.`
+
 If the parameter is set to true, sorting is enabled by default for all fields in the application.
 
 ### How to add?
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/resources/application.yml){:target="_blank"}
-
+ 
 ??? Example
     Add `sort-enabled-default` in application.yml
 

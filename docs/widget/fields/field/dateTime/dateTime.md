@@ -486,10 +486,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/filtration/DateTimeSort.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/datetime/sorting/DateTimeSortMeta.java:buildIndependentMeta
         --8<--
         ```
-
+ 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeSort){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/sorting){:target="_blank"}
 

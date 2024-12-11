@@ -182,12 +182,16 @@ The "defaultView" feature lets you set a default view to open when navigating th
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/defaultview){:target="_blank"}
 
 #### Typical Use Case
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3238){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/defaultview/typicalexample){:target="_blank"}
+
+![typical_user_case.gif](typical_user_case.gif)
 
 1) Navigate to the Client List tab within the main Task entity.
 
-2) Select the Create button to open a new tab for entering client details.
+2) Select the Create button to open a new tab for entering contact details.
 
-3) After completing the details, click the Save button to return to the Client List.
+3) After completing the details, click the Save button to return to the Client Form.
 
 ### primaryViewName
 

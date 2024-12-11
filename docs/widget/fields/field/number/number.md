@@ -5,6 +5,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -64,6 +65,9 @@
         --8<--
         ```    
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/basic){:target="_blank"}
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/placeholder){:target="_blank"}
@@ -91,6 +95,9 @@
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberPlaceholder){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/placeholder){:target="_blank"}
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -148,7 +155,10 @@
             {{ external_links.github_raw_doc }}/fields/number/color/NumberColorForm.widget.json
             --8<--
             ```
- 
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/color){:target="_blank"}
+
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -173,6 +183,10 @@
             {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstForm.widget.json
             --8<--
             ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberColorConst){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/colorconst){:target="_blank"}
+
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -184,9 +198,8 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberCreateEdit){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/ro){:target="_blank"}
 
-
 ### How does it look?
-=== "Readonly"
+=== "Editable"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -224,7 +237,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-   
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBasic){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/basic){:target="_blank"}
+
     === "Readonly"
     
         **Option 1** Enabled by default.
@@ -241,6 +257,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberCreateEdit){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/ro){:target="_blank"}
+
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberFiltration){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/filtration){:target="_blank"}
@@ -276,6 +296,9 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberFiltration){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/filtration){:target="_blank"}
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberDrillDown){:target="_blank"} ·
@@ -330,6 +353,10 @@ Also, it optionally allows you to filter data on target view before it will be o
  
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberDrillDown){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/drilldown){:target="_blank"}
+
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
@@ -359,7 +386,6 @@ Also, it optionally allows you to filter data on target view before it will be o
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2337){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/validationdynamic){:target="_blank"}
-
 
 ### How does it look?
 === "List widget"
@@ -400,6 +426,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberBusinessEx){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -416,6 +446,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberRuntimeEx){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/validationruntimeex){:target="_blank"}
+
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
@@ -430,6 +464,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_Fields cannot be changed on this widget type, so "Confirm" is not applicable for field validation_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberConfirm){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/validationconfirm){:target="_blank"}
+
     === "Field level validation"
         === "Option 1"
             Use if:
@@ -442,7 +480,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw_doc }}/fields/number/validationannotation/MyExample290DTO.java
             --8<--
             ```
- 
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample290){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/validationannotation){:target="_blank"}
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -463,7 +504,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw_doc }}/fields/number/validationdynamic/MyExample2337Service.java:doUpdateEntity
             --8<--
             ```
-  
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2337){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/validationdynamic){:target="_blank"}
+
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberSorting){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/sorting){:target="_blank"}
@@ -525,6 +569,9 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/NumberRequired){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/required){:target="_blank"}
+
 ## Additional properties
 ### <a id="digits">digits</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DigitsNumber){:target="_blank"} ·
@@ -564,6 +611,9 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         --8<--
         ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DigitsNumber){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/additionalproperties/digits){:target="_blank"}
+
 ### <a id="nullable">nullable</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample57){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/additionalproperties/nullable){:target="_blank"}
@@ -598,4 +648,7 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         --8<--
         ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample57){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/additionalproperties/nullable){:target="_blank"}
+    
 

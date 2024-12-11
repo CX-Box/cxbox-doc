@@ -514,7 +514,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
 
 ### How does it look?
-=== "Readonly"
+=== "Editable"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -1085,7 +1085,14 @@ Applies to:
         --8<--
         ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon){:target="_blank"}
+
 ##### <a id="icon_mode">Icon Mode</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon){:target="_blank"}
+
+
 Only the icon is displayed.
 
 When hovering over the icon, a tooltip appears displaying text that is retrieved from the value.
@@ -1157,7 +1164,10 @@ Applies to:
         {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample351ListModeIcon.widget.json
         --8<--
         ```  
- 
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon){:target="_blank"}
+
 #### Types icons
 The workflow logic is to first search for the icon name in the custom icons folder.
 If the icon is found, it will be used from there; if not, the search will continue in the standard Ant icons folder.
@@ -1272,6 +1282,9 @@ You can customize the color of the standard icon using a hex color code.
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
 ##### <a id="custom_icons">Custom icons</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/icon/enums){:target="_blank"}
+
 Custom icons can be uploaded. Icons should be uploaded in SVG format.
 
 ###### How does it look?
@@ -1437,6 +1450,9 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
         {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/dictionary/myexample357list.view.json
         --8<--
         ```
+    
+    [:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/administrations){:target="_blank"}
 
 ## Release
 

@@ -5,6 +5,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample82){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -57,8 +58,10 @@
         --8<--
         {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Form.widget.json
         --8<--
-        ```        
+        ```     
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample82){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/basic){:target="_blank"}
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74list){:target="_blank"} ·
@@ -92,6 +95,9 @@
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/placeholder){:target="_blank"}
+
 ## Color
 **_not applicable_**
 
@@ -109,7 +115,7 @@
 
 
 ### How does it look?
-=== "Readonly"
+=== "Editable"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -147,6 +153,9 @@
         === "Form widget"
             **Works for Form.**
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample82){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/basic){:target="_blank"}
+
     === "Readonly"
 
         **Option 1** Enabled by default.
@@ -164,6 +173,9 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample79){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/ro){:target="_blank"}
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample53){:target="_blank"} ·
@@ -195,6 +207,10 @@
         {{ external_links.github_raw_doc }}/fields/checkbox/filtration/MyExample53Meta.java:buildIndependentMeta
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample53){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/filtration){:target="_blank"}
+
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -272,6 +288,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample77){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -288,6 +308,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample80){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/validationruntimeex){:target="_blank"}
+
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
@@ -301,6 +325,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample78){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/validationconfirm){:target="_blank"}
+
     === "Field level validation"
         === "Option 1"
             Use if:
@@ -317,6 +345,11 @@
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample168){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/validationannotation){:target="_blank"}
+
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -336,6 +369,9 @@
             {{ external_links.github_raw_doc }}/fields/checkbox/validationdynamic/MyExample289Service.java:doUpdateEntity
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample289){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/validationdynamic){:target="_blank"}
  
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample76){:target="_blank"} ·

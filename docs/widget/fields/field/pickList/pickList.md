@@ -8,6 +8,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -120,6 +121,9 @@
         --8<--
         ``` 
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/basic){:target="_blank"}
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample117){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/placeholder){:target="_blank"}
@@ -147,6 +151,9 @@
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample117){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/placeholder){:target="_blank"}
+
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
@@ -167,7 +174,6 @@
     ![img_color_info.png](img_color_info.png)
 === "Form widget"
     _not applicable_
-
 
 ### How to add?
 ??? Example
@@ -196,6 +202,9 @@
         === "Form widget"
             _not applicable_
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample119){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/color){:target="_blank"}
+
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -213,6 +222,10 @@
             ```
         === "Form widget"
             _not applicable_
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample108){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/colorconst){:target="_blank"}
+
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -223,7 +236,6 @@
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample109){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/ro){:target="_blank"}
-
 
 ### How does it look?
 === "Editable"
@@ -262,7 +274,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-   
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/basic){:target="_blank"}
+
     === "Readonly"
     
         **Option 1** Enabled by default.
@@ -278,6 +293,9 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample109){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/ro){:target="_blank"}
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample111){:target="_blank"} ·
@@ -313,6 +331,9 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample111){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/filtration){:target="_blank"}
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample110){:target="_blank"} ·
@@ -366,6 +387,10 @@ Also, it optionally allows you to filter data on target view before it will be o
  
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample110){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/drilldown){:target="_blank"}
+
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
@@ -395,7 +420,6 @@ Also, it optionally allows you to filter data on target view before it will be o
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample400){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationdynamic){:target="_blank"}
-
 
 ### How does it look?
 === "List widget"
@@ -435,6 +459,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample114){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -453,6 +481,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample116){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationruntimeex){:target="_blank"}
+
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
 
@@ -467,6 +499,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample115){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationconfirm){:target="_blank"}
+
     === "Field level validation"
         === "Option 1"
             Add javax.validation to corresponding **DataResponseDTO**.
@@ -485,6 +521,10 @@ Also, it optionally allows you to filter data on target view before it will be o
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample296){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationannotation){:target="_blank"}
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -504,7 +544,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw_doc }}/fields/picklist/validationdynamic/MyExample400Service.java:doUpdateEntity
             --8<--
             ```
-    
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample400){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/validationdynamic){:target="_blank"}
+
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample113){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/sorting){:target="_blank"}
@@ -565,3 +608,6 @@ Also, it optionally allows you to filter data on target view before it will be o
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample112){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picklist/required){:target="_blank"}

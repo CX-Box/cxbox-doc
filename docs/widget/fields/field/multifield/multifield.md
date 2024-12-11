@@ -6,6 +6,7 @@ The typical scenario involves using a common field type (e.g., input, date) for 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample160/view/myexample160list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multifield/basic){:target="_blank"}
+
 ### How does it look?
 
 Logical blocks can be shown in different styles
@@ -64,6 +65,9 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160Form.widget.json
         --8<--
         ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample160/view/myexample160list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multifield/basic){:target="_blank"}
 
 ## Placeholder
 _not applicable_
@@ -138,6 +142,8 @@ Filter not working with field type hint. `see more` [hint](/features/element/hin
     === "Form widget"
         _not applicable_
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample360){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multifield/filtration){:target="_blank"}
 
 ## Drilldown
 _not applicable_

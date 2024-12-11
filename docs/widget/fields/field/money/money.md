@@ -4,6 +4,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/basic){:target="_blank"}
+
 ### How does it look?
 === "List widget"
     ![img_list.png](img_list.png)
@@ -17,9 +18,7 @@
 ??? Example
     **Option1**
     
-    
     One will usually use Long, Double or BigDecimal java types in DTO and Entity for storing this field type.
-    
     
     Next example shows Long usage:
     **Step1** Add **Double** field  to corresponding **DataResponseDTO**.
@@ -57,10 +56,12 @@
         --8<--
         ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/basic){:target="_blank"}
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample64){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.gi_branch }}/src/main/java/org/demo/documentation/fields/money/placeholder){:target="_blank"}
-
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
@@ -84,6 +85,9 @@
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample64){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.gi_branch }}/src/main/java/org/demo/documentation/fields/money/placeholder){:target="_blank"}
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -137,6 +141,10 @@
             {{ external_links.github_raw_doc }}/fields/money/color/MyExample59Form.widget.json
             --8<--
             ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample59){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/color){:target="_blank"}
+
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -160,6 +168,9 @@
             --8<--
             ```
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample60){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/colorconst){:target="_blank"}
+
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -170,7 +181,6 @@
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/ro){:target="_blank"}
-
 
 ### How does it look?
 === "Editable"
@@ -187,8 +197,6 @@
         ![img_ro_info.png](img_ro_info.png)
     === "Form widget"
         ![img_ro_form.png](img_ro_form.png)
-
-
 
 ### How to add?
 ??? Example
@@ -215,6 +223,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/basic){:target="_blank"}
+
     === "Readonly"
         **Option 1** Enabled by default.
         ```java
@@ -229,6 +241,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/ro){:target="_blank"}
+
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/filtration){:target="_blank"}
@@ -261,6 +277,9 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/filtration){:target="_blank"}
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
@@ -311,6 +330,10 @@ Also, it optionally allows you to filter data on target view before it will be o
  
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/drilldown){:target="_blank"}
+
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
 ## Validation
@@ -340,7 +363,6 @@ Also, it optionally allows you to filter data on target view before it will be o
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample333){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationdynamic){:target="_blank"}
-
 
 ### How does it look?
 === "List widget"
@@ -381,6 +403,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -398,6 +424,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample69){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationruntimeex){:target="_blank"}
+
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
@@ -411,6 +441,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample68){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationconfirm){:target="_blank"}
+
     === "Field level validation"
         === "Option 1"
             Use if:
@@ -430,6 +464,10 @@ Also, it optionally allows you to filter data on target view before it will be o
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample271){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationannotation){:target="_blank"}
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -450,6 +488,9 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw_doc }}/fields/money/validationdynamic/MyExample333Service.java:doUpdateEntity
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample333){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationdynamic){:target="_blank"}
 
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample66){:target="_blank"} ·
@@ -514,6 +555,9 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample65){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/required){:target="_blank"}
+
 ## Additional properties
 ### <a id="nullable">nullable</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample307){:target="_blank"} ·
@@ -548,6 +592,9 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
         {{ external_links.github_raw_doc }}/fields/money/nullable/MyExample307Form.widget.json
         --8<--
         ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample307){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/nullable){:target="_blank"}
 
 ### <a id="currency">currency</a>
 `Currency` allows you to add and display currency values within the interface.
@@ -645,3 +692,6 @@ If you only need to display a fixed currency value, you can use a constant curre
         {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150Form.widget.json
         --8<--
         ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3150){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/currency/constkey){:target="_blank"}

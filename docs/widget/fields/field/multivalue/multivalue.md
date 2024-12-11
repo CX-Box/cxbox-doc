@@ -8,6 +8,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample176){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -112,6 +113,9 @@
             --8<--
             ```
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample176){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/basic){:target="_blank"}
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample186){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/placeholder){:target="_blank"}
@@ -142,6 +146,8 @@
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample186){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/placeholder){:target="_blank"}
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -188,6 +194,9 @@
         === "Form widget"
             _not applicable_
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample174){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/color){:target="_blank"}
+
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -200,6 +209,10 @@
             _not applicable_
         === "Form widget"
             _not applicable_
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample178){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/colorconst){:target="_blank"}
+
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -210,7 +223,6 @@
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample180/view/myexample180form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/ro){:target="_blank"}
-
 
 ### How does it look?
 === "Editable"
@@ -227,8 +239,6 @@
         ![img_ro_info.png](img_ro_info.png)
     === "Form widget"
         ![img_ro_form.png](img_ro_form.png)
-
-
 
 ### How to add?
 ??? Example
@@ -254,7 +264,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-   
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample176){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/basic){:target="_blank"}
+
     === "Readonly"
     
         **Option 1** Enabled by default.
@@ -272,6 +285,9 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample180/view/myexample180form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/ro){:target="_blank"}
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample184){:target="_blank"} ·
@@ -309,6 +325,9 @@
     === "Form widget"
         _not applicable_
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample184){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/filtration){:target="_blank"}
+
 ## Drilldown
 **_not applicable_**
 
@@ -339,7 +358,6 @@
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample335){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationdynamic){:target="_blank"}
-
 
 ### How does it look?
 === "List widget"
@@ -381,6 +399,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample192){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -398,6 +420,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample196){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationruntimeex){:target="_blank"}
+
     === "Confirm"
 
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
@@ -414,6 +440,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample194){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationconfirm){:target="_blank"}
+
     === "Field level validation"
         === "Option 1"
             Add javax.validation to corresponding **DataResponseDTO**.
@@ -433,6 +463,10 @@
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample198){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationannotation){:target="_blank"}
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -453,6 +487,10 @@
             {{ external_links.github_raw_doc }}/fields/multivalue/validationdynamic/MyExample335Service.java:doUpdateEntity
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample335){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationdynamic){:target="_blank"}
+
  
 ## Sorting
 **_not applicable_**
@@ -486,6 +524,9 @@
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample188){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/required){:target="_blank"}
 
 ## Additional properties
 ### <a id="Primary">Primary</a>
@@ -530,3 +571,6 @@ Title primary field has default title `primary`.
         {{ external_links.github_raw_doc }}/fields/multivalue/primary/myEntity2001AssocListPopup.widget.json
         --8<--
         ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample2000/view/myexample2000form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/primary){:target="_blank"}

@@ -3,6 +3,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeBasic){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -57,10 +58,13 @@
         {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicForm.widget.json
         --8<--
         ```    
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/basic){:target="_blank"}
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimePlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/placeholder){:target="_blank"}
-
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
 ### How does it look?
@@ -87,6 +91,9 @@
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimePlaceholder){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/placeholder){:target="_blank"}
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -141,6 +148,9 @@
         === "Form widget"
             _not applicable_   
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/color){:target="_blank"}
+
     === "Constant color"
         === "List widget" 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -160,6 +170,8 @@
         === "Form widget"
            _not applicable_    
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColorConst){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/colorconst){:target="_blank"}
 
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
@@ -172,9 +184,8 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeEdit){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/ro){:target="_blank"}
 
-
 ### How does it look?
-=== "Readonly"
+=== "Editable"
     === "List widget"
         ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
@@ -188,7 +199,6 @@
         ![img_ro_info.png](img_ro_info.png)
     === "Form widget"
         ![img_ro_form.png](img_ro_form.png)
-
 
 ### How to add?
 ??? Example
@@ -214,7 +224,10 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
-   
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeBasic){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/basic){:target="_blank"}
+           
     === "Readonly"
         **Option 1** Enabled by default.
 
@@ -231,6 +244,10 @@
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeEdit){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/ro){:target="_blank"}
+
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeFiltration){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/filtration){:target="_blank"}
@@ -266,6 +283,9 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeFiltration){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/filtration){:target="_blank"}
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeDrilldown){:target="_blank"} ·
@@ -322,6 +342,9 @@ Also, it optionally allows you to filter data on target view before it will be o
  
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeDrilldown){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/drilldown){:target="_blank"}
 
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
 
@@ -394,6 +417,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeValidationBusinessEx){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -411,6 +438,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeValidationRuntimeEx){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationruntimeex){:target="_blank"}
+
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
@@ -424,6 +455,9 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeConfirm){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationconfirm){:target="_blank"}
 
     === "Field level validation"
         === "Option 1"
@@ -443,6 +477,10 @@ Also, it optionally allows you to filter data on target view before it will be o
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample166){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationannotation){:target="_blank"}
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -464,6 +502,9 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw_doc }}/fields/datetime/validationdynamic/MyExample321Service.java:doUpdateEntity
             --8<--
             ```
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample321){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationdynamic){:target="_blank"}
  
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeSort){:target="_blank"} ·
@@ -525,3 +566,6 @@ Also, it optionally allows you to filter data on target view before it will be o
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/RequiredDateTime){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/required){:target="_blank"}

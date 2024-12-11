@@ -3,6 +3,7 @@
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/basic){:target="_blank"}
+
 ### How does it look?
 
 === "List widget"
@@ -56,10 +57,12 @@
         --8<--
         ```    
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/basic){:target="_blank"}
+
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputPlaceholder){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/placeholder){:target="_blank"}
-
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
 ### How does it look?
@@ -85,6 +88,9 @@
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputPlaceholder){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/placeholder){:target="_blank"}
+
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
 
@@ -105,7 +111,6 @@
     ![img_2.png](img_2.png)
 === "Form widget"
     _not applicable_
-
 
 ### How to add?
 ??? Example
@@ -133,7 +138,10 @@
             ```
         === "Form widget"
             _not applicable_    
-    
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputColor){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/color){:target="_blank"}
+
     === "Constant color"
         === "List widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -151,6 +159,9 @@
             ```
         === "Form widget"
             _not applicable_        
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/colorconst){:target="_blank"}
 
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
@@ -204,6 +215,9 @@
         === "Form widget"
             **Works for Form.**
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/basic){:target="_blank"}
+
     === "Readonly"
 
         **Option 1** Enabled by default.
@@ -221,6 +235,9 @@
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputCreateEdit){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/ro){:target="_blank"}
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputFiltration){:target="_blank"} ·
@@ -257,6 +274,9 @@ For `Input field` filtering is case-insensitive and retrieves records containing
         _not applicable_
     === "Form widget"
         _not applicable_
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputFiltration){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/filtration){:target="_blank"}
 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputDrilldown){:target="_blank"} ·
@@ -319,6 +339,9 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputDrilldown){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/drilldown){:target="_blank"}
+
 [Advanced customization](/advancedCustomization_drillDown)
 
 ## Validation
@@ -348,7 +371,6 @@ Also, it optionally allows you to filter data on target view before it will be o
    `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample326){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationdynamic){:target="_blank"}
-
 
 ### How does it look?
 === "List widget"
@@ -389,6 +411,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67/view/InputValidationBusinessException){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationbusinessex){:target="_blank"}
+
     === "RuntimeException"
 
         `RuntimeException` describes technical error  within a business process.
@@ -406,6 +432,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputValidationRuntimeException){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationruntimeex){:target="_blank"}
+
     === "Confirm"
         Add [PreAction.confirm](/advancedCustomization_validation) to corresponding **VersionAwareResponseService**.
         ```java
@@ -420,6 +450,10 @@ Also, it optionally allows you to filter data on target view before it will be o
             **_not applicable_**
         === "Form widget"
             **Works for Form.**
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputValidation){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationconfirm){:target="_blank"}
+
     === "Field level validation"
         === "Option 1"
             Add javax.validation to corresponding **DataResponseDTO**.
@@ -439,6 +473,10 @@ Also, it optionally allows you to filter data on target view before it will be o
                 **_not applicable_**
             === "Form widget"
                 **Works for Form.**
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample163){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationannotation){:target="_blank"}
+
         === "Option 2"
             Create сustom service for business logic check.
 
@@ -459,7 +497,9 @@ Also, it optionally allows you to filter data on target view before it will be o
             {{ external_links.github_raw_doc }}/fields/input/validationdynamic/MyExample326Service.java:doUpdateEntity
             --8<--
             ```
- 
+
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample326){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationdynamic){:target="_blank"}
 
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·
@@ -524,10 +564,14 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Form widget"
         **Works for Form.**
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputRequired){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/required){:target="_blank"}
+
 ## Additional properties
 ### <a id="maxInput">maxInput</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MaxInput){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/additionalproperties){:target="_blank"}
+
 Specifies the maximum number of characters to enter
 
 #### How does it look?
@@ -557,3 +601,6 @@ Specifies the maximum number of characters to enter
         {{ external_links.github_raw_doc }}/fields/input/additionalproperties/MaxInputForm.widget.json
         --8<--
         ```
+    
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MaxInput){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/additionalproperties){:target="_blank"}

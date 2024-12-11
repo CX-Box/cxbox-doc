@@ -905,7 +905,8 @@ Also, it optionally allows you to filter data on target view before it will be o
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order.
-Sort by key value.
+
+Sorting items by display_order, then by key (display_order can be null)
 
 ### How does it look?
 === "List widget"
@@ -917,6 +918,9 @@ Sort by key value.
 ### How to add?
 ??? Example
     === "List widget"
+
+        If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
+        
         see more [Sorting](/widget/type/property/sorting/sorting)
 
         **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
@@ -1323,7 +1327,7 @@ Custom icons can be uploaded. Icons should be uploaded in SVG format.
 
 cxbox/core 4.0.0-M12
 
-[:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample357){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/administrations){:target="_blank"}
 
 This screen allows you to edit and create dictionaries .
@@ -1451,7 +1455,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
         --8<--
         ```
     
-    [:material-play-circle: Live Sample]({{ external_links.demo }}/ui/#/screen/myexample357){:target="_blank"}
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample357){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/administrations){:target="_blank"}
 
 ## Release

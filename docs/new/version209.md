@@ -62,13 +62,15 @@ We now support `gridWidth` for [FormPopup](https://doc.cxbox.org/widget/type/for
 
 These changes ensure that the `gridWidth` option for usual widget and for FormPopup widget has the same meaning (e.g. generates widgets of same width).  
 
+**Note!** Before this release value of `gridWidth` was ignored, e.g. popup widget was constant. After release one can set `gridWidth = 9` to remain old popup sizes.  
+
 See the detailed description in the updated [formPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/#widget-size) article.  
 
 #### Added: Dictionary field - Administration UI
 
 * A new Administration Screen has been added to the UI, allowing you to configure `dictionaries` directly from the interface  
 * Changes made through the UI are applied instantly via `Clear Cache` (experimental feature, does not support cluster)  
-* You can now export dictionary data to a CSV file using the `Export`. Exported file format is same as used Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments  
+* You can now export dictionary data to a CSV file using the `Export`. Exported file format is same as used in Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments  
 * A new CSV migration with Liquibase - ensures effortless pre-filling and data transfer between environments (production ready)
 
 ![dictionaryAdministration.png](v2.0.9/dictionaryAdministration.png)  
@@ -106,7 +108,7 @@ AFTER (`view-allowed-roles-enabled: false`):
 
 * A new Administration Screen has been introduced in the UI for configuring view responsibilities  
 * Any updates made in the UI are applied instantly via `Clear Cache` (experimental feature, does not support cluster)
-* You can now export `view responsibilities` data to a CSV file using the `Export`. Exported file format is same as used Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments
+* You can now export `view responsibilities` data to a CSV file using the `Export`. Exported file format is same as used in Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments
 * A new CSV migration with Liquibase - ensures effortless pre-filling and data transfer between environments (production ready)
 
 ![viewResponsibilitiesAdministration.png](v2.0.9/viewResponsibilitiesAdministration.png)
@@ -115,27 +117,26 @@ AFTER (`view-allowed-roles-enabled: false`):
 
 BEFORE (corresponds to `widget-action-groups-enabled: true`):
 
-* Security Layer: Action availability is tied only to a business component (BC) and determined by backend logic using `.available(bc -> true/false/any business logic)`.
 * UI Layer: Action visibility (e.g., buttons on widgets) is managed in `widget.json  -> actionGroups -> include`.
 
 AFTER (`widget-action-groups-enabled: false`)
 
 * The UI now includes an Administration Screen for configuring action responsibilities directly. Additionally, a database table (responsibilities_action) has been introduced to store action responsibilities data.   
 * Any updates made in the UI are applied instantly via `Clear Cache` (experimental feature, does not support cluster)
-* You can now export `action responsibilities` data to a CSV file using the `Export`. Exported file format is same as used Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments
+* You can now export `action responsibilities` data to a CSV file using the `Export`. Exported file format is same as used in Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments
 * A new CSV migration with Liquibase - ensures effortless pre-filling and data transfer between environments (production ready)
 
 ![actionResponsibilitiesAdministration.png](v2.0.9/actionResponsibilitiesAdministration.png)
 
-We have introduced automatic migration of `widget.json -> actionGroups -> include` configuration to `responsibilities_action`. Application fill table on start based on widget information if `widget-action-groups-enabled: true`. Only `widget.json -> actionGroups -> include` is supported - one should migrate manually if `widget.json -> actionGroups -> exclude` is used
+We have introduced automatic migration of `widget.json -> actionGroups -> include` configuration to `responsibilities_action`. Application fills table on start based on widget information if `widget-action-groups-enabled: true`. Only `widget.json -> actionGroups -> include` is supported - one should migrate manually if `widget.json -> actionGroups -> exclude` is used
 
 Also, two migration modes introduced
 
 === "COMPACT (widget-action-groups-compact: true)"
-    If you indicate `widget-action-groups-compact: true` the `responsibilities_action` data will be filled in a compact way. Under this parameter, the asterisk (*) means that the responsibility is relevant for all roles and all views. This is especially helpful during migration process so that you don't have to handle with numerous data rows and just display them in a collapsed way instead.
+    If you indicate `widget-action-groups-compact: true` the `responsibilities_action` data will be filled in a compact way. Under this parameter, the asterisk (*) means that the responsibility is relevant for all roles and all views. This is especially helpful during migration process so that you don't have to handle with numerous data rows and just display them in a collapsed way instead.  
     ![compactTrue.png](v2.0.9/compactTrue.png)  
 === "FULL (widget-action-groups-compact: false)"
-    If you indicate `widget-action-groups-compact: false` the data will be filled for each role and each view separately.
+    If you indicate `widget-action-groups-compact: false` the data will be filled for each role and each view separately.  
     ![compactFalse.png](v2.0.9/compactFalse.png)
 
 #### Added: suggestionPickList field - backend query on click  

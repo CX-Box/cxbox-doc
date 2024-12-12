@@ -6,10 +6,10 @@ This function is available:
 * for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
  
-`Sorting` can be configured in two ways:
+`Sorting` can be enabled in two ways:
 
-* Sorting must be enabled explicitly at the field level [On the field](#on_field)
-* `Not recommended.` Sorting is enabled by default for all fields in the application. [At the application level](#app-default-sort)
+*  [On the field](#on_field) Sorting must be enabled explicitly at the field level
+* `Not recommended.`  [At the application level](#app-default-sort) Sorting is enabled by default for all fields in the application.
  
  
 ### How does it look?

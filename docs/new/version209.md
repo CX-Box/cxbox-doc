@@ -6,83 +6,79 @@
 
 * [cxbox-ui/core 2.4.2 git](https://github.com/CX-Box/cxbox-ui/tree/2.4.2), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.2), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.4.2)
 
-<!--* [cxbox/code-samples 2.0.9 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.9), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.9) --> 
+* [cxbox/code-samples 2.0.9 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.9), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.9)
 
 ## **Key updates November, December 2024**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](http://demo.cxbox.org))
 
-#### Added: Dictionary field - Administration UI  
+#### Added: Dictionary field - Administration UI
 
-* A new Administration Screen has been added to the UI, allowing you to configure dictionaries directly from the interface  
-* Changes made through the UI are applied instantly (experimental feature, does not support cluster)  
-* You can now export dictionary data to a CSV file using the Export to CSV button. The exported file format matches the exact structure required for deployment, which makes migration process easier without any manual adjustments  
-* CSV migration with Liquibase ensures effortless pre-filling and data transfer between environments (production ready)
+* A new Administration Screen has been added to the UI, allowing you to configure `dictionaries` directly from the interface  
+* Changes made through the UI are applied instantly via `Clear Cache` (experimental feature, does not support cluster)  
+* You can now export dictionary data to a CSV file using the `Export`. Exported file format is same as used Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments  
+* A new CSV migration with Liquibase - ensures effortless pre-filling and data transfer between environments (production ready)
 
 ![dictionaryAdministration.png](v2.0.9/dictionaryAdministration.png)  
 
-See details in the updated Dictionary article, section [Administration Dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#administration-dictionary).  
+See details in the updated Dictionary article:
 
-#### Added: Role-Based Model - View Responsibilities Configuration
+* section [Administration Dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#administration-dictionary)
+* `How to add?` sections in this article now have snippets with `Dictionary` usage (instead of deprecated `LOV`)
 
-BEFORE:
+#### Added: Role-Based Model - View Responsibilities Administration UI
 
-* View responsibilities are configured in `view.json -> rolesAllowed`.
+BEFORE (`view-allowed-roles-enabled: true`):
+
+* `view responsibilities` are configured in `view.json -> rolesAllowed`.
 * Database management of the Responsibilities table is only possible through `view.json`.
 
-AFTER:
+AFTER (`view-allowed-roles-enabled: false`):
 
-We have supported a new view responsibilities configuration under the parameter `view-allowed-roles-enabled: false`. If you indicate `view-allowed-roles-enabled: true`, the behavior is the same as in BEFORE.
-
-If you indicate `view-allowed-roles-enabled: false` the changes are as follows:
-
-* A new Administration Screen has been introduced in the UI for configuring view responsibilities directly  
-* Any updates made in the UI are applied instantly (experimental feature, does not support cluster)
-* Data can now be exported to a CSV file via the Export to CSV button in the UI. The exported file format aligns perfectly with the requirements for deployment, allowing quick migration of changes across environments without any additional formating.  
-* CSV migration with Liquibase ensures effortless pre-filling and data transfer between environments (production ready)  
+* A new Administration Screen has been introduced in the UI for configuring view responsibilities  
+* Any updates made in the UI are applied instantly via `Clear Cache` (experimental feature, does not support cluster)
+* You can now export `view responsibilities` data to a CSV file using the `Export`. Exported file format is same as used Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments
+* A new CSV migration with Liquibase - ensures effortless pre-filling and data transfer between environments (production ready)
 
 ![viewResponsibilitiesAdministration.png](v2.0.9/viewResponsibilitiesAdministration.png)
 
-#### Added: Role-Based Model - Action Responsibilities Configuration
+#### Added: Role-Based Model - Action Responsibilities Support
 
-BEFORE:
+BEFORE (corresponds to `widget-action-groups-enabled: true`):
 
 * Security Layer: Action availability is tied only to a business component (BC) and determined by backend logic using `.available(bc -> true/false/any business logic)`.
-* UI Layer: Action visibility (e.g., buttons on widgets) is managed in `widget.json -> include -> actionGroups`.
+* UI Layer: Action visibility (e.g., buttons on widgets) is managed in `widget.json  -> actionGroups -> include`.
 
-AFTER:
-
-We have introduced a new parameter `widget-action-groups-enabled: true/false`. If you indicate `widget-action-groups-enabled: true` the behavior will be the same as in BEFORE.
-
-If you indicate `widget-action-groups-enabled: false` the changes are as follows:
+AFTER (`widget-action-groups-enabled: false`)
 
 * The UI now includes an Administration Screen for configuring action responsibilities directly. Additionally, a database table (responsibilities_action) has been introduced to store action responsibilities data.   
-* Changes made via the UI are applies instantly (experimental feature, does not support cluster)  
-* With the Export to CSV feature, you can export action responsibilities data in a format ready for deployment, making it simple to migrate changes between environments without manual adjustments.  
-* CSV migration with Liquibase ensures effortless pre-filling and data transfer between environments (production ready)
+* Any updates made in the UI are applied instantly via `Clear Cache` (experimental feature, does not support cluster)
+* You can now export `action responsibilities` data to a CSV file using the `Export`. Exported file format is same as used Liquibase migration (see next paragraph) which makes migration process easier without any manual adjustments
+* A new CSV migration with Liquibase - ensures effortless pre-filling and data transfer between environments (production ready)
 
 ![actionResponsibilitiesAdministration.png](v2.0.9/actionResponsibilitiesAdministration.png)
 
-We have introduced another new parameter `widget-action-groups-compact: true/false`. If you indicate `widget-action-groups-compact: true` the responsibilities' data will be displayed in a compact way. Under this parameter, the asterisk (*) means that the responsibility is relevant for all roles and all views. This is especially helpful during migration process so that you don't have to handle with numerous data rows and just display them in a collapsed way instead. If you indicate `widget-action-groups-compact: false` the data will be displayed for each role and each view separately.  
-=== "widget-action-groups-compact: true"  
+We have introduced automatic migration of `widget.json -> actionGroups -> include` configuration to `responsibilities_action`. Application fill table on start based on widget information if `widget-action-groups-enabled: true`. Only `widget.json -> actionGroups -> include` is supported - one should migrate manually if `widget.json -> actionGroups -> exclude` is used
+
+Also, two migration modes introduced
+
+=== "COMPACT (widget-action-groups-compact: true)"
+    If you indicate `widget-action-groups-compact: true` the `responsibilities_action` data will be filled in a compact way. Under this parameter, the asterisk (*) means that the responsibility is relevant for all roles and all views. This is especially helpful during migration process so that you don't have to handle with numerous data rows and just display them in a collapsed way instead.
     ![widgetActionGroupsCompactTrue.png](v2.0.9/widgetActionGroupsCompactTrue.png)  
-=== "widget-action-groups-compact: false"  
+=== "FULL (widget-action-groups-compact: false)"
+    If you indicate `widget-action-groups-compact: false` the data will be filled for each role and each view separately.
     ![widgetActionGroupsCompactFalse.png](v2.0.9/widgetActionGroupsCompactFalse.png)
 
-#### Added: Role-Based Model - Multirole Configuration
+#### Added: Role-Based Model - MultiRole Support
 
-BEFORE:
+BEFORE (`multi-role-enabled: false`):
 
 * Login Behavior. The backend returned an activeRole parameter indicating the user's active role (e.g., "activeRole": "CXBOX_USER").
 * UI Behavior. The UI displayed a checkbox for the active role, and users can switch roles.  
 
-AFTER:
+AFTER (`multi-role-enabled: true`):
 
-We have added a new parameter `multi-role-enabled: true/false`. If you indicate `multi-role-enabled: false` the behavior is the same as in BEFORE.
-
-If you indicate `multi-role-enabled: true` the changes are as follows:
-
-* Login Behavior. The backend sends activeRole: null, and the UI ignores this value. All roles available to the user are sent in the roles list. The content of requests includes all views accessible by any of the user's roles. If the view is available for at least one role, it means that the view is available for all the roles in the multirole mode.
+* Login Behavior. The backend sends activeRole: null, and the UI ignores this value. All roles available to the user are sent in the roles list. The content of requests includes all views accessible by any of the user's roles. If the view is available for at least one role, it means that the view is available for user in the multirole mode.
 * UI Behavior. Checkboxes for all roles are displayed but are disabled, preventing role switching. Requests to the backend for role switching are no longer triggered.  
 
 === "After"  
@@ -94,10 +90,10 @@ If you indicate `multi-role-enabled: true` the changes are as follows:
 
 Now, Additional List widget supports two display modes.  
 
-* Default (NEW): each row in Additional List is rendered using the default List-like style.  
-* (Old) If `options -> read` is populated with AdditionalInfo widget name: each row is rendered as specified  AdditionalInfo widget.   
+* (NEW) Default: each row in Additional List is rendered using the default List-like style. 
+* (OLD) If `options -> read` is populated with AdditionalInfo widget name: each row is rendered as specified  AdditionalInfo widget.   
 
-=== "No read option"
+=== "Default"
     ![additionalListNoReadWithTitle.png](v2.0.9/additionalListNoReadWithTitle.png)
 === "With read option"
     ![additionalListWithRead.png](v2.0.9/additionalListWithRead.png)  
@@ -112,7 +108,7 @@ We have enhanced the Notifications popup to support multiple drilldown links.
 === "Before"  
     ![notificationBannerBefore.png](v2.0.9/notificationBannerBefore.png)  
 
-* Clicking the bell icon opens the Notifications popup, where all hyperlinks to related objects are listed in the Links column. 
+* Clicking the bell icon opens the Notifications popup, where all hyperlinks to related objects are listed. 
 === "After"
       ![notificationsBellLinks.png](v2.0.9/notificationsBellLinks.png)
 === "Before"
@@ -120,12 +116,12 @@ We have enhanced the Notifications popup to support multiple drilldown links.
 
 #### Added: Drilldown - tooltip
 
-Drilldowns has tooltip that appears on hover, offering two options:  
+`drilldown`s now has tooltip that appears on hover, offering two options:  
 
-* Open in a New Tab: Open the drilldown link in a new browser tab.
-* Copy Link Address: Copy the drilldown link to the clipboard. 
+* Open in a New Tab: Open the `drilldown` link in a new browser tab.
+* Copy Link Address: Copy the `drilldown` link to the clipboard. 
 
-Feature can be turned on setting: cxbox.ui.drill-down-tooltip: newAndCopy.  
+Feature can be turned on with `cxbox.ui.drill-down-tooltip: newAndCopy`.  
 === "After"  
     ![tooltipTrue.png](v2.0.9/tooltipTrue.png)
 === "Before"  
@@ -133,8 +129,8 @@ Feature can be turned on setting: cxbox.ui.drill-down-tooltip: newAndCopy.
 
 *Limitations*:  
 
-* Drilldowns of [to-view-with-fields-filtration](https://doc.cxbox.org/features/element/drilldown/drilldown/?h=drill#to-view-with-fields-filtration) type are currently not supported for the "Open in a New Tab" option.  
-* The custom menu is not yet supported for the Stats Block widget.  
+* `drilldowns` of [to-view-with-fields-filtration](https://doc.cxbox.org/features/element/drilldown/drilldown/?h=drill#to-view-with-fields-filtration) type are currently not supported for the "Open in a New Tab" option.  
+* tooltip is not yet supported for the Stats Block widget.  
 
 #### Added: FormPopup widget - forceActive  
 
@@ -142,21 +138,19 @@ We have introduced the `forceActive` feature for [FormPopup](https://doc.cxbox.o
 
 ![formPopupForceActive.gif](v2.0.9/formPopupForceActive.gif){width="900"}  
 
-#### Added: suggestionPickList field - backend query on first click  
+#### Added: suggestionPickList field - backend query on click  
 
 We have optimized the functionality of `suggestionPickList` by removing the character limit for backend queries. Now, when users click on the field, a request is sent to the backend immediately, displaying all available data without the need to type any characters.  
 
 ![suggestionPickListQueryOnFirstClick.gif](v2.0.9/suggestionPickListQueryOnFirstClick.gif){width="900"}  
 
-#### Added: Notifications - Bearer Token Authentification for WebSocket
+#### Added: Notifications - Bearer Token authentication for WebSockets
 
-We have added support for Bearer token authentification when connecting to WebSocket endpoints for notifications. Now, the Bearer token is included in the request header for secure access to the following endpoints: `/api/v1/websocketnotification/` and `/api/v1/notification`.  
+We have added support for Bearer token authentication when connecting to WebSocket endpoints for notifications. Now, the Bearer token is included in the request header for secure access to the following endpoints: `/api/v1/websocketnotification/` and `/api/v1/notification`.
 
+#### Added: FormPopup widget - gridWidth support  
 
-
-#### Added: FormPopup widget - width calculation enhancement  
-
-We have improved the width calculation for [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/). You can now directly indicate the width using `view.json -> widgets -> gridWidth` and the width now dynamically adjusts based on the following factors:  
+We now support `gridWidth` for [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/). You can now directly indicate the width using `view.json -> widgets -> gridWidth` and the width now dynamically adjusts based on the following factors:  
 
 * The state of the menu (collapsed or expanded)  
 === "gridWidth12 Menu Expanded"
@@ -170,7 +164,7 @@ We have improved the width calculation for [FormPopup](https://doc.cxbox.org/wid
 === "gridWidth12 With Additional"
     ![formPopupGridWidth12WithAdditional.png](v2.0.9/formPopupGridWidth12WithAdditional.png)
 
-These changes ensure that the `gridWidth` option for usual widget and for FormPopup widget has the same meaning (generates widgets of same size).  
+These changes ensure that the `gridWidth` option for usual widget and for FormPopup widget has the same meaning (e.g. generates widgets of same width).  
 
 See the detailed description in the updated [formPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/#widget-size) article.  
 

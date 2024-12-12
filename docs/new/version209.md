@@ -132,12 +132,12 @@ We have introduced automatic migration of `widget.json -> actionGroups -> includ
 
 Also, two migration modes introduced
 
-=== "COMPACT (widget-action-groups-compact: true)"
+=== "COMPACT (widget-action-groups-compact: true)"  
     If you indicate `widget-action-groups-compact: true` the `responsibilities_action` data will be filled in a compact way. Under this parameter, the asterisk (*) means that the responsibility is relevant for all roles and all views. This is especially helpful during migration process so that you don't have to handle with numerous data rows and just display them in a collapsed way instead.  
     ![compactTrue.png](v2.0.9/compactTrue.png)  
-=== "FULL (widget-action-groups-compact: false)"
+=== "FULL (widget-action-groups-compact: false)"  
     If you indicate `widget-action-groups-compact: false` the data will be filled for each role and each view separately.  
-    ![compactFalse.png](v2.0.9/compactFalse.png)
+    ![compactFalse.png](v2.0.9/compactFalse.png)  
 
 #### Added: suggestionPickList field - backend query on click  
 

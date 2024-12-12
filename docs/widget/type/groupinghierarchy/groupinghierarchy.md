@@ -18,11 +18,14 @@ See more [field types](/widget/fields/fieldtypes/)
 * All data should be sourced from the backend (e.g., with a backend page size set to 1000), 
     grouping is handled in-memory on the front end.
 
-    If the backend indicates that the total line count exceeds the page size, the widget will switch to GroupingHierarchy mode, and the mode-switching icon will be highlighted in red. 
+    If the backend indicates that the total line count exceeds the page size, the widget will switch to List mode, and the mode-switching icon will be highlighted in red. 
     Hovering over the icon will display the message `Warning!Rows were fetched from backend - limit for Grouping Hierarhical mode is ...(1000). Only GroupingHierarchy mode is available.`
     see more [Default limit page](/widget/type/property/defaultlimitpage/defaultlimitpage)
+
 * The number of nesting levels is unlimited.
+
 * Fields containing either a single element or no elements are displayed in their expanded form by default.The line is expanded by default if the expanded branch occupies the same amount of space as it does when collapsed.
+
 * This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
  
 

@@ -24,7 +24,7 @@
     
         **Step 2** Add existing field to an existing form widget
 
-            ![addfield.gif](addfield.gif)
+        ![addfield.gif](addfield.gif)
 
     === "Example of writing code"
         **Step1** Add field **Boolean** to corresponding **BaseEntity**.

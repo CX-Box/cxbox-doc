@@ -215,10 +215,10 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/DictionaryConfig.java
+        {{ external_links.github_raw_doc }}/conf/cxbox/customization/dictionary/conf/DictionaryConfig.java
         --8<--
         ```
-    
+ 
     === "LOV deprecated recommended use Dictionary"
 
         - **Step 1. LOV** Create LOV

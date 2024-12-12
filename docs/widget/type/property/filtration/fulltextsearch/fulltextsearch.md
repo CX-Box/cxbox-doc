@@ -15,13 +15,13 @@ It only works for the widget `List` type. [List widget](/widget/type/list/list)
 ### How to add?
 ??? Example
 
-    `Step 1` Add extention file FullTextSearchExt.java
+    `Step 1` Add extension file FullTextSearchExt.java
     ```java
     --8<--
-    {{ external_links.github_raw }}/conf/cxbox/fulltextsearch/FullTextSearchExt.java
+    {{ external_links.github_raw }}/conf/cxbox/extension/fulltextsearch/FullTextSearchExt.java
     --8<--
     ```
-
+ 
     `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**. 
     ```java
     --8<--

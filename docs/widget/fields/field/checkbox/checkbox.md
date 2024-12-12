@@ -17,51 +17,61 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **Boolean** to corresponding **BaseEntity**.
 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyEntity82.java
-    --8<--
-    ```
+    === "With plugin(recommended)"
+        **Step 1** Download plugin
+            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+    
+        **Step 2** Add existing field to an existing form widget
 
-    **Step2** Add field **Boolean** to corresponding **DataResponseDTO**.
+            ![addfield.gif](addfield.gif)
 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82DTO.java
-    --8<--
-    ```
-
-    === "List widget"
-        **Step3** Add to **_.widget.json_**.
-
-        ```json
+    === "Example of writing code"
+        **Step1** Add field **Boolean** to corresponding **BaseEntity**.
+    
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82List.widget.json
+        {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyEntity82.java
         --8<--
         ```
-    === "Info widget"
-        **Step3** Add to **_.widget.json_**.
-        
-        ```json
+    
+        **Step2** Add field **Boolean** to corresponding **DataResponseDTO**.
+    
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82DTO.java
         --8<--
         ```
-
-    === "Form widget"
-
-        **Step3** Add to **_.widget.json_**.
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Form.widget.json
-        --8<--
-        ```     
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample82){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/basic){:target="_blank"}
+    
+        === "List widget"
+            **Step3** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82List.widget.json
+            --8<--
+            ```
+        === "Info widget"
+            **Step3** Add to **_.widget.json_**.
+            
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Info.widget.json
+            --8<--
+            ```
+    
+        === "Form widget"
+    
+            **Step3** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Form.widget.json
+            --8<--
+            ```     
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample82){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/basic){:target="_blank"}
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74list){:target="_blank"} ·

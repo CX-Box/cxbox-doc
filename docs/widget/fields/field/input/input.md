@@ -16,49 +16,59 @@
 
 ### How to add?
 ??? Example
-    **Step1**  Add **String** field  to corresponding **BaseEntity**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/input/basic/InputBasic.java
-    --8<--
-    ```
 
-    **Step2** Add **String** field  to corresponding **DataResponseDTO**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicDTO.java
-    --8<--
-    ```
+    === "With plugin(recommended)"
+        **Step 1** Download plugin
+            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+    
+        **Step 2** Add existing field to an existing form widget
 
-    === "List widget"
-        **Step3** Add to **_.widget.json_**.
+            ![addfield.gif](addfield.gif)
 
-        ```json
+    === "Example of writing code"
+        **Step1**  Add **String** field  to corresponding **BaseEntity**.
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/basic/InputBasic.java
         --8<--
         ```
-    === "Info widget"
-        **Step3** Add to **_.widget.json_**.
-        
-        ```json
+    
+        **Step2** Add **String** field  to corresponding **DataResponseDTO**.
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicDTO.java
         --8<--
         ```
-
-    === "Form widget"
-
-        **Step3** Add to **_.widget.json_**.
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicForm.widget.json
-        --8<--
-        ```    
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/basic){:target="_blank"}
+    
+        === "List widget"
+            **Step3** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicList.widget.json
+            --8<--
+            ```
+        === "Info widget"
+            **Step3** Add to **_.widget.json_**.
+            
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicInfo.widget.json
+            --8<--
+            ```
+    
+        === "Form widget"
+    
+            **Step3** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicForm.widget.json
+            --8<--
+            ```    
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputBasic){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/basic){:target="_blank"}
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputPlaceholder){:target="_blank"} ·

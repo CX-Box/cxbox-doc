@@ -149,8 +149,8 @@
         === "Form widget"
             _not applicable_    
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputColor){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/color){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputColor){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/color){:target="_blank"}
 
     === "Constant color"
         === "List widget"
@@ -170,8 +170,8 @@
         === "Form widget"
             _not applicable_        
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/colorconst){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/colorconst){:target="_blank"}
 
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application

@@ -215,10 +215,10 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/conf/cxbox/customization/dictionary/conf/DictionaryConfig.java
+        {{ external_links.github_raw }}/conf/cxbox/customization/dictionary/conf/DictionaryConfig.java
         --8<--
         ```
- 
+
     === "LOV deprecated recommended use Dictionary"
 
         - **Step 1. LOV** Create LOV
@@ -707,8 +707,8 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Option 2**
            Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
 
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
 
     === "Info widget"
 

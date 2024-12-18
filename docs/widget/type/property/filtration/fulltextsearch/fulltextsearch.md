@@ -21,7 +21,7 @@ It only works for the widget `List` type. [List widget](/widget/type/list/list)
     {{ external_links.github_raw }}/conf/cxbox/extension/fulltextsearch/FullTextSearchExt.java
     --8<--
     ```
- 
+  
     `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**. 
     ```java
     --8<--

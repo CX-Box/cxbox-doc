@@ -24,7 +24,8 @@
     --8<--
     {{ external_links.github_raw_doc }}/widgets/list/base/onefield/myexample3189list.view.json
     --8<--
- 
+    ```
+
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/title){:target="_blank"}
@@ -255,14 +256,14 @@ As for List widget, there are several actions.
 
 There are three methods to create a record:
 
-1. [Inline](#createbasic): You can add a line directly.
+* [Inline](#createbasic): You can add a line directly.
 
 !!! info
     Pagination won't function until the page is refreshed after adding records.
 
-2. [Inline-form](#withwidget): You can add data using a form widget without leaving your current view.
+* [Inline-form](#withwidget): You can add data using a form widget without leaving your current view.
 
-3. [With view](#withview): You can create a record by navigating to a view.
+* [With view](#withview): You can create a record by navigating to a view.
 
 ##### <a id="createbasic">Inline</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
@@ -388,11 +389,11 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
 
 There are three methods to create a record:
 
-1. [Inline edit](#editline): You can edit a line directly.
+* [Inline edit](#editline): You can edit a line directly.
 
-2. [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
+* [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 
-3. [With view](#editwithview): You can edit a record by navigating to a view.
+* [With view](#editwithview): You can edit a record by navigating to a view.
 
 ##### <a id="editline">Inline edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·

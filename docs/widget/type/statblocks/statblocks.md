@@ -32,15 +32,15 @@ You have the option to utilize custom field names for standard properties such a
 
         [Title](#Title). Optional
 
-        Value - field that specifies formulas for data aggregation
+        `Value` - field that specifies formulas for data aggregation
 
         [Icon](#Icon). Optional
 
         [Color](#Color). Optional
 
-        Description - comment for field. Optional
+        `Description` - comment for field. Optional
 
-        Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
+        `Id` - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
           ```java
           --8<--
           {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203Dao.java
@@ -69,8 +69,8 @@ You have the option to utilize custom field names for standard properties such a
           --8<--
           ```
 
-          !!! tips
-              To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
+        !!! tips
+            To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
 
     === "Custom name fields"
         You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria

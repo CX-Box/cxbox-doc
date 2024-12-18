@@ -340,7 +340,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008MultiColumn.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008MultiColumnDefault.widget.json
         --8<--
         ```
 

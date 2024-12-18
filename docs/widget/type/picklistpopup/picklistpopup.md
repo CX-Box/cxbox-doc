@@ -4,43 +4,11 @@
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3067){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/basic){:target="_blank"}
 
 ### How does it look?
 ![pickListPopupBasic.gif](pickListPopupBasic.gif)
-
-### How to add?
-??? Example
-    === "Calculated color"
-
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/MyExample3060DTO.java:colorDTO
-        --8<--
-        ```  
  
-        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
-
-        Add in `title` field with `${customField}` 
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopup.widget.json
-        --8<--
-        ```       
-
-    === "Constant color"
- 
-        Add **"bgColor"** :  `HEX color`  to .widget.json.
-
-        Add in `title` field with `${customField}` 
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopupColorConst.widget.json
-        --8<--
-        ```
 ## Title
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3068){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/title){:target="_blank"}

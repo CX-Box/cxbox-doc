@@ -263,8 +263,7 @@ Type: String(required).
 see more  [Fields](/widget/fields/fieldtypes/)
 ## <a id="option">Options</a>
 The options object provides layout details for the widget.
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json){:target="_blank"}
-
+ 
 ### <a id="Fieldslayout">Options layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
@@ -274,7 +273,7 @@ Defines the structure of the widget using rows and columns.
 * `single column layout - recommended`: shows each field on new row. Each field can have width from 1 to 24.
 
 !!! tips
-  Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
+    Use single column layout when fields are frequently hidden or rearranged. This avoids layout issues and ensures the best user experience.
 
 * `multi column layout`: shows fields in grid. Grid can contain any number of rows. Each row can contain any number of fields, until sum of fields widths in row is less than 24. Each field can have width from 1 to 24.
 * `empty`: only title and actions are shown. Usually used when standard buttons position needs to be changed (for example we want to show buttons under widget). One can hide buttons on widget with data. Create separate widget only with buttons and place it anywhere on view

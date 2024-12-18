@@ -8,6 +8,9 @@
 
 * [cxbox/code-samples 2.0.9 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.9), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.9)
 
+* cxbox/intellij-plugin [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions/stable/653424), [cxbox-intellij-plugin-1.7.7.zip](v2.0.9/cxbox-intellij-plugin-1.7.7.zip){:download="cxbox-intellij-plugin-1.7.7.zip"}
+
+
 ## **Key updates November, December 2024**
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
@@ -218,3 +221,30 @@ See all the details about a Checkbox placeholder in our updated article.
 
 #### Added: [Customization of displayed columns](https://doc.cxbox.org/widget/type/list/list/#customization-of-displayed-columns)  
 We have described the process of customization of displayed columns.  
+
+### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
+#### New: Intellij 2024.3+ support
+Intellij 2024.3+ support
+#### New: Autocomplete, Ctrl-click navigation and inspection for @SearchParameter
+![searchparam.gif](v2.0.9/searchparam.gif)
+Autocomplete, Ctrl-click navigation and inspection for @SearchParameter name parameter containing path to Hibernate entity field. Inspection highlights 2 simple but usefully cases: not existing fields references (most common error) and not finished path (expression not ending with hibernate @Column field)
+#### New. Actions in .widget.json -> options -> actionGroups -> include
+* Plus icon and code generation in quickfix for Actions in .widget.json -> options -> actionGroups -> include. We can now generate java boilerplate for new action and navigate to it immediately!
+![button.gif](v2.0.9/button.gif)
+* Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
+* Now .action(, ...) can be not only string but Enum.name() too. All features are supported
+![actionenumkey.png](v2.0.9/actionenumkey.png)
+* Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now .action(, ...) can be not only string but java constant too. Only autocomplete/Ctrl-click in widget.json are supported. Navigation from constant to widget.json action and rename refactorings are not supported in this case for now
+![javaconst.png](v2.0.9/javaconst.png)
+#### New. Inspection that checks viewName is unique per screen
+![unique_view.png](v2.0.9%2Funique_view.png)
+Inspection that checks viewName is unique per screen (.screen.json -> navigation correctness), when type = standard is set (we skip this checks in other cases for backward compatibility with project customizations). We check:
+#### New. Inspection that checks popupBcName in widget.json -> fields
+![picklist.png](v2.0.9/picklist.png)
+Inspection that checks popupBcName in widget.json -> fields must be child for owning widget bc. Inspection checks this only for fields with type picklist
+#### New. Inspection that checks actionGroups in widget.json
+![action_group.png](v2.0.9/action_group.png)
+Inspection that checks actionGroups in widget.json location (e.g. it is located in options tag)
+
+#### Other Changes
+Other minor fixes: when AssocListPopup is code generated title and name order was reverted; when multipleSelect is code generated @CollectionTable name is made more unique (field name + bc); title required inspection is turned off - now we have widgets, that use empty titles by design

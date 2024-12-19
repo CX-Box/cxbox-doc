@@ -261,6 +261,24 @@ We can now generate java boilerplate for new action and navigate to it immediate
 ###### Refactoring
   not supported
 
+
+##### **Actions - `Enum` in .widget.json support:**
+
+###### Plus icon and code generation
+not supported
+
+###### Ctrl-click navigation.Service  -> .widget.json, .widget.json -> Service:
+![navigation_action_enum.gif](v2.0.9/navigation_action_enum.gif)
+
+###### Autocomplete:
+![autocomplete_action_enum.gif](v2.0.9/autocomplete_action_enum.gif)
+
+###### Inspection
+![inspection_action_enum.gif](v2.0.9/inspection_action_enum.gif)
+
+###### Refactoring
+not supported
+
 ##### Actions - `java constant`  in .widget.json support:
 
 ###### Plus icon and code generation:

@@ -243,38 +243,39 @@ Autocomplete, Ctrl-click navigation and inspection for @SearchParameter name par
 #### New. Actions in .widget.json -> options -> actionGroups -> include
 Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
 
-**Actions - `string` in .widget.json support:**
+##### **Actions - `string` in .widget.json support:**
 
-* Plus icon and code generation in quickfix for Actions in .widget.json -> options -> actionGroups -> include. We can now generate java boilerplate for new action and navigate to it immediately!
+###### Plus icon and code generation  
+We can now generate java boilerplate for new action and navigate to it immediately!
 ![actions.gif](v2.0.9/actions.gif)
 
-* Ctrl-click navigation.Service  -> .widget.json, .widget.json -> Service:
+###### Ctrl-click navigation.Service  -> .widget.json, .widget.json -> Service:
   ![navigation_action.gif](v2.0.9/navigation_action.gif)
 
-* Autocomplete:
+###### Autocomplete:
 ![autocomplete_action.gif](v2.0.9/autocomplete_action.gif)
 
-* Inspection
+###### Inspection
 ![inspection_action.gif](v2.0.9/inspection_action.gif)
 
-* Refactoring
+###### Refactoring
   not supported
 
-Actions - `java constant`  in .widget.json support:
+##### Actions - `java constant`  in .widget.json support:
 
-* Plus icon and code generation:
+###### Plus icon and code generation:
   not supported
 
-* Ctrl-click navigation. Only .widget.json -> Service :
+###### Ctrl-click navigation. Only .widget.json -> Service :
 ![navigation_action_java_const.gif](v2.0.9/navigation_action_java_const.gif)
 
-* Autocomplete:
+###### Autocomplete:
 ![autocomplete_java_const.gif](v2.0.9%2Fautocomplete_java_const.gif)
 
-* Inspection
+###### Inspection
 ![inspection_java_const.gif](v2.0.9/inspection_java_const.gif)
 
-* Refactoring
+###### Refactoring
   not supported
 
 #### New. Inspection that checks viewName is unique per screen

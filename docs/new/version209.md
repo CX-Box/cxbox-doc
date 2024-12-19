@@ -226,20 +226,57 @@ We have described the process of customization of displayed columns.
 #### New: Intellij 2024.3+ support
 Intellij 2024.3+ support
 #### New: Autocomplete, Ctrl-click navigation and inspection for @SearchParameter
-![searchparam.gif](v2.0.9/searchparam.gif)
-
 Autocomplete, Ctrl-click navigation and inspection for @SearchParameter name parameter containing path to Hibernate entity field. Inspection highlights 2 simple but usefully cases: not existing fields references (most common error) and not finished path (expression not ending with hibernate @Column field)
+
+* Autocomplete:
+![autocomplete.gif](v2.0.9/autocomplete.gif)
+
+* Ctrl-click navigation
+![navigation.gif](v2.0.9/navigation.gif)
+
+* Inspection
+![inspection.gif](v2.0.9/inspection.gif)
+
+* Refactoring
+![refactor.gif](v2.0.9/refactor.gif)
+
 #### New. Actions in .widget.json -> options -> actionGroups -> include
+Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
+
+**Actions - `string` in .widget.json support:**
+
 * Plus icon and code generation in quickfix for Actions in .widget.json -> options -> actionGroups -> include. We can now generate java boilerplate for new action and navigate to it immediately!
+![actions.gif](v2.0.9/actions.gif)
 
-* ![button.gif](v2.0.9/button.gif)
-* Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
-* Now .action(, ...) can be not only string but Enum.name() too. All features are supported
+* Ctrl-click navigation.Service  -> .widget.json, .widget.json -> Service:
+  ![navigation_action.gif](v2.0.9/navigation_action.gif)
 
-* ![actionenumkey.png](v2.0.9/actionenumkey.png)
-* Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now .action(, ...) can be not only string but java constant too. Only autocomplete/Ctrl-click in widget.json are supported. Navigation from constant to widget.json action and rename refactorings are not supported in this case for now
+* Autocomplete:
+![autocomplete_action.gif](v2.0.9/autocomplete_action.gif)
 
-* ![javaconst.png](v2.0.9/javaconst.png)
+* Inspection
+![inspection_action.gif](v2.0.9/inspection_action.gif)
+
+* Refactoring
+  not supported
+
+Actions - `java constant`  in .widget.json support:
+
+* Plus icon and code generation:
+  not supported
+
+* Ctrl-click navigation. Only .widget.json -> Service :
+![navigation_action_java_const.gif](v2.0.9/navigation_action_java_const.gif)
+
+* Autocomplete:
+![autocomplete_java_const.gif](v2.0.9%2Fautocomplete_java_const.gif)
+
+* Inspection
+![inspection_java_const.gif](v2.0.9/inspection_java_const.gif)
+
+* Refactoring
+  not supported
+
 #### New. Inspection that checks viewName is unique per screen
 ![unique_view.png](v2.0.9%2Funique_view.png)
 

@@ -175,7 +175,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 ??? Example
 
     === "no show condition"
-        see [Basics](#Howtoaddbacis)
+        see [Basic](#Howtoaddbacis)
 
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
@@ -584,11 +584,17 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 `Delete fields with widget`
 
 When fields stored in the additional settings table are deleted from the widget, the functionality will continue to work correctly by ignoring these old fields.
-
-#### FullTextSearch
+#### Filtration
+##### Basic
+see more  [Fields](/widget/type/property/filtration/filtration/)
+##### FullTextSearch
+_not applicable_
+##### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/widget/type/property/filtration/fulltextsearch/fulltextsearch/)
-
+##### Filter group
+A user-filled filter can be saved for each individual user.
+see [Filter group](/widget/type/property/filtration/filtergroup/filtergroup/)
 #### Pagination
 `Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 see [Pagination](/widget/type/property/pagination/pagination)

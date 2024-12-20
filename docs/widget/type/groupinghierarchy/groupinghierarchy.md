@@ -224,7 +224,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 ??? Example
 
     === "no show condition"
-        see [Basics](#Howtoaddbacis)
+        see [Basic](#Howtoaddbacis)
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}

@@ -234,69 +234,63 @@ Autocomplete, Ctrl-click navigation and inspection for @SearchParameter name par
 * Ctrl-click navigation
 ![navigation.gif](v2.0.9/navigation.gif)
 
-* Inspection
+ * Inspection
 ![inspection.gif](v2.0.9/inspection.gif)
 
 * Refactoring
 ![refactor.gif](v2.0.9/refactor.gif)
 
-#### New. Actions in .widget.json -> options -> actionGroups -> include
+#### New. Actions in .widget.json 
 Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
 
-##### **Actions - `string` in .widget.json support:**
-
-###### Plus icon and code generation  
+##### Plus icon and code generation
 We can now generate java boilerplate for new action and navigate to it immediately!
 ![actions.gif](v2.0.9/actions.gif)
 
-###### Ctrl-click navigation.Service  -> .widget.json, .widget.json -> Service:
+##### **Actions - `string` in .widget.json support:**
+
+###### Ctrl-click navigation
+Service  -> .widget.json, .widget.json -> Service:
   ![navigation_action.gif](v2.0.9/navigation_action.gif)
 
-###### Autocomplete:
+###### Autocomplete
 ![autocomplete_action.gif](v2.0.9/autocomplete_action.gif)
 
 ###### Inspection
 ![inspection_action.gif](v2.0.9/inspection_action.gif)
 
 ###### Refactoring
-  not supported
-
+![refactoring_action_string.gif](v2.0.9/refactoring_action_string.gif)
 
 ##### **Actions - `Enum` in .widget.json support:**
 
-###### Plus icon and code generation
-not supported
-
-###### Ctrl-click navigation.Service  -> .widget.json, .widget.json -> Service:
+###### Ctrl-click navigation.
+Service  -> .widget.json, .widget.json -> Service:
 ![navigation_action_enum.gif](v2.0.9/navigation_action_enum.gif)
 
-###### Autocomplete:
+###### Autocomplete
 ![autocomplete_action_enum.gif](v2.0.9/autocomplete_action_enum.gif)
 
 ###### Inspection
 ![inspection_action_enum.gif](v2.0.9/inspection_action_enum.gif)
 
 ###### Refactoring
-not supported
+![refactoring_action_enum.gif](v2.0.9/refactoring_action_enum.gif) 
 
 ##### Actions - `java constant`  in .widget.json support:
 
-###### Plus icon and code generation:
-  not supported
-
-###### Ctrl-click navigation. Only .widget.json -> Service :
+###### Ctrl-click navigation
+Only .widget.json -> Service :
 ![navigation_action_java_const.gif](v2.0.9/navigation_action_java_const.gif)
 
-###### Autocomplete:
+###### Autocomplete
 ![autocomplete_java_const.gif](v2.0.9%2Fautocomplete_java_const.gif)
 
 ###### Inspection
 ![inspection_java_const.gif](v2.0.9/inspection_java_const.gif)
 
-###### Refactoring
-  not supported
-
-#### New. Inspection that checks viewName is unique per screen
+#### New. Inspection viewName
+Inspection that checks viewName is unique per screen
 ![unique_view.png](v2.0.9%2Funique_view.png)
 
 Inspection that checks viewName is unique per screen (.screen.json -> navigation correctness), when type = standard is set (we skip this checks in other cases for backward compatibility with project customizations). We check:

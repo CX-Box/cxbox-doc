@@ -2,14 +2,14 @@
  
 `AdditionalList` widget is additionallist 
 
-## Basics
+## <a id="basic">Basic</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3190){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/base){:target="_blank"}
 ### How does it look?
 === "basic"
-    ![additionallist.png](additionallist.png)
+    ![basic.png](basic.png)
 === "read"
-
+    ![read.png](read.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
@@ -73,49 +73,69 @@ There are types of:
  
 #### How does it look?
 === "Constant title"
-    ![consttitle.png](consttitle.png)
+    === "basic"
+        ![consttitle.png](consttitle.png)
+    === "read"
+        ![consttitle_read.png](consttitle_read.png)
 === "Constant title empty"
-    ![empytitle.png](empytitle.png)
- 
+    === "basic"
+        ![empytitle.png](empytitle.png)
+    === "read"
+        ![empytitle_read.png](empytitle_read.png) 
+
 #### How to add?
 ??? Example
     === "Constant title"
-        **Step1** Add name for **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195Additional.widget.json
-        --8<--
-        ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3195){:target="_blank"} ·
+        === "basic"
+            **Step1** Add name for **title** to **_.widget.json_**.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195Additional.widget.json
+            --8<--
+            ```
+ 
+        === "read"
+            **Step1** Add name for **title** to **_.widget.json_**.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalRead.widget.json
+            --8<--
+            ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3195/view/myexample3195list){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/title){:target="_blank"}
-
-
+            
     === "Constant title empty"
-
-        **Step1** Delete parameter **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalEmptyTitle.widget.json
-        --8<--
-        ```
-
+        === "basic"
+            **Step1** Delete parameter **title** to **_.widget.json_**.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalEmptyTitle.widget.json
+            --8<--
+            ```
+        === "read"
+            **Step1** Delete parameter **title** to **_.widget.json_**.
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalInfoEmpty.widget.json
+            --8<--
+            ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3195){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/title){:target="_blank"}
 
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
-<!--
+ 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
--->
+ 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
 
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
@@ -129,42 +149,42 @@ There are types of:
 ##### How to add?
 ??? Example
     === "Calculated color"
-
-        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196DTO.java
-        --8<--
-        ```  
- 
-        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
-
-        Add in `title` field with `${customField}` 
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalInfo.widget.json
-        --8<--
-        ``` 
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
-<!--
+        === "basic"
+            **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196DTO.java
+            --8<--
+            ```  
+     
+            **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+    
+            Add in `title` field with `${customField}` 
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalConstant.widget.json
+            --8<--
+            ``` 
+    
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
+     
     === "Constant color"
- 
-        Add **"bgColor"** :  `HEX color`  to .widget.json.
-
-        Add in `title` field with `${customField}` 
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/MyExample3050ColorConst.widget.json
-        --8<--
-        ```
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
--->
+        === "basic"
+            Add **"bgColor"** :  `HEX color`  to .widget.json.
+    
+            Add in `title` field with `${customField}` 
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/MyExample3196AdditionalConstant.widget.json
+            --8<--
+            ```
+    
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196list){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
+     
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -194,7 +214,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
-    ![additionallist.png](additionallist.png)
+    see [Basic](#иasic)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 <!--
@@ -206,7 +226,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 ??? Example
 
     === "no show condition"
-        see [Basics](#Howtoaddbacis)
+        see [Basic](#Howtoaddbacis)
 
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
@@ -279,6 +299,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
 ## Actions
 _not applicable_
+
 ## Additional properties
 ### Customization of displayed columns
 _not applicable_

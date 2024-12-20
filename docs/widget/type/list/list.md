@@ -175,7 +175,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 ??? Example
 
     === "no show condition"
-        see [Basics](#Howtoaddbacis)
+        see [Basic](#Howtoaddbacis)
 
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)

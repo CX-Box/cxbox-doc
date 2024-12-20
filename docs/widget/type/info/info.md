@@ -190,7 +190,7 @@ The `showCondition` in configuration represents the condition under which the wi
 ??? Example
  
     === "no show condition"
-        see [Basics](#Howtoaddbacis)
+        see [Basic](#Howtoaddbacis)
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}

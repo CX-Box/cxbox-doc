@@ -1031,7 +1031,7 @@ Applies to:
     This process ensures that icons are displayed based on the specified icon values.
 
     === "Enum"
-        `Step 1` Add **fields.setAllValuesWithIcons** to buildIndependentMeta to corresponding **FieldMetaBuilder**.
+        `Step 1` Add **fields.setEnumIcons** to buildIndependentMeta to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta

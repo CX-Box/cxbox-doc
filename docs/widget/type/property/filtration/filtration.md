@@ -1,22 +1,28 @@
 # Filtration
 !!! warning line end "Work in progress"
+ 
+* [by fields](#by_fields)
+* [by fulltextsearch](#by_fulltextsearch) 
+* [by filter group](#by_filter_group)
+* by personal filter group
+
+## <a id="by_fields">by fields</a>
+The availability or unavailability of filtering operations for each field type see [Fields](/widget/fields/fieldtypes/).
+
+Each field type requires a distinct filtering operation sent by the frontend.
+Here are the standard field types with their respective filtering methods see [SearchOperation for filtering](/widget/fields/filtersearchoperation).
+
+## <a id="by_fulltextsearch">by fulltextsearch</a>
+`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
+
+see [FullTextSearch](/widget/type/property/filtration/fulltextsearch/fulltextsearch/)
+
+## <a id="by_filter_group">by filter group</a>
+`Filter group` - a user-filled filter can be saved for each individual user.
+
+see [Filter group](/widget/type/property/filtration/filtergroup/filtergroup/)
+ 
 <!-- 
-## Filter
-Filtration
-
-by fields
-
-by fulltextsearch
-
-by filter group
-
-by personal filter group
-
-каждый кейс для ВСЕХ типов виджетов поддерживающих фильтрацию
-List | PickList | Assoc | Grouping Hierarhy
-
-The system has the ability to filter recording by value in the field. For this, it is necessary to indicate that this field is allowed to filter in FieldMetaBuilder, and also indicate in the DTO the @SearchParameter annotation for the field that is being searched.
-
 ### Filter widget:
 
 It is possible to display the necessary filters on a specific widget immediately after loading the view. Currently, such filters cannot be removed from the widget's filter panel.

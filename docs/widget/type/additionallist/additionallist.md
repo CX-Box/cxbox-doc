@@ -1,19 +1,25 @@
 # AdditionalList
  
-`AdditionalList` widget is additionallist 
+`AdditionalList` widget is list the general information for many records. Widget is always located **on the left**.
 
-## <a id="basic">Basic</a>
+The widget has two modes:
+
+* Main Mode: Displays records as a list, ideal for tracking the status of business process steps. Editing is not supported.
+
+* Reading Mode: Presents values in the widget's specified format for easy viewing.
+
+## <a id="Main Mode">Basic</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3190){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/base){:target="_blank"}
 ### How does it look?
-=== "basic"
+=== "Main Mode"
     ![basic.png](basic.png)
-=== "read"
+=== "Reading Mode"
     ![read.png](read.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a> 
 ??? Example
-    === "basic"
+    === "Main Mode"
         **Step1** Create file **_.widget.json_** with type = **"AdditionalList"**
     
         Add existing field to a AdditionalList widget. see more [Fields](#fields)
@@ -30,7 +36,7 @@
         {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/myexample3190list.view.json
         --8<--
         ```
-    === "read"
+    === "Reading Mode"
         **Step1** Create file **_.widget.json_** with type = **"AdditionalInfo"**
     
         Add existing field to a AdditionalInfo widget. see more [Fields](#fields)
@@ -71,20 +77,20 @@ There are types of:
  
 #### How does it look?
 === "Constant title"
-    === "basic"
+    === "Main Mode"
         ![consttitle.png](consttitle.png)
-    === "read"
+    === "Reading Mode"
         ![consttitle_read.png](consttitle_read.png)
 === "Constant title empty"
-    === "basic"
+    === "Main Mode"
         ![empytitle.png](empytitle.png)
-    === "read"
+    === "Reading Mode"
         ![empytitle_read.png](empytitle_read.png) 
 
 #### How to add?
 ??? Example
     === "Constant title"
-        === "basic"
+        === "Main Mode"
             **Step1** Add name for **title** to **_.widget.json_**.
             ```json
             --8<--
@@ -92,7 +98,7 @@ There are types of:
             --8<--
             ```
  
-        === "read"
+        === "Reading Mode"
             **Step1** Add name for **title** to **_.widget.json_**.
             ```json
             --8<--
@@ -103,14 +109,14 @@ There are types of:
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/title){:target="_blank"}
             
     === "Constant title empty"
-        === "basic"
+        === "Main Mode"
             **Step1** Delete parameter **title** to **_.widget.json_**.
             ```json
             --8<--
             {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalEmptyTitle.widget.json
             --8<--
             ```
-        === "read"
+        === "Reading Mode"
             **Step1** Delete parameter **title** to **_.widget.json_**.
             ```json
             --8<--
@@ -155,7 +161,7 @@ There are types of:
         --8<--
         ```  
 
-        === "basic"
+        === "Main Mode"
             **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
     
             Add in `title` field with `${customField}` 
@@ -165,7 +171,7 @@ There are types of:
             {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalConstant.widget.json
             --8<--
             ``` 
-        === "read"
+        === "Reading Mode"
             **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json for **read.widget**.
     
             Add in `title` field with `${customField}` 
@@ -181,7 +187,7 @@ There are types of:
 
 <!--     
     === "Constant color"
-        === "basic"
+        === "Main Mode"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
     
             Add in `title` field with `${customField}` 
@@ -240,11 +246,23 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/MyExample31012.widget.json
-        --8<--
-        ```
+        === "Main Mode"
+
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/MyExample3193Additional.widget.json
+            --8<--
+            ```
+        === "Reading Mode"
+
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/MyExample3193AdditionalRead.widget.json
+            --8<--
+            ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3193){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/showcondition/bycurrententity){:target="_blank"}
+
 <!--
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
@@ -296,13 +314,22 @@ Fields Configuration. The fields array defines the individual fields present wit
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
     === "Example of writing code"
-        Add field to **_.widget.json_**.
-
-          ```json
-             --8<--
-             {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190Additional.widget.json
-             --8<--
-          ```
+        === "Main Mode"
+            Add field to **_.widget.json_**.
+    
+              ```json
+                 --8<--
+                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190Additional.widget.json
+                 --8<--
+              ```
+        === "Reading Mode"
+            Add field to **_.widget.json_** for "widget.read" widget.
+    
+              ```json
+                 --8<--
+                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3193AdditionalRead.widget.json
+                 --8<--
+              ```
 
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
@@ -312,8 +339,9 @@ _not applicable_
 
 ## Additional properties
 #### Customization of displayed columns
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/customizationcolumns){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3194){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/customizationcolumns){:target="_blank"}
+
 
 To customize the columns displayed on a list widget, you can perform two main actions:
 
@@ -356,12 +384,12 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/MyExample3135List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/customizationcolumns/MyExample3194Additional.widget.json
         --8<--
         ```
         
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/customizationcolumns){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3194){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/customizationcolumns){:target="_blank"}
         
 
     === "Pre-hidden columns"
@@ -374,19 +402,19 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
             
         ```
            "additional": {
-              "fields": ["customFieldPercent", "customFieldRadio"],
+              "fields": ["customFieldText"],
               "enabled": true
             }
         ```
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/MyExample3135ListHiddenFields.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/customizationcolumns/MyExample3194AdditionalHidden.widget.json
         --8<--
         ```
         
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135/view/myexample3135listhidden){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/customizationcolumns){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3194){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/customizationcolumns){:target="_blank"}
 
 ### Filtration
 #### Basic 

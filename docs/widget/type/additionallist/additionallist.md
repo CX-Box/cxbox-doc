@@ -123,14 +123,14 @@ There are types of:
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
- 
+<!--  
 **Constant color**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
- 
+-->
 **Calculated color**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196list){:target="_blank"} ·
@@ -147,14 +147,15 @@ There are types of:
 ##### How to add?
 ??? Example
     === "Calculated color"
+
+        **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196DTO.java
+        --8<--
+        ```  
+
         === "basic"
-            **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196DTO.java
-            --8<--
-            ```  
-     
             **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
     
             Add in `title` field with `${customField}` 
@@ -164,10 +165,21 @@ There are types of:
             {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalConstant.widget.json
             --8<--
             ``` 
+        === "read"
+            **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json for **read.widget**.
     
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
-     
+            Add in `title` field with `${customField}` 
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalInfo.widget.json
+            --8<--
+            ``` 
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
+
+<!--     
     === "Constant color"
         === "basic"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
@@ -182,7 +194,7 @@ There are types of:
     
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196list){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
-     
+-->
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -378,12 +390,20 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 
 ### Filtration
 #### Basic 
+Works only for mode **basic**
+
 see more  [Fields](/widget/type/property/filtration/filtration/)
 #### FullTextSearch
 _not applicable_
 #### Filter group
-_not applicable_
+A user-filled filter can be saved for each individual user.
+see [Filter group](/widget/type/property/filtration/filtergroup/filtergroup/)
+
 ### Pagination
 _not applicable_
 ### Export to Excel
+Works only for mode **basic** 
+
+`Export to Excel` enables users to download a .xlsx file containing the table's data.
+see [Excel](/widget/type/property/export/excel/excel)
 

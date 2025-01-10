@@ -60,8 +60,24 @@ We have released a new CORE UI version (2.4.3).
 #### Other Changes
 see [cxbox-ui changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.3)  
 
+<!--### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
+
+We've updated the plugin to version 1.7.8! New version of Plugin is currently being reviewed by JetBrains and will be available in a few business days.
+
+#### Added: inspection for field references with `-FieldKey` postfix (`options` section)   
+
+The plugin now supports autocomplete, reference and inspections for field references in the `options` section of a `widget.json` file. To enable this functionality, ensure that fields in the options are named using the `-FieldKey` postfix (or simply named `fieldKey`). The plugin will link these fields to the fields array at the beginning of a widget.json file and, thus, ensure accurate references.  
+
+=== "Autocomplete"  
+    ![fieldKeyAutocomplete.gif](v2.0.10/fieldKeyAutocomplete.gif)
+=== "Reference"  
+    ![fieldKeyReference.gif](v2.0.10/fieldKeyReference.gif)
+=== "Inspection"  
+    ![fieldKeyInspection.gif](v2.0.10/fieldKeyInspection.gif)  
+-->
+
 ### CXBOX [documentation](https://doc.cxbox.org/)
 
 #### Added: [AdditionalList](https://doc.cxbox.org/widget/type/additionallist/additionallist/)
-We have provided a detailed descriptions of Additional List widget.  
+We have provided a detailed description of AdditionalList widget.  
 

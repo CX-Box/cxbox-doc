@@ -13,12 +13,11 @@
 ### How does it look?
 
 === "List widget"
-    ![img_list.png](img_list.png)
+    ![fileUploadList.png](fileUploadList.png)
 === "Info widget"
-    ![img_info.png](img_info.png)
+    ![fileUploadInfo.png](fileUploadInfo.png)
 === "Form widget"
-    ![img_form.png](img_form.png)
-
+    ![fileUploadForm.png](fileUploadForm.png)
 
 ### How to add?
 
@@ -123,18 +122,18 @@
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![img_edit_list.png](img_edit_list.png)
+        ![fileUploadListEditable.PNG](fileUploadListEditable.PNG)
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![img_edit_form.png](img_edit_form.png)
+        ![fileUploadFormEditable.PNG](fileUploadFormEditable.PNG)
 === "Readonly"
     === "List widget"
-        ![img_ro_list.png](img_ro_list.png)
+        ![fileUploadListReadOnly.PNG](fileUploadListReadOnly.PNG)
     === "Info widget"
-        ![img_ro_info.png](img_ro_info.png)
+        ![fileUploadInfoReadOnly.PNG](fileUploadInfoReadOnly.PNG)
     === "Form widget"
-        ![img_ro_form.png](img_ro_form.png)
+        ![fileUploadFormReadOnly.PNG](fileUploadFormReadOnly.PNG)
 
 ### How to add?
 ??? Example
@@ -191,7 +190,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.gif](img_filtr_list.gif)
+    ![fileUploadListFiltering.gif](fileUploadListFiltering.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -391,7 +390,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
 ### How does it look?
 === "List widget"
-    ![img_sort_list](img_sort_list.png)
+    ![fileUploadListSorting.PNG](fileUploadListSorting.PNG)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -425,11 +424,11 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
 ### How does it look?
 === "List widget"
-    ![img_req_list.png](img_req_list.png)
+    ![fileUploadListRequired.PNG](fileUploadListRequired.PNG)
 === "Info widget"
     _not applicable_
 === "Form widget"
-    ![img_req_form.png](img_req_form.png)
+    ![fileUploadFormRequired.PNG](fileUploadFormRequired.PNG)
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.

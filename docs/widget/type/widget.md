@@ -1,13 +1,32 @@
 # Widget
-## Widget Types
+<!-- 
+## Widget Type Family
+* Info: [Base widget - Info widget](/widget/type/info/info) 
+* Form: [Base widget - Form widget](/widget/type/form/form)
+* List: [Base widget - List widget](/widget/type/list/list) 
+* GroupingHierarchy: [Base widget - GroupingHierarchy widget](docs/widget/type/groupinghierarchy/groupinghierarchy)
+* StatsBlock: [Base widget - Statistics blocks widget](widget/type/statblocks/statblocks)
+* AssocListPopup
+* PickListPopup: [Base widget - PickListPopup widget](widget/type/pickListPopup/pickListPopup)
+* FormPopup: [Base widget - Form Popup widget](widget/type/formpopup/formpopup)
+* HeaderWidget
+* LevelMenu
+* Steps
+-->
+
+## Widget Types 
+ 
 * [Form widget](/widget/type/form/form) is a component for data viewing and editing. 
 * [Info widget](/widget/type/info/info) is a component only for data viewing.
 * [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
+* [AdditionalList widget](/widget/type/list/list)is list the general information for many records. Widget is always located **on the left**.
 * [Form Popup widget](widget/type/formpopup/formpopup) is a component for additional field checks in popup and the ability to add information inside the popup.
-* [AdditionalInfo widget](widget/type/additionalinfo/additionalinf) is a component only for data viewing. Widget is always located **on the left**.
-* [Statistics blocks widget](widget/type/statblocks/statblocks)  is a  tool designed to display aggregated data in a visually accessible format.
-* [PickListPopup widget](widget/type/pickListPopup/pickListPopup)
- 
+* [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the left**.
+* [Statistics blocks widget](widget/type/statblocks/statblocks) is a  tool designed to display aggregated data in a visually accessible format.
+* [PickListPopup widget](widget/type/pickListPopup/pickListPopup) is a component that allows the user to select a value from a Popup list of entities.
+* [GroupingHierarchy widget](docs/widget/type/groupinghierarchy/groupinghierarchy)  presents shared information across multiple records, enabling rows to be grouped by one or more specified fields.
+
+
 ## Structure .widget.json
 
 ```json

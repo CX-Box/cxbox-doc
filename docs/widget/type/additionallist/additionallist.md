@@ -8,6 +8,10 @@ The widget has two modes:
 
 * Reading Mode: Presents values in the widget's specified format for easy viewing.
 
+
+!!! info
+    AdditionalList Main Mode does not dynamically expand based on its content. If the number of columns exceeds the available space, a horizontal scrollbar appears at the bottom to accommodate the overflow.
+
 ## <a id="Main Mode">Basic</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3190){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/base){:target="_blank"}

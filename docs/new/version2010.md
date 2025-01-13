@@ -2,6 +2,8 @@
 
 * [cxbox/demo 2.0.10 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.10), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.10)
 
+* [cxbox/core 4.0.0-M13 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M13), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M13), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M13)
+
 * [cxbox-ui/core 2.4.3 git](https://github.com/CX-Box/cxbox-ui/tree/2.4.3), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.4.3), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.4.3)
 
 * [cxbox/code-samples 2.0.10 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.10), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.10)

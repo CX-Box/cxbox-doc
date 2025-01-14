@@ -43,7 +43,7 @@
     --8<--
     ```
 
-    **Step4** Add **fields.setDictionaryTypeWithCustomValues** to corresponding **FieldMetaBuilder**.
+    **Step4** Add **fields.setConcreteValues** to corresponding **FieldMetaBuilder**.
 
     ```java
     --8<--

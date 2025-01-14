@@ -10,8 +10,10 @@ This function is available:
 
 *  [On the field](#on_field) Sorting must be enabled explicitly at the field level
 * `Not recommended.`  [At the application level](#app-default-sort) Sorting is enabled by default for all fields in the application.
- 
- 
+
+!!! info
+    Sorting won't function until the page is refreshed after adding or updating records. 
+
 ### How does it look?
 ![sorting.gif](sorting.gif)
 

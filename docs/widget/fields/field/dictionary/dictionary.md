@@ -937,37 +937,119 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationdynamic){:target="_blank"}
 
 ## Sorting
+`Enum`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
 
+`Dictionary`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample106){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/sorting){:target="_blank"}
+
 `Sorting` allows you to sort data in ascending or descending order.
 
-Sorting items by display_order, then by key (display_order can be null)
+**Sorting data**:
+The sorting of values is based on those stored in the database rather than those displayed in the interface.
+
+!!! info
+    Sorting won't function until the page is refreshed after adding or updating records.
+
+**Sorting Drop-down list or  List values for filter**: 
+Can also arrange the values in the drop-down list or list values for filter in the desired order.
+`Enum` possible to  arrange list values for filter different from sorting for drop-down values.
 
 ### How does it look?
-=== "List widget"
-    ![img_sort_list](img_sort_list.png)
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
-    _not applicable_
+=== "Sorting data"
+    === "List widget"
+        ![img_sort_list](img_sort_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+
+=== "List values for filter"
+    === "List widget"
+        ![img_sort_filter_list.png](img_sort_filter_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        _not applicable_
+=== "Drop-down list"
+    === "List widget"
+        ![img_sort_filter_value.png](img_sort_filter_value.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_sort_value_form.png](img_sort_value_form.png)
+
 ### How to add?
 ??? Example
     === "List widget"
+        === "Enum"
+            === "Sorting data"
+                see more [Sorting](/widget/type/property/sorting/sorting)
 
-        If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
+                The sorting of values is based on those stored in the database rather than those displayed in the interface, using lexicographic sorting.
+
+                **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildIndependentMeta
+                --8<--
+                ```
+
+            === "Drop-down list"
+                The sorting of drop-down values is determined by the order specified by the developer in the method.
+
+                **Step 1**  Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
+                Ensure the values are passed in the correct order to achieve the desired sorting.
+
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildRowDependentMeta
+                --8<--
+                ```
+ 
+            === "List values for filter"
+                The sorting of drop-down values is determined by the order specified by the developer in the method.
+                 
+                **Step 1**  Add **fields.setEnumFilterValues** to corresponding **FieldMetaBuilder**.
+                Ensure the values are passed in the correct order to achieve the desired sorting.
+
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildIndependentMeta
+                --8<--
+                ```
+    
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/field/dictionary/sorting){:target="_blank"}
+
+        === "Dictionary"
+            === "Sorting data"
+                see more [Sorting](/widget/type/property/sorting/sorting)
+
+                The sorting of values is based on those stored in the database rather than those displayed in the interface.
+
+                **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/sorting/MyExample90Meta.java:buildIndependentMeta
+                --8<--
+                ```
+ 
+            === "Drop-down list and List values for filter"
+                If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
+                
+                see more [Sorting](/widget/type/property/sorting/sorting)
         
-        see more [Sorting](/widget/type/property/sorting/sorting)
-
-        **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildIndependentMeta
-        --8<--
-        ```
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
+                **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/sorting/MyExample106Meta.java:buildIndependentMeta
+                --8<--
+                ```
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample106){:target="_blank"} ·
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/sorting){:target="_blank"}
 
     === "Info widget"
         _not applicable_

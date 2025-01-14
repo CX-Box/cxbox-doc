@@ -15,8 +15,11 @@ Pagination modes:
 | /meta                           | +                         | +                            | +                       |
 | /count                          | +                         | + (response is ignored)      | + (response is ignored) | 
 | /data                           | +                         | +                            | +                       | 
-   
- 
+
+
+!!! info
+    Pagination won't function until the page is refreshed after adding records.
+
 **Use Cases** :
 
 * **`nextAndPreviousWithCount`**: Ideal for backends that leverage database sources.

@@ -35,7 +35,7 @@ Added: we added type tag for different tab schemas (just like field types and wi
 
 ![contextTab3and4.gif](v2.0.4/contextTab3and4.gif)
 
-[Fulltextsearch](https://doc.cxbox.org/widget/type/property/filtration/fulltextsearch/fulltextsearch/) 
+[Fulltextsearch](https://doc.cxbox.org/widget/type/property/filtration/filtration/#by-fulltextsearch) 
 
 3) Fixed: default display hidden view of the first level
 

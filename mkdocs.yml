@@ -75,10 +75,7 @@ nav:
       - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
       - Property:
          - Show condition: widget/type/property/showcondition/showcondition.md
-         - Filtration:
-           - Basic: widget/type/property/filtration/filtration.md
-           - FullTextSearch: widget/type/property/filtration/fulltextsearch/fulltextsearch.md
-           - Filter group: widget/type/property/filtration/filtergroup/filtergroup.md
+         - Filtration: widget/type/property/filtration/filtration.md
          - Pagination: widget/type/property/pagination/pagination.md
          - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
          - Sorting: widget/type/property/sorting/sorting.md

@@ -587,14 +587,15 @@ When fields stored in the additional settings table are deleted from the widget,
 #### Filtration
 ##### Basic
 see more  [Fields](/widget/type/property/filtration/filtration/)
-##### FullTextSearch
-_not applicable_
-##### FullTextSearch
+#### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
-see [FullTextSearch](/widget/type/property/filtration/fulltextsearch/fulltextsearch/)
-##### Filter group
+see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
+##### Personal filter group
 A user-filled filter can be saved for each individual user.
-see [Filter group](/widget/type/property/filtration/filtergroup/filtergroup/)
+see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
+##### Filter group
+`Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
+see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 #### Pagination
 `Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 see [Pagination](/widget/type/property/pagination/pagination)

@@ -19,7 +19,7 @@
 * [Form widget](/widget/type/form/form) is a component for data viewing and editing. 
 * [Info widget](/widget/type/info/info) is a component only for data viewing.
 * [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
-* [AdditionalList widget](/widget/type/list/list)is list the general information for many records. Widget is always located **on the left**.
+* [AdditionalList widget](/widget/type/additionallist/additionallist)is list the general information for many records. Widget is always located **on the left**.
 * [Form Popup widget](widget/type/formpopup/formpopup) is a component for additional field checks in popup and the ability to add information inside the popup.
 * [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the left**.
 * [Statistics blocks widget](widget/type/statblocks/statblocks) is a  tool designed to display aggregated data in a visually accessible format.

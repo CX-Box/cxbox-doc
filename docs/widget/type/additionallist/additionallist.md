@@ -427,9 +427,12 @@ Works only for mode **basic**
 see more  [Fields](/widget/type/property/filtration/filtration/)
 #### FullTextSearch
 _not applicable_
-#### Filter group
+##### Personal filter group
 A user-filled filter can be saved for each individual user.
-see [Filter group](/widget/type/property/filtration/filtergroup/filtergroup/)
+see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
+##### Filter group
+`Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
+see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 
 ### Pagination
 _not applicable_

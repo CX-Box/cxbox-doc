@@ -1,10 +1,10 @@
 # Filtration
-!!! warning line end "Work in progress"
  
 * [by fields](#by_fields)
 * [by fulltextsearch](#by_fulltextsearch) 
+* [by personal filter group](#by_personal_filter_group)
 * [by filter group](#by_filter_group)
-* by personal filter group
+* default filtration
 
 ## <a id="by_fields">by fields</a>
 The availability or unavailability of filtering operations for each field type see [Fields](/widget/fields/fieldtypes/).
@@ -12,96 +12,167 @@ The availability or unavailability of filtering operations for each field type s
 Each field type requires a distinct filtering operation sent by the frontend.
 Here are the standard field types with their respective filtering methods see [SearchOperation for filtering](/widget/fields/filtersearchoperation).
 
-## <a id="by_fulltextsearch">by fulltextsearch</a>
-`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
+This function is available:
 
-see [FullTextSearch](/widget/type/property/filtration/fulltextsearch/fulltextsearch/)
+* [List widget](/widget/type/list/list)  
+* [AdditionalList widget](/widget/type/additionallist/additionallist) 
+* [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo)  
+* [PickListPopup widget](widget/type/pickListPopup/pickListPopup)  
+* [GroupingHierarchy widget](docs/widget/type/groupinghierarchy/groupinghierarchy)  
+
+## <a id="by_fulltextsearch">by fulltextsearch</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch){:target="_blank"}
+
+`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query
+(search criteria is configurable and will usually check if at least one column has corresponding value).
+This feature makes it easier for users to quickly find the information they are looking for within a List widget.
+
+
+This function is available: 
+
+* [List widget](/widget/type/list/list)
+
+### How does it look?
+![fulltextsearch.gif](fulltextsearch.gif)
+
+### How to add?
+??? Example
+
+    `Step 1` Add extension file FullTextSearchExt.java
+    ```java
+    import java.util.Optional;
+    import jakarta.persistence.criteria.CriteriaBuilder;
+    import jakarta.persistence.criteria.Path;
+    import jakarta.persistence.criteria.Predicate;
+    import lombok.NonNull;
+    import lombok.experimental.UtilityClass;
+    import org.apache.commons.lang3.StringUtils;
+    import org.cxbox.core.crudma.bc.BusinessComponent;
+    
+    @UtilityClass
+    public class FullTextSearchExt {
+    
+        @NonNull
+        public static Optional<String> getFullTextSearchFilterParam(BusinessComponent bc) {
+            return Optional.ofNullable(bc.getParameters().getParameter("_fullTextSearch"));
+        }
+    
+        public static Predicate likeIgnoreCase(String value, CriteriaBuilder cb, Path<String> path) {
+            return cb.like(cb.lower(path), StringUtils.lowerCase("%" + value + "%"));
+        }
+    
+    }
+    ```
+  
+    `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyEntity3614Repository.java
+    --8<--
+    ```
+ 
+    `Step 4` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Service.java:getSpecification
+    --8<--
+    ```
+ 
+    `Step 5` Add **fullTextSearch** to corresponding **.widget.json**. 
+
+    `enabled` true/false  
+
+    `placeholder` - description for  fullTextSearch
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614List.widget.json
+    --8<--
+    ```
+## <a id="by_personal_filter_group">by personal filter group</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
+
+`Personal filter group` - a user-filled filter can be saved for each individual user.
+
+A user-filled filter can be saved for each individual user.
+
+This function is available: 
+
+* [List](/widget/type/list/list),
+* [AdditionalList](/widget/type/additionallist/additionallist).
+
+The "Save Filters" button is located within the gear icon.
+When the "Save Filters" button is clicked, a modal window appears displaying all custom filters, which can be deleted if desired.
+
+### How does it look?
+=== "List"
+    ![filtergroup.gif](filtergroup.gif)
+=== "AdditionalList"
+    ![filtergroup_addlist.gif](filtergroup_addlist.gif)
+### How to add?
+??? Example
+    The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
+
+    For fields where individual filters are intended to be saved, it is essential to configure the filtering options. see `Step 1` and `Step 2`
+    **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup//MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+    `Step 2` Add **filterSetting** to corresponding **.widget.json**. 
+
+    `enabled` true/false  
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616List.widget.json
+    --8<--
+    ```
 
 ## <a id="by_filter_group">by filter group</a>
-`Filter group` - a user-filled filter can be saved for each individual user.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
 
-see [Filter group](/widget/type/property/filtration/filtergroup/filtergroup/)
- 
-<!-- 
-### Filter widget:
+`Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
 
-It is possible to display the necessary filters on a specific widget immediately after loading the view. Currently, such filters cannot be removed from the widget's filter panel.
-You can add filters to different fields at the same time. After adding a filter to the widget field, a filter object is created in screen meta.
+### How does it look?
+=== "List"
+    ![filter_group_save_list.gif](filter_group_save_list.gif)
+=== "AdditionalList"
+    ![filter_group_save_add_list.gif](filter_group_save_add_list.gif)
 
-### Filter types
+### How to add?
+??? Example
+    !!! tips
+        To write this drilldown, follow these steps:
 
-The system has the ability to filter for entries by value in the field. To do this, you must indicate that this field is allowed to filter in FieldMetaBuilder, and also indicate in the DTO the @SearchParameter annotation for the field that is being searched.
+                * Add a filter function for fields 
+                * Visually fill in the necessary filters in the interface.
+                * Open the developer panel.
+                * Locate the required request.
+                * Use this query to substitute in your code to get a reference 
 
+        ![how_add_search_spec.gif](how_add_search_spec.gif)
 
-Different types of fields have different filtering operations for field records.
+    Add  business component in **BC_FILTER_GROUPS** TABLE
 
-Filter available column types:
+      `name` - name predefined filter
 
-| Field | Filter type
-|:---|:---|
-| **input** | contains
-| **text** | contains
-| **checkbox** | specified
-| **dictionary** | equalsOneOf
-| **multivalue** | equalsOneOf
-| **number** | equals
-| **date** | equals
-| **dateTime** | equals
-| **dateTimeWithSeconds** | equals
-| **pickList** | equals
-| **inlinePickList** | equals
-| **percent** | equals
-| **money** | equals
-| **multifield** | equals
-| **default (other)** | equals  
+      `BC` - name business component
 
-Description supported Filter Operations:
-
-| Filter type | Description
-|:---|:---|
-| **contains** | values containing specified
-| **specified** | certain values
-| **equalsOneOf** | equal to one of these
-| **equals** | equal values
-
-### Multivalue field filter specification
----
-
-Filtering fields of type `multivalue` is implemented not like other types. This type of filter pass filter field keys
-in the url parameters, when other types pass values directly. Filtered values keys are assigned from AssocListPopup widget,
-where the user marked the necessary entries.
-
-Popup widget should be added to the some view. Widget with `multivalue` field filter should have additional keys in the field meta.
-
-Addition widget meta keys for `multivalue` field popup:  
-`popupBcName: string` - name BC popup  
-`assocValueKey: string` - field key which key values will be filtered  
-`associateFieldKey: string` - field key to be added to the filter
-
-
-Example widget field meta that has filter by multivalue field:
-```json
-{
-  "id": 1111111,
-  "name": "Widget Name",
-  "title": "Title",
-  "type": "Form",
-  "bc": "testBcName",
-  "fields": [
-    ...
-    {
-      "label": "Field Name",
-      "key": "fieldKey",
-      "type": "multivalue",
-      "popupBcName": "popupAssocBcName",
-      "assocValueKey": "popupValueFieldKey",
-      "associateFieldKey": "fieldKey"
-    }
-    ...
-  ],
-  "axisFields": [],
-  "chart": [],
-  "options": {}
-}
-```
- -->
+      `filters` - conditions for filtration
+    
+      ```csv
+        name;bc;filters;ID
+        Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%
+      ```

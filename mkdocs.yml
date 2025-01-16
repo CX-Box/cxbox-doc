@@ -68,9 +68,9 @@ nav:
       - Widget Info: widget/type/info/info.md
       - Widget List: widget/type/list/list.md
       - Widget AdditionalList: widget/type/additionallist/additionallist.md
-      - Widget Form Popup: widget/type/formpopup/formpopup.md
+      - Widget FormPopup: widget/type/formpopup/formpopup.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
-      - Widget Statistics blocks: widget/type/statblocks/statblocks.md
+      - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
       - Property:

@@ -126,7 +126,7 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
     **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup//MyExample3616Meta.java:buildIndependentMeta
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
     --8<--
     ```
     `Step 2` Add **filterSetting** to corresponding **.widget.json**. 

@@ -1086,7 +1086,71 @@ Can also arrange the values in the drop-down list or list values for filter in t
     === "Info widget"
         _not applicable_
     === "Form widget"
-        _not applicable_
+        === "Enum"
+            === "Sorting data"
+                _not applicable_
+            === "Drop-down list"
+                The sorting of drop-down values is determined by the order specified by the developer in the method.
+
+                **Step 1**  Add **fields.setEnumValues** to corresponding **FieldMetaBuilder**.
+                Ensure the values are passed in the correct order to achieve the desired sorting.
+
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/fields/dictionary/sorting/MyExample90Meta.java:buildRowDependentMeta
+                --8<--
+                ```
+ 
+            === "List values for filter"
+                _not applicable_
+        === "Dictionary"
+            === "Sorting data"
+                _not applicable_
+            === "Drop-down list"
+                If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
+                ```java
+                @Configuration
+                public class DictionaryConfig {
+
+                    @Bean
+                    public DictionaryProvider dictionaryProvider() {
+                        return new DictionaryProvider() {
+                
+                            @Override
+                            public <T extends Dictionary> T lookupName(@NonNull Class<T> type, @NonNull DictionaryValue value) {
+                                var dictTmp = Dictionary.of(type, "");
+                                var lov = DictionaryCache.dictionary().lookupName(value.getValue(), dictTmp.getDictionaryType());
+                                return Dictionary.of(type, lov.getKey());
+                            }
+                
+                            @Override
+                            public <T extends Dictionary> SimpleDictionary lookupValue(@NonNull T dictionary) {
+                                return DictionaryCache.dictionary().get(dictionary.getDictionaryType(), dictionary.key());
+                            }
+                
+                            @Override
+                            public <T extends Dictionary> Collection<T> getAll(@NonNull Class<T> dictionaryType) {
+                
+                                if (dictionaryType == CustomDictionarySortingExample.class) {
+                                    return DictionaryCache.dictionary().getAll(Dictionary.of(dictionaryType, "").getDictionaryType())
+                                            .stream()
+                                            .sorted(Comparator.comparing(SimpleDictionary::getKey))
+                                            .map(e -> Dictionary.of(dictionaryType, e.getKey()))
+                                            .toList();
+                                }
+                
+                                return DictionaryCache.dictionary().getAll(Dictionary.of(dictionaryType, "").getDictionaryType())
+                                        .stream()
+                                        .map(e -> Dictionary.of(dictionaryType, e.getKey()))
+                                        .toList();
+                            }
+                        };
+                    }
+                
+                }
+                ```
+            === "List values for filter"
+                _not applicable_
 
 ## Required
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample89){:target="_blank"} ·

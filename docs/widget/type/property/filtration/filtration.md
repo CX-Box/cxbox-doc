@@ -4,7 +4,8 @@
 * [by fulltextsearch](#by_fulltextsearch) 
 * [by personal filter group](#by_personal_filter_group)
 * [by filter group](#by_filter_group)
-* default filtration
+<!-- default filtration -->
+
 
 ## <a id="by_fields">by fields</a>
 The availability or unavailability of filtering operations for each field type see [Fields](/widget/fields/fieldtypes/).
@@ -16,8 +17,6 @@ This function is available:
 
 * [List widget](/widget/type/list/list)  
 * [AdditionalList widget](/widget/type/additionallist/additionallist) 
-* [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo)  
-* [PickListPopup widget](widget/type/pickListPopup/pickListPopup)  
 * [GroupingHierarchy widget](docs/widget/type/groupinghierarchy/groupinghierarchy)  
 
 ## <a id="by_fulltextsearch">by fulltextsearch</a>
@@ -126,10 +125,11 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
     **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup//MyExample3616Meta.java:buildIndependentMeta
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
     --8<--
     ```
-    `Step 2` Add **filterSetting** to corresponding **.widget.json**. 
+
+    **Step 3** Add **filterSetting** to corresponding **.widget.json**. 
 
     `enabled` true/false  
         

@@ -1033,20 +1033,52 @@ Can also arrange the values in the drop-down list or list values for filter in t
                 **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
                 ```java
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/sorting/MyExample90Meta.java:buildIndependentMeta
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/sorting/MyExample106Meta.java:buildIndependentMeta
                 --8<--
                 ```
  
             === "Drop-down list and List values for filter"
                 If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
-                
-                see more [Sorting](/widget/type/property/sorting/sorting)
-        
-                **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
                 ```java
-                --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/sorting/MyExample106Meta.java:buildIndependentMeta
-                --8<--
+                @Configuration
+                public class DictionaryConfig {
+                
+                    @Bean
+                    public DictionaryProvider dictionaryProvider() {
+                        return new DictionaryProvider() {
+                
+                            @Override
+                            public <T extends Dictionary> T lookupName(@NonNull Class<T> type, @NonNull DictionaryValue value) {
+                                var dictTmp = Dictionary.of(type, "");
+                                var lov = DictionaryCache.dictionary().lookupName(value.getValue(), dictTmp.getDictionaryType());
+                                return Dictionary.of(type, lov.getKey());
+                            }
+                
+                            @Override
+                            public <T extends Dictionary> SimpleDictionary lookupValue(@NonNull T dictionary) {
+                                return DictionaryCache.dictionary().get(dictionary.getDictionaryType(), dictionary.key());
+                            }
+                
+                            @Override
+                            public <T extends Dictionary> Collection<T> getAll(@NonNull Class<T> dictionaryType) {
+                
+                                if (dictionaryType == CustomDictionarySortingExample.class) {
+                                    return DictionaryCache.dictionary().getAll(Dictionary.of(dictionaryType, "").getDictionaryType())
+                                            .stream()
+                                            .sorted(Comparator.comparing(SimpleDictionary::getKey))
+                                            .map(e -> Dictionary.of(dictionaryType, e.getKey()))
+                                            .toList();
+                                }
+                
+                                return DictionaryCache.dictionary().getAll(Dictionary.of(dictionaryType, "").getDictionaryType())
+                                        .stream()
+                                        .map(e -> Dictionary.of(dictionaryType, e.getKey()))
+                                        .toList();
+                            }
+                        };
+                    }
+                
+                }
                 ```
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample106){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/sorting){:target="_blank"}

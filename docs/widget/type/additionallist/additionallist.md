@@ -176,6 +176,12 @@ There are types of:
             --8<--
             ``` 
         === "Reading Mode"
+            _not applicable_
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
+    === "Constant color"
+        _not applicable_
+<!-- 
             **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json for **read.widget**.
     
             Add in `title` field with `${customField}` 
@@ -188,7 +194,7 @@ There are types of:
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
-
+-->
 <!--     
     === "Constant color"
         === "Main Mode"

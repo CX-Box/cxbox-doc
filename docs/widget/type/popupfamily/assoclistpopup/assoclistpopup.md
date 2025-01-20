@@ -1,41 +1,111 @@
-# AssocassocPopup
+# AssocListPopup
 
-`AssocassocPopup` widget is assoc the general information for many records and present it in a way that is easily interpretable for users.
-
+`AssocListPopup` widget is a popup component designed to the selection of multiple values.
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3053){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/base){:target="_blank"}
 ### How does it look?
-=== "List"
- 
-=== "Form"
+=== "Assoc widget field"
+    === "List"
+        _not applicable_
+    === "Info"
+        _not applicable_
+    === "Form"
+        ![assoc_form.gif](assoc_form.gif)
+=== "Assoc widget button"
+    === "List"
+        ![assoc_list.gif](assoc_list.gif)
+    === "Info"
+        _not applicable_
+    === "Form"
+        _not applicable_
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
-**Step1** Create file **_.widget.json_** with type = **"assoc"**
-Add existing field to a assoc widget. see more [Fields](#fields)
-```json
---8<--
-{{ external_links.github_raw_doc }}/widgets/assoc/base/onefield/MyExample3189assoc.widget.json
---8<--
-```
+    === "Assoc widget field"
+        === "List"
+            _not applicable_
+        === "Info"
+            _not applicable_
 
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+        === "Form"
+            **Step1** Add field with type **multivalue** see more [Fields](#fields)
 
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/base/onefield/myexample3189assoc.view.json
-    --8<--
-    ```
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053Form.widget.json
+            --8<--
+            ```
+       
+            **Step2** Add widget to corresponding ****_.view.json_** **.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053form.view.json
+            --8<--
+            ```
+    === "Assoc widget button"
+        === "List"
+            **Step1** Add button `associate` to corresponding **VersionAwareResponseService**. 
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053Service.java:getActions
+            --8<--
+            ```
+            **Step2** Add method `doAssociate` to corresponding **VersionAwareResponseService**. 
+
+            `associate`
+
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053Service.java:doAssociate
+            --8<--
+            ```
+            method `addNewRecords`
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053Service.java:addNewRecords
+            --8<--
+            ```
+
+            **Step3** Create file **_.widget.json_** with type = **"assoc"** and name = parent bc + "Assoc"
+
+            Add existing field to assoc widget. see more [Fields](#fields)
+
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053Assoc.widget.json
+            --8<--
+            ```
+            **Step4** Add a dependency on parent BC for Assoc BC for to corresponding **EnumBcIdentifier**
+        
+             ```java
+             --8<--
+             {{ external_links.github_raw_doc }}/widgets/assoc/base/CxboxMyExample3053Controller.java:EnumBcIdentifierBc
+             --8<--
+             ```
+
+             **Step5** Add assoc widget to corresponding ****_.view.json_** **.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053list.view.json
+            --8<--
+            ```
+ 
+        === "Info"
+              _not applicable_
+
+        === "Form"
+              _not applicable_
+
 
 ## <a id="Title">Title</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3090){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/title){:target="_blank"}
 
 ### Title Basic
 `Title` for widget (optional)
-
-![assocwidgetinf.png](assocwidgetinf.png)
 
 There are types of:
 
@@ -44,35 +114,34 @@ There are types of:
 
 #### How does it look?
 === "Constant title"
-![consttitle.png](consttitle.png)
+    ![consttitle.png](consttitle.png)
 === "Constant title empty"
-![empytitle.png](empytitle.png)
+    ![empytitle.png](empytitle.png)
 
 #### How to add?
 ??? Example
-=== "Constant title"
-**Step1** Add name for **title** to **_.widget.json_**.
-```json
---8<--
-{{ external_links.github_raw_doc }}/widgets/assoc/title/MyExample3104assoc.widget.json
---8<--
-```
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/title){:target="_blank"}
-
+    === "Constant title"
+        **Step1** Add name for **title** to **_.widget.json_**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/assoc/title/myEntity3090MultiPickAssocListPopup.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3090){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/title){:target="_blank"}
 
     === "Constant title empty"
-
+    
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/title/MyExample3104EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/title/myEntity3090MultiPickAssocEmptyListPopup.widget.json
         --8<--
         ```
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3090/view/myexample3090emptytitle){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/title){:target="_blank"}
-
+    
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
@@ -92,19 +161,19 @@ There are types of:
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
 
 ##### How does it look?
 ![colorwidget.png](colorwidget.png)
 
 ##### How to add?
 ??? Example
-=== "Calculated color"
+    === "Calculated color"
 
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/MyExample3050DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/color/MyEntity3056MultiPickDTO.java
         --8<--
         ```  
  
@@ -114,12 +183,12 @@ Title colorization is **applicable** to the following [fields](/widget/fields/fi
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/MyExample3050.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/color/myEntity3056MultiPickAssocListPopup.widget.json
         --8<--
         ``` 
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/colortitle){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3052/view/myexample3056color){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/colortitle/color){:target="_blank"}
 
     === "Constant color"
  
@@ -129,13 +198,13 @@ Title colorization is **applicable** to the following [fields](/widget/fields/fi
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/MyExample3050ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/colorconst/myEntity3056MultiPickAssocListPopup0.widget.json
         --8<--
         ```
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/colortitle){:target="_blank"}
-
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3052/view/myexample3056colorconst){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/colortitle/colorconst){:target="_blank"}
+ 
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -143,58 +212,7 @@ A business component represents a specific part of a system that handles a parti
 see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="Showcondition">Show condition</a>
-
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/base){:target="_blank"}
-
-* `no show condition - recommended`: widget always visible
-
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/showcondition/bycurrententity){:target="_blank"}
-
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
-
-<!--
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
- 
-* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
--->
-!!! tips
-It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
-
-#### <a id="howdoesitlook">How does it look?</a>
-=== "no show condition"
-![assoc.png](assoc.png)
-=== "show condition by current entity"
-![show_cond_current.gif](show_cond_current.gif)
-<!--
-=== "show condition by parent entity"
-    ![show_cond.gif](show_cond.gif)
--->
-
-#### <a id="howtoadd">How to add?</a>
-??? Example
-
-    === "no show condition"
-        see [Basic](#Howtoaddbacis)
-
-    === "show condition by current entity"
-        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/showcondition/bycurrententity/MyExample31012.widget.json
-        --8<--
-        ```
-<!--
-    === "show condition by parent entity"
-        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/showcondition/byparententity/child/MyExample3107.widget.json
-        --8<--
-        ```
--->
+  
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
@@ -241,13 +259,12 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/assoc/base/onefield/MyExample3189assoc.widget.json
+             {{ external_links.github_raw_doc }}/widgets/assoc/base/myEntity3053MultiAssocListPopup.widget.json
              --8<--
           ```
 
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
-
 
 ## Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
@@ -261,19 +278,19 @@ There are three methods to create a record:
 * [Inline](#createbasic): You can add a line directly.
 
 !!! info
-Pagination won't function until the page is refreshed after adding records.
+    Pagination won't function until the page is refreshed after adding records.
 
 * [Inline-form](#withwidget): You can add data using a form widget without leaving your current view.
 
-* [With view](#withview): You can create a record by navigating to a view.
+* [With view](#withview): not applicable.
 
 ##### <a id="createbasic">Inline</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054inlinecreate){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/basic){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
 ###### How does it look?
-![assoc_create_basic.gif](assoc_create_basic.gif)
+![assoc_create_basic.gif](assoc_create_with_widget.gif)
 
 ###### How to add?
 ??? Example
@@ -281,26 +298,28 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/basic/MyExample3059Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueService.java:getActions
     --8<--
     ```
-     **Step2** Add button `create` to corresponding **.widget.json**. 
+ 
+    **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/basic/MyExample3059assoc.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myEntity3054MultiAssocListPopupCreateAssocListPopup.widget.json
     --8<--
     ```
-     **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+
+    **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/basic/MyExample3059Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ```
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3059){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/basic){:target="_blank"}
 
 ##### <a id="withwidget">Inline-form</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054create){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/withwidget){:target="_blank"}
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
@@ -314,27 +333,26 @@ After filling the information in and clicking "Save", the new row is added to th
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/withwidget/MyExample3064Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueService.java:getActions
     --8<--
     ```
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/withwidget/MyExample3064Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ```
-
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/withwidget/myEntity3064CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myEntity3054MultiFormForPopup.widget.json
     --8<--
     ```
  
      **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/withwidget/myexample3064assoc.view.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myexample3054inlinecreate.view.json
     --8<--
     ```
 
@@ -344,47 +362,15 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/withwidget/MyExample3064assoc.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myEntity3054MultiAssocListPopup.widget.json
     --8<--
     ```
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3064){:target="_blank"} ·
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/withwidget){:target="_blank"}
 
 ##### <a id="withview">With view</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/newview){:target="_blank"}
-
-With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the assoc of entities with the new row added.
-###### How does it look?
-![assoc_create_with_view.gif](assoc_create_with_view.gif)
-
-###### How to add?
-??? Example
-
-    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/newview/MyExample3066Service.java:getActions
-    --8<--
-    ```
-     **Step2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**. 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/newview/MyExample3066Service.java:doCreateEntity
-    --8<--
-    ```
-    **Step4** Add button `create` to corresponding **.widget.json**.
-  
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/newview/MyExample3066assoc.widget.json
-    --8<--
-    ```
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3066){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/newview){:target="_blank"}
-
+_not applicable_
 
 #### Edit
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
@@ -395,7 +381,7 @@ There are three methods to create a record:
 
 * [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 
-* [With view](#editwithview): You can edit a record by navigating to a view.
+* [With view](#editwithview): not applicable
 
 ##### <a id="editline">Inline edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
@@ -473,119 +459,11 @@ There are three methods to create a record:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
 
 ##### <a id="editwithview">With view</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/newview){:target="_blank"}
-
-With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.
-
-###### How does it look?
-![assoc_edit_with_view.gif](assoc_edit_with_view.gif)
-
-###### How to add?
-??? Example
-
-    **Step1** Add action *edit* to corresponding **VersionAwareResponseService**. 
-    
-    Add **PostAction.drillDown** to method *edit*
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/newview/MyExample3066Service.java:getActions
-    --8<--
-    ```
-    **Step2** Add button ot group button to corresponding **.widget.json**.
-   
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/withwidget/MyExample3065assoc.widget.json
-    --8<--
-    ```
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/newview){:target="_blank"}
-
+not applicable
 
 ### Additional properties
 #### Customization of displayed columns
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/customizationcolumns){:target="_blank"}
-
-To customize the columns displayed on a assoc widget, you can perform two main actions:
-
-* Hide columns
-* Swap columns
-
-!!! info
-Currently, table customization data is stored within internal tables, even when microservices are used.
-
-###### Basic
-When customizing columns, records are inserted into the ADDITIONAL_FIELDS table.
-Table *ADDITIONAL_FIELDS* for store user-specific settings:
-
-* `user_id`:  The user ID for which the columns are being customized.
-* `view`: The name of the view where the columns are customized.
-* `widget`: The name of the widget where the columns are customized.
-* `order_fields`: When configuring swap columns, the field sequence will be updated, and a new comma-separated sequence of fields will be saved.
-* `added_to_additional_fields`: User-hidden fields.
-* `removed_from_additional_fields`
-
-###### How does it look?
-=== "Hide columns"
-![customcolumns.gif](customcolumns.gif)
-=== "Swap columns"
-![customcolumnsswap.gif](customcolumnsswap.gif)
-=== "Pre-hidden"
-![customcolumnshide.gif](customcolumnshide.gif)
-
-###### How to add?
-??? Example
-=== "Hide and Swap columns"
-
-        Add in **options** parameter **additional** to corresponding **.widget.json**.
-            
-        ```
-        "additional": {
-          "enabled": true
-        }
-        ```
-        
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/customizationcolumns/MyExample3135assoc.widget.json
-        --8<--
-        ```
-        
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/customizationcolumns){:target="_blank"}
-        
-
-    === "Pre-hidden columns"
-        
-        Сan also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
-        
-        Add in **options** parameter **additional** to corresponding **.widget.json**.
-        
-        Add in **options** parameter **fields** with assoc of hidden fields  to corresponding **.widget.json**.
-            
-        ```
-           "additional": {
-              "fields": ["customFieldPercent", "customFieldRadio"],
-              "enabled": true
-            }
-        ```
-        
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/customizationcolumns/MyExample3135assocHiddenFields.widget.json
-        --8<--
-        ```
-        
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135/view/myexample3135assochidden){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/customizationcolumns){:target="_blank"}
-
-###### Handling Old Records
-`Delete fields with widget`
-
-When fields stored in the additional settings table are deleted from the widget, the functionality will continue to work correctly by ignoring these old fields.
+not applicable
 #### Filtration
 ##### Basic
 see more  [Fields](/widget/type/property/filtration/filtration/)

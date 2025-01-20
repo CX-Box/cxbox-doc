@@ -4,7 +4,7 @@
 * [by fulltextsearch](#by_fulltextsearch) 
 * [by personal filter group](#by_personal_filter_group)
 * [by filter group](#by_filter_group)
-<!-- default filtration -->
+<!-- default filtration  -->
 
 
 ## <a id="by_fields">by fields</a>

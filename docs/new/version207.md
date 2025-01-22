@@ -166,7 +166,7 @@ We have added a description of [PickListPopup](/widget_type_pick_list_popup).
 
 #### Added: List, Form, Info Widget's - showCondition documentation article  
 
-We have added a full description of [Show Condition](https://doc.cxbox.org/widget/type/property/showcondition/showcondition/) and showCondition option for three main widgets ([Form](https://doc.cxbox.org/widget/type/form/form/#show-condition), [Info](https://doc.cxbox.org/widget/type/info/info/#show-condition), [List](https://doc.cxbox.org/widget/type/list/list/#show-condition)).
+We have added a full description of [Show Condition](https://doc.cxbox.org/widget/type/property/showcondition/showcondition/) and showCondition option for three main widgets ([Form](https://doc.cxbox.org/widget/type/formfamily/form/form/#show-condition), [Info](https://doc.cxbox.org/widget/type/infofamily/info/info.md/#show-condition), [List](https://doc.cxbox.org/widget/type/listfamily/list/list/#show-condition)).
 
 #### Added: Money field - currency property section  
 

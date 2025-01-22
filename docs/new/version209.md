@@ -47,7 +47,7 @@ We have enhanced the Notifications popup to support multiple drilldown links.
 
 #### Added: FormPopup widget - gridWidth support  
 
-We now support `gridWidth` for [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/). You can now directly indicate the width using `view.json -> widgets -> gridWidth` and the width now dynamically adjusts based on the following factors:  
+We now support `gridWidth` for [FormPopup](https://doc.cxbox.org/widget/type/popupfamily/formpopup/formpopup/). You can now directly indicate the width using `view.json -> widgets -> gridWidth` and the width now dynamically adjusts based on the following factors:  
 
 * The state of the menu (collapsed or expanded)  
 
@@ -67,7 +67,7 @@ These changes ensure that the `gridWidth` option for usual widget and for FormPo
 
 **Note!** Before this release value of `gridWidth` was ignored, e.g. popup widget was constant. After release one can set `gridWidth = 9` to remain old popup sizes.  
 
-See the detailed description in the updated [formPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/#widget-size) article.  
+See the detailed description in the updated [formPopup](https://doc.cxbox.org/widget/type/popupfamily/formpopup/formpopup/#widget-size) article.  
 
 #### Added: Dictionary field - Administration UI
 
@@ -172,7 +172,7 @@ Feature can be turned on with `cxbox.ui.drill-down-tooltip: newAndCopy`.
 
 #### Added: FormPopup widget - forceActive  
 
-We have introduced the `forceActive` feature for [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/), allowing a backend request to be triggered before the modal window is opened. This ensures that the data within the popup is dynamically updated before being displayed, providing users with the most up-to-date information.  
+We have introduced the `forceActive` feature for [FormPopup](https://doc.cxbox.org/widget/type/popupfamily/formpopup/formpopup/), allowing a backend request to be triggered before the modal window is opened. This ensures that the data within the popup is dynamically updated before being displayed, providing users with the most up-to-date information.  
 
 ![formPopupForceActive.gif](v2.0.9/formPopupForceActive.gif){width="900"}  
 
@@ -207,7 +207,7 @@ Breaking changes have appeared! See [cxbox changelog](https://github.com/CX-Box/
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
-#### Added: [Grouping Hierarchy](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/)  
+#### Added: [Grouping Hierarchy](https://doc.cxbox.org/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy/)  
 We have added a full description of Grouping Hierarchy.  
 
 #### Added: [Export Excel](https://doc.cxbox.org/widget/type/property/export/excel/excel/)  
@@ -219,7 +219,7 @@ Default limit page (available for List and Grouping Hierarchy) is now described 
 #### Added: [Checkbox - placeholder](https://doc.cxbox.org/widget/fields/field/checkbox/checkbox/?h=check#placeholder)  
 See all the details about a Checkbox placeholder in our updated article. 
 
-#### Added: [Customization of displayed columns](https://doc.cxbox.org/widget/type/list/list/#customization-of-displayed-columns)  
+#### Added: [Customization of displayed columns](https://doc.cxbox.org/widget/type/listfamily/list/list/#customization-of-displayed-columns)  
 We have described the process of customization of displayed columns.  
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)

@@ -406,6 +406,9 @@ There are three methods to create a record:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/basic){:target="_blank"}
 
 ##### <a id="editwithwidger">Inline-form</a>
+_not applicable_
+
+<!--
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
 
@@ -457,6 +460,7 @@ There are three methods to create a record:
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
+-->
 
 ##### <a id="editwithview">With view</a>
 not applicable
@@ -471,16 +475,12 @@ see more  [Fields](/widget/type/property/filtration/filtration/)
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
 ##### Personal filter group
-A user-filled filter can be saved for each individual user.
-see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
+not applicable
 ##### Filter group
-`Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
-see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
+not applicable
 #### Pagination
 `Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 see [Pagination](/widget/type/property/pagination/pagination)
 
 #### Export to Excel
-`Export to Excel` enables users to download a .xlsx file containing the table's data.
-see [Excel](/widget/type/property/export/excel/excel)
-
+not applicable

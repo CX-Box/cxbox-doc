@@ -66,7 +66,7 @@ nav:
       - Basic: widget/type/widget.md
       - Family:
           Form:
-            - Widget Form: widget/type/form/form.md
+            - Widget Form: widget/type/formfamily/form/form.md
           Info:
             - Widget Info: widget/type/infofamily/info/info.md
             - Widget AdditionalInfo: widget/type/infofamily/additionalinfo/additionalinfo.md
@@ -78,9 +78,9 @@ nav:
             - Widget PickListPopup: widget/type/popupfamily/picklistpopup/picklistpopup.md
             - Widget AssocListPopup: widget/type/popupfamily/assoclistpopup/assoclistpopup.md
           StatsBlock:
-            - Widget StatsBlock: widget/type/statblocks/statblocks.md
+            - Widget StatsBlock: widget/type/statblocksfamily/statblocks/statblocks.md
           GroupingHierarchy:
-            - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
+            - Widget GroupingHierarchy: widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy.md
       - Property:
          - Show condition: widget/type/property/showcondition/showcondition.md
          - Filtration: widget/type/property/filtration/filtration.md

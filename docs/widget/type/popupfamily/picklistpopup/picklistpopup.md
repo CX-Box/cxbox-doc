@@ -114,3 +114,22 @@ There are 3 types of titles for a Picklist Popup:
         {{ external_links.github_raw_doc }}/widgets/picklist/color/myEntity3061PickListPopupColorConst.widget.json
         --8<--
         ```
+### Additional properties
+#### Customization of displayed columns
+not applicable
+#### Filtration
+##### Basic
+see more  [Fields](/widget/type/property/filtration/filtration/)
+#### FullTextSearch
+`FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
+see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
+##### Personal filter group
+not applicable
+##### Filter group
+not applicable
+#### Pagination
+`Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
+see [Pagination](/widget/type/property/pagination/pagination)
+
+#### Export to Excel
+not applicable

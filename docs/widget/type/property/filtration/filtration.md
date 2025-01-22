@@ -15,9 +15,11 @@ Here are the standard field types with their respective filtering methods see [S
 
 This function is available:
 
-* [List widget](/widget/type/list/list)  
-* [AdditionalList widget](/widget/type/additionallist/additionallist) 
-* [GroupingHierarchy widget](docs/widget/type/groupinghierarchy/groupinghierarchy)  
+* [List widget](/widget/type/listfamily/list/list)  
+* [AdditionalList widget](/widget/type/listfamily/additionallist/additionallist.md) 
+* [GroupingHierarchy widget](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy)  
+* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
 
 ## <a id="by_fulltextsearch">by fulltextsearch</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614list){:target="_blank"}
@@ -30,10 +32,16 @@ This feature makes it easier for users to quickly find the information they are 
 
 This function is available: 
 
-* [List widget](/widget/type/list/list)
+* [List widget](/widget/type/listfamily/list/list)
+* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
 
 ### How does it look?
-![fulltextsearch.gif](fulltextsearch.gif)
+=== "List widget"
+    ![fulltextsearch.gif](fulltextsearch.gif)
+=== "AssocListPopup widget"
+
+=== "PickListPopup widget"
 
 ### How to add?
 ??? Example
@@ -99,8 +107,8 @@ A user-filled filter can be saved for each individual user.
 
 This function is available: 
 
-* [List](/widget/type/list/list),
-* [AdditionalList](/widget/type/additionallist/additionallist).
+* [List](/widget/type/listfamily/list/list),
+* [AdditionalList](/widget/type/listfamily/additionallist/additionallist.md).
 
 The "Save Filters" button is located within the gear icon.
 When the "Save Filters" button is clicked, a modal window appears displaying all custom filters, which can be deleted if desired.

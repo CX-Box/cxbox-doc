@@ -3,7 +3,7 @@
 
 This function is available:
  
-* for widgets: [List](/widget/type/list/list),only mode **basic** [AdditionalList](/widget/type/additionallist/additionallist),[GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
+* for widgets: [List](/widget/type/listfamily/list/list),only mode **basic** [AdditionalList](/widget/type/listfamily/additionallist/additionallist.md),[GroupingHierarchy](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy).
 * for fields: Hint, Multivalue, Inline, Pick List,Radio, Money, Percent, Number, Dictionary, Date Time With Seconds, Date, Checkbox, Date Time, Text, Input.
 See more [field types](/widget/fields/fieldtypes/)
 

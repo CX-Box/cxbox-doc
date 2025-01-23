@@ -195,6 +195,7 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
     The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
 
     For fields where individual filters are intended to be saved, it is essential to configure the filtering options. see `Step 1` and `Step 2`
+    
     **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
     ```java
     --8<--
@@ -229,7 +230,7 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
             
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3618AdditionalList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroupsave/MyExample3618AdditionalList.widget.json
         --8<--
         ```
 

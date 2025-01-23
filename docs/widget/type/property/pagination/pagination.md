@@ -4,6 +4,12 @@ Pagination is the process of dividing content into separate, discrete pages, mak
 
 The navigation arrows and limit settings block are removed if the number of records is less than the limit.
 
+This function is available:
+
+* [List widget](/widget/type/listfamily/list/list)
+* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
+
 Pagination modes:
 
 * **Default (nextAndPreviousWithCount)**

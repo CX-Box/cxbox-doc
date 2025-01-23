@@ -48,9 +48,9 @@ Type: String/boolean/number/null (required).
 
 ## How does it look? 
 
-* [Form widget](/widget/type/form/form/#howdoesitlook)
-* [Info widget](/widget/type/info/info/#howdoesitlook)
-* [List widget](/widget/type/list/list/#howdoesitlook)
+* [Form widget](/widget/type/formfamily/form/form/#howdoesitlook)
+* [Info widget](/widget/type/infofamily/info/info.md/#howdoesitlook)
+* [List widget](/widget/type/listfamily/list/list/#howdoesitlook)
 * Form Popup widget - not applicable 
 * AdditionalInfo widget - not applicable
 * Statistics blocks widget - not applicable
@@ -59,9 +59,9 @@ Type: String/boolean/number/null (required).
 
 ## How to add?
 
-* [Form widget](/widget/type/form/form/#howtoadd)
-* [Info widget](/widget/type/info/info/#howtoadd)
-* [List widget](/widget/type/list/list/#howtoadd)
+* [Form widget](/widget/type/formfamily/form/form/#howtoadd)
+* [Info widget](/widget/type/infofamily/info/info.md/#howtoadd)
+* [List widget](/widget/type/listfamily/list/list/#howtoadd)
 * Form Popup widget - not applicable
 * AdditionalInfo widget - not applicable
 * Statistics blocks widget - not applicable

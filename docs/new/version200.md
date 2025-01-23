@@ -82,14 +82,14 @@ Live sample [suggestionPickList]({{ external_links.demo }}/ui/#/screen/client)
 
 Added new widget type - popup with additional fields.
 
-Live sample [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/)
+Live sample [FormPopup](https://doc.cxbox.org/widget/type/popupfamily/formpopup/formpopup/)
 
 #### Added new widget type - AdditionalInfo
 ![additionalinfo.png](v2.0.0/additionalinfo.png)
 
 Added new widget type only for data viewing. Widget is always located on the right side and has gray background.
 
-Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/)
+Live sample [AdditionalInfo](https://doc.cxbox.org/widget/type/infofamily/additionalinfo/additionalinfo/)
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v2.0.0)

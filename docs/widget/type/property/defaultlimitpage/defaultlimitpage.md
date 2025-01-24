@@ -1,7 +1,6 @@
 # Default page limit
 This function is available for: 
 
-* [GroupingHierarchy](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy),
 * [List](/widget/type/listfamily/list/list),
 * [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
 * [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)

@@ -64,23 +64,16 @@ nav:
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Widget types:
       - Basic: widget/type/widget.md
-      - Family:
-          Form:
-            - Widget Form: widget/type/formfamily/form/form.md
-          Info:
-            - Widget Info: widget/type/infofamily/info/info.md
-            - Widget AdditionalInfo: widget/type/infofamily/additionalinfo/additionalinfo.md
-          List:
-            - Widget List: widget/type/listfamily/list/list.md
-            - Widget AdditionalList: widget/type/listfamily/additionallist/additionallist.md
-          Popup:
-            - Widget FormPopup: widget/type/popupfamily/formpopup/formpopup.md
-            - Widget PickListPopup: widget/type/popupfamily/picklistpopup/picklistpopup.md
-            - Widget AssocListPopup: widget/type/popupfamily/assoclistpopup/assoclistpopup.md
-          StatsBlock:
-            - Widget StatsBlock: widget/type/statblocksfamily/statblocks/statblocks.md
-          GroupingHierarchy:
-            - Widget GroupingHierarchy: widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy.md
+      - Widget Form: widget/type/formfamily/form/form.md
+      - Widget Info: widget/type/infofamily/info/info.md
+      - Widget AdditionalInfo: widget/type/infofamily/additionalinfo/additionalinfo.md
+      - Widget List: widget/type/listfamily/list/list.md
+      - Widget AdditionalList: widget/type/listfamily/additionallist/additionallist.md
+      - Widget FormPopup: widget/type/popupfamily/formpopup/formpopup.md
+      - Widget PickListPopup: widget/type/popupfamily/picklistpopup/picklistpopup.md
+      - Widget AssocListPopup: widget/type/popupfamily/assoclistpopup/assoclistpopup.md
+      - Widget StatsBlock: widget/type/statblocksfamily/statblocks/statblocks.md
+      - Widget GroupingHierarchy: widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy.md
       - Property:
          - Show condition: widget/type/property/showcondition/showcondition.md
          - Filtration: widget/type/property/filtration/filtration.md

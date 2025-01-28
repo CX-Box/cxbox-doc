@@ -83,7 +83,7 @@ The plugin now supports autocomplete, reference and inspections for field refere
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 
-#### Added: [AdditionalList](https://doc.cxbox.org/widget/type/listfamily/additionallist/additionallist.md/)
+#### Added: [AdditionalList](https://doc.cxbox.org/widget/type/additionallist/additionallist.md/)
 We have provided a detailed description of AdditionalList widget.  
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)

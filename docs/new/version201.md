@@ -46,19 +46,19 @@ see more [Microservices](https://doc.cxbox.org/features/element/microservices/mi
 
 We have included a description of how to work with the following types of widgets:
 
-[Info](https://doc.cxbox.org/widget/type/infofamily/info/info.md/):
+[Info](https://doc.cxbox.org/widget/type/info/info.md/):
 Info widget is a component only for data viewing.
 
-[Form](https://doc.cxbox.org/widget/type/formfamily/form/form/):
+[Form](https://doc.cxbox.org/widget/type/form/form/):
 Form widget is a component for data viewing and editing. Usually it shows multiple fields. Also, it can show available action
 
-[List](https://doc.cxbox.org/widget/type/listfamily/list/list/):
+[List](https://doc.cxbox.org/widget/type/list/list/):
 List widget is list the general information for many records and present it in a way that is easily interpretable for users.
 
-[AdditionalInfo](https://doc.cxbox.org/widget/type/infofamily/additionalinfo/additionalinfo/):
+[AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/):
 AdditionalInfo widget is a component only for data viewing. Widget is always located on the left.
 
-[Statistics blocks](https://doc.cxbox.org/widget/type/statblocksfamily/statblocks/statblocks/):
+[Statistics blocks](https://doc.cxbox.org/widget/type/statblocks/statblocks/):
 Statistics blocks widget is a tool designed to display aggregated data in a visually accessible format. This data can be sourced either from a database or from external sources.
 #### Added creation examples for fulltextsearch,Filter group
 ![fulltextsearch.png](v2.0.1/fulltextsearch.png)

@@ -14,11 +14,11 @@ Here are the standard field types with their respective filtering methods see [S
 
 This function is available:
 
-* [List widget](/widget/type/listfamily/list/list)  
-* [AdditionalList widget](/widget/type/listfamily/additionallist/additionallist.md) 
-* [GroupingHierarchy widget](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy)  
-* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
-* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
+* [List widget](/widget/type/list/list)  
+* [AdditionalList widget](/widget/type/additionallist/additionallist.md) 
+* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)  
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 
 ## <a id="by_fulltextsearch">by fulltextsearch</a>
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query
@@ -28,15 +28,15 @@ This feature makes it easier for users to quickly find the information they are 
 
 This function is available:
 
-* [List widget](/widget/type/listfamily/list/list)
+* [List widget](/widget/type/list/list)
 (  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614list){:target="_blank"}
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch){:target="_blank"}
 )
-* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 (  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614assoclistpopup){:target="_blank"}
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forassoc){:target="_blank"}
 )
-* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 ) 
@@ -172,12 +172,12 @@ A user-filled filter can be saved for each individual user.
 
 This function is available:
 
-* [List](/widget/type/listfamily/list/list) (
+* [List](/widget/type/list/list) (
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
 )
 
-* [AdditionalList](/widget/type/listfamily/additionallist/additionallist.md) (
+* [AdditionalList](/widget/type/additionallist/additionallist.md) (
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
 )
@@ -243,11 +243,11 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
 
 This function is available:
 
-* [List](/widget/type/listfamily/list/list)
+* [List](/widget/type/list/list)
   ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"}
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
   )
-* [AdditionalList](/widget/type/listfamily/additionallist/additionallist.md)
+* [AdditionalList](/widget/type/additionallist/additionallist.md)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
 )

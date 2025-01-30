@@ -1,10 +1,9 @@
 # Default page limit
 This function is available for: 
 
-* [GroupingHierarchy](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy),
-* [List](/widget/type/listfamily/list/list),
-* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
-* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
+* [List](/widget/type/list/list),
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 
 The page limit can be configured in two ways: 
 

@@ -64,23 +64,16 @@ nav:
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Widget types:
       - Basic: widget/type/widget.md
-      - Family:
-          Form:
-            - Widget Form: widget/type/formfamily/form/form.md
-          Info:
-            - Widget Info: widget/type/infofamily/info/info.md
-            - Widget AdditionalInfo: widget/type/infofamily/additionalinfo/additionalinfo.md
-          List:
-            - Widget List: widget/type/listfamily/list/list.md
-            - Widget AdditionalList: widget/type/listfamily/additionallist/additionallist.md
-          Popup:
-            - Widget FormPopup: widget/type/popupfamily/formpopup/formpopup.md
-            - Widget PickListPopup: widget/type/popupfamily/picklistpopup/picklistpopup.md
-            - Widget AssocListPopup: widget/type/popupfamily/assoclistpopup/assoclistpopup.md
-          StatsBlock:
-            - Widget StatsBlock: widget/type/statblocksfamily/statblocks/statblocks.md
-          GroupingHierarchy:
-            - Widget GroupingHierarchy: widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy.md
+      - Widget Form: widget/type/form/form.md
+      - Widget Info: widget/type/info/info.md
+      - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
+      - Widget List: widget/type/list/list.md
+      - Widget AdditionalList: widget/type/additionallist/additionallist.md
+      - Widget FormPopup: widget/type/formpopup/formpopup.md
+      - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
+      - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
+      - Widget StatsBlock: widget/type/statblocks/statblocks.md
+      - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
       - Property:
          - Show condition: widget/type/property/showcondition/showcondition.md
          - Filtration: widget/type/property/filtration/filtration.md
@@ -227,12 +220,12 @@ plugins:
         'advancedCustomization_drillDown.md': 'advancedCustomization/element/drilldown/drilldown.md'
         'advancedCustomization_filtration.md': 'advancedCustomization/element/filtration/filtration.md'
         'advancedCustomization_validation.md': 'advancedCustomization/element/validation/validation.md'
-        'form.md': 'widget/type/formfamily/form/form.md'
-        'info.md': 'widget/type/infofamily/info/info.md'
-        'list.md': 'widget/type/listfamily/list/list.md'
-        'widget_type_form_popup.md': 'widget/type/popupfamily/formpopup/formpopup.md'
-        'widget_type_pick_list_popup.md': 'widget/type/listfamily/picklistpopup/picklistpopup.md'
-        'additionalinfo.md': 'widget/type/infofamily/additionalinfo/additionalinfo.md'
+        'form.md': 'widget/type/form/form.md'
+        'info.md': 'widget/type/info/info.md'
+        'list.md': 'widget/type/list/list.md'
+        'widget_type_form_popup.md': 'widget/type/formpopup/formpopup.md'
+        'widget_type_pick_list_popup.md': 'widget/type/picklistpopup/picklistpopup.md'
+        'additionalinfo.md': 'widget/type/additionalinfo/additionalinfo.md'
 
 copyright: Copyright &copy; 2023 (Version 1.1)
 repo_url: https://github.com/CX-Box/cxbox-doc

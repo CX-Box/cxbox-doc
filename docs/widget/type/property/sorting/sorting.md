@@ -3,7 +3,7 @@
 
 This function is available:
 
-* for widgets: [List](/widget/type/listfamily/list/list), [GroupingHierarchy](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy).
+* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
  
 `Sorting` can be enabled in two ways:

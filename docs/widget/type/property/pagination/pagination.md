@@ -6,9 +6,9 @@ The navigation arrows and limit settings block are removed if the number of reco
 
 This function is available:
 
-* [List widget](/widget/type/listfamily/list/list)
-* [AssocListPopup widget](/widget/type/popupfamily/assoclistpopup/assoclistpopup)
-* [PickListPopup widget](/widget/type/popupfamily/picklistpopup/picklistpopup)
+* [List widget](/widget/type/list/list)
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 
 Pagination modes:
 

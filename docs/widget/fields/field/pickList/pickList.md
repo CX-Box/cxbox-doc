@@ -84,6 +84,10 @@
         --8<--
         ```
     -   **Step5** Add bc myEntityPickListPopup to corresponding **EnumBcIdentifier**.
+        
+        !!! info
+            `myEntityPickListPopup` business component needs to be a child of the business component from which the popup window is invoked.
+
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/picklist/basic/PlatformMyExample118Controller.java:bc

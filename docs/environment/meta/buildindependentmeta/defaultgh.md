@@ -283,4 +283,4 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
 * null or missing:
   Default (same as false)
 
- see more [GroupingHierarchy.defaultExpanded](/widget/type/groupinghierarchyfamily/groupinghierarchy/groupinghierarchy/#default-groupinghierarchy)
+ see more [GroupingHierarchy.defaultExpanded](/widget/type/groupinghierarchy/groupinghierarchy/#default-groupinghierarchy)

@@ -298,7 +298,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueService.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
     --8<--
     ```
  
@@ -312,9 +312,9 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
-    ```
+    ``` 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/basic){:target="_blank"}
 
@@ -333,19 +333,19 @@ After filling the information in and clicking "Save", the new row is added to th
     **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueService.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
     --8<--
     ```
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/create/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ```
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myEntity3054MultiFormForPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/myEntity3054MultiFormForPopup.widget.json
     --8<--
     ```
  

@@ -1,7 +1,7 @@
 # PickListPopup
 
 `PickListPopup` is a component that allows the user to select a value from a Popup list of entities.
-
+ 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3067){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/basic){:target="_blank"}
@@ -194,11 +194,19 @@ Fields Configuration. The fields array defines the individual fields present wit
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
 
-## Actions
+## Standard Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
 
+**Standard Actions**:
+
+* [`Create`](#standart_create): Action to initialize the process of creating a new record
+* [`Delete`](#standart_delete): Remove an existing record
+* [`Edit`](#standart_edit): Users to update or correct information
+* [`Save`](#standart_save): Action to store the data entered or modified
+* [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
+ 
 As for assoc widget, there are several actions.
-#### Create
+####  <a id="standart_create">Create</a>  
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:
 
 There are three methods to create a record:
@@ -249,12 +257,12 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
  
 ##### <a id="withwidget">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3072listinlineform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/actions/create){:target="_blank"}
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
 After filling the information in and clicking "Save", the new row is added to the assoc.
 ###### How does it look?
-![assoc_create_with_widget.gif](assoc_create_with_widget.gif)
+![create_with_widget.gif](create_with_widget.gif)
 
 ###### How to add?
 ??? Example
@@ -291,15 +299,47 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/inlinepicklist/myEntity3072InlinePickPickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/actions/create/inlinepicklist/myEntity3072InlinePickPickListPopup.widget.json
     --8<--
-    ```
- 
+    ``` 
+
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3072listinlineform){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/actions/create){:target="_blank"}
 
 ##### <a id="withview">With view</a>
 _not applicable_
+
+
+#### **<a id="standart_delete">Delete</a>**
+`Delete` remove an existing record.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
+###### How does it look?
+![actiondelete.gif](actiondelete.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
+    --8<--
+    ```  
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
+    --8<--
+    ``` 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
 
 #### Edit
 _not applicable_

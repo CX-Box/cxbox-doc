@@ -379,11 +379,11 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
 
 There are two methods to create a record:
 
-1. [Basic](#createbasic): You can add data using a standard button create without leaving your current view.
+1. [Basic](#createinline): You can add data using a standard button create without leaving your current view.
 
 2. [With view](#withview): You can create a record by navigating to a view.
 
-##### <a id="createbasic">Basic</a>
+##### <a id="createinline">Basic</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3300){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/create/basic){:target="_blank"}
 

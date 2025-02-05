@@ -269,13 +269,21 @@ Fields Configuration. The fields array defines the individual fields present wit
 ## Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
 
+**Standard Actions**:
+
+* [`Create`](#standart_create): Action to initialize the process of creating a new record
+* [`Delete`](#standart_delete): Remove an existing record
+* [`Edit`](#standart_edit): Users to update or correct information
+* [`Save`](#standart_save): Action to store the data entered or modified
+* [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
+
 As for assoc widget, there are several actions.
 #### Create
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:
 
 There are three methods to create a record:
 
-* [Inline](#createbasic): You can add a line directly.
+* [Inline](#createinline): You can add a line directly.
 
 !!! info
     Pagination won't function until the page is refreshed after adding records.
@@ -284,7 +292,7 @@ There are three methods to create a record:
 
 * [With view](#withview): not applicable.
 
-##### <a id="createbasic">Inline</a>
+##### <a id="createinline">Inline</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054inlinecreate){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/create/basic){:target="_blank"}
 
@@ -371,6 +379,39 @@ After filling the information in and clicking "Save", the new row is added to th
 
 ##### <a id="withview">With view</a>
 _not applicable_
+
+
+#### **<a id="standart_delete">Delete</a>**
+`Delete` remove an existing record.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
+###### How does it look?
+![actiondelete.gif](actiondelete.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyExample3054Service.java:getActions
+    --8<--
+    ```  
+ 
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
+    --8<--
+    ``` 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
 
 #### Edit
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.

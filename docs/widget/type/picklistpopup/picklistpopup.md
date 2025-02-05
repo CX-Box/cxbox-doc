@@ -205,13 +205,13 @@ Fields Configuration. The fields array defines the individual fields present wit
 * [`Save`](#standart_save): Action to store the data entered or modified
 * [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
  
-As for assoc widget, there are several actions.
+
 ####  <a id="standart_create">Create</a>  
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:
 
 There are three methods to create a record:
 
-* [Inline](#createbasic): You can add a line directly.
+* [Inline](#createinline): You can add a line directly.
 
 !!! info
     Pagination won't function until the page is refreshed after adding records.
@@ -220,7 +220,7 @@ There are three methods to create a record:
 
 * [With view](#withview): not applicable.
 
-##### <a id="createbasic">Inline</a>
+##### <a id="createinline">Inline</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/create){:target="_blank"}
 
@@ -248,7 +248,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}}/widgets/picklist/actions/create/inlinepicklist/MyEntity3072InlinePickPickMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/MyEntity3072InlinePickPickMeta.java:buildRowDependentMeta
     --8<--
     ```
  
@@ -276,7 +276,7 @@ After filling the information in and clicking "Save", the new row is added to th
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}}/widgets/picklist/actions/create/inlinepicklist/MyEntity3072InlinePickPickMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/MyEntity3072InlinePickPickMeta.java:buildRowDependentMeta
     --8<--
     ```
     **Step3** Create widget.json with type `Form` that appears when you click a button
@@ -299,10 +299,10 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/actions/create/inlinepicklist/myEntity3072InlinePickPickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myEntity3072InlinePickPickListPopup.widget.json
     --8<--
     ``` 
-
+ 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3072listinlineform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/actions/create){:target="_blank"}
 

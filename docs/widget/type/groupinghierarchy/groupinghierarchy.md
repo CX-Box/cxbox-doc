@@ -310,7 +310,7 @@ As for GroupingHierarchy widget, there are several actions.
 
 There are three methods to create a record:
 
-1. [Inline](#createbasic): You can add a line directly.
+1. [Inline](#createinline): You can add a line directly.
 
 !!! info
     Pagination won't function until the page is refreshed after adding records.
@@ -319,7 +319,7 @@ There are three methods to create a record:
 
 3. [With view](#withview): You can create a record by navigating to a view.
 
-##### <a id="createbasic">Inline</a>
+##### <a id="createinline">Inline</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 

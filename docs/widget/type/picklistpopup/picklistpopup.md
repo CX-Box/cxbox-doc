@@ -200,8 +200,8 @@ Fields Configuration. The fields array defines the individual fields present wit
 **Standard Actions**:
 
 * [`Create`](#standart_create): Action to initialize the process of creating a new record
-* [`Delete`](#standart_delete): Remove an existing record
-* [`Edit`](#standart_edit): Users to update or correct information
+* `Delete` - _not applicable_
+* `Edit`  -  _not applicable_
 * [`Save`](#standart_save): Action to store the data entered or modified
 * [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
  
@@ -309,40 +309,127 @@ After filling the information in and clicking "Save", the new row is added to th
 ##### <a id="withview">With view</a>
 _not applicable_
 
+#### Delete
+_not applicable_
+ 
+#### Edit
+_not applicable_
 
-#### **<a id="standart_delete">Delete</a>**
-`Delete` remove an existing record.
+###  **<a id="standart_save">Save</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3197form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/save){:target="_blank"}
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
-
+`Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
+ 
 ###### How does it look?
-![actiondelete.gif](actiondelete.gif)
+![actionsave.gif](actionsave.gif)
 
 ###### How to add?
 ??? Example
 
-    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
-
-    By default, the access button is available when a record exist.
+    **Step1** Add action *save* to corresponding **VersionAwareResponseService**. 
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/MyExample3197Service.java:getActions
     --8<--
     ```  
     **Step2** Add button ot group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/MyExample3197Form.widget.json
     --8<--
-    ``` 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+    ```
 
-#### Edit
-_not applicable_
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3197form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/save){:target="_blank"}
+
+
+### **<a id="standart_cancel_create">Cancel-create</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3198form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/cancelcreate/basic){:target="_blank"}
+
+`Cancel-create` abort the creation of a new record, discarding any input without saving
+ 
+###### How does it look?
+=== "Basic"
+    ![actioncancel.gif](actioncancel.gif)
+=== "With drilldown"
+    ![actioncanceloncancel.gif](actioncanceloncancel.gif)
+
+###### How to add?
+??? Example
+    === "Basic"
+
+        **Step1** Add standart action *cancelCreate* to corresponding **VersionAwareResponseService**. 
+        The interface displays "cancelCreate" as the default option.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/basic/MyEntity3198PickPickService.java:getActions
+        --8<--
+        ```
+         **Step2** Add action *cancel-create* to corresponding **PickListPopup**. 
+ 
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/basic/myEntity3198PickPickPickListPopup.widget.json
+        --8<--
+        ```
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3198form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/cancelcreate/basic){:target="_blank"}
+
+    === "With postAction"
+        **Step1** Add action *cancel* to corresponding **VersionAwareResponseService** with postAction. 
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/postaction/MyEntity3198PickPostActionPickService.java:getActions
+        --8<--
+        ``` 
+ 
+        **Step2** Add button ot group button to corresponding **.widget.json**.
+       
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/postaction/myEntity3198PickPostActionPickPickListPopup.widget.json
+        --8<--
+        ```
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3198formpostaction){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/cancelcreate/postaction){:target="_blank"}
+
+    === "Method onCancel"
+        !!! info
+            Only for **Inner** Business Component see more [Business Component](/environment/businesscomponent/businesscomponent/)
+
+        **Step1** Add standart action *cancelCreate* to corresponding **VersionAwareResponseService**. 
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/oncancel/MyEntity3198PickOnCancelPickService.java:getActions
+        --8<--
+        ```
+        **Step2** Add method *onCancel* to corresponding **VersionAwareResponseService**. 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/oncancel/MyEntity3198PickOnCancelPickService.java:onCancel
+        --8<--
+        ```
+        **Step3** Add button ot group button to corresponding **.widget.json**.
+       
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/oncancel/myEntity3198PickOnCancelPickPickListPopup.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3198formoncancel){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/cancelcreate/oncancel){:target="_blank"}
+
+
 <!--
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
 
@@ -431,6 +518,49 @@ There are three methods to create a record:
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
+
+#### **<a id="standart_delete">Delete</a>**
+_not applicable_
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
+`Delete` remove an existing record.
+
+!!! tips
+    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
+
+###### How does it look?
+![actiondelete.gif](actiondelete.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
+    --8<--
+    ```  
+    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**. 
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:deleteEntity
+    --8<--
+    ```  
+    **Step3** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
+    --8<--
+    ``` 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
 -->
 
 ### Additional properties

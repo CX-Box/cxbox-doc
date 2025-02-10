@@ -311,10 +311,13 @@ _not applicable_
 
 
 #### **<a id="standart_delete">Delete</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
 `Delete` remove an existing record.
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+!!! tips
+    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
 
 ###### How does it look?
 ![actiondelete.gif](actiondelete.gif)
@@ -331,7 +334,14 @@ _not applicable_
     {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
     --8<--
     ```  
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**. 
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:deleteEntity
+    --8<--
+    ```  
+    **Step3** Add button ot group button to corresponding **.widget.json**.
    
     ```json
     --8<--

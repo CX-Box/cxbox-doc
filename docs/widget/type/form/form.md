@@ -478,6 +478,8 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/form/actions/delete/MyExample3180Form.widget.json
     --8<--
     ```
+    
+    For to implement a custom handler for deleting an entity, you must override `deleteEntity` method to corresponding **VersionAwareResponseService**.
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3180){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/delete){:target="_blank"}

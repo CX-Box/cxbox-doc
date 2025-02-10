@@ -382,10 +382,13 @@ _not applicable_
 
 
 #### **<a id="standart_delete">Delete</a>**
-`Delete` remove an existing record.
-
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
+`Delete` remove an existing record.
+
+!!! tips
+    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
 
 ###### How does it look?
 ![actiondelete.gif](actiondelete.gif)

@@ -548,11 +548,11 @@ With `Edit with view`, you can edit the entity from a separate view that display
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/edit/withview){:target="_blank"}
 
 ###  **<a id="standart_save">Save</a>**
-`Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
-
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3181){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/save){:target="_blank"}
 
+`Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
+ 
 ###### How does it look?
 ![actionsave.gif](actionsave.gif)
 
@@ -578,10 +578,10 @@ With `Edit with view`, you can edit the entity from a separate view that display
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/save){:target="_blank"}
     
 ### **<a id="standart_cancel_create">Cancel-create</a>**
-`Cancel-create` abort the creation of a new record, discarding any input without saving
-
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
+
+`Cancel-create` abort the creation of a new record, discarding any input without saving
 
 ###### How does it look?
 ![actioncancel.gif](actioncancel.gif)

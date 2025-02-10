@@ -200,8 +200,8 @@ Fields Configuration. The fields array defines the individual fields present wit
 **Standard Actions**:
 
 * [`Create`](#standart_create): Action to initialize the process of creating a new record
-* [`Delete`](#standart_delete): Remove an existing record
-* [`Edit`](#standart_edit): Users to update or correct information
+* `Delete` - _not applicable_
+* `Edit`  -  _not applicable_
 * [`Save`](#standart_save): Action to store the data entered or modified
 * [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
  
@@ -309,48 +309,9 @@ After filling the information in and clicking "Save", the new row is added to th
 ##### <a id="withview">With view</a>
 _not applicable_
 
-
-#### **<a id="standart_delete">Delete</a>**
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
-
-`Delete` remove an existing record.
-
-!!! tips
-    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
-
-###### How does it look?
-![actiondelete.gif](actiondelete.gif)
-
-###### How to add?
-??? Example
-
-    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
-
-    By default, the access button is available when a record exist.
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
-    --8<--
-    ```  
-    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**. 
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:deleteEntity
-    --8<--
-    ```  
-    **Step3** Add button ot group button to corresponding **.widget.json**.
-   
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
-    --8<--
-    ``` 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
-
+#### Delete
+_not applicable_
+ 
 #### Edit
 _not applicable_
 
@@ -557,6 +518,49 @@ There are three methods to create a record:
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
+
+#### **<a id="standart_delete">Delete</a>**
+_not applicable_
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
+`Delete` remove an existing record.
+
+!!! tips
+    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
+
+###### How does it look?
+![actiondelete.gif](actiondelete.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
+    --8<--
+    ```  
+    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**. 
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:deleteEntity
+    --8<--
+    ```  
+    **Step3** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
+    --8<--
+    ``` 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
+
 -->
 
 ### Additional properties

@@ -12,16 +12,16 @@ This mechanism is useful for implementing long-running operations where the user
 
 ```java
 PostAction.waitUntil(
-    MyExampleDTO_.statusResponse, // Field to check for the condition
-    StatusEnum.DONE)               // Expected value
-   .timeoutMaxRequests(6)          // Maximum number of requests
-   .timeout(Duration.ofSeconds(12)) // Total timeout duration
-   .inProgressMessage("In Progress custom message") // In-progress message
-   .successMessage("Success custom message")      // Success message
-   .timeoutMessage("Timeout custom message")       // Timeout message
+    MyExampleDTO_.statusResponse, 
+    StatusEnum.DONE)                
+   .timeoutMaxRequests(6)          
+   .timeout(Duration.ofSeconds(12))  
+   .inProgressMessage("In Progress custom message")  
+   .successMessage("Success custom message")       
+   .timeoutMessage("Timeout custom message")      
    .build()
 ```
-
+**Parameters of `waitUntil`**:
 * (Required) **Field to check for the condition**:
     `MyExampleDTO_.statusResponse` — This is the field that will be checked for the condition. It can be of type boolean, string, Dictionary, Enum, LOV. 
    Field that will be compared to the expected value.This field must be (may be hidden) in the  on the screen.
@@ -111,12 +111,12 @@ PostAction.drillDownAndWaitUntil(
      CxboxMyExampleController.myexample + "/" + myEntity.getId()` — This is path to the screen where will navigate.
 
 * (Required) **Business component to check for the condition**:
-    `CxboxMyExampleController.myexample` — This is the business component that will be checked for the condition. It can be of type boolean, string, Dictionary, Enum, LOV.
-     Field that will be compared to the expected value.
+    `CxboxMyExampleController.myexample` —  This is a business component where the field to be compared with the expected value will be checked.
+  This business component must be (may be hidden)in the  on the screen to which the transition is made.
 
 * (Required) **Field to check for the condition**:
-    `MyExampleDTO_.statusResponse` — This is a business component where the field to be compared with the expected value will be checked.
-   This business component must be (may be hidden)in the  on the screen to which the transition is made.
+  `MyExampleDTO_.statusResponse` — This is the field that will be checked for the condition. It can be of type boolean, string, Dictionary, Enum, LOV.
+  Field that will be compared to the expected value.This field must be (may be hidden) in the  on the screen.
 
 * (Required) **Expected value**:
     `StatusEnum.DONE` — This is the value the frontend will wait for in the `statusResponse` field.
@@ -141,13 +141,10 @@ PostAction.drillDownAndWaitUntil(
      By default, the standard message is not displayed. 
  
 How it works:
-
+- The frontend navigates to the specified screen (`/screen/myexample3231/view/myexample3232resultform/...`). The `In Progress custom message` is displayed.
 - It starts checking the `statusResponse` field in `MyExample3232DTO_` for the value `StatusEnum.DONE`.
 - The frontend makes up to 6 requests at intervals of 2 seconds (12 seconds total).
--  During this process:
-   The `In Progress custom message` is displayed.
 - If the condition is met:
-  The frontend navigates to the specified screen (`/screen/myexample3231/view/myexample3232resultform/...`).
   The `Success custom message` is displayed, and the process ends.
 - If the condition is not met after 6 requests:
   The frontend navigates to the specified screen (`/screen/myexample3231/view/myexample3232resultform/...`).

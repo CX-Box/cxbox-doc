@@ -142,13 +142,14 @@ PostAction.drillDownAndWaitUntil(
      By default, the standard message is not displayed. 
  
 How it works:
-- The frontend navigates to the specified screen (`/screen/myexample3231/view/myexample3232resultform/...`). The `In Progress custom message` is displayed.
-- It starts checking the `statusResponse` field in `MyExample3232DTO_` for the value `StatusEnum.DONE`.
+
+- The frontend navigates to the specified screen (`/screen/myexample/view/myexampleresultform/...`). The `In Progress custom message` is displayed.
+- It starts checking the `statusResponse` field in `MyExampleDTO_` for the value `StatusEnum.DONE`.
 - The frontend makes up to 6 requests at intervals of 2 seconds (12 seconds total).
 - If the condition is met:
   The `Success custom message` is displayed, and the process ends.
 - If the condition is not met after 6 requests:
-  The frontend navigates to the specified screen (`/screen/myexample3231/view/myexample3232resultform/...`).
+  The frontend navigates to the specified screen (`/screen/myexample/view/myexampleresultform/...`).
   The `Timeout custom message` is displayed, and the process ends due to a timeout.
 
 ### How does it look?

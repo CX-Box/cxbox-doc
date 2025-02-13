@@ -22,6 +22,7 @@ PostAction.waitUntil(
    .build()
 ```
 **Parameters of `waitUntil`**:
+
 * (Required) **Field to check for the condition**:
     `MyExampleDTO_.statusResponse` — This is the field that will be checked for the condition. It can be of type boolean, string, Dictionary, Enum, LOV. 
    Field that will be compared to the expected value.This field must be (may be hidden) in the  on the screen.
@@ -90,7 +91,7 @@ This method is useful for scenarios where you need to navigate to a screen, wait
 
 ```java
 PostAction.drillDownAndWaitUntil(
-    "/screen/myexample3231/view/myexample3232resultform/" +
+    "/screen/myexample/view/myexampleresultform/" +
     CxboxMyExampleController.myexample + "/" + myEntity.getId(),
     CxboxMyExampleController.myexample,
     MyExampleDTO_.statusResponse,
@@ -107,7 +108,7 @@ PostAction.drillDownAndWaitUntil(
 **Parameters of `drillDownAndWaitUntil`**:
 
 * (Required) **Path to the screen**:
-    `"/screen/myexample3231/view/myexample3232resultform/" +
+    `"/screen/myexample/view/myexampleresultform/" +
      CxboxMyExampleController.myexample + "/" + myEntity.getId()` — This is path to the screen where will navigate.
 
 * (Required) **Business component to check for the condition**:

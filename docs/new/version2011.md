@@ -127,6 +127,10 @@ We have added a restriction for the [inlinePickList](https://doc.cxbox.org/widge
 
 We have updated the logic for checking required fields when they are present in the FormPopup: the required fields in the FormPopup and on the main form are now validated separately.  
 
+#### Added: SIEM  
+
+<!-- TO DO >> Аня -->
+
 #### Fixed: [dictionary](/dictionary/) field - filtering logic   
 
 We have improved the filtering logic for Dictionary fields. Now, when all selected values are unchecked and Apply is clicked, the filter is properly cleared, and all data is displayed without requiring an additional Clear Filter action.  

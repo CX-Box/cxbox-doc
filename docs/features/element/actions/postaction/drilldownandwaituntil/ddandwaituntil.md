@@ -1,7 +1,7 @@
 # waitUntil and drillDownAndWaitUntil
  
 ## waitUntil
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3231asyncform){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3233asyncform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/postaction/waituntil){:target="_blank"}
 
 Creates a post-action that waits until a specified condition is met.
@@ -73,15 +73,15 @@ How it works:
 
     ```java
        --8<--
-       {{ external_links.github_raw_doc }}/feature/postaction/waituntil/MyExample3231Service.java:getActions
+       {{ external_links.github_raw_doc }}/feature/postaction/waituntil/basic/MyExample3233Service.java:getActions
        --8<--
     ```
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3231asyncform){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3233asyncform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/postaction/waituntil){:target="_blank"}
 
  
 ## drillDownAndWaitUntil
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3232form){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3234form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/postaction/drilldownandwaituntil){:target="_blank"}
  
 Creates a post-action that performs a INNER drill-down and then waits until a specified condition is met. 
@@ -167,7 +167,9 @@ How it works:
 
     ```java
        --8<--
-       {{ external_links.github_raw_doc }}/feature/postaction/drilldownandwaituntil/MyExample3232Service.java:getActions
+       {{ external_links.github_raw_doc }}/feature/postaction/drilldownandwaituntil/basic/MyExample3234Service.java:getActions
        --8<--
     ```
- 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3234form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/postaction/drilldownandwaituntil){:target="_blank"}
+     

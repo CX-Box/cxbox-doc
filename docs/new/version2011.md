@@ -117,10 +117,52 @@ We have added a restriction for the [inlinePickList](https://doc.cxbox.org/widge
 
 We have updated the logic for checking required fields when they are present in the FormPopup: the required fields in the FormPopup and on the main form are now validated separately.  
 
-#### Added: SIEM  
+#### Added: SIEM
+* Added login system logging.
+```
+INFO o.d.c.c.extension.siem.SecurityLogger: SIEM event. Operation: login, endpoint (resource): /login, user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: 1100057 
+```
 
-<!-- TO DO >> Аня -->
+* For "invoke" events, log the action name.
+``` 
+INFO o.d.c.c.extension.siem.SecurityLogger : SIEM event. Operation: INVOKE.sendEmailNextDay, endpoint (resource): meeting (1100062), user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: null
+```
 
+* Log access rights changes in SIEM (with WARN level).
+```
+WARN o.d.c.c.extension.siem.SecurityLogger    : SIEM event. Operation: UPDATE, endpoint (resource): responsibilities (1100342), user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: {"id":"1100342","vstamp":1,"internalRoleCD":"BUSINESS_ADMIN","view":"meetingview","viewWidgets":[{"id":"meetingViewButtons","value":"'/api/v1/../meeting' by widget 'meetingViewButtons'","options":{}},{"id":"meetingEditViewHeader","value":"'/api/v1/../meetingEdit' by widget 'meetingEditViewHeader'","options":{}},{"id":"meetingDocumentsFormForList","value":"'/api/v1/../meetingDocumentEdit' by widget 'meetingDocumentsFormForList'","options":{}},{"id":"meetingView","value":"'/api/v1/../meeting' by widget 'meetingView'","options":{}},{"id":"meetingDocumentsList","value":"'/api/v1/../meetingDocumentEdit' by widget 'meetingDocumentsList'","options":{}},{"id":"meetingViewClientInfo","value":"'/api/v1/../meeting' by widget 'meetingViewClientInfo'","options":{}},{"id":"SecondLevelMenu","value":"'/api/v1/../null' by widget 'SecondLevelMenu'","options":{}},{"id":"meetingViewResult","value":"'/api/v1/../meeting' by widget 'meetingViewResult'","options":{}}]}
+```
+
+In the project code, in SiemCrudmaEventListener, you can **customize the settings**:
+
+* Configure log only the IDs:
+ ``` public static final boolean SIEM_CONFIG_LOG_DATA_ID_ONLY = false;```
+
+* Configure which CRUD-MA actions to log:
+``` 
+public static final Map<CrudmaActionType, Boolean> SIEM_CONFIG_LOG_CRUDMA_ACTION_TYPES = Map.of(
+  CrudmaActionType.INVOKE, true,
+  CrudmaActionType.FIND, true,
+  CrudmaActionType.GET, true,
+  CrudmaActionType.UPDATE, true,
+  CrudmaActionType.PREVIEW, false,
+  CrudmaActionType.DELETE, true,
+  CrudmaActionType.COUNT, false,
+  CrudmaActionType.ASSOCIATE, true,
+  CrudmaActionType.META, false,
+  CrudmaActionType.CREATE, true
+  );
+```
+
+* Configure which BC + CRUD-MA pairs to log with a WARN level (by default, it is set for administration screens: responsibility and action responsibility):
+```
+public static final Map<EnumBcIdentifier, List<CrudmaActionType>> SIEM_CONFIG_LOG_LEVEL_WARN = Map.of(
+    CxboxRestController.responsibilities,
+    Arrays.stream(CrudmaActionType.values()).filter(e -> !e.isReadOnly()).toList(),
+    CxboxRestController.responsibilitiesAction,
+    Arrays.stream(CrudmaActionType.values()).filter(e -> !e.isReadOnly()).toList()
+);
+```
 #### Fixed: [dictionary](/dictionary/) field - filtering logic   
 
 We have improved the filtering logic for Dictionary fields. Now, when all selected values are unchecked and Apply is clicked, the filter is properly cleared, and all data is displayed without requiring an additional Clear Filter action.  
@@ -170,36 +212,24 @@ This makes the code cleaner and reduces boilerplate.
         }
     ```
 
-#### Added: waitUntil and drillDownAndWaitUntil postActions
+#### Added: [waitUntil and drillDownAndWaitUntil PostAction](https://doc.cxbox.org/features/element/actions/postaction/drilldownandwaituntil/ddandwaituntil/)
+
 **waitUntil**
 
 This mechanism allows the program to wait until a certain condition is met. For example, "Wait until the task status becomes 'Done'."
 
 This is useful when you have long-running operations (e.g., waiting for a response from a third-party system), and you want the user to see what’s happening and know when everything is finished.
 
-=== "step1"
-    ![step1WaitUntil.png](v2.0.11/step1WaitUntil.png) 
-=== "step2"
-    ![step2WaitUntil.png](v2.0.11/step2WaitUntil.png)
-=== "step3"
-    ![step3WaitUntil.png](v2.0.11/step3WaitUntil.png)
-=== "step4"
-    ![step4WaitUntil.png](v2.0.11/step4WaitUntil.png)
+ ![waitUntil.gif](v2.0.11/waitUntil.gif)
 
 **drillDownAndWaitUntil**
-This is a mechanism that allows the program to navigate to another screen  and then wait until a specific condition is met. For example, you can tell the program: "Go to this screen, wait until the status becomes 'Done', and show the user what’s happening."
+
+This is a mechanism that allows the program to navigate to another screen  and then wait until a specific condition is met. 
+For example, "Go to this screen, wait until the status becomes 'Done', and show the user what’s happening."
 
 This is helpful in scenarios where you need to navigate to another screen (e.g., to view details or results).
 
-=== "step1"
-    ![step1waitUntilDD.png](v2.0.11/step1waitUntilDD.png)
-=== "step2"
-    ![step2WaitUntil.png](v2.0.11/step2WaitUntil.png)
-=== "step3"
-    ![step3WaitUntil.png](v2.0.11/step3WaitUntil.png)
-=== "step4"
-    ![step4waitUntilDD.png](v2.0.11/step4waitUntilDD.png)
-
+![waitUntilDD.gif](v2.0.11/waitUntilDD.gif)
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 

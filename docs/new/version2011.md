@@ -15,13 +15,10 @@
 
 #### Added: [GroupingHierarchy](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/) widget - support for aggregate rows 
 
-We have added aggregate rows to display the aggregates on hierarchy levels. You can configure it with the `groupMode: compact/ aggregate` setting.      
-
-=== "compact (default)"
-    ![aggregateBefore.png](v2.0.11/aggregateBefore.png)  
-    With `groupMode: compact` the widget appears in a compact view, where grouping fields and their content are displayed **on the same row**.  
+We have added aggregate rows to display the aggregates on hierarchy levels. You can configure in `widget.json -> options -> groupMode: compact/ aggregate`.      
+ 
 === "aggregate"  
-    ![aggregateAfter.png](v2.0.11/aggregateAfter.png)  
+    ![aggregateAfter.png](v2.0.11/aggregateAfter.png){width="700"}  
     With `groupMode: aggregate` the widget displays **aggregate rows** at the grouping field level.  
     With this mode you can:  
     1) Define the columns to display aggregate values in  
@@ -29,66 +26,59 @@ We have added aggregate rows to display the aggregates on hierarchy levels. You 
     3) Select an aggregation function for calculations. Currently, we support standard functions: sum, min, max, avg.  
     4) Configure which columns will be used for aggregation calculations, including values from other columns.  
     !!! info  
-        To apply aggregates to all levels, use the `aggFields` parameter. To apply aggregation to specific levels, use `aggLevels` and explicitly define the target levels.  
+        We will soon provide a detailed description of Aggregate mode in the updated `GroupingHierarchy` article ([Aggregate](http://localhost:8000/widget/type/groupinghierarchy/groupinghierarchy/#aggregate) section) 
+=== "compact (default)"
+    ![aggregateBefore.png](v2.0.11/aggregateBefore.png){width="700"}  
+    With `groupMode: compact` the widget appears in a compact view, where grouping fields and their content are displayed **on the same row**.  
 
 #### Added: Pie1D widget - New widget type!  
 
 We have added a new widget type `Pie1D` to display data in a circular format.  
 
-Key features include:  
+![pie1D.PNG](v2.0.11/pie1D.PNG)
 
-=== "Tooltip (descriptionFieldKey)"
-    === "Default"  
-    === "Custom"  
-=== "Inner radius control (innerSpace)"
-    === "0.5 (default)"  
-    === "0"  
-=== "Legend (titleFieldKey)"
-    === "With legend"  
-    === "No legend"  
-=== "Center (total)"
-    === "Text (value)"  
-    === "Aggregate (func)"  
+Key features include:
+
+* Inner radius control
+* Tooltips' display  
+* Legend display  
+* Center text/aggregate display  
 
 Functionality includes:    
 
 === "Drilldown"  
     Click on a segment to drilldown to the filtered data displayed in a table.  
-=== "Mode switch"  
+    ![pie1DDrillDown.gif](v2.0.11/pie1DDrillDown.gif)
+=== "Switch mode"  
     Switch from chart mode to table mode to view data in a tabular format.  
+    ![pie1DSwitchMode.gif](v2.0.11/pie1DSwitchMode.gif)
 === "Segment interaction"  
     Click on legend values to add or remove segments from the chart. The aggregate value in the center of the chart will be recalculated as you interact with the legend values.
+    ![pie1DInteractive.gif](v2.0.11/pie1DInteractive.gif)  
 
 #### Added: Column2D widget - New widget type!  
 
 We have introduced a new widget type `Column2D` to display data using X and Y axes.  
 
+![column2D.PNG](v2.0.11/column2D.PNG)
+
 Key features include:    
 
-=== "Tooltip (descriptionFieldKey)"  
-    === "Default"  
-    === "Custom"  
-=== "Grouped bars (groupFieldKey)"  
-    === "No group bars (only 2 parameters)"  
-    === "With group bars (3 parameters for separation within each category)"  
-=== "Grouped bars' mode (stack)"
-    === "stack: false (default)"  
-        Bars are displayed separately.  
-    === "stack: true"  
-        Bars are stacked.  
-=== "Axis Scale (xMin/xMax/yMin/yMax)"  
-    === "default"  
-    === "custom"  
-=== "Step size (xStep/yStep)"  
-    === "default"  
-    === "custom"  
+* Axes' scale/ step control
+* Grouped bars' display
+* Tooltips' display
 
 Functionality includes:  
 
 === "Drilldown"  
-    Click on xAxis values to drilldown to the filtered data displayed in a table.    
-=== "Mode switch"  
+    Click on xAxis values to drilldown to the filtered data displayed in a table.   
+    ![column2DDrillDown.gif](v2.0.11/column2DDrillDown.gif)
+=== "Switch mode"  
     Switch from column mode to table mode to view data in a tabular format.  
+    ![column2DSwitchMode.gif](v2.0.11/column2DSwitchMode.gif)
+=== "Segment interaction"  
+    Click on legend values to add or remove bars from the plot.  
+    ![column2DInteractive.gif](v2.0.11/column2DInteractive.gif)
 
 #### Added: [AssocListPopup](https://doc.cxbox.org/widget/type/assoclistpopup/assoclistpopup/) widget - support for creating a row  
 
@@ -111,19 +101,19 @@ For visible fields, a line is added above and below, except:
 === "Before"  
     ![infoHighlightBefore.png](v2.0.11/infoHighlightBefore.png)  
 
-#### Added: [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/) field - limitation in [FormPopup](/form/) widget  
+#### Added: [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/) field - restrictions in [FormPopup](/form/) widget  
 
-We have added a restriction for the [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/) field in [FormPopup](/form/) to prevent opening a popup within a popup, as this functionality is not supported. The folder icon has been removed, so the popup can no longer be triggered.  
+We have added a restriction for the [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/) field in [FormPopup](/form/) to prevent opening a popup within a popup, as this functionality is not supported. The folder icon has been removed, so the popup can no longer be triggered. All the available values will be displayed in the dropdown list.    
 
 !!! info  
-    We recommend avoiding the use of InlinePickList in FormPopup, as the popup functionality will not work due to this limitation.  
+    We recommend to use InlinePickList (and to avoid pickList) in FormPopup, as inlinePickList displays values in the dropdown list, while the popup functionality for pickList will not work due to the restriction.  
 
 === "After"  
     ![inlinePickListAfter.png](v2.0.11/inlinePickListAfter.png)  
 === "Before"
     ![inlinePickListBefore.png](v2.0.11/inlinePickListBefore.png)  
 
-#### Added: [FormPopup](/form/) widget - a new way of required fields' handling  
+#### Added: [FormPopup](/form/) widget - improved required fields' handling  
 
 We have updated the logic for checking required fields when they are present in the FormPopup: the required fields in the FormPopup and on the main form are now validated separately.  
 
@@ -137,7 +127,7 @@ We have improved the filtering logic for Dictionary fields. Now, when all select
 
 #### Fixed: consistent handling of field keys  
 
-We have updated the logic for processing field keys. Now, the "key" value in JSON is no longer matched against custom field type names. This prevents conflicts where a field was incorrectly interpreted as a custom type, which previously led to errors in rendering and data handling on the frontend.  
+We have updated the logic for processing field keys. Previously, `widget.json -> fields -> key: number` would lead to errors in data handling on the frontend, because the "key" value was misinterpreted as a custom type. Now, the new logic prevents errors and guarantees proper interpretation of fields.  
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.11)

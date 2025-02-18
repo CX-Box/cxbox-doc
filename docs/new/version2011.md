@@ -152,12 +152,64 @@ see [cxbox-ui changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.0)
 ### CXBOX 4.0.0-M14 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M14))  
 
 #### Added: @RequiredArgsConstructor  
+Use Lombok’s @RequiredArgsConstructor and @Getter (meta,dao) for AnySourceVersionAwareResponseService and  @Getter (meta) VersionAwareResponseService instead of explicitly writing a constructor.
+This makes the code cleaner and reduces boilerplate.
 
-<!-- TODO>> Аня -->
+=== "After"
+
+    ```java
+    @SuppressWarnings({"java:S1170", "java:S2387"})
+    @RequiredArgsConstructor
+    @Service
+    public class LovReadService extends AnySourceVersionAwareResponseService<LovDTO, DictDTO> {
+    
+        @Getter(onMethod_ = {@Override})
+        private final Class<LovReadMeta> meta = LovReadMeta.class;
+    
+        @Getter(onMethod_ = {@Override})
+        private final Class<LovDao> dao = LovDao.class;
+    ```
+=== "Before"
+
+    ```java
+    @Service
+    public class LovReadService extends AnySourceVersionAwareResponseService<LovDTO, DictDTO> {
+    
+        public LovReadService() {
+            super(LovDTO.class, DictDTO.class, LovReadMeta.class, LovDao.class);
+        }
+    ```
 
 #### Added: waitUntil and drillDownAndWaitUntil postActions
+**waitUntil**
 
-<!--TODO >> Аня -->
+This mechanism allows the program to wait until a certain condition is met. For example, "Wait until the task status becomes 'Done'."
+
+This is useful when you have long-running operations (e.g., waiting for a response from a third-party system), and you want the user to see what’s happening and know when everything is finished.
+
+=== "step1"
+    ![step1WaitUntil.png](v2.0.11/step1WaitUntil.png) 
+=== "step2"
+    ![step2WaitUntil.png](v2.0.11/step2WaitUntil.png)
+=== "step3"
+    ![step3WaitUntil.png](v2.0.11/step3WaitUntil.png)
+=== "step4"
+    ![step4WaitUntil.png](v2.0.11/step4WaitUntil.png)
+
+**drillDownAndWaitUntil**
+This is a mechanism that allows the program to navigate to another screen  and then wait until a specific condition is met. For example, you can tell the program: "Go to this screen, wait until the status becomes 'Done', and show the user what’s happening."
+
+This is helpful in scenarios where you need to navigate to another screen (e.g., to view details or results).
+
+=== "step1"
+    ![step1waitUntilDD.png](v2.0.11/step1waitUntilDD.png)
+=== "step2"
+    ![step2WaitUntil.png](v2.0.11/step2WaitUntil.png)
+=== "step3"
+    ![step3WaitUntil.png](v2.0.11/step3WaitUntil.png)
+=== "step4"
+    ![step4waitUntilDD.png](v2.0.11/step4waitUntilDD.png)
+
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 

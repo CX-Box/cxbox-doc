@@ -27,6 +27,7 @@ Example request: `/screen/myexample3618`
 ##### How to add?
 
 ??? Example
+
     The availability of this function depends on the type. See more [field types](/widget/fields/fieldtypes/)
 
     `Step1`  Add **fields.setDrilldown** to corresponding **FieldMetaBuilder**.
@@ -132,7 +133,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
  
 ### <a id="to_view_with_fields_filtration">To view with fields filtration</a>
 #### By fields (visually visible)
-[see more about filtration](/features/element/filtration/filtration/filtration)
+[see more about filtration](/widget/type/property/filtration/filtration)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3612){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/advancedonebcfilter){:target="_blank"}
@@ -146,44 +147,45 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
  
 ##### How to add?
 ??? Example
-        !!! tips
-            To write this drilldown, follow these steps:
-        
-                * Add a filter function for fields that require filtering.
-                * Visually fill in the necessary filters in the interface.
-                * Open the developer panel.
-                * Locate the required request.
-                * Use this query to substitute in your code to get a reference  
 
-        The link consists of two parts:
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:url
-        --8<--
-        ```
-
-        `Step 1`  Create a link to the required widget. 
-        The link is formulated as follows:  `/screen/nameScreen/view/nameView/nameBC`    
+    !!! tips
+        To write this drilldown, follow these steps:
         
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:urlBC
-        --8<--
-        ```
-        `Step 2`  Create a link with filter.
-     
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:urlFilter
-        --8<--
-        ```
-        `Step 3`  Create a link for drilldown.
-     
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:url
-        --8<--
-        ```
+            * Add a filter function for fields that require filtering.
+            * Visually fill in the necessary filters in the interface.
+            * Open the developer panel.
+            * Locate the required request.
+            * Use this query to substitute in your code to get a reference  
+
+    The link consists of two parts:
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:url
+    --8<--
+    ```
+    
+    `Step 1`  Create a link to the required widget. 
+    The link is formulated as follows:  `/screen/nameScreen/view/nameView/nameBC`    
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:urlBC
+    --8<--
+    ```
+    `Step 2`  Create a link with filter.
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:urlFilter
+    --8<--
+    ```
+    `Step 3`  Create a link for drilldown.
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:url
+    --8<--
+    ```
 
 
 #### By fulltextsearch
@@ -204,44 +206,45 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
  
 ##### How to add?
 ??? Example
-        !!! tips
-            To write this drilldown, follow these steps:
-        
-                * Add a filter function for fields that require filtering.
-                * Visually fill in the necessary filters in the interface.
-                * Open the developer panel.
-                * Locate the required request.
-                * Use this query to substitute in your code to get a reference  
 
-        The link consists of two parts:
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:url
-        --8<--
-        ```
+    !!! tips
+        To write this drilldown, follow these steps:
     
-        `Step 1`  Create a link to the required widget. 
-        The link is formulated as follows:  `/screen/nameScreen/view/nameView/nameBC`    
-        
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:urlBC
-        --8<--
-        ```
-        `Step 2`  Create a link with filter.
-     
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:urlFilter
-        --8<--
-        ```
-        `Step 3`  Create a link for drilldown.
-     
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:url
-        --8<--
-        ```
+        * Add a filter function for fields that require filtering.
+        * Visually fill in the necessary filters in the interface.
+        * Open the developer panel.
+        * Locate the required request.
+        * Use this query to substitute in your code to get a reference  
+    
+    The link consists of two parts:
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:url
+    --8<--
+    ```
+    
+    `Step 1`  Create a link to the required widget. 
+    The link is formulated as follows:  `/screen/nameScreen/view/nameView/nameBC`    
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:urlBC
+    --8<--
+    ```
+    `Step 2`  Create a link with filter.
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:urlFilter
+    --8<--
+    ```
+    `Step 3`  Create a link for drilldown.
+    
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedfulltextsearchfilter/MyExample3615Meta.java:url
+    --8<--
+    ```
 
 #### By filter group
     _not applicable_

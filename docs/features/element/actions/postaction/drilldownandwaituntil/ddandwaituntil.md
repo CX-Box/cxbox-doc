@@ -10,6 +10,14 @@ Creates a post-action that waits until a specified condition is met.
 
 This mechanism is useful for implementing long-running operations where the user needs to be informed about the progress and its outcome.
 
+### How does it look?
+=== "Without custom message"
+![waitUntil.gif](waitUntil.gif)
+=== "With `Success` and `In progress` custom message"
+![waitUntilSuccess.gif](waitUntilSuccess.gif)
+=== "With `Timeout` custom message"
+![waitUntilTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
+
 ```java
 PostAction.waitUntil(
     MyExampleDTO_.statusResponse, 
@@ -58,14 +66,7 @@ How it works:
 - If the condition is not met after 6 requests, the `Timeout custom message` is displayed, and the process ends due to a timeout.
 - During the execution of the requests, the `In Progress custom message` is displayed.
 
- 
-### How does it look?
-=== "Without custom message"
-    ![waitUntil.gif](waitUntil.gif)
-=== "With `Success` and `In progress` custom message"
-    ![waitUntilSuccess.gif](waitUntilSuccess.gif)
-=== "With `Timeout` custom message"
-    ![waitUntilTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
+
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
 
@@ -88,6 +89,14 @@ Creates a post-action that performs a INNER drill-down and then waits until a sp
 
 Use Case:
 This method is useful for scenarios where you need to navigate to a screen, wait for a specific condition (e.g., a status change), and provide feedback to the user during the process.
+
+### How does it look?
+=== "Without custom message"
+![waitUntilDD.gif](waitUntil.gif)
+=== "With `Success` and `In progress` custom message"
+![waitUntilDDSuccess.gif](waitUntilSuccess.gif)
+=== "With `Timeout` custom message"
+![waitUntilDDTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
 
 ```java
 PostAction.drillDownAndWaitUntil(
@@ -151,14 +160,6 @@ How it works:
 - If the condition is not met after 6 requests:
   The frontend navigates to the specified screen (`/screen/myexample/view/myexampleresultform/...`).
   The `Timeout custom message` is displayed, and the process ends due to a timeout.
-
-### How does it look?
-=== "Without custom message"
-    ![waitUntilDD.gif](waitUntil.gif)
-=== "With `Success` and `In progress` custom message"
-    ![waitUntilDDSuccess.gif](waitUntilSuccess.gif)
-=== "With `Timeout` custom message"
-    ![waitUntilDDTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example

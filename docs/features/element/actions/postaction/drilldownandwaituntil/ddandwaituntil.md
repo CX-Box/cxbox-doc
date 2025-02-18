@@ -4,19 +4,16 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3231asyncform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/postaction/waituntil){:target="_blank"}
 
-Creates a post-action that waits until a specified condition is met.
-
-**Use Case**:
-
 This mechanism is useful for implementing long-running operations where the user needs to be informed about the progress and its outcome.
 
 ### How does it look?
 === "Without custom message"
-![waitUntil.gif](waitUntil.gif)
+    ![waitUntil.gif](waitUntil.gif)
 === "With `Success` and `In progress` custom message"
-![waitUntilSuccess.gif](waitUntilSuccess.gif)
+    ![waitUntilSuccess.gif](waitUntilSuccess.gif)
 === "With `Timeout` custom message"
-![waitUntilTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
+    ![waitUntilTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
+
 
 ```java
 PostAction.waitUntil(
@@ -84,19 +81,17 @@ How it works:
 ## drillDownAndWaitUntil
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3231/view/myexample3232form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/postaction/drilldownandwaituntil){:target="_blank"}
- 
-Creates a post-action that performs a INNER drill-down and then waits until a specified condition is met. 
-
-Use Case:
 This method is useful for scenarios where you need to navigate to a screen, wait for a specific condition (e.g., a status change), and provide feedback to the user during the process.
+
+Creates a post-action that performs a INNER drill-down and then waits until a specified condition is met.
 
 ### How does it look?
 === "Without custom message"
-![waitUntilDD.gif](waitUntil.gif)
+    ![waitUntilDD.gif](waitUntil.gif)
 === "With `Success` and `In progress` custom message"
-![waitUntilDDSuccess.gif](waitUntilSuccess.gif)
+    ![waitUntilDDSuccess.gif](waitUntilSuccess.gif)
 === "With `Timeout` custom message"
-![waitUntilDDTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
+    ![waitUntilDDTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
 
 ```java
 PostAction.drillDownAndWaitUntil(

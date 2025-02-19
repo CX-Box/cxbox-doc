@@ -2,7 +2,7 @@
 
 * [cxbox/demo 2.0.11 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.11), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.11)
 
-* [cxbox/core 4.0.0-M14 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M14), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M14), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M14)
+* [cxbox/core 4.0.0-M15 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M15), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M15), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M15)
 
 * [cxbox-ui/core 2.5.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.0)
 
@@ -200,7 +200,7 @@ We have released a new CORE UI version (2.5.0).
 #### Other Changes
 see [cxbox-ui changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.0)
 
-### CXBOX 4.0.0-M14 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M14))  
+### CXBOX 4.0.0-M15 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M15))  
 
 #### Added: @RequiredArgsConstructor  
 Use Lombok’s @RequiredArgsConstructor and @Getter (meta,dao) for AnySourceVersionAwareResponseService and  @Getter (meta) VersionAwareResponseService instead of explicitly writing a constructor.
@@ -247,7 +247,8 @@ This makes the code cleaner and reduces boilerplate.
             super(ClientWriteDTO.class, Client.class, null, ClientReadWriteMeta.class);
         }
     ```
-
+#### Other Changes
+We have released two CORE versions! See [cxbox 4.0.0-M14 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M14) and [cxbox 4.0.0-M15 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M15).  
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 

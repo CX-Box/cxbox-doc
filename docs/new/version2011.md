@@ -212,40 +212,45 @@ This makes the code cleaner and reduces boilerplate.
     @SuppressWarnings({"java:S1170"})
     @Service
     @RequiredArgsConstructor
-    public class ClientReadWriteService extends VersionAwareResponseService<ClientWriteDTO, Client> {
+    public class ResponsibilitiesActionAdminService extends
+    VersionAwareResponseService<ResponsibilitiesActionAdminDTO, ResponsibilitiesAction> {
+ 
+        private final MetaAdminServiceExt metaAdminServiceExt;
     
-        private final ClientRepository clientRepository;
+        private final JpaDao jpaDao;
     
-        private final MeetingRepository meetingRepository;
-    
-        private final UserRepository userRepository;
-    
-        private final SessionService sessionService;
+        private final CxboxFileService cxboxFileService;
     
         @Getter(onMethod_ = {@Override})
-        private final Class<ClientReadWriteMeta> meta = ClientReadWriteMeta.class;
+        private final Class<ResponsibilitiesActionAdminMeta> meta = ResponsibilitiesActionAdminMeta.class;
+
     ```
 === "Before"
 
     ```java
     @Service
-    public class ClientReadWriteService extends VersionAwareResponseService<ClientWriteDTO, Client> {
+    public class ResponsibilitiesActionAdminService extends
+    VersionAwareResponseService<ResponsibilitiesActionAdminDTO, ResponsibilitiesAction> {
     
-        @Autowired
-        private ClientRepository clientRepository;
+        private final MetaAdminServiceExt metaAdminServiceExt;
     
-        @Autowired
-        private MeetingRepository meetingRepository;
+        private final JpaDao jpaDao;
     
-        @Autowired
-        private UserRepository userRepository;
+        private final CxboxFileService cxboxFileService;
     
-        @Autowired
-        private SessionService sessionService;
-    
-        public ClientReadWriteService() {
-            super(ClientWriteDTO.class, Client.class, null, ClientReadWriteMeta.class);
+        public ResponsibilitiesActionAdminService(MetaAdminServiceExt metaAdminServiceExt, JpaDao jpaDao,
+                CxboxFileService cxboxFileService) {
+            super(
+                    ResponsibilitiesActionAdminDTO.class,
+                    ResponsibilitiesAction.class,
+                    null,
+                    ResponsibilitiesActionAdminMeta.class
+            );
+            this.metaAdminServiceExt = metaAdminServiceExt;
+            this.jpaDao = jpaDao;
+            this.cxboxFileService = cxboxFileService;
         }
+
     ```
 #### Other Changes
 We have released two CORE versions! See [cxbox 4.0.0-M14 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M14) and [cxbox 4.0.0-M15 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M15).  

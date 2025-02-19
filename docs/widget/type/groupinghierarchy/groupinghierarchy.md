@@ -895,3 +895,7 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3203){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}
+
+#### Aggregate 
+
+!!! warning line end "Work in progress"

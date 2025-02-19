@@ -31,6 +31,25 @@ We have added aggregate rows to display the aggregates on hierarchy levels. You 
     ![aggregateBefore.png](v2.0.11/aggregateBefore.png){width="700"}  
     With `groupMode: compact` the widget appears in a compact view, where grouping fields and their content are displayed **on the same row**.  
 
+#### Added: [waitUntil and drillDownAndWaitUntil PostAction](https://doc.cxbox.org/features/element/actions/postaction/drilldownandwaituntil/ddandwaituntil/)
+
+**waitUntil**
+
+This mechanism allows the program to wait until a certain condition is met. For example, "Wait until the task status becomes 'Done'."
+
+This is useful when you have long-running operations (e.g., waiting for a response from a third-party system), and you want the user to see what’s happening and know when everything is finished.
+
+![waitUntil.gif](v2.0.11/waitUntil.gif)
+
+**drillDownAndWaitUntil**
+
+This is a mechanism that allows the program to navigate to another screen  and then wait until a specific condition is met.
+For example, "Go to this screen, wait until the status becomes 'Done', and show the user what’s happening."
+
+This is helpful in scenarios where you need to navigate to another screen (e.g., to view details or results).
+
+![waitUntilDD.gif](v2.0.11/waitUntilDD.gif)
+
 #### Added: Pie1D widget - New widget type!  
 
 We have added a new widget type `Pie1D` to display data in a circular format.  
@@ -123,12 +142,12 @@ We have updated the logic for checking required fields when they are present in 
 INFO o.d.c.c.extension.siem.SecurityLogger: SIEM event. Operation: login, endpoint (resource): /login, user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: 1100057 
 ```
 
-* For "invoke" events, log the action name.
+* For  `invoke`  events, log the action name.
 ``` 
 INFO o.d.c.c.extension.siem.SecurityLogger : SIEM event. Operation: INVOKE.sendEmailNextDay, endpoint (resource): meeting (1100062), user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: null
 ```
 
-* Log access rights changes in SIEM (with WARN level).
+* Log access `Responsibility View` и `Responsibility Action` changes in SIEM (with WARN level).
 ```
 WARN o.d.c.c.extension.siem.SecurityLogger    : SIEM event. Operation: UPDATE, endpoint (resource): responsibilities (1100342), user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: {"id":"1100342","vstamp":1,"internalRoleCD":"BUSINESS_ADMIN","view":"meetingview","viewWidgets":[{"id":"meetingViewButtons","value":"'/api/v1/../meeting' by widget 'meetingViewButtons'","options":{}},{"id":"meetingEditViewHeader","value":"'/api/v1/../meetingEdit' by widget 'meetingEditViewHeader'","options":{}},{"id":"meetingDocumentsFormForList","value":"'/api/v1/../meetingDocumentEdit' by widget 'meetingDocumentsFormForList'","options":{}},{"id":"meetingView","value":"'/api/v1/../meeting' by widget 'meetingView'","options":{}},{"id":"meetingDocumentsList","value":"'/api/v1/../meetingDocumentEdit' by widget 'meetingDocumentsList'","options":{}},{"id":"meetingViewClientInfo","value":"'/api/v1/../meeting' by widget 'meetingViewClientInfo'","options":{}},{"id":"SecondLevelMenu","value":"'/api/v1/../null' by widget 'SecondLevelMenu'","options":{}},{"id":"meetingViewResult","value":"'/api/v1/../meeting' by widget 'meetingViewResult'","options":{}}]}
 ```
@@ -190,46 +209,45 @@ This makes the code cleaner and reduces boilerplate.
 === "After"
 
     ```java
-    @SuppressWarnings({"java:S1170", "java:S2387"})
-    @RequiredArgsConstructor
+    @SuppressWarnings({"java:S1170"})
     @Service
-    public class LovReadService extends AnySourceVersionAwareResponseService<LovDTO, DictDTO> {
+    @RequiredArgsConstructor
+    public class ClientReadWriteService extends VersionAwareResponseService<ClientWriteDTO, Client> {
+    
+        private final ClientRepository clientRepository;
+    
+        private final MeetingRepository meetingRepository;
+    
+        private final UserRepository userRepository;
+    
+        private final SessionService sessionService;
     
         @Getter(onMethod_ = {@Override})
-        private final Class<LovReadMeta> meta = LovReadMeta.class;
-    
-        @Getter(onMethod_ = {@Override})
-        private final Class<LovDao> dao = LovDao.class;
+        private final Class<ClientReadWriteMeta> meta = ClientReadWriteMeta.class;
     ```
 === "Before"
 
     ```java
     @Service
-    public class LovReadService extends AnySourceVersionAwareResponseService<LovDTO, DictDTO> {
+    public class ClientReadWriteService extends VersionAwareResponseService<ClientWriteDTO, Client> {
     
-        public LovReadService() {
-            super(LovDTO.class, DictDTO.class, LovReadMeta.class, LovDao.class);
+        @Autowired
+        private ClientRepository clientRepository;
+    
+        @Autowired
+        private MeetingRepository meetingRepository;
+    
+        @Autowired
+        private UserRepository userRepository;
+    
+        @Autowired
+        private SessionService sessionService;
+    
+        public ClientReadWriteService() {
+            super(ClientWriteDTO.class, Client.class, null, ClientReadWriteMeta.class);
         }
     ```
 
-#### Added: [waitUntil and drillDownAndWaitUntil PostAction](https://doc.cxbox.org/features/element/actions/postaction/drilldownandwaituntil/ddandwaituntil/)
-
-**waitUntil**
-
-This mechanism allows the program to wait until a certain condition is met. For example, "Wait until the task status becomes 'Done'."
-
-This is useful when you have long-running operations (e.g., waiting for a response from a third-party system), and you want the user to see what’s happening and know when everything is finished.
-
- ![waitUntil.gif](v2.0.11/waitUntil.gif)
-
-**drillDownAndWaitUntil**
-
-This is a mechanism that allows the program to navigate to another screen  and then wait until a specific condition is met. 
-For example, "Go to this screen, wait until the status becomes 'Done', and show the user what’s happening."
-
-This is helpful in scenarios where you need to navigate to another screen (e.g., to view details or results).
-
-![waitUntilDD.gif](v2.0.11/waitUntilDD.gif)
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 

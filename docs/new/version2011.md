@@ -26,7 +26,7 @@ We have added aggregate rows to display the aggregates on hierarchy levels. You 
     3) Select an aggregation function for calculations. Currently, we support standard functions: sum, min, max, avg.  
     4) Configure which columns will be used for aggregation calculations, including values from other columns.  
     !!! info  
-        We will soon provide a detailed description of Aggregate mode in the updated `GroupingHierarchy` article ([Aggregate](http://localhost:8000/widget/type/groupinghierarchy/groupinghierarchy/#aggregate) section) 
+        We will soon provide a detailed description of Aggregate mode in the updated `GroupingHierarchy` article ([Aggregate](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/#aggregate) section) 
 === "compact (default)"
     ![aggregateBefore.png](v2.0.11/aggregateBefore.png){width="700"}  
     With `groupMode: compact` the widget appears in a compact view, where grouping fields and their content are displayed **on the same row**.  

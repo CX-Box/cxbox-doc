@@ -1,9 +1,6 @@
 # SuggestionPickList
-`SuggestionPickList` is a component that allows to select a value from Popup list of entities
-
-!!! tips
-Use if user needs to open a detailed view of related entities. Feel free to use this field type for large entities of any size (only one page is loaded in memory)
-
+`SuggestionPickList` is a component that allows you to select values from a dropdown list and display data from various external sources, such as microservices, files, and others.
+ 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3080){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/suggestion/basic){:target="_blank"}
@@ -143,7 +140,7 @@ Use if user needs to open a detailed view of related entities. Feel free to use 
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fields/suggestion/placeholder/MyExample3086Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/suggestion/placeholder/MyExample3097Meta.java:buildRowDependentMeta
     --8<--
     ```  
     === "List widget"
@@ -234,7 +231,7 @@ _not applicable_
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
 `Editable`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3080){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/suggestion/basic){:target="_blank"}
 
 `Readonly`
@@ -243,43 +240,43 @@ _not applicable_
 
 ### How does it look?
 === "Editable"
-=== "List widget"
-![img_list.gif](img_list.gif)
-=== "Info widget"
-_not applicable_
-=== "Form widget"
-![img_form.gif](img_form.gif)
+    === "List widget"
+        ![img_list.gif](img_list.gif)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_form.gif](img_form.gif)
 === "Readonly"
-=== "List widget"
-![img_ro_list.png](img_ro_list.png)
-=== "Info widget"
-![img_ro_info.png](img_ro_info.png)
-=== "Form widget"
-![img_ro_form.png](img_ro_form.png)
+    === "List widget"
+        ![img_ro_list.png](img_ro_list.png)
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ![img_ro_form.png](img_ro_form.png)
 
 ### How to add?
 ??? Example
-=== "Editable"
-**Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
-```java
---8<--
-{{ external_links.github_raw_doc }}/fields/suggestion/basic/MyExample118Service.java:doUpdateEntity
---8<--
-```
-**Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-```java
---8<--
-{{ external_links.github_raw_doc }}/fields/suggestion/basic/MyExample118Meta.java:buildRowDependentMeta
---8<--
-```    
-=== "List widget"
-**Works for List.**
-=== "Info widget"
-**_not applicable_**
-=== "Form widget"
-**Works for Form.**
+    === "Editable"
+        **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/suggestion/basic/MyExample3080Service.java:doUpdateEntity
+        --8<--
+        ```
+        **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/suggestion/basic/MyExample380Meta.java:buildRowDependentMeta
+        --8<--
+        ```    
+        === "List widget"
+            **Works for List.**
+        === "Info widget"
+            **_not applicable_**
+        === "Form widget"
+            **Works for Form.**
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample118){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3080){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/suggestion/basic){:target="_blank"}
 
     === "Readonly"

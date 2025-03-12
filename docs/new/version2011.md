@@ -4,7 +4,7 @@
 
 * [cxbox/core 4.0.0-M15 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M15), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M15), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M15)
 
-* [cxbox-ui/core 2.5.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.01), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.1)
+* [cxbox-ui/core 2.5.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.1), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.1)
 
 * [cxbox/code-samples 2.0.11 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.11), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.11)
 
@@ -193,12 +193,12 @@ We have updated the logic for processing field keys. Previously, `widget.json ->
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.11)
 
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.0))
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.1))
 
-We have released a new CORE UI version (2.5.0).
+We have released two CORE UI versions - 2.5.0 and 2.5.1! 
 
 #### Other Changes
-see [cxbox-ui changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.0)
+see [cxbox-ui 2.5.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.0) and [cxbox-ui 2.5.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.1)
 
 ### CXBOX 4.0.0-M15 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M15))  
 

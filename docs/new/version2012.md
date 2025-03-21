@@ -33,7 +33,7 @@ You can configure `timeout` for all three modes. For `stack` and `column`, you c
 
 We have introduced a new widget type `Line2D` to display data using X and Y axes in a linear format.
 
-
+![Line2Dbasic.jpg](v2.0.12/Line2Dbasic.jpg){width="700"}
 
 Key features include:
 
@@ -43,42 +43,35 @@ Key features include:
 
 Functionality includes:
 
-=== "Drilldown"  
-    Click on xAxis values to drilldown to the filtered data displayed in a table.   
-
-=== "Switch mode"  
-    Switch from column mode to table mode to view data in a tabular format.  
-
-=== "Segment interaction"  
-    Click on legend values to add or remove lines from the plot.  
+* Drilldown - click on xAxis values to drilldown to the filtered data displayed in a table.   
+* Switch mode - switch from column mode to table mode to view data in a tabular format.  
+* Segment interaction - click on legend values to add or remove lines from the plot.  
 
 #### Added: DualAxes2D widget - New widget type!
 
 We have introduced a new widget type `DualAxes2D` to display data from different types of charts in a single area. The charts share the same X axis, but can have separate Y axes. 
 **Note!** DualAxes2D can only display 2D types of widgets (e.g. Line2D, Column2D). The features (tooltip and axis scale/step) for 2D widgets will apply to DualAxes2D automatically.
 
+![DualAxes2Dbasic.PNG](v2.0.12/DualAxes2Dbasic.PNG){width="700"}
 
-Functionality includes:
+Functionality includes:  
 
-=== "Drilldown"  
-    Click on yAxis values to drilldown to the filtered data displayed in a table.
-
-=== "Switch mode"  
-    Switch from column mode to table mode to view data in a tabular format.
-
-=== "Segment interaction"  
-    Click on legend values to add or remove lines/bars from the plot. 
+* Drilldown - click on yAxis values to drilldown to the filtered data displayed in a table.  
+* Switch mode - switch from column mode to table mode to view data in a tabular format.  
+* Segment interaction - click on legend values to add or remove lines/bars from the plot.   
 
 #### Added: UI panel - display of application version and environment type  
 
-We have added the ability to display the environment type and current application version in the UI panel for convenience. The text changes depending on the menu state (`collapsed`/`expanded`) and shows a tooltip with more details. If the text is too long for the area, it will be shortened with three dots. Background color customization for this section is also supported.  
+We have added the ability to display the environment type and current application version in the UI panel for convenience. The text adapts depending on the menu state (`collapsed`/`expanded`) and shows a tooltip with more details. If the text is too long for the area, it will be shortened with three dots. Background color customization for this section is also supported.  
 
-=== "After"
+=== "After"  
+    ![envAfter.PNG](v2.0.12/envAfter.PNG){width="700"}
 === "Before"
+    ![envBefore.png](v2.0.12/envBefore.png){width="700"}
 
 #### Added: Push Notifications - long links support  
 
-We have enhanced the display of long link labels for [Push Notifications](https://doc.cxbox.org/features/element/notifications/push/websocket/). Now, if the link label exceeds the width of the notification, the text automatically wraps to the next line, ensuring the full label is displayed correctly without being truncated. In addition, *"and (N) more..."* text (in case there are several links) is also displayed correctly within the notification area.   
+We have enhanced the display of long link labels for [Push Notifications](https://doc.cxbox.org/features/element/notifications/push/websocket/). Now, if the link label exceeds the width of the notification, the text automatically wraps to the next line, ensuring the full label is displayed correctly without being truncated. In addition, the *"and (N) more..."* text (in case there are several links) is also displayed correctly within the notification area.   
 
 === "After"
     ![notificationLinkAfter.png](v2.0.12/notificationLinkAfter.png){width="700"}
@@ -140,8 +133,11 @@ Added support for passing an empty `message` in `preAction confirm`. Now, `preAc
 * If an empty string (`" "`) is passed, the confirmation window remains blank with no text.  
 
 === "empty"  
+    ![confirmWithEmptyMessage.png](v2.0.12/confirmWithEmptyMessage.png){width="700"}  
 === "null"  
-=== "message"  
+    ![confirmWithNullMessage.png](v2.0.12/confirmWithNullMessage.png){width="700"}  
+=== "text"  
+    ![confirmWithMessage.png](v2.0.12/confirmWithMessage.png){width="700"}
 
 #### MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
 
@@ -154,11 +150,7 @@ See [cxbox 4.0.0-M16 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 
 #### Added: Run Inspections Button  
 
-We have added a Run Inspections button to the IntelliJ IDEA sidebar, enabling one-click execution of inspections across the entire project.  
-
-**Functionality**:  
-* Automates the manual steps required to run inspections, eliminating the need to configure profiles or adjust settings.  
-* Executes inspections for the entire project without requiring manual scope selection.  
+We have added a Run Inspections button to the IntelliJ IDEA sidebar, enabling one-click execution of inspections across the entire project. The functionality automates the manual steps required to run inspections, eliminating the need to configure profiles or adjust settings.  
 
 #### Added: AdditionalInfo widget - fieldKey validation in *.widget.json
 
@@ -166,6 +158,11 @@ Added inspections for [AdditionalInfo](https://doc.cxbox.org/widget/type/additio
 
 #### Added: Inspection for options -> create/edit -> widget in *.widget.json  
 
-Added an inspection to ensure that widgets referenced in create and edit parameters are present on the same view. Missing widgets are automatically added to the view.  
+Added an inspection to ensure that widgets referenced in `create` and `edit` parameters are present on the same view. Missing widgets are automatically added to the view.  
 
-#### Added: 
+#### Added: postAction drillDownAndWaitUntil - validation for successCondition_bcName  
+
+We have added a validation check to verify that the field specified in the successCondition_bcName parameter is present on the indicated bc in the drillDownAndWaitUntil postAction.  
+
+
+

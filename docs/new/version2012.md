@@ -19,7 +19,7 @@ We have introduced three display modes for [WebSocket Push Notifications](https:
 
 === "Stack (default)"  
     Notifications appear separately, stacking on top of each other.  
-    ![notificationStack.gif](v2.0.12/notificationStack.gif)  
+    ![notificationStack.gif](v2.0.12/notificationStack.gif)
 === "Column"  
     Notifications appear separately, aligned vertically in a column.  
     ![notificationColumn.gif](v2.0.12/notificationColumn.gif)  
@@ -73,22 +73,38 @@ Functionality includes:
 We have enhanced the display of long link labels for [Push Notifications](https://doc.cxbox.org/features/element/notifications/push/websocket/). Now, if the link label exceeds the width of the notification, the text automatically wraps to the next line, ensuring the full label is displayed correctly without being truncated.  
 
 === "After"
-    ![notificationLinkAfter.png](v2.0.12/notificationLinkAfter.png)
+    ![notificationLinkAfter.png](v2.0.12/notificationLinkAfter.png){width="700"}
 === "Before"
-    ![notificationLinkBefore.png](v2.0.12/notificationLinkBefore.png)  
+    ![notificationLinkBefore.png](v2.0.12/notificationLinkBefore.png){width="700"}  
 
 #### Added: suggestionPickList field - scrollbar support  
 
 We have improved the suggestionPickList field by adding scrollbar support - you can now navigate long lists more easily using the scrollbar.  
 
 === "After"
-    ![suggestionPickListScroll.png](v2.0.12/suggestionPickListScroll.png)
+    ![suggestionPickListScroll.png](v2.0.12/suggestionPickListScroll.png){width="700"}
 === "Before"
-    ![suggestionPickListNoScroll.png](v2.0.12/suggestionPickListNoScroll.png)  
+    ![suggestionPickListNoScroll.png](v2.0.12/suggestionPickListNoScroll.png){width="700"}  
 
-#### Fixed: formPopup widget - forceActive update  
+#### Added: suggestionPickList field - changes in filtering method  
 
-We have enhanced the forceActive feature for FormPopup widget to ensure that only a POST row-meta request is executed. This guarantees the most up-to-date information even when the entity is being edited, preventing data loss.  
+We have refined the filtering method for the suggestionPickList field. Previously, it required an exact match with the typed characters (`equals`). Now, the filtering logic is less strict, and displays all the results that contain the entered text (`contains`).  
+=== "After"  
+    ![suggestionPickListFiltrationAfter.gif](v2.0.12/suggestionPickListFiltrationAfter.gif)  
+=== "Before"  
+    ![suggestionPickListFiltrationBefore.gif](v2.0.12/suggestionPickListFiltrationBefore.gif)  
+
+#### Added: dictionary field - improved layout for mode:icon  
+
+We have removed the minimum width restriction for [Dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/) field with `mode: icon`. This allows the field to shrink dynamically while keeping the icon and value closer together, resulting in a more compact layout.  
+=== "After"  
+    ![dictionaryPaddingAfter.png](v2.0.12/dictionaryPaddingAfter.png){width="700"}   
+=== "Before"  
+    ![dictionaryPaddingBefore.png](v2.0.12/dictionaryPaddingBefore.png){width="700"}  
+
+#### Fixed: FormPopup widget - forceActive update  
+
+We have enhanced the forceActive feature for [FormPopup widget](https://doc.cxbox.org/widget/type/formpopup/formpopup/) to ensure that only a POST row-meta request is executed. This guarantees the most up-to-date information even when the entity is being edited, preventing data loss.  
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.12)

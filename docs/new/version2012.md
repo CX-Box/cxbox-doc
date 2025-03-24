@@ -244,13 +244,19 @@ See [cxbox 4.0.0-M16 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 
 We have added a Run Inspections button to the IntelliJ IDEA sidebar, enabling one-click execution of inspections across the entire project. The functionality automates the manual steps required to run inspections, eliminating the need to configure profiles or adjust settings.  
 
+![pluginRunInspections.gif](v2.0.12/pluginRunInspections.gif)
+
 #### Added: AdditionalInfo widget - fieldKey validation in *.widget.json
 
 Added inspections for [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/) widget, following the same logic as [Info](https://doc.cxbox.org/widget/type/info/info/) widget. Now, if a `fieldKey` in `layout` is missing or does not reference a field from `fields`, an inspection warning is triggered.  
 
+![pluginAdditionalInfo.gif](v2.0.12/pluginAdditionalInfo.gif)
+
 #### Added: Inspection for options -> create/edit -> widget in *.widget.json  
 
 Added an inspection to ensure that widgets referenced in `create` and `edit` parameters are present on the same view. Missing widgets are automatically added to the view.  
+
+![pluginCreateEdit.gif](v2.0.12/pluginCreateEdit.gif)
 
 #### Added: postAction drillDownAndWaitUntil - validation for successCondition_bcName  
 

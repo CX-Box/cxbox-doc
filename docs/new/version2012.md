@@ -103,6 +103,10 @@ We have removed the minimum width restriction for [Dictionary](https://doc.cxbox
 === "Before"  
     ![dictionaryPaddingBefore.png](v2.0.12/dictionaryPaddingBefore.png){width="700"}
 
+#### Added: GroupingHierarchy widget - validation for aggregate fields  
+
+We have introduced a validation rule for aggregate fields in the [GroupingHierarchy](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/) widget. Now, a field **cannot** be used both as a grouping field and as an aggregate field at the same time. If the same field is used both for  grouping and aggregation, the widget will prioritize grouping, and the aggregation function will be ignored.  
+
 #### Fixed: FormPopup widget - forceActive update  
 
 We have enhanced the forceActive feature for [FormPopup widget](https://doc.cxbox.org/widget/type/formpopup/formpopup/) to ensure that only a POST row-meta request is executed. This guarantees the most up-to-date information even when the entity is being edited, preventing data loss.  

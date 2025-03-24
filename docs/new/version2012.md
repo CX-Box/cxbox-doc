@@ -62,12 +62,12 @@ Functionality includes:
 
 #### Added: UI panel - display of application version and environment type  
 
-We have added the ability to display the environment type and current application version in the UI panel for convenience. The text adapts depending on the menu state (`collapsed`/`expanded`) and shows a tooltip with more details. If the text is too long for the area, it will be shortened with three dots. Background color customization for this section is also supported.  
+We have added the ability to display the environment type and current application version in the UI panel for convenience. The text adapts depending on the menu state (`collapsed`/`expanded`) and shows a tooltip with more details. Background color customization for this section is also supported.  
 
 === "After"  
-    ![envAfter.PNG](v2.0.12/envAfter.PNG){width="700"}
+    ![envAfter.gif](v2.0.12/envAfter.gif)
 === "Before"
-    ![envBefore.png](v2.0.12/envBefore.png){width="700"}
+    ![envBefore.gif](v2.0.12/envBefore.gif)
 
 #### Added: Push Notifications - long links support  
 
@@ -125,19 +125,111 @@ See [cxbox-ui 2.5.2 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 
 We have released a new 4.0.0-M16 CORE version.  
 
-#### Added: PreAction Confirm - Support for Empty Message
+#### Added: NEW! Java API for confirm preActions  
 
-Added support for passing an empty `message` in `preAction confirm`. Now, `preAction confirm` and `confirmWithCustomWidget` follow the same logic:
-* If `message` is provided, it is displayed.
-* If `null` is passed, the default message appears.
-* If an empty string (`" "`) is passed, the confirmation window remains blank with no text.  
+New Java API for confirm preActions in the **CORE** now provides with a standardized and unified behavior for both `confirm` and `confirmWithWidget` preActions.  
 
-=== "empty"  
-    ![confirmWithEmptyMessage.png](v2.0.12/confirmWithEmptyMessage.png){width="700"}  
-=== "null"  
-    ![confirmWithNullMessage.png](v2.0.12/confirmWithNullMessage.png){width="700"}  
-=== "text"  
-    ![confirmWithMessage.png](v2.0.12/confirmWithMessage.png){width="700"}
+1)`confirm` preAction 
+
+=== "NEW! withoutTitle()"  
+    We have added support for an empty title using a `.withoutTitle()` method  
+    ```java
+    PreAction.confirm(cf -> cf
+    .withoutTitle()
+    .text("Changes will be saved")
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```  
+    ![confirmWithoutTitle.jpg](v2.0.12/confirmWithoutTitle.jpg)  
+
+=== "NEW! withoutText()"  
+    We have added support for an empty text using a `.withoutText()` method. The body of the confirmPopup shrinks as the text is left empty.  
+    ```java
+    PreAction.confirm(cf -> cf
+    .title("Approve?")
+    .withoutText()
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```  
+    ![confirmWithoutText.jpg](v2.0.12/confirmWithoutText.jpg)  
+
+=== "Unchanged: default title"  
+    If you indicate `.title(null)` or don't indicate it at all, the default title is displayed.  
+    ```java
+    PreAction.confirm(cf -> cf
+    .title(null)
+    .text("Changes will be saved")
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```
+    ![confirmDefaultTitle.jpg](v2.0.12/confirmDefaultTitle.jpg)  
+
+=== "Unchanged: default text"  
+    If you indicate `.text(null)` or don't indicate it at all, the default text is displayed.  
+    ```java
+    PreAction.confirm(cf -> cf
+    .title("Approve?")
+    .text(null)
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```
+    ![confirmDefaultText.jpg](v2.0.12/confirmDefaultText.jpg)  
+
+=== "Unchanged: custom title/text"  
+    If `title` or `text` contains a value, it is displayed correctly.  
+    ```java
+    PreAction.confirm(cf -> cf
+    .title("Approve?")
+    .text("Changes will be saved")
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```
+    ![confirmCustomTitleText.jpg](v2.0.12/confirmCustomTitleText.jpg)  
+
+=== "Unchanged: all default"  
+    If nothing except for `preAction.confirm()` is indicated, all default values are displayed.  
+    ```java
+    PreAction.confirm()
+    ```    
+    ![confirmAllDefault.jpg](v2.0.12/confirmAllDefault.jpg)  
+
+2)`confirmWithWidget` preAction (renamed from `confirmWithCustomWidget`)  
+
+=== "NEW! withoutTitle()"  
+    Just like with `confirm`, there is now a support for an empty title using a `.withoutTitle()` method  
+    ```java
+    PreAction.confirmWithWidget(
+    "meetingResultFormPopup", cf -> cf
+    .withoutTitle()
+    .yesText("Approve and Save")
+    .noText("Cancel")
+    )
+    ```  
+    ![confirmWithWidgetWithoutTitle.jpg](v2.0.12/confirmWithWidgetWithoutTitle.jpg)  
+
+=== "Unchanged: default title"  
+    If `.title(null)` is indicated, the default title is displayed.  The same logic is if you don't indicate `title` at all.   
+    ```java
+    PreAction.confirmWithWidget(
+    "meetingResultFormPopup", cf -> cf
+    .title(null)
+    .yesText("Approve and Save")
+    .noText("Cancel")
+    )
+    ```
+    ![confirmWithWidgetDefaultTitle.jpg](v2.0.12/confirmWithWidgetDefaultTitle.jpg)  
+
+=== "Unchanged: custom title"  
+    If `title` contains a value, it is displayed.  
+    ```java
+    PreAction.confirmWithWidget(
+    "meetingResultFormPopup", cf -> cf
+    .title("Approve?")
+    .yesText("Approve and Save")
+    .noText("Cancel")
+    )
+    ```  
+    ![confirmWithWidgetCustom.jpg](v2.0.12/confirmWithWidgetCustom.jpg)  
 
 #### MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
 

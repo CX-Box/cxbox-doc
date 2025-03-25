@@ -265,11 +265,11 @@ New Java API for confirm preActions in the **CORE** now provides with a standard
     ```  
     ![confirmWithWidgetWithoutTitle.jpg](v2.0.12/confirmWithWidgetWithoutTitle.jpg)  
 
-#### MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
+#### Added: MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
 
 We have implemented Serializable for `MultivalueField` and `MultivalueFieldSingleValue` to ensure compatibility with springSessionJDBC. This change allows the backend to serialize bcState using the JDK serializer (instead of Jackson) by default, resolving issues with inconsistent behavior when attempting to serialize these objects.
 
-#### Spring Boot upgraded up to 3.3.8
+#### Added: Spring Boot upgraded up to 3.3.8
 
 In response to security requirements, we have upgraded Spring Boot from 3.3.4 to 3.3.8. This update also automatically upgraded transitive dependencies, resolving most security-related issues.
 

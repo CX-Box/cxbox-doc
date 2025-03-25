@@ -6,7 +6,9 @@
 
 * [cxbox-ui/core 2.5.2 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.2), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.2), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.2)
 
-* [cxbox/code-samples 2.0.12 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.12), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.12)
+* [cxbox/code-samples 2.0.12 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.12), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.12)  
+
+* cxbox/intellij-plugin 1.7.9 - Available soon! New version of Plugin is currently being reviewed by JetBrains.  
 
 
 ## **Key updates February, March 2025**
@@ -59,14 +61,6 @@ Functionality includes:
 * Drilldown - click on yAxis values to drilldown to the filtered data displayed in a table.  
 * Switch mode - switch from column mode to table mode to view data in a tabular format.  
 * Segment interaction - click on legend values to add or remove lines/bars from the plot.  
-
-#### Added: Draft Builder for Drilldowns with field filtration
-
-A new draft builder has been introduced, eliminating the need for manually constructing filters with complex syntax. It provides static type checks and autocomplete support, simplifying the process. With this builder, you can select the business component (bc), choose its DTO, pick the field with autocomplete, and specify the value. The builder automatically validates field names and values, removing the need for manual formatting and reducing the risk of errors.  
-
-!!! info 
-    This **draft** feature is not ready yet for production use, so your feedback is essential! Share your thoughts on this builder, so we can improve it and make building drilldowns with field filtration easier and more automated for you in the future!
-
 
 #### Added: UI panel - display of application version and environment type  
 
@@ -121,7 +115,38 @@ We have enhanced the forceActive feature for [FormPopup widget](https://doc.cxbo
 
 #### Fixed: AssocListPopup - ignored scope for action buttons  
 
-We have updated [AssocListPopup](https://doc.cxbox.org/widget/type/assoclistpopup/assoclistpopup/) to ignore `scope` for action buttons, which prevents unnecessary duplication. Previously, actions from the three-dot menu were duplicated as separate buttons at the top. 
+We have updated [AssocListPopup](https://doc.cxbox.org/widget/type/assoclistpopup/assoclistpopup/) to ignore `scope` for action buttons, which prevents unnecessary duplication. Previously, actions from the three-dot menu were duplicated as separate buttons at the top.  
+
+#### Added: Draft Builder for Drilldowns with field filtration
+
+A new Java Builder for generating [drillDowns with filter by fields](https://doc.cxbox.org/features/element/drilldown/drilldown/#to-view-with-fields-filtration) has been introduced:
+=== "After"  
+    ```java
+    drillDownExt.filterBcByFields(
+	    CxboxRestController.sale, SaleDTO.class, fb -> fb
+	        .input(SaleDTO_.clientName, fields.getCurrentValue(DashboardSalesProductDTO_.clientName).orElse(null))
+	        .dictionary(SaleDTO_.product, fields.getCurrentValue(DashboardSalesProductDTO_.productName).orElse(null))
+	        .multiValue(SaleDTO_.fieldOfActivity, activity)
+	);
+    ```
+=== "Before"  
+    ```java
+   	"?filters={\""
+		+ CxboxRestController.sale + "\":\""
+		+ URLEncoder.encode(SaleDTO_.clientName + "." + SearchOperation.CONTAINS.getOperationName() 
+		+ "=" + fields.getCurrentValue(DashboardSalesProductDTO_.clientName).orElse(null), StandardCharsets.UTF_8)
+		+ "&"
+		+ URLEncoder.encode(SaleDTO_.product + "." +  SearchOperation.EQUALS_ONE_OF.getOperationName()
+		+ "=[\\\"" + fields.getCurrentValue(DashboardSalesProductDTO_.productName).orElse(null) + "\\\"]", StandardCharsets.UTF_8)
+		+ "&"
+		+ URLEncoder.encode(SaleDTO_.fieldOfActivity + "." + SearchOperation.EQUALS_ONE_OF.getOperationName()
+		+ "=[\\\"" + FieldOfActivity.IT.getValue() + "\\\",\\\"" + FieldOfActivity.MEDIA.getValue() + "\\\"]", StandardCharsets.UTF_8)
+		+ "\"}";
+	//And lots of logic to skip field filter if its value is null...
+    ```
+
+!!! info
+    This is a **draft** Java API — we will improve it but also make breaking changes in it very likely in next releases. So, please, do not use it in you production code for now, but your feedback is essential! 
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.12)
@@ -143,7 +168,46 @@ New Java API for confirm preActions in the **CORE** now provides with a standard
 
 1)`confirm` preAction 
 
-=== "NEW! withoutTitle()"  
+=== "with title/text"  
+    `title` or `text` set explicitly
+    ```java
+    PreAction.confirm(cf -> cf
+    .title("Approve?")
+    .text("Changes will be saved")
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```
+    ![confirmCustomTitleText.jpg](v2.0.12/confirmCustomTitleText.jpg)
+
+=== "default title"  
+    If you call `.title(null)` or don't call `title(..)` at all, the default title is displayed (actually its translation).  
+    ```java
+    PreAction.confirm(cf -> cf
+    .text("Changes will be saved")
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```
+    ![confirmDefaultTitle.jpg](v2.0.12/confirmDefaultTitle.jpg)  
+
+=== "default text"  
+    If you call `.text(null)` or don't call `text(..)` at all, the auto-generated text is displayed.  
+    ```java
+    PreAction.confirm(cf -> cf
+    .title("Approve?")
+    .yesText("Approve and Save")
+    .noText("Cancel"))
+    ```
+    ![confirmDefaultText.jpg](v2.0.12/confirmDefaultText.jpg)
+
+
+=== "all default"  
+    If `preAction.confirm()` is called, all default values are displayed.  
+    ```java
+    PreAction.confirm()
+    ```    
+    ![confirmAllDefault.jpg](v2.0.12/confirmAllDefault.jpg)
+
+=== "withoutTitle()"  
     We have added support for an empty title using a `.withoutTitle()` method  
     ```java
     PreAction.confirm(cf -> cf
@@ -152,9 +216,9 @@ New Java API for confirm preActions in the **CORE** now provides with a standard
     .yesText("Approve and Save")
     .noText("Cancel"))
     ```  
-    ![confirmWithoutTitle.jpg](v2.0.12/confirmWithoutTitle.jpg)  
+    ![confirmWithoutTitle.jpg](v2.0.12/confirmWithoutTitle.jpg)
 
-=== "NEW! withoutText()"  
+=== "withoutText()"  
     We have added support for an empty text using a `.withoutText()` method. The body of the confirmPopup shrinks as the text is left empty.  
     ```java
     PreAction.confirm(cf -> cf
@@ -163,55 +227,35 @@ New Java API for confirm preActions in the **CORE** now provides with a standard
     .yesText("Approve and Save")
     .noText("Cancel"))
     ```  
-    ![confirmWithoutText.jpg](v2.0.12/confirmWithoutText.jpg)  
+    ![confirmWithoutText.jpg](v2.0.12/confirmWithoutText.jpg)
+    
+2)`confirmWithWidget` preAction (replacement for old `confirmWithCustomWidget` in demo)  
 
-=== "Unchanged: default title"  
-    If you indicate `.title(null)` or don't indicate it at all, the default title is displayed.  
+=== "with title"  
+    If `title` contains a value, it is displayed.  
     ```java
-    PreAction.confirm(cf -> cf
-    .title(null)
-    .text("Changes will be saved")
-    .yesText("Approve and Save")
-    .noText("Cancel"))
-    ```
-    ![confirmDefaultTitle.jpg](v2.0.12/confirmDefaultTitle.jpg)  
-
-=== "Unchanged: default text"  
-    If you indicate `.text(null)` or don't indicate it at all, the default text is displayed.  
-    ```java
-    PreAction.confirm(cf -> cf
+    PreAction.confirmWithWidget("meetingResultFormPopup", cf -> cf
     .title("Approve?")
-    .text(null)
     .yesText("Approve and Save")
-    .noText("Cancel"))
-    ```
-    ![confirmDefaultText.jpg](v2.0.12/confirmDefaultText.jpg)  
+    .noText("Cancel")
+    )
+    ```  
+    ![confirmWithWidgetCustom.jpg](v2.0.12/confirmWithWidgetCustom.jpg)
 
-=== "Unchanged: custom title/text"  
-    If `title` or `text` contains a value, it is displayed correctly.  
+=== "default title"  
+    If you call `.title(null)` or don't call `title(..)` at all, then `*FormPopup.widget.json -> title` is shown   
     ```java
-    PreAction.confirm(cf -> cf
-    .title("Approve?")
-    .text("Changes will be saved")
+    PreAction.confirmWithWidget("meetingResultFormPopup", cf -> cf
     .yesText("Approve and Save")
-    .noText("Cancel"))
+    .noText("Cancel")
+    )
     ```
-    ![confirmCustomTitleText.jpg](v2.0.12/confirmCustomTitleText.jpg)  
+    ![confirmWithWidgetDefaultTitle.jpg](v2.0.12/confirmWithWidgetDefaultTitle.jpg)
 
-=== "Unchanged: all default"  
-    If nothing except for `preAction.confirm()` is indicated, all default values are displayed.  
-    ```java
-    PreAction.confirm()
-    ```    
-    ![confirmAllDefault.jpg](v2.0.12/confirmAllDefault.jpg)  
-
-2)`confirmWithWidget` preAction (renamed from `confirmWithCustomWidget`)  
-
-=== "NEW! withoutTitle()"  
+=== "withoutTitle()"  
     Just like with `confirm`, there is now a support for an empty title using a `.withoutTitle()` method  
     ```java
-    PreAction.confirmWithWidget(
-    "meetingResultFormPopup", cf -> cf
+    PreAction.confirmWithWidget("meetingResultFormPopup", cf -> cf
     .withoutTitle()
     .yesText("Approve and Save")
     .noText("Cancel")
@@ -219,29 +263,9 @@ New Java API for confirm preActions in the **CORE** now provides with a standard
     ```  
     ![confirmWithWidgetWithoutTitle.jpg](v2.0.12/confirmWithWidgetWithoutTitle.jpg)  
 
-=== "Unchanged: default title"  
-    If `.title(null)` is indicated, the default title is displayed.  The same logic is if you don't indicate `title` at all.   
-    ```java
-    PreAction.confirmWithWidget(
-    "meetingResultFormPopup", cf -> cf
-    .title(null)
-    .yesText("Approve and Save")
-    .noText("Cancel")
-    )
-    ```
-    ![confirmWithWidgetDefaultTitle.jpg](v2.0.12/confirmWithWidgetDefaultTitle.jpg)  
 
-=== "Unchanged: custom title"  
-    If `title` contains a value, it is displayed.  
-    ```java
-    PreAction.confirmWithWidget(
-    "meetingResultFormPopup", cf -> cf
-    .title("Approve?")
-    .yesText("Approve and Save")
-    .noText("Cancel")
-    )
-    ```  
-    ![confirmWithWidgetCustom.jpg](v2.0.12/confirmWithWidgetCustom.jpg)  
+
+
 
 #### MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
 
@@ -251,6 +275,8 @@ We have implemented Serializable for `MultivalueField` and `MultivalueFieldSingl
 See [cxbox 4.0.0-M16 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M16).  
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)  
+
+We've updated the plugin to version 1.7.9. New version of Plugin is currently being reviewed by JetBrains and will be available in a few business days!  
 
 #### Added: Run Inspections Button  
 
@@ -266,7 +292,7 @@ Added inspections for [AdditionalInfo](https://doc.cxbox.org/widget/type/additio
 
 #### Added: Inspection for options -> create/edit -> widget in *.widget.json  
 
-Added an inspection to ensure that widgets referenced in `create` and `edit` parameters are present on the same view. Missing widgets are automatically added to the view.  
+Added an inspection to ensure that widgets referenced in `create` and `edit` parameters are present on the same view as the main widget. Missing widgets are automatically added to the view.  
 
 ![pluginCreateEdit.gif](v2.0.12/pluginCreateEdit.gif)
 

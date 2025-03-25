@@ -306,6 +306,10 @@ We have added a validation check to verify that the field specified in the succe
 
 Added functionality to handle MultipleSelect fields for Enums stored as comma-separated strings in an Entity, replacing the deprecated `setDictionaryTypeWithCustomValues()` method with the new method `setConcreteValues()`.  
 
+#### Added: @SearchParam – enhanced inspection algorithm
+
+We've improved the validation of the path to the filtered field, ensuring better compatibility with microservices (Anysource services). Additionally, we fixed an issue where the inspection didn't work correctly if the first field with the annotation had no explicitly defined path.  
+
 #### Fixed: inlinePicklist field - parent bc check in *.widget.json
 
-Fixed the inspection for `popupBcName` in *.widget.json, ensuring that it correctly checks that the referenced business component (bc) is a child to the parent widget's bc.   
+Fixed the inspection for `popupBcName` in *.widget.json, ensuring that it correctly checks that the referenced business component (bc) is a child to the parent widget's bc.  

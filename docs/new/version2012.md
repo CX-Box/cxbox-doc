@@ -58,7 +58,15 @@ Functionality includes:
 
 * Drilldown - click on yAxis values to drilldown to the filtered data displayed in a table.  
 * Switch mode - switch from column mode to table mode to view data in a tabular format.  
-* Segment interaction - click on legend values to add or remove lines/bars from the plot.   
+* Segment interaction - click on legend values to add or remove lines/bars from the plot.  
+
+#### Added: Draft Builder for Drilldowns with field filtration
+
+A new draft builder has been introduced, eliminating the need for manually constructing filters with complex syntax. It provides static type checks and autocomplete support, simplifying the process. With this builder, you can select the business component (bc), choose its DTO, pick the field with autocomplete, and specify the value. The builder automatically validates field names and values, removing the need for manual formatting and reducing the risk of errors.  
+
+!!! info 
+    This **draft** feature is not ready yet for production use, so your feedback is essential! Share your thoughts on this builder, so we can improve it and make building drilldowns with field filtration easier and more automated for you in the future!
+
 
 #### Added: UI panel - display of application version and environment type  
 
@@ -101,7 +109,7 @@ We have removed the minimum width restriction for [Dictionary](https://doc.cxbox
 === "After"  
     ![dictionaryPaddingAfter.png](v2.0.12/dictionaryPaddingAfter.png){width="700"}   
 === "Before"  
-    ![dictionaryPaddingBefore.png](v2.0.12/dictionaryPaddingBefore.png){width="700"}
+    ![dictionaryPaddingBefore.png](v2.0.12/dictionaryPaddingBefore.png){width="700"}  
 
 #### Added: GroupingHierarchy widget - validation for aggregate fields  
 

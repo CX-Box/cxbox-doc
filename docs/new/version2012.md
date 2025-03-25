@@ -80,7 +80,7 @@ We have enhanced the display of long link labels for [Push Notifications](https:
 === "Before"
     ![notificationLinkBefore.png](v2.0.12/notificationLinkBefore.png){width="700"}  
 
-#### Added: suggestionPickList field - scrollbar support  
+#### Added: suggestionPickList field - scrollbar and empty value support  
 
 We have improved the suggestionPickList field by adding scrollbar support - you can now navigate long lists more easily using the scrollbar.  
 
@@ -88,6 +88,8 @@ We have improved the suggestionPickList field by adding scrollbar support - you 
     ![suggestionPickListScroll.png](v2.0.12/suggestionPickListScroll.png){width="700"}
 === "Before"
     ![suggestionPickListNoScroll.png](v2.0.12/suggestionPickListNoScroll.png){width="700"}  
+
+In addition, we have improved empty value display logic. If backend returns `null`, frontend will display an empty value instead of showing `null`.  
 
 #### Added: suggestionPickList field - changes in filtering method  
 
@@ -263,13 +265,13 @@ New Java API for confirm preActions in the **CORE** now provides with a standard
     ```  
     ![confirmWithWidgetWithoutTitle.jpg](v2.0.12/confirmWithWidgetWithoutTitle.jpg)  
 
-
-
-
-
-#### MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
+#### Added: MultivalueField & MultivalueFieldSingleValue - Implemented Serializable  
 
 We have implemented Serializable for `MultivalueField` and `MultivalueFieldSingleValue` to ensure compatibility with springSessionJDBC. This change allows the backend to serialize bcState using the JDK serializer (instead of Jackson) by default, resolving issues with inconsistent behavior when attempting to serialize these objects.
+
+#### Added: Spring Boot upgraded up to 3.3.8
+
+In response to security requirements, we have upgraded Spring Boot from 3.3.4 to 3.3.8. This update also automatically upgraded transitive dependencies, resolving most security-related issues.
 
 #### Other Changes
 See [cxbox 4.0.0-M16 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M16).  
@@ -300,5 +302,14 @@ Added an inspection to ensure that widgets referenced in `create` and `edit` par
 
 We have added a validation check to verify that the field specified in the successCondition_bcName parameter is present on the indicated bc in the drillDownAndWaitUntil postAction.  
 
+#### Added:  multipleSelect field - support for Enum stored as comma-separated string  
 
+Added functionality to handle MultipleSelect fields for Enums stored as comma-separated strings in an Entity, replacing the deprecated `setDictionaryTypeWithCustomValues()` method with the new method `setConcreteValues()`.  
 
+#### Added: @SearchParam – enhanced inspection algorithm
+
+We've improved the validation of the path to the filtered field, ensuring better compatibility with microservices (Anysource services). Additionally, we fixed an issue where the inspection didn't work correctly if the first field with the annotation had no explicitly defined path.  
+
+#### Fixed: inlinePicklist field - parent bc check in *.widget.json
+
+Fixed the inspection for `popupBcName` in *.widget.json, ensuring that it correctly checks that the referenced business component (bc) is a child to the parent widget's bc.  

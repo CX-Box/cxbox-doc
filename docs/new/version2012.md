@@ -302,14 +302,20 @@ Added an inspection to ensure that widgets referenced in `create` and `edit` par
 
 We have added a validation check to verify that the field specified in the successCondition_bcName parameter is present on the indicated bc in the drillDownAndWaitUntil postAction.  
 
+![drillDownAndWaitUntilCheck.gif](v2.0.12/drillDownAndWaitUntilCheck.gif)
 #### Added: multipleSelect field - updated method for field auto-generation in *.widget.json
 
 Now, when adding a multipleSelect field via the + button, the plugin automatically generates the necessary code. If the project's core version supports it, the generated code will use `setConcreteValues()` instead of `setDictionaryTypeWithCustomValues()` marked as **@deprecated** since 4.0.0-M12.  
 
-#### Added: @SearchParam – enhanced inspection algorithm
-
-We've improved the validation of the path to the filtered field, ensuring better compatibility with microservices (Anysource services). Additionally, we fixed an issue where the inspection didn't work correctly if the first field with the annotation had no explicitly defined path.  
-
+![multipleSelectGenerate.gif](v2.0.12/multipleSelectGenerate.gif)
 #### Fixed: inlinePicklist field - parent bc check in *.widget.json
 
-Fixed the inspection for `popupBcName` in *.widget.json, ensuring that it correctly checks that the referenced business component (bc) is a child to the parent widget's bc.  
+Fixed the inspection for `popupBcName` in *.widget.json, ensuring that it correctly checks that the referenced business component (bc) is a child to the parent widget's bc. 
+
+![inlinePickListCheck.gif](v2.0.11%2FinlinePickListCheck.gif)
+
+#### Added: @SearchParam – enhanced inspection algorithm
+
+We've improved the validation of the path to the filtered field, ensuring better compatibility with microservices (Anysource services).
+Additionally, we resolved an issue affecting the inspection process in cases where the initial annotated field lacked an explicitly specified path.
+

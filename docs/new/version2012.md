@@ -302,9 +302,9 @@ Added an inspection to ensure that widgets referenced in `create` and `edit` par
 
 We have added a validation check to verify that the field specified in the successCondition_bcName parameter is present on the indicated bc in the drillDownAndWaitUntil postAction.  
 
-#### Added:  multipleSelect field - support for Enum stored as comma-separated string  
+#### Added: multipleSelect field - updated method for field auto-generation in *.widget.json
 
-Added functionality to handle MultipleSelect fields for Enums stored as comma-separated strings in an Entity, replacing the deprecated `setDictionaryTypeWithCustomValues()` method with the new method `setConcreteValues()`.  
+Now, when adding a multipleSelect field via the + button, the plugin automatically generates the necessary code. If the project's core version supports it, the generated code will use `setConcreteValues()` instead of `setDictionaryTypeWithCustomValues()` marked as **@deprecated** since 4.0.0-M12.  
 
 #### Added: @SearchParam – enhanced inspection algorithm
 

@@ -139,7 +139,7 @@ see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)  
 
-We've updated the plugin to version 1.7.7. New version of Plugin is currently being reviewed by JetBrains and will be available in a few business days
+We've updated the plugin to version 1.7.7
 
 #### Added: *.screen.json - inspection when "type" : "standard"  
 

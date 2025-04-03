@@ -35,3 +35,6 @@ target/
 build
 .gradle
 out
+
+# sources updated not from git
+/documentation/

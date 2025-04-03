@@ -8,7 +8,7 @@
 
 * [cxbox/code-samples 2.0.12 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.12), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.12)  
 
-* cxbox/intellij-plugin 1.7.9 - Available soon! New version of Plugin is currently being reviewed by JetBrains.  
+* cxbox/intellij-plugin 1.7.9 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions/stable/707119), [cxbox-intellij-plugin.zip](https://disk.yandex.ru/d/bcY7wjV5RQIvfA) 
 
 
 ## **Key updates February, March 2025**

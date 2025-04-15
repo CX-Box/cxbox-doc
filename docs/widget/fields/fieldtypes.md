@@ -28,16 +28,16 @@ In cxbox add standard types
 |  `Required`   | +      | +       | +     | +     | +        | -      |        
                                                                                
                                                                                    
-|     Type      | dictionary | fileUpload | pickList | inlinePickList |           
-|:-------------:|------------|------------|----------|----------------|
-| `Placeholder` | +          | +          | +        | +              |  
-|    `Color`    | +          | -          | +        | +              |  
-|   `RO/Edit`   | +          | +          | +        | +              |  
-|   `Filter`    | +          | +          | +        | +              |  
-|  `Drilldown`  | +          | -          | +        | +              |  
-| `Validation`  | +          | +          | +        | +              |  
-|    `Sort`     | +          | +          | +        | +              |  
-|  `Required`   | +          | +          | +        | +              |  
+|     Type      | dictionary | fileUpload | pickList | inlinePickList | suggestionPickList |           
+|:-------------:|------------|------------|----------|----------------|--------------------|
+| `Placeholder` | +          | +          | +        | +              | +                  |  
+|    `Color`    | +          | -          | +        | +              | +                  |  
+|   `RO/Edit`   | +          | +          | +        | +              | +                  |  
+|   `Filter`    | +          | +          | +        | +              | +                  |  
+|  `Drilldown`  | +          | -          | +        | +              | +                  |  
+| `Validation`  | +          | +          | +        | +              | +                  |  
+|    `Sort`     | +          | +          | +        | +              | +                  |  
+|  `Required`   | +          | +          | +        | +              | +                  |  
                                                                          
 
 |     Type      | hint | multifield | multivalueHover | multivalue | multipleSelect |    

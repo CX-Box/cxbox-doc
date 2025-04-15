@@ -33,13 +33,14 @@
         === "list.view.json"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3091list.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3091list.view.json
             --8<--
             ```
+ 
         === "form.view.json"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3091form.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3091form.view.json
             --8<--
             ```
     -   **Step3** Add bc myexamplesuggection to corresponding **EnumBcIdentifier**.

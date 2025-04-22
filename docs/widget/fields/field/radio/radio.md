@@ -232,10 +232,23 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample25){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search uses `in` operator. 
+`Filtering` allows you to search data based on criteria. Search uses `in` operator.
+
+The filter component displays a text search field and scrollbar based on the number of available filter values.
+(since [release 2.0.13](https://doc.cxbox.org/new/version2013/"))
+
+- The search input and scrollbar appear only when the number of filterable values exceeds  
+  7 items (7 Default count items -configurable via frontend constant).
+
+- The Apply button shows a counter of selected items (e.g., `Apply (5)`).
+- If the selection count exceeds  7 items, it displays `Apply (N+)` (e.g., `Apply (9+)`).
+ 
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
+    === "< Default count items"    
+        ![img_filtr_list.png](img_filtr_list.png)
+    === "> Default count items"
+        ![img_filtr_list_many_records.png](img_filtr_list_many_records.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -260,6 +273,14 @@
         _not applicable_
     === "Form widget"
         _not applicable_
+
+    **Configuration Default count items**
+
+    - Location: `\ui\src\constants\filter.ts`
+    - Variables:
+
+        - `checkboxFilterMaxVisibleItems` – Controls when scroll/search appear.
+        - `checkboxFilterCounterLimit` – Sets the maximum number before switching to `+` notation.
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample25){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/filtration){:target="_blank"}

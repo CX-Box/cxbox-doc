@@ -249,10 +249,19 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample63){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator. 
+`Filtering` allows you to search data based on criteria.
+
+Search uses:
+
+* `greaterOrEqualThan`(>=) and `lessOrEqualThan`(<=) operators.
+* `equals` (=) operator.
+
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
+    === "By Range"
+        ![filter_by_range.gif](filter_by_range.gif)
+    === "Equals"
+        ![img_filtr_list.png](img_filtr_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -261,6 +270,10 @@
 ### How to add?
 ??? Example
     === "List widget"
+        !!! info  
+            By default, filtration is carried out **by range**. If you want to turn it off, indicate `cxbox.widget.fields.filter-by-range-enabled-default: false` in meta.  
+            [see more](/features/element/applicationparams/applicationparams)
+
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--

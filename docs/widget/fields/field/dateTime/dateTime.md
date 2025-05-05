@@ -252,10 +252,19 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeFiltration){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search is carried out between 00:00 and 23:59.
+`Filtering` allows you to search data based on criteria.
+
+Search uses(Data format is YYYY-MM-DD HH:MM):
+
+* `greaterOrEqualThan`(>=) and `lessOrEqualThan`(<=) operators. When the date is first set in the filter field, the time values will either be 00:00 or 23:59, depending on the date field.
+* `equals` (=) operator.Search is carried out between 00:00:00 and 23:59:59.
+
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
+    === "By Range"
+        ![dateTimeFilterByRange.gif](dateTimeFilterByRange.gif)
+    === "Equals"
+        ![img_filtr_list.png](img_filtr_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -264,6 +273,10 @@
 ### How to add?
 ??? Example
     === "List widget"
+
+        !!! info  
+            By default, filtration is carried out **by range**. If you want to turn it off, indicate `cxbox.widget.fields.filter-by-range-enabled-default: false` in meta.  
+
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
 
         ```java
@@ -279,14 +292,14 @@
         --8<--
         ```
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeFiltration){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/filtration){:target="_blank"}
+
     === "Info widget"
         _not applicable_
     === "Form widget"
         _not applicable_
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeFiltration){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/filtration){:target="_blank"}
-
+ 
 ## Drilldown
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeDrilldown){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/drilldown){:target="_blank"}

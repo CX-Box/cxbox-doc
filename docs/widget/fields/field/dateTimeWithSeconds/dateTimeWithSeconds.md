@@ -258,7 +258,7 @@
 
 `Filtering` allows you to search data based on criteria.  
 
-Search uses(Data format is YYYY-MM-DD HH:MM):
+Search uses (data format is YYYY-MM-DD HH:MM):
 
 * `greaterOrEqualThan`(>=) and `lessOrEqualThan`(<=) operators. When the date is first set in the filter field, the time values will either be 00:00:00 or 23:59:59, depending on the date field.
 * `equals` (=) operator.Search is carried out between 00:00:00 and 23:59:59.
@@ -280,7 +280,7 @@ Search uses(Data format is YYYY-MM-DD HH:MM):
 
         !!! info  
             By default, filtration is carried out **by range**. If you want to turn it off, indicate `cxbox.widget.fields.filter-by-range-enabled-default: false` in meta.  
-
+            [see more](/features/element/applicationparams/applicationparams)
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
 
         ```java

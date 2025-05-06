@@ -48,34 +48,19 @@ You can fill in either one or both fields. Values matching the entered range wil
 
 **Note**: The buttons are only active when the corresponding source field contains a value.
 
-![filter_button.gif](v2.0.13/filter_button.gif)
+![filter_button.gif](v2.0.13/filter_button.gif)  
 
-#### Fixed: drillDown autoscroll behavior
-Now, the page automatically scrolls to the top during drillDown navigation.  
-Previously, the system remembered the user's scroll position on the screen, which could lead to confusion when switching screens.
+!!! info 
+    The `.equals` method is still available to support exact match filtering, ensuring backward compatibility.  
 
-=== "After"
-    ![dd_up.gif](v2.0.13/dd_up.gif){width="900"}
-=== "Before"
-    ![dd_down.gif](v2.0.13/dd_down.gif){width="900"}
+#### Added: dictionary, multipleSelect, radio fields - filter panel improvements  
+The filter panel for fields with checkbox-style filtering (dictionary, multipleSelect, and radio) has been improved for better usability.  
 
-#### Fixed: refresh request for a non-existent bc
-The frontend now handles refresh requests for business components that aren't present on the page without errors. Instead, a warning is logged to the console.
-
-=== "After"
-    ![after_refresh_bc.png](v2.0.13/after_refresh_bc.png)
-=== "Before"
-    ![before_refresh_bc.png](v2.0.13/before_refresh_bc.png)
-
-#### Added: dictionary, multipleSelect, radio fields - filtering window improvements
-Enhancements were introduced to filtering windows for fields with checkbox selection (dictionary, multipleSelect, radio):
-
-* **Search Field**: A text field for searching filter values has been added. It appears only when the list of values exceeds the visible area and a scrollbar is shown.
-  Note: This search filters the list of available values — it does not select them.
-* **Selected Values Counter**: A counter has been added to the "Apply" button to display the number of the selected values. It is shown under the same condition as the search field - when the list doesn't fit and a scrollbar appears. The maximum value displayed in the counter is configured in a frontend constant. If the number of selected values exceeds the limit, a "+" sign is added (e.g., **9+**).
+* **Search Field**: A text input for searching filter values has been added. It appears only when the list of values exceeds the visible area and a scrollbar is shown. **Note**: This is just a search tool - it doesn't select any values.  
+* **Selected Values Counter**: A counter has been added to the "Apply" button to display the number of the selected values. It is shown under the same condition as the search field (when a scrollbar is present). The maximum displayed number is limited by a frontend constant. If the number of selected values exceeds the limit, a "+" sign is added (e.g., **9+**).
 * **UI Adjustments**:
     * Scrollbar is now aligned to the right edge
-    * Margin between the list of values and the buttons has been removed
+    * Margin between the list and the buttons has been removed
 
 See more [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering)
 === "After"
@@ -83,19 +68,46 @@ See more [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dicti
 === "Before"
     ![dictionaryFilterBefore.png](v2.0.13/dictionaryFilterBefore.png){width="400"}
 
-#### Added: Screen navigation - line wrapping and search bar
-We have added support for automatic line wrapping in the screen navigation panel. If the setting is `auto`, long screen names will wrap. If it is set to `none`, they will remain on a single line.
+#### Added: Sorting - support for toggling sorting states  
 
+Users can now toggle sorting on sortable fields through repeated clicks:  
+
+* First click enables ascending sort (↓). 
+* Second click switches to descending sort (↑).
+* Third click clears the sorting, returning the field to an unsorted state (if sorting was user-defined).
+
+Visual behavior:
+
+* When sorting is inactive, both arrows appear faded and are only visible on hover. 
+* When ascending or descending sorting is active, the corresponding arrow is highlighted and remains visible at all times.
+
+=== "Ascending (1st click)"  
+    ![sortAsc.png](v2.0.13/sortAsc.png)
+=== "Descending (2nd click)"
+    ![sortDesc.png](v2.0.13/sortDesc.png)
+=== "No sorting (3d click)"
+    ![sortOff.png](v2.0.13/sortOff.png)
+
+**Note**: Users can only clear the sorting they applied themselves. Default sorting set by the system cannot be cleared.  
+
+#### Added: Screen navigation - line wrapping and search bar  
+We have enhanced the left screen navigation panel with two new features:  
+
+* **Line wrapping for screen names** - a new setting controls how long screen names are displayed    
 === "none (default)"  
+    Names stay on a single line and may be truncated if the screen name is long.  
     ![wrapNone.png](v2.0.13/wrapNone.png){width="400"}
 === "auto"  
+    Names automatically wrap to the next line.  
     ![wrapAuto.png](v2.0.13/wrapAuto.png){width="400"}
 
-Additionally, a new setting allows you to enable or disable the search bar in the expanded left navigation menu. If it set to `true`, the search bar is displayed when the menu is expanded. If it is set to `false`, the search bar is unavailable.
+* **Search bar visibility** - you can now control the search bar's display when the navigation menu is expanded:  
 
-=== "true (default)"
+=== "true (default)"  
+    The search bar is shown.  
     ![searchTrue.png](v2.0.13/searchTrue.png){width="400"}
-=== "false"
+=== "false"  
+    The search bar is unavailable.  
     ![searchFalse.png](v2.0.13/searchFalse.png){width="400"}
 
 #### Added: Steps Widget – Description Support
@@ -106,13 +118,12 @@ The Steps widget now supports optional descriptions for each step. If no descrip
 === "Before"
     ![stepsDescriptionBefore.png](v2.0.13/stepsDescriptionBefore.png)
 
-#### Added: List widget – Excel Export Limit
-You can now configure a row limit for Excel export in list widgets at the application level. If the number of rows exceeds this limit, the UI will display a warning stating that only N rows were exported due to the configured restriction. To ensure stable performance, the maximum allowed value is capped at 10,000, even if a higher value is set.
+#### Added: List widget – configurable Excel export limit  
+You can now set a row limit for Excel export in List widget at the application level. If the number of rows to export exceeds the configured limit, a warning message will inform the user that only **N** rows were exported. To ensure stable performance, the maximum export limit is **10,000 rows**, even if a higher value is set in the configuration.  
 
-#### Fixed: Date field - filter window after drillDown
-We have improved the filter window display for Date field after drilldowns.
-Previously, when opening a filter window after applying a drilldown filter to a Date field, no values were displayed.
-Now, the window correctly displays the applied values.  
+#### Fixed: date field - applied filtration display after drillDown  
+Previously, when opening the filter window for a date field after a drillDown, the applied filter values were not displayed.
+Now, the selected values are shown correctly, making it easier to understand and adjust the filter.  
 === "After"
     ![filterDateAfter.png](v2.0.13/filterDateAfter.png)
 === "Before"
@@ -121,9 +132,29 @@ Now, the window correctly displays the applied values.
 #### Fixed: showCondition with forceActive parent
 We’ve improved the behavior of showCondition in cases where a parent widget has forceActive enabled. Now, when the value of a forceActive field changes, the metadata is correctly updated, ensuring that the affected widget’s visibility and available actions are properly refreshed.
 
-#### Fixed: Improved Display of elements in Inline Editing Mode upon errors
+#### Fixed: drillDown - autoscroll to top  
+The screen now scrolls to the top when navigating via drillDown.
+Previously, the scroll position was preserved, which could confuse users when switching between screens.  
+=== "After"
+    ![dd_up.gif](v2.0.13/dd_up.gif){width="900"}
+=== "Before"
+    ![dd_down.gif](v2.0.13/dd_down.gif){width="900"}
 
-The display of elements in inline editing mode has been enhanced to handle errors (e.g., mandatory field validation errors).
+<!--#### Fixed: dictionary, multipleSelect, suggestionPickList, inlinePickList fields - improved dropdown positioning in List widget  
+Improved the dropdown positioning for dictionary, multipleSelect, suggestionPickList, and inlinePickList fields in list widgets. Now, dropdowns are displayed correctly outside the row and are no longer cut off.  
+-->
+
+#### Fixed: refresh request for a non-existent bc
+The frontend now handles refresh requests for business components that aren't present on the page without errors. Instead, a warning is logged to the console.
+
+=== "After"
+    ![after_refresh_bc.png](v2.0.13/after_refresh_bc.png)
+=== "Before"
+    ![before_refresh_bc.png](v2.0.13/before_refresh_bc.png)  
+
+#### Fixed: dictionary field - consistent field size with validation (inline-edit)  
+
+The display of dictionary in inline editing mode has been enhanced to handle errors (e.g., mandatory field validation errors).
 
 Now, the empty value area occupies the same space as filled fields, ensuring a consistent interface.
 === "After"
@@ -131,15 +162,19 @@ Now, the empty value area occupies the same space as filled fields, ensuring a c
 === "Before"
     ![before_dictionary.png](v2.0.13/before_dictionary.png)
 
-#### Fixed: Button actions respect Force-Active field
-Previously, when data in a force active field was modified and a button (e.g., Save) was clicked, the button action triggered before the metadata check for its availability. This caused the action to execute even if the button should have been disabled.
+#### Fixed: Button actions - respond to force-active fields  
 
-Now, the system first checks the metadata and button availability, and only then executes the action if the button is active.
+Button actions now correctly respond to metadata updates from force-active fields.
+Previously, actions could be triggered before re-evaluating button availability, allowing execution even when the button should have been disabled.  
+
 === "After"
-    ![after_fa.png](v2.0.13%2Fafter_fa.png)
+    ![after_fa.png](v2.0.13/after_fa.png)
 === "Before"
-    ![before_fa.png](v2.0.13%2Fbefore_fa.png)
+    ![before_fa.png](v2.0.13/before_fa.png)
 
+#### Fixed: dictionary, multipleSelect, multivalue, multivalueHover - unified display height in read mode  
+
+The height of the following field types in view mode has been adjusted from 20px to 16px (just like other fields) to ensure visual consistency.   
 
 #### Fixed: pickList field - updated query logic
 
@@ -151,7 +186,7 @@ Now, the system first checks the metadata and button availability, and only then
 === "Before"
     ![before_data_loading.png](v2.0.13/before_data_loading.png)
 
-#### Fixed: Improved Error Handling in Role Switching
+#### Fixed: role switching - improved error handling  
 We’ve refined how error messages are shown when switching user roles. Before, an error could appear even if the view was actually available. Now, the message is shown only when the requested view is truly inaccessible for the selected role.
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
@@ -159,5 +194,9 @@ We’ve refined how error messages are shown when switching user roles. Before, 
 #### Added: [suggestionPickList](https://doc.cxbox.org/widget/fields/field/suggestionpicklist/suggestionPickList/) field
 We have provided a full description of [suggestionPickList](https://doc.cxbox.org/widget/fields/field/suggestionpicklist/suggestionPickList/) field
 
-#### Added: enhancements for filtering elements [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering)
-We have provided a  description of [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering)
+#### Added: [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering) fields - updated article  
+We have provided a  description of [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering)  
+
+#### Added: [number](https://doc.cxbox.org/widget/fields/field/number/number/#filtering), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/#filtering), [money](https://doc.cxbox.org/widget/fields/field/money/money/#filtering) fields - filtration by range  
+We have updated the articles on [number](https://doc.cxbox.org/widget/fields/field/number/number/#filtering), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/#filtering) and [money](https://doc.cxbox.org/widget/fields/field/money/money/#filtering) and elaborated on the filtration by range.  
+

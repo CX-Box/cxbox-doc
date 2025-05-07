@@ -9,11 +9,11 @@
 ### How does it look?
 
 === "List widget"
-    ![img_list.gif](img_list.gif)
+    ![inlinePickListBasicList.gif](inlinePickListBasicList.gif)
 === "Info widget"
-    _not applicable_
+    ![inlinePickListBasicInfo.PNG](inlinePickListBasicInfo.PNG)
 === "Form widget"
-    ![img_form.gif](img_form.gif)
+    ![inlinePickListBasicForm.gif](inlinePickListBasicForm.gif)
 
 
 ### How to add?
@@ -235,11 +235,11 @@
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![img_list.gif](img_list.gif)
+        ![inlinePickListEditableList.png](inlinePickListEditableList.png)
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![img_form.gif](img_form.gif)
+        ![inlinePickListEditableForm.png](inlinePickListEditableForm.png)
 === "Readonly"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)

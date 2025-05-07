@@ -2,44 +2,34 @@
 
 * [cxbox/demo 2.0.13 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.13), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.13)
 
-* [cxbox/core 4.0.0-M16 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M16), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M16), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M16)
+* [cxbox/core 4.0.0-M17 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M17), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M17), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M17)
 
-* [cxbox-ui/core 2.5.2 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.2), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.2), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.2)
+* [cxbox-ui/core 2.5.3 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.3), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.3)
 
-* [cxbox/code-samples 2.0.13 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.13), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.13)
-
-* cxbox/intellij-plugin 1.7.9 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions/stable/707119), [cxbox-intellij-plugin.zip](https://disk.yandex.ru/d/bcY7wjV5RQIvfA)
+* [cxbox/code-samples 2.0.13 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.13), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.13)  
 
 
 ## **Key updates April, May 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))
-#### Added: number, money, percent fields - range filtering support
+### CXBOX ([Demo](http://demo.cxbox.org))  
 
-You can now filter number, money, and percent fields by a value range.
+#### Added: number, money, percent fields - range filter support
+
+You can now filter [number](https://doc.cxbox.org/widget/fields/field/number/number/), [money](https://doc.cxbox.org/widget/fields/field/money/money/), and [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/) fields by a value range.
 
 The filter displays two inputs:
 
 * `From` – shows values ≥ the entered number (.greaterOrEqualThan).
 * `To` – shows values ≤ the entered number (.lessOrEqualThan).
 
-You can fill in either one or both fields. Values matching the entered range will be shown.
+You can fill in either one or both fields. Values matching the entered range will be shown.  
 
-=== "Number"
-    === "After"  
-        ![numberFilterAfter.png](v2.0.13/numberFilterAfter.png)
-    === "Before"
-        ![numberFilterBefore.png](v2.0.13/numberFilterBefore.png)
-=== "Percent"
-    === "After"
-        ![percentFilterAfter.png](v2.0.13/percentFilterAfter.png)
-    === "Before"
-        ![percentFilterBefore.png](v2.0.13/percentFilterBefore.png)
-=== "Money"
-    === "After"
-        ![moneyFilterAfter.png](v2.0.13/moneyFilterAfter.png)
-    === "Before"
-        ![moneyFilterBefore.png](v2.0.13/moneyFilterBefore.png)
+=== "After"  
+    ![numberFilterAfter.png](v2.0.13/filtrationRangeAfter.png){width="700"}
+=== "Before"
+    ![numberFilterBefore.png](v2.0.13/filtrationRangeBefore.png){width="700"}
+
+See range filtering for [number](https://doc.cxbox.org/widget/fields/field/number/number/#filtering), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/#filtering), [money](https://doc.cxbox.org/widget/fields/field/money/money/#filtering) in the updated articles.  
 
 **Copy buttons** allow duplicating values between fields:
 
@@ -53,20 +43,21 @@ You can fill in either one or both fields. Values matching the entered range wil
 !!! info 
     The `.equals` method is still available to support exact match filtering, ensuring backward compatibility.  
 
-#### Added: dictionary, multipleSelect, radio fields - filter panel improvements  
-The filter panel for fields with checkbox-style filtering (dictionary, multipleSelect, and radio) has been improved for better usability.  
+#### Added: dictionary, multipleSelect, radio fields - filter display 
+The filter panel for fields with checkbox-style filtering ([dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/), and [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/)) has been improved for better usability.  
 
-* **Search Field**: A text input for searching filter values has been added. It appears only when the list of values exceeds the visible area and a scrollbar is shown. **Note**: This is just a search tool - it doesn't select any values.  
-* **Selected Values Counter**: A counter has been added to the "Apply" button to display the number of the selected values. It is shown under the same condition as the search field (when a scrollbar is present). The maximum displayed number is limited by a frontend constant. If the number of selected values exceeds the limit, a "+" sign is added (e.g., **9+**).
+* **Search Field**: A text input for searching filter values has been added. It appears **only** when the list of values exceeds the visible area and a scrollbar is shown. **Note**: This is just a search tool - it doesn't select any values.  
+* **Selected Values Counter**: A counter has been added to the **"Apply"** button to display the number of the selected values. It is shown under the same condition as the search field (when a scrollbar is present). The maximum displayed number is limited by a frontend constant. If the number of selected values exceeds the limit, a "+" sign is added (e.g., **9+**).
 * **UI Adjustments**:
     * Scrollbar is now aligned to the right edge
     * Margin between the list and the buttons has been removed
 
-See more [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering)
 === "After"
     ![dictionaryFilterAfter.png](v2.0.13/dictionaryFilterAfter.png){width="400"}
 === "Before"
-    ![dictionaryFilterBefore.png](v2.0.13/dictionaryFilterBefore.png){width="400"}
+    ![dictionaryFilterBefore.png](v2.0.13/dictionaryFilterBefore.png){width="400"}  
+
+See filter display for [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering) in the updated articles.  
 
 #### Added: Sorting - support for toggling sorting states  
 
@@ -74,7 +65,7 @@ Users can now toggle sorting on sortable fields through repeated clicks:
 
 * First click enables ascending sort (↓). 
 * Second click switches to descending sort (↑).
-* Third click clears the sorting, returning the field to an unsorted state (if sorting was user-defined).
+* Third click clears the sorting, returning the field to an unsorted state (**only** if sorting was user-defined!).
 
 Visual behavior:
 
@@ -86,12 +77,19 @@ Visual behavior:
 === "Descending (2nd click)"
     ![sortDesc.png](v2.0.13/sortDesc.png)
 === "No sorting (3d click)"
-    ![sortOff.png](v2.0.13/sortOff.png)
+    ![sortOff.png](v2.0.13/sortOff.png)  
 
-**Note**: Users can only clear the sorting they applied themselves. Default sorting set by the system cannot be cleared.  
+!!! info
+    Users can only clear the sorting they applied themselves. Default sorting set by the system cannot be cleared.  
 
-#### Added: Screen navigation - line wrapping and search bar  
-We have enhanced the left screen navigation panel with two new features:  
+<!--#### Added: time field - logic and display enhancements  
+The [time](https://doc.cxbox.org/widget/fields/field/time/time/) field is now fully supported and aligned with the behavior of [date](https://doc.cxbox.org/widget/fields/field/date/date/), [dateTime](https://doc.cxbox.org/widget/fields/field/dateTime/dateTime/), and [dateTimeWithSeconds](https://doc.cxbox.org/widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/) fields. It supports sorting, range-based filtering, and multiple display formats (`HH:mm:ss`, `HH:mm`, `HH`, `hh:mm:ss A`, `hh:mm A`, `hh A`).
+
+!!! info  
+    A detailed article on time field support is coming soon — stay tuned!
+-->
+#### Added: Screen panel - line wrapping and search bar  
+We have enhanced the left screen panel with two new features:  
 
 * **Line wrapping for screen names** - a new setting controls how long screen names are displayed    
 === "none (default)"  
@@ -110,7 +108,7 @@ We have enhanced the left screen navigation panel with two new features:
     The search bar is unavailable.  
     ![searchFalse.png](v2.0.13/searchFalse.png){width="400"}
 
-#### Added: Steps Widget – Description Support
+#### Added: Steps widget – description support
 The Steps widget now supports optional descriptions for each step. If no description is provided, only the step label is displayed, as before.
 
 === "After"  
@@ -119,18 +117,18 @@ The Steps widget now supports optional descriptions for each step. If no descrip
     ![stepsDescriptionBefore.png](v2.0.13/stepsDescriptionBefore.png)
 
 #### Added: List widget – configurable Excel export limit  
-You can now set a row limit for Excel export in List widget at the application level. If the number of rows to export exceeds the configured limit, a warning message will inform the user that only **N** rows were exported. To ensure stable performance, the maximum export limit is **10,000 rows**, even if a higher value is set in the configuration.  
+You can now set a row limit for Excel export in [List](https://doc.cxbox.org/widget/type/list/list/) widget at the application level. If the number of rows to export exceeds the configured limit, a warning message will inform the user that only **N** rows were exported. To ensure stable performance, the maximum export limit is **10,000 rows**, even if a higher value is set in the configuration.  
 
 #### Fixed: date field - applied filtration display after drillDown  
-Previously, when opening the filter window for a date field after a drillDown, the applied filter values were not displayed.
-Now, the selected values are shown correctly, making it easier to understand and adjust the filter.  
+Previously, when opening the filter window for a [date](https://doc.cxbox.org/widget/fields/field/date/date/) field after a drillDown, the applied filter values were not displayed.
+Now, the selected values are shown correctly, making it easier to understand the applied filter values and adjust the filter.  
 === "After"
     ![filterDateAfter.png](v2.0.13/filterDateAfter.png)
 === "Before"
     ![filterDateBefore.png](v2.0.13/filterDateBefore.png)
 
 #### Fixed: showCondition with forceActive parent
-We’ve improved the behavior of showCondition in cases where a parent widget has forceActive enabled. Now, when the value of a forceActive field changes, the metadata is correctly updated, ensuring that the affected widget’s visibility and available actions are properly refreshed.
+We’ve improved the showCondition logic in cases where a parent widget has forceActive enabled. Now, when the value of a forceActive field changes, the metadata is correctly updated, ensuring that the affected widget’s visibility and available actions are properly refreshed.
 
 #### Fixed: drillDown - autoscroll to top  
 The screen now scrolls to the top when navigating via drillDown.
@@ -140,10 +138,16 @@ Previously, the scroll position was preserved, which could confuse users when sw
 === "Before"
     ![dd_down.gif](v2.0.13/dd_down.gif){width="900"}
 
-<!--#### Fixed: dictionary, multipleSelect, suggestionPickList, inlinePickList fields - improved dropdown positioning in List widget  
-Improved the dropdown positioning for dictionary, multipleSelect, suggestionPickList, and inlinePickList fields in list widgets. Now, dropdowns are displayed correctly outside the row and are no longer cut off.  
--->
+#### Fixed: dictionary, multipleSelect, inlinePickList fields - unified dropdown positioning in List widget  
+The dropdown positioning for [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/), and [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/) fields has been unified. Now, all dropdowns in List widget are displayed correctly outside the row and are no longer truncated.  
 
+=== "After"
+    ![dictionaryDropdownAfter.png](v2.0.13/dictionaryDropdownAfter.png)
+=== "Before"
+    ![dictionaryDropdownBefore.png](v2.0.13/dictionaryDropdownBefore.png)
+
+<!--See [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#readonlyeditable), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#readonlyeditable), and [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/#readonlyeditable) in the updated articles.  
+-->
 #### Fixed: refresh request for a non-existent bc
 The frontend now handles refresh requests for business components that aren't present on the page without errors. Instead, a warning is logged to the console.
 
@@ -164,8 +168,7 @@ Now, the empty value area occupies the same space as filled fields, ensuring a c
 
 #### Fixed: Button actions - respond to force-active fields  
 
-Button actions now correctly respond to metadata updates from force-active fields.
-Previously, actions could be triggered before re-evaluating button availability, allowing execution even when the button should have been disabled.  
+Button actions now correctly respond to metadata updates from force-active fields. Previously, actions could be triggered before re-evaluating button availability, allowing execution even when the button should have been disabled.  
 
 === "After"
     ![after_fa.png](v2.0.13/after_fa.png)
@@ -187,7 +190,24 @@ The height of the following field types in view mode has been adjusted from 20px
     ![before_data_loading.png](v2.0.13/before_data_loading.png)
 
 #### Fixed: role switching - improved error handling  
-We’ve refined how error messages are shown when switching user roles. Before, an error could appear even if the view was actually available. Now, the message is shown only when the requested view is truly inaccessible for the selected role.
+We’ve refined how error messages are shown when switching user roles. Before, an error could appear even if the view was actually available. Now, the message is shown only when the requested view is truly inaccessible for the selected role.  
+
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.13)  
+
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3))
+
+We have released a new 2.5.3 CORE UI version.
+
+#### Other Changes
+See [cxbox-ui 2.5.3 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3).
+
+### CXBOX 4.0.0-M17 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M17))
+
+We have released a new 4.0.0-M17 CORE version.  
+
+#### Other Changes
+See [cxbox 4.0.0-M17 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M17).
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 
@@ -198,5 +218,5 @@ We have provided a full description of [suggestionPickList](https://doc.cxbox.or
 We have provided a  description of [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#filtering), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#filtering), [radio](https://doc.cxbox.org/widget/fields/field/radio/radio/#filtering)  
 
 #### Added: [number](https://doc.cxbox.org/widget/fields/field/number/number/#filtering), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/#filtering), [money](https://doc.cxbox.org/widget/fields/field/money/money/#filtering) fields - filtration by range  
-We have updated the articles on [number](https://doc.cxbox.org/widget/fields/field/number/number/#filtering), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/#filtering) and [money](https://doc.cxbox.org/widget/fields/field/money/money/#filtering) and elaborated on the filtration by range.  
+We have updated the articles on [number](https://doc.cxbox.org/widget/fields/field/number/number/#filtering), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/#filtering) and [money](https://doc.cxbox.org/widget/fields/field/money/money/#filtering) on range filtration.  
 

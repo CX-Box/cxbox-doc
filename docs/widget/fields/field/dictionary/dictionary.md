@@ -24,7 +24,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 === "List widget"
     ![dictionaryBasicList.gif](dictionaryBasicList.gif)
 === "Info widget"
-    ![dictionaryBasicInfo2.PNG](dictionaryBasicInfo2.PNG)
+    ![dictionaryBasicInfo.png](dictionaryBasicInfo.png)
 === "Form widget"
     ![dictionaryBasicForm.gif](dictionaryBasicForm.gif)
 

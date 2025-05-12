@@ -11,7 +11,7 @@
 === "List widget"
     ![inlinePickListBasicList.gif](inlinePickListBasicList.gif)
 === "Info widget"
-    ![inlinePickListBasicInfo.PNG](inlinePickListBasicInfo.PNG)
+    ![inlinePickListBasicInfo.png](inlinePickListBasicInfo.png)
 === "Form widget"
     ![inlinePickListBasicForm.gif](inlinePickListBasicForm.gif)
 

@@ -22,11 +22,11 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 ### How does it look?
 
 === "List widget"
-    ![dictionaryBasicList.gif](dictionaryBasicList.gif)
+    ![img_list.gif](img_list.gif)
 === "Info widget"
-    ![dictionaryBasicInfo.png](dictionaryBasicInfo.png)
+    ![img_info.png](img_info.png)
 === "Form widget"
-    ![dictionaryBasicForm.gif](dictionaryBasicForm.gif)
+    ![img_form.gif](img_form.gif)
 
 
 ### <a id="basics_how_to_add">How to add?</a>
@@ -552,11 +552,11 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![dictionaryEditableList.png](dictionaryEditableList.png)
+        ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![dictionaryEditableForm.png](dictionaryEditableForm.png)
+        ![img_edit_form.png](img_edit_form.png)
 === "Readonly"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)

@@ -12,11 +12,11 @@
 ### How does it look?
 
 === "List widget"
-    ![multipleSelectBasicList.gif](multipleSelectBasicList.gif)
+    ![img_list.gif](img_list.gif)
 === "Info widget"
     ![img_info.png](img_info.png)
 === "Form widget"
-    ![multipleSelectBasicForm.gif](multipleSelectBasicForm.gif)
+    ![img_form.gif](img_form.gif)
 
 ### How to add?
 
@@ -127,11 +127,11 @@ _not applicable_
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![multipleSelectEditableList.png](multipleSelectEditableList.png)
+        ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![multipleSelectEditableForm.png](multipleSelectEditableForm.png)
+        ![img_edit_form.png](img_edit_form.png)
 === "Readonly"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)

@@ -127,11 +127,11 @@ _not applicable_
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![img_list.gif](img_list.gif)
+        ![img_edit_list.png](img_edit_list.png)
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![img_form.gif](img_form.gif)
+        ![img_edit_form.png](img_edit_form.png)
 === "Readonly"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)

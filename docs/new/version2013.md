@@ -6,8 +6,8 @@
 
 * [cxbox-ui/core 2.5.3 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.3), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.3)
 
-* [cxbox/code-samples 2.0.13 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.13), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.13)  
-
+<!--* [cxbox/code-samples 2.0.13 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.13), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.13)  
+-->
 
 ## **Key updates April, May 2025**
 
@@ -61,33 +61,37 @@ See filter display for [dictionary](https://doc.cxbox.org/widget/fields/field/di
 
 #### Added: Sorting - support for toggling sorting states  
 
-Users can now toggle sorting on sortable fields through repeated clicks:  
+In addition to modifying sorting (which was already supported), users can now clear sorting with a third click — returning the field to an unsorted state (only for user-applied sorting).  
 
-* First click enables ascending sort (↓). 
-* Second click switches to descending sort (↑).
-* Third click clears the sorting, returning the field to an unsorted state (**only** if sorting was user-defined!).
+Visual updates make the sorting state more intuitive:  
 
-Visual behavior:
+* Both arrows (↑↓) are now always displayed to indicate whether sorting is applied.   
+* The active direction is highlighted (ascending or descending), while the other remains faded.   
+* When no sorting is applied, both arrows are faded and only visible on hover.
 
-* When sorting is inactive, both arrows appear faded and are only visible on hover. 
-* When ascending or descending sorting is active, the corresponding arrow is highlighted and remains visible at all times.
-
-=== "Ascending (1st click)"  
+=== "1st click (ascending)"  
     ![sortAsc.png](v2.0.13/sortAsc.png)
-=== "Descending (2nd click)"
+=== "2nd click (descending)"
     ![sortDesc.png](v2.0.13/sortDesc.png)
-=== "No sorting (3d click)"
+=== "3d click (no sorting)"
     ![sortOff.png](v2.0.13/sortOff.png)  
 
 !!! info
-    Users can only clear the sorting they applied themselves. Default sorting set by the system cannot be cleared.  
+    Users can **only** clear the sorting they applied themselves. Default sorting set by the system **cannot** be cleared.  
 
-<!--#### Added: time field - logic and display enhancements  
+#### Added: time field - logic and display enhancements  
 The [time](https://doc.cxbox.org/widget/fields/field/time/time/) field is now fully supported and aligned with the behavior of [date](https://doc.cxbox.org/widget/fields/field/date/date/), [dateTime](https://doc.cxbox.org/widget/fields/field/dateTime/dateTime/), and [dateTimeWithSeconds](https://doc.cxbox.org/widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/) fields. It supports sorting, range-based filtering, and multiple display formats (`HH:mm:ss`, `HH:mm`, `HH`, `hh:mm:ss A`, `hh:mm A`, `hh A`).
 
+=== "List"  
+    ![timeList.png](v2.0.13/timeList.png)
+=== "Info"
+    ![timeInfo.png](v2.0.13/timeInfo.png)
+=== "Form"
+    ![timeForm.png](v2.0.13/timeForm.png)
+
 !!! info  
-    A detailed article on time field support is coming soon — stay tuned!
--->
+    An updated article on time field is coming soon — stay tuned!
+
 #### Added: Screen panel - line wrapping and search bar  
 We have enhanced the left screen panel with two new features:  
 
@@ -142,12 +146,12 @@ Previously, the scroll position was preserved, which could confuse users when sw
 The dropdown positioning for [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/), and [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/) fields has been unified. Now, all dropdowns in List widget are displayed correctly outside the row and are no longer truncated.  
 
 === "After"
-    ![dictionaryDropdownAfter.png](v2.0.13/dictionaryDropdownAfter.png)
+    ![dropdownAfter.png](v2.0.13/dropdownAfter.png)
 === "Before"
-    ![dictionaryDropdownBefore.png](v2.0.13/dictionaryDropdownBefore.png)
+    ![dropdownBefore.png](v2.0.13/dropdownBefore.png)
 
-<!--See [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#readonlyeditable), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#readonlyeditable), and [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/#readonlyeditable) in the updated articles.  
--->
+See [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/#readonlyeditable), [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/#readonlyeditable), and [inlinePickList](https://doc.cxbox.org/widget/fields/field/inlinePickList/inlinePickList/#readonlyeditable) in the updated articles.  
+
 #### Fixed: refresh request for a non-existent bc
 The frontend now handles refresh requests for business components that aren't present on the page without errors. Instead, a warning is logged to the console.
 

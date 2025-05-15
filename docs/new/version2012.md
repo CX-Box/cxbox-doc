@@ -19,15 +19,15 @@
 
 We have introduced three display modes for [WebSocket Push Notifications](https://doc.cxbox.org/features/element/notifications/push/websocket/): `single`, `stack`, and `column`.  
 
-=== "Stack (default)"  
-    Notifications appear separately, stacking on top of each other.  
-    ![notificationStack.gif](v2.0.12/notificationStack.gif)
+=== "Single (default)"  
+    Each new notification replaces the previous one in a single area.    
+    ![notificationSingle.gif](v2.0.12/notificationSingle.gif)
 === "Column"  
     Notifications appear separately, aligned vertically in a column.  
     ![notificationColumn.gif](v2.0.12/notificationColumn.gif)  
-=== "Single"  
-    Each new notification replaces the previous one in a single area.  
-    ![notificationSingle.gif](v2.0.12/notificationSingle.gif)  
+=== "Stack"  
+    Notifications appear separately, stacking on top of each other.
+    ![notificationStack.gif](v2.0.12/notificationStack.gif)  
 
 You can configure `timeout` for all three modes. For `stack` and `column`, you can also set the maximum number of visible notifications and the display direction (`upward`/`downward`).  
 

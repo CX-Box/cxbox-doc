@@ -6,6 +6,8 @@ This function is available:
 * for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
  
+## Type sorting
+
 `Sorting` can be enabled in two ways:
 
 *  [On the field](#on_field) Sorting must be enabled explicitly at the field level
@@ -14,14 +16,14 @@ This function is available:
 !!! info
     Sorting won't function until the page is refreshed after adding or updating records. 
 
-### How does it look?
+How does it look?
 ![sorting.gif](sorting.gif)
 
-## <a id="on_field">On the field</a>
+### <a id="on_field">On the field</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/sorting){:target="_blank"}
 
-### How to add?
+#### How to add?
 ??? Example
 
     **Step 1**  Add `sort-enabled-default` = `false` in application.yml
@@ -41,12 +43,12 @@ This function is available:
         --8<--
         ```
 
-## <a id="app-default-sort">At the application level</a>
+### <a id="app-default-sort">At the application level</a>
 `Not recommended.`
 
 If the parameter is set to true, sorting is enabled by default for all fields in the application.
 
-### How to add?
+#### How to add?
  
 ??? Example
     Add `sort-enabled-default` in application.yml
@@ -57,3 +59,23 @@ If the parameter is set to true, sorting is enabled by default for all fields in
                fields: 
                     sort-enabled-default: true
       ```
+
+
+## <a id="default_sort">Default sorting</a>
+If the parameter is set to true, sorting is enabled by default for all fields in the application.
+ 
+ 
+### How to add?
+??? Example
+
+     Add  business component in **BC_PROPERTIES** TABLE
+
+      BC - name business component
+      PAGE_LIMIT - limit page default
+      SORT - default sorting
+
+      ```csv
+      BC;PAGE_LIMIT;SORT;FILTER;ID
+      dateSorting;1000;_sort.0.desc=customField;'""';
+      ```
+

@@ -145,7 +145,37 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         ```
         
         **Step 4.** Add field with new record to corresponding **DataResponseDTO**.
-        
+
+        !!! info
+            if you microservice uses hibernate, then add dependency, that will allow you to use org. cxbox. dictionary. hibernate. DictionaryType under entity column, e. g. @Type(DictionaryType. class): 
+            ```xml            
+            <dependency>  
+                <groupId>org. cxbox</ groupId> 
+                <artifactId>cxbox-dictionary-hibernate</ artifactId> 
+            </ dependency>
+            ```
+
+            Also, you can turn on auto type registration setting org. cxbox. dictionary. enable_types_contributor=true in hibernate properties, e. g. in spring:
+            ```xml   
+            <dependency>   
+                <groupId>org. cxbox</ groupId> 
+                <artifactId>cxbox-dictionary-api</ artifactId> 
+            </ dependency>
+            ```
+
+            ```
+            spring: 
+            jpa:   
+                properties:  
+                    org:       
+                        cxbox:        
+                            dictionary:         
+                                enable_types_contributor: true
+            ```
+
+            then @Type(DictionaryType. class) can be optionally skipped under column, because system will register type for all Dictionary implementations.
+            enable_types_contributor feature is experimental - please, use @Type(DictionaryType. class) under entity column as fallback varian
+
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352DTO.java

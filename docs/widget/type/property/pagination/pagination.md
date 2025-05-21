@@ -146,5 +146,93 @@ Disadvantages of this mode:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandprevioussmart){:target="_blank"}
 
-## Default limit page
-see more [Default limit page](/widget/type/property/defaultlimitpage/defaultlimitpage)
+## hideLimitOptions
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3865list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/hidelimitoptions){:target="_blank"}
+
+Controls the visibility of the records-per-page selection option.
+
+This function is available:
+
+* [List widget](/widget/type/list/list)
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+
+**Values:**
+
+* `true` – Hides the records-per-page selection option.
+* `false` (default if not specified) – Shows the records-per-page selection option.
+
+## How does it look?
+![hide_limit_options.png](hide_limit_options.png)
+### How to add?
+??? Example
+
+    Add in **options** parameter **pagination** to corresponding **.widget.json**.
+    ```
+    "pagination": {
+      "hideLimitOptions" : true
+    }
+    ```
+
+    ```json
+      --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/hidelimitoptions/MyExample3865List.widget.json
+      --8<--
+    ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3865list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/hidelimitoptions){:target="_blank"}
+
+
+## availableLimitsList
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
+
+Specifies the available options for the number of items displayed per page. Users will see these values in a dropdown.
+
+This function is available:
+
+* [List widget](/widget/type/list/list)
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+
+**Values:**
+
+An array of integers.
+
+
+**Behavior:**
+
+If not provided, the component use default values [5, 10,15, 20].
+
+The user will only be able to select from the specified values.
+
+**Use Case:**
+
+Restrict pagination options to specific values (e.g., 10, 25, 50, or 100 items per page).
+
+### How does it look?
+![available_lmits_list.png](available_lmits_list.png)
+
+### How to add?
+??? Example
+
+    Add in **options** parameter **pagination** to corresponding **.widget.json**.
+    ```
+    "pagination": {
+        "availableLimitsList": [ 1,2,3 ]
+    }
+    ```
+
+    ```json
+      --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/MyExample3867List.widget.json
+      --8<--
+    ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
+

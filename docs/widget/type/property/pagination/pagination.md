@@ -164,7 +164,7 @@ This function is available:
 * `true` – Hides the records-per-page selection option.
 * `false` (default if not specified) – Shows the records-per-page selection option.
 
-## How does it look?
+### How does it look?
 ![hide_limit_options.png](hide_limit_options.png)
 ### How to add?
 ??? Example

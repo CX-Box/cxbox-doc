@@ -232,6 +232,7 @@ plugins:
         'widget_type_form_popup.md': 'widget/type/formpopup/formpopup.md'
         'widget_type_pick_list_popup.md': 'widget/type/picklistpopup/picklistpopup.md'
         'additionalinfo.md': 'widget/type/additionalinfo/additionalinfo.md'
+        'widget_field_time.md': 'widget/fields/field/time/time.md'
 
 copyright: Copyright &copy; 2023 (Version 1.1)
 repo_url: https://github.com/CX-Box/cxbox-doc

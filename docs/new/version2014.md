@@ -8,10 +8,110 @@
 
 * [cxbox/code-samples 2.0.14 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.14)
 
-## **Key updates July 2025**
+## **Key updates June, July 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))
- 
+### CXBOX ([Demo](http://demo.cxbox.org))  
+
+<!--#### Added: List widget – mass operations (NEW!)  
+We’ve introduced a new feature that allows you to apply actions to multiple rows at once – **mass operations**.  
+This is a special list widget display designed to guide the user through each step of a bulk action.  
+
+Mass operations can include the following steps:  
+=== "Step 1: Select"  
+    Checkboxes appear next to each row. You can select multiple rows, which are then shown as tags above the table.  
+=== "Step 2: Review"  
+    The selected rows are shown in read-only mode, allowing you to double-check your selection before proceeding.  
+=== "Step 3: Confirm"  
+    Depending on the operation, this step may include a form for entering additional required data and/or a confirmation button.  
+=== "Step 4: Results"  
+    Once the action is complete, you’ll see a summary of results for each row. You can also download the result as an Excel file and exit the mass operation mode.  
+
+!!! info 
+    A detailed article on mass operations will be available soon in our official documentation – stay tuned!  
+-->
+#### Added: FilePreview widget – NEW widget type!  
+
+We’ve introduced a new widget type – FilePreview. It takes up 50% of the main screen area and is placed next to other content. The widget remains fixed at the top while scrolling, keeping the document always visible.  
+
+FilePreview supports a new preview mode: `inline`, which displays the document directly within the page, without opening a popup.   
+
+This widget is especially useful for side-by-side document viewing and form editing, making it easier to fill out forms based on the contents of the uploaded file.  
+
+=== "Standard display"  
+    ![filePreviewNoAdditional.gif](v2.0.14/filePreviewNoAdditional.gif)
+=== "Display with Additional widgets"  
+    ![filePreviewAdditional.gif](v2.0.14/filePreviewAdditional.gif)  
+
+#### Added: text field – value truncation
+We’ve added support for truncating long values in text fields using a frontend constant.  
+If the value exceeds the defined limit, it will be shortened with an ellipsis (...). Hovering over the ellipsis shows the full value in a tooltip.  
+
+=== "After"
+    ![textTruncateAfter.png](v2.0.14/textTruncateAfter.png)
+=== "Before"
+    ![textTruncateBefore.png](v2.0.14/textTruncateBefore.png)  
+
+#### Added: StatsBlock widget – selected block highlighting  
+We’ve enhanced the [StatsBlock widget](https://doc.cxbox.org/widget/type/statblocks/statblocks/) by adding a new `bcCursor` option to highlight the selected block.  
+When `bcCursor: show` is set, the selected card is visually highlighted, making it easier to navigate data and identify which block is active — especially useful when working with parent-child widgets. With `bcCursor: none` (default), there is no highlighting.  
+
+**Note!** Highlighting is automatically disabled if a drillDown is defined for the field — in this case, standard drillDown behavior applies.  
+
+=== "none (default)"  
+    ![statsBlockBefore.png](v2.0.14/statsBlockBefore.png)
+=== "show"  
+    ![statsBlockAfter.png](v2.0.14/statsBlockAfter.png)  
+
+#### Fixed: Form widget - stable layout on validation
+We have corrected layout behavior in multi-column [Form widget](https://doc.cxbox.org/widget/type/form/form/). Validation messages no longer cause fields to shift. Fields stay aligned, and the overall form structure remains stable and consistent when errors appear.  
+
+=== "After"  
+    ![multiValidAfter.png](v2.0.14/multiValidAfter.png)
+=== "Before"
+    ![multiValidBefore.png](v2.0.14/multiValidBefore.png)  
+
+#### Added: date, dateTime, dateTimeWithSeconds fields – copy buttons in range filter
+
+We’ve improved the range filter for the following field types: [date](https://doc.cxbox.org/widget/fields/field/date/date/), [dateTime](https://doc.cxbox.org/widget/fields/field/dateTime/dateTime/), and [dateTimeWithSeconds](https://doc.cxbox.org/widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/).  
+
+The filter already supported “From” and “To” inputs. This time, we’ve added copy buttons to simplify filling both fields:  
+
+* `>` button – copies the “From” value into “To”  
+* `<` button – copies the “To” value into “From”  
+
+These buttons are only active when the source field contains a value.  
+
+This update brings the same convenient experience to date-based filters as the one we introduced for number, money, and percent fields in our previous release, [2.0.13](https://doc.cxbox.org/new/version2013/#added-number-money-percent-fields-range-filter-support).  
+
+=== "After"  
+    ![filterRangeAfter.png](v2.0.14/filterRangeAfter.png)
+=== "Before"
+    ![filterRangeBefore.png](v2.0.14/filterRangeBefore.png)  
+
+#### Added: fileUpload field – word wrapping support  
+Long file names in [fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/) field now wrap automatically and fit within the available space.  
+The text also wraps around the extension icon, making the layout more compact and readable.  
+
+=== "After"  
+    ![wordWrapAfter.png](v2.0.14/wordWrapAfter.png)
+=== "Before"
+    ![wordWrapBefore.png](v2.0.14/wordWrapBefore.png)  
+
+<!--#### Fixed: drillDown – updated display logic  
+We’ve updated the drillDown display logic to correctly handle cases where the first row has no value in a drillDown field. DrillDown links now appear for all rows with valid values, regardless of the first row.  
+
+=== "After"  
+    ![drillDownAfter.png](v2.0.14/drillDownAfter.png)
+=== "Before"
+    ![drillDownBefore.png](v2.0.14/drillDownBefore.png)  
+-->
+#### Fixed: Notification counter update  
+The unread notifications counter (bell icon) now updates automatically after deleting unread messages.
+It always reflects the current number of unread notifications — including cases when there are none left.  
+
+#### Fixed: FourthLevelMenu widget – correct tab rendering  
+FourthLevelMenu now shows only tabs from the active screen branch, matching the `screen.json` structure. Tabs from other branches are no longer displayed outside their defined context.  
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.14)
 
@@ -23,9 +123,9 @@ A new tag, `changedNow`, has been introduced. It contains only the fields modifi
 been sent to the backend.
 
 === "After row-meta/ (POST)"
-    ![new_rowmeta_post.png](v2014/new_rowmeta_post.png)
+    ![new_rowmeta_post.png](v2.0.14/new_rowmeta_post.png)
 === "Before row-meta/ (POST)"
-    ![old_rowmeta_post.png](v2014/old_rowmeta_post.png)
+    ![old_rowmeta_post.png](v2.0.14/old_rowmeta_post.png)
 
 
 **When is `changedNow` sent?**
@@ -93,6 +193,18 @@ Legend:
 | `multipleSelect`      | ✅ Yes                                |                                                     |
 | `suggestionPickList`  | ✅ Yes                                | Save only triggered if an item is picked            |
 
+#### Added: action buttons – block repeated actions  
+
+We’ve added a block to prevent double execution of the same action. If an action is already in progress, the corresponding button becomes temporarily inactive until the action completes. Other buttons remain available and work as usual.  
+![actionBlock.gif](v2.0.14/actionBlock.gif)  
+
+#### Fixed: Dictionary field – support for filtering with special characters  
+Filtering by dictionary values that include special characters (e.g. "" ) is now fully supported. Results are displayed correctly in all cases.  
+
+=== "After"  
+    ![specialCharAfter.png](v2.0.14/specialCharAfter.png)
+=== "Before"
+    ![specialCharBefore.png](v2.0.14/specialCharBefore.png)  
 
 #### Other Changes
 See [cxbox-ui 2.5.3 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3).
@@ -139,5 +251,8 @@ See [cxbox 4.0.0-M17 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 ####  
 
 
-### CXBOX [documentation](https://doc.cxbox.org/) 
+### CXBOX [documentation](https://doc.cxbox.org/)  
+
+#### Added: Pagination - hideLimitOptions updated  
+We have updated the Pagination article, [hideLimitOptions](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=pag#hidelimitoptions) section.  
 

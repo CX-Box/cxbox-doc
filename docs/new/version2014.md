@@ -112,13 +112,57 @@ It always reflects the current number of unread notifications — including case
 #### Fixed: FourthLevelMenu widget – correct tab rendering  
 FourthLevelMenu now shows only tabs from the active screen branch, matching the `screen.json` structure. Tabs from other branches are no longer displayed outside their defined context.  
 
+
+
+#### Fix: Pagination Optimization and New Display Setting for Widgets
+
+##### Optimized `count` Calls for Various Widget Types
+
+* The **default `count` mode** is set to `nextAndPreviousSmart`.
+* For the following widget types, the default mode is `nextAndPreviousWithCount`:
+
+    * `List`
+    * `CustomGroupingHierarchy`
+    * `CustomDashboardList`
+    * `AssocListPopup`
+    * `PickListPopup`
+    * `CustomPie1D`
+    * `CustomColumn2D`
+    * `CustomLine2D`
+    * `CustomDualAxes2D`
+
+* The `count` query is executed **only if at least one widget with mode `nextAndPreviousWithCount` is present on the screen**.
+
+=== "After Form widget"  
+    ![after_pagination.png](v2.0.14/after_pagination.png)
+=== "Before Form widget"
+    ![befor_pagination.png](v2.0.14/befor_pagination.png)
+
+##### New Pagination Panel Display Setting
+A new option has been added to `options -> pagination` in the `widget.json` configuration, controlling the display of the pagination panel.
+
+Example configuration:
+
+```json
+"options": {
+  "pagination": {
+    "enabled": false
+  }
+}
+```
+
+* `enabled: false` — the pagination panel and limit selector block **will not be displayed**, regardless of the number of records.
+* `enabled: true` (or if the option is omitted) — the standard display logic applies, taking `defaultPageLimit` into account.
+ 
+![enabled_pagination.png](v2.0.14/enabled_pagination.png)
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.14)
 
 
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3))
 
-#### Added tag changedNow the fields modified in the current user interaction   (CXBOX-812)
+#### Added tag changedNow the fields modified in the current user interaction
 A new tag, `changedNow`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
 been sent to the backend.
 
@@ -214,7 +258,7 @@ See [cxbox-ui 2.5.3 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 
 We have released a new 4.0.0-M18 CORE version.
 
-#### Added tag changedNow the fields modified in the current user interaction   (CXBOX-812)
+#### Added tag changedNow the fields modified in the current user interaction 
 **as is**
 
 Previously, the frontend included all previously changed fields in the `data` tag, rather than only those modified in the current user action. This made it difficult to determine which fields were *just now* changed by the user.
@@ -242,15 +286,132 @@ if (isFieldChangedNow(fields, MyDtoFields_.name)) {
     // Logic to execute if the 'name' field was changed in the current action
 }
 ```
- 
+
+#### Core support for offically introduced in previous releases widget and field types (moved from project)
+
+* moved "multipleSelect" support from project to core.
+* moved "suggestionPickList" support from  project to core.
+* moved prev releases officially introduced widget types from to core.
+* merged InfoFieldExtractor.java and SimpleFormFieldExtractor.java to new single default SimpleFieldExtractor.java
+
 #### Other Changes
 See [cxbox 4.0.0-M17 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M17).
 
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-####  
+#### New: IntelliJ 2025.1+ support added.
 
+Installing the *Platform Tools* Plugin
 
+The plugin now has **separate builds** for different versions of JetBrains IDEs. Make sure the correct update repository is configured.
+
+1)Open the Plugin Manager
+
+* In your JetBrains IDE, go to `Help → Find Action`
+* Type `Plugins` and open the corresponding option
+
+2) Add the Plugin Repository
+
+* In the Plugins window, click the ⚙️ (gear icon) → `Manage Plugin Repositories...`
+* Click ➕
+* Enter the following URL:
+  ```
+  https://document.cxbox.org/plugin/updatePlugins.xml
+  ```
+  
+* Click **OK**
+
+3) Install the Plugin
+
+* Switch to the `Marketplace` tab
+* Search for **Platform Tools**
+* Click **Install**
+* After installation, click **OK**
+
+4) Restart the IDE
+
+#### New: Code generation support added for fields with type <code>Time</code> in <code>.widget.json</code>.<br>
+
+With  [core 4.0.0-M17](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M17)
+
+##### Code Generation
+
+Added support for code generation of fields with the `time` type. You can now:
+
+* Generate a `time` field with the default format `hh:mm:ss`;
+* Specify a custom time format by selecting the desired pattern from the list of supported formats.
+
+=== "time"
+    ![time_field.gif](v2.0.14/timeField.gif)
+=== "time with format"
+    ![time_field_format.gif](v2.0.14/timeFieldFormat.gif)
+
+##### Autocomplete
+
+Autocomplete is now available for `time` fields. When entering a format, you'll see a list of **officially supported patterns**,
+making it easier and faster to configure the desired time format.
+
+![format_time_example.png](v2.0.14/formatTtimeExample.png)
+
+#### New: For fields containing <code>pickMap</code>, type checking was added 
+For fields containing <code>pickMap</code>, type checking was added to ensure Java type consistency of <code>pickMap</code> parameters (excluding the <code>id</code> field).
+ 
+**Validation is implemented for the following field types:**
+
+* `inline-pickList`
+* `pickList`
+* `suggestionPickList`
+
+![pickMap_check.png](v2.0.14/pickMapCheck.png)
+
+#### New: Added inspection and quick-fix support for the new API
+As part of the [core 4.0.0-M15](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M15) release, used Lombok’s @RequiredArgsConstructor and @Getter (meta,dao) 
+for AnySourceVersionAwareResponseService and @Getter (meta) VersionAwareResponseService instead of explicitly writing a constructor.
+Added a quick-fix for the plugin to ensure compatibility with the new API and simplify the migration to the updated service implementation.
+
+![new_api_service.gif](v2.0.14/newApiService.gif)
+#### New: <code>@SearchParameter</code>: if no explicit parameter is defined
+Now, if no parameter is specified for @SearchParameter,  through to the entity with the corresponding field name.
+
+![searchParameter.gif](v2.0.14/searchParameter.gif)
+
+#### New: Autocomplete, Ctrl-click navigation and inspection for defaultView
+Autocomplete, Ctrl-click navigation and inspectio support added for the <code>defaultView</code> property in <code>.screen.json</code>
+
+##### Autocomplete:
+  ![autocomplete.gif](v2.0.14/autocomplete.gif)
+
+##### Ctrl-click navigation
+  ![navigation.gif](v2.0.14/navigation.gif)
+
+##### Inspection
+  ![inspection.gif](v2.0.14/inspection.gif)
+
+##### Refactoring
+  ![refactor.gif](v2.0.14/refactor.gif)
+
+#### Fix: For fields with type <code>Picklist</code> and <code>inline-pickList</code> code generation fixed 
+For fields with type <code>Picklist</code> and <code>inline-pickList</code> in <code>.widget.json</code> code generation fixed: 
+
+* **Field filtering added** to the popup for selecting fields when creating a picklist.
+  Now only fields of the following types are displayed:
+
+    * `String`
+    * `LocalDateTime`
+    * `Long`
+    * `Double`
+    * `Enum`
+    * `Dictionary extension`
+    * `Boolean`
+
+* **Autogeneration of picklist configuration** is now supported **only** for the above simple field types.
+  Other field types can be added manually via the picklist widget.
+
+> **Autogeneration message:**
+> *Autogeneration is supported for simple field types: String, LocalDateTime, Long, Double, Enum, Dictionary extension, Boolean. Other types can be added manually via the picklist widget.*
+
+![popupCreatedPicklist.png](v2.0.14/popupCreatedPicklist.png)
+ 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
 #### Added: Pagination - hideLimitOptions updated  

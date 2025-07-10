@@ -2,9 +2,9 @@
 
 * [cxbox/demo 2.0.14 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.14)
 
-* [cxbox/core 4.0.0-M17 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M17), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M17), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M17)
+* [cxbox/core 4.0.0-M18 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M18), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M18), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M18)
 
-* [cxbox-ui/core 2.5.3 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.3), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.3)
+* [cxbox-ui/core 2.5.4 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.4), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.4)
 
 * [cxbox/code-samples 2.0.14 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.14)
 
@@ -12,7 +12,7 @@
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
-<!--#### Added: List widget – mass operations (NEW!)  
+#### TODO>> ADD after test! Added: List widget – mass operations (NEW!)  
 We’ve introduced a new feature that allows you to apply actions to multiple rows at once – **mass operations**.  
 This is a special list widget display designed to guide the user through each step of a bulk action.  
 
@@ -28,7 +28,7 @@ Mass operations can include the following steps:
 
 !!! info 
     A detailed article on mass operations will be available soon in our official documentation – stay tuned!  
--->
+
 #### Added: FilePreview widget – NEW widget type!  
 
 We’ve introduced a new widget type – FilePreview. It takes up 50% of the main screen area and is placed next to other content. The widget remains fixed at the top while scrolling, keeping the document always visible.  
@@ -97,14 +97,14 @@ The text also wraps around the extension icon, making the layout more compact an
 === "Before"
     ![wordWrapBefore.png](v2.0.14/wordWrapBefore.png)  
 
-<!--#### Fixed: drillDown – updated display logic  
+#### TODO>> ADD after test! Fixed: drillDown – updated display logic  
 We’ve updated the drillDown display logic to correctly handle cases where the first row has no value in a drillDown field. DrillDown links now appear for all rows with valid values, regardless of the first row.  
 
 === "After"  
     ![drillDownAfter.png](v2.0.14/drillDownAfter.png)
 === "Before"
     ![drillDownBefore.png](v2.0.14/drillDownBefore.png)  
--->
+
 #### Fixed: Notification counter update  
 The unread notifications counter (bell icon) now updates automatically after deleting unread messages.
 It always reflects the current number of unread notifications — including cases when there are none left.  
@@ -112,9 +112,7 @@ It always reflects the current number of unread notifications — including case
 #### Fixed: FourthLevelMenu widget – correct tab rendering  
 FourthLevelMenu now shows only tabs from the active screen branch, matching the `screen.json` structure. Tabs from other branches are no longer displayed outside their defined context.  
 
-
-
-#### Fix: Pagination Optimization and New Display Setting for Widgets
+#### Added: Pagination Optimization and New Display Setting for Widgets
 
 ##### Optimized `count` Calls for Various Widget Types
 
@@ -160,9 +158,9 @@ Example configuration:
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.14)
 
 
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3))
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4))
 
-#### Added tag changedNow the fields modified in the current user interaction
+#### Added: tag changedNow the fields modified in the current user interaction
 A new tag, `changedNow`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
 been sent to the backend.
 
@@ -251,14 +249,14 @@ Filtering by dictionary values that include special characters (e.g. "" ) is now
     ![specialCharBefore.png](v2.0.14/specialCharBefore.png)  
 
 #### Other Changes
-See [cxbox-ui 2.5.3 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.3).
+See [cxbox-ui 2.5.4 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4).
 
 
 ### CXBOX 4.0.0-M18 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M18))
 
 We have released a new 4.0.0-M18 CORE version.
 
-#### Added tag changedNow the fields modified in the current user interaction 
+#### Added: tag changedNow the fields modified in the current user interaction 
 **as is**
 
 Previously, the frontend included all previously changed fields in the `data` tag, rather than only those modified in the current user action. This made it difficult to determine which fields were *just now* changed by the user.
@@ -287,7 +285,7 @@ if (isFieldChangedNow(fields, MyDtoFields_.name)) {
 }
 ```
 
-#### Core support for offically introduced in previous releases widget and field types (moved from project)
+#### Added: Core support for officially introduced in previous releases widget and field types (moved from project)
 
 * moved "multipleSelect" support from project to core.
 * moved "suggestionPickList" support from  project to core.
@@ -295,11 +293,11 @@ if (isFieldChangedNow(fields, MyDtoFields_.name)) {
 * merged InfoFieldExtractor.java and SimpleFormFieldExtractor.java to new single default SimpleFieldExtractor.java
 
 #### Other Changes
-See [cxbox 4.0.0-M17 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M17).
+See [cxbox 4.0.0-M18 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M18).
 
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-#### New: IntelliJ 2025.1+ support added.
+#### Added: IntelliJ 2025.1+ support
 
 Installing the *Platform Tools* Plugin
 
@@ -330,9 +328,9 @@ The plugin now has **separate builds** for different versions of JetBrains IDEs.
 
 4) Restart the IDE
 
-#### New: Code generation support added for fields with type <code>Time</code> in <code>.widget.json</code>.<br>
+#### Added: Code generation support added for fields with type <code>Time</code> in <code>.widget.json</code>.<br>
 
-With  [core 4.0.0-M17](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M17)
+Works with [core 4.0.0-M17](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M17) and the versions above.  
 
 ##### Code Generation
 
@@ -353,7 +351,7 @@ making it easier and faster to configure the desired time format.
 
 ![format_time_example.png](v2.0.14/formatTtimeExample.png)
 
-#### New: For fields containing <code>pickMap</code>, type checking was added 
+#### Added: type checking for fields containing <code>pickMap</code> 
 For fields containing <code>pickMap</code>, type checking was added to ensure Java type consistency of <code>pickMap</code> parameters (excluding the <code>id</code> field).
  
 **Validation is implemented for the following field types:**
@@ -364,18 +362,19 @@ For fields containing <code>pickMap</code>, type checking was added to ensure Ja
 
 ![pickMap_check.png](v2.0.14/pickMapCheck.png)
 
-#### New: Added inspection and quick-fix support for the new API
+#### Added: inspection and quick-fix support for the new API
 As part of the [core 4.0.0-M15](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M15) release, used Lombok’s @RequiredArgsConstructor and @Getter (meta,dao) 
 for AnySourceVersionAwareResponseService and @Getter (meta) VersionAwareResponseService instead of explicitly writing a constructor.
 Added a quick-fix for the plugin to ensure compatibility with the new API and simplify the migration to the updated service implementation.
 
-![new_api_service.gif](v2.0.14/newApiService.gif)
-#### New: <code>@SearchParameter</code>: if no explicit parameter is defined
+![new_api_service.gif](v2.0.14/newApiService.gif)  
+
+#### Added: <code>@SearchParameter</code>: if no explicit parameter is defined
 Now, if no parameter is specified for @SearchParameter,  through to the entity with the corresponding field name.
 
 ![searchParameter.gif](v2.0.14/searchParameter.gif)
 
-#### New: Autocomplete, Ctrl-click navigation and inspection for defaultView
+#### Added: Autocomplete, Ctrl-click navigation and inspection for defaultView
 Autocomplete, Ctrl-click navigation and inspectio support added for the <code>defaultView</code> property in <code>.screen.json</code>
 
 ##### Autocomplete:
@@ -390,7 +389,7 @@ Autocomplete, Ctrl-click navigation and inspectio support added for the <code>de
 ##### Refactoring
   ![refactor.gif](v2.0.14/refactor.gif)
 
-#### Fix: For fields with type <code>Picklist</code> and <code>inline-pickList</code> code generation fixed 
+#### Fixed: code generation for fields with type <code>Picklist</code> and <code>inline-pickList</code>
 For fields with type <code>Picklist</code> and <code>inline-pickList</code> in <code>.widget.json</code> code generation fixed: 
 
 * **Field filtering added** to the popup for selecting fields when creating a picklist.

@@ -310,6 +310,35 @@ if (fields.isFieldChangedNow(fields, MyExampleDTO_.country)) {
 }
 ```
 
+#### Added: Drilldowns with field-based filter – builder
+A new method `setDrilldownWithFilter` has been implemented, enabling drill-down functionality with filtering capabilities for a specific field. You can use it with all field types by adding it directly to the builder. This makes drill-down link generation much simpler and more intuitive.
+
+```java
+public final void setDrilldownWithFilter(DtoField<? super T, ?> field,
+                                         DrillDownTypeSpecifier drillDownType, String drillDown,
+                                         Consumer<FC> fc) 
+```
+
+Example Usage:
+
+`buildRowDependentMeta`
+
+```java
+fields.setDrilldownWithFilter(
+        MyExampleWithDrilldownDTO_.customFieldHint, DrillDownType.INNER, "/screen/MyExample/view/MyExamplelist/",fc->
+        fc.add(
+        CxboxMyExampleController.myexample,
+        MyExampleWithDrilldownDTO.class,
+            fb -> {
+            fb.input(MyExampleWithDrilldownDTO_.region,
+                     fields.getCurrentValue(MyExampleWithDrilldownDTO_.region).orElse(null));
+            fb.multiValue(MyExampleWithDrilldownDTO_.street,
+                          fields.getCurrentValue(MyExample4300WithDrilldownDTO_.street).orElse(null));
+            }
+        )
+);
+```
+
 #### Added: Core support for officially introduced in previous releases widget and field types (moved from project)
 Delete the classes from the project, or, if you want to keep the logic description of the new widgets at the project level, you need to add the new widget type to the project files
 [FilePreview widget](https://doc.cxbox.org/new/version2014/#added-filepreview-widget-new-widget-type).

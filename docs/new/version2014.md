@@ -280,6 +280,8 @@ been sent to the backend.
 
 **New Methods for Tracking Field Changes on the Client (changedNow_)**
 
+We recommend using this method only for updating values and placing it at the beginning of the `buildRowDependentMeta` method.
+
 To support tracking of field changes on the UI, the following method has been introduced:
 
 ```java
@@ -290,6 +292,8 @@ Description:
 Checks if a specific field was modified during the current UI interaction, based on the contents of the `changedNow_` tag.
 
 Example Usage:
+
+`buildRowDependentMeta` 
 
 ```java
 if (fields.isFieldChangedNow(fields, MyExampleDTO_.country)) {

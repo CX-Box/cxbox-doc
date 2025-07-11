@@ -4,7 +4,7 @@
 
 * [cxbox/core 4.0.0-M18 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M18), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M18), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M18)
 
-* [cxbox-ui/core 2.5.4 git](https://github.com/CX-Box/cxbox-ui/tree/2.5.4), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.5.4)
+* [cxbox-ui/core 2.6.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.6.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.6.0)
 
 * [cxbox/code-samples 2.0.14 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.14)
 
@@ -52,15 +52,20 @@ If the value exceeds the defined limit, it will be shortened with an ellipsis (.
     ![textTruncateBefore.png](v2.0.14/textTruncateBefore.png)  
 
 #### Added: StatsBlock widget – selected block highlighting  
-We’ve enhanced the [StatsBlock widget](https://doc.cxbox.org/widget/type/statblocks/statblocks/) by adding a new `bcCursor` option to highlight the selected block.  
-When `bcCursor: show` is set, the selected card is visually highlighted, making it easier to navigate data and identify which block is active — especially useful when working with parent-child widgets. With `bcCursor: none` (default), there is no highlighting.  
 
-**Note!** Highlighting is automatically disabled if a drillDown is defined for the field — in this case, standard drillDown behavior applies.  
+We’ve added support for highlighting the selected block in [StatsBlock](https://doc.cxbox.org/widget/type/statblocks/statblocks/). This makes it easier to understand which block was clicked and which data is currently being displayed.
+It’s especially useful when StatsBlock is used together with another widget (e.g. [List widget](https://doc.cxbox.org/widget/type/list/list/)).
 
-=== "none (default)"  
-    ![statsBlockBefore.png](v2.0.14/statsBlockBefore.png)
-=== "show"  
-    ![statsBlockAfter.png](v2.0.14/statsBlockAfter.png)  
+!!! info
+    You can place StatsBlock and List widget either on different views or on the same view. The behavior depends on how they’re configured.  
+
+StatsBlock + List widget:  
+=== "On the same view - highlight supported"  
+    If both widgets are placed on the same view, you can link them via a **parent-child** relationship, without using any drillDowns. In this case, highlighting is **available**.  
+    ![statsBlockParentChild.gif](v2.0.14/statsBlockParentChild.gif)
+=== "On different views - no highlight"
+    If the widgets are placed on separate views, highlighting is **not supported**. You can link them **only** using a drillDown.  
+    ![statsBlockDrillDown.gif](v2.0.14/statsBlockDrillDown.gif)  
 
 #### Fixed: Form widget - stable layout on validation
 We have corrected layout behavior in multi-column [Form widget](https://doc.cxbox.org/widget/type/form/form/). Validation messages no longer cause fields to shift. Fields stay aligned, and the overall form structure remains stable and consistent when errors appear.  
@@ -97,8 +102,8 @@ The text also wraps around the extension icon, making the layout more compact an
 === "Before"
     ![wordWrapBefore.png](v2.0.14/wordWrapBefore.png)  
 
-#### TODO>> ADD after test! Fixed: drillDown – updated display logic  
-We’ve updated the drillDown display logic to correctly handle cases where the first row has no value in a drillDown field. DrillDown links now appear for all rows with valid values, regardless of the first row.  
+#### Fixed: drillDown – updated display logic  
+We’ve updated the drillDown display logic to correctly handle cases where the first row has no value in a drillDown field. DrillDown links now appear for all rows with valid values, regardless of the first row. You can now simply set `"drillDown": true` in `*.widget.json`, and the links will be correctly rendered for all applicable rows.  
 
 === "After"  
     ![drillDownAfter.png](v2.0.14/drillDownAfter.png)
@@ -158,7 +163,9 @@ Example configuration:
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.14)
 
 
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4))
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.0))   
+
+We have released two CORE UI versions - 2.5.4 and 2.6.0! 
 
 #### Added: tag changedNow the fields modified in the current user interaction
 A new tag, `changedNow`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
@@ -235,21 +242,29 @@ Legend:
 | `multipleSelect`      | ✅ Yes                                |                                                     |
 | `suggestionPickList`  | ✅ Yes                                | Save only triggered if an item is picked            |
 
-#### Added: action buttons – block repeated actions  
+#### Added: action buttons –  improved logic for repeated actions    
 
-We’ve added a block to prevent double execution of the same action. If an action is already in progress, the corresponding button becomes temporarily inactive until the action completes. Other buttons remain available and work as usual.  
-![actionBlock.gif](v2.0.14/actionBlock.gif)  
+We’ve added a new logic to prevent accidental repeated execution of the same action. If a button is clicked while its action is already in progress, it becomes temporarily inactive and shows a spinner. Other actions remain available as usual.  
+
+=== "After"  
+    Repeated clicks are ignored while the action is running — the action is only called once
+    ![noDoubleAction.png](v2.0.14/noDoubleAction.png)
+=== "Before"  
+    On double-click, the same action (while still in progress) could be triggered twice
+    ![withDoubleAction.png](v2.0.14/withDoubleAction.png)  
 
 #### Fixed: Dictionary field – support for filtering with special characters  
 Filtering by dictionary values that include special characters (e.g. "" ) is now fully supported. Results are displayed correctly in all cases.  
 
 === "After"  
+    Filtering by values with special characters applies correctly.
     ![specialCharAfter.png](v2.0.14/specialCharAfter.png)
-=== "Before"
+=== "Before"  
+    Filtering by values with special characters did not apply. 
     ![specialCharBefore.png](v2.0.14/specialCharBefore.png)  
 
 #### Other Changes
-See [cxbox-ui 2.5.4 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4).
+See [cxbox-ui 2.5.4 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4) and [cxbox-ui 2.6.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.0).
 
 
 ### CXBOX 4.0.0-M18 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M18))

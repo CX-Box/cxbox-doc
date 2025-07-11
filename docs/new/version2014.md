@@ -117,31 +117,28 @@ It always reflects the current number of unread notifications — including case
 #### Fixed: FourthLevelMenu widget – correct tab rendering  
 FourthLevelMenu now shows only tabs from the active screen branch, matching the `screen.json` structure. Tabs from other branches are no longer displayed outside their defined context.  
 
-#### Added: Pagination Optimization and New Display Setting for Widgets
+#### Fixed: Pagination default
+The **default `count` mode** is set to `nextAndPreviousSmart`.
+For the following widget types, the default mode is `nextAndPreviousWithCount`:
 
-##### Optimized `count` Calls for Various Widget Types
+* `List`
+* `CustomGroupingHierarchy`
+* `CustomDashboardList`
+* `AssocListPopup`
+* `PickListPopup`
+* `CustomPie1D`
+* `CustomColumn2D`
+* `CustomLine2D`
+* `CustomDualAxes2D`
 
-* The **default `count` mode** is set to `nextAndPreviousSmart`.
-* For the following widget types, the default mode is `nextAndPreviousWithCount`:
-
-    * `List`
-    * `CustomGroupingHierarchy`
-    * `CustomDashboardList`
-    * `AssocListPopup`
-    * `PickListPopup`
-    * `CustomPie1D`
-    * `CustomColumn2D`
-    * `CustomLine2D`
-    * `CustomDualAxes2D`
-
-* The `count` query is executed **only if at least one widget with mode `nextAndPreviousWithCount` is present on the screen**.
+The `count` query is executed **only if at least one widget with mode `nextAndPreviousWithCount` is present on the screen**.
 
 === "After Form widget"  
     ![after_pagination.png](v2.0.14/after_pagination.png)
 === "Before Form widget"
     ![befor_pagination.png](v2.0.14/befor_pagination.png)
 
-##### New Pagination Panel Display Setting
+#### Added: Pagination switch
 A new option has been added to `options -> pagination` in the `widget.json` configuration, controlling the display of the pagination panel.
 
 Example configuration:
@@ -167,8 +164,8 @@ see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2
 
 We have released two CORE UI versions - 2.5.4 and 2.6.0! 
 
-#### Added: tag changedNow the fields modified in the current user interaction
-A new tag, `changedNow`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
+#### Added: tag changedNow_ the fields modified in the current user interaction
+A new tag, `changedNow_`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
 been sent to the backend.
 
 === "After row-meta/ (POST)"
@@ -177,7 +174,7 @@ been sent to the backend.
     ![old_rowmeta_post.png](v2.0.14/old_rowmeta_post.png)
 
 
-**When is `changedNow` sent?**
+**When is `changedNow_` sent?**
 
 row-meta/ (POST)
 
@@ -271,17 +268,17 @@ See [cxbox-ui 2.5.4 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 
 We have released a new 4.0.0-M18 CORE version.
 
-#### Added: tag changedNow the fields modified in the current user interaction 
-**as is**
+#### Added: tag changedNow_ the fields modified in the current user interaction 
+**Before**
 
 Previously, the frontend included all previously changed fields in the `data` tag, rather than only those modified in the current user action. This made it difficult to determine which fields were *just now* changed by the user.
 
-**to be**
+**After**
 
-A new tag, `changedNow`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
+A new tag, `changedNow_`, has been introduced. It contains only the fields modified in the current user interaction that have not yet
 been sent to the backend.
 
-**New Methods for Tracking Field Changes on the Client (changedNow)**
+**New Methods for Tracking Field Changes on the Client (changedNow_)**
 
 To support tracking of field changes on the UI, the following method has been introduced:
 
@@ -290,17 +287,28 @@ public <V> boolean isFieldChangedNow(RowDependentFieldsMeta<T> fields, DtoField<
 ```
 
 Description:
-Checks if a specific field was modified during the current UI interaction, based on the contents of the `changedNow` tag.
+Checks if a specific field was modified during the current UI interaction, based on the contents of the `changedNow_` tag.
 
 Example Usage:
 
 ```java
-if (isFieldChangedNow(fields, MyDtoFields_.name)) {
-    // Logic to execute if the 'name' field was changed in the current action
+if (fields.isFieldChangedNow(fields, MyExampleDTO_.country)) {
+    if (fields.getCurrentValue(MyExampleDTO_.country).isEmpty()) {
+    fields.setCurrentValue(MyExampleDTO_.region, null);
+            fields.setCurrentValue(MyExampleDTO_.street, null);
+        } else if (Objects.equals(fields.getCurrentValue(MyExampleDTO_.country).orElse(null), CountryEnum.BELARUS)) {
+    fields.setCurrentValue(MyExampleDTO_.region, RegionEnum.MINSK);
+            fields.setCurrentValue(MyExampleDTO_.street, "Avenue Nezavisimosti");
+        } else if (Objects.equals(fields.getCurrentValue(MyExampleDTO_.country).orElse(null), CountryEnum.RUSSIA)) {
+    fields.setCurrentValue(MyExampleDTO_.region, RegionEnum.MOSCOWSKAYA);
+            fields.setCurrentValue(MyExampleDTO_.street, "Tverskaya street");
+        }
 }
 ```
 
 #### Added: Core support for officially introduced in previous releases widget and field types (moved from project)
+Delete the classes from the project, or, if you want to keep the logic description of the new widgets at the project level, you need to add the new widget type to the project files
+[FilePreview widget](https://doc.cxbox.org/new/version2014/#added-filepreview-widget-new-widget-type).
 
 * moved "multipleSelect" support from project to core.
 * moved "suggestionPickList" support from  project to core.

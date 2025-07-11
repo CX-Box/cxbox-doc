@@ -12,19 +12,25 @@
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
-#### TODO>> ADD after test! Added: List widget – mass operations (NEW!)  
+#### Added: List widget – mass operations (NEW!)  
 We’ve introduced a new feature that allows you to apply actions to multiple rows at once – **mass operations**.  
 This is a special list widget display designed to guide the user through each step of a bulk action.  
 
 Mass operations can include the following steps:  
 === "Step 1: Select"  
-    Checkboxes appear next to each row. You can select multiple rows, which are then shown as tags above the table.  
+    Checkboxes appear next to each row. You can select multiple rows, which are then shown as tags above the table. You can also Select from file and upload the rows you want to apply mass operation to.    
+    ![massOpStep1.png](v2.0.14/massOpStep1.png)
 === "Step 2: Review"  
     The selected rows are shown in read-only mode, allowing you to double-check your selection before proceeding.  
-=== "Step 3: Confirm"  
-    Depending on the operation, this step may include a form for entering additional required data and/or a confirmation button.  
+    ![massOpStep2.png](v2.0.14/massOpStep2.png)
+=== "Step 3: Confirm (Optional)"  
+    Depending on the operation, this step may be included to provide a form for entering additional required data or just provide a confirmation text.  
+    !!! info
+        We recommend to specifically create an additional mass operation field to display it on this step. Otherwise, the query will be sent to the first row in the table and, thus, the field will be pre-filled with the values from the first field.  
+    ![massOpStep3.png](v2.0.14/massOpStep3.png)
 === "Step 4: Results"  
-    Once the action is complete, you’ll see a summary of results for each row. You can also download the result as an Excel file and exit the mass operation mode.  
+    Once the action is complete, you’ll see a summary of results for each row. You can also download the result as an Excel file to work with those rows later during the next bulk operation.  
+    ![massOpStep4.png](v2.0.14/massOpStep4.png)
 
 !!! info 
     A detailed article on mass operations will be available soon in our official documentation – stay tuned!  

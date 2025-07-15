@@ -6,7 +6,10 @@
 
 * [cxbox-ui/core 2.6.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.6.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.6.0)
 
-* [cxbox/code-samples 2.0.14 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.14)
+* [cxbox/code-samples 2.0.14 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.14)  
+
+* cxbox/intellij-plugin 1.8.0 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools#)
+
 
 ## **Key updates June, July 2025**
 
@@ -14,7 +17,7 @@
 
 #### Added: List widget – mass operations (NEW!)  
 We’ve introduced a new feature that allows you to apply actions to multiple rows at once – **mass operations**.  
-This is a special list widget display designed to guide the user through each step of a bulk action.  
+This is a special [List widget](https://doc.cxbox.org/widget/type/list/list/) display designed to guide the user through each step of a bulk action.  
 
 Mass operations can include the following steps:  
 === "Step 1: Select"  
@@ -49,7 +52,7 @@ This widget is especially useful for side-by-side document viewing and form edit
     ![filePreviewAdditional.gif](v2.0.14/filePreviewAdditional.gif)  
 
 #### Added: text field – value truncation
-We’ve added support for truncating long values in text fields using a frontend constant.  
+We’ve added support for truncating long values in [text field](https://doc.cxbox.org/widget/fields/field/text/text/) using a frontend constant.  
 If the value exceeds the defined limit, it will be shortened with an ellipsis (...). Hovering over the ellipsis shows the full value in a tooltip.  
 
 === "After"
@@ -267,7 +270,7 @@ Filtering by dictionary values that include special characters (e.g. "" ) is now
     ![specialCharBefore.png](v2.0.14/specialCharBefore.png)  
 
 #### Other Changes
-See [cxbox-ui 2.5.4 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.5.4) and [cxbox-ui 2.6.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.0).
+See [cxbox-ui 2.6.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.0).
 
 
 ### CXBOX 4.0.0-M18 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M18))

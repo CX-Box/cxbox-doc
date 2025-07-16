@@ -8,7 +8,7 @@
 
 * [cxbox/code-samples 2.0.14 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.14), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.14)  
 
-* cxbox/intellij-plugin 1.8.0 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools#)
+* cxbox/intellij-plugin 1.8.0 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools#), [cxbox repo (recommended)](https://doc.cxbox.org/new/version2014/#added-intellij-20251-support)
 
 
 ## **Key updates June, July 2025**

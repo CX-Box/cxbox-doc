@@ -368,7 +368,7 @@ Installing the *Platform Tools* Plugin
 
 The plugin now has **separate builds** for different versions of JetBrains IDEs. Make sure the correct update repository is configured.
 
-1)Open the Plugin Manager
+1) Open the Plugin Manager
 
 * In your JetBrains IDE, go to `Help → Find Action`
 * Type `Plugins` and open the corresponding option

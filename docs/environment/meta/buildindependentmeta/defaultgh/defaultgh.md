@@ -23,7 +23,7 @@ Suppose you have four levels of hierarchy, defined as:
 * `Level 4`: CustomFieldDictionaryLevelFourEnum
 
 
- ![level 4.png](level%204.png)
+ ![level 4.png](level 4.png)
 
 You can configure this hierarchy in the method call:
 
@@ -59,7 +59,7 @@ Lambdas (lvl -> lvl.add(...)) allow customization for each grouping level.They s
 ### Level 1
 
 #### How does it look?
- ![level 1.png](level%201.png)
+ ![level 1.png](level 1.png)
 
 #### How to add?
 
@@ -85,7 +85,7 @@ Example Hierarchy Structure:
 ### Level 2
 
 #### How does it look?
-![level 2.png](level%202.png)
+![level 2.png](level 2.png)
 
 #### How to add?
 
@@ -120,7 +120,7 @@ Example Hierarchy Structure:
 ### Level 3
 
 #### How does it look?
-![level 3.png](level%203.png)
+![level 3.png](level 3.png)
 
 #### How to add?
 
@@ -168,7 +168,7 @@ Example Hierarchy Structure:
 
 ### Level 4
 #### How does it look?
-![level 4.png](level%204.png)
+![level 4.png](level 4.png)
 
 #### How to add?
 
@@ -219,7 +219,7 @@ Example Hierarchy Structure:
 
 ### Level 5
 #### How does it look?
-![level 5.png](level%205.png)
+![level 5.png](level 5.png)
 
 #### How to add?
 

@@ -104,7 +104,9 @@ nav:
       - MetaBuilder:
           - Basic: environment/meta/metabuilder.md
           - buildIndependentMeta:
-            - defaultGroupingHierarchy: environment/meta/buildindependentmeta/defaultgh.md
+            - defaultGroupingHierarchy: environment/meta/buildindependentmeta/defaultgh/defaultgh.md
+          - buildRowDependentMeta:
+            - isFieldChangedNow: environment/meta/buildrowdependentmeta/isfieldchangednow/isfieldchangednow.md
       - Controller: environment/controller/controller.md
   - Features:
       - Actions:

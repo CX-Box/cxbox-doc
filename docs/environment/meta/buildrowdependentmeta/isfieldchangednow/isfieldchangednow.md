@@ -1,4 +1,7 @@
 # `isFieldChangedNow()`
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4901/view/myexample3420FA){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/other/forceactive2/anysource){:target="_blank"}
+
 Available since [v2.0.14](/new/version2014/)
 
 The `isFieldChangedNow()` method checks whether a specific field was modified by the user 
@@ -26,6 +29,8 @@ We recommend placing `isFieldChangedNow()` at the beginning of `buildRowDependen
 
 
 ## How to add?
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4901/view/myexample3420FA){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/other/forceactive2/anysource){:target="_blank"}
 
 ??? Example
 

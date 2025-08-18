@@ -896,6 +896,36 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3203){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded){:target="_blank"}
 
-#### Aggregate 
+#### Group Display Mode: `groupMode`
 
-!!! warning line end "Work in progress"
+=== "`groupMode: compact` (default mode)"
+
+     **By default**, the `compact` mode is used. If the `groupMode` parameter is not specified, this mode is applied automatically.
+    
+    * In this mode, the contents of a group (e.g., rows within a “folder”) are displayed **on the same row** as the group header.
+    * This layout provides a clean and compact visual structure.
+    
+    Inline Editing
+    
+    * **Inline editing** of rows is supported.
+    * When enabled, clicking on a row will activate **edit mode for the entire row**, including group header rows.
+    
+
+=== "`groupMode: aggregate`"
+
+    * This mode is used when **aggregated values** (e.g., sum, max, min) need to be displayed at the group level.
+    * **Compact display is not possible** in this mode because the group header row is used to show aggregate values.
+    
+     **Group contents** (rows) are displayed **starting from the next row** after the group header.
+    
+    Inline Editing
+    
+    * **Inline editing is not available** for group headers in `aggregate` mode.
+    * This is because those rows are dedicated to displaying aggregate information.
+
+##### How does it look?
+=== "`groupMode: compact` (default mode)"
+
+=== "`groupMode: aggregate`"
+
+#### Aggregate 

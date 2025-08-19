@@ -27,9 +27,9 @@ We’ve made the notification banner responsive to long button texts, so button 
 
 We have improved validation logic for required and both static and dynamic hidden fields to correctly display messages when required fields are empty. If a field is required and left empty, validation 
 
-==="required"
+=== "required"
     ![requiredEmptyField.png](v2/0/15/requiredEmptyField.png)
-==="hidden"
+=== "hidden"
     ![hiddenEmptyField.png](v2/0/15/hiddenEmptyField.png)
 
 #### Fixed: cancel action after validation warning
@@ -82,6 +82,5 @@ See [cxbox 4.0.0-M19 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
-#### Added: Pagination - hideLimitOptions updated  
-We have updated the Pagination article, [hideLimitOptions](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=pag#hidelimitoptions) section.  
+#### Added: 
 

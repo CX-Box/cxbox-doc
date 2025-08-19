@@ -79,6 +79,7 @@ nav:
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
+      - Widget FilePreview: widget/type/filepreview/filepreview.md
       - Property:
          - Show condition: widget/type/property/showcondition/showcondition.md
          - Filtration: widget/type/property/filtration/filtration.md

@@ -18,9 +18,33 @@
 ![filepreview.png](filepreview.png)  
 
 ###  <a id="Howtoaddbacis">How to add?</a>
+ 
 ??? Example
 
-    !!! warning line end "Work in progress"
+    **Step1** Create file **_.widget.json_** with type = **"FilePreview"**
+
+        Add existing field with type `fileUpload` to a `FilePreview` widget. see more [Fields](#fields)
+        Add 
+        ```json
+            "preview": {
+                "enabled": true,
+                "mode": "inline"
+            }
+        ```
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample3190Additional.widget.json
+        --8<--
+        ```
+ 
+    **Step2** Add widget to corresponding ****_.view.json_** **.
+    
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample5003form.view.json
+        --8<--
+        ```
 
 ## <a id="Title">Title</a>
 !!! warning line end "Work in progress"

@@ -978,6 +978,9 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
     All fields used for aggregation must be present in the interface.
     They can be either visible or hidden.
 
+!!! Attention    
+    Field cannot be both a grouping field and an aggregated field
+
 ###### How does it look?
 === "sum"
     ![aggSum.png](aggSum.png) 
@@ -1277,7 +1280,7 @@ How to add?
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevel){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json){:target="_blank"}
 
-**Different hierarchy levels** — apply different aggregation standard functions at grouping levels and total level.
+Apply different aggregation standard functions at grouping levels and total level.
 
 How does it look?
 
@@ -1376,3 +1379,96 @@ How to add?
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevel){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json){:target="_blank"}
 
+###### Custom functions
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3126customfunctgh){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json){:target="_blank"}
+
+**Custom functions** — define your own aggregation rules when standard ones are not enough.
+
+How does it look?
+
+![aggCustom.png](aggCustom.png)
+
+How to add?
+
+??? Example
+
+    The aggLevels parameter defines which fields are aggregated at each grouping level using the aggFields tag.
+    
+    level — specifies the level number.
+    
+    Levels are numbered starting from 1 and correspond to the order of fields in groupingHierarchy.fields.
+    
+    You can specify the level where aggregation is required, and the aggregated data will be displayed at that level.
+    
+    * aggFields (array of objects)
+
+    Description: Defines which columns will be aggregated and how their values will be calculated.
+    
+    Each aggFields object contains:
+    
+    * fieldKey — the column whose values will be aggregated.
+                
+    * func — min
+
+    * argFieldKeys (optional) — list of column names whose values will be aggregated.You can also aggregate multiple fields at once by listing them here.
+    
+    * description (optional) — a text description of the aggregation, displayed in the UI. 
+
+        ```
+         "options": {
+            "groupingHierarchy": {
+              "fields": [
+                "location",
+                "object"
+              ],
+              "aggLevels": [
+                {
+                  "level": 0,
+                  "aggFields": [
+                    {
+                      "fieldKey": "insuranceValue",
+                      "func": "sum",
+                      "argFieldKeys": [
+                        "insuranceValue"
+                      ],
+                      "description": "sum fields `Insured amount`"
+                    }
+                  ]
+                },
+                {
+                  "level": 1,
+                  "aggFields": [
+                    {
+                      "fieldKey": "insuranceValue", // the column above which the aggregated value will be displayed.
+                      "func": "sum",  // aggregation function: sum/min/max/avg
+                      "argFieldKeys": [ // OPTIONAL. If you need to display an aggregated value not above the column being aggregated,or if you need to aggregate multiple fields at once, list the column names separated by commas.
+                        "annualPremium"
+                      ],
+                      "description": "sum fields `Annual Premium`" // OPTIONAL. Description for UI
+                    }
+                  ]
+                },
+                {
+                  "level": 2,
+                  "aggFields": [
+                    {
+                      "fieldKey": "insuranceAmount",
+                      "func": "sum",
+                      "argFieldKeys": [
+                        "insuranceAmount"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+        ```
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json
+        --8<--
+        ``` 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3126customfunctgh){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json){:target="_blank"}

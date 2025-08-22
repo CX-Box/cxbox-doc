@@ -991,6 +991,27 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
 
 ###### How to add?
 ??? Example
+
+    aggFields (array of objects)
+            
+    Description: Defines which columns will be aggregated and how their values will be calculated.
+    
+    Each aggFields object contains:
+    
+    * fieldKey — the column whose values will be aggregated.
+                
+    * func — the aggregation function. Supported values:
+        
+        sum — calculates the total sum,
+        
+        min — the minimum value,
+        
+        max — the maximum value,
+        
+        avg — the average value.
+
+    * description (optional) — a text description of the aggregation, displayed in the UI.
+
     ```json
     "options": {
         "groupingHierarchy": {
@@ -1077,6 +1098,25 @@ How to add?
 
 ??? Example 
     === "Above the same column"
+
+        aggFields (array of objects)
+                
+        Description: Defines which columns will be aggregated and how their values will be calculated.
+        
+        Each aggFields object contains:
+        
+        * fieldKey — the column whose values will be aggregated.
+                    
+        * func — the aggregation function. Supported values:
+            
+            sum — calculates the total sum,
+            
+            min — the minimum value,
+            
+            max — the maximum value,
+            
+            avg — the average value.
+
         ```json
         "options": {
             "groupingHierarchy": {
@@ -1105,6 +1145,28 @@ How to add?
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json){:target="_blank"}
 
     === "Above another column and aggregations for multiple fields"
+
+        aggFields (array of objects)
+                
+        Description: Defines which columns will be aggregated and how their values will be calculated.
+        
+        Each aggFields object contains:
+        
+        * fieldKey — the column whose values will be aggregated.
+                    
+        * func — the aggregation function. Supported values:
+            
+            sum — calculates the total sum,
+            
+            min — the minimum value,
+            
+            max — the maximum value,
+            
+            avg — the average value.
+        
+        * argFieldKeys (optional) — list of column names whose values will be aggregated.You can also aggregate multiple fields at once by listing them here.
+        
+        * description (optional) — a text description of the aggregation, displayed in the UI.
 
         ```json
         "options": {
@@ -1146,9 +1208,16 @@ By default, if aggregation is enabled, the **Total** row is displayed automatica
     If the table contains no data rows, the grand total row is not displayed.
     As soon as at least one data row appears, the grand total row becomes visible.
 
+How does it look?
+=== "Without total"
+    ![aggWithoutTotal.png](aggWithoutTotal.png)
+=== "With total"
+    ![aggWithTotal.png](aggWithTotal.png)
+
 How to add?
 
 ??? Example
+
     To remove the Total row, use the aggLevels parameter.
 
     It defines which fields are aggregated at each grouping level using the aggFields tag.
@@ -1216,8 +1285,38 @@ How does it look?
 
 How to add?
 
-??? Example       
+??? Example  
+
+    The aggLevels parameter defines which fields are aggregated at each grouping level using the aggFields tag.
+    
+    level — specifies the level number.
+    
+    Levels are numbered starting from 1 and correspond to the order of fields in groupingHierarchy.fields.
+    
+    You can specify the level where aggregation is required, and the aggregated data will be displayed at that level.
+    
+    * aggFields (array of objects)
+
+    Description: Defines which columns will be aggregated and how their values will be calculated.
+    
+    Each aggFields object contains:
+    
+    * fieldKey — the column whose values will be aggregated.
+                
+    * func — the aggregation function. Supported values:
         
+        sum — calculates the total sum,
+        
+        min — the minimum value,
+        
+        max — the maximum value,
+        
+        avg — the average value.
+    
+    * argFieldKeys (optional) — list of column names whose values will be aggregated.You can also aggregate multiple fields at once by listing them here.
+    
+    * description (optional) — a text description of the aggregation, displayed in the UI. 
+
         ```
          "options": {
             "groupingHierarchy": {
@@ -1268,7 +1367,12 @@ How to add?
             }
         ```
 
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json
+        --8<--
+        ``` 
+
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevel){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json){:target="_blank"}
-
 

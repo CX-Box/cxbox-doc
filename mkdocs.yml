@@ -126,6 +126,8 @@ nav:
       - FileStorage:
         - Basic: features/element/filestorage/fileStorage.md
         - Minio: features/element/filestorage/minio.md
+      - File Options:
+        - Multi-upload files: features/element/fileoptions/fileoptions.md
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
       - Microservices:

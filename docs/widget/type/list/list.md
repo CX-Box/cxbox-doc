@@ -604,3 +604,8 @@ see [Pagination](/widget/type/property/pagination/pagination)
 `Export to Excel` enables users to download a .xlsx file containing the table's data.
 see [Excel](/widget/type/property/export/excel/excel)
 
+#### Multi-upload files
+We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
+
+see more [Multi-upload files](/features/element/fileoptions/fileoptions)
+ 

@@ -484,8 +484,8 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3180){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/delete){:target="_blank"}
 
-### **<a id="standart_edit">Edit</a>**
 `Edit` enables you to change the field value.
+### **<a id="standart_edit">Edit</a>**
 
 There are two methods to edit a record:
 
@@ -648,5 +648,9 @@ With `Edit with view`, you can edit the entity from a separate view that display
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
 
+## Additional properties
+### Multi-upload files
+We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
+see more [Multi-upload files](/features/element/fileoptions/fileoptions)
  

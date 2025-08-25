@@ -67,8 +67,8 @@ We’ve updated the display of the multivalue field. Changes include adjustments
 #### Fixed: multivalue field – correct display of values
 We've improved the logic behind displaying values in multivalue fields, ensuring that each row now shows its own correct data, regardless of the selected row.
 
-#### Fixed: Error popups were not shown
-Error popups were not shown when an error requiring user notification occurred — the message was logged to the console.
+#### Fixed: Error popups were not shown for fileUpload
+Error popups were not shown when for fileUpload an error requiring user notification occurred — the message was logged to the console.
 Now the popup is displayed with the error text.
 
 === "After"
@@ -83,7 +83,7 @@ See [cxbox-ui 2.6.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 ### CXBOX 4.0.0-M19 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M19))
 
 We have released a new 4.0.0-M19 CORE version.
-#### Fix: Missing roles in the getSessionUserRoles
+#### Fixed: Missing roles in the getSessionUserRoles
 Added handling for the situation of missing roles in the getSessionUserRoles method.
 
 === "after"
@@ -91,7 +91,7 @@ Added handling for the situation of missing roles in the getSessionUserRoles met
 === "before"
     ![beforeGetSessionUserRole.png](v2/0/15/beforeGetSessionUserRole.png)
 
-#### Fix: getCurrentValue with @JsonSerialize
+#### Fixed: Incorrect behavior of getCurrentValue with @JsonSerialize
 We fixed the incorrect behavior of getCurrentValue with fields annotated with @JsonSerialize.
 
 === "after"
@@ -107,10 +107,10 @@ See [cxbox 4.0.0-M19 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 
 We have released two versions - 2.0.0, 1.9.0
 
-#### New: IntelliJ 2025.2+ support added. (with 1.9.0)
+#### Added: IntelliJ 2025.2+ support added. (with 1.9.0)
 IntelliJ 2025.2+ support added.
 
-#### New: Added generation bc from widget (with 2.0.0)
+#### Added: Added generation bc from widget (with 2.0.0)
 Added generation bc from widget.
 
 ![createBc.png](v2/0/15/createBc.png)
@@ -125,12 +125,12 @@ Example:
 
 ![createBc.gif](v2/0/15/createBc.gif)
 
-#### New: Added to check the sum of span values in options.layout.rows.cols  (with 2.0.0)
+#### Added: Added to check the sum of span values in options.layout.rows.cols  (with 2.0.0)
 Form and Info widgets, a validation was added to check that the sum of span values in options.layout.rows.cols does not exceed the grid limit (24
 
 ![optionsum.png](v2/0/15/optionsum.png)
 
-#### Fix. Incorrect triggering of inspection for ss (with 1.9.0)
+#### Fixed: Incorrect triggering of inspection for ss (with 1.9.0)
 We fixed the `SearchParameterAnnotationCorrectEndingInspection`, which was working incorrectly for the `multipleSelect` field.
 
 === "after"

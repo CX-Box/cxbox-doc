@@ -107,17 +107,32 @@ See [cxbox 4.0.0-M19 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools).
 
-#### New: IntelliJ 2025.2+ support added.
+We have released two versions - 2.0.0, 1.9.0
+
+#### New: IntelliJ 2025.2+ support added. (with 1.9.0)
 IntelliJ 2025.2+ support added.
 
-#### New: Added generation bc from widget
+#### New: Added generation bc from widget (with 2.0.0)
+Added generation bc from widget.
 
-#### New: Added to check the sum of span values in options.layout.rows.cols 
+![createBc.png](v2/0/15/createBc.png)
+
+You can create a new Service, Entity, or DTO based on the name of your BK, or you can use existing Services, Entities, or DTOs
+
+Select Parameters:
+
+![popupCreateBc.png](v2/0/15/popupCreateBc.png)
+
+Example:
+
+![createBc.gif](v2/0/15/createBc.gif)
+
+#### New: Added to check the sum of span values in options.layout.rows.cols  (with 2.0.0)
 Form and Info widgets, a validation was added to check that the sum of span values in options.layout.rows.cols does not exceed the grid limit (24
 
 ![optionsum.png](v2/0/15/optionsum.png)
 
-#### Fix. Incorrect triggering of inspection for ss
+#### Fix. Incorrect triggering of inspection for ss (with 1.9.0)
 We fixed the `SearchParameterAnnotationCorrectEndingInspection`, which was working incorrectly for the `multipleSelect` field.
 
 === "after"

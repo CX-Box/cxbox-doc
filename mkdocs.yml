@@ -81,13 +81,16 @@ nav:
       - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
       - Widget FilePreview: widget/type/filepreview/filepreview.md
       - Property:
-         - Show condition: widget/type/property/showcondition/showcondition.md
+         - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
+         - Export:
+            - Excel: widget/type/property/export/excel/excel.md
+         - File Options:
+            - Multi-upload files: widget/type/property/bullupload/bulkupload.md
          - Filtration: widget/type/property/filtration/filtration.md
          - Pagination: widget/type/property/pagination/pagination.md
-         - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
          - Sorting: widget/type/property/sorting/sorting.md
-         - Export:
-             - Excel: widget/type/property/export/excel/excel.md
+         - Show condition: widget/type/property/showcondition/showcondition.md
+
   - Navigation:
       - Tabs:
         - Standard:
@@ -126,8 +129,6 @@ nav:
       - FileStorage:
         - Basic: features/element/filestorage/fileStorage.md
         - Minio: features/element/filestorage/minio.md
-      - File Options:
-        - Multi-upload files: features/element/fileoptions/fileoptions.md
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
       - Microservices:

@@ -652,5 +652,5 @@ With `Edit with view`, you can edit the entity from a separate view that display
 ### Multi-upload files
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
-see more [Multi-upload files](/features/element/fileoptions/fileoptions)
+see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
  

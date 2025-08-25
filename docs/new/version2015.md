@@ -23,6 +23,21 @@ We’ve made the notification banner responsive to long button texts, so button 
 === "Before"
     ![notificationButtonBefore.png](v2/0/15/notificationButtonBefore.png)
 
+#### Added:  collapsedCondition tag
+
+In view.json, each widget group now has a collapsedCondition tag:
+
+* true – the widget group is collapsed
+* false (default) – the widget group is expanded
+
+If collapsedCondition -> true is set, the widget group is displayed in a collapsed state immediately after the page loads. Only the main widget header remains visible; the other widgets are hidden.
+
+If collapsedCondition -> false is set, the widget group is expanded.
+
+If the parameter is not specified at all, the default state is expanded (collapsedCondition -> default: false).
+
+![collapse.png](v2/0/15/collapse.png)
+
 #### Fixed: validation handling for required and hidden fields
 
 We have improved validation logic for required and both static and dynamic hidden fields to correctly display messages when required fields are empty. If a field is required and left empty, validation 
@@ -54,7 +69,7 @@ We’ve updated the display of the multivalue field. Changes include adjustments
 #### Fixed: multivalue field – correct display of values
 We've improved the logic behind displaying values in multivalue fields, ensuring that each row now shows its own correct data, regardless of the selected row.
 
-#### Fixed: Fixed: Error popups were not shown
+#### Fixed: Error popups were not shown
 Error popups were not shown when an error requiring user notification occurred — the message was logged to the console.
 Now the popup is displayed with the error text.
 
@@ -70,17 +85,51 @@ See [cxbox-ui 2.6.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 ### CXBOX 4.0.0-M19 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M19))
 
 We have released a new 4.0.0-M19 CORE version.
+#### Fix: Missing roles in the getSessionUserRoles
+Added handling for the situation of missing roles in the getSessionUserRoles method.
 
-#### 
+=== "after"
+    ![afterGetSessionUserRole.png](v2/0/15/afterGetSessionUserRole.png)
+=== "before"
+    ![beforeGetSessionUserRole.png](v2/0/15/beforeGetSessionUserRole.png)
+
+#### Fix: getCurrentValue with @JsonSerialize
+We fixed the incorrect behavior of getCurrentValue with fields annotated with @JsonSerialize.
+
+=== "after"
+    ![afterGetCurrentValue.png](v2/0/15/afterGetCurrentValue.png)
+=== "before"
+    ![beforeGetCurrentValue.png](v2/0/15/beforeGetCurrentValue.png)
+
 #### Other Changes
 See [cxbox 4.0.0-M19 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M19).
 
 
-### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-#### 
+### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools).
 
+#### New: IntelliJ 2025.2+ support added.
+IntelliJ 2025.2+ support added.
+
+#### New: Added generation bc from widget
+
+#### New: Added to check the sum of span values in options.layout.rows.cols 
+Form and Info widgets, a validation was added to check that the sum of span values in options.layout.rows.cols does not exceed the grid limit (24
+
+![optionsum.png](v2/0/15/optionsum.png)
+
+#### Fix. Incorrect triggering of inspection for ss
+We fixed the `SearchParameterAnnotationCorrectEndingInspection`, which was working incorrectly for the `multipleSelect` field.
+
+=== "after"
+    ![afterss.png](v2/0/15/afterss.png)
+=== "before"
+    ![beforess.png](v2/0/15/beforess.png)
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
-#### Added: 
+#### Added: widget GroupingHierarchy - Aggregate
+We have provided a description of Aggregate widget `GroupingHierarchy` [Aggregate](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/#data-aggregation)   
+
+#### Added: Multi-upload files
+We have provided a description of [Multi-upload files](https://doc.cxbox.org/widget/type/property/bullupload/bulkupload/).
 

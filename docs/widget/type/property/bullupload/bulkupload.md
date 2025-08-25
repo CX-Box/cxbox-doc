@@ -46,6 +46,7 @@ Uploaded:
 * If all files are uploaded successfully, the progress notification automatically disappears after 2 seconds.
 * If some files are skipped, the notification remains visible until it is closed manually or the user navigates to another screen. Information about successfully uploaded files still disappears after 2 seconds.
 * When hovering over a notification, it will not disappear until the mouse is moved away (successful notifications also remain visible in this case)
+* Limitation: When navigating to another screen, the notification is hidden and the upload is canceled
 
 !!! Button
     A file can be added not only through the standard selection dialog but also by dragging and dropping it onto the upload button.

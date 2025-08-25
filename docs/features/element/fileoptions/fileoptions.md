@@ -7,9 +7,9 @@ We have implemented multi-file upload. You can use a dedicated drag-and-drop zon
 
 This feature supports the following types:
 
-* [Form widget](/widget/type/form/form)
+* [Form widget](/widget/type/form/form)  
 * [List widget](/widget/type/list/list)
-* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
+* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)   
 
 
 This feature supports only field [fileUpload](/widget/fields/field/fileUpload/fileUpload)
@@ -28,7 +28,7 @@ This feature supports only field [fileUpload](/widget/fields/field/fileUpload/fi
 ??? Example
     === "Button And Multi-upload files"
         `Step1`  Add actionKey **associate** to corresponding **.widget.json**.
-
+    
         ```json
               {
                 "actionKey": "associate",
@@ -74,6 +74,12 @@ This feature supports only field [fileUpload](/widget/fields/field/fileUpload/fi
         {{ external_links.github_raw_doc }}/src/main/java/org/demo/documentation/feature/file/MyExample6100DefaultList.widget.json
         --8<--
         ``` 
+    
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/src/main/java/org/demo/documentation/feature/file/MyExample6100AllList.widget.json
+        --8<--
+        ```
 
     `Step2`  Add **setFileAccept** to corresponding **FieldMetaBuilder**.
         ```java

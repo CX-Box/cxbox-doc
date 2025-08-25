@@ -447,3 +447,10 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample101){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/required){:target="_blank"}
+
+## Additional properties
+### Multi-upload files
+We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
+
+see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
+ 

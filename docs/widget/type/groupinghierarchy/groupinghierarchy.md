@@ -1472,3 +1472,9 @@ How to add?
         ``` 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3126customfunctgh){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json){:target="_blank"}
+ 
+#### Multi-upload files
+We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
+
+see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
+ 

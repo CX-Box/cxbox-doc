@@ -24,23 +24,18 @@ We’ve made the notification banner responsive to long button texts, so button 
     ![notificationButtonBefore.png](v2/0/15/notificationButtonBefore.png)
 
 #### Added:  collapsedCondition tag
+Now you can set the collapse state when opening the screen by default.
 
 In view.json, each widget group now has a collapsedCondition tag:
 
-* true – the widget group is collapsed
-* false (default) – the widget group is expanded
-
-If collapsedCondition -> true is set, the widget group is displayed in a collapsed state immediately after the page loads. Only the main widget header remains visible; the other widgets are hidden.
-
-If collapsedCondition -> false is set, the widget group is expanded.
-
-If the parameter is not specified at all, the default state is expanded (collapsedCondition -> default: false).
+* true is set, the widget group is displayed in a collapsed state immediately after the page loads. Only the main widget header remains visible; the other widgets are hidden
+* false is set, the widget group is expanded(default)
 
 ![collapse.png](v2/0/15/collapse.png)
 
 #### Fixed: validation handling for required and hidden fields
-
-We have improved validation logic for required and both static and dynamic hidden fields to correctly display messages when required fields are empty. If a field is required and left empty, validation 
+добавить что для обязательных задизейбленных полей
+We have improved validation logic for required and both static and dynamic hidden fields to correctly display messages when required fields are empty. Now the field validation is visible to the user.
 
 === "required"
     ![requiredEmptyField.png](v2/0/15/requiredEmptyField.png)
@@ -54,18 +49,16 @@ We have improved the cancel action logic for cases when a form is blocked by val
 === "Before"
     ![982before.gif](v2/0/15/982before.gif) 
 
-
-#### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.15)
-
-
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.1))
-
 #### Added: multivalue field – updated display
 We’ve updated the display of the multivalue field. Changes include adjustments to field height, chip size, folder icon display, and more to ensure visual consistency with other field types.
 
 #### Fixed: multivalue field – correct display of values
 We've improved the logic behind displaying values in multivalue fields, ensuring that each row now shows its own correct data, regardless of the selected row.
+
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.15)
+
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.1))
 
 #### Fixed: Error popups were not shown for fileUpload
 Error popups were not shown when for fileUpload an error requiring user notification occurred — the message was logged to the console.
@@ -99,6 +92,21 @@ We fixed the incorrect behavior of getCurrentValue with fields annotated with @J
 === "before"
     ![beforeGetCurrentValue.png](v2/0/15/beforeGetCurrentValue.png)
 
+#### Fixed: Logic for @ElementCollection annotation has been changed
+The logic for searching fields in the database with the @ElementCollection annotation has been changed:
+
+If a DTO field is annotated with @SearchParameter(name = "joinTable.elementCollectionField"), then filtering will perform a join of the entities that are present in the chain.
+
+Example of a query for count:
+```sql
+select count(rt_1.id)
+    from root_entity rt_1
+where rt_1.id in ((select rt_2.id
+        from root_entity rt_2
+            join join_table jt on jt.id = rt_2.join_table_id
+            join element_collection_table ect on jt.id = ect.join_table_id
+            where ect.value in ))
+```
 #### Other Changes
 See [cxbox 4.0.0-M19 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M19).
 
@@ -126,7 +134,7 @@ Example:
 ![createBc.gif](v2/0/15/createBc.gif)
 
 #### Added: Added to check the sum of span values in options.layout.rows.cols  (with 2.0.0)
-Form and Info widgets, a validation was added to check that the sum of span values in options.layout.rows.cols does not exceed the grid limit (24
+Form and Info widgets, a validation was added to check that the sum of span values in options.layout.rows.cols does not exceed the grid limit (24)
 
 ![optionsum.png](v2/0/15/optionsum.png)
 

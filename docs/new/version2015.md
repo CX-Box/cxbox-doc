@@ -26,18 +26,19 @@ We’ve made the notification banner responsive to long button texts, so button 
 #### Added:  collapsedCondition tag
 Now you can set the collapse state when opening the screen by default.
 
-In view.json, each widget group now has a collapsedCondition tag:
+In view.json, each widget group now has a collapsedCondition tag.  
+=== "collapsedCondition: false (default)"  
+    The widget group appears expanded.  
+    ![v2/0/15/collapsedFalse.png](v2/0/15/collapsedFalse.png)
+=== "collapsedCondition: true"  
+    The widget group is displayed in a collapsed state as soon as the page is loaded. Only the main widget header remains visible.  
+    ![v2/0/15/collapsedTrue.png](v2/0/15/collapsedTrue.png)  
 
-* true is set, the widget group is displayed in a collapsed state immediately after the page loads. Only the main widget header remains visible; the other widgets are hidden
-* false is set, the widget group is expanded(default)
+#### Fixed: validation handling for required disabled and hidden fields
 
-![collapse.png](v2/0/15/collapse.png)
+We have improved validation logic for disabled and hidden fields to correctly display messages when required fields are empty. Now the field validation is visible to the user.
 
-#### Fixed: validation handling for required and hidden fields
-добавить что для обязательных задизейбленных полей
-We have improved validation logic for required and both static and dynamic hidden fields to correctly display messages when required fields are empty. Now the field validation is visible to the user.
-
-=== "required"
+=== "disabled"
     ![requiredEmptyField.png](v2/0/15/requiredEmptyField.png)
 === "hidden"
     ![hiddenEmptyField.png](v2/0/15/hiddenEmptyField.png)

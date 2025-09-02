@@ -9,6 +9,13 @@
 * HeaderWidget
 * LevelMenu
 * Steps
+AdditionalInfo
+SuggestionPickList
+DashboardList
+EmptyWidget 
+HeaderWidget
+LevelMenu
+Steps 
 -->
 
 ## Widget Types 

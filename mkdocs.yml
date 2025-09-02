@@ -46,41 +46,42 @@ nav:
   - Field types:
       - Basic: widget/fields/fieldtypes.md
       - SearchOperation for filtering: widget/fields/filtersearchoperation.md
-      - Field input: widget/fields/field/input/input.md
+      - Field checkbox: widget/fields/field/checkbox/checkbox.md
       - Field date: widget/fields/field/date/date.md
       - Field dateTime: widget/fields/field/dateTime/dateTime.md
       - Field dateTimeWithSeconds: widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md
-      - Field time: widget/fields/field/time/time.md
-      - Field number: widget/fields/field/number/number.md
-      - Field percent: widget/fields/field/percent/percent.md
-      - Field hidden: widget/fields/field/hidden/hidden.md
-      - Field text: widget/fields/field/text/text.md
-      - Field radio: widget/fields/field/radio/radio.md
-      - Field checkbox: widget/fields/field/checkbox/checkbox.md
-      - Field money: widget/fields/field/money/money.md
       - Field dictionary: widget/fields/field/dictionary/dictionary.md
       - Field fileUpload: widget/fields/field/fileUpload/fileUpload.md
-      - Field pickList: widget/fields/field/pickList/pickList.md
-      - Field inlinePickList: widget/fields/field/inlinePickList/inlinePickList.md
-      - Field suggestionPickList: widget/fields/field/suggestionpicklist/suggestionPickList.md
+      - Field hidden: widget/fields/field/hidden/hidden.md
       - Field hint: widget/fields/field/hint/hint.md
+      - Field inlinePickList: widget/fields/field/inlinePickList/inlinePickList.md
+      - Field input: widget/fields/field/input/input.md
+      - Field money: widget/fields/field/money/money.md
       - Field multifield: widget/fields/field/multifield/multifield.md
       - Field multivalue: widget/fields/field/multivalue/multivalue.md
-      - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
+      - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
+      - Field number: widget/fields/field/number/number.md
+      - Field percent: widget/fields/field/percent/percent.md
+      - Field pickList: widget/fields/field/pickList/pickList.md
+      - Field radio: widget/fields/field/radio/radio.md
+      - Field suggestionPickList: widget/fields/field/suggestionpicklist/suggestionPickList.md
+      - Field text: widget/fields/field/text/text.md
+      - Field time: widget/fields/field/time/time.md
   - Widget types:
       - Basic: widget/type/widget.md
-      - Widget Form: widget/type/form/form.md
-      - Widget Info: widget/type/info/info.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
-      - Widget List: widget/type/list/list.md
       - Widget AdditionalList: widget/type/additionallist/additionallist.md
-      - Widget FormPopup: widget/type/formpopup/formpopup.md
-      - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
-      - Widget StatsBlock: widget/type/statblocks/statblocks.md
-      - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
       - Widget FilePreview: widget/type/filepreview/filepreview.md
+      - Widget Form: widget/type/form/form.md
+      - Widget FormPopup: widget/type/formpopup/formpopup.md
+      - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
+      - Widget HeaderWidget: widget/type/headerwidget/headerwidget.md
+      - Widget Info: widget/type/info/info.md
+      - Widget List: widget/type/list/list.md
+      - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
+      - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Property:
          - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
          - Export:

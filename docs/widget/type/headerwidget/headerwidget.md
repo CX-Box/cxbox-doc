@@ -12,7 +12,7 @@
 === "Header widget"
     ![onlyheaderwidget.png](onlyheaderwidget.png)
 === "Header widget with other widget"
-    ![headerwidget.md](headerwidget.md)
+    ![headerwidget.png](headerwidget.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example

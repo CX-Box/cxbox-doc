@@ -18,7 +18,6 @@
 ??? Example
     
     **Step1** Create file **_.widget.json_**. with  type = **"HeaderWidget"**
-    Add existing field to a headerwidget widget. see more [Fields](#fields)
 
     ```json
        --8<--
@@ -30,7 +29,7 @@
 
     ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/headerwidget/base/onefield/myexample5021.view.json
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/base/myexample5021.view.json
         --8<--
     ```
 
@@ -57,25 +56,29 @@ There are types of:
 #### How to add?
 ??? Example
     === "Constant title"
-        **Step1** Add name for **title** to **_.widget.json_**.
+        **Step1** Add name for **title** to **_.widget.json_**. 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/headerwidget/title/MyExample5027Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/title/myExample5027const.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5027){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title/myExample5027const.widget.json){:target="_blank"}
 
     === "Calculated title"
         <!--родитель??-->
-        **Step1** Add ${customField} for **title** to **_.widget.json_**.
+        **Step1** Add ${customField} for **title** to **_.widget.json_**. Add `customField` with type `hidden`  to corresponding ****_.widget.json_** **. 
+
+        !!! info
+            To ensure a field value is received by the frontend and displayed in the header, it must be specified within the `fields` array.
+        
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/headerwidget/title/myExample5027.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5027/view/myexample5027form){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title/myExample5027form.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title/myExample5027.widget.json){:target="_blank"}
 
 ### <a id="TitleColor">Title Color</a>
  
@@ -110,9 +113,30 @@ There are types of:
         --8<--
         ```   
  
-        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+        **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
+        with the bgColorKey property.
+
+        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
 
         Add in `title` field with `${customField}` 
+
+        ```json
+        {
+        "label": "Custom Field",
+        "key": "customFieldText",
+        "type": "input",
+        "bgColorKey": "customFieldTextColor"
+        }
+        ```
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/colortitle/myExample5024Form.widget.json
+        --8<--
+        ```     
+
+        **Step 3** Add in `title` field with `${customField} . Add field to the `fields` array.
+        
 
         ```json
         --8<--
@@ -128,6 +152,10 @@ There are types of:
         Add **"bgColor"** :  `HEX color`  to .widget.json.
 
         Add in `title` field with `${customField}` 
+
+        !!! info
+            To ensure a field value is received by the frontend and displayed in the header, it must be specified within the `fields` array.
+        
 
         ```json
         --8<--
@@ -151,7 +179,12 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
- 
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5030form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/byparententity){:target="_blank"}
+
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
@@ -161,7 +194,8 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
     ![headerwidget.png](headerwidget.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
-
+=== "show condition by parent entity"
+    ![show_cond.gif](show_cond.gif)
 
 ### <a id="howtoadd">How to add?</a>
 ??? Example
@@ -182,6 +216,15 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5026form){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/bycurrententity){:target="_blank"}
 
+    === "show condition by parent entity"
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/myexample5029Header.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5030form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/headerwidget/byparententity){:target="_blank"}
  
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this headerwidget belongs.
@@ -236,9 +279,15 @@ Type: hidden.
         Add field to **_.widget.json_**.
 
         ```json
-           --8<--
-           {{ external_links.github_raw_doc }}/widgets/headerwidget/base/myExample5021HeaderWidget.widget.json
-           --8<--
+        "name": "myexampleHeader",
+        "title": "Header Widget",
+        "type": "HeaderWidget",
+        "bc": "myexample",
+        {
+            "label": "Custom Field",
+            "key": "customField",
+            "type": "hidden"
+        }
         ```
         
 see more  [Fields](/widget/fields/fieldtypes/)

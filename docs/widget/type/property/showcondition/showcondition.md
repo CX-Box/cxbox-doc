@@ -47,25 +47,28 @@ Description:  Value of the field  for the show condition to be met..
 Type: String/boolean/number/null (required).
 
 ## How does it look? 
+ 
+*   AdditionalInfo widget - not applicable
+*   [EmptyWidget](/widget/type/emptywidget/emptywidget/#howdoesitlook)
+*   Form Popup widget - not applicable
+*   [Form widget](/widget/type/form/form/#howdoesitlook)
+*   [HeaderWidget](/widget/type/headerwidget/headerwidget.md/#howdoesitlook)
+*   [Info widget](/widget/type/info/info.md/#howdoesitlook)
+*   [List widget](/widget/type/list/list/#howdoesitlook)
+*   PickListPopup widget - not applicable
+*   Statistics blocks widget - not applicable
 
-* [Form widget](/widget/type/form/form/#howdoesitlook)
-* [Info widget](/widget/type/info/info.md/#howdoesitlook)
-* [List widget](/widget/type/list/list/#howdoesitlook)
-* Form Popup widget - not applicable 
-* AdditionalInfo widget - not applicable
-* Statistics blocks widget - not applicable
-* PickListPopup widget - not applicable
+## How to add? 
 
-
-## How to add?
-
-* [Form widget](/widget/type/form/form/#howtoadd)
-* [Info widget](/widget/type/info/info.md/#howtoadd)
-* [List widget](/widget/type/list/list/#howtoadd)
-* Form Popup widget - not applicable
-* AdditionalInfo widget - not applicable
-* Statistics blocks widget - not applicable
-* PickListPopup widget - not applicable
+*   AdditionalInfo widget - not applicable
+*   [EmptyWidget](/widget/type/emptywidget/emptywidget/#howtoadd)
+*   Form Popup widget - not applicable
+*   [Form widget](/widget/type/form/form/#howtoadd)
+*   [HeaderWidget](/widget/type/headerwidget/headerwidget.md/#howtoadd)
+*   [Info widget](/widget/type/info/info.md/#howtoadd)
+*   [List widget](/widget/type/list/list/#howtoadd)
+*   PickListPopup widget - not applicable
+*   Statistics blocks widget - not applicable
 
 ## Deprecated functions
 

@@ -1,35 +1,57 @@
 # Widget
 <!-- 
 ## Widget Type Family
-* Info: [Base widget - Info widget](/widget/type/info/info.md) 
-* Form: [Base widget - Form widget](/widget/type/form/form)
-* List: [Base widget - List widget](/widget/type/list/list) 
-* GroupingHierarchy: [Base widget - GroupingHierarchy widget](docs/widget/type/groupinghierarchy/groupinghierarchy)
-* StatsBlock: [Base widget - Statistics blocks widget](widget/type/statblocks/statblocks)
-* HeaderWidget
-* LevelMenu
-* Steps
+
 AdditionalInfo
 SuggestionPickList
 DashboardList
-EmptyWidget 
-HeaderWidget
+ 
 LevelMenu
 Steps 
 -->
 
+
 ## Widget Types 
- 
-* [Form widget](/widget/type/form/form) is a component for data viewing and editing. 
-* [Info widget](/widget/type/info/info.md) is a component only for data viewing.
-* [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
-* [AdditionalList widget](/widget/type/additionallist/additionallist.md) is list the general information for many records. Widget is always located **on the left**.* [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the left**.
-* [Statistics blocks widget](/widget/type/statblocks/statblocks) is a tool designed to display aggregated data in a visually accessible format.
-* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup) is a component that allows the user to select a value from a Popup list of entities.
-* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
-* [FormPopup widget](/widget/type/formpopup/formpopup) is a component for additional field checks in popup and the ability to add information inside the popup.
-* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy) presents shared information across multiple records, enabling rows to be grouped by one or more specified fields.  
-* [FilePreview widget](/widget/type/filepreview/filepreview) is a component for file viewing.  It always occupies 50% of the main screen area and stays fixed at the top while scrolling.  
+=== "AdditionalInfo"
+    ![additionalinfo.png](additionalinfo/additionalinfo.png)
+=== "AdditionalList"
+    ![basic.png](additionallist/basic.png)
+=== "AssocListPopup"
+    ![assoc.png](assoclistpopup/assoc.png)
+=== "EmptyWidget"
+    ![emptywidget.png](emptywidget/emptywidget.png)
+=== "FilePreview"
+    ![filepreview.png](filepreview/filepreview.png)
+=== "Form"
+    ![formwidget.png](form/formwidget.png)
+=== "FormPopup"
+    ![formpopup.png](formpopup/formpopup.png)
+=== "GroupingHierarchy"
+    ![gh.png](groupinghierarchy/gh.png)
+=== "HeaderWidget"
+    ![headerwidget.png](headerwidget/headerwidget.png)
+=== "Info"
+    ![info.png](info/info.png)
+=== "List"
+    ![list.png](list/list.png)
+=== "PickListPopup"
+    ![picklist.png](picklistpopup/picklist.png)
+=== "StatsBlock"
+    ![img_stat.png](statblocks/img_stat.png)
+
+*   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the left**.
+*   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the left**.
+*   [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
+*   [EmptyWidget widget](/widget/type/emptywidget/emptywidget)
+*   [FilePreview widget](/widget/type/filepreview/filepreview) is a component for file viewing. It always occupies 50% of the main screen area and stays fixed at the top while scrolling.
+*   [Form widget](/widget/type/form/form) is a component for data viewing and editing.
+*   [FormPopup widget](/widget/type/formpopup/formpopup) is a component for additional field checks in popup and the ability to add information inside the popup.
+*   [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy) presents shared information across multiple records, enabling rows to be grouped by one or more specified fields.
+*   [HeaderWidget widget](/widget/type/headerwidget/headerwidget) is a component for displaying a header.
+*   [Info widget](/widget/type/info/info) is a component only for data viewing.
+*   [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
+*   [PickListPopup widget](/widget/type/picklistpopup/picklistpopup) is a component that allows the user to select a value from a Popup list of entities.
+*   [StatsBlock widget](/widget/type/statblocks/statblocks) is a tool designed to display aggregated data in a visually accessible format.
 
 ## Structure .widget.json
 

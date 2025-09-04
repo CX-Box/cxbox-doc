@@ -22,7 +22,7 @@
 
     ```json
        --8<--
-       {{ external_links.github_raw_doc }}/widgets/emptywidget/base/myExample5022EmptyWidget.widget.json
+       {{ external_links.github_raw_doc }}/widgets/emptywidget/base/myexample5022EmptyWidget.widget.json
        --8<--
     ```
 
@@ -70,7 +70,7 @@ There are types of:
         <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
 
-        Dynamic data output in the title only works if these fields are displayed on or passed as the hidden type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+        Dynamic data output in the title only works if these fields are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
 
         ```java
         --8<--
@@ -113,12 +113,10 @@ There are types of:
         --8<--
         ```   
  
-         **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
+         **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info)
         with the bgColorKey property.
 
-        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
-
-        Add in `title` field with `${customField}` 
+        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info))
 
         ```json
         {
@@ -131,7 +129,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5032Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myexample5031Form.widget.json
         --8<--
         ```     
 
@@ -139,7 +137,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5032emptywidget.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5031EmptyWidget.widget.json
         --8<--
         ```     
 
@@ -147,9 +145,9 @@ There are types of:
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/colortitle){:target="_blank"}
 
     === "Constant color"
-        Constant color in the title only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+        Constant color in the title only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
 
-        Add **"bgColor"** :  `HEX color`  to .widget.json.([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+        Add **"bgColor"** :  `HEX color`  to .widget.json.([List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
 
         Add in `title` field with `${customField}` 
  
@@ -177,7 +175,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/byparententity){:target="_blank"}
 
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
@@ -202,7 +200,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/base){:target="_blank"}
 
     === "show condition by current entity"
-        `showCondition` only works if these fields for showCondition are displayed on or passed as the hidden type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+        `showCondition` only works if these fields for showCondition are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
 
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -215,16 +213,16 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/bycurrententity){:target="_blank"}
 
     === "show condition by parent entity"
-        `showCondition` only works if these fields for showCondition are displayed on or passed as the hidden type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+        `showCondition` only works if these fields for showCondition are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
 
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
+        {{ external_links.github_raw_doc }}/widgetsshowcondition/byparententity/child/myexample5037Empty.widget.json
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5033/view/myexample5036form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/byparententity){:target="_blank"}
 
  
 ## <a id="bc">Business component</a>

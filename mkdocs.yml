@@ -73,6 +73,7 @@ nav:
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
       - Widget AdditionalList: widget/type/additionallist/additionallist.md
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
+      - Widget EmptyWidget: widget/type/emptywidget/emptywidget.md
       - Widget FilePreview: widget/type/filepreview/filepreview.md
       - Widget Form: widget/type/form/form.md
       - Widget FormPopup: widget/type/formpopup/formpopup.md

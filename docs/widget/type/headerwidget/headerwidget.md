@@ -30,7 +30,7 @@
 
     ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/headerwidget/base/onefield/myexample5021.view.json
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/base/myexample5021.view.json
         --8<--
     ```
 
@@ -151,7 +151,12 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
- 
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5030form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/byparententity){:target="_blank"}
+
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
@@ -161,7 +166,8 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
     ![headerwidget.png](headerwidget.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
-
+=== "show condition by parent entity"
+    ![show_cond.gif](show_cond.gif)
 
 ### <a id="howtoadd">How to add?</a>
 ??? Example
@@ -182,6 +188,15 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5026form){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/bycurrententity){:target="_blank"}
 
+    === "show condition by parent entity"
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/myexample5029Header.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5030form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/headerwidget/byparententity){:target="_blank"}
  
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this headerwidget belongs.
@@ -236,9 +251,15 @@ Type: hidden.
         Add field to **_.widget.json_**.
 
         ```json
-           --8<--
-           {{ external_links.github_raw_doc }}/widgets/headerwidget/base/myExample5021HeaderWidget.widget.json
-           --8<--
+        "name": "myexampleHeader",
+        "title": "Header Widget",
+        "type": "HeaderWidget",
+        "bc": "myexample",
+        {
+            "label": "Custom Field",
+            "key": "customField",
+            "type": "hidden"
+        }
         ```
         
 see more  [Fields](/widget/fields/fieldtypes/)

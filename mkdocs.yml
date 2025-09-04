@@ -44,7 +44,7 @@ nav:
           - Add widget: gettingstarted/microservice/addwidget.md
           - Add field: gettingstarted/microservice/addfield.md
   - Field types:
-      - Basic: widget/fields/fieldtypes.md
+      - Fields: widget/fields/fieldtypes.md
       - SearchOperation for filtering: widget/fields/filtersearchoperation.md
       - Field checkbox: widget/fields/field/checkbox/checkbox.md
       - Field date: widget/fields/field/date/date.md
@@ -69,7 +69,7 @@ nav:
       - Field text: widget/fields/field/text/text.md
       - Field time: widget/fields/field/time/time.md
   - Widget types:
-      - Basic: widget/type/widget.md
+      - Widgets: widget/type/widget.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
       - Widget AdditionalList: widget/type/additionallist/additionallist.md
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md

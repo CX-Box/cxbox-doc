@@ -18,7 +18,6 @@
 ??? Example
     
     **Step1** Create file **_.widget.json_**. with  type = **"HeaderWidget"**
-    Add existing field to a headerwidget widget. see more [Fields](#fields)
 
     ```json
        --8<--
@@ -57,25 +56,29 @@ There are types of:
 #### How to add?
 ??? Example
     === "Constant title"
-        **Step1** Add name for **title** to **_.widget.json_**.
+        **Step1** Add name for **title** to **_.widget.json_**. 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/headerwidget/title/MyExample5027Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/title/myExample5027const.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5027){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title/myExample5027const.widget.json){:target="_blank"}
 
     === "Calculated title"
         <!--родитель??-->
-        **Step1** Add ${customField} for **title** to **_.widget.json_**.
+        **Step1** Add ${customField} for **title** to **_.widget.json_**. Add `customField` with type `hidden`  to corresponding ****_.widget.json_** **. 
+
+        !!! info
+            To ensure a field value is received by the frontend and displayed in the header, it must be specified within the `fields` array.
+        
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/headerwidget/title/myExample5027.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5027/view/myexample5027form){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title/myExample5027form.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/title/myExample5027.widget.json){:target="_blank"}
 
 ### <a id="TitleColor">Title Color</a>
  
@@ -110,9 +113,30 @@ There are types of:
         --8<--
         ```   
  
-        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+        **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
+        with the bgColorKey property.
+
+        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
 
         Add in `title` field with `${customField}` 
+
+        ```json
+        {
+        "label": "Custom Field",
+        "key": "customFieldText",
+        "type": "input",
+        "bgColorKey": "customFieldTextColor"
+        }
+        ```
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/colortitle/myExample5024Form.widget.json
+        --8<--
+        ```     
+
+        **Step 3** Add in `title` field with `${customField} . Add field to the `fields` array.
+        
 
         ```json
         --8<--
@@ -128,6 +152,10 @@ There are types of:
         Add **"bgColor"** :  `HEX color`  to .widget.json.
 
         Add in `title` field with `${customField}` 
+
+        !!! info
+            To ensure a field value is received by the frontend and displayed in the header, it must be specified within the `fields` array.
+        
 
         ```json
         --8<--

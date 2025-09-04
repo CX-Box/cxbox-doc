@@ -1,9 +1,8 @@
 # EmptyWidget
  
-`EmptyWidget` widget is a component for displaying text or hidden data.
+`EmptyWidget` widget is a component for displaying text.
 
-* does not support control elements (e.g., action buttons or menus).
-* purpose is to display information or service fields within the current screen.
+* does not support control elements (e.g., action buttons or menus) and fields.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5022){:target="_blank"} ·
@@ -13,14 +12,13 @@
     ![onlyemptywidget.png](onlyemptywidget.png)
 === "Empty widget with other widget"
     ![emptywidget.png](emptywidget.png)
-=== "EmptyWidget and HeaderWidget"
+=== "EmptyWidget and emptywidget"
     ![emptyheaderwidget.png](emptyheaderwidget.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
-    R
+ 
     **Step1** Create file **_.widget.json_**. with  type = **"EmptyWidget"**
-    Add existing field to a emptywidget widget. see more [Fields](#fields)
 
     ```json
        --8<--
@@ -32,7 +30,7 @@
 
     ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/base/onefield/myexample5022.view.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/base/myexample5022empty.view.json
         --8<--
     ```
 
@@ -71,6 +69,9 @@ There are types of:
     === "Calculated title"
         <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
+
+        Dynamic data output in the title only works if these fields are displayed on or passed as the hidden type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myExample5034.widget.json
@@ -112,13 +113,33 @@ There are types of:
         --8<--
         ```   
  
-        **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
+         **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
+        with the bgColorKey property.
+
+        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
 
         Add in `title` field with `${customField}` 
 
         ```json
+        {
+        "label": "Custom Field",
+        "key": "customFieldText",
+        "type": "input",
+        "bgColorKey": "customFieldTextColor"
+        }
+        ```
+
+        ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5031EmptyWidget.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5032Form.widget.json
+        --8<--
+        ```     
+
+         **Step 3** Add in `title` field with `${customField} . 
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5032emptywidget.widget.json
         --8<--
         ```     
 
@@ -126,11 +147,12 @@ There are types of:
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/colortitle){:target="_blank"}
 
     === "Constant color"
- 
-        Add **"bgColor"** :  `HEX color`  to .widget.json.
+        Constant color in the title only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+
+        Add **"bgColor"** :  `HEX color`  to .widget.json.([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
 
         Add in `title` field with `${customField}` 
-
+ 
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5031EmptyWidgetConstColor.widget.json
@@ -149,7 +171,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 
 * `no show condition - recommended`: widget always visible
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5026form){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5033/view/myexample5033form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
@@ -169,28 +191,32 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 === "show condition by parent entity"
-![show_cond.gif](show_cond.gif)
+    ![show_cond.gif](show_cond.gif)
 
 ### <a id="howtoadd">How to add?</a>
 ??? Example
 
     === "no show condition"
         see [Basic](#Howtoaddbacis)
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5021){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5022){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/base){:target="_blank"}
 
     === "show condition by current entity"
+        `showCondition` only works if these fields for showCondition are displayed on or passed as the hidden type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/bycurrententity/myExample5026.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/bycurrententity/myExample5033.widget.json
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5026form){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5033/view/myexample5033form){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/bycurrententity){:target="_blank"}
 
     === "show condition by parent entity"
+        `showCondition` only works if these fields for showCondition are displayed on or passed as the hidden type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
+
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
@@ -208,58 +234,7 @@ A business component represents a specific part of a system that handles a parti
 see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="fields">Fields</a>
-This array is usually empty.
-
-However, if you need to use field values for displaying data (for example, to dynamically generate a header based on a field value see [Title Color](#TitleColor) ),
-you should add the required field with the hidden type — this way the frontend will be able to retrieve its value.
-
-
-```json
-{
-    "label": "Custom Field",
-    "key": "customField",
-    "type": "hidden"
-}
-```
-
-* **"label"**
-
-Description:  Field Title.
-
-Type: String(optional).
-
-* **"key"**
-
-Description: Name field to corresponding DataResponseDTO.
-
-Type: String(required).
-
-* **"type"**
-
-Description: [Field hidden](/widget/fields/field/hidden/hidden/)
-
-Type: hidden.
-
-### How to add?
-??? Example
-
-    === "With plugin(recommended)"
-        **Step 1** Download plugin
-            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
-    
-        **Step 2** Add existing field to an existing emptywidget widget
-            ![addfield.gif](addfield.gif)
-
-    === "Example of writing code"
-        Add field to **_.widget.json_**.
-
-        ```json
-           --8<--
-           {{ external_links.github_raw_doc }}/widgets/emptywidget/base/myExample5021EmptyWidget.widget.json
-           --8<--
-        ```
-        
-see more  [Fields](/widget/fields/fieldtypes/)
+This widget type does not support fields
 
 ## Options
 This widget type does not support options

@@ -1,4 +1,4 @@
-# Widget
+# Widgets
 <!-- 
 ## Widget Type Family
 
@@ -42,7 +42,7 @@ Steps
 *   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the left**.
 *   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the left**.
 *   [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
-*   [EmptyWidget widget](/widget/type/emptywidget/emptywidget)
+*   [EmptyWidget widget](/widget/type/emptywidget/emptywidget) is a component for displaying text.
 *   [FilePreview widget](/widget/type/filepreview/filepreview) is a component for file viewing. It always occupies 50% of the main screen area and stays fixed at the top while scrolling.
 *   [Form widget](/widget/type/form/form) is a component for data viewing and editing.
 *   [FormPopup widget](/widget/type/formpopup/formpopup) is a component for additional field checks in popup and the ability to add information inside the popup.

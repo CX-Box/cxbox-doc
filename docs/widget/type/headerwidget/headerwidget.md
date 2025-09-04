@@ -113,7 +113,7 @@ There are types of:
         --8<--
         ```   
  
-        **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the hidden type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
+        **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
         with the bgColorKey property.
 
         Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
@@ -236,7 +236,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 This array is usually empty.
 
 However, if you need to use field values for displaying data (for example, to dynamically generate a header based on a field value see [Title Color](#TitleColor) ),
-you should add the required field with the hidden type — this way the frontend will be able to retrieve its value.
+you should add the required field with the [Field hidden](/widget/fields/field/hidden/hidden/) type — this way the frontend will be able to retrieve its value.
 
 
 ```json

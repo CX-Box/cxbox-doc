@@ -218,7 +218,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgetsshowcondition/byparententity/child/myexample5037Empty.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/byparententity/child/myexample5037Empty.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5033/view/myexample5036form){:target="_blank"} ·

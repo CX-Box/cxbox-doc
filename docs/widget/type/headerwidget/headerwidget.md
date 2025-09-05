@@ -220,7 +220,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/myexample5029Header.widget.json
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/showcondition/bycurrententity/myExample5026.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5030form){:target="_blank"} ·

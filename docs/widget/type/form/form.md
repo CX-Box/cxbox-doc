@@ -648,9 +648,5 @@ With `Edit with view`, you can edit the entity from a separate view that display
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
 
-## Additional properties
-### Multi-upload files
-We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
-see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
  

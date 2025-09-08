@@ -7,10 +7,8 @@ We have implemented multi-file upload. You can use a dedicated drag-and-drop zon
 
 This feature supports the following types:
 
-* [Form widget](/widget/type/form/form)
 * [List widget](/widget/type/list/list)
 * [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
-
 
 This feature supports only field [fileUpload](/widget/fields/field/fileUpload/fileUpload)
 

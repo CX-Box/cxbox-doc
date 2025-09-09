@@ -12,12 +12,32 @@ This feature supports the following types:
 
 This feature supports only field [fileUpload](/widget/fields/field/fileUpload/fileUpload)
 
+The interface supports three distinct modes for displaying the bulk file upload functionality, allowing for flexible user experience configuration:
+
+1. Combined Mode (Button + Multi-upload)
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
+
+This mode displays both a button to trigger the upload dialog and a drag-and-drop widget, giving the user maximum choice in how they initiate the upload.
+
+2. Button-Only Mode (Button)
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
+
+This mode is designed to display only a button. Clicking it opens the operating system's standard file selection dialog for bulk uploading files.
+
+3. Widget-Only Mode (Multi-upload files)
+This mode displays only the interactive drag-and-drop upload widget, without a separate button.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
+
 ##### How does it look?
-=== "Button And Multi-upload files"
+=== "Combined Mode (Button + Multi-upload)"
     ![default-and-file-upload-dnd.png](default-and-file-upload-dnd.png)
-=== "Button"
+=== "Button-Only Mode (Button)"
     ![default-mode.png](default-mode.png)
-=== "Multi-upload files"
+=== "Widget-Only Mode (Multi-upload files)"
     ![file-upload-dnd.png](file-upload-dnd.png)
 
 There are five main colors used for the progress bar and icon:

@@ -1,20 +1,18 @@
 # Statistics blocks
 `Statistics blocks`  widget is a  tool designed to display aggregated data in a visually accessible format. This data can be sourced either from a database or from external sources.
 
+The current number of columns per row is set to 3.
+
 ## Basics
-You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
-
-`Custom fields`:
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4200){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/customfields){:target="_blank"}
-
-`Default fields`:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4203){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/defaultfields){:target="_blank"}
 
 ### How does it look?
-![img_stat.png](img_stat.png)
 
+=== "With color" 
+    ![img_stat_basic_color.png](img_stat_basic_color.png)
+=== "Without color"
+    ![img_stat.png](img_stat.png)
 
 ### How to add?
 ??? Example
@@ -72,6 +70,9 @@ You have the option to utilize custom field names for standard properties such a
         !!! tips
             To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4203){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/defaultfields){:target="_blank"}
+
     === "Custom name fields"
         You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
 
@@ -115,7 +116,8 @@ You have the option to utilize custom field names for standard properties such a
         **Step5** Create **Widget** with  type **StatsBlock** 
         !!! tips
             **fields**.We recommend including all fields used in the widget within this block. This maintains the principle of consistency in your application
-        **options.stats** - This map how custom fields are matched to standard properties.    
+            **options.stats** - This map how custom fields are matched to standard properties. 
+
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
@@ -124,6 +126,9 @@ You have the option to utilize custom field names for standard properties such a
 
         !!! tips
             To display statistical blocks on the same screen where data is added, you need to add **RefreshBC** property.
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4200){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/customfields){:target="_blank"}
 
 
 ## Main visual parts
@@ -199,12 +204,17 @@ see [Actions](/features/element/actions/actions)
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
 
 Icon - picture representing a particular function.Optional
-[Example icon](https://3x.ant.design/components/icon/))
+<a id="standard_icons">Standard icons</a>
+Cxbox-ui already includes this icon library.
+
+[Ant Design icons](https://3x.ant.design/components/icon/)
 
 There are types of:
 
 * `icon`.
 * `icon empty`.
+
+ 
 
 #### How does it look?
 === "Icon"
@@ -240,7 +250,7 @@ There are types of:
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4206){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4205){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/colorconst){:target="_blank"}
 
 #### How does it look?
@@ -314,7 +324,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         {{ external_links.github_raw_doc }}/widgets/statsblock/fieldslayoute/MyExample4228Stat6.view.json
         --8<--
         ```
-### Drilldown
+### Drilldown  
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4208){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown){:target="_blank"}
 
@@ -344,5 +354,88 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     **Option 2**
        Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+
+ 
+
+### Highlighting Functionality
+
+Added Highlighting Functionality for the Current Item (Tile)
+
+**Parent-Child Hierarchy**: 
+
+This approach implements a parent-child widget dependency, which introduces the following behavioral specifics:
+
+1.  **Initialization and Cursor Focus**
+    *   Upon screen opening, the cursor is automatically set to the first record in the dataset received by the parent widget.
+
+2.  **Mandatory "All Records" Entry**
+    *   For the filtering mechanism to function correctly, the parent widget **must** include a static "All Records" entry (or an equivalent item).
+    *   **Purpose:** When this item is selected, the child table widget should display all available records without applying any filters based on the parent widget's selection. This entry should typically be the first item in the list and selected by default during initialization.
+
+3.  **Restriction for Parent Widget (StatsBlock)**
+    *   If the parent widget is a statistical block (StatsBlock), its configuration **must not** use drilldowns, as the navigational function is already handled by its linkage to the child widget.
+
+ 
+#### How does it look?
+![highlighting.gif](highlighting.gif)
+
+#### How to add?
+??? Example
+
+    !!! info
+        For the parent-child dependency to work, the IDs assigned to StatBlock widgets must be of type **long**.
+
+    `Step 1` Add dependency parent/child  to corresponding **EnumBcIdentifier**.
+    
+    parent -> bc for StatsBlock
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/CxboxMyExample4216Controller.java:bc
+    --8<--
+    ```
+ 
+    `Step 2` Add **getParentSpecification** to corresponding **ResponseService**.
+     Add filtering based on the assigned IDs corresponding **Dao*.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/data/MyExample4216Service.java:getParentSpecification
+    --8<--
+    ```
+    `Step 2` Add **bcCursor** to corresponding **widget.json**.
+    A new `bcCursor` option has been introduced to control the visual highlighting of the selected UI element.
+
+    *   **`bcCursor: show`**
+    When this option is enabled, the selected item is highlighted. Additionally, for parent items, the system automatically displays the child widgets associated with the selected tile.
+
+    *   **`bcCursor: none`** (default value)
+      Default mode. Visual highlighting of the active element is disabled. The interface behavior corresponds to the previous version.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/example4127Stats.widget.json
+    --8<--
+    ```
+#### Configuring selected item opacity
+
+The transparency of the visual highlight for a selected widget element is controlled by the `selectedItemOpacity` constant.
+
+**Location:**
+`ui/src/components/widgets/StatsBlock/constants.ts`
+
+**Current Value:**
+`0.5` (50% opacity / 50% transparent)
+
+#### Configuring number of columns
+If needed, you can change this in the frontend component settings in StatsBlock.tsx using the grid prop. 
+
+Example: grid={{ gutter: 16, sm: 3, column: 6 }} - which results in 3 columns.
+
+**Location:**
+`ui/src/components/widgets/StatsBlock/StatsBlock.tsx`
+
+**Current Value:**
+`3`  which results in 3 columns
 
 [Advanced customization](/advancedCustomization_drillDown)

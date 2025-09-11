@@ -325,8 +325,8 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         --8<--
         ```
 ### Drilldown  
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4208){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
 
@@ -341,29 +341,31 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 1` Add [fields.setDrilldown](/features/element/drilldown/drilldown) to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/MyExample4210Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/drilldown/MyExample4210Meta.java:buildRowDependentMeta
     --8<--
     ```
 
     `Step 2` Add **"drillDown": "true"**  to .widget.json.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/MyExample4210List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/drilldown/MyExample4210List.widget.json
     --8<--
     ```
 
     **Option 2**
        Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
- 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/drilldown){:target="_blank"}
+
 
 ### Highlighting Functionality
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210/view/myexample4216list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/parentchild){:target="_blank"}
 
-Added Highlighting Functionality for the Current Item (Tile)
+Highlighting Functionality for the Current Item (Tile)
 
-**Parent-Child Hierarchy**: 
-
-This approach implements a parent-child widget dependency, which introduces the following behavioral specifics:
+**Parent-Child Hierarchy**. This approach implements a parent-child widget dependency, which introduces the following behavioral specifics:
 
 1.  **Initialization and Cursor Focus**
     *   Upon screen opening, the cursor is automatically set to the first record in the dataset received by the parent widget.
@@ -375,6 +377,7 @@ This approach implements a parent-child widget dependency, which introduces the 
 3.  **Restriction for Parent Widget (StatsBlock)**
     *   If the parent widget is a statistical block (StatsBlock), its configuration **must not** use drilldowns, as the navigational function is already handled by its linkage to the child widget.
 
+4. Tabs are not to be used
  
 #### How does it look?
 ![highlighting.gif](highlighting.gif)
@@ -416,6 +419,10 @@ This approach implements a parent-child widget dependency, which introduces the 
     {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/example4127Stats.widget.json
     --8<--
     ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210/view/myexample4216list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/parentchild){:target="_blank"}
+
+
 ### Configuring selected item opacity
 
 The transparency of the visual highlight for a selected widget element is controlled by the `selectedItemOpacity` constant.

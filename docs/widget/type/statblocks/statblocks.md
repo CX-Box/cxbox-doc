@@ -381,7 +381,6 @@ This approach implements a parent-child widget dependency, which introduces the 
 
 #### How to add?
 ??? Example
-
     !!! info
         For the parent-child dependency to work, the IDs assigned to StatBlock widgets must be of type **long**.
 
@@ -417,25 +416,22 @@ This approach implements a parent-child widget dependency, which introduces the 
     {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/example4127Stats.widget.json
     --8<--
     ```
-#### Configuring selected item opacity
+### Configuring selected item opacity
 
 The transparency of the visual highlight for a selected widget element is controlled by the `selectedItemOpacity` constant.
 
-**Location:**
-`ui/src/components/widgets/StatsBlock/constants.ts`
+**Location:** ui/src/components/widgets/StatsBlock/constants.ts
 
-**Current Value:**
-`0.5` (50% opacity / 50% transparent)
+**Current Value:** 0.5 (50% opacity / 50% transparent)
 
-#### Configuring number of columns
+### Configuring number of columns
 If needed, you can change this in the frontend component settings in StatsBlock.tsx using the grid prop. 
 
-Example: grid={{ gutter: 16, sm: 3, column: 6 }} - which results in 3 columns.
+Example: `gutter: 16, sm: 3, column: 6`- which results in 3 columns.
 
-**Location:**
-`ui/src/components/widgets/StatsBlock/StatsBlock.tsx`
+**Location:** ui/src/components/widgets/StatsBlock/StatsBlock.tsx
 
-**Current Value:**
+**Current Value:** 
 `3`  which results in 3 columns
 
 [Advanced customization](/advancedCustomization_drillDown)

@@ -220,126 +220,135 @@ Adding **MultipleSelect** field now utilizes a new method for `buildRowDependent
 ![multiple.gif](../new/v2.0.10/multiple.gif)
 
 ## [v2.0.9](/new/version209/)
-
-### Intellij 2024.3+ support
-
-### Autocomplete, Ctrl-click navigation and inspection for @SearchParameter
+#### New: Intellij 2024.3+ support
+Intellij 2024.3+ support
+#### New: Autocomplete, Ctrl-click navigation and inspection for @SearchParameter
 Autocomplete, Ctrl-click navigation and inspection for @SearchParameter name parameter containing path to Hibernate entity field. Inspection highlights 2 simple but usefully cases: not existing fields references (most common error) and not finished path (expression not ending with hibernate @Column field)
 
-#### Autocomplete
-![autocomplete.gif](v209/autocomplete.gif)
+* Autocomplete:
+  ![autocomplete.gif](../new/v2.0.9/autocomplete.gif)
 
-#### Ctrl-click navigation
-![navigation.gif](v209/navigation.gif)
+* Ctrl-click navigation
+  ![navigation.gif](../new/v2.0.9/navigation.gif)
 
-#### Inspection
-![inspection.gif](v209/inspection.gif)
+* Inspection
+  ![inspection.gif](../new/v2.0.9/inspection.gif)
 
-#### Refactoring
-![refactor.gif](v209/refactor.gif)
+* Refactoring
+  ![refactor.gif](../new/v2.0.9/refactor.gif)
 
-### Actions in .widget.json 
+#### New. Actions in .widget.json
 Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
 
-### Plus icon and code generation
+##### Plus icon and code generation
 We can now generate java boilerplate for new action and navigate to it immediately!
-![actions.gif](v209/actions.gif)
+![actions.gif](../new/v2.0.9/actions.gif)
 
-### **Actions - `string` in .widget.json support:**
+##### **Actions - `string` in .widget.json support:**
 
-#### Ctrl-click navigation
+###### Ctrl-click navigation
 Service  -> .widget.json, .widget.json -> Service:
-  ![navigation_action.gif](v209/navigation_action.gif)
+![navigation_action.gif](../new/v2.0.9/navigation_action.gif)
 
-#### Autocomplete
-![autocomplete_action.gif](v209/autocomplete_action.gif)
+###### Autocomplete
+![autocomplete_action.gif](../new/v2.0.9/autocomplete_action.gif)
 
-#### Inspection
-![inspection_action.gif](v209/inspection_action.gif)
+###### Inspection
+![inspection_action.gif](../new/v2.0.9/inspection_action.gif)
 
-#### Refactoring
-![refactoring_action_string.gif](v209/refactoring_action_string.gif)
+###### Refactoring
+![refactoring_action_string.gif](../new/v2.0.9/refactoring_action_string.gif)
 
-### **Actions - `Enum` in .widget.json support:**
+##### **Actions - `Enum` in .widget.json support:**
 
-#### Ctrl-click navigation.
+###### Ctrl-click navigation.
 Service  -> .widget.json, .widget.json -> Service:
-![navigation_action_enum.gif](v209/navigation_action_enum.gif)
+![navigation_action_enum.gif](../new/v2.0.9/navigation_action_enum.gif)
 
-#### Autocomplete
-![autocomplete_action_enum.gif](v209/autocomplete_action_enum.gif)
+###### Autocomplete
+![autocomplete_action_enum.gif](../new/v2.0.9/autocomplete_action_enum.gif)
 
-#### Inspection
-![inspection_action_enum.gif](v209/inspection_action_enum.gif)
+###### Inspection
+![inspection_action_enum.gif](../new/v2.0.9/inspection_action_enum.gif)
 
-#### Refactoring
-![refactoring_action_enum.gif](v209/refactoring_action_enum.gif) 
+###### Refactoring
+![refactoring_action_enum.gif](../new/v2.0.9/refactoring_action_enum.gif)
 
-### Actions - `java constant`  in .widget.json support:
+##### Actions - `java constant`  in .widget.json support:
 
-#### Ctrl-click navigation
+###### Ctrl-click navigation
 Only .widget.json -> Service :
-![navigation_action_java_const.gif](v209/navigation_action_java_const.gif)
+![navigation_action_java_const.gif](../new/v2.0.9/navigation_action_java_const.gif)
 
-#### Autocomplete
-![autocomplete_java_const.gif](plugin%2Fautocomplete_java_const.gif)
+###### Autocomplete
+![autocomplete_java_const.gif](v2.0.9%2Fautocomplete_java_const.gif)
 
-#### Inspection
-![inspection_java_const.gif](v209/inspection_java_const.gif)
+###### Inspection
+![inspection_java_const.gif](../new/v2.0.9/inspection_java_const.gif)
 
-### Inspection viewName
+#### New. Inspection viewName
 Inspection that checks viewName is unique per screen
-![unique_view.png](v209/unique_view.png)
+![unique_view.png](v2.0.9%2Funique_view.png)
 
 Inspection that checks viewName is unique per screen (.screen.json -> navigation correctness), when type = standard is set (we skip this checks in other cases for backward compatibility with project customizations). We check:
-### Inspection that checks popupBcName in widget.json -> fields
-![picklist.png](v209/picklist.png)
+#### New. Inspection that checks popupBcName in widget.json -> fields
+![picklist.png](../new/v2.0.9/picklist.png)
 
 Inspection that checks popupBcName in widget.json -> fields must be child for owning widget bc. Inspection checks this only for fields with type picklist
-### Inspection that checks actionGroups in widget.json
-![action_group.png](v209/action_group.png)
+#### New. Inspection that checks actionGroups in widget.json
+![action_group.png](../new/v2.0.9/action_group.png)
 
 Inspection that checks actionGroups in widget.json location (e.g. it is located in options tag)
 
 ## [v2.0.7](/new/version207/)
-### *.widget.json - auto-completion and navigation for `actionKey`
+
+#### Added: *.screen.json - inspection when "type" : "standard"
+
+We have added inspections for screens that have explicitly set `"type"="standard"` in .screen.json. These include making sure each `viewName` is unique, detecting empty arrays. We have also improved view generation (triggered by `+` icon click)
+
+#### Added: *.widget.json - auto-completion and navigation for `actionKey`
 
 Previous plugin versions provided navigation for actions referenced in `options->actionGroups` of .widget.json.
 In this release we added same feature for actions referenced in `options->buttons->actionKey` tag of .widget.json used for files drag-and-drop configuration.
 
-### Ctrl-click navigation
-![navigation_actionKey.gif](v207/navigation_actionKey.gif)
+![actionKey.gif](v2.0.7/actionKey.gif){width="800"}
 
-### Autocomplete
-![autocomplete_actionKey.gif](v207/autocomplete_actionKey.gif)
+#### Added: *.widget.json - inspection for actionGroups location.
 
-### Inspection
-![inspection_actionKey.gif](v207/inspection_actionKey.gif)
+We have added an inspection for `actionGroups` tag in .widget.json to ensure it is located within `options`.
 
-### Plus icon and code generation
-![plus_actionKey.gif](v207/plus_actionKey.gif)
+![actionGroupsLocation.gif](v2.0.7/actionGroupsLocation.gif){width="800"}
 
-### Refactoring
-![refactoring_actionKey.gif](v207/refactoring_actionKey.gif)
-
-[v2.0.5](/new/version205/)
-### Filtering fields of Type Hint
+## [v2.0.5](/new/version205/)
+### Fix for filtering fields of Type Hint
 The `SearchParameter` annotation was added to `Hint` fields in the DTO, enabling proper filtering functionality.
-![hint_ss.gif](v205/hint_ss.gif)
 
-### Added inspection for widget references
+#### Added quick-fix for action builder api
+You can choose to migrate actions either selectively or for the entire project to the new API.
+
+Selectively:
+
+![quickfixoneaction.gif](../new/v2.0.5/quickfixoneaction.gif)
+
+For the entire project:
+
+![quickfixallaction.gif](..%2F..%2F..%2F..%2FDownloads%2Fquickfixallaction.gif)
+
+####  Added inspection for widget references
 1. Reference and inspection for `option.create.widget` and `option.edit.widget`  
    1.1 Added references in `.widget.json` for `option.create.widget` and `option.edit.widget` to the `name` field, enabling autocomplete, navigation to usages, definition, and rename refactoring.  
-      ![create-edit-autocomplete.gif](v205/create-edit-autocomplete.gif)
-
    1.2 Error and warning inspections added for invalid widget types and missing references.  
-      ![create-edit-inspection.gif](v205/create-edit-inspection.gif)
-
+   ![create&edit_reference&inspection](../new/v2.0.5/create&edit_reference&inspection.gif)
 2. Reference and inspection for `confirmWithCustomWidget`  
    2.1 Implemented references for `confirmWithCustomWidget` method arguments to widgets in `.widget.json`, with the same autocomplete, navigation, and refactoring functionality.  
    2.2 Error and warning inspections added for invalid widget types and missing references.
-   ![confirm_with_custom_widget.gif](v205%2Fconfirm_with_custom_widget.gif)
+   ![confirmWithCustomWidget_reference&inspection](../new/v2.0.5/confirmWithCustomWidget_reference&inspection.gif)
 3. Introduced the `@WidgetName` annotation in the core, which checks the widget type via the `typePostfix` parameter to ensure the correct type is used.
 4. Expanded coverage of inspections and autocompletion for methods where arguments are annotated with `@WidgetName`.  
-  
+   ![widgetName_reference&inspection](../new/v2.0.5/widgetName_reference&inspection.gif)
 
+ 
+
+
+
+ 

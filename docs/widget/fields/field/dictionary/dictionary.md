@@ -34,7 +34,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     === "Enum"
         === "With plugin(recommended)"
             **Step 1** Download plugin
-                [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+                [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
         
             **Step 2** Add dictionary field to an existing form widget
                 ![addfield.gif](addfield.gif)

@@ -1,11 +1,12 @@
-# Create environment
+# Create  **DAO**, **DTO** , **Service**, **Controller** 
 === "With plugin(recommended)"
-    **Step 1** Download plugin
-        [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
 
-    **Step 2** Add dictionary field to an existing form widget
-        ![addfield.gif](addfield.gif)
+    **Step 2** Create  **DAO**, **DTO** , **Service**, **Controller** to an existing form widget
+
+        ![addEnviroment.gif](addfield.gif)
+
 === "Example of writing code"
+
     ## **Step1** Create DTO for integrating with microservice
     
     Create DTO for integrating with microservices through which data will be sent to the microservice

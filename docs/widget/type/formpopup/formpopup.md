@@ -212,7 +212,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://plugins.jetbrains.com/plugin/195-tesler-helper)
+            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
 

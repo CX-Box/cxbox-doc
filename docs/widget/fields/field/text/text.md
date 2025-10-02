@@ -547,3 +547,25 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample47){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/text/required){:target="_blank"}
+
+## Additional properties
+
+### Support for truncating long values
+Support for truncating long values in text fields using a frontend constant(deafult value 140). 
+
+* If the value exceeds the defined limit, it will be shortened with an ellipsis (...).
+* Hovering over the ellipsis shows the full value in a tooltip.
+
+!!! restriction
+    applies only in read-only mode. 
+
+#### How does it look?
+![long_values.png](long_values.png)
+
+#### How to add?
+??? Example
+    Change constant **text_maxDisplayed** .
+    ```
+    ui/src/components/ui/TextArea/constants.ts
+    ```
+ 

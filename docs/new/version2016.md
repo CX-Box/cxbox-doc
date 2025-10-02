@@ -67,4 +67,7 @@ See [cxbox 4.0.0-M20 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
-####  
+#### Added: Support for truncating long values
+<!-- CXBOX-1094  -->
+We have provided a description of [Support for truncating long values](https://doc.cxbox.org/widget/fields/field/text/text/#support-for-truncating-long-values).
+ 

@@ -1,46 +1,67 @@
-# View
-!!! warning line end "Work in progress"      
+## View
+
+**`View`** is the core building block of the user interface, used to form screens in the system. Each screen is created based on one or more Views, inside which various widgets are placed.
+
+A View defines:
+
+*   The structure and layout of the screen's content.
+*   The order in which widgets are displayed.
+*   The width of each widget (using an adaptive grid).
  
 
-* 
-### **2. Правила отображения виджетов**ДЛЛ
+### Adaptive Grid
 
-#### **Порядок (Position)**
-вы можете указать последовательность вывода виджетов наэкран
+The system uses a 24-column adaptive grid for placing widgets. This allows for flexible management of their positioning and interface adaptability.
 
-#### **Ширина (Grid Width)**
-Система использует адаптивную сетку шириной **24** для размещения виджетов.
-    *   `24` — виджет занимает всю доступную ширину страницы.
-        *   **Исключение:** Некоторые специальные виджеты (например, `AdditionalInfo`, `AdditionalList`) могут иметь фиксированное или иное поведение.
-    *   ` 12` — виджет занимает половину ширины контейнера (12/24 = 50%).
+| Value | Behavior |
+| :--- | :--- |
+| **24** | The widget occupies the full width of the page. *(Default)* |
+| **12** | The widget occupies half the width of the page (12/24 = 50%). |
+
+> **Note:** Some special widgets (e.g., `AdditionalList`) may ignore the standard width rules and behave differently.
+
+If two consecutive widgets have a total grid width of 24 or less, they will be placed on the same line: the first on the left, the second on the right. If the total width of the widgets exceeds 24, the following widgets are automatically moved to a new line.
+
+### Widget Display Order (`position`)
+
+Widgets inside a View are displayed in ascending order of their `position` parameter.
+
+> **Recommendation:**
+> Use increments of 10 (e.g., `10`, `20`, `30`) so that in the future you can easily insert a new widget between existing ones (e.g., at position `15`) without changing the other values.
+
  
-**Пример:**
-Если два следующих друг за другом виджета имеют  ширину` 12`, 
-они будут расположены на одном уровне — первый слева, второй справа.
-Система автоматически переносит следующие виджеты на новую строку, если их суммарная ширина превышает 24 колонки.
+### Example View Configuration
+
+| Parameter | Example Value             | Description |
+| :--- |:--------------------------| :--- |
+| **`id`** | `myexampleid`             | The unique identifier for the View in the system. |
+| **`title`** | `My Title`                | The View title displayed to the user (depends on the tab level). |
+| **`template`** | `DashboardView`           | The View template. `DashboardView` is the standard (vanilla) template. |
+| **`url`** | `myexample357listexample` | The unique URL for the View. |
+| **`rolesAllowed`** | `["CXBOX_USER"]`          | The list of roles allowed to access this View. |
  
 ### How to add?
 ??? Example
-    **Рекомендация по порядку:** Для гибкости и удобства поддержки рекомендуется назначать виджетам порядковый номер (позицию) с шагом **10** (например, 10, 20, 30...). Это позволяет в будущем легко добавлять новые виджеты между существующими (например, на позицию 15 или 25), не изменяя нумерацию всех остальных элементов.
-    
-    | Параметр | Пример значения | Описание                                                                                                            |
-    | :--- | :--- |:--------------------------------------------------------------------------------------------------------------------|
-    | **`name`** | `myexample357listexample` | Уникальный идентификатор представления в системе.                                                                   |
-    | **`title`** | `MyExample357 List` | Заголовок вью, отображается пользователю зависит от уровня в скрине смотри tab.                                     |
-    | **`template`** | `DashboardView` | Шаблон, определяющий общий макет и внешний вид интерфейса. `DashboardView` является стандартным (vanilla) шаблоном. |
-    | **`url`** | `/screen/myexample357/view/myexample357listexample` | Уникальный URL-адрес, по которому будет доступен этот экран.                                                        |
-    | **`rolesAllowed`** | `["CXBOX_USER"]` | Список ролей пользователей, которым разрешен доступ к данному представлению.                                        |
-    
-    #### **Порядок (Position)**
-        Виджеты отображаются на экране в порядке возрастания значения их позиции.
-        . Виджет с `position: 10` будет показан выше виджета с `position: 20`. \
-    **Параметр:** `gridWidth`
-        Система использует адаптивную сетку шириной **24 колонки** для размещения виджетов.
-      *   `gridWidth: 24` — виджет занимает всю доступную ширину страницы.
-          *   **Исключение:** Некоторые специальные виджеты (например, `AdditionalInfo`, `AdditionalList`) могут иметь фиксированное или иное поведение.
-      *   `gridWidth: 12` — виджет занимает половину ширины контейнера (12/24 = 50%).
-      *   **Расположение:** Если два следующих друг за другом виджета имеют `gridWidth: 12`, они будут расположены на одном уровне — первый слева, второй справа. Система автоматически переносит следующие виджеты на новую строку, если их суммарная ширина превышает 24 колонки.
+    To create a new View, you must:
 
+    1.  Set a unique `id`
+    2.  Specify `title`.
+    3.  Define the list of allowed `roles`.
+    4.  `template`= `DashboardView`
+    5.  Add URL for the view.
+    6.  Add widgets, specifying for each:
+          *   The `position` parameter (controls the display order).
+          *   The `gridWidth` parameter (controls the width in the 24-column grid). 
+
+    === "With plugin(recommended)"
+        ![addview.gif](addview.gif)
+
+    === "Example of writing code"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/getstarted/microservice/example/myexample4001form.view.json
+        --8<--
+        ```
 ## Security
 Allowed Roles
 [see more rolesAllowed](/environment/userrole/userrole/)

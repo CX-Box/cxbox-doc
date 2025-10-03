@@ -39,8 +39,11 @@ Task for the developer:
 
     ![addWidget.gif](addWidget.gif)
 
-    ## **Step5** Create  **DAO**, **DTO** , **Service**. Add to corresponding **Controller**
+    **Step5** Create  **DAO**, **DTO** , **Service**. Add to corresponding **Controller**
     ![createDaoDTOBuilder.gif](createDaoDTOBuilder.gif)
+    
+    **Step6** Add field to corresponding **widget.json**
+    see [Add field](/gettingstarted/microservice/addfield)
 
 === "Example of writing code"
 

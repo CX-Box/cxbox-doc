@@ -147,7 +147,9 @@ nav:
       - Validation: advancedCustomization/element/validation/validation.md
       - Filtration: advancedCustomization/element/filtration/filtration.md
       - SearchParameter: advancedCustomization/element/searchparameter/searchparameter.md
-  - Plugin: plugin/plugin.md
+  - Plugin:
+      Install and Update: plugin/plugininstalling.md
+      Versions: plugin/plugin.md
 
 markdown_extensions:
   - tables

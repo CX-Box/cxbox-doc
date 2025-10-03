@@ -2,8 +2,6 @@
 
 Create file  **screen.json**
 
-??? Example
-
     ```json 
     {
       "name": "myexample",

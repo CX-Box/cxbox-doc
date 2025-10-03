@@ -311,13 +311,13 @@ We have added inspections for screens that have explicitly set `"type"="standard
 Previous plugin versions provided navigation for actions referenced in `options->actionGroups` of .widget.json.
 In this release we added same feature for actions referenced in `options->buttons->actionKey` tag of .widget.json used for files drag-and-drop configuration.
 
-![actionKey.gif](v2.0.7/actionKey.gif){width="800"}
+![actionKey.gif](../new/v2.0.7/actionKey.gif){width="800"}
 
 #### Added: *.widget.json - inspection for actionGroups location.
 
 We have added an inspection for `actionGroups` tag in .widget.json to ensure it is located within `options`.
 
-![actionGroupsLocation.gif](v2.0.7/actionGroupsLocation.gif){width="800"}
+![actionGroupsLocation.gif](../new/v2.0.7/actionGroupsLocation.gif){width="800"}
 
 ## [v2.0.5](/new/version205/)
 ### Fix for filtering fields of Type Hint

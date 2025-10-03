@@ -1,19 +1,24 @@
-# Add new widget to corresponding **view.json**
-## **Step1** Create **widget.json**
+# Create and add new widget to corresponding **view.json**
+[see more about widget](/navigation/widget/widget/)
 
-??? Example
+**Step1** Create **widget.json**
 
-    ```json
-    --8<--
-        {{ external_links.github_raw_doc }}/getstarted/microservice/document/MyExample4003Form.widget.json
-    --8<--
-    ```
-## **Step2** Add widget to corresponding **view.json**
+```json
+ {
+  "name": "MyExample4001Form",
+  "title": "Form title",
+  "type": "Form",
+  "bc": "myExampleBc4001",
+  "fields": [
+  ]
+}
+```
 
-??? Example
+**Step2** Add widget to corresponding **view.json**
 
-    ```json
-    --8<--
-        {{ external_links.github_raw_doc }}/getstarted/microservice/example/myexample4001form.view.json
-    --8<--
-    ```
+
+```json
+--8<--
+    {{ external_links.github_raw_doc }}/getstarted/microservice/example/myexample4001form.view.json
+--8<--
+```

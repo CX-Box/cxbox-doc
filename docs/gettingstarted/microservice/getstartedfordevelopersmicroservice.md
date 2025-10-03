@@ -12,19 +12,35 @@ Task for the developer:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/getstarted/microservice/example){:target="_blank"}
 === "With plugin(recommended)"
 
-    ## **Step 1** [Download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+    **Step 1** [Download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
 
-    ## **Step2** Add **screen**
-    see [Add screen](/gettingstarted/microservice/addscreen)
-    
-    ## **Step3** Add **view** to corresponding **screen.json**
-    see [Add view](/gettingstarted/microservice/addview)
-    
-    ## **Step4** Add **widget** to corresponding **view.json**
-    see [Add widget](/gettingstarted/microservice/addwidget)
+    **Step2** Add **screen**
 
-    ## **Step5** ACreate  **DAO**, **DTO** , **Service**, **Controller**
-    see [Add widget](/gettingstarted/microservice/addwidget)
+    Create file  **screen.json**
+
+    ```json 
+    {
+      "name": "myexample",
+      "icon": "calendar",
+      "order": 4002,
+      "title": "Get Started example microservice",
+      "navigation": {
+        "menu": [
+        ]
+      }
+    }
+    ```
+    
+    **Step3** Create and add **view** to corresponding **screen.json**
+
+    ![addview.gif](addview.gif) 
+
+    **Step4** Create and add **widget** to corresponding **view.json**
+
+    ![addWidget.gif](addWidget.gif)
+
+    ## **Step5** Create  **DAO**, **DTO** , **Service**. Add to corresponding **Controller**
+    ![createDaoDTOBuilder.gif](createDaoDTOBuilder.gif)
 
 === "Example of writing code"
 

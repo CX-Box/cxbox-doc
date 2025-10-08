@@ -73,4 +73,8 @@ We have provided a description of [Support for truncating long values](https://d
 
 #### Added: Highlighting Functionality for the Current Item (Tile)
 <!-- CXBOX-1078  -->
-Added description -   [Highlighting Functionality for the Current Item (Tile)](https://doc.cxbox.org/widget/type/statblocks/statblocks/#highlighting-functionality).
+We added a description of [Highlighting Functionality for the Current Item (Tile)](https://doc.cxbox.org/widget/type/statblocks/statblocks/#highlighting-functionality).
+
+#### Added: Description Widget Header
+<!-- CXBOX-1061  -->
+We added a description of [Widget Header](https://doc.cxbox.org/widget/type/headerwidget/headerwidget/).

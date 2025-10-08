@@ -70,4 +70,7 @@ See [cxbox 4.0.0-M20 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 #### Added: Support for truncating long values
 <!-- CXBOX-1094  -->
 We have provided a description of [Support for truncating long values](https://doc.cxbox.org/widget/fields/field/text/text/#support-for-truncating-long-values).
- 
+
+#### Added: Highlighting Functionality for the Current Item (Tile)
+<!-- CXBOX-1078  -->
+Added description -   [Highlighting Functionality for the Current Item (Tile)](https://doc.cxbox.org/widget/type/statblocks/statblocks/#highlighting-functionality).

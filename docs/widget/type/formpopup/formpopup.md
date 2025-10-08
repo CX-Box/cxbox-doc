@@ -10,61 +10,73 @@
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
-    
-    **Step1**  Add type **"FormPopup"** to **BaseFieldExtractor**.
-    ```java
-	@Override
-	public List<String> getSupportedTypes() {
-		return Lists.newArrayList(
-				"Funnel",
-				"RingProgress",
-				"DashboardList",
-				"FormPopup"
-		);
-	}
-    ```
+    === "since 4.0.0-M16-SNAPSHOT"
 
-    **Step2**  Add file **"ActionsExt"**.
-    ```java
-    @UtilityClass
-    public class ActionsExt {
-
-        public static PreAction confirmWithCustomWidget(@Nullable String message, @Nullable String widget, @Nullable String yesButton, @Nullable String noButton) {
-            Map<String, String> customParameters = new HashMap<>();
-            customParameters.put("subtype", "confirmWithCustomWidget");
-            if (widget != null) {
-                customParameters.put("widget", widget);
-            }
-            if (yesButton != null) {
-                customParameters.put("yesText", yesButton);
-            }
-            if (noButton != null) {
-                customParameters.put("noText", noButton);
-            }
-            return PreAction.custom(message, customParameters);
+    === "before 4.0.0-M16-SNAPSHOT"
+        Add type **"FormPopup"** to **BaseFieldExtractor**.
+        ```java
+        @Override
+        public List<String> getSupportedTypes() {
+            return Lists.newArrayList(
+                    "Funnel",
+                    "RingProgress",
+                    "DashboardList",
+                    "FormPopup"
+            );
         }
+        ```
     
-    }
-    ```
-    **Step3** Add a button **"save-send"** that raises the widget Popup
+        Add file **"ActionsExt"**.
+        ```java
+        @UtilityClass
+        public class ActionsExt {
+    
+            public static PreAction confirmWithCustomWidget(@Nullable String message, @Nullable String widget, @Nullable String yesButton, @Nullable String noButton) {
+                Map<String, String> customParameters = new HashMap<>();
+                customParameters.put("subtype", "confirmWithCustomWidget");
+                if (widget != null) {
+                    customParameters.put("widget", widget);
+                }
+                if (yesButton != null) {
+                    customParameters.put("yesText", yesButton);
+                }
+                if (noButton != null) {
+                    customParameters.put("noText", noButton);
+                }
+                return PreAction.custom(message, customParameters);
+            }
+        
+        }
+        ```
+    **Step1** Add a button **"save-send"** that raises the widget Popup
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400FormButton.widget.json
     --8<--
     ```
-    **Step4** Add widget with type **FormPopup**
+    **Step2** Add widget with type **FormPopup**
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400Formpopup.widget.json
     --8<--
     ```
-    **Step5** Add widget **FormPopup** on view
+    **Step3** Add widget **FormPopup** on view
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/myexample3400formpopup.view.json
     --8<--
     ```
-    **Step6** Add **withPreAction** with action **confirmWithCommentwith**
+    **Step4** Add **withPreAction** with action **confirmWithWidget**
+     
+    Params: 
+
+    `PreAction.confirmWithWidget("myWidget", cf -> cf
+    .title("Approve?") //or withoutTitle()
+    .yesText("Yes")
+    .noText("Cancel"))`
+
+    myWidget – widget name of any *FormPopup.widget.json
+
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400Service.java

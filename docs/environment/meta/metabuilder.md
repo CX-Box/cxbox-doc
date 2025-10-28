@@ -17,8 +17,7 @@
       ```
 ### AnySourceFieldMetaBuilder
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
-
+c
 ??? Example  
 
     **Meta** extends **AnySourceFieldMetaBuilder**

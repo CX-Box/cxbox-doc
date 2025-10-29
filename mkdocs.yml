@@ -93,7 +93,8 @@ nav:
          - Pagination: widget/type/property/pagination/pagination.md
          - Sorting: widget/type/property/sorting/sorting.md
          - Show condition: widget/type/property/showcondition/showcondition.md
-
+  - About CXBOX work:
+      - Frontend - Backend Interaction: basic/frontbackinteraction.md
   - Navigation:
       - Tabs:
         - Standard:
@@ -173,9 +174,13 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       url_download: true
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 extra_css:
   - stylesheets/extra.css
 
@@ -212,6 +217,7 @@ theme:
 plugins:
   - search
   - markdownextradata
+  - mermaid2
   - redirects:
       redirect_maps:
         'widget_field_input.md': 'widget/fields/field/input/input.md'

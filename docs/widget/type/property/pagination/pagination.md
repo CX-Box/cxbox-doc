@@ -16,11 +16,30 @@ Pagination modes:
 * **nextAndPreviousWithHasNext**
 * **nextAndPreviousSmart**
 
-| API Calls (Frontend to Backend) | nextAndPreviousWithCount  | nextAndPreviousWithHasNext   | nextAndPreviousSmart    |
-|---------------------------------|---------------------------|------------------------------|-------------------------|
-| /meta                           | +                         | +                            | +                       |
-| /count                          | +                         | + (response is ignored)      | + (response is ignored) | 
-| /data                           | +                         | +                            | +                       | 
+**By default**, all widget types use the following navigation mode: `nextAndPreviousSmart`
+
+However, for certain `exception widgets,` the default navigation mode is: `nextAndPreviousWithCount`
+
+`Exception Type Widgets`: 
+
+* [List widget](/widget/type/list/list)
+* [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+* [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
+* DashboardList
+* Pie1D
+* Column2D
+* Line2D
+* DualAxes2D
+
+The /count request is executed only if there is at least one widget with the `nextAndPreviousWithCount` mode on the view.
+If such a widget is present (as specified in the view’s metadata), the /count request will be triggered.
+ 
+| API Calls (Frontend to Backend) | nextAndPreviousWithCount  | nextAndPreviousWithHasNext | nextAndPreviousSmart |
+|---------------------------------|---------------------------|----------------------------|----------------------|
+| /meta                           | +                         | +                          | +                    |
+| /count                          | +                         | -                          | -                    | 
+| /data                           | +                         | +                          | +                    | 
 
 
 !!! info

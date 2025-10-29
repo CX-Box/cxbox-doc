@@ -4,17 +4,17 @@ Pagination is the process of dividing content into separate, discrete pages, mak
 
 The navigation arrows and limit settings block are removed if the number of records is less than the limit.
 
-This function is available:
+**This feature is available and recommended for use**:
 
 * [List widget](/widget/type/list/list)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 
-Pagination modes:
+**Pagination modes**:
 
-* **Default (nextAndPreviousWithCount)**
-* **nextAndPreviousWithHasNext**
-* **nextAndPreviousSmart**
+* Default (nextAndPreviousWithCount)
+* nextAndPreviousWithHasNext
+* nextAndPreviousSmart
 
 **By default**, all widget types use the following navigation mode: `nextAndPreviousSmart`
 
@@ -25,7 +25,7 @@ However, for certain `exception widgets,` the default navigation mode is: `nextA
 * [List widget](/widget/type/list/list)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
-* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
+* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy) 
 * DashboardList
 * Pie1D
 * Column2D

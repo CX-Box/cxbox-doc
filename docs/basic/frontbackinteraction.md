@@ -72,7 +72,7 @@ Form, list, and info widgets all work under the same logic.
 This ensures that switching from one widget type to another does not disrupt the API functionality.
 
 ## Examples
-### How a List Works?
+### How a List widget works?
 Let’s consider a screen with a single List widget.
 
 1. Open the Developer Tools → Network tab.
@@ -141,3 +141,5 @@ The frontend uses this value to display information about the total number of av
 
 For example:
 “Showing 5 out of 10 records.”
+
+### How a parent-child widgets work?

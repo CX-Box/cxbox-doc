@@ -1,10 +1,9 @@
-# Microservices for List widgets
+# Work with DAO
 
-
-
+<!-- 
 ## User Actions
 
-* [Opening List Screen](#openlistscreen)
+* [Opening Screen](#openlistscreen)
 * [CRUD Operations](#crudoperations)
 * [Click ...](#click)
 * [Force Active](#forceactive)
@@ -16,47 +15,44 @@
 * refresh screen = [Opening List Screen](#openlistscreen)
 * parent child
 * show condition
-* customization column (api/v1/personalAdditionalFields)
-* file download 
-* уведомление
+-->
+
 GET
 
-=== "List widget"
-    count (Only for pagination: default, nextAndPreviousWithCount)
+count (Only for pagination: default, nextAndPreviousWithCount)
 
-    | Operation             | `/row-meta`      | `/row-meta-new` | `/row-meta/id` | `/data/` |`/count` |
-    |-----------------------|------------------|-----------------|----------------|--------------|-------------|
-    | Open Screen           | ✅<br/>no records | ❌             | ✅            | ✅           | ✅          |
-    | Create                | ❌                | ✅             | ❌             | ❌          | ❌          |
-    | Save                  | ❌                | ❌             | ✅             | ❌          | ❌          |
-    | Delete                | ✅<br/>no records | ❌             | ✅             | ✅          | ❌          |
-    | Click ..              | ✅                | ❌             | ❌             | ❌          | ❌          |
-    | Open Assoc,<br/>Popup | ✅                | ❌             | ❌             | ✅          | ✅          |
-    | Open Form Popup       | ❌                | ❌             | ❌             | ❌          | ❌          |
-    | Force Active          | ❌                | ❌             | ❌             | ❌          | ❌          |
+| Operation             | `/row-meta`      | `/row-meta-new` | `/row-meta/id` | `/data/` |`/count` |
+|-----------------------|------------------|-----------------|----------------|--------------|-------------|
+| Open Screen           | ✅<br/>no records | ❌             | ✅            | ✅           | ✅          |
+| Create                | ❌                | ✅             | ❌             | ❌          | ❌          |
+| Save                  | ❌                | ❌             | ✅             | ❌          | ❌          |
+| Delete                | ✅<br/>no records | ❌             | ✅             | ✅          | ❌          |
+| Click ..              | ✅                | ❌             | ❌             | ❌          | ❌          |
+| Open Assoc,<br/>Popup | ✅                | ❌             | ❌             | ✅          | ✅          |
+| Open Form Popup       | ❌                | ❌             | ❌             | ❌          | ❌          |
+| Force Active          | ❌                | ❌             | ❌             | ❌          | ❌          |
 
 Other
-=== "List widget"
+
     
-    | Operation             | POST <br/>`/row-meta/id` | PUT <br/>`/data/id` | DELETE <br/>`/data/id` |
-    |-----------------------|---------------------|---------------|------------------|
-    | Open Screen           | ❌                  | ❌            | ❌            |
-    | Create                | ❌                  | ❌            | ❌            |
-    | Save                  | ❌                  | ✅            | ❌            |
-    | Delete                | ❌                  | ❌            | ✅            |
-    | Click ..              | ❌                  | ❌            | ❌            |
-    | Open Assoc,<br/>Popup | ❌                  | ❌            | ❌            |
-    | Open Form Popup       | ✅                  | ❌            | ❌            |
-    | Force Active          | ✅                  | ❌            | ❌            |
-    
+| Operation             | POST <br/>`/row-meta/id` | PUT <br/>`/data/id` | DELETE <br/>`/data/id` |
+|-----------------------|---------------------|---------------|------------------|
+| Open Screen           | ❌                  | ❌            | ❌            |
+| Create                | ❌                  | ❌            | ❌            |
+| Save                  | ❌                  | ✅            | ❌            |
+| Delete                | ❌                  | ❌            | ✅            |
+| Click ..              | ❌                  | ❌            | ❌            |
+| Open Assoc,<br/>Popup | ❌                  | ❌            | ❌            |
+| Open Form Popup       | ✅                  | ❌            | ❌            |
+| Force Active          | ✅                  | ❌            | ❌            |
 
 
 
-### <a id="openlistscreen">Opening List Screen</a>
-use F12
+
+### <a id="openlistscreen">Opening Screen</a>
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3800){:target="_blank"} ·
 
-![open_screen_for_analiz.png](api/open_screen_for_analiz.png)
 
 `/row-meta/id`
 
@@ -69,11 +65,8 @@ If there are no records, the method is called without an ID.
 `/count/`
 
 Only invoked when Pagination modes are: nextAndPreviousWithCount or Default
-
  
 
-#### How it work?
- 
 ```mermaid
 sequenceDiagram
     Frontend->>Backend: GET /api/v1/data/ 
@@ -82,16 +75,15 @@ sequenceDiagram
     Frontend->>Backend: GET /api/v1/count (Only for pagination: default, nextAndPreviousWithCount)
 ```
 
-??? Thems
-    ![open_screen_backend.png](api/open_screen_backend.png)
+
+#### API -> DAO
+
+![open_screen_backend.png](api/open_screen_backend.png)
 
 
 ### <a id="crudoperations">CRUD Operations</a>
 
 #### Create
-
-![create_save.png](api/create_save.png)
-
 **User actions:** Create
 
 **Process:**
@@ -101,13 +93,17 @@ sequenceDiagram
 ```
 
 **Used methods:**
+
 - `getId()` (using FirstLevelCache)
 - `setId()` (using FirstLevelCache)
 
 **Recommendation:** Use standard CXBOX mechanism for record storage and calling external systems.
 
+##### API -> DAO
+![createactiondev.png](api/createactiondev.png)
+
 #### Save
-**User actions:** Save
+**User actions:** Save 
 
 **Process:**
 ```mermaid
@@ -123,15 +119,21 @@ Frontend->>Backend: PUT /api/v1/data/id
 - `getId()` (using FirstLevelCache)
 - `setId()` (using FirstLevelCache)
 - `getId()` (using FirstLevelCache)
-- `create()` (using FirstLevelCache)
+- `create()` 
+- `update()` 
 
 Frontend->>Backend: GET /api/v1/row-meta/id
 
 - `getByIdIgnoringFirstLevelCache()`
 
-#### Delete 
+##### API -> DAO
 
-![delete.png](api/delete.png)
+=== "save after create"
+    ![saveaftercreateactiondev.png](api/saveaftercreateactiondev.png)
+=== "save"
+    ![saveactiondev.png](api/saveactiondev.png)
+
+#### Delete 
 
 **User actions:** Delete
 
@@ -152,6 +154,11 @@ Frontend->>Backend: DELETE /api/v1/data/id
 - `getList()`
 - `getByIdIgnoringFirstLevelCache()`
 
+##### API -> DAO
+![deleteactiondev.png](api/deleteactiondev.png)
+
+
+<!-- 
 ### <a id="click">Click ...</a>
 ![click.png](api/click.png)
 
@@ -162,6 +169,8 @@ Frontend->>Backend: DELETE /api/v1/data/id
 sequenceDiagram
     Frontend->>Backend: GET /api/v1/row-meta/id
 ```
+
+#### API -> DAO
 
 ### <a id="forceactive">Force Activate</a>
 
@@ -188,31 +197,7 @@ sequenceDiagram
     Frontend->>Backend: POST /api/v1/row-meta/id
 ```
 
-
-
-
-
-
-## Form Widget
-
-### Opening Form Screen
-
-**User actions:** Opening Form widget family screen
-
-**Loading process:**
-```mermaid
-sequenceDiagram
-    Frontend->>Backend: GET /api/v1/row-meta
-    Frontend->>Backend: GET /api/v1/data/
-    Frontend->>Backend: GET /api/v1/row-meta/id
-```
-
-**Used methods:**
-- `getList()` (get all records)
-- `getByIdIgnoringFirstLevelCache()`
-
-**Features:**
-- If there are no records, the method without `id` is called
+ 
 
  
 
@@ -241,4 +226,4 @@ All
 | Open Form Popup       | ❌                 | ❌                 |                   | ✅                  |              |               |                  |              |
 | Force Active          | ❌                 | ❌                 |                   | ✅                 |              |               |                  |              |
 
- 
+-->

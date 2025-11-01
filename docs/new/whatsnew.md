@@ -1,4 +1,5 @@
 # What’s New in cxbox 
+## [v2.0.16](/new/version2016/)
 ## [v2.0.15](/new/version2015/)
 ## [v2.0.14](/new/version2014/)
 ## [v2.0.13](/new/version2013/)

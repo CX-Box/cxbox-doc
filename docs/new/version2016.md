@@ -187,3 +187,13 @@ We added a description of [Highlighting Functionality for the Current Item (Tile
 #### Added: Description Widget Header
 <!-- CXBOX-1061  -->
 We added a description of [Widget Header](https://doc.cxbox.org/widget/type/headerwidget/headerwidget/).
+
+
+#### Added: Description Frontend - Backend Interaction
+
+[Frontend - Backend Interaction](https://doc.cxbox.org/basic/frontbackinteraction/)
+
+CXBox provides a standardized and unified API mechanism for frontend–backend communication.
+In this article, we'll examine how this mechanism is structured and explore the fundamental API methods that make it work.
+
+This page provides an understanding of the correspondence between UI elements and REST calls.

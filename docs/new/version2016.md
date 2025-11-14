@@ -4,7 +4,7 @@
 
 * [cxbox/core 4.0.0-M20 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M20), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M20), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M20)
 
-* [cxbox-ui/core 2.6.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.6.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.1), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.6.1)
+* [cxbox-ui/core 2.7.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.7.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.7.1)
 
 * [cxbox/code-samples 2.0.16 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.16), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.16)  
 
@@ -19,18 +19,23 @@
 <!-- CXBOX-756 -->  
 We’ve added a new CalendarList widget that allows you to view and manage events in three display modes: month, week, and day.
 The widget supports switching between display modes, scrolling through dates, and automatically changing from month/week to day view when clicking on a specific date.  
-
+![CalendarListBasic.png](v2.0.16/CalendarListBasic.png)
 Key functionality includes:
 === "Actions' support"
     Full support for actions (of all scope types) is provided. Edit events right in the Calendar!
+    ![CalendarListEdit.gif](v2.0.16/CalendarListEdit.gif)
 === "Filtration"
     Filtration (+ additional fields' filtration) is supported. 
+    ![CalendarListFilter.gif](v2.0.16/CalendarListFilter.gif)
 === "Navigation"
     You can navigate through months/weeks/days.
+    ![CalendarListNav.gif](v2.0.16/CalendarListNav.gif)
 === "drillDown"
-    drillDown feature is available. 
+    drillDown feature is available.
+    ![CalendarListDrillDown.gif](v2.0.16/CalendarListDrillDown.gif)
 === "Calendar-Table"
-    You can switch between Calendar and Table modes to analyze the data in table display. 
+    You can switch between Calendar and Table modes to analyze the data in table display.
+    ![CalendarListTable.gif](v2.0.16/CalendarListTable.gif)
 
 !!! warning
     We recommend not to transmit long values for optimal display. 
@@ -42,6 +47,7 @@ Key functionality includes:
 <!-- CXBOX-756 -->  
 We've introduced the CalendarYearList widget - designed to display events in a yearly overview.  
 It's recommended to group backend data by the number of events per day for optimal display.  
+![CalendarYearListBasic.PNG](v2.0.16/CalendarYearListBasic.PNG)
 
 Key functionality is the same as for CalendarList and includes:  
 
@@ -59,8 +65,7 @@ Key functionality is the same as for CalendarList and includes:
 We have added support for audio file preview in the fileUpload field. Users can now upload and play audio files (mp3, wav, m4a) directly in the interface without downloading them. The built-in player supports all standard features, including play/pause, rewind, and playback speed control.  
 ![audioSupport.jpg](v2.0.16/audioSupport.jpg)
 
-#### Added: Compact widget settings (gear icon)  
-<!-- CXBOX-985 -->  
+<!-- #### Added: Compact widget settings (gear icon)
 We have improved the gear icon display for a more compact widget layout. The gear icon has been moved from above the table into the table header.   
 === "After"
 === "Before"  
@@ -68,6 +73,7 @@ We have improved the gear icon display for a more compact widget layout. The gea
 We have also moved several options into the gear menu - including the switch between table and chart modes, and Collapse columns, Expand columns (NEW), and Default (NEW) controls for GroupingHierarchy widget - to keep everything organized in one place.  
 === "After" 
 === "Before"
+--> 
 
 #### Added: showMessage postAction - timeout support  
 <!-- CXBOX-786 -->  
@@ -90,18 +96,6 @@ We have unified the display of all field types. The unification covered font siz
     For projects upgrading to version 2.0.16!  
     If you prefer to keep the gray text color for disabled fields, set the following frontend constant: WHEN_EDITABLE_FIELD_IS_DISABLED_THEN_FONT_OPACITY = 0.35.  
 
-#### Added: improved logic for dynamic setHidden field visibility  
-<!-- CXBOX-1043 -->
-We have clarified how the setHidden parameter works depending on the widget type.
-
-Behavior by widget type:
-
-* Form and Form-like widgets (displaying a single record): setHidden is applied as expected, allowing fields to be dynamically hidden.  
-* List and List-like widgets (displaying multiple records): setHidden is not applied.
-
-!!! info 
-    Dynamic setHidden only affects the currently selected row, so it is only supported in widgets showing a single record (e.g., Form, Info, etc.). For multi-row widgets (List, GroupingHierarchy, etc.), setHidden is not applied to prevent fields from disappearing or reappearing unexpectedly when switching pages or selecting different rows.
-
 #### Added: Numeric fields - right alignment and improved icon layout  
 <!-- CXBOX-915 -->  
 We have updated the alignment for numeric field types ([money](https://doc.cxbox.org/widget/fields/field/money/money/), [number](https://doc.cxbox.org/widget/fields/field/number/number/), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/)). Both the header and the field values are now right-aligned, while other field types remain left-aligned. Additionally, filter and sort icons for numeric fields are now displayed to the left of the field header, ensuring consistent alignment between headers and values across field types.  
@@ -116,7 +110,19 @@ We have updated the alignment for numeric field types ([money](https://doc.cxbox
 We have added a border highlight to the StatsBlock widget for consistency with Pie1D.
 The border appears on hover and when a block is selected in a parent–child relationship, making it easier to identify the active block.  
 
-![StatsBorder.gif](v2.0.16/StatsBorder.gif)
+![StatsBorder.gif](v2.0.16/StatsBorder.gif)  
+
+#### Added: improved logic for dynamic setHidden field visibility
+<!-- CXBOX-1043 -->
+We have clarified how the setHidden parameter works depending on the widget type.
+
+Behavior by widget type:  
+
+* Form and Form-like widgets (displaying a single record): setHidden is applied as expected, allowing fields to be dynamically hidden.  
+* List and List-like widgets (displaying multiple records): setHidden is not applied.
+
+!!! info
+    Dynamic setHidden only affects the currently selected row, so it is only supported in widgets showing a single record (e.g., Form, Info, etc.). For multi-row widgets (List, GroupingHierarchy, etc.), setHidden is not applied to prevent fields from disappearing or reappearing unexpectedly when switching pages or selecting different rows.
 
 #### Added: Unified sorting behavior  
 <!-- CXBOX-1089 -->  
@@ -129,27 +135,6 @@ We have fixed the issue where an action inside an action group remained visually
     ![v2.0.16/focusResetAfter.jpg](v2.0.16/focusResetAfter.jpg)
 === "Before"
     ![focusResetBefore.jpg](v2.0.16/focusResetBefore.jpg)
-
-#### Fixed: Lazy loading for picklists
-<!-- CXBOX-1069  -->
-Lazy loading for picklists has been implemented.
-
-Data is now fetched only upon:
-
-* Opening the pop-up
-* Performing CRUD operations on its contents
-
-=== "After"
-    ![after_save_CXBOX-1069.gif](v2.0.16/after_save_CXBOX-1069.gif)
-=== "Before"
-    ![before_save_CXBOX-1069.gif](v2.0.16/before_save_CXBOX-1069.gif)
-
-The count() function is no longer called when an inline picklist is opened.
-
-=== "After"
-    ![after_CXBOX-1069.png](v2.0.16/after_CXBOX-1069.png)
-=== "Before"
-    ![before_CXBOX-1069.png](v2.0.16/before_CXBOX-1069.png)
 
 #### Added: New inline-edit widget validation
 <!-- CXBOX-1069  -->
@@ -165,7 +150,8 @@ We have improved the file preview and deletion logic for a more consistent user 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.16)
 
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.1))
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1))  
+We have released a new 2.7.1 CORE UI version.
 
 #### Added: improved clarity of validation messages for hidden or disabled required fields  
 <!-- CXBOX-1044 -->
@@ -174,10 +160,31 @@ In this update, we’ve made these messages even more informative — now they a
 === "After"
     ![hiddenWarningAfter.png](v2.0.16/hiddenWarningAfter.png)
 === "Before"
-    ![hiddenWarningBefore.png](v2.0.16/hiddenWarningBefore.png)
+    ![hiddenWarningBefore.png](v2.0.16/hiddenWarningBefore.png)  
+
+#### Fixed: Lazy loading for picklists
+<!-- CXBOX-1069  -->
+Lazy loading for picklists has been implemented.
+
+Data is now fetched only upon:  
+
+* Opening the pop-up  
+* Performing CRUD operations on its contents
+
+=== "After"
+    ![after_save_CXBOX-1069.gif](v2.0.16/after_save_CXBOX-1069.gif)
+=== "Before"
+    ![before_save_CXBOX-1069.gif](v2.0.16/before_save_CXBOX-1069.gif)
+
+The count() function is no longer called when an inline picklist is opened.
+
+=== "After"
+    ![after_CXBOX-1069.png](v2.0.16/after_CXBOX-1069.png)
+=== "Before"
+    ![before_CXBOX-1069.png](v2.0.16/before_CXBOX-1069.png)
 
 #### Other Changes
-See [cxbox-ui 2.6.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.6.1).
+See [cxbox-ui 2.7.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1).
 
 
 ### CXBOX 4.0.0-M20 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M20))

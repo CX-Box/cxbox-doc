@@ -183,14 +183,41 @@ See [cxbox-ui 2.6.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 ### CXBOX 4.0.0-M20 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M20))
 
 We have released a new 4.0.0-M20 CORE version.
- 
+<!-- CXBOX-1070 -->
+#### Fixed: Update dependencies version spring-boot
+
+spring-boot.version : 3.3.11 -> 3.3.13
+
+<!-- CXBOX-1058 -->
+#### Fixed: The mechanism for logging business errors has been updated
+
+A constant was added to control the logging level of business errors.
+
+
+1) If the constant is defined:
+
+* The logging level specified in the constant is used.
+* If the logging output level is lower than the level from the constant, the error is not logged.
+* If the logging output level is higher or equal, the error is logged using the level defined in the constant.
+
+2) If the constant is not defined:
+
+* The default project-wide logging level is used.
+
+```yaml
+logging:
+    global-handler:
+        business-exception:
+            log-level: debug
+```
+
+
 #### Other Changes
 See [cxbox 4.0.0-M20 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M20).
 
 
 ### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-
-released 2.0.1
+ 
 <!-- CXBOX-1079  -->
 #### Added: Simple field generation for AnySourceVersionAwareResponseService
 

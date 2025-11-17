@@ -1,11 +1,14 @@
 # FileUpload
 
-`FileUpload` is a component that allows to view and attach single file
+`FileUpload` is a component that allows to view and attach single file.
+
+**Supported types**: .png, .pdf, .jpg, .jpeg, .mp3, .wav, .m4a
 
 !!! info
     * When a file is selected, it is stored in the storage system immediately, which then generates a unique "file ID". When the save button is clicked, only this "file ID" is sent to the backend
     * If a new file is selected, it will be saved as a new file in storage. Previous file remains untouched (e.g. one is free to implement custom deletion logic)
 
+ 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample94){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/basic){:target="_blank"}
@@ -27,52 +30,60 @@
 
     **Step1 FileStorage** Add file storage. `see more` [FileStorage](/features/element/fileStorage/fileStorage)
 
+    === "With plugin(recommended)"
+        **Step 2** Download plugin
+            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+    
+        **Step 3** Add existing field to an existing form widget
 
-    **Step2** Add same **String** fields  to corresponding **BaseEntity**.
+        ![addfield.gif](addfield.gif)
 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyEntity94.java
-    --8<--
-    ```
-
-    **Step3** Add two **String** fields (for file name and id)  to corresponding **DataResponseDTO**.
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94DTO.java
-    --8<--
-    ```
- 
-    === "List widget"
-        **Step4** Add to **_.widget.json_**.
-
-        ```json
+    === "Example of writing code"
+        **Step2** Add same **String** fields  to corresponding **BaseEntity**.
+    
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94List.widget.json
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyEntity94.java
         --8<--
         ```
-    === "Info widget"
-        **Step4** Add to **_.widget.json_**.
-        
-        ```json
+    
+        **Step3** Add two **String** fields (for file name and id)  to corresponding **DataResponseDTO**.
+    
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94DTO.java
         --8<--
         ```
-
-    === "Form widget"
-
-        **Step4** Add to **_.widget.json_**.
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Form.widget.json
-        --8<--
-        ```    
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample94){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/basic){:target="_blank"}
+     
+        === "List widget"
+            **Step4** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94List.widget.json
+            --8<--
+            ```
+        === "Info widget"
+            **Step4** Add to **_.widget.json_**.
+            
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Info.widget.json
+            --8<--
+            ```
+    
+        === "Form widget"
+    
+            **Step4** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Form.widget.json
+            --8<--
+            ```    
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample94){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/basic){:target="_blank"}
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample100){:target="_blank"} ·
@@ -453,4 +464,28 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
 see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
+
+### Regulating the allowed upload types
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample107){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/types){:target="_blank"}
+
+You can choose which file types are allowed for upload.
+
+#### How does it look?
+=== "List widget"
+    
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
  
+#### How to add?
+??? Example
+    Add **fields.setFileAccept** to corresponding **FieldMetaBuilder** with the allowed upload types.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/fields/fileupload/types/MyExample107Meta.java:buildIndependentMeta
+    --8<--
+    ```    
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample107){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/types){:target="_blank"}

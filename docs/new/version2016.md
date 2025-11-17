@@ -18,7 +18,7 @@
 #### Added: CalendarList - NEW widget type!  
 <!-- CXBOX-756 -->  
 We’ve added a new CalendarList widget that allows you to view and manage events in three display modes: month, week, and day.
-The widget supports switching between display modes, scrolling through dates, and automatically changing from month/week to day view when clicking on a specific date.  
+The widget supports switching between display modes, scrolling through dates, and changing from month/week to day view when clicking on a specific date.  
 ![CalendarListBasic.png](v2.0.16/CalendarListBasic.png)
 Key functionality includes:
 === "Actions' support"
@@ -98,7 +98,7 @@ We have unified the display of all field types. The unification covered font siz
 
 #### Added: Numeric fields - right alignment and improved icon layout  
 <!-- CXBOX-915 -->  
-We have updated the alignment for numeric field types ([money](https://doc.cxbox.org/widget/fields/field/money/money/), [number](https://doc.cxbox.org/widget/fields/field/number/number/), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/)). Both the header and the field values are now right-aligned, while other field types remain left-aligned. Additionally, filter and sort icons for numeric fields are now displayed to the left of the field header, ensuring consistent alignment between headers and values across field types.  
+We have updated the alignment for numeric field types ([money](https://doc.cxbox.org/widget/fields/field/money/money/), [number](https://doc.cxbox.org/widget/fields/field/number/number/), [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/)). Filter and sort icons for numeric fields are now displayed to the left of the field header. Now, all field types' headers and values are consistently aligned.  
 
 === "After"
     ![numberRightAfter.png](v2.0.16/numberRightAfter.png)
@@ -179,9 +179,9 @@ Data is now fetched only upon:
 The count() function is no longer called when an inline picklist is opened.
 
 === "After"
-    ![after_CXBOX-1069.png](v2.0.16/after_CXBOX-1069.png)
+    ![inlinePickListQueryAfter.png](v2.0.16/inlinePickListQueryAfter.png)
 === "Before"
-    ![before_CXBOX-1069.png](v2.0.16/before_CXBOX-1069.png)
+    ![inlinePickListQueryBefore.png](v2.0.16/inlinePickListQueryBefore.png)
 
 #### Other Changes
 See [cxbox-ui 2.7.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1).

@@ -472,12 +472,8 @@ see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
 You can choose which file types are allowed for upload.
 
 #### How does it look?
-=== "List widget"
-    
-=== "Info widget"
-    _not applicable_
-=== "Form widget"
- 
+![notsuppfile.png](notsuppfile.png) 
+
 #### How to add?
 ??? Example
     Add **fields.setFileAccept** to corresponding **FieldMetaBuilder** with the allowed upload types.

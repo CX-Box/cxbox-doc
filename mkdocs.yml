@@ -116,6 +116,7 @@ nav:
             - defaultGroupingHierarchy: environment/meta/buildindependentmeta/defaultgh/defaultgh.md
           - buildRowDependentMeta:
             - isFieldChangedNow: environment/meta/buildrowdependentmeta/isfieldchangednow/isfieldchangednow.md
+            - setHidden: environment/meta/buildrowdependentmeta/sethidden/sethidden.md
       - Controller: environment/controller/controller.md
   - Features:
       - Actions:

@@ -649,4 +649,29 @@ With `Edit with view`, you can edit the entity from a separate view that display
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
 
 
- 
+## Additional properties
+
+### Field hidden
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5019/view/myexample5019form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/sethidden){:target="_blank"}
+
+If you need to hide certain fields based on the values of other fields, you can use the **[hidden](/environment/meta/buildrowdependentmeta/sethidden/sethidden)** and **`forceActive`** properties.
+
+When the value of a related field changes, the current field will automatically:
+
+* hide and become unavailable, or
+* show and become visible,
+
+depending on the configured logic.
+
+
+#### How does it look?
+![basic_setHidden.gif](basic_setHidden.gif)
+
+#### How to add?
+??? Example
+    see more [setHidden](/environment/meta/buildrowdependentmeta/sethidden/sethidden)
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5019/view/myexample5019form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/sethidden){:target="_blank"}

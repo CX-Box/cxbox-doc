@@ -164,7 +164,7 @@ All fields are readonly.
 
 ## Filtering
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample233){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluehover /filtration){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluehover/filtration){:target="_blank"}
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 
@@ -178,28 +178,51 @@ All fields are readonly.
 
 ### How to add?
 ??? Example
-    === "List widget"
-        **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyEntity234DTO.java
-        --8<--
-        ```
- 
-        **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyExample233Meta.java:buildIndependentMeta
-        --8<--
-        ```
- 
-    === "Info widget"
-        _not applicable_
-    === "Form widget"
-        _not applicable_
+    === "With plugin(recommended)"
+        **Step 1** Download plugin
+        [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample233){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluehover /filtration){:target="_blank"}
+        **Step 2** Add existing field to an existing form widget
+
+        ![addfield.gif](addfield.gif)
+
+    === "Example of writing code"
+        === "List widget"
+            **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyEntity234DTO.java
+            --8<--
+            ```
+     
+            **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyExample233Meta.java:buildIndependentMeta
+            --8<--
+            ```
+      
+            **Step 3**  Add **popupBcName** on current BC to corresponding **widget,json**.
+     
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyExample233List.widget.json
+            --8<--
+            ```
+            **Step 4**  Add **popup** to corresponding **view.json**.
+     
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/myexample233list.view.json
+            --8<--
+            ```
+        === "Info widget"
+            _not applicable_
+        === "Form widget"
+            _not applicable_
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample233){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluehover/filtration){:target="_blank"}
 
 ## Drilldown
 **_not applicable_**

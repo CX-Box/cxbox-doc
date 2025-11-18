@@ -98,6 +98,11 @@
         **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
+        pickMap defines the mapping between fields of the main BC (the primary form) and the popup BC from which the user selects a record.
+        
+        * Left side — the field in the main BC where the value should be written.
+        * Right side — the field in the popup BC from which the value is taken when the user selects a row.
+        
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/fields/picklist/basic/MyExample118List.widget.json
@@ -108,6 +113,11 @@
         **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
+        pickMap defines the mapping between fields of the main BC (the primary form) and the popup BC from which the user selects a record.
+        
+        * Left side — the field in the main BC where the value should be written.
+        * Right side — the field in the popup BC from which the value is taken when the user selects a row.
+        
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/fields/picklist/basic/MyExample118Info.widget.json
@@ -119,6 +129,12 @@
         **Step6** Add popupBcName and pickMap to **_.widget.json_**.
         `pickMap` - maping for field Picklist to MyEntity
 
+        pickMap defines the mapping between fields of the main BC (the primary form) and the popup BC from which the user selects a record.
+        
+        * Left side — the field in the main BC where the value should be written.
+        * Right side — the field in the popup BC from which the value is taken when the user selects a row.
+        
+        When the user selects a record in the popup, take the value from the right-side field and place it into the left-side field.
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/fields/picklist/basic/MyExample118Form.widget.json

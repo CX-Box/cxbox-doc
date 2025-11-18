@@ -448,6 +448,9 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample350){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/old/basic){:target="_blank"}
 
+**How to sort values in a drop-down list or for filtering?**
+
+see [Sorting](#sort)
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
@@ -483,9 +486,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample88){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/placeholder){:target="_blank"}
 
-*How to sort values in a drop-down list or for filtering?*
 
-see [Sorting](#sort)
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -715,7 +716,7 @@ The filter component displays a text search field and scrollbar based on the num
             --8<--
             ```
     
-            *How to sort values in a drop-down list or for filtering?**
+            **How to sort values in a drop-down list or for filtering?**
             
             see [Sorting](#sort)
 
@@ -756,7 +757,7 @@ The filter component displays a text search field and scrollbar based on the num
         === "Form widget"
             _not applicable_
 
-    *How to sort values in a drop-down list or for filtering?**
+    **How to sort values in a drop-down list or for filtering?**
     
     see [Sorting](#sort)
 

@@ -1,6 +1,6 @@
 # AdditionalList
  
-`AdditionalList` widget is list the general information for many records. Widget is always located **on the left**.
+`AdditionalList` widget is list the general information for many records. Widget is always located **on the right**.
 
 The widget has two modes:
 

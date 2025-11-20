@@ -8,7 +8,7 @@ services:
     environment:
       - GITHUB_UI=https://github.com/CX-Box/cxbox-code-samples/tree
       - github_raw_doc=/docs/demo/documentation
-      - github_raw=/docs
+      - github_raw=/docs/demo
       - GITHUB_BRANCH=main
       - CODE_SAMPLES=http://code-samples.cxbox.org
       - DEMO=http://demo.cxbox.org

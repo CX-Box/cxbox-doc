@@ -264,8 +264,8 @@ edit_uri: edit/main/docs/
 extra:
   external_links:
     github_ui: !ENV [GITHUB_UI, 'https://github.com/CX-Box/cxbox-code-samples/tree']
-    github_raw_doc: !ENV [github_raw_doc, 'documentation']
-    github_raw: !ENV [github_raw]
+    github_raw_doc: !ENV [github_raw_doc, 'demo/documentation']
+    github_raw: !ENV [github_raw,'demo']
     github_branch: !ENV [GITHUB_BRANCH, 'main']
     code_samples: !ENV [CODE_SAMPLES, 'http://code-samples.cxbox.org']
     demo: !ENV [DEMO, 'http://demo.cxbox.org']

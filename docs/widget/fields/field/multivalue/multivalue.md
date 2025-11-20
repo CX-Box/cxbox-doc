@@ -319,6 +319,19 @@
         {{ external_links.github_raw_doc }}/fields/multivalue/filtration/MyExample184Meta.java:buildIndependentMeta
         --8<--
         ```
+
+        **Step 3**  Add popupBcName and assocValueKey to **_.widget.json_**.
+
+        popupBcName - name bc 
+        
+        assocValueKey - field for opening AssocListPopup
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/multivalue/filtration/MyExample184List.widget.json
+        --8<--
+        ```
+ 
  
     === "Info widget"
         _not applicable_

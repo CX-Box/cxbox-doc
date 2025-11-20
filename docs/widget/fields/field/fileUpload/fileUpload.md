@@ -2,7 +2,7 @@
 
 `FileUpload` is a component that allows to view and attach single file.
 
-**Supported types**: .webp,.svg,.png,.gif,.jpg,.jpeg,.jfif,.bmp,.dpg,.ico,.heic,.heif,.xls,.xlsx ,.doc,.docx,.txt,.pdf,.mp3,.wav,.m4a
+**We support visualization for the following types:**: .webp,.svg,.png,.gif,.jpg,.jpeg,.jfif,.bmp,.dpg,.ico,.heic,.heif,.pdf,.mp3,.wav,.m4a
 
 !!! info
     * When a file is selected, it is stored in the storage system immediately, which then generates a unique "file ID". When the save button is clicked, only this "file ID" is sent to the backend

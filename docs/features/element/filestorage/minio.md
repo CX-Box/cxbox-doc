@@ -1,7 +1,6 @@
 # Minio
 === "since [release 2.0.9](https://doc.cxbox.org/new/version209/)"
-    **Step1** Add config file.
-    
+    **Step1** Add config file.    
         ```java
         --8<--
         {{ external_links.github_raw }}/conf/cxbox/customization/file/MinioFileConfig.java

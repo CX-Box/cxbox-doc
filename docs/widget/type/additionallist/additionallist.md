@@ -370,7 +370,8 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 * `widget`: The name of the widget where the columns are customized.
 * `order_fields`: When configuring swap columns, the field sequence will be updated, and a new comma-separated sequence of fields will be saved.
 * `added_to_additional_fields`: User-hidden fields.
-* `removed_from_additional_fields`
+* `removed_from_additional_fields`: Contains a list of fields that were initially hidden for the user but were later made visible.
+  When the user opens a widget and chooses to display fields that were previously hidden, those fields are recorded in this column.
 
 ###### How does it look?
 === "Hide columns"

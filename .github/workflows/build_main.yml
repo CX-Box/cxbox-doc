@@ -20,7 +20,7 @@ jobs:
       - run: sudo apt-get install
       - run: curl "http://code-samples.cxbox.org/api/v1/githubcode/" >githubcode.zip
       - run: unzip githubcode.zip
-      - run: chmod -R 777 docs
+      - run: chmod -R 777 docs/
       - run: pip install --no-cache-dir mkdocs-redirects
       - run: pip install --no-cache-dir mkdocs-markdownextradata-plugin
       - run: pip install --no-cache-dir mkdocs-mermaid2-plugin

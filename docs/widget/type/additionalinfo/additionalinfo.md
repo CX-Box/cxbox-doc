@@ -1,6 +1,6 @@
 # AdditionalInfo
  
-`AdditionalInfo` widget is a component only for data viewing. Widget is always located **on the left**.
+`AdditionalInfo` widget is a component only for data viewing. Widget is always located **on the right**.
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3600){:target="_blank"} ·

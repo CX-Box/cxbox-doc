@@ -56,7 +56,7 @@ Form widget is a component for data viewing and editing. Usually it shows multip
 List widget is list the general information for many records and present it in a way that is easily interpretable for users.
 
 [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/):
-AdditionalInfo widget is a component only for data viewing. Widget is always located on the left.
+AdditionalInfo widget is a component only for data viewing. Widget is always located on the right.
 
 [Statistics blocks](https://doc.cxbox.org/widget/type/statblocks/statblocks/):
 Statistics blocks widget is a tool designed to display aggregated data in a visually accessible format. This data can be sourced either from a database or from external sources.

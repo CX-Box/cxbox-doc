@@ -144,7 +144,7 @@ We can modify the following parameters on this widget:
 ### Title Basic
 Title - a name displayed in a block. It is optional.
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4209){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4225/view/MyExample4226Stat){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/title/withtitle){:target="_blank"}
 
 There are types of:
@@ -167,7 +167,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/statsblock/title/withtitle/MyExample4226Stat.widget.json
         --8<--
         ```
- 
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4225/view/MyExample4226Stat){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/title/withtitle){:target="_blank"}
+
     === "Constant title empty"
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
@@ -175,6 +178,10 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4225/view/MyExample4225Stat){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/title/withtitle){:target="_blank"}
+
 ### Title Color
 _not applicable_
 
@@ -200,7 +207,7 @@ see [Actions](/features/element/actions/actions)
 ## Additional properties
 
 ### <a id="Icon">Icon</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4215){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4223/view/MyExample4223Stat){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
 
 Icon - picture representing a particular function.Optional
@@ -232,6 +239,9 @@ There are types of:
         --8<--
         ```
 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4223/view/MyExample4223Stat){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
+
     === "Icon empty"
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
@@ -239,6 +249,9 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withouticon/MyExample4224Stat.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4223/view/MyExample4224Stat){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
 
 ### <a id="ColorField">Color</a>
 `Color` allows you to specify a field block.Optional. It can be calculated based on business logic of application
@@ -325,7 +338,7 @@ For example, if the row has a total width of 24 spans, each widget will take up 
         --8<--
         ```
 ### Drilldown  
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210/view/myexample4210list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
@@ -355,7 +368,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     **Option 2**
        Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210/view/myexample4210list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/drilldown){:target="_blank"}
 
 

@@ -196,7 +196,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 * `no show condition - recommended`: widget always visible
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3171){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3169/view/myexample3171gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
@@ -236,7 +236,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/bycurrententity/MyExample3171showcond.widget.json
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3171){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3169/view/myexample3171gh){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/showcondition/bycurrententity){:target="_blank"}
 
 <!--
@@ -320,7 +320,7 @@ There are three methods to create a record:
 3. [With view](#withview): You can create a record by navigating to a view.
 
 ##### <a id="createinline">Inline</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148/view/myexample3148gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the GroupingHierarchy widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
@@ -348,11 +348,11 @@ With `Line Addition`, a new empty row is immediately added to the top of the Gro
     {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/basic/MyExample3148Meta.java:buildRowDependentMeta
     --8<--
     ```
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148/view/myexample3148gh){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/basic){:target="_blank"}
 
 ##### <a id="withwidget">Inline-form</a> 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3159){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148/view/myexample3159gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/withwidget){:target="_blank"}
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the GroupingHierarchy of entities and the form for adding a new row. 
@@ -400,11 +400,11 @@ After filling the information in and clicking "Save", the new row is added to th
     --8<--
     ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3159){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148/view/myexample3159gh){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/withwidget){:target="_blank"}
 
 ##### <a id="withview">With view</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3149){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148/view/myexample3149gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/newview){:target="_blank"}
 
 With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and saving, the system returns to the GroupingHierarchy of entities with the new row added. 
@@ -434,7 +434,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     --8<--
     ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3149){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3148/view/myexample3149gh){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/create/newview){:target="_blank"}
 
 
@@ -450,7 +450,7 @@ There are three methods to create a record:
 3. [With view](#editwithview): You can edit a record by navigating to a view.
 
 ##### <a id="editline">Inline edit </a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3166gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/basic){:target="_blank"}
 
 
@@ -468,11 +468,11 @@ There are three methods to create a record:
     --8<--
     ```
  
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3166gh){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/basic){:target="_blank"}
 
 ##### <a id="editwithwidget">Inline-form</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3168){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3168gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/withwidget){:target="_blank"}
 
 `Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
@@ -521,11 +521,11 @@ There are three methods to create a record:
     --8<--
     ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3168){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3168gh){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/withwidget){:target="_blank"}
 
 ##### <a id="editwithview">With view</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3167){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3167gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/newview){:target="_blank"}
 
 With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.  
@@ -552,7 +552,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
     {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3168GH.widget.json
     --8<--
     ```
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3167){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3167gh){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/newview){:target="_blank"}
 
 

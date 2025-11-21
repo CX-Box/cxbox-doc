@@ -75,7 +75,7 @@
     .yesText("Yes")
     .noText("Cancel"))`
 
-    myWidget – widget name of any *FormPopup.widget.json
+    myWidget – widget name FormPopup.widget.json on current bc
 
     ```java
     --8<--

@@ -129,14 +129,14 @@ There are types of:
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3027/view/myexample3027formcolorconst){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3027/view/myexample3027form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/colortitle){:target="_blank"}
 
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
@@ -166,7 +166,10 @@ There are types of:
         --8<--
         {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027FormPopup.widget.json
         --8<--
-        ```       
+        ```  
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3027/view/myexample3027form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/colortitle){:target="_blank"}
 
     === "Constant color"
  
@@ -179,6 +182,11 @@ There are types of:
         {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027FormPopupColorConst.widget.json
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3027/view/myexample3027formcolorconst){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/formpopup/colortitle){:target="_blank"}
+
+
 ## <a id="Showcondition">Show condition</a>
 _not applicable_
 

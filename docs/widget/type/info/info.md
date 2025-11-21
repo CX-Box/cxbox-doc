@@ -30,7 +30,7 @@
      
 ## <a id="Title">Title</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/title){:target="_blank"}
 
 ### Title Basic
 Title - (optional)
@@ -61,7 +61,7 @@ There are types of:
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/title){:target="_blank"}
 
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
@@ -72,7 +72,7 @@ There are types of:
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/title){:target="_blank"}
 
     === "Calculated title"
         <!--родитель??-->
@@ -84,7 +84,7 @@ There are types of:
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3008){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/title){:target="_blank"}
 
 
 ### Title Color
@@ -92,14 +92,14 @@ There are types of:
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3040/view/myexample3040infocolorconst){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3040/view/myexample3040info){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/colortitle){:target="_blank"}
 
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
@@ -131,7 +131,7 @@ There are types of:
         --8<--
         ```       
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3040/view/myexample3040info){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/colortitle){:target="_blank"}
 
     === "Constant color"
@@ -146,7 +146,7 @@ There are types of:
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3025/view/myexample3025constcolor){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3040/view/myexample3040infocolorconst){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/colortitle){:target="_blank"}
 
 ## <a id="bc">Business component</a>
@@ -159,19 +159,19 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 The `showCondition` is used to define the availability or visibility of the widget dynamically.
 The `showCondition` in configuration represents the condition under which the widge will be made visible to the user. It controls whether the form appears on the user interface based on the value of a specific field in another or currentbusiness component.
 
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3001){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base/onefield){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
  
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3103/view/myexample3103showcond){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/showcondition/bycurrententity){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
  
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3103/view/myexample3105showcond){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/showcondition/byparententity){:target="_blank"}
 
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
@@ -192,8 +192,8 @@ The `showCondition` in configuration represents the condition under which the wi
     === "no show condition"
         see [Basic](#Howtoaddbacis)
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3000){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/base/onefield){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3001){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/base/onefield){:target="_blank"}
 
     === "show condition by current entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
@@ -203,8 +203,8 @@ The `showCondition` in configuration represents the condition under which the wi
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3005showcondform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3103/view/myexample3103showcond){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/showcondition/bycurrententity){:target="_blank"}
 
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
@@ -214,8 +214,8 @@ The `showCondition` in configuration represents the condition under which the wi
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/byparententity){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3103/view/myexample3105showcond){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/showcondition/byparententity){:target="_blank"}
 
 ## <a id="bc">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
@@ -270,7 +270,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
 
 ## <a id="Fieldslayout">Options layout</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/fieldslayoute){:target="_blank"}
 
 * `single column layout - recommended`: shows each field on new row. Each field can have width from 1 to 24.
 
@@ -317,7 +317,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/fieldslayoute){:target="_blank"}
 
     === "Multi column layout"
         **Step1** Create **"options": {"layout": {}}**.
@@ -345,7 +345,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/fieldslayoute){:target="_blank"}
 
     === "Empty only buttons"
         **Step1** Create **"options": {"layout": {}}**.
@@ -359,7 +359,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/info/fieldslayoute){:target="_blank"}
 
 ## Actions
 This widget type does not support buttons

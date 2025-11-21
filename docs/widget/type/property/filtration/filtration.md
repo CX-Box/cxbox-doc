@@ -240,7 +240,7 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
 ## <a id="by_filter_group">by filter group</a>
 
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
-
+ 
 This function is available:
 
 * [List](/widget/type/list/list)
@@ -262,29 +262,59 @@ The option to default filter by saved groups is currently unavailable.
 
 ### How to add?
 ??? Example
-    !!! tips
-        To write this drilldown, follow these steps:
-
-                * Add a filter function for fields 
-                * Visually fill in the necessary filters in the interface.
-                * Open the developer panel.
-                * Locate the required request.
-                * Use this query to substitute in your code to get a reference 
-
-        ![how_add_search_spec.gif](how_add_search_spec.gif)
-
-    Add  business component in **BC_FILTER_GROUPS** TABLE
-
-      `name` - name predefined filter
-
-      `BC` - name business component
-
-      `filters` - conditions for filtration
+    === "Bacis"
+        !!! tips
+            To write this drilldown, follow these steps:
     
-      ```csv
-        name;bc;filters;ID
-        Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%
-      ```
+                    * Add a filter function for fields 
+                    * Visually fill in the necessary filters in the interface.
+                    * Open the developer panel.
+                    * Locate the required request.
+                    * Use this query to substitute in your code to get a reference 
+    
+            ![how_add_search_spec.gif](how_add_search_spec.gif)
+    
+        Add  business component in **BC_FILTER_GROUPS** TABLE
+    
+          `name` - name predefined filter
+    
+          `BC` - name business component
+    
+          `filters` - conditions for filtration
+        
+          ```csv
+            name;bc;filters;ID
+            Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%
+          ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
+
+    === "With computed field"
+
+        If the logic for selecting the Filter group is too complex and cannot be expressed using simple and conditions on widget fields, 
+        you can add a separate computed hidden field. This field pre-calculates the required value, and then the Filter group is applied to it.
+
+        **Step 1** Add computed boolean field to corresponding **DataResponseDTO**. 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/filtration/filtergrouphiddenfield/MyExample3628DTO.java
+        --8<--
+        ```   
+        **Step 2** Add  business component in **BC_FILTER_GROUPS** TABLE
+    
+          `name` - name predefined filter
+    
+          `BC` - name business component
+    
+          `filters` - conditions for filtration
+        
+          ```csv
+            name;bc;filters;ID
+            Dictionary is null;myexample3628;customFieldHidden.equals=true;
+          ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergrouphiddenfield){:target="_blank"}
 
 
 ## Additional properties

@@ -2,7 +2,7 @@
 
 Within our system, five main types of operations occur:
 
-* Getting data by ID: This operation involves retrieving specific data entries from the microservice based on their unique identifier (ID). This allows for the retrieval of individual records as needed.
+* Getting data by ID: This operation involves retrieving specific data entries from the microservice based on their unique identifier (ID). This allows for the retrieval of individual records as needed. 
 
 * Getting all data: This operation involves retrieving all available data from the microservice.
 
@@ -10,7 +10,8 @@ Within our system, five main types of operations occur:
 
 * Update of existing entries: This refers to making changes by sending data to the microservice for processing and storage.
 
-* Creation: This involves creating new records by sending data to the microservice for processing and storage.
+* Creation: This involves creating new records by sending data to the microservice for processing and storage. 
+When creating a record, a temporary ID is assigned, which is replaced by an ID obtained from the microservice after the record is saved.
 
 
 ## Basics
@@ -225,6 +226,8 @@ Combining these parameters allows users to control and customize the behavior of
 !!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
     If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
+
+When creating a record, a temporary ID is assigned, which is replaced by an ID obtained from the microservice after the record is saved.
 
 ??? Example
 

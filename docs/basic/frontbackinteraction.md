@@ -192,6 +192,11 @@ For all widget types, the system always performs API requests (/data, /row-meta,
 including fields that use popup widgets.
 
 `Exceptions`: [FormPopup](#formpopup), [notifications](/features/element/notifications/email/email), filePreview, and [customization of displayed columns](/widget/type/list/list/#customization-of-displayed-columns) calls — these behave differently.
+
+!!! info
+    It is also important to consider how the **parent → child** calls are executed.
+    Each entity is loaded through its own request, so a parent–child pair results in **6 separate calls**.    
+    This matters especially when dependent data is stored in the same microservice. In such cases, the same microservice will be called **twice** during page loading — once for the parent entity and once for the child.
  
 
 #### GET /api/v1/data 

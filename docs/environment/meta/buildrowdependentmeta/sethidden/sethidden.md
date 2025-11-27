@@ -69,13 +69,12 @@ Applies to:
 ??? Example
 
     **buildRowDependentMeta** 
-
      ```java
      --8<--
-     {{ external_links.github_raw_doc }}/src/main/java/org/demo/repository/metabuilder/buildrowdependentmeta/sethidden/basic/MyExample5010Meta.java:buildRowDependentMeta
+     {{ external_links.github_raw }}/repository/metabuilder/buildrowdependentmeta/sethidden/basic/MyExample5010Meta.java:buildRowDependentMeta
      --8<--
      ```
-
+ 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5010){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/repository/metabuilder/buildrowdependentmeta/sethidden/basic){:target="_blank"}
  

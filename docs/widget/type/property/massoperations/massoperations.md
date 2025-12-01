@@ -27,16 +27,15 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * Bulk operations become available only if there is at least one row in the table.
     * All requests are executed using the ID of the first selected row!
 
-## <a id="selecting_rows">Selecting rows</a>
+## <a id="selecting_rows">Step 1. Selecting rows</a>
 ![select.png](select.png)
 
-1. **Checkboxes for selecting rows** are displayed in the first column of the table (true = the row is selected).
-2. **Filtering and sorting** remain available.
-3. **Rows become non-editable** while in bulk-operation mode.
-4. **All selected rows are displayed above the table as chips.**
+1. Checkboxes for selecting rows are displayed in the first column of the table (true = the row is selected).
+2. Filtering and sortingremain available.
+3. Rows become non-editable while in bulk-operation mode.
+4. All selected rows are displayed above the table as chips.
 
-    * If the number of chips exceeds **N**, only the first **N** are shown; the rest are collapsed and replaced with the label **“+N values”**.
-    * Hovering over **“+N values”** displays a tooltip: *“Move on to Step 2 to see all the chosen rows.”*
+    * If the number of chips exceeds **N**, only the first **N** are shown; the rest are collapsed and replaced with the label **“+N values”**. Hovering over **“+N values”** displays a tooltip: *“Move on to Step 2 to see all the chosen rows.”*
     * A **“Clear”** button is displayed next to the chips. Clicking **Clear** deselects all checkboxes and removes all chips.
     * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing data from an Excel file).
 5. **Available actions**:
@@ -44,10 +43,28 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * **Cancel** — exits bulk-operation mode.
     * **Next** — proceeds to Step 2, where only the selected rows are displayed.
  
-## <a id="reviewing">Reviewing the selected rows</a>
+## <a id="reviewing">Step 2. Reviewing the selected rows</a>
 ![review.png](review.png)
 
-## <a id="confirming">Confirming the action</a>
+1.Selected rows from [Step 1. Selecting rows](#selecting_rows) are displayed in read-only mode.
+
+2.Checkboxes are disabled, and rows cannot be edited.
+
+3.Filtering and sorting of the selected rows remain available.
+
+4.Available actions:
+
+4.1.Dynamic **“Next / Apply** button 
+
+* **Next** — moves the user to Step 3 (confirmation).
+* **Apply** — immediately executes the bulk action and navigates to the *View Results* step.
+
+4.2.**Back** — returns the user to Step 1 (row selection).
+    When returning to Step 1, the table resets to the first page and all filters are cleared.
+
+4.3.**Cancel** — exits bulk-operation mode without applying any changes.
+
+## <a id="confirming">Step 3. Confirming the action</a>
 === "Basic"
     ![confirm.png](confirm.png)
 === "With custom text"
@@ -55,6 +72,6 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 === "Without title"
     ![confirmwithouttitle.png](confirmwithouttitle.png)
 
-## <a id="result">Viewing the result</a>
+## <a id="result">Step 4. Viewing the result</a>
 
 ![result.png](result.png)

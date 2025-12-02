@@ -153,5 +153,5 @@ We fixed the `SearchParameterAnnotationCorrectEndingInspection`, which was worki
 We have provided a description of Aggregate widget `GroupingHierarchy` [Aggregate](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/#data-aggregation)   
 
 #### Added: Multi-upload files
-We have provided a description of [Multi-upload files](https://doc.cxbox.org/widget/type/property/bullupload/bulkupload/).
+We have provided a description of [Multi-upload files](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/).
 

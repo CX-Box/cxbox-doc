@@ -608,5 +608,5 @@ see [Excel](/widget/type/property/export/excel/excel)
 #### Multi-upload files
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
-see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
+see more [Multi-upload files](/widget/type/property/multiupload/multiupload)
  

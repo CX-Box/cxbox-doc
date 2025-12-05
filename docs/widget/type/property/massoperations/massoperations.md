@@ -1,4 +1,7 @@
 # Bulk operations
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+
 !!! info
     For small and medium data volumes. Use for synchronous processing within a single transaction when the data size is up to 10,000 rows.
 
@@ -7,8 +10,6 @@
 This function is available:
 
 * for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
-* for fields: See more [field types](/widget/fields/fieldtypes/) 
-
 
 When the table contains at least one row, bulk operations become available. 
 After clicking on a bulk operation, the user enters the bulk-operation mode, which consists of several steps:
@@ -28,7 +29,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * All requests are executed using the ID of the first selected row!
 
 ## <a id="selecting_rows">Step 1. Selecting rows</a>
-![select.png](select.png)
+![mass_select_row2.png](mass_select_row2.png)
 
 1. Checkboxes for selecting rows are displayed in the first column of the table (true = the row is selected).
 2. Filtering and sortingremain available.
@@ -37,12 +38,15 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 
     * If the number of chips exceeds **N**, only the first **N** are shown; the rest are collapsed and replaced with the label **“+N values”**. Hovering over **“+N values”** displays a tooltip: *“Move on to Step 2 to see all the chosen rows.”*
     * A **“Clear”** button is displayed next to the chips. Clicking **Clear** deselects all checkboxes and removes all chips.
-    * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing data from an Excel file).
+    * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing data from an Excel file [step 4](#result)).
+          ![import.png](import.png)
+  
 5. **Available actions**:
 
-    * **Cancel** — exits bulk-operation mode.
-    * **Next** — proceeds to Step 2, where only the selected rows are displayed.
- 
+5.1 **Cancel** — exits bulk-operation mode.
+
+5.2 **Next** — proceeds to Step 2, where only the selected rows are displayed.
+
 ## <a id="reviewing">Step 2. Reviewing the selected rows</a>
 ![review.png](review.png)
 
@@ -75,3 +79,110 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 ## <a id="result">Step 4. Viewing the result</a>
 
 ![result.png](result.png)
+
+
+##### How to add?
+
+??? Example
+    - **Step1**  Add actionGroups **massEdit**(Custom name) to corresponding **.widget.json**.
+
+        ```json
+            "actionGroups": {
+              "include": [
+                "massEdit"
+              ]
+        }
+        ```
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101List.widget.json
+        --8<--
+        ``` 
+    - **Step2** Create action massEdit to corresponding **AwareResponseService*.      
+          
+            !!! info
+                If the update logic depends on the values of the record’s fields, these values must be retrieved from the database.
+                Since the frontend sends only the modified data of the first row — not all fields of all selected records — if your logic depends on the current value of a field in the entity itself, you must fetch the up-to-date record from the database (`findById` or `getReferenceById`).
+
+          ```java
+          --8<--
+          {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEdit
+          --8<--
+          ``` 
+
+            **Property description**
+            
+        - **Step2.1** `.action("massEditCustomTitle", "Mass Edit With Custom Text")`
+            
+            * `"massEditCustomTitle"` — name button for internal used by backend and frontend.
+            * `"Mass Edit With Custom Text"` —  title displayed in the UI.
+            
+            
+        - **Step2.2** `.withPreAction(PreAction.confirmWithWidget(...))`
+            
+            Adds a confirmation dialog before the mass action executes.
+            
+            Parameters:
+            
+            **`"myexample6101Form"`**
+            
+            The name widget used for the confirmation .
+            
+            ##### **`cfw -> ...`**
+            
+            A configuration block where  properties are defined:
+            
+            * **`.noText("It is text no")`**
+              Text for the **Cancel ** button.
+            
+            * **`.title("Mass Edit Title")`**
+                Title of the a confirmation dialog before the mass action executes.
+            
+            * **`.yesText("It is text yes")`**
+                Text for the **Apply** button.
+            
+            This allows customizing the buttons and title.
+            
+       - **Step2.3** 
+            
+            `.scope(ActionScope.MASS)`**
+            
+            Specifies that this is a **mass action**, applied to all selected rows in the grid.
+            
+       - **Step2.4**  `.massInvoker((bc, data, ids) -> { ... })`
+            
+            The main handler for the mass operation.
+            
+            Parameters:
+            
+            * **`bc`** — business component context.
+              * **`data`** — data submitted from the confirmation dialog based on the *first row*.
+              * **`ids`** — the set of IDs of all selected records.
+            
+            Inside the handler:
+             The  method processes each record and returns:
+            
+            * `MassDTO.success(id)` - result success 
+            * `MassDTO.fail(id, "message")` - result error 
+  
+            
+            #### **5. `return new MassActionResultDTO<>(massResult)...`**
+            
+            The mass action result includes:
+            
+            * success/failure information for each record,
+              * a UI post-action.
+            
+         - **Step2.5** `.setAction(PostAction.showMessage(...))`
+            
+            Displays a message in the UI after the mass action completes.
+            
+            Parameters:
+            
+            * `MessageType.INFO` — message type.
+            * `"The fields mass operation was completed!"` — message text.
+
+ 
+
+ 

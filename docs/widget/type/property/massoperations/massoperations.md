@@ -9,8 +9,7 @@
 
 This function is available for widgets:
 
- * [List](/widget/type/list/list),
- * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
+ * [List](/widget/type/list/list) 
 
 When the table contains at least one row, bulk operations become available. 
 After clicking on a bulk operation, the user enters the bulk-operation mode, which consists of several steps:

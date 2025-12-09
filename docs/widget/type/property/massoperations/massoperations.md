@@ -20,6 +20,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 3. [Confirming the action](#confirming) (this step is optional)
 4. [Viewing the result](#result) 
 
+### How does it look?
 === "With confirm"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
@@ -149,6 +150,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 
 
 ## <a id="selecting_rows">Step 1. Selecting rows</a>
+### How does it look?
 ![mass_select_row2.png](mass_select_row2.png)
 
 1. Checkboxes for selecting rows are displayed in the first column of the table (true = the row is selected).
@@ -167,6 +169,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * **Next** — proceeds to Step 2, where only the selected rows are displayed.
 
 ## <a id="reviewing">Step 2. Reviewing the selected rows</a>
+### How does it look?
 ![review.png](review.png)
 
 1.Selected rows from [Step 1. Selecting rows](#selecting_rows) are displayed in read-only mode.
@@ -188,6 +191,14 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 4.3.**Cancel** — exits bulk-operation mode without applying any changes.
 
 ## <a id="confirming">Step 3. Confirming the action</a>
+### How does it look?
+=== "Basic"
+    ![confirm.png](confirm.png)
+=== "With custom text"
+    ![confirmwithcustomtitle.png](confirmwithcustomtitle.png)
+=== "Without title"
+    ![confirmwithouttitle.png](confirmwithouttitle.png)
+
 You can enable or disable the confirmation step — if it’s disabled, the system moves directly to the *View results* stage.
 
 In the confirmation step, you can customize 
@@ -197,14 +208,9 @@ In the confirmation step, you can customize
 * customize the text of the **Save** and **Cancel** buttons
 * the **Back** button is fixed and does not depend on the configuration
 
-=== "Basic"
-    ![confirm.png](confirm.png)
-=== "With custom text"
-    ![confirmwithcustomtitle.png](confirmwithcustomtitle.png)
-=== "Without title"
-    ![confirmwithouttitle.png](confirmwithouttitle.png)
-
-##### How to add?
+ 
+### How to add?
+??? Example
     === "Basic"
         ```java
         --8<--
@@ -225,7 +231,7 @@ In the confirmation step, you can customize
         ```  
 
 ## <a id="result">Step 4. Viewing the result</a>
-
+### How does it look?
 ![result.png](result.png)
 
 

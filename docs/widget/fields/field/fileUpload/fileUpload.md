@@ -463,7 +463,7 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
 ### Multi-upload files
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
-see more [Multi-upload files](/widget/type/property/bullupload/bulkupload)
+see more [Multi-upload files](/widget/type/property/multiupload/multiupload)
 
 ### Regulating the allowed upload types
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample107){:target="_blank"} ·

@@ -131,7 +131,7 @@ Uploaded:
             fields.setFileAccept(MyExampleDTO_.customFieldFile, List.of(".png",".pdf",".jpg",".jpeg"));
         ```
     
-        ```json
+        ```java
         --8<--
         {{ external_links.github_raw_doc }}/feature/file/MyExample6100Meta:buildIndependentMeta
         --8<--
@@ -145,23 +145,23 @@ Uploaded:
             .text("Add Files"))
         ```
     
-        ```json
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Meta:getActions
+        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service:getActions
         --8<--
         ```
     `Step3.1`  Add **doAssociate** to corresponding **ResponseService**. 
         In this service, it is necessary to describe what happens to the files during multiple upload, as well as how and with which properties they are stored.
 
-        ```json
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Meta:doAssociate
+        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service:doAssociate
         --8<--
         ```
     `Step3.2`  Add function **fileUpload** to corresponding **ResponseService**.
     
-        ```json
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Meta:fileUpload
+        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service:fileUpload
         --8<--
         ```

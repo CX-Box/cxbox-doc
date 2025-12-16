@@ -54,7 +54,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
         {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101List.widget.json
         --8<--
         ``` 
-    - **Step2** Create action massEdit to corresponding **AwareResponseService*.      
+    - **Step2** Create action massEdit to corresponding **AwareResponseService**.      
 
           ```java
           --8<--
@@ -74,80 +74,80 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             
             Parameters:
             
-            1) The name widget used for the confirmation .
+            - 1) The name widget used for the confirmation .
             
-            2) **`cfw -> ...`**:
+            - 2) **`cfw -> ...`**:
             
             A configuration block where  properties are defined:
             
-            2.1) **`.noText("It is text no")`**
-              Text for the **Cancel ** button.
-            
-            2.2) **`.title("Mass Edit Title")`**
-                Title of the a confirmation dialog before the mass action executes.
-            
-            2.3) **`.yesText("It is text yes")`**
-                Text for the **Apply** button.
+                - 2.1) **`.noText("It is text no")`**
+                  Text for the **Cancel ** button.
+                
+                - 2.2) **`.title("Mass Edit Title")`**
+                    Title of the a confirmation dialog before the mass action executes.
+                
+                - 2.3) **`.yesText("It is text yes")`**
+                    Text for the **Apply** button.
             
             This allows customizing the buttons and title.
             
-       - **Step2.3** 
+        - **Step2.3** 
             
-        `.scope(ActionScope.MASS)`**
+            `.scope(ActionScope.MASS)`**
+                
+            Specifies that this is a **mass action**, applied to all selected rows in the grid.
+                
+        - **Step2.4**  `.massInvoker((bc, data, ids) -> { ... })`
             
-        Specifies that this is a **mass action**, applied to all selected rows in the grid.
+            The main handler for the mass operation.
             
-       - **Step2.4**  `.massInvoker((bc, data, ids) -> { ... })`
+            Parameters:
             
-        The main handler for the mass operation.
-        
-        Parameters:
-        
-        * **`bc`** — business component context.
-        * **`data`** — data submitted from the confirmation dialog based on the *first row*.
-        * **`ids`** — the set of IDs of all selected records.
-        
-        Inside the handler:
-         The  method processes each record and returns:
-        
-        * `MassDTO.success(id)` - result success 
-        * `MassDTO.fail(id, "message")` - result error 
-  
+            * **`bc`** — business component context.
+            * **`data`** — data submitted from the confirmation dialog based on the *first row*.
+            * **`ids`** — the set of IDs of all selected records.
             
-       - **Step2.5**  `return new MassActionResultDTO<>(massResult)...`**
+            Inside the handler:
+             The  method processes each record and returns:
             
-        The mass action result includes:
+            * `MassDTO.success(id)` - result success 
+            * `MassDTO.fail(id, "message")` - result error 
         
-        * success/failure information for each record,
-        * a UI post-action.
-        
-       - **Step2.6** `.setAction(PostAction.showMessage(...))`
+                
+        - **Step2.5**  `return new MassActionResultDTO<>(massResult)...`**
+                
+            The mass action result includes:
             
-        Displays a message in the UI after the mass action completes.
-        
-        Parameters:
-        
-        * `MessageType.INFO` — message type.
-        * `"The fields mass operation was completed!"` — message text.
+            * success/failure information for each record,
+            * a UI post-action.
+            
+          - **Step2.6** `.setAction(PostAction.showMessage(...))`
+                
+             Displays a message in the UI after the mass action completes.
+            
+             Parameters:
+            
+             * `MessageType.INFO` — message type.
+             * `"The fields mass operation was completed!"` — message text.
 
-        === "With confirm"
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+         === "With confirm"
+             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
+             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEdit
-            --8<--
-            ``` 
-        === "Without confirm"
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruelist){:target="_blank"}
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+             ```java
+             --8<--
+             {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEdit
+             --8<--
+             ``` 
+         === "Without confirm"
+             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruelist){:target="_blank"}
+             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massCheckboxTrue
-            --8<--
-            ``` 
+             ```java
+             --8<--
+             {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massCheckboxTrue
+             --8<--
+             ``` 
 
 
 ## <a id="selecting_rows">Step 1. Selecting rows</a>
@@ -155,7 +155,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 ![mass_select_row2.png](mass_select_row2.png)
 
 1. Checkboxes for selecting rows are displayed in the first column of the table (true = the row is selected).
-2. Filtering and sortingremain available.
+2. Filtering and sorting remain available.
 3. Rows become non-editable while in bulk-operation mode.
 4. All selected rows are displayed above the table as chips.
 

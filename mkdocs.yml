@@ -25,6 +25,8 @@ nav:
         - v2.0.0: new/version200.md
         - v1.0.1: new/version101.md
         - v1.0.0: new/version100.md
+      - plugin:
+
   - Guides for work with documentation:
     - For analysts: guide/analystguide/analystguide.md
     - For developers: guide/developerguide/developerguide.md

@@ -161,6 +161,7 @@ nav:
       - SearchParameter: advancedCustomization/element/searchparameter/searchparameter.md
   - Plugin:
       Install and Update: plugin/plugininstalling.md
+  - FAQ: faq/faq.md
 
 markdown_extensions:
   - tables

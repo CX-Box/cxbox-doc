@@ -1,4 +1,5 @@
 # 1.7.8
+
 ## Added: @SearchParameter - improved handling for unresolved entities
 
 We have improved the plugin's behavior when the Entity specified in the annotation cannot be resolved.

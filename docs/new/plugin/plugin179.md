@@ -1,4 +1,5 @@
 # 1.7.9
+
 ## Added: Run Inspections Button
 
 We have added a Run Inspections button to the IntelliJ IDEA sidebar, enabling one-click execution of inspections across the entire project. The functionality automates the manual steps required to run inspections, eliminating the need to configure profiles or adjust settings.

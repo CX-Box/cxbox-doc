@@ -1,4 +1,5 @@
 # 2.0.0
+
 ## Added: IntelliJ 2025.2+ support added. (with 1.9.0)
 IntelliJ 2025.2+ support added.
  

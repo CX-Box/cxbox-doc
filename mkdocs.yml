@@ -155,6 +155,7 @@ nav:
       - Notifications:
         - Sent to email: features/element/notifications/email/email.md
         - Push: features/element/notifications/push/websocket.md
+      - New Year Theme: features/happynewyear/happynewyear.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drilldown/drilldown.md
       - Validation: advancedCustomization/element/validation/validation.md

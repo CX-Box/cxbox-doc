@@ -25,6 +25,7 @@
  
 ## **Plugin**:
 
+### [2.0.2](/new/plugin/plugin202)
 ### [2.0.0](/new/plugin/plugin200)
 ### [1.8.0](/new/plugin/plugin180)
 ### [1.7.9](/new/plugin/plugin179)

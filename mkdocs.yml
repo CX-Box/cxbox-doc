@@ -26,12 +26,12 @@ nav:
         - v1.0.1: new/version101.md
         - v1.0.0: new/version100.md
       - plugin:
-        - v2.0.0: new/plugin/plugin200.md
-        - v1.8.0: new/plugin/plugin180.md
-        - v1.7.9: new/plugin/plugin179.md
-        - v1.7.8: new/plugin/plugin178.md
-        - v1.7.7: new/plugin/plugin177.md
-        - v1.7.1: new/plugin/plugin171.md
+        - 2.0.0: new/plugin/plugin200.md
+        - 1.8.0: new/plugin/plugin180.md
+        - 1.7.9: new/plugin/plugin179.md
+        - 1.7.8: new/plugin/plugin178.md
+        - 1.7.7: new/plugin/plugin177.md
+        - 1.7.1: new/plugin/plugin171.md
 
   - Guides for work with documentation:
     - For analysts: guide/analystguide/analystguide.md
@@ -161,7 +161,6 @@ nav:
       - SearchParameter: advancedCustomization/element/searchparameter/searchparameter.md
   - Plugin:
       Install and Update: plugin/plugininstalling.md
-      Versions: plugin/plugin.md
 
 markdown_extensions:
   - tables

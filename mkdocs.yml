@@ -26,6 +26,7 @@ nav:
         - v1.0.1: new/version101.md
         - v1.0.0: new/version100.md
       - plugin:
+        - 2.0.2: new/plugin/plugin202.md
         - 2.0.0: new/plugin/plugin200.md
         - 1.8.0: new/plugin/plugin180.md
         - 1.7.9: new/plugin/plugin179.md

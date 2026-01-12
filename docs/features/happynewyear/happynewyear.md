@@ -7,13 +7,10 @@ The effect is controlled via a configuration parameter.
 The period during which the snow is displayed is defined on the frontend side. Currently, it is set from **December 15 to January 20**.
 
 ## How does it look?
-[happynewyear.md](happynewyear.md)
+![newyeartheme.png](newyeartheme.png)
 
 ## How to add?
-
 ??? Example
-### Backend Configuration
-
     **Step 1** Add the `seasonalEffectsEnabled` parameter to `application.yml`  
  
     ```yml
@@ -32,3 +29,5 @@ The period during which the snow is displayed is defined on the frontend side. C
 								uiProperties.isSeasonalEffectsEnabled()
 						)
     ```
+
+    Frontend setting:  ui/src/components/AppSide/Snowflakes/constants.ts

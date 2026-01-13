@@ -1,4 +1,5 @@
 # New Year Theme 🎄
+Available since [v2.0.17](/new/version2017/)
 
 We have added an option to create a festive New Year atmosphere in the application. You can enable a falling snow effect in the application menu.
 

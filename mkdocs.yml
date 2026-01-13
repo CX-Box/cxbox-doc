@@ -115,6 +115,7 @@ nav:
           - Basic: navigation/view/view.md
       - Screen:
           - Basic: navigation/screen/screen.md
+      - Browser navigation buttons:  navigation/browsernavigationbuttons/browsernavigationbuttons.md
   - Repository elements:
       - Basic: environment/repository.md
       - Entity: environment/entity/entity.md

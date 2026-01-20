@@ -254,6 +254,17 @@ This function is available:
 
 The option to default filter by saved groups is currently unavailable.
 
+!!! info
+
+    There is a limitation when using predefined filters of the following types:
+    `multivalue`, `pickList`, and `multivalueHover`.
+    
+     * When such filters are **predefined**, the filter tags display **`id` values**.
+     * When the filter is **manually edited** (for example, by adding values via a picklist), the tags are displayed **according to the standard rules**.
+    
+    This behavior is caused by a frontend limitation:  
+    the frontend cannot resolve display names for filter tags if the records specified in the predefined filter are located on **different pages of the picklist popup** and are not loaded in the current UI context.
+
 ### How does it look?
 === "List"
     ![filter_group_save_list.gif](filter_group_save_list.gif)

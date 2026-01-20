@@ -16,6 +16,11 @@ This function is available:
 !!! info
     Sorting won't function until the page is refreshed after adding or updating records. 
 
+**Please pay attention to the sorting behavior:**
+
+* If the user has not set a sorting option, the default sorting is applied if it is defined.
+* If the user has applied a sorting option, it will be preserved when navigating via drill-down or between screens.
+
 How does it look?
 ![sorting.gif](sorting.gif)
 

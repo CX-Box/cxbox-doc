@@ -18,8 +18,8 @@ This function is available:
 
 **Please pay attention to the sorting behavior:**
 
-If a user-defined sorting has been applied, it should be preserved when navigating via drill-down or between screens.
-
+* If the user has not set a sorting option, the default sorting is applied if it is defined.
+* If the user has applied a sorting option, it will be preserved when navigating via drill-down or between screens.
 
 How does it look?
 ![sorting.gif](sorting.gif)

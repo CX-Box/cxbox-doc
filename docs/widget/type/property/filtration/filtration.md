@@ -253,7 +253,7 @@ This function is available:
 )
 
 The option to default filter by saved groups is currently unavailable.
-
+ 
 ### How does it look?
 === "List"
     ![filter_group_save_list.gif](filter_group_save_list.gif)
@@ -316,6 +316,18 @@ The option to default filter by saved groups is currently unavailable.
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergrouphiddenfield){:target="_blank"}
 
+!!! info
+
+    There is a limitation when using predefined filters of the following types:
+    `multivalue`, `pickList`, and `multivalueHover`.
+    
+     * When such filters are **predefined**, the filter tags display **`id` values**.
+     * When the filter is **manually edited** (for example, by adding values via a picklist), the tags are displayed **according to the standard rules**.
+    
+    This behavior is caused by a frontend limitation:  
+    the frontend cannot resolve display names for filter tags if the records specified in the predefined filter are located on **different pages of the picklist popup** and are not loaded in the current UI context.
+
+    ![example.png](example.png)   
 
 ## Additional properties
 ### Clear filters

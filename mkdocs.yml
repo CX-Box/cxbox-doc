@@ -129,6 +129,7 @@ nav:
             - isFieldChangedNow: environment/meta/buildrowdependentmeta/isfieldchangednow/isfieldchangednow.md
             - setHidden: environment/meta/buildrowdependentmeta/sethidden/sethidden.md
       - Controller: environment/controller/controller.md
+      - Repository: environment/jparepository/jparepository.md
   - Features:
       - Actions:
           - basic: features/element/actions/actions.md
@@ -164,7 +165,6 @@ nav:
       - SearchParameter: advancedCustomization/element/searchparameter/searchparameter.md
   - Plugin:
       Install and Update: plugin/plugininstalling.md
-  - FAQ: faq/faq.md
 
 markdown_extensions:
   - tables

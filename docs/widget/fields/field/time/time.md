@@ -373,6 +373,11 @@ The time type supports various formats for representing and manipulating time va
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3504){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/filtration){:target="_blank"}
 
+        !!! info
+            With a large number of rows in the database, a significant performance degradation may occur; therefore, we recommend adding appropriate indexes.
+
+            `postgres` - CREATE INDEX idx_apple_created_date_time_filtr ON my_entity (cast(custom_field as time(6))); 
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"
@@ -587,6 +592,14 @@ Also, it optionally allows you to filter data on target view before it will be o
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3508){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/sorting){:target="_blank"}
 
+        !!! info
+            With a large number of rows in the database, a significant performance degradation may occur; therefore, we recommend adding appropriate indexes.
+
+            `postgres` 
+            
+                * CREATE INDEX idx_apple_created_date_time_desc ON my_entity (cast(custom_field as time(6)) desc,id desc);
+                * CREATE INDEX idx_apple_created_date_time_asc ON my_entity (cast(custom_field as time(6)) asc,id desc);
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"

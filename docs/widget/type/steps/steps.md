@@ -86,7 +86,7 @@ Type: String(required).
 
         ```json
            --8<--
-           {{ external_links.github_raw_doc }}/widgets/steps/base/MyExample5023Steps.widget.json
+           {{ external_links.github_raw_doc }}/widgets/steps/base/myExampleStep.widget.json
            --8<--
         ```
 

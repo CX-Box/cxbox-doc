@@ -483,6 +483,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     === "BusinessException"
+
         `BusinessException` describes an error  within a business process.
     
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
@@ -539,25 +540,25 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
     === "Field level validation"
-            Create сustom service for business logic check.
 
-            Use if:
+        Create сustom service for business logic check.
 
-            Business logic check required for fields
+        Use if:
 
-            `Step 1`  Create сustom method for check.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:validateFields
-            --8<--
-            ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:doUpdateEntity
-            --8<--
-            ```
+        Business logic check required for fields
 
+        `Step 1`  Create сustom method for check.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:validateFields
+        --8<--
+        ```
+        `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:doUpdateEntity
+        --8<--
+        ```
 
 ## Sorting
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3508){:target="_blank"} ·

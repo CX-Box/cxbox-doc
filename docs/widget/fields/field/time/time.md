@@ -440,16 +440,16 @@ Also, it optionally allows you to filter data on target view before it will be o
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MyExample3503List){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4101){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationRuntimeExEntity){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4104){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateConfirm){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4103){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
@@ -493,9 +493,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationbusinessex/DateValidationBusinessExService.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/fields/time/validationbusinessex/MyExample4101Service.java:doUpdateEntity
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4101){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationbusinessex){:target="_blank"}
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -509,9 +513,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationruntimeex/DateValidationRuntimeExEntityService.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/fields/time/validationruntimeex/MyExample4104Service.java:doUpdateEntity
         --8<--
-        ```         
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4104){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationruntimeex){:target="_blank"}
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -522,9 +530,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationconfirm/DateConfirmService.java:getActions
+        {{ external_links.github_raw_doc }}/fields/time/validationconfirm/MyExample4103Service.java:getActions
         --8<--
         ```
+        
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4103){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationconfirm){:target="_blank"}
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -603,7 +615,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         _not applicable_
 
 ## Required
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateRequired){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3506){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided.
@@ -620,7 +632,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fields/time/required/DateRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/time/required/MyExample3506Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"

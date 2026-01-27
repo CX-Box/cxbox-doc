@@ -571,14 +571,14 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 
 ## Sorting
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3508){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order.
 
 ### How does it look?
 === "List widget"
-    ![sort_list](sort_list.png)
+    ![sort_list](sort_list.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -591,10 +591,10 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/sorting/DateSortingMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/time/sorting/MyExample3508Meta.java:buildIndependentMeta
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3508){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/sorting){:target="_blank"}
 
     === "Info widget"

@@ -38,6 +38,8 @@ Steps
     ![picklist.png](picklistpopup/picklist.png)
 === "StatsBlock"
     ![img_stat.png](statblocks/img_stat.png)
+=== "Steps"
+    ![steps.png](steps/steps.png)
 
 *   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the right**.
 *   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the right**.
@@ -52,7 +54,8 @@ Steps
 *   [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
 *   [PickListPopup widget](/widget/type/picklistpopup/picklistpopup) is a component that allows the user to select a value from a Popup list of entities.
 *   [StatsBlock widget](/widget/type/statblocks/statblocks) is a tool designed to display aggregated data in a visually accessible format.
-
+*   [Steps](/widget/type/steps/steps) is used to define and manage sequential actions or stages within a business process in the application. They allow developers and users to structure complex behavior into smaller, manageable steps, improving readability, maintainability.
+ 
 ## Structure .widget.json
 
 ```json

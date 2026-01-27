@@ -454,12 +454,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
-   `Option 1`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample165){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationannotation){:target="_blank"}
-
-   `Option 2`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample320){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4106){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationdynamic){:target="_blank"}
 
 ### How does it look?
@@ -544,24 +539,6 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
     === "Field level validation"
-        === "Option 1"
-            Add javax.validation to corresponding **DataResponseDTO**.
-
-            Use if:
-
-            Requires a simple fields check (javax validation)
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationannotation/MyExample165DTO.java
-            --8<--
-            ```
-            === "List widget"
-                **Works for List.**
-            === "Info widget"
-                **_not applicable_**
-            === "Form widget"
-                **Works for Form.**
-        === "Option 2"
             Create сustom service for business logic check.
 
             Use if:
@@ -571,13 +548,13 @@ Also, it optionally allows you to filter data on target view before it will be o
             `Step 1`  Create сustom method for check.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample320Service.java:valitimeFields
+            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:validateFields
             --8<--
             ```
             `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample320Service.java:doUptimeEntity
+            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:doUpdateEntity
             --8<--
             ```
 

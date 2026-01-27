@@ -93,6 +93,7 @@ nav:
       - Widget List: widget/type/list/list.md
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
+      - Widget Steps: widget/type/steps/steps.md
       - Property:
          - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
          - Export:

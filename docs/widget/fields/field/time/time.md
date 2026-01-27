@@ -345,7 +345,13 @@ The time type supports various formats for representing and manipulating time va
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3504){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering` allows you to search data based on criteria.
+
+Search uses (HH:MM:SS):
+
+* `greaterOrEqualThan(>=)` and `lessThan(<)` operators. When the time is first set in the filter field, the time values will either be 00:00:00 or 23:59:59.
+* `equals (=)` operator.Search is carried out between 00:00:00 and 23:59:59.
+
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -357,6 +363,11 @@ The time type supports various formats for representing and manipulating time va
 ### How to add?
 ??? Example
     === "List widget"
+
+        !!! info  
+            By default, filtration is carried out **by range**. If you want to turn it off, indicate `cxbox.widget.fields.filter-by-range-enabled-default: false` in meta.  
+            [see more](/features/element/applicationparams/applicationparams)
+
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
@@ -597,8 +608,8 @@ Also, it optionally allows you to filter data on target view before it will be o
 
             `postgres` 
             
-                * CREATE INDEX idx_apple_created_date_time_desc ON my_entity (cast(custom_field as time(6)) desc,id desc);
-                * CREATE INDEX idx_apple_created_date_time_asc ON my_entity (cast(custom_field as time(6)) asc,id desc);
+            * CREATE INDEX idx_apple_created_date_time_desc ON my_entity (cast(custom_field as time(6)) desc,id desc);
+            * CREATE INDEX idx_apple_created_date_time_asc ON my_entity (cast(custom_field as time(6)) asc,id desc);
  
     === "Info widget"
         _not applicable_

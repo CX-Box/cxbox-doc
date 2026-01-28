@@ -5,21 +5,34 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/base){:target="_blank"}
 
-The time type supports various formats for representing and manipulating time values. These formats include:
+The time type supports various formats for representing and manipulating time values. 
 
-* 24-hour clock format (hh:mm,hh: mm:ss): For example, 14:30, 14:30:00.
-* 12-hour clock format with AM/PM (hh:mm AM/PM,hh: mm:ss AM/PM): For example, 02:30 PM,02:30:45 PM.
-* The time type also supports representing hours, minutes, and seconds separately. For example:
-    
-    Hours(h): 13 (13 Hours or 1PM).
+!!! info
+    The format of this field is designed to support business scenarios in which the same field is used in different contexts:
+     as **date and time** , as **time only**.
 
-    Minutes(mm): 55 (55 minutes).
+    This approach allows for consistent data storage while providing flexible representation and usage across different parts of the system.
 
-    Seconds(ss): 30 (30 seconds).
+**Supported Formats**:
 
-    Minutes and seconds(mm:ss) : 55:30 (55 minutes and 30 seconds).
+| Format       | Value range           | Example     |
+| ------------ | --------------------- | ----------- |
+| *default*    | 00–23 : 00–59 : 00–59 | 15:45:28    |
+| `HH:mm:ss`   | 00–23 : 00–59 : 00–59 | 15:45:28    |
+| `HH:mm`      | 00–23 : 00–59         | 15:28       |
+| `HH`         | 00–23                 | 15          |
+| `hh:mm:ss A` | 01–12 : 00–59 : 00–59 | 03:45:28 PM |
+| `hh:mm A`    | 01–12 : 00–59         | 03:28 PM    |
+| `hh A`       | 01–12                 | 03 PM       |
 
-These formats ensure that the time type can be utilized effectively in various contexts and applications, from simple time displays to complex time computations and data interchange. 
+**NOT supported formats**
+
+| Format  | Value range   | Example |
+| ------- | ------------- | ------- |
+| `mm:ss` | 00–59 : 00–59 | 45:28   |
+| `mm`    | 00–59         | 15      |
+| `ss`    | 00–59         | 28      |
+
 
 ### How does it look?
 
@@ -33,54 +46,118 @@ These formats ensure that the time type can be utilized effectively in various c
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDateTime** to corresponding **BaseEntity**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/time/base/MyEntity3500.java
-    --8<--
-    ```
+    === "LocalDateTime(recommended)"
 
-    **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/fields/time/base/yExample3500DTO.java
-    --8<--
-    ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/base){:target="_blank"}
 
-    === "List widget"
-        **Step3** Add to **_.widget.json_**.
-
-        To set the format, add  "format". For example:
-
-        "format": "h:mm"
-
-        By default, there will be a standard format applied: "h: mm:ss"
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500List.widget.json
-        --8<--
-        ```
-    === "Info widget"
-        **Step3** Add to **_.widget.json_**.
+        We recommend using the **`LocalDateTime`** type, as the format of this field is designed to support business scenarios in which the same field is used in different contexts:
         
-        ```json
+        * in some cases, it is treated as **date and time** (for example, when creating a meeting);
+          * in other cases, the **same field** is displayed as **time only**, without a date.
+        
+        This approach ensures consistent data modeling while allowing flexible representation of the field across different parts of the system.
+
+        **Step1** Add field **LocalDateTime** to corresponding **BaseEntity**.
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/time/base/MyEntity3500.java
+        --8<--
+        ```
+    
+        **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/time/base/Example3500DTO.java
         --8<--
         ```
 
-    === "Form widget"
+        === "List widget"
+            **Step3** Add to **_.widget.json_**.
+    
+            To set the format, add  "format".  
+    
+            By default, there will be a standard format applied: "HH : mm:ss"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500List.widget.json
+            --8<--
+            ```
+        === "Info widget"
+            **Step3** Add to **_.widget.json_**.
+            
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Info.widget.json
+            --8<--
+            ```
+    
+        === "Form widget"
+    
+            **Step3** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Form.widget.json
+            --8<--
+            ```    
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/base){:target="_blank"}
 
-        **Step3** Add to **_.widget.json_**.
+    === "LocalTime"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3512){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/baselocaltime){:target="_blank"}
 
-        ```json
+        **Step1** Add field **LocalTime** to corresponding **BaseEntity**.
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyEntity3512.java
         --8<--
-        ```    
+        ```
+    
+        **Step2**  Add field **LocalTime** to corresponding **DataResponseDTO**.
+        Add  @JsonSerialize(using = LocalTimeWithDateSerializer.class).
+        Add  @JsonDeserialize(using = LocalTimeWithDateDeserializer.class).
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/base){:target="_blank"}
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512DTO.java
+        --8<--
+        ```
+
+        === "List widget"
+            **Step3** Add to **_.widget.json_**.
+    
+            To set the format, add  "format".  
+    
+            By default, there will be a standard format applied: "HH : mm:ss"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512List.widget.json
+            --8<--
+            ```
+        === "Info widget"
+            **Step3** Add to **_.widget.json_**.
+            
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512Info.widget.json
+            --8<--
+            ```
+    
+        === "Form widget"
+    
+            **Step3** Add to **_.widget.json_**.
+    
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512Form.widget.json
+            --8<--
+            ```    
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3512){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/baselocaltime){:target="_blank"}
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3505){:target="_blank"} ·
@@ -194,7 +271,7 @@ These formats ensure that the time type can be utilized effectively in various c
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/colorconst){:target="_blank"}
 
 
-<!--
+ 
 ## Readonly/Editable
 `Readonly/Editable` indicates whether the field can be edited or not. It can be calculated based on business logic of application
 
@@ -210,11 +287,11 @@ These formats ensure that the time type can be utilized effectively in various c
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![img_edit_list.png](img_edit_list.png)
+        ![img_list.png](img_list.png)
     === "Info widget"
-        _not applicable_
+        ![img_info.png](img_info.png)
     === "Form widget"
-        ![img_edit_form.png](img_edit_form.png)
+        ![img_form.png](img_form.png)
 === "Readonly"
     === "List widget"
         ![img_ro_list.png](img_ro_list.png)
@@ -230,7 +307,7 @@ These formats ensure that the time type can be utilized effectively in various c
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/myexample3500Service.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/fields/time/base/myexample3500Service.java:doUpdateEntity
         --8<--
         ```
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
@@ -251,9 +328,10 @@ These formats ensure that the time type can be utilized effectively in various c
         **Option 1** Enabled by default.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/ro/DateCreateEditMeta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/time/ro/MyExample3507Meta.java:buildRowDependentMeta
         --8<--
         ```    
+ 
         **Option 2** `Not recommended.` Property fields.setDisabled() overrides the enabled field if you use after property fields.setEnabled.
         === "List widget"
             **Works for List.**
@@ -261,12 +339,19 @@ These formats ensure that the time type can be utilized effectively in various c
             **Works for Info.**
         === "Form widget"
             **Works for Form.**
-## Filtering
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateFiltration){:target="_blank"} ·
+ 
+## Filtering
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3504){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/filtration){:target="_blank"}
 
-`Filtering` allows you to search data based on criteria. Search uses equals (=) operator.
+`Filtering` allows you to search data based on criteria.
+
+Search uses (HH:MM:SS):
+
+* `greaterOrEqualThan(>=)` and `lessThan(<)` operators. When the time is first set in the filter field, the time values will either be 00:00:00 or 23:59:59.
+* `equals (=)` operator.Search is carried out between 00:00:00 and 23:59:59.
+
 ### How does it look?
 === "List widget"
     ![img_filtr_list.png](img_filtr_list.png)
@@ -278,28 +363,40 @@ These formats ensure that the time type can be utilized effectively in various c
 ### How to add?
 ??? Example
     === "List widget"
+
+        !!! info  
+            By default, filtration is carried out **by range**. If you want to turn it off, indicate `cxbox.widget.fields.filter-by-range-enabled-default: false` in meta.  
+            [see more](/features/element/applicationparams/applicationparams)
+
         **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/filtration/DateFiltrationDTO.java
+        {{ external_links.github_raw_doc }}/fields/time/filtration/MyExample3504DTO.java   
         --8<--
-        ```        
+        ```   
         **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/filtration/DateFiltrationMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/time/filtration/MyExample3504Meta.java:buildIndependentMeta
         --8<--
-        ```        
+        ```       
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3504){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/filtration){:target="_blank"}
+
+        !!! info
+            With a large number of rows in the database, a significant performance degradation may occur; therefore, we recommend adding appropriate indexes.
+
+            `postgres` - CREATE INDEX idx_apple_created_date_time_filtr ON my_entity (cast(custom_field as time(6))); 
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"
         _not applicable_
--->
+ 
 
 ## Drilldown
-_not applicable_
-<!--
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503![img_list.png](../../../../../../../Downloads/img_list.png)){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
@@ -350,35 +447,30 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Form widget"
         _not applicable_
 [Advanced customization](/advancedCustomization/element/drilldown/drilldown)
--->
+
 
 ## Validation
-<!--
+ 
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
 
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MyExample3503List){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4101){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationRuntimeExEntity){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4104){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationruntimeex){:target="_blank"}
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateConfirm){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4103){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
-   `Option 1`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample165){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationannotation){:target="_blank"}
-
-   `Option 2`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample320){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4106){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationdynamic){:target="_blank"}
 
 ### How does it look?
@@ -407,14 +499,19 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How to add?
 ??? Example
     === "BusinessException"
+
         `BusinessException` describes an error  within a business process.
     
         Add **BusinessException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationbusinessex/DateValidationBusinessExService.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/fields/time/validationbusinessex/MyExample4101Service.java:doUpdateEntity
         --8<--
         ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4101){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationbusinessex){:target="_blank"}
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -428,9 +525,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add **RuntimeException** to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationruntimeex/DateValidationRuntimeExEntityService.java:doUptimeEntity
+        {{ external_links.github_raw_doc }}/fields/time/validationruntimeex/MyExample4104Service.java:doUpdateEntity
         --8<--
-        ```         
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4104){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationruntimeex){:target="_blank"}
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -441,9 +542,13 @@ Also, it optionally allows you to filter data on target view before it will be o
         Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationconfirm/DateConfirmService.java:getActions
+        {{ external_links.github_raw_doc }}/fields/time/validationconfirm/MyExample4103Service.java:getActions
         --8<--
         ```
+        
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4103){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/validationconfirm){:target="_blank"}
+
         === "List widget"
             **Works for List.**
         === "Info widget"
@@ -451,53 +556,35 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
     === "Field level validation"
-        === "Option 1"
-            Add javax.validation to corresponding **DataResponseDTO**.
 
-            Use if:
+        Create сustom service for business logic check.
 
-            Requires a simple fields check (javax validation)
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationannotation/MyExample165DTO.java
-            --8<--
-            ```
-            === "List widget"
-                **Works for List.**
-            === "Info widget"
-                **_not applicable_**
-            === "Form widget"
-                **Works for Form.**
-        === "Option 2"
-            Create сustom service for business logic check.
+        Use if:
 
-            Use if:
+        Business logic check required for fields
 
-            Business logic check required for fields
-
-            `Step 1`  Create сustom method for check.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample320Service.java:valitimeFields
-            --8<--
-            ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample320Service.java:doUptimeEntity
-            --8<--
-            ```
-
+        `Step 1`  Create сustom method for check.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:validateFields
+        --8<--
+        ```
+        `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:doUpdateEntity
+        --8<--
+        ```
 
 ## Sorting
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3508){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/sorting){:target="_blank"}
 
 `Sorting` allows you to sort data in ascending or descending order.
 
 ### How does it look?
 === "List widget"
-    ![sort_list](sort_list.png)
+    ![sort_list](sort_list.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -510,19 +597,27 @@ Also, it optionally allows you to filter data on target view before it will be o
         **Step 1**  Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/sorting/DateSortingMeta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/time/sorting/MyExample3508Meta.java:buildIndependentMeta
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateSorting){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3508){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/sorting){:target="_blank"}
 
+        !!! info
+            With a large number of rows in the database, a significant performance degradation may occur; therefore, we recommend adding appropriate indexes.
+
+            `postgres` 
+            
+            * CREATE INDEX idx_apple_created_date_time_desc ON my_entity (cast(custom_field as time(6)) desc,id desc);
+            * CREATE INDEX idx_apple_created_date_time_asc ON my_entity (cast(custom_field as time(6)) asc,id desc);
+ 
     === "Info widget"
         _not applicable_
     === "Form widget"
         _not applicable_
 
 ## Required
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateRequired){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3506){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/required){:target="_blank"}
 
 `Required` allows you to denote, that this field must have a value provided.
@@ -539,7 +634,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/fields/time/required/DateRequiredMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/fields/time/required/MyExample3506Meta.java:buildRowDependentMeta
     --8<--
     ```
     === "List widget"
@@ -548,5 +643,4 @@ Also, it optionally allows you to filter data on target view before it will be o
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
-
--->
+ 

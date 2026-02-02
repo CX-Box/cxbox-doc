@@ -68,10 +68,10 @@ The time type supports various formats for representing and manipulating time va
         **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/Example3500DTO.java
+        {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500DTO.java
         --8<--
         ```
-
+ 
         === "List widget"
             **Step3** Add to **_.widget.json_**.
     
@@ -307,15 +307,17 @@ The time type supports various formats for representing and manipulating time va
         **Step1** Add mapping DTO->entity to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/myexample3500Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Service.java:doUpdateEntity
         --8<--
         ```
+ 
         **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/base/myexample3500Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Meta.java:buildRowDependentMeta
         --8<--
         ```
+ 
         === "List widget"
             **Works for List.**
         === "Info widget"

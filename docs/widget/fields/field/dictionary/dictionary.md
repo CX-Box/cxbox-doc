@@ -1406,7 +1406,7 @@ Applies to:
     Next, we retrieve the value from either values (see [how_to_add](#basics_how_to_add)) or filterValues (see  [how_to_add](#filtering_how_to_add))
     and then search for the matching icon in allValues.
     === "Enum"
-        `Step 1` Add **fields.setAllValuesWithIcons** to corresponding **FieldMetaBuilder**.
+        `Step 1` Add **fields.setEnumIcons** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/dictionary/icon/MyExample3011Meta.java:buildIndependentMeta

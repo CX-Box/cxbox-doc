@@ -197,6 +197,14 @@ We have provided a description [Screen Search in Left Menu](https://doc.cxbox.or
 <!-- CXBOX-1221 -->   
 We have provided a description [Screen Name Wrapping in Left Menu](https://doc.cxbox.org/navigation/screen/screen/#screen-name-wrapping-in-left-menu)
 
+#### Added: Description setHidden
+<!-- CXBOX-1155 -->   
+We have provided a description [setHidden](https://doc.cxbox.org/environment/meta/buildrowdependentmeta/sethidden/sethidden/)
+
+#### Added: Description new properties Time
+<!-- CXBOX-1222 -->   
+We have provided a description new properties [time](https://doc.cxbox.org/widget/fields/field/time/time/)
+
 #### Added: Description a limitation when using predefined filters
 <!-- CXBOX-1145 -->  
 There is a limitation when using predefined filters of the following types: multivalue, pickList, and multivalueHover.

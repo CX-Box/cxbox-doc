@@ -85,7 +85,7 @@ For the GroupingHierarchy widget, scroll display has been added for cases when t
 <!-- CXBOX-1179 -->  
 The display of the action group has been improved: the width of the window showing button labels now automatically adjusts based on the content.
 
-![CXBOX_1179.png](v2.0.17/CXBOX_1179.png)
+![CXBOX_1179.png](v2.0.17/CXBOX_1179.png){ style="width:50%" }
 
 #### Fixed: Improved Scrolling for Large Lists
 <!-- CXBOX-1188 --> 
@@ -121,12 +121,26 @@ WebSocket Request Behavior Based on featureSettings
 #### Added: Optional WebSocket Updates
 <!-- CXBOX-1149 --> 
 
-For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC
+For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC*
 
 === "after"
     ![after_CXBOX-1149.png](v2.0.17/after_CXBOX-1149.png)
 === "before"
     ![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
+
+#### Added: Support for OGG, AAC, and FLAC
+<!-- CXBOX-1234 --> 
+
+Support for OGG, AAC, and FLAC formats has been added.
+
+#### Added: Fixed the highlighting of required multivalue field
+<!-- CXBOX-1138 --> 
+Fixed the highlighting of required multivalue field in the list widget when using inline form editing.
+
+=== "after"
+    ![after_CXBOX-1138.png](v2.0.17/after_CXBOX-1138.png)
+=== "before"
+    ![before_CXBOX-1138.png](v2.0.17/before_CXBOX-1138.png)
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.17)
@@ -139,9 +153,9 @@ We have released a new 2.7.1 CORE UI version.
 Removed the request triggered by clicking on ...  the GET /api/v1/row-meta/id request is no longer sent.
 
 === "after"
-    ![after_CXBOX-1111.png](v2.0.17/before_CXBOX-1111.png)
+    ![after_CXBOX-1111.png](v2.0.17/after_CXBOX-1111.png)
 === "before"
-    ![before_CXBOX-1111.png](v2.0.17/after_CXBOX-1111.png)
+    ![before_CXBOX-1111.png](v2.0.17/before_CXBOX-1111.png)
 
 #### Other Changes
 See [cxbox-ui 2.7.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1).
@@ -162,11 +176,10 @@ We added a new parameter for `UiProperties`: `webSocketNotificationEnabled`.
 
 When set to `false` the frontend guarantees no WebSocket interactions, so the backend WebSocket functionality may be safely removed.
 
-
 #### Added: New PostAction exportToExcel
 <!-- CXBOX-1060 --> 
 Added the ability to add button Export to Excel as a regular button. 
-
+ 
 #### Other Changes
 See [cxbox 4.0.0-M21 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M21).
 

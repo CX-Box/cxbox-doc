@@ -6,6 +6,7 @@ nav:
   - What’s new: new/whatsnew.md
   - Versions :
       - cxbox:
+        - v2.0.17: new/version2017.md
         - v2.0.16: new/version2016.md
         - v2.0.15: new/version2015.md
         - v2.0.14: new/version2014.md

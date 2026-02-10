@@ -136,28 +136,7 @@ fields.defaultGroupingHierarchy(
 ```
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M10)
-
-### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)  
-
-We've updated the plugin to version 1.7.7
-
-#### Added: *.screen.json - inspection when "type" : "standard"  
-
-We have added inspections for screens that have explicitly set `"type"="standard"` in .screen.json. These include making sure each `viewName` is unique, detecting empty arrays. We have also improved view generation (triggered by `+` icon click)
-
-#### Added: *.widget.json - auto-completion and navigation for `actionKey` 
-
-Previous plugin versions provided navigation for actions referenced in `options->actionGroups` of .widget.json.
-In this release we added same feature for actions referenced in `options->buttons->actionKey` tag of .widget.json used for files drag-and-drop configuration.  
-
-![actionKey.gif](v2.0.7/actionKey.gif){width="800"}
-
-#### Added: *.widget.json - inspection for actionGroups location.  
-
-We have added an inspection for `actionGroups` tag in .widget.json to ensure it is located within `options`.  
-
-![actionGroupsLocation.gif](v2.0.7/actionGroupsLocation.gif){width="800"}  
-
+ 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 
 #### Added: [PickListPopup](/widget_type_pick_list_popup) widget - documentation article  

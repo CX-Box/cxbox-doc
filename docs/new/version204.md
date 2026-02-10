@@ -6,8 +6,6 @@
 
 * [cxbox-ui/core 2.0.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.0.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.0.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.0.0)
 
-* [Platform Tools 1.7.5](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions/stable)
-
 ## **Key updates August 2024**
 ### CXBOX ([Demo](https://github.com/CX-Box/cxbox-demo))
 #### New version core
@@ -68,17 +66,3 @@ see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2
 #### Other Changes
 see [cxbox changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M6)
 
-###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-We've updated the plugin to version 1.7.5.
-#### New. For new field code generation plugin uses setIfChanged
-![setIfChanged.gif](v2.0.4/setIfChanged.gif)
-
-For new field code generation plugin uses setIfChanged single line mapping where possible
-#### Fix. Generation of pickList/inline-pickList fields types  unique name
-![pickListname.gif](v2.0.4/pickListname.gif)
-
-For new field code generation of pickList/inline-pickList fields types plugin now generates unique name for popup corresponding classes
-####   Fix. For new field code generation when you do not have DTO_ class
-![dto_.gif](v2.0.4/dto_.gif)
-For new field code generation when you do not have DTO_ class (generated with maven plugin), then plugin auto generates DTO_ for you (also it will now automatically create auto generated sources folder in /target and add it as sources root to IDE)
- 

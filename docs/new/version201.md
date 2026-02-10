@@ -9,24 +9,6 @@
 * [cxbox/code-samples 2.0.1 git](https://github.com/CX-Box/cxbox-code-samples/tree/v2.0.1), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v2.0.1)
 
 ## **Key updates July 2024**
-###  CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-We've updated the plugin from version 1.7.1 to version 1.7.4.
-You have the latest features and improvements available.
-#### Dynamically selects whether to use the Javax library or Jakarta
-![jakarta.gif](v2.0.1/jakarta.gif)
-Dynamically selects whether to use the Javax library or Jakarta depending on the version Hibernate 
-
-#### Added quick-fix and check for correct filling for the "hidden" property
-![hidden.gif](v2.0.1/hidden.gif)
-For the "hidden" property in .widget.json, a quick-fix has been implemented, and inspection for correct filling has been added.
-
-#### Added a check for correct filling  for the "title" property
-![title.png](v2.0.1/title.png)
-Property "title" inspection for correct filling in .widget.json for type widget "List" has been added.
- 
-#### Other Changes
-see [cxbox-plugin changelog](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions)
-
 ### CXBOX [documetation](https://doc.cxbox.org/)
 #### Added getting started for developer
 ![getstart.png](v2.0.1/getstart.png)

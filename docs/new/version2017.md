@@ -139,7 +139,7 @@ Support for .ogg, .aac, and .flac formats has been added.
 === ".flac"
     ![flac_CXBOX-1234.png](v2.0.17/flac_CXBOX-1234.png)
 
-#### Added: Fixed the highlighting of required multivalue field
+#### Fixed: Fixed the highlighting of required multivalue field
 <!-- CXBOX-1138 --> 
 Fixed the highlighting of required multivalue field in the list widget when using inline form editing.
 
@@ -147,6 +147,24 @@ Fixed the highlighting of required multivalue field in the list widget when usin
     ![after_CXBOX-1138.png](v2.0.17/after_CXBOX-1138.png)
 === "before"
     ![before_CXBOX-1138.png](v2.0.17/before_CXBOX-1138.png)
+
+#### Fixed: Multivalue,multivalueHover и pickList Filter Display Fix
+<!-- CXBOX-1145 --> 
+Fixed the display of filters for multivalue,multivalueHover и pickList fields: selected values are now shown correctly, regardless of whether they are present on the selected page.
+
+=== "after"
+    ![after_CXBOX-1145.gif](v2.0.17/after_CXBOX-1145.gif)
+=== "before"
+    ![befoe_CXBOX-1145.gif](v2.0.17/befoe_CXBOX-1145.gif)
+
+There is a limitation when using predefined filters of the following types: multivalue, pickList, and multivalueHover.
+
+When such filters are predefined, the filter tags display id values.
+When the filter is manually edited (for example, by adding values via a picklist), the tags are displayed according to the standard rules.
+This behavior is caused by a frontend limitation:
+the frontend cannot resolve display names for filter tags if the records specified in the predefined filter are located on different pages of the picklist popup and are not loaded in the current UI context.
+
+![CXBOX_1145.png](v2.0.17/CXBOX_1145.png)
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.17)
@@ -157,7 +175,7 @@ We have released a new 2.7.1 CORE UI version.
 #### Fixed: Optimized functionality for ...
  <!-- CXBOX-1111 --> 
 Removed the request triggered by clicking on ...  the GET /api/v1/row-meta/id request is no longer sent.
-
+![CXBOX_1145.png](v2.0.17/CXBOX_1145.png)
 === "after"
     ![after_CXBOX-1111.png](v2.0.17/after_CXBOX-1111.png)
 === "before"

@@ -57,55 +57,21 @@ Support has also been added for exporting the following field types to Excel:
 * money with Сurrency
 * suggestionPickList
 
-#### Fixed: Full-Width Numeric Fields
-<!-- CXBOX-1203 -->  
-The display of fields with the following types has been improved:
+#### Added: Alternative pagination support
+<!-- CXBOX-1118 -->
+Added the ability to switch to an alternative pagination type. The selected pagination type is preserved during user interaction and is reset only after a page reload.
 
-* **number**  
-* **percent**
-* **money**  
+A new parameter, alternativeType, has been added to widget.json under options → pagination to define the pagination type.
+By default, if the parameter is not specified, its value is empty.
 
-The field input now spans the full width of the table column.
-
-=== "after"
-    ![after_CXBOX_1203.png](v2.0.17/after_CXBOX_1203.png)
-=== "before"
-    ![before_CXBOX_1203.png](v2.0.17/before_CXBOX_1203.png)
-
-#### Fixed: GroupingHierarchy Empty State Improvement 
-<!-- CXBOX-1146 -->  
-For the GroupingHierarchy widget, scroll display has been added for cases when there is no data and no default hierarchy is defined.
-
-=== "after"
-    ![after_CXBOX_1146.png](v2.0.17/after_CXBOX_1146.png)
-=== "before"
-    ![before_CXBOX_1146.png](v2.0.17/before_CXBOX_1146.png)
-
-#### Fixed: Adaptive Action Group Width
-<!-- CXBOX-1179 -->  
-The display of the action group has been improved: the width of the window showing button labels now automatically adjusts based on the content.
-
-![CXBOX_1179.png](v2.0.17/CXBOX_1179.png){ style="width:50%" }
-
-#### Fixed: Improved Scrolling for Large Lists
-<!-- CXBOX-1188 --> 
-The behavior of the scroll and arrows has been improved when there are many values in dictionary.
-
-=== "after"
-    ![after_CXBOX-1188.gif](v2.0.17/after_CXBOX-1188.gif)
-=== "before"
-    ![befoe_CXBOX-1188.gif](v2.0.17/befoe_CXBOX-1188.gif)
-
-#### Fixed: Gear Icon Display Fix
-<!-- CXBOX-1192 --> 
-Fixed the gear icon behavior when there are no buttons on the widget — the gear icon is now displayed.
-
-```json
-    "actionGroups": {
-    "include": []
-    },
+```java
+   "options": {
+    "pagination": {
+      "alternativeType": "nextAndPreviousWithCount" 
+      "type": "nextAndPreviousSmart"  
+    }
+  }
 ```
-![CXBOX_1192.png](v2.0.17/CXBOX_1192.png)
 
 #### Added: Optional WebSocket Updates
 <!-- CXBOX-1060 --> 
@@ -138,6 +104,85 @@ Support for .ogg, .aac, and .flac formats has been added.
     ![aac_CXBOX-1234.png](v2.0.17/aac_CXBOX-1234.png)
 === ".flac"
     ![flac_CXBOX-1234.png](v2.0.17/flac_CXBOX-1234.png)
+
+#### Fixed: Settings Menu Update
+<!-- CXBOX-985 -->  
+The settings icon (gear) has been moved to the table header and positioned on the right side, above the three-dot menu.
+
+=== "after" 
+    ![after_CXBOX-985.png](v2.0.17/after_CXBOX-985.png)
+=== "before"
+    ![before_CXBOX-985.png](v2.0.17/before_CXBOX-985.png)
+
+The view mode toggle icon (chart / table) has been moved to the settings menu.
+=== "after"
+    ![after_CXBOX_985_Pie.png](v2.0.17/after_CXBOX_985_Pie.png){ style="width:60%" }
+=== "before"
+    ![before_CXBOX_985_Pie.png](v2.0.17/before_CXBOX_985_Pie.png)
+
+
+The **Collapse columns** function has been added to the settings menu.
+=== "after"
+    ![after_CXBOX-985_Collapse.png](v2.0.17/after_CXBOX-985_Collapse.png) 
+=== "before"
+    ![before_CXBOX-985_Collapse.png](v2.0.17/before_CXBOX-985_Collapse.png) 
+
+In the **GroupingHierarchy** widget, the hierarchy icon has been updated and moved to the settings menu (gear icon).
+=== "after"
+    ![after_CXBOX-985_GH.png](v2.0.17/after_CXBOX-985_Collapse.png)
+=== "before"
+    ![before_CXBOX-985_GH.png](v2.0.17/before_CXBOX-985_Collapse.png) 
+
+
+#### Fixed: Full-Width Numeric Fields
+<!-- CXBOX-1203 -->  
+The display of fields with the following types has been improved:
+
+* **number**
+* **percent**
+* **money**
+
+The field input now spans the full width of the table column.
+
+=== "after"
+![after_CXBOX_1203.png](v2.0.17/after_CXBOX_1203.png)
+=== "before"
+![before_CXBOX_1203.png](v2.0.17/before_CXBOX_1203.png)
+
+#### Fixed: GroupingHierarchy Empty State Improvement
+<!-- CXBOX-1146 -->  
+For the GroupingHierarchy widget, scroll display has been added for cases when there is no data and no default hierarchy is defined.
+
+=== "after"
+![after_CXBOX_1146.png](v2.0.17/after_CXBOX_1146.png)
+=== "before"
+![before_CXBOX_1146.png](v2.0.17/before_CXBOX_1146.png)
+
+#### Fixed: Adaptive Action Group Width
+<!-- CXBOX-1179 -->  
+The display of the action group has been improved: the width of the window showing button labels now automatically adjusts based on the content.
+
+![CXBOX_1179.png](v2.0.17/CXBOX_1179.png){ style="width:50%" }
+
+#### Fixed: Improved Scrolling for Large Lists
+<!-- CXBOX-1188 --> 
+The behavior of the scroll and arrows has been improved when there are many values in dictionary.
+
+=== "after"
+![after_CXBOX-1188.gif](v2.0.17/after_CXBOX-1188.gif)
+=== "before"
+![befoe_CXBOX-1188.gif](v2.0.17/befoe_CXBOX-1188.gif)
+
+#### Fixed: Gear Icon Display Fix
+<!-- CXBOX-1192 --> 
+Fixed the gear icon behavior when there are no buttons on the widget — the gear icon is now displayed.
+
+```json
+    "actionGroups": {
+    "include": []
+    },
+```
+![CXBOX_1192.png](v2.0.17/CXBOX_1192.png)
 
 #### Fixed: Fixed the highlighting of required multivalue field
 <!-- CXBOX-1138 --> 
@@ -175,7 +220,7 @@ We have released a new 2.7.1 CORE UI version.
 #### Fixed: Optimized functionality for ...
  <!-- CXBOX-1111 --> 
 Removed the request triggered by clicking on ...  the GET /api/v1/row-meta/id request is no longer sent.
-![CXBOX_1145.png](v2.0.17/CXBOX_1145.png)
+ 
 === "after"
     ![after_CXBOX-1111.png](v2.0.17/after_CXBOX-1111.png)
 === "before"

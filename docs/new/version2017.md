@@ -128,10 +128,16 @@ For the *CalendarYearList* type, the buttons are displayed correctly depending o
 === "before"
     ![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
 
-#### Added: Support for OGG, AAC, and FLAC
+#### Added: Support for .ogg, .aac, and .flac
 <!-- CXBOX-1234 --> 
+Support for .ogg, .aac, and .flac formats has been added.
 
-Support for OGG, AAC, and FLAC formats has been added.
+=== ".ogg"
+    ![ogg_CXBOX-1234.png](v2.0.17/ogg_CXBOX-1234.png)
+=== ".aac"
+    ![aac_CXBOX-1234.png](v2.0.17/aac_CXBOX-1234.png)
+=== ".flac"
+    ![flac_CXBOX-1234.png](v2.0.17/flac_CXBOX-1234.png)
 
 #### Added: Fixed the highlighting of required multivalue field
 <!-- CXBOX-1138 --> 

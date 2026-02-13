@@ -4,11 +4,11 @@
 
 * [cxbox/core 4.0.0-M21 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M21), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M21), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M21)
 
-* [cxbox-ui/core 2.7.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.7.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.7.1)
+* [cxbox-ui/core 2.8.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.0)
 
 * [cxbox/code-samples 2.0.17 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.17), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.17)  
 
-## **Key updates October, November 2025**
+## **Key updates February 2026**
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
@@ -263,8 +263,8 @@ the frontend cannot resolve display names for filter tags if the records specifi
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.17)
 
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1))  
-We have released a new 2.7.1 CORE UI version.
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0))  
+We have released a new 2.8.0 CORE UI version.
 
 #### Fixed: Optimized functionality for ...
  <!-- CXBOX-1111 --> 
@@ -276,7 +276,7 @@ Removed the request triggered by clicking on ...  the GET /api/v1/row-meta/id re
     ![before_CXBOX-1111.png](v2.0.17/before_CXBOX-1111.png)
 
 #### Other Changes
-See [cxbox-ui 2.7.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.7.1).
+See [cxbox-ui 2.8.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0).
 
 
 ### CXBOX 4.0.0-M21 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M21))

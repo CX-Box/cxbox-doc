@@ -2,7 +2,7 @@
 
 * [cxbox/demo 2.0.17 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.17), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.17)
 
-* [cxbox/core 4.0.0-M21 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M21), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M21), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M21)
+* [cxbox/core 4.0.0-M22 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M22), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M22), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M22)
 
 * [cxbox-ui/core 2.8.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.0)
 
@@ -133,7 +133,7 @@ WebSocket Request Behavior Based on featureSettings
 * webSocketNotificationEnabled: true → WebSocket requests are enabled
 * If the setting is not provided → WebSocket requests are enabled by default
 
-#### Added: Optional WebSocket Updates
+#### Fixed: CalendarYearList the buttons are displayed
 <!-- CXBOX-1149 --> 
 
 For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC*
@@ -279,9 +279,9 @@ Removed the request triggered by clicking on ...  the GET /api/v1/row-meta/id re
 See [cxbox-ui 2.8.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0).
 
 
-### CXBOX 4.0.0-M21 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M21))
+### CXBOX 4.0.0-M22 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M22))
 
-We have released a new 4.0.0-M21 CORE version.
+We have released a new 4.0.0-M22 CORE version.
 #### Added: Parameter New Year atmosphere  
 <!-- CXBOX-1212 -->  
 We added a new parameter for `UiProperties`: `seasonalEffectsEnabled`.
@@ -299,7 +299,7 @@ When set to `false` the frontend guarantees no WebSocket interactions, so the ba
 Added the ability to add button Export to Excel as a regular button. 
  
 #### Other Changes
-See [cxbox 4.0.0-M21 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M21).
+See [cxbox 4.0.0-M22 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M22).
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 #### Added: Description New Year atmosphere in the application

@@ -154,9 +154,9 @@ Support for .ogg, .aac, and .flac formats has been added.
 For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC*
 
 === "after"
-![after_CXBOX-1149.png](v2.0.17/after_CXBOX-1149.png)
+    ![after_CXBOX-1149.png](v2.0.17/after_CXBOX-1149.png)
 === "before"
-![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
+    ![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
 
 #### Fixed: Settings Menu Update
 <!-- CXBOX-985 -->  

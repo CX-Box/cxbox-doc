@@ -21,6 +21,55 @@ see more  [New Year atmosphere](/features/happynewyear/happynewyear/)
 
 ![CXBOX-1212.png](v2.0.17/CXBOX-1212.png)
 
+## Added: RelationGraph – NEW widget type!
+<!-- CXBOX-1157 -->  
+We’ve introduced the RelationGraph widget to visualize relationships between nodes in a structured graph format.
+
+Key functionality includes:
+
+* Switch between graph and table view
+* Parent–child support
+* DrillDown support
+* Custom color configuration for nodes and edges
+* Configurable graph direction (top-bottom, left-right, etc.)
+* Customizable node text, edge labels, and edge styles
+
+![CXBOX-1157.jpg](v2.0.17/CXBOX-1157.jpg)
+
+A detailed article on RelationGraph will be available soon in our official documentation – stay tuned!
+ 
+## Added: CardList – NEW widget type!
+<!-- CXBOX-901 -->
+We’ve introduced a new CardList widget designed for convenient file preview and management.
+All uploaded files are displayed as preview cards, allowing you to easily browse, edit, add, or delete items directly within the widget.
+
+Key functionality includes:
+
+* File preview in card format
+* Actions’ support
+* DrillDown support
+* Configurable card size
+* 
+![CXBOX-901.jpg](v2.0.17/CXBOX-901.jpg)
+
+A detailed article on CardList will be available soon in our official documentation – stay tuned!
+
+## Added: CardCarouselList – NEW widget type!
+<!-- CXBOX-901 -->
+We’ve added a new CardCarouselList widget with functionality similar to CardList, but presented in a carousel layout.
+Cards are arranged in a horizontal scrollable strip, while the selected item is displayed prominently above for easier viewing.
+
+Key functionality includes:
+
+* Carousel navigation (forward/backward scrolling)
+* Actions’ support
+* DrillDown support
+* Configurable card size
+
+![CXBOX-901_CardCarouselList.jpg](v2.0.17/CXBOX-901_CardCarouselList.jpg)
+
+A detailed article on CardCarouselList will be available soon in our official documentation – stay tuned!
+
 #### Added: Support for `gridWidth` for popup
 <!-- CXBOX-715 -->
 Implemented support for `gridWidth` for popup:

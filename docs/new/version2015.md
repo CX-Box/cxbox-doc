@@ -8,9 +8,6 @@
 
 * [cxbox/code-samples 2.0.15 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.15), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.15)  
 
-* cxbox/intellij-plugin 2.0.0 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools#), [cxbox repo (recommended)](https://doc.cxbox.org/new/version2014/#added-intellij-20251-support)
-
-
 ## **Key updates August 2025**
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
@@ -110,42 +107,6 @@ where rt_1.id in ((select rt_2.id
 ```
 #### Other Changes
 See [cxbox 4.0.0-M19 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M19).
-
-
-### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools).
-
-We have released two versions - 2.0.0, 1.9.0
-
-#### Added: IntelliJ 2025.2+ support added. (with 1.9.0)
-IntelliJ 2025.2+ support added.
-
-#### Added: Added generation bc from widget (with 2.0.0)
-Added generation bc from widget.
-
-![createBc.png](v2/0/15/createBc.png)
-
-You can create a new Service, Entity, or DTO based on the name of your BK, or you can use existing Services, Entities, or DTOs
-
-Select Parameters:
-
-![popupCreateBc.png](v2/0/15/popupCreateBc.png)
-
-Example:
-
-![createBc.gif](v2/0/15/createBc.gif)
-
-#### Added: Added to check the sum of span values in options.layout.rows.cols  (with 2.0.0)
-Form and Info widgets, a validation was added to check that the sum of span values in options.layout.rows.cols does not exceed the grid limit (24)
-
-![optionsum.png](v2/0/15/optionsum.png)
-
-#### Fixed: Incorrect triggering of inspection for ss (with 1.9.0)
-We fixed the `SearchParameterAnnotationCorrectEndingInspection`, which was working incorrectly for the `multipleSelect` field.
-
-=== "after"
-    ![afterss.png](v2/0/15/afterss.png)
-=== "before"
-    ![beforess.png](v2/0/15/beforess.png)
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 

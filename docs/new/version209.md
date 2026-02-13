@@ -8,8 +8,6 @@
 
 * [cxbox/code-samples 2.0.9 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.9), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.9)
 
-* cxbox/intellij-plugin 1.7.7 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools/versions/stable/653424), [cxbox-intellij-plugin.zip](https://disk.yandex.ru/d/MWls9m_TPiBdQA)
-
 
 ## **Key updates November, December 2024**
 
@@ -221,87 +219,3 @@ See all the details about a Checkbox placeholder in our updated article.
 
 #### Added: [Customization of displayed columns](https://doc.cxbox.org/widget/type/list/list/#customization-of-displayed-columns)  
 We have described the process of customization of displayed columns.  
-
-### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
-#### New: Intellij 2024.3+ support
-Intellij 2024.3+ support
-#### New: Autocomplete, Ctrl-click navigation and inspection for @SearchParameter
-Autocomplete, Ctrl-click navigation and inspection for @SearchParameter name parameter containing path to Hibernate entity field. Inspection highlights 2 simple but usefully cases: not existing fields references (most common error) and not finished path (expression not ending with hibernate @Column field)
-
-* Autocomplete:
-![autocomplete.gif](v2.0.9/autocomplete.gif)
-
-* Ctrl-click navigation
-![navigation.gif](v2.0.9/navigation.gif)
-
- * Inspection
-![inspection.gif](v2.0.9/inspection.gif)
-
-* Refactoring
-![refactor.gif](v2.0.9/refactor.gif)
-
-#### New. Actions in .widget.json 
-Autocomplete, Ctrl-click navigation and inspection for Actions in .widget.json -> options -> actionGroups -> include. Now available without downloading sources with maven!
-
-##### Plus icon and code generation
-We can now generate java boilerplate for new action and navigate to it immediately!
-![actions.gif](v2.0.9/actions.gif)
-
-##### **Actions - `string` in .widget.json support:**
-
-###### Ctrl-click navigation
-Service  -> .widget.json, .widget.json -> Service:
-  ![navigation_action.gif](v2.0.9/navigation_action.gif)
-
-###### Autocomplete
-![autocomplete_action.gif](v2.0.9/autocomplete_action.gif)
-
-###### Inspection
-![inspection_action.gif](v2.0.9/inspection_action.gif)
-
-###### Refactoring
-![refactoring_action_string.gif](v2.0.9/refactoring_action_string.gif)
-
-##### **Actions - `Enum` in .widget.json support:**
-
-###### Ctrl-click navigation.
-Service  -> .widget.json, .widget.json -> Service:
-![navigation_action_enum.gif](v2.0.9/navigation_action_enum.gif)
-
-###### Autocomplete
-![autocomplete_action_enum.gif](v2.0.9/autocomplete_action_enum.gif)
-
-###### Inspection
-![inspection_action_enum.gif](v2.0.9/inspection_action_enum.gif)
-
-###### Refactoring
-![refactoring_action_enum.gif](v2.0.9/refactoring_action_enum.gif) 
-
-##### Actions - `java constant`  in .widget.json support:
-
-###### Ctrl-click navigation
-Only .widget.json -> Service :
-![navigation_action_java_const.gif](v2.0.9/navigation_action_java_const.gif)
-
-###### Autocomplete
-![autocomplete_java_const.gif](v2.0.9%2Fautocomplete_java_const.gif)
-
-###### Inspection
-![inspection_java_const.gif](v2.0.9/inspection_java_const.gif)
-
-#### New. Inspection viewName
-Inspection that checks viewName is unique per screen
-![unique_view.png](v2.0.9%2Funique_view.png)
-
-Inspection that checks viewName is unique per screen (.screen.json -> navigation correctness), when type = standard is set (we skip this checks in other cases for backward compatibility with project customizations). We check:
-#### New. Inspection that checks popupBcName in widget.json -> fields
-![picklist.png](v2.0.9/picklist.png)
-
-Inspection that checks popupBcName in widget.json -> fields must be child for owning widget bc. Inspection checks this only for fields with type picklist
-#### New. Inspection that checks actionGroups in widget.json
-![action_group.png](v2.0.9/action_group.png)
-
-Inspection that checks actionGroups in widget.json location (e.g. it is located in options tag)
-
-#### Other Changes
-Other minor fixes: when AssocListPopup is code generated title and name order was reverted; when multipleSelect is code generated @CollectionTable name is made more unique (field name + bc); title required inspection is turned off - now we have widgets, that use empty titles by design

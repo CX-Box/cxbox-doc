@@ -8,8 +8,6 @@
 
 * [cxbox/code-samples 2.0.16 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.16), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.16)  
 
-* cxbox/intellij-plugin 2.0.1 [Jetbrains Marketplace](https://plugins.jetbrains.com/plugin/19523-platform-tools#), [cxbox repo (recommended)](https://doc.cxbox.org/new/version2014/#added-intellij-20251-support)
-
 
 ## **Key updates October, November 2025**
 
@@ -221,49 +219,6 @@ logging:
 
 #### Other Changes
 See [cxbox 4.0.0-M20 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M20).
-
-
-### CXBOX [plugin](https://plugins.jetbrains.com/plugin/19523-platform-tools)
- 
-<!-- CXBOX-1079  -->
-#### Added: Simple field generation for AnySourceVersionAwareResponseService
-
-Added the ability to create simple fields for AnySourceVersionAwareResponseService.
-
-Supported simple field types:
-
-- **input**
-- **text**
-- **date**
-- **dateTime**
-- **dateTimeWithSeconds**
-- **hint**
-- **multifield**
-- **number**
-- **percent**
-- **money**
-- **radio**
-- **checkbox**
-- **fileUpload**
-- **hidden**
-- **dictionary**
- 
-![generatesimplefield.gif](v2.0.16/generatesimplefield.gif)
-
-
-<!-- CXBOX-1031  -->
-#### Added: Generator bc and related classes. Added choose folder. 
-We added the ability to choose the folder where the code will be generated.  
-In addition, we improved the logic for searching the folder in which service, DTO and entity will be created.  
-
-![generate_bc_CXBOX-1031.png](v2.0.16/generate_bc_CXBOX-1031.png)
-
-Example choose folder:
-
-![choose_folder_CXBOX-1031.gif](v2.0.16/choose_folder_CXBOX-1031.gif)
-
-#### Other Changes
-see [plugin changelog](http://github.com/CX-Box/cxbox-intellij-plugin/releases/tag/v2.0.1)
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 

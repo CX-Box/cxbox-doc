@@ -113,6 +113,8 @@ Added the ability to switch to an alternative pagination type. The selected pagi
 A new parameter, alternativeType, has been added to widget.json under options → pagination to define the pagination type.
 By default, if the parameter is not specified, its value is empty.
 
+![CXBOX_1118.png](v2.0.17/CXBOX_1118.png)
+
 ```java
    "options": {
     "pagination": {
@@ -121,6 +123,8 @@ By default, if the parameter is not specified, its value is empty.
     }
   }
 ```
+
+![CXBOX_1118.gif](v2.0.17/CXBOX_1118.gif)
 
 #### Added: Optional WebSocket Updates
 <!-- CXBOX-1060 --> 
@@ -133,16 +137,6 @@ WebSocket Request Behavior Based on featureSettings
 * webSocketNotificationEnabled: true → WebSocket requests are enabled
 * If the setting is not provided → WebSocket requests are enabled by default
 
-#### Fixed: CalendarYearList the buttons are displayed
-<!-- CXBOX-1149 --> 
-
-For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC*
-
-=== "after"
-    ![after_CXBOX-1149.png](v2.0.17/after_CXBOX-1149.png)
-=== "before"
-    ![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
-
 #### Added: Support for .ogg, .aac, and .flac
 <!-- CXBOX-1234 --> 
 Support for .ogg, .aac, and .flac formats has been added.
@@ -153,6 +147,16 @@ Support for .ogg, .aac, and .flac formats has been added.
     ![aac_CXBOX-1234.png](v2.0.17/aac_CXBOX-1234.png)
 === ".flac"
     ![flac_CXBOX-1234.png](v2.0.17/flac_CXBOX-1234.png)
+
+#### Fixed: CalendarYearList the buttons are displayed correctly depending on the type
+<!-- CXBOX-1149 --> 
+
+For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC*
+
+=== "after"
+![after_CXBOX-1149.png](v2.0.17/after_CXBOX-1149.png)
+=== "before"
+![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
 
 #### Fixed: Settings Menu Update
 <!-- CXBOX-985 -->  
@@ -194,18 +198,18 @@ The display of fields with the following types has been improved:
 The field input now spans the full width of the table column.
 
 === "after"
-![after_CXBOX_1203.png](v2.0.17/after_CXBOX_1203.png)
+    ![after_CXBOX_1203.png](v2.0.17/after_CXBOX_1203.png)
 === "before"
-![before_CXBOX_1203.png](v2.0.17/before_CXBOX_1203.png)
+    ![before_CXBOX_1203.png](v2.0.17/before_CXBOX_1203.png)
 
 #### Fixed: GroupingHierarchy Empty State Improvement
 <!-- CXBOX-1146 -->  
 For the GroupingHierarchy widget, scroll display has been added for cases when there is no data and no default hierarchy is defined.
 
 === "after"
-![after_CXBOX_1146.png](v2.0.17/after_CXBOX_1146.png)
+    ![after_CXBOX_1146.png](v2.0.17/after_CXBOX_1146.png)
 === "before"
-![before_CXBOX_1146.png](v2.0.17/before_CXBOX_1146.png)
+    ![before_CXBOX_1146.png](v2.0.17/before_CXBOX_1146.png)
 
 #### Fixed: Adaptive Action Group Width
 <!-- CXBOX-1179 -->  
@@ -218,10 +222,10 @@ The display of the action group has been improved: the width of the window showi
 The behavior of the scroll and arrows has been improved when there are many values in dictionary.
 
 === "after"
-![after_CXBOX-1188.gif](v2.0.17/after_CXBOX-1188.gif)
+    ![after_CXBOX-1188.gif](v2.0.17/after_CXBOX-1188.gif)
 === "before"
-![befoe_CXBOX-1188.gif](v2.0.17/befoe_CXBOX-1188.gif)
-
+    ![befoe_CXBOX-1188.gif](v2.0.17/befoe_CXBOX-1188.gif)
+    
 #### Fixed: Gear Icon Display Fix
 <!-- CXBOX-1192 --> 
 Fixed the gear icon behavior when there are no buttons on the widget — the gear icon is now displayed.

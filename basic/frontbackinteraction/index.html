@@ -1,0 +1,2414 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../widget/type/property/massoperations/massoperations/" rel="prev"/>
+<link href="../../navigation/tabs/standard/basic/tab/" rel="next"/>
+<link href="../../assets/logo.svg" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.2.5" name="generator"/>
+<title>Frontend - Backend Interaction - CXBox Documentation</title>
+<link href="../../assets/stylesheets/main.0e669242.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.85d0ee34.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-SEVVVTLFB8"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-SEVVVTLFB8",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-SEVVVTLFB8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#frontend-backend-interaction">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="CXBox Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="CXBox Documentation">
+<img alt="logo" src="../../assets/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            CXBox Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Frontend - Backend Interaction
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/CX-Box/cxbox-doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="CXBox Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="CXBox Documentation">
+<img alt="logo" src="../../assets/logo.svg"/>
+</a>
+    CXBox Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/CX-Box/cxbox-doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/whatsnew/">
+<span class="md-ellipsis">
+    What’s new
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Versions
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Versions
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    cxbox
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+            cxbox
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2017/">
+<span class="md-ellipsis">
+    v2.0.17
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2016/">
+<span class="md-ellipsis">
+    v2.0.16
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2015/">
+<span class="md-ellipsis">
+    v2.0.15
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2014/">
+<span class="md-ellipsis">
+    v2.0.14
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2013/">
+<span class="md-ellipsis">
+    v2.0.13
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2012/">
+<span class="md-ellipsis">
+    v2.0.12
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2011/">
+<span class="md-ellipsis">
+    v2.0.11
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version2010/">
+<span class="md-ellipsis">
+    v2.0.10
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version209/">
+<span class="md-ellipsis">
+    v2.0.9
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version208/">
+<span class="md-ellipsis">
+    v2.0.8
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version207/">
+<span class="md-ellipsis">
+    v2.0.7
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version206/">
+<span class="md-ellipsis">
+    v2.0.6
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version205/">
+<span class="md-ellipsis">
+    v2.0.5
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version204/">
+<span class="md-ellipsis">
+    v2.0.4
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version203/">
+<span class="md-ellipsis">
+    v2.0.3
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version202/">
+<span class="md-ellipsis">
+    v2.0.2
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version201/">
+<span class="md-ellipsis">
+    v2.0.1
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version200/">
+<span class="md-ellipsis">
+    v2.0.0
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version101/">
+<span class="md-ellipsis">
+    v1.0.1
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/version100/">
+<span class="md-ellipsis">
+    v1.0.0
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    plugin
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            plugin
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin202/">
+<span class="md-ellipsis">
+    2.0.2
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin200/">
+<span class="md-ellipsis">
+    2.0.0
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin180/">
+<span class="md-ellipsis">
+    1.8.0
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin179/">
+<span class="md-ellipsis">
+    1.7.9
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin178/">
+<span class="md-ellipsis">
+    1.7.8
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin177/">
+<span class="md-ellipsis">
+    1.7.7
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../new/plugin/plugin171/">
+<span class="md-ellipsis">
+    1.7.1
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Guides for work with documentation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Guides for work with documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guide/analystguide/analystguide/">
+<span class="md-ellipsis">
+    For analysts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guide/developerguide/developerguide/">
+<span class="md-ellipsis">
+    For developers
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Getting started cxbox
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Getting started cxbox
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    For developers
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/getstartedfordevelopers/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Postgres
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_1_2">
+<span class="md-nav__icon md-icon"></span>
+            Postgres
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/postgres/getstartedfordeveloperspostgres/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/postgres/addenvironment/">
+<span class="md-ellipsis">
+    Add environment
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/postgres/addscreen/">
+<span class="md-ellipsis">
+    Add screen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/postgres/addview/">
+<span class="md-ellipsis">
+    Add view
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/postgres/addwidget/">
+<span class="md-ellipsis">
+    Add widget and field
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Microservice
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Microservice
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/microservice/getstartedfordevelopersmicroservice/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/microservice/addenvironment/">
+<span class="md-ellipsis">
+    Add environment
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/microservice/addscreen/">
+<span class="md-ellipsis">
+    Add screen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/microservice/addview/">
+<span class="md-ellipsis">
+    Add view
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/microservice/addwidget/">
+<span class="md-ellipsis">
+    Add widget
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gettingstarted/microservice/addfield/">
+<span class="md-ellipsis">
+    Add field
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Field types
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Field types
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/fieldtypes/">
+<span class="md-ellipsis">
+    Fields
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/filtersearchoperation/">
+<span class="md-ellipsis">
+    SearchOperation for filtering
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/checkbox/checkbox/">
+<span class="md-ellipsis">
+    Field checkbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/date/date/">
+<span class="md-ellipsis">
+    Field date
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/dateTime/dateTime/">
+<span class="md-ellipsis">
+    Field dateTime
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/">
+<span class="md-ellipsis">
+    Field dateTimeWithSeconds
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/dictionary/dictionary/">
+<span class="md-ellipsis">
+    Field dictionary
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/fileUpload/fileUpload/">
+<span class="md-ellipsis">
+    Field fileUpload
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/hidden/hidden/">
+<span class="md-ellipsis">
+    Field hidden
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/hint/hint/">
+<span class="md-ellipsis">
+    Field hint
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/inlinePickList/inlinePickList/">
+<span class="md-ellipsis">
+    Field inlinePickList
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/input/input/">
+<span class="md-ellipsis">
+    Field input
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/money/money/">
+<span class="md-ellipsis">
+    Field money
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/multifield/multifield/">
+<span class="md-ellipsis">
+    Field multifield
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/multivalue/multivalue/">
+<span class="md-ellipsis">
+    Field multivalue
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/multivalueHover/multivalueHover/">
+<span class="md-ellipsis">
+    Field multivalueHover
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/multipleSelect/multipleSelect/">
+<span class="md-ellipsis">
+    Field multipleSelect
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/number/number/">
+<span class="md-ellipsis">
+    Field number
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/percent/percent/">
+<span class="md-ellipsis">
+    Field percent
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/pickList/pickList/">
+<span class="md-ellipsis">
+    Field pickList
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/radio/radio/">
+<span class="md-ellipsis">
+    Field radio
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/suggestionpicklist/suggestionPickList/">
+<span class="md-ellipsis">
+    Field suggestionPickList
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/text/text/">
+<span class="md-ellipsis">
+    Field text
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/fields/field/time/time/">
+<span class="md-ellipsis">
+    Field time
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Widget types
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Widget types
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/widget/">
+<span class="md-ellipsis">
+    Widgets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/additionalinfo/additionalinfo/">
+<span class="md-ellipsis">
+    Widget AdditionalInfo
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/additionallist/additionallist/">
+<span class="md-ellipsis">
+    Widget AdditionalList
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/assoclistpopup/assoclistpopup/">
+<span class="md-ellipsis">
+    Widget AssocListPopup
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/emptywidget/emptywidget/">
+<span class="md-ellipsis">
+    Widget EmptyWidget
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/filepreview/filepreview/">
+<span class="md-ellipsis">
+    Widget FilePreview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/form/form/">
+<span class="md-ellipsis">
+    Widget Form
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/formpopup/formpopup/">
+<span class="md-ellipsis">
+    Widget FormPopup
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/groupinghierarchy/groupinghierarchy/">
+<span class="md-ellipsis">
+    Widget GroupingHierarchy
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/headerwidget/headerwidget/">
+<span class="md-ellipsis">
+    Widget HeaderWidget
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/info/info/">
+<span class="md-ellipsis">
+    Widget Info
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/list/list/">
+<span class="md-ellipsis">
+    Widget List
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/picklistpopup/picklistpopup/">
+<span class="md-ellipsis">
+    Widget PickListPopup
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/statblocks/statblocks/">
+<span class="md-ellipsis">
+    Widget StatsBlock
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/steps/steps/">
+<span class="md-ellipsis">
+    Widget Steps
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_16" id="__nav_7_16_label" tabindex="0">
+<span class="md-ellipsis">
+    Property
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_16_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_16">
+<span class="md-nav__icon md-icon"></span>
+            Property
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/defaultlimitpage/defaultlimitpage/">
+<span class="md-ellipsis">
+    Default page limit
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_16_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_16_2" id="__nav_7_16_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Export
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_16_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_16_2">
+<span class="md-nav__icon md-icon"></span>
+            Export
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/export/excel/excel/">
+<span class="md-ellipsis">
+    Excel
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_16_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_16_3" id="__nav_7_16_3_label" tabindex="0">
+<span class="md-ellipsis">
+    File Options
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_16_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_16_3">
+<span class="md-nav__icon md-icon"></span>
+            File Options
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/multiupload/multiupload/">
+<span class="md-ellipsis">
+    Multi-upload files
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/filtration/filtration/">
+<span class="md-ellipsis">
+    Filtration
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/pagination/pagination/">
+<span class="md-ellipsis">
+    Pagination
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/sorting/sorting/">
+<span class="md-ellipsis">
+    Sorting
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/showcondition/showcondition/">
+<span class="md-ellipsis">
+    Show condition
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../widget/type/property/massoperations/massoperations/">
+<span class="md-ellipsis">
+    Bulk operations
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    About CXBOX work
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            About CXBOX work
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Frontend - Backend Interaction
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Frontend - Backend Interaction
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-structure">
+    API Structure
+  </a>
+<nav aria-label="API Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data">
+    /data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#row-meta">
+    /row-meta
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-action">
+    /custom-action
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#count">
+    /count
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cxbox-core-principle">
+    CXBOX Core Principle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#examples">
+    Examples
+  </a>
+<nav aria-label="Examples" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-loading-independent-bcs">
+    Data Loading: independent BCs
+  </a>
+<nav aria-label="Data Loading: independent BCs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1data">
+    GET /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1row-meta">
+    GET /api/v1/row-meta
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1count">
+    GET /api/v1/count
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-loading-dependent-parent-child-bcs">
+    Data Loading: dependent parent-child BCs
+  </a>
+<nav aria-label="Data Loading: dependent parent-child BCs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1data_1">
+    GET /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1row-meta_1">
+    GET /api/v1/row-meta
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1count_1">
+    GET /api/v1/count
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-force-active">
+    Edit (Force Active)
+  </a>
+<nav aria-label="Edit (Force Active)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-apiv1row-meta">
+    POST /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#formpopup">
+    FormPopup
+  </a>
+<nav aria-label="FormPopup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-apiv1row-meta_1">
+    POST /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standart-action">
+    Standart action
+  </a>
+<nav aria-label="Standart action" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#save">
+    Save
+  </a>
+<nav aria-label="Save" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#put-apiv1data">
+    PUT /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-apiv1row-meta_2">
+    POST /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-action_1">
+    Custom-action
+  </a>
+<nav aria-label="Custom-action" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1custom-action">
+    GET /api/v1/custom-action
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1data_2">
+    GET /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1row-meta_2">
+    GET /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Navigation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Navigation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Tabs
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_1">
+<span class="md-nav__icon md-icon"></span>
+            Tabs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1_1" id="__nav_9_1_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Standard
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_1_1">
+<span class="md-nav__icon md-icon"></span>
+            Standard
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../navigation/tabs/standard/basic/tab/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../navigation/tabs/standard/basicdevelop/tabfordevelop/">
+<span class="md-ellipsis">
+    Basic for developer
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+<span class="md-ellipsis">
+    View
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_2">
+<span class="md-nav__icon md-icon"></span>
+            View
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../navigation/view/view/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Screen
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_3">
+<span class="md-nav__icon md-icon"></span>
+            Screen
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../navigation/screen/screen/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../navigation/browsernavigationbuttons/browsernavigationbuttons/">
+<span class="md-ellipsis">
+    Browser navigation buttons
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Repository elements
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            Repository elements
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/repository/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/entity/entity/">
+<span class="md-ellipsis">
+    Entity
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/dto/dto/">
+<span class="md-ellipsis">
+    DTO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/service/service/">
+<span class="md-ellipsis">
+    Service
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10_5" id="__nav_10_5_label" tabindex="0">
+<span class="md-ellipsis">
+    MetaBuilder
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_5">
+<span class="md-nav__icon md-icon"></span>
+            MetaBuilder
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/meta/metabuilder/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10_5_2" id="__nav_10_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    buildIndependentMeta
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_10_5_2">
+<span class="md-nav__icon md-icon"></span>
+            buildIndependentMeta
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/meta/buildindependentmeta/defaultgh/defaultgh/">
+<span class="md-ellipsis">
+    defaultGroupingHierarchy
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10_5_3" id="__nav_10_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    buildRowDependentMeta
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_10_5_3">
+<span class="md-nav__icon md-icon"></span>
+            buildRowDependentMeta
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/meta/buildrowdependentmeta/isfieldchangednow/isfieldchangednow/">
+<span class="md-ellipsis">
+    isFieldChangedNow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/meta/buildrowdependentmeta/sethidden/sethidden/">
+<span class="md-ellipsis">
+    setHidden
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/controller/controller/">
+<span class="md-ellipsis">
+    Controller
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../environment/jparepository/jparepository/">
+<span class="md-ellipsis">
+    Repository
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+<span class="md-ellipsis">
+    Features
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Actions
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_1">
+<span class="md-nav__icon md-icon"></span>
+            Actions
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/actions/actions/">
+<span class="md-ellipsis">
+    basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_1_2" id="__nav_11_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    postAction
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_1_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_11_1_2">
+<span class="md-nav__icon md-icon"></span>
+            postAction
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/actions/postaction/drilldownandwaituntil/ddandwaituntil/">
+<span class="md-ellipsis">
+    waitUntil and drillDownAndWaitUntil
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Authorization
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_2">
+<span class="md-nav__icon md-icon"></span>
+            Authorization
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/authorization/basic/basicauthorization/">
+<span class="md-ellipsis">
+    Basic Authorization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/authorization/keycloak/keycloakauthorization/">
+<span class="md-ellipsis">
+    Keycloak Authorization
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Database
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_3">
+<span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/database/oracle/oraclebd/">
+<span class="md-ellipsis">
+    Oracle
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/database/postgres/postgresbd/">
+<span class="md-ellipsis">
+    Postgres
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+<span class="md-ellipsis">
+    DrillDown
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_4">
+<span class="md-nav__icon md-icon"></span>
+            DrillDown
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/drilldown/drilldown/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/drilldown/drilldowntype/">
+<span class="md-ellipsis">
+    DrillDown Types
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_5" id="__nav_11_5_label" tabindex="0">
+<span class="md-ellipsis">
+    FileStorage
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_5">
+<span class="md-nav__icon md-icon"></span>
+            FileStorage
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/filestorage/fileStorage/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/filestorage/minio/">
+<span class="md-ellipsis">
+    Minio
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_6" id="__nav_11_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Monitoring tools
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_6">
+<span class="md-nav__icon md-icon"></span>
+            Monitoring tools
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/monitoringtools/metrics/performancemetrics/">
+<span class="md-ellipsis">
+    Performance Metrics
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_7" id="__nav_11_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Microservices
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_7">
+<span class="md-nav__icon md-icon"></span>
+            Microservices
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/microservices/microservices/">
+<span class="md-ellipsis">
+    Basic
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_7_2" id="__nav_11_7_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Get started
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_7_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_11_7_2">
+<span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/microservices/existingmicroservices/existingmicroservices/">
+<span class="md-ellipsis">
+    Connecting an existing microservices
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/microservices/microservices_users_action/">
+<span class="md-ellipsis">
+    Work with DAO
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_8" id="__nav_11_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Notifications
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_8">
+<span class="md-nav__icon md-icon"></span>
+            Notifications
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/notifications/email/email/">
+<span class="md-ellipsis">
+    Sent to email
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/element/notifications/push/websocket/">
+<span class="md-ellipsis">
+    Push
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../features/happynewyear/happynewyear/">
+<span class="md-ellipsis">
+    New Year Theme
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+<span class="md-ellipsis">
+    Advanced customization
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_12">
+<span class="md-nav__icon md-icon"></span>
+            Advanced customization
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../advancedCustomization/element/drilldown/drilldown.md">
+<span class="md-ellipsis">
+    DrillDown
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../advancedCustomization/element/validation/validation/">
+<span class="md-ellipsis">
+    Validation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../advancedCustomization/element/filtration/filtration/">
+<span class="md-ellipsis">
+    Filtration
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../advancedCustomization/element/searchparameter/searchparameter/">
+<span class="md-ellipsis">
+    SearchParameter
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+<span class="md-ellipsis">
+    Plugin
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_13">
+<span class="md-nav__icon md-icon"></span>
+            Plugin
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin/plugininstalling/">
+<span class="md-ellipsis">
+    Install and Update
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-structure">
+    API Structure
+  </a>
+<nav aria-label="API Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data">
+    /data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#row-meta">
+    /row-meta
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-action">
+    /custom-action
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#count">
+    /count
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cxbox-core-principle">
+    CXBOX Core Principle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#examples">
+    Examples
+  </a>
+<nav aria-label="Examples" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-loading-independent-bcs">
+    Data Loading: independent BCs
+  </a>
+<nav aria-label="Data Loading: independent BCs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1data">
+    GET /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1row-meta">
+    GET /api/v1/row-meta
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1count">
+    GET /api/v1/count
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-loading-dependent-parent-child-bcs">
+    Data Loading: dependent parent-child BCs
+  </a>
+<nav aria-label="Data Loading: dependent parent-child BCs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1data_1">
+    GET /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1row-meta_1">
+    GET /api/v1/row-meta
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1count_1">
+    GET /api/v1/count
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-force-active">
+    Edit (Force Active)
+  </a>
+<nav aria-label="Edit (Force Active)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-apiv1row-meta">
+    POST /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#formpopup">
+    FormPopup
+  </a>
+<nav aria-label="FormPopup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-apiv1row-meta_1">
+    POST /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standart-action">
+    Standart action
+  </a>
+<nav aria-label="Standart action" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#save">
+    Save
+  </a>
+<nav aria-label="Save" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#put-apiv1data">
+    PUT /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-apiv1row-meta_2">
+    POST /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-action_1">
+    Custom-action
+  </a>
+<nav aria-label="Custom-action" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1custom-action">
+    GET /api/v1/custom-action
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1data_2">
+    GET /api/v1/data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-apiv1row-meta_2">
+    GET /api/v1/row-meta
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/CX-Box/cxbox-doc/edit/main/docs/basic/frontbackinteraction.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="frontend-backend-interaction">Frontend - Backend Interaction</h1>
+<p>CXBox provides a standardized and unified API mechanism for frontend–backend communication.
+Developers don’t need to design or maintain custom APIs — all data operations (read, update, delete, metadata retrieval, and custom actions) are handled by built-in endpoints.
+This approach simplifies development, improves consistency, and reduces integration errors.</p>
+<p>The platform includes a universal interaction mechanism that works equally well for forms, tables, and other widgets. This means that when you change the widget type, the underlying logic remains correct - everything continues to function without requiring additional API configuration.</p>
+<p>In this article, we'll examine how this mechanism is structured and explore the fundamental API methods that make it work.</p>
+<p>This page provides an understanding of the correspondence between UI elements and REST calls.</p>
+<p>A backend call can be routed to either any source or version and is processed as follows: </p>
+<ul>
+<li>VersionAwareResponseService</li>
+<li><a href="/features/element/microservices/microservices_users_action">AnySourceVersionAwareResponseService</a></li>
+</ul>
+<hr/>
+<h2 id="api-structure">API Structure</h2>
+<p>Interaction between the frontend and backend in CXBox is built on four types of APIs:</p>
+<ul>
+<li><a href="#data">/data</a></li>
+<li><a href="#rowmeta">/row-meta/</a></li>
+<li><a href="#customaction">/custom-action</a></li>
+<li><a href="#count">/count</a></li>
+</ul>
+<p>The API is structured as follows:</p>
+<ul>
+<li><a href="#independentbcs">independent entities</a>:  <code>.../screen/bc</code> or <code>.../screen/bc/id</code> </li>
+<li><a href="#parentchild">for dependent parent-child relationships</a>:  <code>.../screen/parent_bc/id/child_bc</code> or <code>screen/parent_bc/id/child_bc/id</code></li>
+</ul>
+<p>Example:</p>
+<p><img alt="meta.png" src="../callapi/meta.png"/></p>
+<h3 id="data"><a id="data">/data</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/v1/data/</td>
+<td style="text-align: left;">Get list of records</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/v1/data/id</td>
+<td style="text-align: left;">Get specific record data</td>
+</tr>
+<tr>
+<td style="text-align: left;">PUT</td>
+<td style="text-align: left;">/api/v1/data/id</td>
+<td style="text-align: left;">Update record</td>
+</tr>
+<tr>
+<td style="text-align: left;">DELETE</td>
+<td style="text-align: left;">/api/v1/data/id</td>
+<td style="text-align: left;">Delete record</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="row-meta"><a id="rowmeta">/row-meta</a></h3>
+<p>Metadata describes which fields are enabled, which buttons are visible, and so on.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/v1/row-meta</td>
+<td style="text-align: left;">Get general metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/v1/row-meta/id</td>
+<td style="text-align: left;">Get metadata for a specific record</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/v1/row-meta-new</td>
+<td style="text-align: left;">Get metadata for creating new record</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="custom-action"><a id="customaction">/custom-action</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/v1/custom-action</td>
+<td style="text-align: left;">Trigger a custom action</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="count"><a id="count">/count</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/v1/count</td>
+<td style="text-align: left;">Get total record count</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="cxbox-core-principle"><a id="coreprinciple">CXBOX Core Principle</a></h2>
+<p>All widgets work under the same logic.(except for <a href="#formpopup">FormPopup</a>)
+This ensures that switching from one widget type to another does not disrupt the API functionality.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="data-loading-independent-bcs"><a id="independentbcs"> Data Loading: independent BCs</a></h3>
+<p>Let’s consider a screen with a single List widget.</p>
+<ol>
+<li>Open the Developer Tools → Network tab.</li>
+<li>Load the screen containing the list. </li>
+</ol>
+<p><img alt="3api.png" src="../callapi/3api.png"/></p>
+<p>We can see that three API calls are executed.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    Frontend-&gt;&gt;Backend: GET /api/v1/data/screen/bc
+    Frontend-&gt;&gt;Backend: GET /api/v1/row-meta/screen/bc/id
+    Frontend-&gt;&gt;Backend: GET /api/v1/count/screen/bc</code></pre>
+<h4 id="get-apiv1data"><a id="databc">GET /api/v1/data </a></h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="data1.png" src="../callapi/data1.png"/></p>
+<p><a id="datadescription"><strong>Description</strong></a></p>
+<p>This request retrieves the data to be displayed on the screen.
+It respects pagination parameters (page, limit), as well as filtering and sorting conditions.</p>
+<p><img alt="data2.png" src="../callapi/data2.png"/></p>
+<p>The diagram above shows how the API response directly maps to the UI elements displayed in the list.</p>
+<h4 id="get-apiv1row-meta"><a id="metabc">GET /api/v1/row-meta </a></h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="meta1.png" src="../callapi/meta1.png"/></p>
+<p><a id="metadescription"><strong>Description</strong></a>
+When the list screen opens, CXBox automatically places the cursor on the first record — you can see this as the highlighted first row.</p>
+<p>The metadata response defines the state of the user interface controls, such as active buttons and editable fields, for the first record.</p>
+<p>(This call is made for only a single record to ensure proper operation in accordance with the <a href="#coreprinciple">CXBox Core Principle</a>.
+We fetch metadata for a single record rather than all records for performance reasons.
+Parent-child relationships often involve complex logic, and calculating metadata for a large number of records could lead to slow UI response times.)</p>
+<p><img alt="meta2.png" src="../callapi/meta2.png"/></p>
+<p>The diagram illustrates how fields correspond to their properties received from the backend.</p>
+<ul>
+<li>When the backend sends a field state with the parameter <code>disabled: true</code>, the frontend displays the field as read-only (not editable).</li>
+<li>When the parameter is <code>disabled: false</code>, the frontend displays the field as editable.</li>
+</ul>
+<p>This principle applies to all properties provided by this API — each property received from the backend directly determines how the field is displayed and behaves on the client side.</p>
+<h4 id="get-apiv1count"><a id="countbc">GET /api/v1/count </a></h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="count1.png" src="../callapi/count1.png"/></p>
+<p><a id="countdescription"><strong>Description</strong></a></p>
+<p>The count method returns the total number of records.
+The call depends on the Pagination parameter — see  <a href="/widget/type/property/pagination/pagination">Pagination</a>.
+The frontend uses this value to display information about the total number of available records.</p>
+<p><img alt="count2.png" src="../callapi/count2.png"/></p>
+<p>For example:
+“Showing 5 out of 10 records.”</p>
+<hr/>
+<h3 id="data-loading-dependent-parent-child-bcs"><a id="parentchild"> Data Loading: dependent parent-child BCs</a></h3>
+<p>Let’s consider a screen with a single List widget.</p>
+<ol>
+<li>Open the Developer Tools → Network tab.</li>
+<li>Load the screen containing parent–child BCs.</li>
+</ol>
+<p><img alt="parentchild.png" src="../callapi/parentchild.png"/></p>
+<p>When the screen loads, you can see that several API calls are executed:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    Frontend-&gt;&gt;Backend: GET /api/v1/data/screen/parent_bc
+    Frontend-&gt;&gt;Backend: GET /api/v1/row-meta/screen/parent_bc/parent_bc_id
+    Frontend-&gt;&gt;Backend: GET /api/v1/count/screen/parent_bc
+    Frontend-&gt;&gt;Backend: GET /api/v1/data/screen/parent_bc/parent_bc_id/child_bc
+    Frontend-&gt;&gt;Backend: GET /api/v1/row-meta/screen/parent_bc/parent_bc_id/child_bc/child_bc_id
+    Frontend-&gt;&gt;Backend: GET /api/v1/count/screen/parent_bc/parent_bc_id/child_bc</code></pre>
+<p><strong>Parent Widget</strong></p>
+<p>For the parent widget, everything described above applies —
+standard <a href="#databc">data</a>, <a href="#metabc">row-meta</a>, and <a href="#countbc">count</a> requests are executed.</p>
+<p><strong>Child Widget</strong></p>
+<p>For the child widget, everything works the same way, except for the following differences:</p>
+<ul>
+<li>The requests include parent/child prefixes, reflecting the BC hierarchy.</li>
+<li>Data for the child entity is calculated only for the first automatically selected record.</li>
+</ul>
+<p><img alt="parentchilddata.png" src="../callapi/parentchilddata.png"/></p>
+<p><strong>General Principles</strong></p>
+<p>For all widget types, the system always performs API requests (/data, /row-meta, /count),
+including fields that use popup widgets.</p>
+<p><code>Exceptions</code>: <a href="#formpopup">FormPopup</a>, <a href="/features/element/notifications/email/email">notifications</a>, filePreview, and <a href="/widget/type/list/list/#customization-of-displayed-columns">customization of displayed columns</a> calls — these behave differently.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It is also important to consider how the <strong>parent → child</strong> calls are executed.
+Each entity is loaded through its own request, so a parent–child pair results in <strong>6 separate calls</strong>.  <br/>
+This matters especially when dependent data is stored in the same microservice. In such cases, the same microservice will be called <strong>twice</strong> during page loading — once for the parent entity and once for the child.</p>
+</div>
+<h4 id="get-apiv1data_1">GET /api/v1/data</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="parentchilddata.png" src="../callapi/parentchilddata.png"/></p>
+<p><strong>Description</strong>
+see  <a href="#datadescription">description</a></p>
+<h4 id="get-apiv1row-meta_1">GET /api/v1/row-meta</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="parentchildrowmeta.png" src="../callapi/parentchildrowmeta.png"/></p>
+<p><strong>Description</strong></p>
+<p>see  <a href="#metadescription">description</a></p>
+<h4 id="get-apiv1count_1">GET /api/v1/count</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="parentchildcount.png" src="../callapi/parentchildcount.png"/></p>
+<p><strong>Description</strong>
+see  <a href="#countdescription">description</a></p>
+<hr/>
+<h3 id="edit-force-active">Edit (Force Active)</h3>
+<p>When editing data, any changes are not sent to the backend until the user clicks the “Save” button.
+However, some fields can be marked as force-active.
+For such fields, every time their value changes, a request is automatically sent to the backend, and the updated values of dependent fields are returned to the frontend.
+This is useful when the value of one field depends on another.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    Frontend-&gt;&gt;Backend: POST /api/v1/row-meta/screen/bc/id</code></pre>
+<h4 id="post-apiv1row-meta">POST /api/v1/row-meta</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="fa3.png" src="../callapi/fa3.png"/></p>
+<p><a id="fadescription"><strong>Description</strong></a></p>
+<p>Let’s look at an example where the country field is marked as force-active.
+When the user changes the value of this field, the region and street fields should be automatically updated.</p>
+<ol>
+<li>All fields are initially empty</li>
+</ol>
+<p><img alt="fa1.png" src="../callapi/fa1.png"/></p>
+<ol>
+<li>Fill in the "Country" field
+   The user selects a value in the Country field.
+   After the value is selected, a meta request (/api/v1/row-meta) is triggered.</li>
+</ol>
+<p><img alt="fa2.png" src="../callapi/fa2.png"/></p>
+<ol>
+<li>Dependent fields are updated
+   On the backend, the region and street fields are automatically filled based on the selected country,
+   and the updated values are returned to the frontend.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">country</label><label for="__tabbed_1_2">region</label><label for="__tabbed_1_3">street</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="facountry.png" src="../callapi/facountry.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="faregion.png" src="../callapi/faregion.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="fastreet.png" src="../callapi/fastreet.png"/></p>
+</div>
+</div>
+</input></input></input></div>
+<hr/>
+<h3 id="formpopup"><a id="formpopup">FormPopup </a></h3>
+<p>All widget types follow the described logic above <a href="#independentbcs">Independent BCs</a>,<a href="#parentchild">dependent parent-child BCs</a>, except for FormPopup.</p>
+<p>The reason for this exception is that when a <a href="/widget/type/formpopup">FormPopup</a> is opened,
+it doesn’t just display existing data — it triggers a process similar to
+changing the active field and then updating its dependent fields.</p>
+<p>This means that when the popup is opened, we must fetch the latest row meta
+to ensure that recalculated and up-to-date fields are displayed. Like ForceActive but with button.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    Frontend-&gt;&gt;Backend: POST /api/v1/row-meta/screen/bc/id</code></pre>
+<h4 id="post-apiv1row-meta_1">POST /api/v1/row-meta</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="formpopup.png" src="../callapi/formpopup.png"/></p>
+<p><strong>Description</strong></p>
+<p>see  <a href="#fadescription">description</a></p>
+<hr/>
+<h3 id="standart-action"><a id="standartactionapi">Standart action </a></h3>
+<h4 id="save">Save</h4>
+<pre class="mermaid"><code>sequenceDiagram 
+    Frontend-&gt;&gt;Backend: PUT /api/v1/data/screen/bc/id
+    Frontend-&gt;&gt;Backend: GET /api/v1/row-meta/screen/bc/id </code></pre>
+<p><img alt="saveactionallcall.png" src="../callapi/saveactionallcall.png"/></p>
+<h5 id="put-apiv1data">PUT /api/v1/data</h5>
+<p><strong>How does it look?</strong></p>
+<p><img alt="saveactionalput.png" src="../callapi/saveactionalput.png"/></p>
+<p><strong>Description</strong></p>
+<p>see  <a href="#fadescription">description</a></p>
+<h5 id="post-apiv1row-meta_2">POST /api/v1/row-meta</h5>
+<p><strong>How does it look?</strong></p>
+<p><img alt="saveactionalmeta.png" src="../callapi/saveactionalmeta.png"/></p>
+<p><strong>Description</strong></p>
+<p>see  <a href="#fadescription">description</a></p>
+<!-- 
+вот и кнопки пришли 2 скопа на таблице и на бк
+при нажатии кнопочки отправляют сл запрос, могут обновляться данные после нажатия
+
+
+описываем пост экшены(просто словами - тема др статьи)
+-->
+<hr/>
+<h3 id="custom-action_1"><a id="customactionapi">Custom-action </a></h3>
+<p>Clicking the custom button triggers 3 calls:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    Frontend-&gt;&gt;Backend: GET /api/v1/custom-action
+    Frontend-&gt;&gt;Backend: GET /api/v1/data
+    Frontend-&gt;&gt;Backend: GET /api/v1/row-meta</code></pre>
+<h4 id="get-apiv1custom-action">GET /api/v1/custom-action</h4>
+<p><strong>How does it look?</strong>
+<img alt="custombutton.png" src="../callapi/custombutton.png"/></p>
+<p><img alt="custombuttonu4.png" src="../callapi/custombuttonu4.png"/></p>
+<h4 id="get-apiv1data_2">GET /api/v1/data</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="dataaction.png" src="../callapi/dataaction.png"/></p>
+<p><strong>Description</strong>
+see  <a href="#datadescription">description</a></p>
+<h4 id="get-apiv1row-meta_2">GET /api/v1/row-meta</h4>
+<p><strong>How does it look?</strong></p>
+<p><img alt="metaaction.png" src="../callapi/metaaction.png"/></p>
+<p><strong>Description</strong></p>
+<p>see  <a href="#metadescription">description</a></p>
+<form class="md-feedback" hidden="" name="feedback">
+<fieldset>
+<legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+<div class="md-feedback__inner">
+<div class="md-feedback__list">
+<button class="md-feedback__icon md-icon" data-md-value="1" title="This page was helpful" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"></path></svg>
+</button>
+<button class="md-feedback__icon md-icon" data-md-value="0" title="This page could be improved" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"></path></svg>
+</button>
+</div>
+<div class="md-feedback__note">
+<div data-md-value="1" hidden="">
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+<div data-md-value="0" hidden="">
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/CX-Box/cxbox-doc/issues/new/?title=[Feedback]+Frontend%20-%20Backend%20Interaction+-+/basic/frontbackinteraction/" rel="noopener" target="_blank">feedback form</a>.
+            </div>
+</div>
+</div>
+</fieldset>
+</form>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 (Version 1.1)
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "search.highlight", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+</body>
+</html>

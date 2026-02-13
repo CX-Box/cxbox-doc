@@ -21,7 +21,7 @@ see more  [New Year atmosphere](/features/happynewyear/happynewyear/)
 
 ![CXBOX-1212.png](v2.0.17/CXBOX-1212.png)
 
-## Added: RelationGraph – NEW widget type!
+#### Added: RelationGraph – NEW widget type!
 <!-- CXBOX-1157 -->  
 We’ve introduced the RelationGraph widget to visualize relationships between nodes in a structured graph format.
 
@@ -38,7 +38,7 @@ Key functionality includes:
 
 A detailed article on RelationGraph will be available soon in our official documentation – stay tuned!
  
-## Added: CardList – NEW widget type!
+#### Added: CardList – NEW widget type!
 <!-- CXBOX-901 -->
 We’ve introduced a new CardList widget designed for convenient file preview and management.
 All uploaded files are displayed as preview cards, allowing you to easily browse, edit, add, or delete items directly within the widget.
@@ -54,7 +54,7 @@ Key functionality includes:
 
 A detailed article on CardList will be available soon in our official documentation – stay tuned!
 
-## Added: CardCarouselList – NEW widget type!
+#### Added: CardCarouselList – NEW widget type!
 <!-- CXBOX-901 -->
 We’ve added a new CardCarouselList widget with functionality similar to CardList, but presented in a carousel layout.
 Cards are arranged in a horizontal scrollable strip, while the selected item is displayed prominently above for easier viewing.

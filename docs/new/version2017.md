@@ -8,7 +8,7 @@
 
 * [cxbox/code-samples 2.0.17 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.17), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.17)  
 
-## **Key updates February 2026**
+## **Key updates January, February 2026**
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 

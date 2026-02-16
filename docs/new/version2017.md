@@ -36,7 +36,8 @@ Key functionality includes:
 
 ![CXBOX-1157.jpg](v2.0.17/CXBOX-1157.jpg)
 
-A detailed article on RelationGraph will be available soon in our official documentation – stay tuned!
+!!! info  
+    A detailed article on RelationGraph will be available soon in our official documentation – stay tuned!
  
 #### Added: CardList – NEW widget type!
 <!-- CXBOX-901 -->
@@ -52,7 +53,8 @@ Key functionality includes:
 * 
 ![CXBOX-901.jpg](v2.0.17/CXBOX-901.jpg)
 
-A detailed article on CardList will be available soon in our official documentation – stay tuned!
+!!! info  
+    A detailed article on CardList will be available soon in our official documentation – stay tuned!
 
 #### Added: CardCarouselList – NEW widget type!
 <!-- CXBOX-901 -->
@@ -68,74 +70,57 @@ Key functionality includes:
 
 ![CXBOX-901_CardCarouselList.jpg](v2.0.17/CXBOX-901_CardCarouselList.jpg)
 
-A detailed article on CardCarouselList will be available soon in our official documentation – stay tuned!
-
-#### Added: Support for `gridWidth` for popup
-<!-- CXBOX-715 -->
-Implemented support for `gridWidth` for popup:
-
-1. AssocListPopup
-    ![assoc_CXBOX-715.png](v2.0.17/assoc_CXBOX-715.png)
-
-2. PickListPopup
-    ![picklist_CXBOX-715.png](v2.0.17/picklist_CXBOX-715.png)
+!!! info 
+    A detailed article on CardCarouselList will be available soon in our official documentation – stay tuned!
 
 #### Added: Export to Excel as a regular button
 <!-- CXBOX-816 -->  
-Added the ability to display Export to Excel as a regular button.
-To do this, you need to add the following code
-```java
-   .action(act -> act						
-        .scope(ActionScope.BC)
-        .withPreAction(PreAction.confirm(cf -> cf.text("Export to Excel?" )))
-        .action("customExportToExcel", "Custom export to excel" )
-        .invoker((bc, data) -> new ActionResultDTO<MyExampleDTO>()
-        .setAction(PostAction.exportToExcel()))
-```
+Added the ability to display Export to Excel as a regular button. To do this, you only need to indicate a new `PostAction.exportToExcel` for a BC button.
 
-![CXBOX_816.png](v2.0.17/CXBOX_816.png)
+=== "Before"  
+    ![CXBOX-816-Export.png](v2.0.17/CXBOX-816-Export.png)   
+=== "After"  
+    ![CXBOX-816-CustomExport.png](v2.0.17/CXBOX-816-CustomExport.png)
+
+#### Added: Support for `gridWidth` for popup
+<!-- CXBOX-715 -->
+We have added support for `gridWidth` for AssocListPopup and PickListPopup, like we did for FormPopup in [v2.0.9](https://doc.cxbox.org/new/version209/?h=grid#added-formpopup-widget-gridwidth-support). You can now directly indicate the width using `view.json -> widgets -> gridWidth` and the width now dynamically adjusts based on the following factors:  
+
+* The state of the menu (collapsed or expanded)  
+
+=== "gridWidth12 Menu Expanded"  
+    ![CXBOX-715-menuExpandedPopup.png](v2.0.17/CXBOX-715-menuExpandedPopup.png)
+=== "gridWidth12 Menu Collapsed"  
+    ![CXBOX-715-menuCollapsed.png](v2.0.17/CXBOX-715-menuCollapsed.png)  
+
+* The presence or absence of the additional widget on the view  
+
+=== "gridWidth12 No Additional"  
+    ![CXBOX-715-noAdditional.png](v2.0.17/CXBOX-715-noAdditional.png)
+=== "gridWidth12 With Additional"  
+    ![CXBOX-715-additional.png](v2.0.17/CXBOX-715-additional.png)  
 
 #### Added: Export to Excel support all types fields
 
 Support has also been added for exporting the following field types to Excel:
 
-* multivalue 
-* multivalueHover
-* multipleSelect
-* fileUpload
-* money with Сurrency
-* suggestionPickList
+* [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/) 
+* [multivalueHover](https://doc.cxbox.org/widget/fields/field/multivalueHover/multivalueHover/)
+* [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/)
+* [fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/)
+* [money with Сurrency](https://doc.cxbox.org/widget/fields/field/money/money/#currency)
+* [suggestionPickList](https://doc.cxbox.org/widget/fields/field/suggestionpicklist/suggestionPickList/)
 
 #### Added: Alternative pagination support
-<!-- CXBOX-1118 -->
-Added the ability to switch to an alternative pagination type. The selected pagination type is preserved during user interaction and is reset only after a page reload.
+<!-- CXBOX-1118 -->  
+We have introduced the ability to retrieve the total row count on demand via a new `alternativeType` parameter. By clicking a button, users can request the total number of rows. Once activated, the count remains available during filtering and page navigation and resets only after a page refresh.  
 
-A new parameter, alternativeType, has been added to widget.json under options → pagination to define the pagination type.
-By default, if the parameter is not specified, its value is empty.
-
-![CXBOX_1118.png](v2.0.17/CXBOX_1118.png)
-
-```java
-   "options": {
-    "pagination": {
-      "alternativeType": "nextAndPreviousWithCount" 
-      "type": "nextAndPreviousSmart"  
-    }
-  }
-```
-
-![CXBOX_1118.gif](v2.0.17/CXBOX_1118.gif)
-
-#### Added: Optional WebSocket Updates
-<!-- CXBOX-1060 --> 
-
-Added the option to disable WebSocket calls from the frontend. The notification bell count is still displayed, but it will only update when the page is reloaded.
-
-WebSocket Request Behavior Based on featureSettings
-
-* webSocketNotificationEnabled: false → WebSocket requests are disabled
-* webSocketNotificationEnabled: true → WebSocket requests are enabled
-* If the setting is not provided → WebSocket requests are enabled by default
+=== "After"  
+    You can keep a performance-friendly pagination mode by default ([nextAndPreviousWithHasNext](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#nextandpreviouswithhasnext)/ [nextAndPreviousSmart](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#nextandprevioussmart)) and switch to [nextAndPreviousWithCount](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#default-nextandpreviouswithcount) only when record counting is needed.  
+    ![CXBOX-1118After.gif](v2.0.17/CXBOX-1118After.gif)
+=== "Before"
+    To display the total row count, you can only indicate [nextAndPreviousWithCount](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#default-nextandpreviouswithcount) pagination type, which sends a /count request and may impact performance.  
+    ![CXBOX-1118Before.gif](v2.0.17/CXBOX-1118Before.gif)  
 
 #### Added: Support for .ogg, .aac, and .flac
 <!-- CXBOX-1234 --> 
@@ -153,122 +138,128 @@ Support for .ogg, .aac, and .flac formats has been added.
 
 For the *CalendarYearList* type, the buttons are displayed correctly depending on the type — *record* or *BC*
 
-=== "after"
-    ![after_CXBOX-1149.png](v2.0.17/after_CXBOX-1149.png)
-=== "before"
-    ![before_CXBOX-1149.png](v2.0.17/before_CXBOX-1149.png)
+=== "After"
+    ![CXBOX-1149After.png](v2.0.17/CXBOX-1149After.png)
+=== "Before"
+    ![CXBOX-1149Before.png](v2.0.17/CXBOX-1149Before.png)
 
 #### Fixed: Settings Menu Update
 <!-- CXBOX-985 -->  
 The settings icon (gear) has been moved to the table header and positioned on the right side, above the three-dot menu.
 
-=== "after" 
-    ![after_CXBOX-985.png](v2.0.17/after_CXBOX-985.png)
-=== "before"
-    ![before_CXBOX-985.png](v2.0.17/before_CXBOX-985.png)
+=== "After" 
+    ![CXBOX-985After.png](v2.0.17/CXBOX-985After.png)
+=== "Before"
+    ![CXBOX-985Before.png](v2.0.17/CXBOX-985Before.png)
 
 The view mode toggle icon (chart / table) has been moved to the settings menu.
-=== "after"
-    ![after_CXBOX_985_Pie.png](v2.0.17/after_CXBOX_985_Pie.png){ style="width:60%" }
-=== "before"
-    ![before_CXBOX_985_Pie.png](v2.0.17/before_CXBOX_985_Pie.png)
+=== "After"
+    ![CXBOX-985graphAfter.gif](v2.0.17/CXBOX-985graphAfter.gif)
+=== "Before"
+    ![CXBOX-985graphBefore.gif](v2.0.17/CXBOX-985graphBefore.gif)
 
-
-The **Collapse columns** function has been added to the settings menu.
-=== "after"
-    ![after_CXBOX-985_Collapse.png](v2.0.17/after_CXBOX-985_Collapse.png) 
-=== "before"
-    ![before_CXBOX-985_Collapse.png](v2.0.17/before_CXBOX-985_Collapse.png) 
-
-In the **GroupingHierarchy** widget, the hierarchy icon has been updated and moved to the settings menu (gear icon).
-=== "after"
-    ![after_CXBOX-985_GH.png](v2.0.17/after_CXBOX-985_Collapse.png)
-=== "before"
-    ![before_CXBOX-985_GH.png](v2.0.17/before_CXBOX-985_Collapse.png) 
+The **Collapse columns** function has been moved to the settings menu.
+=== "After"
+    ![CXBOX-985collapseAfter.gif](v2.0.17/CXBOX-985collapseAfter.gif) 
+=== "Before"
+    ![CXBOX-985collapseBefore.gif](v2.0.17/CXBOX-985collapseBefore.gif) 
 
 
 #### Fixed: Full-Width Numeric Fields
 <!-- CXBOX-1203 -->  
 The display of fields with the following types has been improved:
 
-* **number**
-* **percent**
-* **money**
+* [number](https://doc.cxbox.org/widget/fields/field/number/number/)
+* [percent](https://doc.cxbox.org/widget/fields/field/percent/percent/)
+* [money](https://doc.cxbox.org/widget/fields/field/money/money/)
 
 The field input now spans the full width of the table column.
 
-=== "after"
-    ![after_CXBOX_1203.png](v2.0.17/after_CXBOX_1203.png)
-=== "before"
-    ![before_CXBOX_1203.png](v2.0.17/before_CXBOX_1203.png)
+=== "After"
+    ![CXBOX-1203-After.png](v2.0.17/CXBOX-1203-After.png)
+=== "Before"
+    ![CXBOX-1203-Before.png](v2.0.17/CXBOX-1203-Before.png)
 
 #### Fixed: GroupingHierarchy Empty State Improvement
 <!-- CXBOX-1146 -->  
 For the GroupingHierarchy widget, scroll display has been added for cases when there is no data and no default hierarchy is defined.
 
-=== "after"
-    ![after_CXBOX_1146.png](v2.0.17/after_CXBOX_1146.png)
-=== "before"
-    ![before_CXBOX_1146.png](v2.0.17/before_CXBOX_1146.png)
+=== "After"
+    ![CXBOX-1146After.png](v2.0.17/CXBOX-1146After.png)
+=== "Before"
+    ![CXBOX-1146Before.png](v2.0.17/CXBOX-1146Before.png)
 
 #### Fixed: Adaptive Action Group Width
 <!-- CXBOX-1179 -->  
-The display of the action group has been improved: the width of the window showing button labels now automatically adjusts based on the content.
+The display of the action group has been improved: the width of the window showing button labels now automatically adjusts based on the content.  
 
-![CXBOX_1179.png](v2.0.17/CXBOX_1179.png){ style="width:50%" }
+=== "After"  
+    ![CXBOX-1179After.png](v2.0.17/CXBOX-1179After.png)
+=== "Before"  
+    ![CXBOX-1179Before.png](v2.0.17/CXBOX-1179Before.png)
 
 #### Fixed: Improved Scrolling for Large Lists
 <!-- CXBOX-1188 --> 
 The behavior of the scroll and arrows has been improved when there are many values in dictionary.
 
-=== "after"
+=== "After"
     ![after_CXBOX-1188.gif](v2.0.17/after_CXBOX-1188.gif)
-=== "before"
+=== "Before"
     ![befoe_CXBOX-1188.gif](v2.0.17/befoe_CXBOX-1188.gif)
     
 #### Fixed: Gear Icon Display Fix
 <!-- CXBOX-1192 --> 
-Fixed the gear icon behavior when there are no buttons on the widget — the gear icon is now displayed.
+Fixed the gear icon behavior when there are no buttons on the widget — the gear icon is now displayed.  
 
-```json
-    "actionGroups": {
-    "include": []
-    },
-```
-![CXBOX_1192.png](v2.0.17/CXBOX_1192.png)
+=== "After"  
+    ![CXBOX-1192After.png](v2.0.17/CXBOX-1192After.png)
+=== "Before"  
+    ![CXBOX-1192Before.png](v2.0.17/CXBOX-1192Before.png)
 
 #### Fixed: Fixed the highlighting of required multivalue field
 <!-- CXBOX-1138 --> 
 Fixed the highlighting of required multivalue field in the list widget when using inline form editing.
 
-=== "after"
-    ![after_CXBOX-1138.png](v2.0.17/after_CXBOX-1138.png)
-=== "before"
-    ![before_CXBOX-1138.png](v2.0.17/before_CXBOX-1138.png)
+=== "After"
+    ![CXBOX-1138After.png](v2.0.17/CXBOX-1138After.png)
+=== "Before"
+    ![CXBOX-1138Before.png](v2.0.17/CXBOX-1138Before.png)  
 
 #### Fixed: Multivalue,multivalueHover и pickList Filter Display Fix
 <!-- CXBOX-1145 --> 
 Fixed the display of filters for multivalue,multivalueHover и pickList fields: selected values are now shown correctly, regardless of whether they are present on the selected page.
 
-=== "after"
-    ![after_CXBOX-1145.gif](v2.0.17/after_CXBOX-1145.gif)
-=== "before"
-    ![befoe_CXBOX-1145.gif](v2.0.17/befoe_CXBOX-1145.gif)
+=== "After"  
+    === "first page"  
+        ![CXBOX-1145After1.png](v2.0.17/CXBOX-1145After1.png)  
+    === "second page"  
+        ![CXBOX-1145After2.png](v2.0.17/CXBOX-1145After2.png)
+=== "Before"  
+    === "first page"  
+        ![CXBOX-1145Before1.png](v2.0.17/CXBOX-1145Before1.png)  
+    === "second page"  
+        ![CXBOX-1145Before2.png](v2.0.17/CXBOX-1145Before2.png)  
 
-There is a limitation when using predefined filters of the following types: multivalue, pickList, and multivalueHover.
-
-When such filters are predefined, the filter tags display id values.
-When the filter is manually edited (for example, by adding values via a picklist), the tags are displayed according to the standard rules.
-This behavior is caused by a frontend limitation:
-the frontend cannot resolve display names for filter tags if the records specified in the predefined filter are located on different pages of the picklist popup and are not loaded in the current UI context.
-
-![CXBOX_1145.png](v2.0.17/CXBOX_1145.png)
+!!! info  
+    There is a limitation when using predefined filters of the following types: multivalue, pickList, and multivalueHover. When such filters are predefined, the filter tags display id values. When the filter is manually edited (for example, by adding values via a picklist), the tags are displayed according to the standard rules. This behavior is caused by a frontend limitation: the frontend cannot resolve display names for filter tags if the records specified in the predefined filter are located on different pages of the picklist popup and are not loaded in the current UI context.  
+    ![CXBOX_1145.png](v2.0.17/CXBOX_1145.png)
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.17)
 
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0))  
-We have released a new 2.8.0 CORE UI version.
+We have released a new 2.8.0 CORE UI version.  
+
+#### Added: Optional WebSocket Updates
+<!-- CXBOX-1060 --> 
+
+Added the option to disable WebSocket calls from the frontend. The notification bell count is still displayed, but it will only update when the page is reloaded.
+
+WebSocket Request Behavior Based on featureSettings
+
+* webSocketNotificationEnabled: false → WebSocket requests are disabled
+* webSocketNotificationEnabled: true → WebSocket requests are enabled
+* If the setting is not provided → WebSocket requests are enabled by default  
 
 #### Fixed: Optimized functionality for ...
  <!-- CXBOX-1111 --> 

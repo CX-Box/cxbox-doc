@@ -17,7 +17,7 @@
 We have added an option to create a festive New Year atmosphere in the application. You can enable a falling snow effect in the application menu.
 
 The effect is controlled via a configuration parameter.
-see more  [New Year atmosphere](/features/happynewyear/happynewyear/)
+See more  [New Year atmosphere](/features/happynewyear/happynewyear/)
 
 ![CXBOX-1212.png](v2.0.17/CXBOX-1212.png)
 
@@ -98,18 +98,8 @@ We have added support for `gridWidth` for AssocListPopup and PickListPopup, like
 === "gridWidth12 No Additional"  
     ![CXBOX-715-noAdditional.png](v2.0.17/CXBOX-715-noAdditional.png)
 === "gridWidth12 With Additional"  
-    ![CXBOX-715-additional.png](v2.0.17/CXBOX-715-additional.png)  
-
-#### Added: Export to Excel support all types fields
-
-Support has also been added for exporting the following field types to Excel:
-
-* [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/) 
-* [multivalueHover](https://doc.cxbox.org/widget/fields/field/multivalueHover/multivalueHover/)
-* [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/)
-* [fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/)
-* [money with Сurrency](https://doc.cxbox.org/widget/fields/field/money/money/#currency)
-* [suggestionPickList](https://doc.cxbox.org/widget/fields/field/suggestionpicklist/suggestionPickList/)
+    ![CXBOX-715-additional.png](v2.0.17/CXBOX-715-additional.png)
+**Note!** Before this release value of gridWidth was ignored, e.g. popup widget was constant. After release one can set `gridWidth = 16` to remain old popup sizes.
 
 #### Added: Alternative pagination support
 <!-- CXBOX-1118 -->  
@@ -133,6 +123,17 @@ Support for .ogg, .aac, and .flac formats has been added.
 === ".flac"
     ![flac_CXBOX-1234.png](v2.0.17/flac_CXBOX-1234.png)
 
+#### Added: Export to Excel support all types fields
+
+Support has also been added for exporting the following field types to Excel:
+
+* [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/)
+* [multivalueHover](https://doc.cxbox.org/widget/fields/field/multivalueHover/multivalueHover/)
+* [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/)
+* [fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/)
+* [money with Сurrency](https://doc.cxbox.org/widget/fields/field/money/money/#currency)
+* [suggestionPickList](https://doc.cxbox.org/widget/fields/field/suggestionpicklist/suggestionPickList/)
+
 #### Fixed: CalendarYearList the buttons are displayed correctly depending on the type
 <!-- CXBOX-1149 --> 
 
@@ -145,7 +146,7 @@ For the *CalendarYearList* type, the buttons are displayed correctly depending o
 
 #### Fixed: Settings Menu Update
 <!-- CXBOX-985 -->  
-The settings icon (gear) has been moved to the table header and positioned on the right side, above the three-dot menu.
+The settings icon (gear) has been moved to the table header and positioned on the right side, above the three-dot menu. This will save space when there are no actions, PDQ, or full-text search on the table.
 
 === "After" 
     ![CXBOX-985After.png](v2.0.17/CXBOX-985After.png)

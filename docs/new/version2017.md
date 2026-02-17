@@ -34,7 +34,11 @@ Key functionality includes:
 * Configurable graph direction (top-bottom, left-right, etc.)
 * Customizable node text, edge labels, and edge styles
 
-![CXBOX-1157.jpg](v2.0.17/CXBOX-1157.jpg)
+![CXBOX-1157.jpg](v2.0.17/CXBOX-1157.jpg)  
+
+!!! warning  
+    1. If multiple connections lead to the same node, and some of them skip intermediate nodes, the graph may not display as expected. Because of this, we do not recommend using such data structures when possible.  
+    2. The widget automatically switches to table view if cyclic relations or duplicate connections are detected in the data.  
 
 !!! info  
     A detailed article on RelationGraph will be available soon in our official documentation – stay tuned!
@@ -77,40 +81,34 @@ Key functionality includes:
 <!-- CXBOX-816 -->  
 Added the ability to display Export to Excel as a regular button. To do this, you only need to indicate a new `PostAction.exportToExcel` for a BC button.
 
-=== "Before"  
-    ![CXBOX-816-Export.png](v2.0.17/CXBOX-816-Export.png)   
 === "After"  
     ![CXBOX-816-CustomExport.png](v2.0.17/CXBOX-816-CustomExport.png)
+=== "Before"  
+    ![CXBOX-816-Export.png](v2.0.17/CXBOX-816-Export.png)   
 
 #### Added: Support for `gridWidth` for popup
 <!-- CXBOX-715 -->
-We have added support for `gridWidth` for AssocListPopup and PickListPopup, like we did for FormPopup in [v2.0.9](https://doc.cxbox.org/new/version209/?h=grid#added-formpopup-widget-gridwidth-support). You can now directly indicate the width using `view.json -> widgets -> gridWidth` and the width now dynamically adjusts based on the following factors:  
+We have added support for `gridWidth` for AssocListPopup and PickListPopup, like we did for FormPopup in [v2.0.9](https://doc.cxbox.org/new/version209/?h=grid#added-formpopup-widget-gridwidth-support). You can now manage the width using `view.json -> widgets -> gridWidth` to control the adequate content presentation in the popup.  
 
-* The state of the menu (collapsed or expanded)  
+=== "After"  
+    You can now control the size using `gridWidth` to ensure that the content is fully displayed in the popup.  
+    ![CXBOX-715After.png](v2.0.17/CXBOX-715After.png)
+=== "Before"  
+    The popup size for AssocListPopup and PickListPopup was constant, the value of `gridWidth` was ignored.  
+    ![CXBOX-715Before.png](v2.0.17/CXBOX-715Before.png)
 
-=== "gridWidth12 Menu Expanded"  
-    ![CXBOX-715-menuExpandedPopup.png](v2.0.17/CXBOX-715-menuExpandedPopup.png)
-=== "gridWidth12 Menu Collapsed"  
-    ![CXBOX-715-menuCollapsed.png](v2.0.17/CXBOX-715-menuCollapsed.png)  
-
-* The presence or absence of the additional widget on the view  
-
-=== "gridWidth12 No Additional"  
-    ![CXBOX-715-noAdditional.png](v2.0.17/CXBOX-715-noAdditional.png)
-=== "gridWidth12 With Additional"  
-    ![CXBOX-715-additional.png](v2.0.17/CXBOX-715-additional.png)
-**Note!** Before this release value of gridWidth was ignored, e.g. popup widget was constant. After release one can set `gridWidth = 16` to remain old popup sizes.
+**Note!** Before this release value of gridWidth was ignored, e.g. popup widget was constant. You can set `gridWidth = 16` to remain old popup sizes.
 
 #### Added: Alternative pagination support
 <!-- CXBOX-1118 -->  
 We have introduced the ability to retrieve the total row count on demand via a new `alternativeType` parameter. By clicking a button, users can request the total number of rows. Once activated, the count remains available during filtering and page navigation and resets only after a page refresh.  
 
 === "After"  
+    ![CXBOX-1118-After.gif](v2.0.17/CXBOX-1118-After.gif)  
     You can keep a performance-friendly pagination mode by default ([nextAndPreviousWithHasNext](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#nextandpreviouswithhasnext)/ [nextAndPreviousSmart](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#nextandprevioussmart)) and switch to [nextAndPreviousWithCount](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#default-nextandpreviouswithcount) only when record counting is needed.  
-    ![CXBOX-1118After.gif](v2.0.17/CXBOX-1118After.gif)
-=== "Before"
+=== "Before"  
+    ![CXBOX-1118-Before.gif](v2.0.17/CXBOX-1118-Before.gif)  
     To display the total row count, you can only indicate [nextAndPreviousWithCount](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#default-nextandpreviouswithcount) pagination type, which sends a /count request and may impact performance.  
-    ![CXBOX-1118Before.gif](v2.0.17/CXBOX-1118Before.gif)  
 
 #### Added: Support for .ogg, .aac, and .flac
 <!-- CXBOX-1234 --> 
@@ -155,9 +153,9 @@ The settings icon (gear) has been moved to the table header and positioned on th
 
 The view mode toggle icon (chart / table) has been moved to the settings menu.
 === "After"
-    ![CXBOX-985graphAfter.gif](v2.0.17/CXBOX-985graphAfter.gif)
+    ![CXBOX-985ToggleAfter.gif](v2.0.17/CXBOX-985ToggleAfter.gif)
 === "Before"
-    ![CXBOX-985graphBefore.gif](v2.0.17/CXBOX-985graphBefore.gif)
+    ![CXBOX-985ToggleBefore.gif](v2.0.17/CXBOX-985ToggleBefore.gif)
 
 The **Collapse columns** function has been moved to the settings menu.
 === "After"
@@ -186,9 +184,9 @@ The field input now spans the full width of the table column.
 For the GroupingHierarchy widget, scroll display has been added for cases when there is no data and no default hierarchy is defined.
 
 === "After"
-    ![CXBOX-1146After.png](v2.0.17/CXBOX-1146After.png)
+    ![CXBOX-1146After1.png](v2.0.17/CXBOX-1146After1.png)
 === "Before"
-    ![CXBOX-1146Before.png](v2.0.17/CXBOX-1146Before.png)
+    ![CXBOX-1146Before1.png](v2.0.17/CXBOX-1146Before1.png)
 
 #### Fixed: Adaptive Action Group Width
 <!-- CXBOX-1179 -->  
@@ -219,7 +217,7 @@ Fixed the gear icon behavior when there are no buttons on the widget — the gea
 
 #### Fixed: Fixed the highlighting of required multivalue field
 <!-- CXBOX-1138 --> 
-Fixed the highlighting of required multivalue field in the list widget when using inline form editing.
+Fixed the highlighting of required [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/) field in the List widget when using inlineForm editing. This ensures visual consistency with other field types, which are also highlighted in List widget above the editing Form.  
 
 === "After"
     ![CXBOX-1138After.png](v2.0.17/CXBOX-1138After.png)
@@ -228,7 +226,7 @@ Fixed the highlighting of required multivalue field in the list widget when usin
 
 #### Fixed: Multivalue,multivalueHover и pickList Filter Display Fix
 <!-- CXBOX-1145 --> 
-Fixed the display of filters for multivalue,multivalueHover и pickList fields: selected values are now shown correctly, regardless of whether they are present on the selected page.
+Fixed the display of filters for [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/), [multivalueHover](https://doc.cxbox.org/widget/fields/field/multivalueHover/multivalueHover/) и [pickList](https://doc.cxbox.org/widget/fields/field/pickList/pickList/) fields: selected values are now shown correctly, regardless of whether they are present on the selected page.
 
 === "After"  
     === "first page"  
@@ -266,9 +264,9 @@ WebSocket Request Behavior Based on featureSettings
  <!-- CXBOX-1111 --> 
 Removed the request triggered by clicking on ...  the GET /api/v1/row-meta/id request is no longer sent.
  
-=== "after"
+=== "After"
     ![after_CXBOX-1111.png](v2.0.17/after_CXBOX-1111.png)
-=== "before"
+=== "Before"
     ![before_CXBOX-1111.png](v2.0.17/before_CXBOX-1111.png)
 
 #### Other Changes

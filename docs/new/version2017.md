@@ -78,15 +78,23 @@ Key functionality includes:
     A detailed article on CardCarouselList will be available soon in our official documentation – stay tuned!
 
 #### Added: Export to Excel as a regular button
-<!-- CXBOX-816 -->  
+<!-- CXBOX-816 --> 
 Added the ability to display Export to Excel as a regular button. To do this, you only need to indicate a new `PostAction.exportToExcel` for a BC button.
+??? Example
+    ```java
+       .action(act -> act						
+            .scope(ActionScope.BC)
+            .withPreAction(PreAction.confirm(cf -> cf.text("Export to Excel?" )))
+            .action("customExportToExcel", "Custom export to excel" )
+            .invoker((bc, data) -> new ActionResultDTO<MyExampleDTO>()
+            .setAction(PostAction.exportToExcel()))
+    ```
+=== "Export in a button"
+    ![CXBOX-816.New.After.png](v2.0.17/CXBOX-816.New.After.png)
+=== "Export in options"   
+    ![CXBOX-816.New.Before.png](v2.0.17/CXBOX-816.New.Before.png)
 
-=== "After"  
-    ![CXBOX-816-CustomExport.png](v2.0.17/CXBOX-816-CustomExport.png)
-=== "Before"  
-    ![CXBOX-816-Export.png](v2.0.17/CXBOX-816-Export.png)   
-
-#### Added: Support for `gridWidth` for popup
+#### Added: AssocListPopup and PickListPopup widget - `gridWidth` support
 <!-- CXBOX-715 -->
 We have added support for `gridWidth` for AssocListPopup and PickListPopup, like we did for FormPopup in [v2.0.9](https://doc.cxbox.org/new/version209/?h=grid#added-formpopup-widget-gridwidth-support). You can now manage the width using `view.json -> widgets -> gridWidth` to control the adequate content presentation in the popup.  
 

@@ -34,7 +34,7 @@ Key functionality includes:
 * Configurable graph direction (top-bottom, left-right, etc.)
 * Customizable node text, edge labels, and edge styles
 
-![CXBOX-1157.jpg](v2.0.17/CXBOX-1157.jpg)  
+![CXBOX-1157.New.png](v2.0.17/CXBOX-1157.New.png)
 
 !!! warning  
     1. If multiple connections lead to the same node, and some of them skip intermediate nodes, the graph may not display as expected. Because of this, we do not recommend using such data structures when possible.  
@@ -110,7 +110,15 @@ We have added support for `gridWidth` for AssocListPopup and PickListPopup, like
 #### Added: Alternative pagination support
 <!-- CXBOX-1118 -->  
 We have introduced the ability to retrieve the total row count on demand via a new `alternativeType` parameter. By clicking a button, users can request the total number of rows. Once activated, the count remains available during filtering and page navigation and resets only after a page refresh.  
-
+??? Example
+    ```java
+       "options": {
+        "pagination": {
+          "alternativeType": "nextAndPreviousWithCount" 
+          "type": "nextAndPreviousSmart"  
+        }
+      }
+    ```
 === "After"  
     ![CXBOX-1118-After.gif](v2.0.17/CXBOX-1118-After.gif)  
     You can keep a performance-friendly pagination mode by default ([nextAndPreviousWithHasNext](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#nextandpreviouswithhasnext)/ [nextAndPreviousSmart](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#nextandprevioussmart)) and switch to [nextAndPreviousWithCount](https://doc.cxbox.org/widget/type/property/pagination/pagination/?h=next#default-nextandpreviouswithcount) only when record counting is needed.  

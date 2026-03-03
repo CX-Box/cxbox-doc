@@ -1,5 +1,7 @@
 # Localization (i18n)
 
+!!! warning line end "Work in progress"
+
 This document describes how localization works in the system and how to add translations for UI elements, dictionaries, and enums.
 
 The system supports localization for:
@@ -491,3 +493,18 @@ How to add?
     }
     
     ```
+
+#### Dictionary
+
+How does it look?
+
+=== "french" 
+    ![dict_fr.png](files/dict_fr.png)
+=== "english"
+    ![dict_en.png](files/dict_en.png)
+
+How to add?
+
+??? Example
+    It is necessary to populate the `dictionary_item_tr` table with translated values for each dictionary, adding the value of the newly introduced language in the `language` column.
+

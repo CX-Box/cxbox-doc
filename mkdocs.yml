@@ -149,6 +149,7 @@ nav:
       - FileStorage:
         - Basic: features/element/filestorage/fileStorage.md
         - Minio: features/element/filestorage/minio.md
+      - Locale: features/locale/locale.md
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
       - Microservices:
@@ -160,6 +161,7 @@ nav:
         - Sent to email: features/element/notifications/email/email.md
         - Push: features/element/notifications/push/websocket.md
       - New Year Theme: features/happynewyear/happynewyear.md
+
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drilldown/drilldown.md
       - Validation: advancedCustomization/element/validation/validation.md

@@ -133,7 +133,7 @@ Such text may include:
 
 Localization is applied by using translation keys instead of hardcoded text. Use {% raw %} "{{ui.client.name}}" {% endraw %}
 
-#### Examples:
+#### Examples
 
 ##### <a id="field">Field Labels Localization</a>
 

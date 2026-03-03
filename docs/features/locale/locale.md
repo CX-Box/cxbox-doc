@@ -4,7 +4,7 @@ This document describes how localization works in the system and how to add tran
 
 The system supports localization for:
 
-* [Standard message(required,exception,button)](#ui)
+* [Static message(required,exception,button)](#ui)
 * [Field labels](#field)
 * [Screen titles](#screen)
 * [Buttons and actions](#action)
@@ -23,41 +23,69 @@ Localization is based on translation keys instead of hardcoded texts. Динам
  
 ??? Example
  
-    **UI(Standart message(required,exception,button))**:
+    **UI(Static message(required,exception,button))**:
 
     **Step 1**  
-    Add a translation file to ui/src/i18n/assets/
-
-    For example: fr.json containing the translations.
-
+    Add a translation file to ui/src/i18n/assets/fr.json containing the translations.
+    ```json
+    "translation": { 
+        "Clear": "Effacer",
+        "Copy details to clipboard": "Copier les détails dans le presse-papiers",
+        "Details": "Détails",
+        "Error": "Erreur",
+        "Errors": "Erreurs"
+    }
+    ```
     **Step 2**  
     Register the language in: ui/src/i18n/assets/index.ts
- 
 
     Add:
 
     * import of the new file
     * mapping between language code and file
- 
+
+    ```
+    import { Resource } from 'i18next'
+    import en from './en.json'
+    import fr from './fr.json'
+    
+    export const resources: Resource = {
+        en,
+        fr
+    }    
+    ```
     **Step 3** Register the language in: ui/src/interfaces
  
+    ```
+    import i18n from 'i18next'
+    import { initReactI18next } from 'react-i18next'
+    import { resources } from './assets'
+    
+    export function initLocale(lang: 'fr' |'en' | string) {
+        i18n.use(initReactI18next).init({
+            resources: resources,
+            lng: lang,
+            keySeparator: false,
+            interpolation: {
+                escapeValue: false
+            }
+        })
+    }    
+    ```
 
     **Backend**:
 
     **Step 1**  
     Create translation files in:  src/main/resources/ui/ 
-    
-    **Step 2**  
-    Use the following naming format(UTF-8):
-    
+
+    Use the following naming format(UTF-8): (messages_fr.properties)    
       ```text
-      messages.properties
+      messages.properties (default)
       messages_<lang>.properties
       ```
     
-    **Step 1**  
-    Open `application.yml`
-    Add supported languages:
+    **Step 2**  Add supported languages.
+    Add to `application.yml` :
     
       ```yaml
       cxbox:
@@ -65,16 +93,16 @@ Localization is based on translation keys instead of hardcoded texts. Динам
           supported-languages: [ en, fr ]
       ```
 
-## <a id="ui">Standart message(required,exception,button)</a>
+## <a id="ui">Static message(required,exception,button)</a>
 Frontend localization is used for standard Cxbox buttons, operations, and validation errors handled on the UI side.
  
 ### How does it look?
-=== "required message"
+=== "action filter settings"
     === "french"
         ![standartbutton.png](files/standartbutton.png)
     === "english"
         ![standartbutton_en.png](files/standartbutton_en.png)
-=== "Button filter settings"
+=== "required message"
     === "french"
         ![standartmessage.png](files/standartmessage.png)
     === "english"
@@ -83,7 +111,7 @@ Frontend localization is used for standard Cxbox buttons, operations, and valida
 ### How to add?
 
 ??? Example
-    Add  [setting](#setting)
+    Add  [setting UI(Static message(required,exception,button))](#setting)
  
 ## <a id="field">Field Labels Localization</a>
 
@@ -99,10 +127,14 @@ Field labels define how fields are displayed on screens.
 ??? Example
     
     **Step 1**  
-    Use a translation key in screen JSON: `ui.client.name`
-    
-     
-    
+    Use a translation key in screen JSON: `ui.client.name`       
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/clientList.widget.json
+    --8<--
+    ```
+
     **Step 2**  
     Add translation to `messages_fr.properties`:
     
@@ -112,8 +144,43 @@ Field labels define how fields are displayed on screens.
 
     Use recommended key prefixes:
     
-    * `ui.*` — UI texts
-    * `action.*` — buttons and actions
+    * `ui.*` — UI texts 
+
+
+## <a id="view">View Titles Localization</a>
+
+Screen titles define the name of a view in the UI.
+
+### How does it look?
+=== "french"
+ 
+=== "english"
+ 
+
+### How to add?
+
+??? Example
+
+    **Step 1**  
+    Define title in screen JSON:  `ui.view.clients`
+    
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/clientlist.view.json
+    --8<--
+    ``` 
+    
+    **Step 2**  
+    Add translation to `messages_fr.properties`:
+    
+      ```properties
+      ui.view.clients=Clientes
+      ```
+    
+    Use recommended key prefixes:
+    
+    * `ui.*` — UI texts 
+
 
 ## <a id="screen">Screen Titles Localization</a>
 
@@ -121,24 +188,28 @@ Screen titles define the name of a screen in the UI.
 
 ### How does it look?
 === "french"
-  ![field_fr.png](files/field_fr.png)
+    ![field_fr.png](files/field_fr.png)
 === "english"
-  ![field_en.png](files/field_en.png) 
-
+    ![field_en.png](files/field_en.png)
+ 
 ### How to add?
 
 ??? Example
     
     **Step 1**  
-    Define title in screen JSON:  `ui.client.list`
+    Define title in screen JSON:  `ui.screen.clients`
     
- 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/client.screen.json
+    --8<--
+    ``` 
     
     **Step 2**  
     Add translation to `messages_fr.properties`:
     
       ```properties
-      ui.client.list=Client list
+      ui.screen.clients=Clientes
       ```
     
     Use recommended key prefixes:
@@ -153,9 +224,9 @@ Buttons and actions use predefined keys with the action.
 ### How does it look?
 
 === "french"
-  ![action_fr.png](files/action_fr.png)
+    ![action_fr.png](files/action_fr.png)
 === "english"
-  ![action_en.png](files/action_en.png) 
+    ![action_en.png](files/action_en.png) 
  
 ### How to add?
 
@@ -167,11 +238,17 @@ Buttons and actions use predefined keys with the action.
     .create(crt -> crt.text(LocalizationFormatter.uiMessage("action.add")))
     ```
 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}feature/locale/Myexample6103Service.java:getActions
+    --8<--
+    ``` 
+
     **Step 2**  
     Add translation to `messages_fr.properties`:
     
       ```properties
-      action.add=Add 
+      action.add=Ajouter 
       ```
     
     Use recommended key prefixes:

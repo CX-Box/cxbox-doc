@@ -82,7 +82,7 @@ The system supports localization for:
       ```
 
 
-## <a id="ui">Static UI Text</a>
+## <a id="static">Static UI Text</a>
 
 Static localization is used for interface labels, titles, buttons, messages, and other UI text that does not come from business data.
 
@@ -95,9 +95,9 @@ Stored on the front-end: translation file to ui/src/i18n/assets/<language>.json 
 Frontend localization is used for standard Cxbox buttons, operations, and validation errors handled on the UI side.
 
 
-Examples:
+#### Examples:
 
-#### How does it look?
+How does it look?
 === "action filter settings"
     === "french"
         ![standartbutton.png](files/standartbutton.png)
@@ -109,7 +109,7 @@ Examples:
     === "english"
         ![standartmessage_en.png](files/standartmessage_en.png)
 
-#### How to add?
+How to add?
 
 ??? Example
     Add  [setting UI(Static message(required,exception,button))](#setting)
@@ -131,19 +131,19 @@ Such text may include:
 
 Localization is applied by using translation keys instead of hardcoded text.
 
-Examples:
+#### Examples:
 
-#### <a id="field">Field Labels Localization</a>
+##### <a id="field">Field Labels Localization</a>
 
 Field labels define how fields are displayed on screens.
 
-##### How does it look?
+How does it look?
 === "french"
     ![field_fr.png](files/field_fr.png)
 === "english"
     ![field_en.png](files/field_en.png)
 
-##### How to add?
+How to add?
 ??? Example
     
     **Step 1**  
@@ -167,17 +167,17 @@ Field labels define how fields are displayed on screens.
     * `ui.*` — UI texts 
 
 
-#### <a id="view">View Titles Localization</a>
+##### <a id="view">View Titles Localization</a>
 
 Screen titles define the name of a view in the UI.
 
-##### How does it look?
+How does it look?
 === "french"
     ![view_fr.png](files/view_fr.png)
 === "english"
     ![view_en.png](files/view_en.png)
 
-##### How to add?
+How to add?
 
 ??? Example
 
@@ -202,17 +202,17 @@ Screen titles define the name of a view in the UI.
     * `ui.*` — UI texts 
 
 
-#### <a id="screen">Screen Titles Localization</a>
+##### <a id="screen">Screen Titles Localization</a>
 
 Screen titles define the name of a screen in the UI.
 
-##### How does it look?
+How does it look?
 === "french"
     ![field_fr.png](files/field_fr.png)
 === "english"
     ![field_en.png](files/field_en.png)
  
-##### How to add?
+How to add?
 
 ??? Example
     

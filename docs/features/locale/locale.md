@@ -8,7 +8,7 @@ The system supports localization for:
 * [Field labels](#field)
 * [Screen titles](#screen)
 * [Buttons and actions](#action)
-* Validation and system messages
+* [Business Exception messages](#messages)
 * Enum values
 * Dictionary values(Filters)
  
@@ -19,7 +19,7 @@ Localization is based on translation keys instead of hardcoded texts. Динам
 * If a translation is missing, the default language is used
   UI (Frontend) Localization
 
-##  <a id="setting">Common setting</a>
+##<a id="setting">Common setting</a>
  
 ??? Example
  
@@ -178,4 +178,36 @@ Buttons and actions use predefined keys with the action.
     
     * `ui.*` — UI texts
     * `action.*` — buttons and actions
-     
+
+## <a id="messages">Business Exception messages Localization</a>
+
+Buttons and actions use predefined keys with the action.
+
+### How does it look?
+
+=== "french"
+    ![message_business_exception.png](files/message_business_exception.png)
+=== "english"
+    ![message_business_exception_en.png](files/message_business_exception_en.png)
+
+### How to add?
+
+??? Example
+**Step 1**  
+Add translation LocalizationFormatter.uiMessage() to button
+
+    ```java
+    .create(crt -> crt.text(LocalizationFormatter.uiMessage("action.add")))
+    ```
+
+    **Step 2**  
+    Add translation to `messages_fr.properties`:
+    
+      ```properties
+      action.add=Add 
+      ```
+    
+    Use recommended key prefixes:
+    
+    * `ui.*` — UI texts
+    * `action.*` — buttons and actions

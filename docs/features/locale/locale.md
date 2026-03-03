@@ -95,7 +95,7 @@ Stored on the front-end: translation file to ui/src/i18n/assets/<language>.json 
 Frontend localization is used for standard Cxbox buttons, operations, and validation errors handled on the UI side.
 
 
-#### Examples:
+#### Examples
 
 How does it look?
 === "action filter settings"
@@ -129,7 +129,7 @@ Such text may include:
 * Labels
 * Any custom text specified directly in JSON
 
-Localization is applied by using translation keys instead of hardcoded text.
+Localization is applied by using translation keys instead of hardcoded text. Example {% raw %} "{{ui.client.name}}" {% endraw %}
 
 #### Examples:
 
@@ -149,11 +149,16 @@ How to add?
     **Step 1**  
     Use a translation key in screen JSON: `ui.client.name`       
 
+    {% raw %}
     ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/locale/clientList.widget.json
-    --8<--
+    {
+    "title": "{{ui.client.name}}",
+    "key": "fullName",
+    "type": "input",
+    "width": 300
+    }
     ```
+    {% endraw %}
 
     **Step 2**  
     Add translation to `messages_fr.properties`:
@@ -183,13 +188,22 @@ How to add?
 
     **Step 1**  
     Define title in screen JSON:  `ui.view.clients`
-    
+
+    {% raw %}
     ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/locale/clientlist.view.json
-    --8<--
+    "menu": [
+      {
+        "title": "{{ui.view.clients}}",
+        "child": [
+          {
+            "viewName": "clientlist"
+          }
+        ]
+      }
+    ]
     ``` 
-    
+    {% endraw %}
+
     **Step 2**  
     Add translation to `messages_fr.properties`:
     
@@ -219,7 +233,16 @@ How to add?
     **Step 1**  
     Define title in screen JSON:  `ui.screen.clients`
 
-    
+    {% raw %}
+    ```json
+    "name": "client",
+    "icon": "team",
+    "order": 0,
+    "title": "{{ui.screen.clients}}",
+    "navigation": {
+    }
+    ``` 
+    {% endraw %}
     **Step 2**  
     Add translation to `messages_fr.properties`:
     
@@ -231,6 +254,41 @@ How to add?
     
     * `ui.*` — UI texts
     * `action.*` — buttons and actions
+
+
+##### FullTextSearch placeholder
+
+How does it look?
+=== "french" 
+    ![placeholder_fr.png](files/placeholder_fr.png)
+=== "english"
+    ![placeholder_en.png](files/placeholder_en.png)
+
+How to add?
+??? Example
+
+    **Step 1**  
+    Use a translation key in screen JSON: `ui.client.find.placeholder`       
+
+    {% raw %}
+    ```json
+    "fullTextSearch": {
+      "enabled": true,
+      "placeholder": "{{ui.client.find.placeholder}}"
+    },
+    ```
+    {% endraw %}
+
+    **Step 2**  
+    Add translation to `messages_fr.properties`:
+    
+      ```properties
+      ui.client.find.placeholder=Recherche par client ou adresse
+      ```
+
+    Use recommended key prefixes:
+    
+    * `ui.*` — UI texts 
 
 ### <a id="action">Static Text Defined in Java</a>
  This includes UI text created on the backend, such as:
@@ -244,30 +302,33 @@ Important rule:
 Static text defined in Java must be translated before it is sent to the front-end.
 
 The translation can be performed at any place in Java code where the value is prepared for the UI.
+LocalizationFormatter.uiMessage("action.add")
 
-#### Actions
-##### How does it look?
+#### Examples
+##### Actions
+How does it look?
 
 === "french"
     ![action_fr.png](files/action_fr.png)
 === "english"
     ![action_en.png](files/action_en.png) 
  
-##### How to add?
+How to add?
 
 ??? Example
     **Step 1**  
     Add translation LocalizationFormatter.uiMessage() to button 
 
     ```java
-    .create(crt -> crt.text(LocalizationFormatter.uiMessage("action.add")))
+	public Actions<MyexampleDTO> getActions() {
+		return Actions.<MyexampleDTO>builder()
+				.save(sv -> sv.text(LocalizationFormatter.uiMessage("action.save")))
+				.cancelCreate(ccr -> ccr.text(LocalizationFormatter.uiMessage("action.cancel")).available(bc -> true))
+				.create(crt -> crt.text(LocalizationFormatter.uiMessage("action.add")))
+				.delete(dlt -> dlt.text(LocalizationFormatter.uiMessage("action.delete")))
+				.build();
+	}
     ```
-
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}feature/locale/Myexample6103Service.java:getActions
-    --8<--
-    ``` 
 
     **Step 2**  
     Add translation to `messages_fr.properties`:
@@ -281,25 +342,31 @@ The translation can be performed at any place in Java code where the value is pr
     * `ui.*` — UI texts
     * `action.*` — buttons and actions
 
-#### Business Exception messages Localization
+##### Business Exception messages Localization
 
-##### How does it look?
+How does it look?
 
 === "french"
     ![message_business_exception.png](files/message_business_exception.png)
 === "english"
     ![message_business_exception_en.png](files/message_business_exception_en.png)
 
-##### How to add?
+How to add?
 
 ??? Example
     **Step 1**  
     Add translation LocalizationFormatter.uiMessage() to button
 
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}feature/locale/Myexample6103Service.java:getActions
-    --8<--
+    ```java
+	protected ActionResultDTO<MyexampleDTO> doUpdateEntity(Myexample6103 entity, MyexampleDTO data, BusinessComponent bc) {
+
+		if (data.isFieldChanged(MyexampleDTO_.dateStart)) {
+			LocalDateTime sysdate = LocalDateTime.now();
+			if (data.getDateStart() != null && sysdate.compareTo(data.getDateStart()) > 0) {
+				throw new BusinessException().addPopup(LocalizationFormatter.uiMessage("business.exception.less.current.date"));
+			}
+			entity.setDateStart(data.getDateStart());
+		}
     ``` 
 
     **Step 2**  
@@ -316,13 +383,14 @@ The translation can be performed at any place in Java code where the value is pr
 2) Dictionary 
 
 #### <a id="enum">Enum Localization</a>
-##### How does it look?
+How does it look?
 
 === "french" 
-
+    ![enum_fr.png](files/enum_fr.png)
 === "english" 
     ![enum_en.png](files/enum_en.png)
-##### How to add?
+
+How to add?
 
 ??? Example
     **Step 1**  Add LocaleEnumUtil to  /conf/cxbox/extension/locale
@@ -406,4 +474,20 @@ The translation can be performed at any place in Java code where the value is pr
         }
     }
     ```
-    **Step 4**  Add LocaleEnum.java 
+    **Step 4**  implements LocaleEnum.java 
+    ```java
+    
+    @Getter
+    @AllArgsConstructor
+    public enum StatusEnum implements LocaleEnum {
+    
+        NEW("New", "Nouvelle"),
+        INACTIVE("Inactive", "Inactive"),
+        IN_PROGRESS("In progress", "En cours");
+    
+        private final String value;
+    
+        private final String valueFr;
+    }
+    
+    ```

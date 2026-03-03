@@ -149,7 +149,7 @@ nav:
       - FileStorage:
         - Basic: features/element/filestorage/fileStorage.md
         - Minio: features/element/filestorage/minio.md
-      - Locale: features/locale/locale.md
+      - Localization: features/locale/locale.md
       - Monitoring tools:
         - Performance Metrics: features/element/monitoringtools/metrics/performancemetrics.md
       - Microservices:

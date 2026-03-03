@@ -131,7 +131,7 @@ Such text may include:
 * Labels
 * Any custom text specified directly in JSON
 
-Localization is applied by using translation keys instead of hardcoded text. Example {% raw %} "{{ui.client.name}}" {% endraw %}
+Localization is applied by using translation keys instead of hardcoded text. Use {% raw %} "{{ui.client.name}}" {% endraw %}
 
 #### Examples:
 
@@ -304,7 +304,7 @@ Important rule:
 Static text defined in Java must be translated before it is sent to the front-end.
 
 The translation can be performed at any place in Java code where the value is prepared for the UI.
-LocalizationFormatter.uiMessage("action.add")
+Use method LocalizationFormatter.uiMessage("action.add")
 
 #### Examples
 ##### Actions

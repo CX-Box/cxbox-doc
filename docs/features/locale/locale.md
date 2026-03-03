@@ -4,20 +4,8 @@ This document describes how localization works in the system and how to add tran
 
 The system supports localization for:
 
-* [Static message(required,exception,button)](#ui)
-* [Field labels](#field)
-* [Screen titles](#screen)
-* [Buttons and actions](#action)
-* [Business Exception messages](#messages)
-* Enum values
-* Dictionary values(Filters)
- 
-
-Localization is based on translation keys instead of hardcoded texts. Динамические данные(например данные приходящие в /data не переводятся)
-
-* Language is resolved from the user locale
-* If a translation is missing, the default language is used
-  UI (Frontend) Localization
+* [Static UI Text](#static)
+* [Data Localization](#data)
 
 ##<a id="setting">Common setting</a>
  
@@ -93,10 +81,23 @@ Localization is based on translation keys instead of hardcoded texts. Динам
           supported-languages: [ en, fr ]
       ```
 
-## <a id="ui">Static message(required,exception,button)</a>
+
+## <a id="ui">Static UI Text</a>
+
+Static localization is used for interface labels, titles, buttons, messages, and other UI text that does not come from business data.
+
+### Global Static Text (Front-end)
+
+This includes common UI labels shared across the entire interface.
+
+Stored on the front-end: translation file to ui/src/i18n/assets/<language>.json containing the translations.
+
 Frontend localization is used for standard Cxbox buttons, operations, and validation errors handled on the UI side.
- 
-### How does it look?
+
+
+Examples:
+
+#### How does it look?
 === "action filter settings"
     === "french"
         ![standartbutton.png](files/standartbutton.png)
@@ -108,22 +109,41 @@ Frontend localization is used for standard Cxbox buttons, operations, and valida
     === "english"
         ![standartmessage_en.png](files/standartmessage_en.png)
 
-### How to add?
+#### How to add?
 
 ??? Example
     Add  [setting UI(Static message(required,exception,button))](#setting)
- 
-## <a id="field">Field Labels Localization</a>
+
+
+### In Widget / View / Screen-Level Static Text
+
+This includes text defined directly in configuration files:
+
+* *.widget.json
+* *.view.json
+* *.screen.json
+
+Such text may include:
+
+* Titles
+* Labels
+* Any custom text specified directly in JSON
+
+Localization is applied by using translation keys instead of hardcoded text.
+
+Examples:
+
+#### <a id="field">Field Labels Localization</a>
 
 Field labels define how fields are displayed on screens.
 
-### How does it look?
+##### How does it look?
 === "french"
     ![field_fr.png](files/field_fr.png)
 === "english"
     ![field_en.png](files/field_en.png)
 
-### How to add?
+##### How to add?
 ??? Example
     
     **Step 1**  
@@ -147,17 +167,17 @@ Field labels define how fields are displayed on screens.
     * `ui.*` — UI texts 
 
 
-## <a id="view">View Titles Localization</a>
+#### <a id="view">View Titles Localization</a>
 
 Screen titles define the name of a view in the UI.
 
-### How does it look?
+##### How does it look?
 === "french"
- 
+    ![view_fr.png](files/view_fr.png)
 === "english"
- 
+    ![view_en.png](files/view_en.png)
 
-### How to add?
+##### How to add?
 
 ??? Example
 
@@ -182,28 +202,23 @@ Screen titles define the name of a view in the UI.
     * `ui.*` — UI texts 
 
 
-## <a id="screen">Screen Titles Localization</a>
+#### <a id="screen">Screen Titles Localization</a>
 
 Screen titles define the name of a screen in the UI.
 
-### How does it look?
+##### How does it look?
 === "french"
     ![field_fr.png](files/field_fr.png)
 === "english"
     ![field_en.png](files/field_en.png)
  
-### How to add?
+##### How to add?
 
 ??? Example
     
     **Step 1**  
     Define title in screen JSON:  `ui.screen.clients`
-    
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/locale/client.screen.json
-    --8<--
-    ``` 
+
     
     **Step 2**  
     Add translation to `messages_fr.properties`:
@@ -217,18 +232,28 @@ Screen titles define the name of a screen in the UI.
     * `ui.*` — UI texts
     * `action.*` — buttons and actions
 
-## <a id="action"> Buttons and Actions Localization </a>
+### <a id="action">Static Text Defined in Java</a>
+ This includes UI text created on the backend, such as:
 
-Buttons and actions use predefined keys with the action. 
+* Button captions
+* Popup messages
+* Validation messages
+* etc
 
-### How does it look?
+Important rule:
+Static text defined in Java must be translated before it is sent to the front-end.
+
+The translation can be performed at any place in Java code where the value is prepared for the UI.
+
+#### Actions
+##### How does it look?
 
 === "french"
     ![action_fr.png](files/action_fr.png)
 === "english"
     ![action_en.png](files/action_en.png) 
  
-### How to add?
+##### How to add?
 
 ??? Example
     **Step 1**  
@@ -256,35 +281,129 @@ Buttons and actions use predefined keys with the action.
     * `ui.*` — UI texts
     * `action.*` — buttons and actions
 
-## <a id="messages">Business Exception messages Localization</a>
+#### Business Exception messages Localization
 
-Buttons and actions use predefined keys with the action.
-
-### How does it look?
+##### How does it look?
 
 === "french"
     ![message_business_exception.png](files/message_business_exception.png)
 === "english"
     ![message_business_exception_en.png](files/message_business_exception_en.png)
 
-### How to add?
+##### How to add?
 
 ??? Example
-**Step 1**  
-Add translation LocalizationFormatter.uiMessage() to button
+    **Step 1**  
+    Add translation LocalizationFormatter.uiMessage() to button
 
-    ```java
-    .create(crt -> crt.text(LocalizationFormatter.uiMessage("action.add")))
-    ```
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}feature/locale/Myexample6103Service.java:getActions
+    --8<--
+    ``` 
 
     **Step 2**  
     Add translation to `messages_fr.properties`:
     
-      ```properties
-      action.add=Add 
-      ```
+    ```properties
+    business.exception.less.current.date=La valeur de ce champ ne peut pas Ãªtre antÃ©rieure Ã  la date actuelle
+    ``` 
+
+## Data Localization
+
+1) Enum Localization
+
+2) Dictionary 
+
+#### <a id="enum">Enum Localization</a>
+##### How does it look?
+
+=== "french" 
+
+=== "english" 
+    ![enum_en.png](files/enum_en.png)
+##### How to add?
+
+??? Example
+    **Step 1**  Add LocaleEnumUtil to  /conf/cxbox/extension/locale
+
+    ```java
+
+    public final class LocaleEnumUtil {
     
-    Use recommended key prefixes:
+        private LocaleEnumUtil() {
+        }
     
-    * `ui.*` — UI texts
-    * `action.*` — buttons and actions
+        public static <E extends Enum<E> & PlatformLocaleEnum<E>> String toValue(
+                @NonNull PlatformLocaleEnum<E> e
+        ) {
+            Locale locale = LocaleContextHolder.getLocale();
+            return e.translations()
+                    .getOrDefault(
+                            locale,
+                            e.translations().values().stream().findFirst().orElseThrow()
+                    )
+                    .get();
+        }
+    
+        public static <E extends Enum<E> & PlatformLocaleEnum<E>> Optional<E> fromValue(
+                @NonNull Class<E> enumClass,
+                @NonNull String value
+        ) {
+            Map<String, E> map = new HashMap<>();
+            for (E e : enumClass.getEnumConstants()) {
+                for (var entry : e.translations().entrySet()) {
+                    map.put(entry.getValue().get(), e);
+                }
+            }
+            return Optional.ofNullable(map.get(value));
+        }
+    
+    }
+    ``` 
+
+    **Step 2**  Add PlatformLocaleEnum.java
+    ```java
+    
+    public interface PlatformLocaleEnum<E extends Enum<E> & PlatformLocaleEnum<E>> {
+    
+        Map<Locale, Supplier<String>> translations();
+    
+        @JsonValue
+        default String toValue() {
+            return LocaleEnumUtil.toValue(this);
+        }
+    
+        @JsonCreator
+        default E fromValue(String value) {
+            return LocaleEnumUtil
+                    .fromValue((Class<E>) this.getClass(), value)
+                    .orElse(null);
+        }
+    
+    }
+    ```
+
+    **Step 3**  Add LocaleEnum.java 
+        Each enum constant must define a value for every supported Locale.
+        Localization is configured via the  #translations() map.
+
+    ```java
+    
+    public interface LocaleEnum<E extends Enum<E> & PlatformLocaleEnum<E>>
+            extends PlatformLocaleEnum<E> {
+    
+        String getValue();
+    
+        String getValueFr();
+    
+        @Override
+        default Map<Locale, Supplier<String>> translations() {
+            return  Map.of(
+                    Locale.ENGLISH, this::getValue,
+                    Locale.FRENCH, this::getValueFr
+            );
+        }
+    }
+    ```
+    **Step 4**  Add LocaleEnum.java 

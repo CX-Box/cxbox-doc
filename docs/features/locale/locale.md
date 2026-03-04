@@ -110,7 +110,7 @@ The system supports localization for:
 
 Static localization is used for interface labels, titles, buttons, messages, and other UI text that does not come from business data.
 
-### <a id="global">Global Static Text (Front-end)</a>
+### <a id="global"> Static Text: Global(Front-end)</a>
 
 This includes common UI labels shared across the entire interface.
 
@@ -329,8 +329,12 @@ How to add?
 * Validation messages
 * etc
 
-Important rule:
-Static text defined in Java must be translated before it is sent to the front-end.
+!!! warning  
+    It is important to distinguish **statistics** from **data** that are also passed from Java.
+    By *data*, we mean values that can change (by a user, via the admin UI, etc.) and/or for which additional features are available—such as search, sorting, full-text search, and so on.
+    As a result, Static Text: Defined in Java only require translating the value immediately before it is sent to the front end, anywhere in Java, using the corresponding expression.
+    **Data**, on the other hand, must support editing, searching, and sorting. Therefore, a task of **reverse translation** is added—converting the localized value received from the UI back to its internal representation. This is a more complex problem and will be discussed in section  [Data Localization](#datalocalization).
+
 
 The translation can be performed at any place in Java code where the value is prepared for the UI.
 Use method LocalizationFormatter.uiMessage("action.add")
@@ -534,4 +538,27 @@ How to add?
 
 ??? Example
     It is necessary to populate the `dictionary_item_tr` table with translated values for each dictionary, adding the value of the newly introduced language in the `language` column.
+    
+    **Step 1** Add new column `VALUE_FR`
+    ```
+        <column name="VALUE_FR" remarks="French language" type="VARCHAR2(255)"/>
+    ```
+    **Step 2** Add new column `VALUE_FR` in DICTIONARY.csv
 
+    ```csv
+    TYPE;KEY;VALUE;VALUE_FR;DISPLAY_ORDER;DESCRIPTION;ACTIVE;ID
+    BRIEFINGS;PROJECT;Project;Projet;1;;;
+    BRIEFINGS;SECURITY;Security;Sécurité;2;;;
+    BRIEFINGS;MARKET;Market;Marché;3;;;
+    ```
+
+    **Step 3** Add value_fr in insert for dictionary_item_tr
+
+    ```
+    <sql>
+      insert into dictionary_item_tr (id, language, value)
+      select id, 'en', value from dictionary_item
+      union all
+      select id, 'fr', value_fr from dictionary_item;
+    </sql>
+    ```

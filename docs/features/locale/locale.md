@@ -9,17 +9,19 @@ The system supports localization for:
 * [Static Text](#static)
 * [Data Localization](#datalocalization)
 
-##<a id="setting">Преднастройки для работы с локалализацией</a>
+##<a id="setting">Pre-setup for Working with Localization</a>
  
 ??? Example
- 
-    Для работы с локализацией делаем преднастройки на фронте и бэке, которые необходимы для корректной работы с добавляемым языком.
+
+    To work with localization, perform pre-setup on both front-end and back-end, which is necessary for correct handling of the added language.
 
     **[Global Static Text (Front-end)](#global)**:
  
     **Step 1**  
-    Add a translation file to ui/src/i18n/assets/fr.json containing the translations.
-    В ui/src/i18n/assets мы имеем файл en.json  с переводами котороые используются для бокса, для нового языка достаточно перевести значения для нового языка
+      
+    Add a translation file to `ui/src/i18n/assets/fr.json` containing the translations.  
+    In `ui/src/i18n/assets`, we already have an `en.json` file with translations used for the UI.
+    For a new language, it is sufficient to translate the values into the new language.
 
     Example:
 
@@ -33,7 +35,8 @@ The system supports localization for:
     }
     ```
     **Step 2**  
-    необходимо зарегистрировать новый язык для возможночти обработки фронтом
+    Register the new language to allow the front-end to handle it. 
+
     Register the language in: ui/src/i18n/assets/index.ts
 
     Add:

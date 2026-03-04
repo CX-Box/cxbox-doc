@@ -9,13 +9,14 @@ The system supports localization for:
 * [Static Text](#static)
 * [Data Localization](#datalocalization)
 
-##<a id="setting">Pre-setup for Working with Localization</a>
+## <a id="setting">Pre-setup for Working with Localization</a>
  
 ??? Example
-
     To work with localization, perform pre-setup on both front-end and back-end, which is necessary for correct handling of the added language.
-
-    **see more [Global Static Text (Front-end)](#global)**:
+    
+    **Front-end**:
+    
+    see more [Global Static Text (Front-end)](#global)
  
     **Step 1**  
       
@@ -43,51 +44,50 @@ The system supports localization for:
     }
     ```
     **Step 2**  
-    Register the new language to allow the front-end to handle it. 
-
-    Register the language in: ui/src/i18n/assets/index.ts
-
-    Add:
-
-    * import of the new file
-    * mapping between language code and file
-
+    Register the new language to allow the front-end to handle it.
+    1.0 ui/src/i18n/assets/local/index.ts
     ```
     import { Resource } from 'i18next'
     import en from './en.json'
     import fr from './fr.json'
+    import ru from './ru.json'
     
-    export const resources: Resource = {
+    export default {
         en,
+        ru,
         fr
-    }    
-    ```
+    } as Resource
     
-    Register the language in: ui/src/interfaces
- 
     ```
-    import i18n from 'i18next'
-    import { initReactI18next } from 'react-i18next'
-    import { resources } from './assets'
-    
-    export function initLocale(lang: 'fr' |'en' | string) {
-        i18n.use(initReactI18next).init({
-            resources: resources,
-            lng: lang,
-            keySeparator: false,
-            interpolation: {
-                escapeValue: false
-            }
-        })
-    }    
+    1.1  ui/src/i18n/assets/moment/index.ts
+    ```
+    import 'moment/locale/ru'
+    import 'moment/locale/fr'
     ```
 
+    1.2 Ant supported languages:    ui/src/i18n/assets/antd/index.
+
+    ```
+    import { Locale } from 'antd/es/locale-provider'
+    import { SupportedLanguage } from '../../constants'
+    import enUs from 'antd/es/locale-provider/en_US'
+    import ruRu from 'antd/es/locale-provider/ru_RU'
+    import frFr from 'antd/es/locale-provider/fr_FR'
+    
+    export default { en: enUs, ru: ruRu, fr: frFr } as { [key in SupportedLanguage]: Locale }
+    ```
+
+    !!! info
+        Since [release 2.0.18](https://doc.cxbox.org/new/version218/): The frontend automatically detects the user's language: /login parameter `language`
+        
+        Before [release 2.0.18](https://doc.cxbox.org/new/version218/): Additional frontend development was required to retrieve the user's language. Without this customization, the frontend used a predefined constant.
+    
     **Back-end**:
     
     see more [Static Text: Widget / View / Screen](#widget)
 
     **Step 1**  
-    Create translation files in:  src/main/resources/ui/ 
+    Create translation files for [Static Text: Widget / View / Screen](#widget) in:  src/main/resources/ui/ 
 
     Use the following naming format(UTF-8): (messages_fr.properties)
 
@@ -112,12 +112,9 @@ Static localization is used for interface labels, titles, buttons, messages, and
 
 ### <a id="global"> Static Text: Global(Front-end)</a>
 
-This includes common UI labels shared across the entire interface.
+This includes common UI labels shared across the entire interface(standard Cxbox buttons, operations, and validation errors handled on the UI side).
 
 Stored on the front-end: translation file to ui/src/i18n/assets/<language>.json containing the translations.
-
-Frontend localization is used for standard Cxbox buttons, operations, and validation errors handled on the UI side.
-
 
 #### Examples
 
@@ -416,6 +413,9 @@ How to add?
 * [Enum](#enum)
 * [Dictionary](#dictionary)
 
+!!! warning
+    By 'data' mean information that can be modified (by users, via the admin panel, etc.) and/or supports additional functions such as search, sorting, full-text search, etc. The LocalizationFormatter.uiMessage() function performs translation in one direction only, while data requires editing, search, full-text search, and sorting capabilities. Since this function does not support reverse translation, we do not recommend using LocalizationFormatter.uiMessage() for data
+
 #### <a id="enum">Enum</a>
 How does it look?
 
@@ -427,16 +427,52 @@ How does it look?
 How to add?
 
 ??? Example
-    **Step 1**  Add LocaleEnumUtil to  /conf/cxbox/extension/locale
+    **Step 1**  Add PlatformLocaleEnum.java to  /conf/cxbox/extension/locale
 
     ```java
-
-    public final class LocaleEnumUtil {
+    import com.fasterxml.jackson.annotation.JsonCreator;
+    import com.fasterxml.jackson.annotation.JsonValue;
+    import java.util.HashMap;
+    import java.util.Locale;
+    import java.util.Map;
+    import java.util.function.Supplier;
+    import lombok.NonNull;
+    import org.springframework.context.i18n.LocaleContextHolder;
     
-        private LocaleEnumUtil() {
+    /**
+     * Interface for enums
+     */
+    public interface PlatformLocaleEnum<E extends Enum<E> & PlatformLocaleEnum<E>> {
+    
+        Map<Locale, Supplier<@NonNull String>> translations();
+    
+        /**
+         * Converts this enum constant to its string representation based on the current locale.
+         */
+        @JsonValue
+        default String toValue() {
+            return toValue(this);
         }
     
-        public static <E extends Enum<E> & PlatformLocaleEnum<E>> String toValue(
+        /**
+         * Creates an enum constant from its string representation.
+         */
+        @JsonCreator
+        @SuppressWarnings("unchecked")
+        default E fromValue(@NonNull String value) {
+            return fromValue((Class<E>) this.getClass(), value);
+        }
+    
+        /**
+         * Converts this enum constant to its string representation based on the current locale.
+         * <p>
+         * Serialization logic. The current locale is obtained
+         * from {@link LocaleContextHolder}. If no translation exists for the current locale,
+         * the first available translation is used as a fallback.
+         * </p>
+         *
+         */
+        static <E extends Enum<E> & PlatformLocaleEnum<E>> String toValue(
                 @NonNull PlatformLocaleEnum<E> e
         ) {
             Locale locale = LocaleContextHolder.getLocale();
@@ -448,45 +484,33 @@ How to add?
                     .get();
         }
     
-        public static <E extends Enum<E> & PlatformLocaleEnum<E>> Optional<E> fromValue(
+        /**
+         * Creates an enum constant of the specified type from its string representation.
+         * <p>
+         * Deserialization logic. It builds
+         * a reverse lookup map from all translated values to their corresponding enum constants
+         * and uses it to find the matching constant.
+         * </p>
+         */
+        static <E extends Enum<E> & PlatformLocaleEnum<E>> E fromValue(
                 @NonNull Class<E> enumClass,
                 @NonNull String value
         ) {
             Map<String, E> map = new HashMap<>();
             for (E e : enumClass.getEnumConstants()) {
                 for (var entry : e.translations().entrySet()) {
-                    map.put(entry.getValue().get(), e);
+                    if (entry != null && entry.getValue() != null) {
+                        map.put(entry.getValue().get(), e);
+                    }
                 }
             }
-            return Optional.ofNullable(map.get(value));
-        }
-    
-    }
-    ``` 
-
-    **Step 2**  Add PlatformLocaleEnum.java
-    ```java
-    
-    public interface PlatformLocaleEnum<E extends Enum<E> & PlatformLocaleEnum<E>> {
-    
-        Map<Locale, Supplier<String>> translations();
-    
-        @JsonValue
-        default String toValue() {
-            return LocaleEnumUtil.toValue(this);
-        }
-    
-        @JsonCreator
-        default E fromValue(String value) {
-            return LocaleEnumUtil
-                    .fromValue((Class<E>) this.getClass(), value)
-                    .orElse(null);
+            return map.get(value);
         }
     
     }
     ```
 
-    **Step 3**  Add LocaleEnum.java 
+    **Step 2**  Add LocaleEnum.java 
         Each enum constant must define a value for every supported Locale.
         Localization is configured via the  #translations() map.
 
@@ -508,7 +532,8 @@ How to add?
         }
     }
     ```
-    **Step 4**  implements LocaleEnum.java 
+    **Step 3**  implements LocaleEnum.java 
+
     ```java
     
     @Getter

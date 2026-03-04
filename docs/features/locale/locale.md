@@ -157,11 +157,7 @@ This includes text defined directly in configuration files:
 * *.view.json
 * *.screen.json
 
-Such text may include:
-
-* Titles
-* Labels
-* Any custom text specified directly in JSON
+Such text may include: Titles, Labels, Any custom text specified directly in JSON
 
 Localization is applied by using translation keys instead of hardcoded text. 
 

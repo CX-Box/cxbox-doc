@@ -15,7 +15,7 @@ The system supports localization for:
 
     To work with localization, perform pre-setup on both front-end and back-end, which is necessary for correct handling of the added language.
 
-    **[Global Static Text (Front-end)](#global)**:
+    **see more [Global Static Text (Front-end)](#global)**:
  
     **Step 1**  
       
@@ -23,6 +23,14 @@ The system supports localization for:
     In `ui/src/i18n/assets`, we already have an `en.json` file with translations used for the UI.
     For a new language, it is sufficient to translate the values into the new language.
 
+    Use the following naming format(UTF-8): (fr.json)
+
+      ```text
+      fr.json
+      en.json
+      <lang>.json
+      ```
+    
     Example:
 
     ```json
@@ -74,12 +82,15 @@ The system supports localization for:
     }    
     ```
 
-    **Backend**:
-        widget
+    **Back-end**:
+    
+    see more [Static Text: Widget / View / Screen](#widget)
+
     **Step 1**  
     Create translation files in:  src/main/resources/ui/ 
 
-    Use the following naming format(UTF-8): (messages_fr.properties)    
+    Use the following naming format(UTF-8): (messages_fr.properties)
+
       ```text
       messages.properties (default)
       messages_<lang>.properties
@@ -329,6 +340,7 @@ The translation can be performed at any place in Java code where the value is pr
 Use method LocalizationFormatter.uiMessage("action.add")
 
 #### Examples Localization
+
 ##### Actions
 How does it look?
 
@@ -401,9 +413,8 @@ How to add?
 
 ## <a id="datalocalization">Data Localization</a>
 
-1) [Enum](#enum)
-
-2) [Dictionary](#dictionary)
+* [Enum](#enum)
+* [Dictionary](#dictionary)
 
 #### <a id="enum">Enum</a>
 How does it look?

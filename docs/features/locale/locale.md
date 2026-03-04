@@ -254,9 +254,9 @@ Screen titles define the name of a screen in the UI.
 
 How does it look?
 === "french"
-    ![field_fr.png](files/field_fr.png)
+    ![screen_fr.png](files/screen_fr.png) 
 === "english"
-    ![field_en.png](files/field_en.png)
+    ![screen_en.png](files/screen_en.png)
  
 How to add?
 

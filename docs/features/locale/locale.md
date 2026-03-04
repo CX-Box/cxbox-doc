@@ -6,17 +6,33 @@ This document describes how localization works in the system and how to add tran
 
 The system supports localization for:
 
-* [Static UI Text](#static)
-* [Data Localization](#data)
+* [Static Text](#static)
+* [Data Localization](#datalocalization)
 
-##<a id="setting">Common setting</a>
+##<a id="setting">Pre-setup for Working with Localization</a>
  
 ??? Example
- 
-    **UI(Static message(required,exception,button))**:
 
+    To work with localization, perform pre-setup on both front-end and back-end, which is necessary for correct handling of the added language.
+
+    **see more [Global Static Text (Front-end)](#global)**:
+ 
     **Step 1**  
-    Add a translation file to ui/src/i18n/assets/fr.json containing the translations.
+      
+    Add a translation file to `ui/src/i18n/assets/fr.json` containing the translations.  
+    In `ui/src/i18n/assets`, we already have an `en.json` file with translations used for the UI.
+    For a new language, it is sufficient to translate the values into the new language.
+
+    Use the following naming format(UTF-8): (fr.json)
+
+      ```text
+      fr.json
+      en.json
+      <lang>.json
+      ```
+    
+    Example:
+
     ```json
     "translation": { 
         "Clear": "Effacer",
@@ -27,6 +43,8 @@ The system supports localization for:
     }
     ```
     **Step 2**  
+    Register the new language to allow the front-end to handle it. 
+
     Register the language in: ui/src/i18n/assets/index.ts
 
     Add:
@@ -44,7 +62,8 @@ The system supports localization for:
         fr
     }    
     ```
-    **Step 3** Register the language in: ui/src/interfaces
+    
+    Register the language in: ui/src/interfaces
  
     ```
     import i18n from 'i18next'
@@ -63,12 +82,15 @@ The system supports localization for:
     }    
     ```
 
-    **Backend**:
+    **Back-end**:
+    
+    see more [Static Text: Widget / View / Screen](#widget)
 
     **Step 1**  
     Create translation files in:  src/main/resources/ui/ 
 
-    Use the following naming format(UTF-8): (messages_fr.properties)    
+    Use the following naming format(UTF-8): (messages_fr.properties)
+
       ```text
       messages.properties (default)
       messages_<lang>.properties
@@ -84,11 +106,11 @@ The system supports localization for:
       ```
 
 
-## <a id="static">Static UI Text</a>
+## <a id="static">Static Text</a>
 
 Static localization is used for interface labels, titles, buttons, messages, and other UI text that does not come from business data.
 
-### Global Static Text (Front-end)
+### <a id="global">Global Static Text (Front-end)</a>
 
 This includes common UI labels shared across the entire interface.
 
@@ -114,10 +136,20 @@ How does it look?
 How to add?
 
 ??? Example
-    Add  [setting UI(Static message(required,exception,button))](#setting)
+    Add a translation file to ui/src/i18n/assets/fr.json containing the translations.
+
+    ```json
+    "translation": { 
+        "Clear": "Effacer",
+        "Copy details to clipboard": "Copier les détails dans le presse-papiers",
+        "Details": "Détails",
+        "Error": "Erreur",
+        "Errors": "Erreurs"
+    }
+    ```
 
 
-### In Widget / View / Screen-Level Static Text
+### <a id="widget">Static Text: Widget / View / Screen </a>
 
 This includes text defined directly in configuration files:
 
@@ -125,17 +157,15 @@ This includes text defined directly in configuration files:
 * *.view.json
 * *.screen.json
 
-Such text may include:
+Such text may include: Titles, Labels, Any custom text specified directly in JSON
 
-* Titles
-* Labels
-* Any custom text specified directly in JSON
+Localization is applied by using translation keys instead of hardcoded text. 
 
-Localization is applied by using translation keys instead of hardcoded text. Use {% raw %} "{{ui.client.name}}" {% endraw %}
+Use {% raw %}  {{ui.client.name}}  {% endraw %}
 
-#### Examples
+#### Examples Localization
 
-##### <a id="field">Field Labels Localization</a>
+##### Field Labels
 
 Field labels define how fields are displayed on screens.
 
@@ -163,7 +193,7 @@ How to add?
     {% endraw %}
 
     **Step 2**  
-    Add translation to `messages_fr.properties`:
+      Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
       ui.client.name=Nom du client
@@ -174,7 +204,7 @@ How to add?
     * `ui.*` — UI texts 
 
 
-##### <a id="view">View Titles Localization</a>
+##### View Titles 
 
 Screen titles define the name of a view in the UI.
 
@@ -207,7 +237,7 @@ How to add?
     {% endraw %}
 
     **Step 2**  
-    Add translation to `messages_fr.properties`:
+      Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
       ui.view.clients=Clientes
@@ -218,15 +248,15 @@ How to add?
     * `ui.*` — UI texts 
 
 
-##### <a id="screen">Screen Titles Localization</a>
+##### Screen Titles
 
 Screen titles define the name of a screen in the UI.
 
 How does it look?
 === "french"
-    ![field_fr.png](files/field_fr.png)
+    ![screen_fr.png](files/screen_fr.png) 
 === "english"
-    ![field_en.png](files/field_en.png)
+    ![screen_en.png](files/screen_en.png)
  
 How to add?
 
@@ -246,7 +276,7 @@ How to add?
     ``` 
     {% endraw %}
     **Step 2**  
-    Add translation to `messages_fr.properties`:
+      Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
       ui.screen.clients=Clientes
@@ -255,7 +285,6 @@ How to add?
     Use recommended key prefixes:
     
     * `ui.*` — UI texts
-    * `action.*` — buttons and actions
 
 
 ##### FullTextSearch placeholder
@@ -282,7 +311,7 @@ How to add?
     {% endraw %}
 
     **Step 2**  
-    Add translation to `messages_fr.properties`:
+      Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
       ui.client.find.placeholder=Recherche par client ou adresse
@@ -292,7 +321,7 @@ How to add?
     
     * `ui.*` — UI texts 
 
-### <a id="action">Static Text Defined in Java</a>
+### <a id="action">Static Text: Defined in Java</a>
  This includes UI text created on the backend, such as:
 
 * Button captions
@@ -306,7 +335,8 @@ Static text defined in Java must be translated before it is sent to the front-en
 The translation can be performed at any place in Java code where the value is prepared for the UI.
 Use method LocalizationFormatter.uiMessage("action.add")
 
-#### Examples
+#### Examples Localization
+
 ##### Actions
 How does it look?
 
@@ -333,7 +363,7 @@ How to add?
     ```
 
     **Step 2**  
-    Add translation to `messages_fr.properties`:
+      Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
       action.add=Ajouter 
@@ -341,10 +371,9 @@ How to add?
     
     Use recommended key prefixes:
     
-    * `ui.*` — UI texts
     * `action.*` — buttons and actions
 
-##### Business Exception messages Localization
+##### Business Exception messages
 
 How does it look?
 
@@ -372,19 +401,18 @@ How to add?
     ``` 
 
     **Step 2**  
-    Add translation to `messages_fr.properties`:
+      Add translation to `src/main/resources/ui/messages_fr.properties`:
     
     ```properties
     business.exception.less.current.date=La valeur de ce champ ne peut pas Ãªtre antÃ©rieure Ã  la date actuelle
     ``` 
 
-## Data Localization
+## <a id="datalocalization">Data Localization</a>
 
-1) Enum Localization
+* [Enum](#enum)
+* [Dictionary](#dictionary)
 
-2) Dictionary 
-
-#### <a id="enum">Enum Localization</a>
+#### <a id="enum">Enum</a>
 How does it look?
 
 === "french" 
@@ -491,10 +519,9 @@ How to add?
     
         private final String valueFr;
     }
-    
     ```
 
-#### Dictionary
+#### <a id="dictionary">Dictionary</a>   
 
 How does it look?
 

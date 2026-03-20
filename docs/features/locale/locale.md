@@ -1,13 +1,29 @@
 # Localization (i18n)
 
-!!! warning line end "Work in progress"
-
 This document describes how localization works in the system and how to add translations for UI elements, dictionaries, and enums.
 
 The system supports localization for:
 
 * [Static Text](#static)
 * [Data Localization](#datalocalization)
+## Basic
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/client){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/locale){:target="_blank"}
+
+To change the interface language, you need to:
+
+* French — log in as a user demo_fr/demo
+* English — log in as a user demo/demo
+
+!!! info
+    To apply the translation of all elements to the selected language, you must log out and log back in, or refresh the page. Simply switching roles does not fully change the interface language.
+
+How does it look?
+
+=== "french"
+    ![locale_fr.png](files/locale_fr.png)
+=== "english"
+    ![locale_en.png](files/locale_en.png) 
 
 ## <a id="setting">Pre-setup for Working with Localization</a>
  
@@ -89,11 +105,11 @@ The system supports localization for:
     **Step 1**  
     Create translation files for [Static Text: Widget / View / Screen](#widget) in:  src/main/resources/ui/ 
 
-    Use the following naming format(UTF-8): (messages_fr.properties)
+    Use the following naming format(UTF-8): (messages_<lang>.properties)
 
       ```text
       messages.properties (default)
-      messages_<lang>.properties
+      messages_fr.properties
       ```
     
     **Step 2**  Add supported languages.
@@ -178,22 +194,17 @@ How to add?
     **Step 1**  
     Use a translation key in screen JSON: `ui.client.name`       
 
-    {% raw %}
     ```json
-    {
-    "title": "{{ui.client.name}}",
-    "key": "fullName",
-    "type": "input",
-    "width": 300
-    }
-    ```
-    {% endraw %}
-
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/clientList.widget.json
+    --8<--
+    ```  
+ 
     **Step 2**  
       Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
-      ui.client.name=Nom du client
+      ui.screen.screenname=Nom du client
       ```
 
     Use recommended key prefixes:
@@ -218,20 +229,11 @@ How to add?
     **Step 1**  
     Define title in screen JSON:  `ui.view.clients`
 
-    {% raw %}
     ```json
-    "menu": [
-      {
-        "title": "{{ui.view.clients}}",
-        "child": [
-          {
-            "viewName": "clientlist"
-          }
-        ]
-      }
-    ]
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/clientlist.view.json
+    --8<--
     ``` 
-    {% endraw %}
 
     **Step 2**  
       Add translation to `src/main/resources/ui/messages_fr.properties`:
@@ -262,21 +264,17 @@ How to add?
     **Step 1**  
     Define title in screen JSON:  `ui.screen.clients`
 
-    {% raw %}
     ```json
-    "name": "client",
-    "icon": "team",
-    "order": 0,
-    "title": "{{ui.screen.clients}}",
-    "navigation": {
-    }
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/client.screen.json
+    --8<--
     ``` 
-    {% endraw %}
+
     **Step 2**  
       Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
-      ui.screen.clients=Clientes
+        ui.screen.screenname
       ```
     
     Use recommended key prefixes:
@@ -298,14 +296,11 @@ How to add?
     **Step 1**  
     Use a translation key in screen JSON: `ui.client.find.placeholder`       
 
-    {% raw %}
     ```json
-    "fullTextSearch": {
-      "enabled": true,
-      "placeholder": "{{ui.client.find.placeholder}}"
-    },
-    ```
-    {% endraw %}
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/clientList.widget.json
+    --8<--
+    ```  
 
     **Step 2**  
       Add translation to `src/main/resources/ui/messages_fr.properties`:
@@ -353,15 +348,10 @@ How to add?
     Add translation LocalizationFormatter.uiMessage() to button 
 
     ```java
-	public Actions<MyexampleDTO> getActions() {
-		return Actions.<MyexampleDTO>builder()
-				.save(sv -> sv.text(LocalizationFormatter.uiMessage("action.save")))
-				.cancelCreate(ccr -> ccr.text(LocalizationFormatter.uiMessage("action.cancel")).available(bc -> true))
-				.create(crt -> crt.text(LocalizationFormatter.uiMessage("action.add")))
-				.delete(dlt -> dlt.text(LocalizationFormatter.uiMessage("action.delete")))
-				.build();
-	}
-    ```
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/Myexample6103Service.java:getActions
+    --8<--
+    ```  
 
     **Step 2**  
       Add translation to `src/main/resources/ui/messages_fr.properties`:
@@ -390,16 +380,10 @@ How to add?
     Add translation LocalizationFormatter.uiMessage() to button
 
     ```java
-	protected ActionResultDTO<MyexampleDTO> doUpdateEntity(Myexample6103 entity, MyexampleDTO data, BusinessComponent bc) {
-
-		if (data.isFieldChanged(MyexampleDTO_.dateStart)) {
-			LocalDateTime sysdate = LocalDateTime.now();
-			if (data.getDateStart() != null && sysdate.compareTo(data.getDateStart()) > 0) {
-				throw new BusinessException().addPopup(LocalizationFormatter.uiMessage("business.exception.less.current.date"));
-			}
-			entity.setDateStart(data.getDateStart());
-		}
-    ``` 
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/Myexample6103Service.java:doUpdateEntity
+    --8<--
+    ```  
 
     **Step 2**  
       Add translation to `src/main/resources/ui/messages_fr.properties`:
@@ -427,128 +411,37 @@ How does it look?
 How to add?
 
 ??? Example
+    === "first setting"
     **Step 1**  Add PlatformLocaleEnum.java to  /conf/cxbox/extension/locale
 
     ```java
-    import com.fasterxml.jackson.annotation.JsonCreator;
-    import com.fasterxml.jackson.annotation.JsonValue;
-    import java.util.HashMap;
-    import java.util.Locale;
-    import java.util.Map;
-    import java.util.function.Supplier;
-    import lombok.NonNull;
-    import org.springframework.context.i18n.LocaleContextHolder;
-    
-    /**
-     * Interface for enums
-     */
-    public interface PlatformLocaleEnum<E extends Enum<E> & PlatformLocaleEnum<E>> {
-    
-        Map<Locale, Supplier<@NonNull String>> translations();
-    
-        /**
-         * Converts this enum constant to its string representation based on the current locale.
-         */
-        @JsonValue
-        default String toValue() {
-            return toValue(this);
-        }
-    
-        /**
-         * Creates an enum constant from its string representation.
-         */
-        @JsonCreator
-        @SuppressWarnings("unchecked")
-        default E fromValue(@NonNull String value) {
-            return fromValue((Class<E>) this.getClass(), value);
-        }
-    
-        /**
-         * Converts this enum constant to its string representation based on the current locale.
-         * <p>
-         * Serialization logic. The current locale is obtained
-         * from {@link LocaleContextHolder}. If no translation exists for the current locale,
-         * the first available translation is used as a fallback.
-         * </p>
-         *
-         */
-        static <E extends Enum<E> & PlatformLocaleEnum<E>> String toValue(
-                @NonNull PlatformLocaleEnum<E> e
-        ) {
-            Locale locale = LocaleContextHolder.getLocale();
-            return e.translations()
-                    .getOrDefault(
-                            locale,
-                            e.translations().values().stream().findFirst().orElseThrow()
-                    )
-                    .get();
-        }
-    
-        /**
-         * Creates an enum constant of the specified type from its string representation.
-         * <p>
-         * Deserialization logic. It builds
-         * a reverse lookup map from all translated values to their corresponding enum constants
-         * and uses it to find the matching constant.
-         * </p>
-         */
-        static <E extends Enum<E> & PlatformLocaleEnum<E>> E fromValue(
-                @NonNull Class<E> enumClass,
-                @NonNull String value
-        ) {
-            Map<String, E> map = new HashMap<>();
-            for (E e : enumClass.getEnumConstants()) {
-                for (var entry : e.translations().entrySet()) {
-                    if (entry != null && entry.getValue() != null) {
-                        map.put(entry.getValue().get(), e);
-                    }
-                }
-            }
-            return map.get(value);
-        }
-    
-    }
-    ```
-
-    **Step 2**  Add LocaleEnum.java 
-        Each enum constant must define a value for every supported Locale.
-        Localization is configured via the  #translations() map.
+    --8<--
+    {{ external_links.github_raw }}/conf/cxbox/extension/locale/PlatformLocaleEnum.java
+    --8<--
+    ```  
+    **Step 2**  Add SupportedLanguages.java
 
     ```java
-    
-    public interface LocaleEnum<E extends Enum<E> & PlatformLocaleEnum<E>>
-            extends PlatformLocaleEnum<E> {
-    
-        String getValue();
-    
-        String getValueFr();
-    
-        @Override
-        default Map<Locale, Supplier<String>> translations() {
-            return  Map.of(
-                    Locale.ENGLISH, this::getValue,
-                    Locale.FRENCH, this::getValueFr
-            );
-        }
-    }
-    ```
+    --8<--
+    {{ external_links.github_raw }}/conf/cxbox/extension/locale/SupportedLanguages.java
+    --8<--
+    ```  
+    **Step 3**  Add LocaleEnum.java 
+    Each enum constant must define a value for every supported Locale.
+    Localization is configured via the  #translations() map.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw }}/conf/cxbox/extension/locale/LocaleEnum.java
+    --8<--
+    ```  
     **Step 3**  implements LocaleEnum.java 
 
     ```java
-    
-    @Getter
-    @AllArgsConstructor
-    public enum StatusEnum implements LocaleEnum {
-    
-        NEW("New", "Nouvelle"),
-        INACTIVE("Inactive", "Inactive"),
-        IN_PROGRESS("In progress", "En cours");
-    
-        private final String value;
-    
-        private final String valueFr;
-    }
-    ```
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/locale/enums/StatusEnum.java
+    --8<--
+    ```  
 
 #### <a id="dictionary">Dictionary</a>   
 

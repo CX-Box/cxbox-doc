@@ -92,6 +92,7 @@ nav:
       - Widget HeaderWidget: widget/type/headerwidget/headerwidget.md
       - Widget Info: widget/type/info/info.md
       - Widget List: widget/type/list/list.md
+      - Widget RelationGraph: widget/type/relationGraph/relationGraph.md
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md

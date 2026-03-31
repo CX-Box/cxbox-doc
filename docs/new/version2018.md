@@ -15,7 +15,8 @@
 #### Fixed: Duplicate Actions in Debug Panel
 <!-- CXBOX-1256 -->  
 This issue occurred when the same action (button) was assigned to multiple roles that belong to a single user. 
-When the widgetActionGroupsEnabled parameter is set to false and responsibilities are loaded from the standardized RESPONSIBILITIES_ACTION.csv file via Liquibase,
+
+When the `widgetActionGroupsEnabled` = false and responsibilities are loaded from the standardized `RESPONSIBILITIES_ACTION.csv` file via Liquibase,
 duplicate action buttons could appear in the Debug panel.
 
 === "After"

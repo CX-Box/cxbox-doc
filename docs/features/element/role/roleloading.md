@@ -20,18 +20,14 @@ There are **three main permission layers**:
 2. **Widget actions**
    Defines which buttons or actions are visible and executable within a widget.
 
-3. **Service-level restrictions**
+3. **Service-level restrictions** for widget actions
    Backend-level validation  
 
 
 ## Role Loading for Views
 The set of views available to a user depends on their roles.
 
-Stores allowed **View–Role pairs** in the `RESPONSIBILITIES` table:
-
-* `INTERNAL_ROLE_CD` — role code
-* `RESPONSIBILITIES` — view name
-* `RESP_TYPE` — type of permission (e.g., `VIEW`)
+The role model for views is based on data stored in the **RESPONSIBILITY** table.
 
 !!! warning
     Avoid creating or modifying records in the `RESPONSIBILITIES` table manually.
@@ -60,6 +56,15 @@ Permissions can also be loaded via:
  
  
 The system extracts roles from the `rolesAllowed` field in `.view.json` files and populates the `RESPONSIBILITIES` table.
+
+!!! info
+    For faster development, we recommend working in this mode:
+
+   1. Develop and configure data using this mode during implementation.
+   2. Once development is complete, navigate to the **view/responsibilitiesAdmin** screen.
+   3. Click the **Export** button.
+   4. Download the generated file.
+   5. Use this file later for data loading via CSV.
 
 #### Examples
 
@@ -184,13 +189,12 @@ How to add?
     ```
     
     
-    Step 2. Add to `RESPONSIBILITIES.CSV`
+    Step 2. Add role- vew to `RESPONSIBILITIES.CSV`
 
     | INTERNAL_ROLE_CD | RESPONSIBILITIES | ID |
     |------------------|------------------|----|
     | CXBOX_USER       | myexample82list  |    |
-   
-    ```
+
     Step 3. Apply changes
     
     * Restart the application **or**
@@ -290,4 +294,9 @@ These parameters are defined in core in `MetaConfigurationProperties` (`cxbox.me
 - `cxbox.meta.widget-action-groups-compact` (default `true`)
 
 Detailed description: [Role-based meta settings](/features/element/authorization/rolebasedmetasettings/)
+Stores allowed **View–Role pairs** in the `RESPONSIBILITIES` table:
+
+* `INTERNAL_ROLE_CD` — role code
+* `RESPONSIBILITIES` — view name
+* `RESP_TYPE` — type of permission (e.g., `VIEW`)
 -->

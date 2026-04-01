@@ -1,55 +1,105 @@
-# Role loading (Views and Actions)
-This article explains how CXBOX determines:
+# Role Loading (Views and Actions)
 
-- which **views** a user can open
-- which **actions** are visible/available in widgets
+This article explains how determines:
+
+* which **views** a user can open
+* which **actions** are visible and available inside widgets
+
+It also briefly explains how these permissions are configured and why different approaches exist.
+
  
-## Role loading Views
-### Basic
-Views visible for user can depend on user roles.
+## Basic
 
-In CXBOX there are 3 permission layers that are often managed separately:
+Access control is split into several independent layers. This separation allows flexibility but requires careful configuration to avoid inconsistencies.
 
-- **View access**: who can open a view (screen navigation item).
-- **Widget actions**: which buttons/actions are visible for a role in a widget.
-- **Ограничение доступности на уровне сервиса**
+There are **three main permission layers**:
+
+1. **View access**
+   Controls whether a user can open a specific screen (navigation item).
+
+2. **Widget actions**
+   Defines which buttons or actions are visible and executable within a widget.
+
+3. **Service-level restrictions**
+   Backend-level validation  
 
 
-Allowed View-Role pairs are always taken from table **responsibilities**(internal_role, responsibilites, ...)
+## Role Loading for Views
+The set of views available to a user depends on their roles.
+
+Stores allowed **View–Role pairs** in the `RESPONSIBILITIES` table:
+
+* `INTERNAL_ROLE_CD` — role code
+* `RESPONSIBILITIES` — view name
+* `RESP_TYPE` — type of permission (e.g., `VIEW`)
 
 !!! warning
-    But one must always avoid loading this pairs by hand.
+    Avoid creating or modifying records in the `RESPONSIBILITIES` table manually.
+    Incorrect data may lead to inconsistent UI behavior or security issues.
+ 
+Load permissions from two main sources:
 
-CXBOX can load these permissions from:
+* Meta JSON Files
+* CSV and Liquibase 
 
-- **Meta JSON files** (`*.view.json`, `*.widget.json`)
-- **Vanilla migrated via CSV/Liquibase** (managed via Administration UI)
+### **Meta JSON Files**
+It is not possible to configure responsibilities through the Administration UI.
 
-### настройка выгрузки респонсибилити в интерфейе
-создание экрана с респами
+We recommended to use for faster development.
 
-### Meta JSON files
+Permissions can also be loaded via: 
 
-Always prefer  when possible due to better plugin support and faster development speed.
+* `*.view.json` 
 
-В данном режиме загрузка  респосибилити происходит автоматически собирая данные из 
-  *view.json->rollesAllowed tags
+**Advantages:**
+
+* Better integration with plugins
+* Faster development(automatically generates responsibility records based on metadata)
+* Automatic synchronization with the system
+* Less risk of human error
+ 
+ 
+The system extracts roles from the `rolesAllowed` field in `.view.json` files and populates the `RESPONSIBILITIES` table.
 
 #### Examples
 
-Требуется вывести экран для роли CXbox пользователь с вью
+**Goal:**
+
+Make a view available for role `CXBOX_USER`.
+
+**What happens internally:**
+
+1. Developer adds `rolesAllowed = ["CXBOX_USER"]` in `.view.json`
+2. Application starts or meta is refreshed
+3. CXBOX creates a record in `RESPONSIBILITIES`
+4. User with role `CXBOX_USER` can now open the view
+
 
 How does it look?
+![example_json.png](example_json.png)
 
 How to add?
-    Step 1 выствить параметр в application.yml
+??? Example
 
-    сxbox.meta.view-allowed-roles-enabled = true
-
-    Step 2 in file .view.json add tag  `rolesAllowed`
-    ```{
+    Step 1. Enable feature
+    
+    In `application.yml`:
+    
+    ```yaml
+    cxbox:
+      meta:
+        view-allowed-roles-enabled: true
+    ```
+    
+    
+    Step 2. Configure `.view.json`
+    
+    Add the `rolesAllowed` field:
+    
+    ```json
+    {
       "name": "myexamplelist",
-      "title": "My example List",
+      "title": "My Example List",
       "url": "/screen/myexample/view/myexamplelist",
       "template": "DashboardView",
       "widgets": [
@@ -67,74 +117,98 @@ How to add?
       "rolesAllowed": [
         "CXBOX_USER"
       ]
-    }```
-    Step 3 Refresh Meta or Start application
-    Step 4 Go to  table responsibility - watch 
-    id,internal_role_cd,responsibilities,resp_type
-    1100441,CXBOX_USER,myexample82list,VIEW
+    }
+    ```
+    Step 3. Apply changes
+    
+    * Restart the application **or**
+      * Trigger Meta Refresh
+    
+    Step 4. Verify in database
+    
+    Check the `RESPONSIBILITIES` table:
+    
+    | ID      | INTERNAL_ROLE_CD | RESPONSIBILITIES | RESP_TYPE |
+    | ------- | ---------------- | ---------------- | --------- |
+    | 1100441 | CXBOX_USER       | myexamplelist    | VIEW      |
 
+    Each view declares allowed roles in metadata
+    On application startup or meta refresh:
 
+        * scans all `.view.json` files
+        * Extracts `rolesAllowed`
+        * Creates or updates records in `RESPONSIBILITIES`
 
-### Vanilla migrated via CSV/Liquibase
-
-2) auto load from standartized RESPONSIBILITIES.csv with liquibase(viewAllowedRolesEnabled = false (default)
-
-Start project
-
-Production support
-* Recommendations:
-*  Always prefer viewAllowedRolesEnabled = true when possible due to better plugin support and faster development speed.
-* Use viewAllowedRolesEnabled = false only when responsibilities table edit through admin UI is required in your project.
-* During local development still to use viewAllowedRolesEnabled = true,
-* then export the RESPONSIBILITIES.csv using /view/responsibilitiesAdmin (Export button)
-* and set viewAllowedRolesEnabled = false before commit
-
-Security: restrict access to screens and actions based on responsibilities.
-Separation of duties: different user groups see only what they need.
-   
  
-CXBOX can load these permissions from:
+### CSV and Liquibase
+It is possible to configure responsibilities through the Administration UI.
 
-- **Meta JSON files** (`*.view.json`, `*.widget.json`)
-- **Vanilla migrated via CSV/Liquibase** (managed via Administration UI)
+Permissions can also be loaded via:
 
-## Pre-setup (roles in your project)
+* vanilla load CSV files (e.g., `RESPONSIBILITIES_VIEW.csv`) and Liquibase changesets
+ 
 
-Before you configure permission loading, make sure your project has a clear role model:
+This approach is typically used when permissions must be managed externally.
 
-- **Authentication provider**: Basic auth / Keycloak / custom.
-- **Role names**: stable role codes (e.g. `CXBOX_USER`, `ADMIN`, etc.).
-- **Role assignment**: how roles are attached to a user at login.
+This approach is useful for runtime configuration but less convenient for development workflows.
 
-If you use Keycloak, start here: [Keycloak Authorization](/features/element/authorization/keycloak/keycloakauthorization/)
 
-## View access loading
+#### Examples
 
-### JSON mode (`rolesAllowed` in `*.view.json`)
+**Goal:**
 
-When `cxbox.meta.view-allowed-roles-enabled=true`, CXBOX takes allowed roles from view meta:
+Make a view available for role `CXBOX_USER`.
 
-- Each `*.view.json` may contain `rolesAllowed: [ ... ]`
-- Access is defined in code repository and deployed together with the application
+**What happens internally:**
 
-Good for simple setups and when you prefer permissions as code.
+1. Developer adds view-role to `RESPONSIBILITIES.CSV`
+2. Application starts or meta is refreshed
+3. CXBOX creates a record in `RESPONSIBILITIES`
+4. User with role `CXBOX_USER` can now open the view
 
-### DB/UI mode (Responsibilities)
 
-When `cxbox.meta.view-allowed-roles-enabled=false`, CXBOX takes view permissions from DB (Responsibilities).
+How does it look?
+![example_json.png](example_json.png)
 
-In `cxbox-demo` this is represented by entity `Responsibilities` of type `VIEW`, where:
+How to add?
+??? Example
 
-- `INTERNAL_ROLE_CD` is a role code (for example, from `InternalRole` dictionary)
-- `RESPONSIBILITIES` is a view name
+    Step 1. Enable feature
+    
+    In `application.yml`:
+    
+    ```yaml
+    cxbox:
+      meta:
+        view-allowed-roles-enabled: false
+    ```
+    
+    
+    Step 2. Add to `RESPONSIBILITIES.CSV`
 
-Administration UI typically provides:
+    | INTERNAL_ROLE_CD | RESPONSIBILITIES | ID |
+    |------------------|------------------|----|
+    | CXBOX_USER       | myexample82list  |    |
+   
+    ```
+    Step 3. Apply changes
+    
+    * Restart the application **or**
+    * Trigger Meta Refresh
+    
+    Step 4. Verify in database
+    
+    Check the `RESPONSIBILITIES` table:
+    
+    | ID      | INTERNAL_ROLE_CD | RESPONSIBILITIES | RESP_TYPE |
+    | ------- | ---------------- | ---------------- | --------- |
+    | 1100441 | CXBOX_USER       | myexamplelist    | VIEW      |
 
-- assigning views to roles
-- exporting responsibilities to `RESPONSIBILITIES.csv`
-- clearing meta cache after changes
+    On application startup or meta refresh:
 
-## Widget actions loading
+        * Creates or updates records in `RESPONSIBILITIES`
+
+<!-- ## Widget actions loading 
 
 ### JSON mode (`actionGroups` in `*.widget.json`)
 
@@ -216,3 +290,4 @@ These parameters are defined in core in `MetaConfigurationProperties` (`cxbox.me
 - `cxbox.meta.widget-action-groups-compact` (default `true`)
 
 Detailed description: [Role-based meta settings](/features/element/authorization/rolebasedmetasettings/)
+-->

@@ -141,8 +141,6 @@ nav:
       - Authorization:
         - Basic Authorization: features/element/authorization/basic/basicauthorization.md
         - Keycloak Authorization: features/element/authorization/keycloak/keycloakauthorization.md
-        - Role loading (Views and Actions): features/element/authorization/roleloading/roleloading.md
-        - Role-based meta settings: features/element/authorization/rolebasedmetasettings.md
       - Database:
         - Oracle: features/element/database/oracle/oraclebd.md
         - Postgres: features/element/database/postgres/postgresbd.md
@@ -164,7 +162,7 @@ nav:
         - Sent to email: features/element/notifications/email/email.md
         - Push: features/element/notifications/push/websocket.md
       - New Year Theme: features/happynewyear/happynewyear.md
-
+      - Role loading (Views and Actions): features/element/role/roleloading.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drilldown/drilldown.md
       - Validation: advancedCustomization/element/validation/validation.md

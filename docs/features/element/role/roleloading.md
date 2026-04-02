@@ -5,12 +5,13 @@ This article explains how determines:
 * which **views** a user can open
 * which **actions** are visible and available inside widgets
 
-It also briefly explains how these permissions are configured and why different approaches exist.
+It also explains how these permissions are configured and why different approaches exist.
 
  
 ## Basic
 
-Access control is split into several independent layers. This separation allows flexibility but requires careful configuration to avoid inconsistencies.
+Access control is split into several independent layers. 
+This separation allows flexibility but requires careful configuration to avoid inconsistencies.
 
 There are **three main permission layers**:
 
@@ -23,6 +24,7 @@ There are **three main permission layers**:
 3. **Service-level restrictions** for widget actions
    Backend-level validation  
 
+Viewing and editing of the role model is available through the administrator screen().
 
 ## Role Loading for Views
 The set of views available to a user depends on their roles.
@@ -43,28 +45,22 @@ It is not possible to configure responsibilities through the Administration UI.
 
 We recommended to use for faster development.
 
-Permissions can also be loaded via: 
-
-* `*.view.json` 
+The system extracts roles from the `rolesAllowed` field in `.view.json` files and populates the `RESPONSIBILITIES` table.
 
 **Advantages:**
 
 * Better integration with plugins
-* Faster development(automatically generates responsibility records based on metadata)
-* Automatic synchronization with the system
+* Faster development (automatically generates responsibility records based on metadata)
 * Less risk of human error
- 
- 
-The system extracts roles from the `rolesAllowed` field in `.view.json` files and populates the `RESPONSIBILITIES` table.
 
 !!! info
     For faster development, we recommend working in this mode:
 
-   1. Develop and configure data using this mode during implementation.
-   2. Once development is complete, navigate to the **view/responsibilitiesAdmin** screen.
-   3. Click the **Export** button.
-   4. Download the generated file.
-   5. Use this file later for data loading via CSV.
+      1. Develop and configure data using this mode during implementation.
+      2. Once development is complete, navigate to the **view/responsibilitiesAdmin** screen.
+      3. Click the **Export** button.
+      4. Download the generated file.
+      5. Use this file later for data loading via CSV.
 
 #### Examples
 
@@ -148,9 +144,7 @@ How to add?
 ### CSV and Liquibase
 It is possible to configure responsibilities through the Administration UI.
 
-Permissions can also be loaded via:
-
-* vanilla load CSV files (e.g., `RESPONSIBILITIES_VIEW.csv`) and Liquibase changesets
+Permissions be loaded via - vanilla load CSV files (e.g., `RESPONSIBILITIES_VIEW.csv`) and Liquibase changesets
  
 
 This approach is typically used when permissions must be managed externally.
@@ -211,6 +205,8 @@ How to add?
     On application startup or meta refresh:
 
         * Creates or updates records in `RESPONSIBILITIES`
+
+## Screen Responsibility
 
 <!-- ## Widget actions loading 
 

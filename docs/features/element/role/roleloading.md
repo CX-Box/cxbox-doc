@@ -206,93 +206,166 @@ How to add?
 
         * Creates or updates records in `RESPONSIBILITIES`
 
-## Screen Responsibility
+## Role Loading for Actions
 
-<!-- ## Widget actions loading 
+Which **widget actions** (buttons, row actions, and so on) a role may use is driven by the **`RESPONSIBILITIES_ACTION`** table.
 
-### JSON mode (`actionGroups` in `*.widget.json`)
+The source of truth is controlled by `cxbox.meta.widget-action-groups-enabled` (see `MetaConfigurationProperties` in the core: `cxbox-starter-meta`).
 
-When `cxbox.meta.widget-action-groups-enabled=true`, action visibility is loaded from widget meta:
+!!! warning
+    Avoid editing `RESPONSIBILITIES_ACTION` manually in production without understanding the role model.
+    Prefer the Administration UI or controlled CSV/Liquibase loads.
 
-- `*.widget.json -> actionGroups -> include/exclude`
+Load permissions from two main sources:
 
-### DB/UI mode (Responsibilities Action)
+* Meta JSON files (`*.widget.json` → `actionGroups`)
+* CSV and Liquibase (file such as `RESPONSIBILITIES_ACTION.csv` in the demo project)
 
-When `cxbox.meta.widget-action-groups-enabled=false`, action visibility is loaded from DB
-(commonly a table like `responsibilities_action`) and can be managed through UI and migrations.
+### **Meta JSON Files**
 
-This mode is recommended when you need:
+When `widget-action-groups-enabled` is **true**, action visibility is defined in **`widget.json`** under `options.actionGroups` (typically `include` lists action group keys).
 
-- environment-to-environment migration of permissions
-- runtime updates without rebuilding meta JSON files
+The platform can also **prefill** `RESPONSIBILITIES_ACTION` from `actionGroups.include` on startup when this mode is enabled. Only **`include`** is migrated automatically; if you use **`exclude`**, plan a manual migration.
 
-## Basic loading during release (recommended workflow)
+**Advantages:**
 
-This section describes a typical release workflow to make role loading predictable for users and DevOps.
+* Same workflow as for views: fast iteration in metadata
+* Aligns with plugin-driven development
 
-### Option A: Permissions as code (JSON-driven)
+!!! info
+    Recommended development flow (analogous to views):
 
-Use when you want permissions to be shipped with meta JSON:
+    1. Configure actions in `widget.json` while `widget-action-groups-enabled: true`.
+    2. When the model is stable, open **`/screen/admin/view/responsibilitiesActionAdmin`** (Administration → action responsibilities).
+    3. Click **Export** and download the generated CSV.
+    4. Place or merge the file into your project (for example `src/main/resources/db/data/cxbox/RESPONSIBILITIES_ACTION.csv`) and load it with Liquibase like other responsibility data.
+    5. Optionally switch `widget-action-groups-enabled` to `false` so the database becomes the single source of truth.
 
-```yaml
-cxbox:
-  meta:
-    view-allowed-roles-enabled: true
-    widget-action-groups-enabled: true
-    widget-action-groups-compact: true
-```
+#### `widget-action-groups-compact`
 
-Release steps:
+This flag matters when `widget-action-groups-enabled` is **true** and the application **fills** `RESPONSIBILITIES_ACTION` from JSON (migration / prefill).
 
-1. Update `rolesAllowed` in `*.view.json` and `actionGroups` in `*.widget.json`.
-2. Deploy the new application build.
-3. Restart the application (meta reload as per your setup).
+* **`true` (compact)** — fewer rows: wildcard semantics (for example `*` for “all roles / all views”) so the table stays readable during migration.
+* **`false` (full)** — one row per role and view combination; more verbose but explicit.
 
-### Option B: Permissions via DB/UI (Responsibilities-driven)
+Default in core: `widget-action-groups-compact: true`.
 
-Use when you want permissions to be migrated and adjusted via UI:
+How does prefill look in the database?
+=== "COMPACT (`widget-action-groups-compact: true`)"
+    ![Compact responsibilities_action prefill](../../../new/v2.0.9/compactTrue.png)
+=== "FULL (`widget-action-groups-compact: false`)"
+    ![Full responsibilities_action prefill](../../../new/v2.0.9/compactFalse.png)
 
-```yaml
-cxbox:
-  meta:
-    view-allowed-roles-enabled: false
-    widget-action-groups-enabled: false
-    widget-action-groups-compact: true
-```
+#### Examples
 
-Release steps:
+**Goal:** Allow action groups `create` and `actions` on a List widget for metadata-driven development.
 
-1. Prepare migration content (CSV/Liquibase) for Responsibilities tables.
-2. Deploy and run DB migrations.
-3. Restart the application (or clear meta cache from Administration UI if applicable).
-4. Validate: login as a user with each role and confirm navigation + actions are correct.
+**What happens internally:**
 
-### Option C: Transitional mode (migrate actions from JSON first)
+1. Developer sets `widget-action-groups-enabled: true` in `application.yml`.
+2. Developer adds `actionGroups.include` in `*.widget.json`.
+3. On startup or meta refresh, the engine applies widget meta; with prefill enabled, rows can be created in `RESPONSIBILITIES_ACTION` according to `widget-action-groups-compact`.
 
-Use when you are moving action permissions from JSON to DB:
+How does it look?
+![Action responsibilities administration — Export and grid](../../../new/v2.0.9/actionResponsibilitiesAdministration.png)
 
-```yaml
-cxbox:
-  meta:
-    view-allowed-roles-enabled: false
-    widget-action-groups-enabled: true
-    widget-action-groups-compact: true
-```
+How to add?
+??? Example
 
-Then switch `widget-action-groups-enabled` to `false` after you have prefilled/migrated action responsibilities.
+    Step 1. Enable JSON-driven action groups
 
-## Configuration parameters reference
+    In `application.yml`:
 
-These parameters are defined in core in `MetaConfigurationProperties` (`cxbox.meta.*`):
+    ```yaml
+    cxbox:
+      meta:
+        widget-action-groups-enabled: true
+        widget-action-groups-compact: true
+    ```
 
-- `cxbox.meta.view-allowed-roles-enabled` (default `false`)
-- `cxbox.meta.widget-action-groups-enabled` (default `true`)
-- `cxbox.meta.widget-action-groups-compact` (default `true`)
+    Step 2. Configure `*.widget.json`
 
-Detailed description: [Role-based meta settings](/features/element/authorization/rolebasedmetasettings/)
-Stores allowed **View–Role pairs** in the `RESPONSIBILITIES` table:
+    Example fragment:
 
-* `INTERNAL_ROLE_CD` — role code
-* `RESPONSIBILITIES` — view name
-* `RESP_TYPE` — type of permission (e.g., `VIEW`)
--->
+    ```json
+    {
+      "options": {
+        "actionGroups": {
+          "include": [
+            "create",
+            "actions"
+          ]
+        }
+      }
+    }
+    ```
+
+    Step 3. Apply changes
+
+    * Restart the application **or**
+    * Trigger Meta Refresh
+
+    Step 4. (Optional) Export for Liquibase
+
+    Use **`responsibilitiesActionAdmin`** → **Export** to produce `RESPONSIBILITIES_ACTION.csv` for version control.
+
+### **CSV and Liquibase**
+
+When `widget-action-groups-enabled` is **false**, action responsibilities are **not** taken only from `widget.json` for the role model: they are maintained in **`RESPONSIBILITIES_ACTION`** (UI or CSV).
+
+Typical project file in **cxbox-demo**: `src/main/resources/db/data/cxbox/RESPONSIBILITIES_ACTION.csv`
+
+Liquibase loads it (see changelog `RESPONSIBILITIES_ACTION` in `db/changelog/cxbox/`). Separator is **`;`**. Columns:
+
+| Column             | Meaning |
+| ------------------ | ------- |
+| `INTERNAL_ROLE_CD` | Internal role code |
+| `ACTION`           | Action key |
+| `VIEW`             | View name |
+| `WIDGET`           | Widget name |
+| `ID`               | Optional / generated depending on migration |
+
+Primary key for upsert: `INTERNAL_ROLE_CD`, `ACTION`, `VIEW`, `WIDGET`.
+
+#### Examples
+
+**Goal:** Grant an action for role `CXBOX_USER` on a concrete view and widget via data load.
+
+**What happens internally:**
+
+1. Row exists in `RESPONSIBILITIES_ACTION` (via UI edit + Clear Cache, or via CSV + Liquibase).
+2. User with that role sees the action when the view/widget matches.
+
+How does it look?
+![Action responsibilities administration — same screen for UI edits and Export](../../../new/v2.0.9/actionResponsibilitiesAdministration.png)
+
+How to add?
+??? Example
+
+    Step 1. Disable JSON-only action groups (DB is source of truth)
+
+    In `application.yml`:
+
+    ```yaml
+    cxbox:
+      meta:
+        widget-action-groups-enabled: false
+    ```
+
+    Step 2. Add or edit rows
+
+    * **Option A — UI:** open **`/screen/admin/view/responsibilitiesActionAdmin`**, configure rows, use **Clear Cache** (experimental; not for clustered cache without coordination).
+    * **Option B — CSV:** edit `RESPONSIBILITIES_ACTION.csv` and let Liquibase apply on deploy.
+
+    Step 3. Apply changes
+
+    * Restart after Liquibase **or**
+    * Clear meta cache from the UI as required
+
+    Step 4. Export for the next environment
+
+    From **`responsibilitiesActionAdmin`**, click **Export** to obtain a CSV in the same format used by Liquibase migrations.
+
+## See also
+
+* [Role-based meta settings](../authorization/rolebasedmetasettings.md) — recommended combinations of `view-allowed-roles-enabled`, `widget-action-groups-enabled`, and `widget-action-groups-compact`.

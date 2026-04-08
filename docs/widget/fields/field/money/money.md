@@ -7,11 +7,11 @@
 
 ### How does it look?
 === "List widget"
-    ![img_list.png](img_list.png)
+    ![img_list.gif](img_list.gif)
 === "Info widget"
-    ![img_info.png](img_info.png)
+    ![img_info.gif](img_info.gif)
 === "Form widget"
-    ![img_form.png](img_form.png)
+    ![img_form.gif](img_form.gif)
 
 ### How to add?
 
@@ -66,11 +66,11 @@
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
 === "List widget"
-    ![img_plchldr_list.png](img_plchldr_list.png) 
+    ![img_plchldr_list.gif](img_plchldr_list.gif) 
 === "Info widget"
     _not applicable_
 === "Form widget"
-    ![img_plchldr_form.png](img_plchldr_form.png)
+    ![img_plchldr_form.gif](img_plchldr_form.gif)
 ### How to add?
 ??? Example
     Add **fields.setPlaceholder** to corresponding **FieldMetaBuilder**.
@@ -104,9 +104,9 @@
 
 ### How does it look?
 === "List widget"
-    ![img_color_list.png](img_color_list.png)
+    ![img_color_list.gif](img_color_list.gif)
 === "Info widget"
-    ![img_color_info.png](img_color_info.png)
+    ![img_color_info.gif](img_color_info.gif)
 === "Form widget"
     ![img_color_form.png](img_color_form.png)
 
@@ -185,18 +185,18 @@
 ### How does it look?
 === "Editable"
     === "List widget"
-        ![img_edit_list.png](img_edit_list.png)
+        ![img_edit_list.gif](img_edit_list.gif)
     === "Info widget"
         _not applicable_
     === "Form widget"
-        ![img_edit_form.png](img_edit_form.png)
+        ![img_edit_form.gif](img_edit_form.gif)
 === "Readonly"
     === "List widget"
-        ![img_ro_list.png](img_ro_list.png)
+        ![img_ro_list.gif](img_ro_list.gif)
     === "Info widget"
-        ![img_ro_info.png](img_ro_info.png)
+        ![img_ro_info.gif](img_ro_info.gif)
     === "Form widget"
-        ![img_ro_form.png](img_ro_form.png)
+        ![img_ro_form.gif](img_ro_form.gif)
 
 ### How to add?
 ??? Example
@@ -305,9 +305,9 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 ### How does it look?
 === "List widget"
-    ![img_drilldown_list](img_drilldown_list.png)
+    ![img_drilldown_list](img_drilldown_list.gif)
 === "Info widget"
-    ![img_drilldown_info](img_drilldown_info.png)
+    ![img_drilldown_info](img_drilldown_info.gif)
 === "Form widget"
     _not applicable_
 
@@ -380,24 +380,24 @@ Also, it optionally allows you to filter data on target view before it will be o
 ### How does it look?
 === "List widget"
     === "BusinessException"
-        ![img_business_error](img_business_error.png)
+        ![img_business_error](img_business_error.gif)
     === "RuntimeException"
-        ![img_runtime_error](img_runtime_error.png)
+        ![img_runtime_error](img_runtime_error.gif)
     === "Confirm"
-        ![confirm_form](confirm_form.png)
+        ![confirm_form](confirm_form.gif)
     === "Field level validation"
-        ![img_javax_stat_form](img_javax_stat_form.png)
+        ![img_javax_stat_list.gif](img_javax_stat_list.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
     === "BusinessException"
-        ![img_business_error](img_business_error.png)
+        ![img_business_error](img_business_error.gif)
     === "RuntimeException"
-        ![img_runtime_error](img_runtime_error.png)
+        ![img_runtime_error](img_runtime_error.gif)
     === "Confirm"
-        ![confirm_form](confirm_form.png)
+        ![confirm_form](confirm_form.gif)
     === "Field level validation"
-        ![img_javax_stat_form](img_javax_stat_form.png)
+        ![img_javax_stat_form](img_javax_stat_form.gif)
 ### How to add?
 ??? Example
     === "BusinessException"
@@ -547,11 +547,11 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
 
 ### How does it look?
 === "List widget"
-    ![img_req_list.png](img_req_list.png)
+    ![img_req_list.gif](img_req_list.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
-    ![img_req_form.png](img_req_form.png)
+    ![img_req_form.gif](img_req_form.gif)
 ### How to add?
 ??? Example
     Add **fields.setRequired** to corresponding **FieldMetaBuilder**.
@@ -579,11 +579,11 @@ By default, UI sets `Money` value to 0 when user deletes it and `nullable` is no
 By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equals to true, then UI keeps empty value as usual
 #### How does it look?
 === "List widget"
-    ![img_nullable_list.png](img_nullable_list.png)
+    ![img_nullable_list.gif](img_nullable_list.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"
-    ![img_nullable_form.png](img_nullable_form.png)
+    ![img_nullable_form.gif](img_nullable_form.gif)
 
 #### How to add?
 ??? Example
@@ -629,11 +629,11 @@ If you only need to display a fixed currency value, you can use a constant curre
 
 #### How does it look?
 === "List widget"
-    ![img_currency_list.png](img_currency_list.png)
+    ![img_currency_list.gif](img_currency_list.gif)
 === "Info widget"
-    ![img_currency_info.png](img_currency_info.png)
+    ![img_currency_info.gif](img_currency_info.gif)
 === "Form widget"
-    ![img_currency_form.png](img_currency_form.png)
+    ![img_currency_form.gif](img_currency_form.gif)
 === "AdditionalInfo widget"
     ![img_currency_addinfo.png](img_currency_addinfo.png)
 === "GroupingHierarchy widget"

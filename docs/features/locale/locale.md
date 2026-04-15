@@ -26,10 +26,98 @@ How does it look?
     ![locale_en.png](files/locale_en.png) 
 
 ## <a id="setting">Pre-setup for Working with Localization</a>
- 
 ??? Example
-    To work with localization, perform pre-setup on both front-end and back-end, which is necessary for correct handling of the added language.
+
+    It is necessary to configure the correct language transfer.  
+    The language is determined using:
+    === "from the user"
+        Step 1. Add custom DynamicLocaleResolver to ApplicationConfig.java
+        ```java
+            @Bean
+            public LocaleResolver localeResolver() {
+                return new DynamicLocaleResolver();
+            }
+        ```
+        Step 2. Add enum SupportedLanguages
+        ```java
+        @RequiredArgsConstructor
+        @Getter
+        public enum SupportedLanguages {
+        
+            ENGLISH(Locale.ENGLISH),
+            FRENCH(Locale.FRENCH);
+        
+            private final Locale locale;
+        
+            public static @NonNull Locale getDefaultLocale() {
+                return SupportedLanguages.ENGLISH.getLocale();
+            }
+        
+        }
+        ```
+        Step 3. Setting DynamicLocaleResolver
+
+        Below is an example of how to configure token parsing and retrieve the locale for each user from Keycloak.
+        
+        Setting Keycloak
+
+        ![locale_keycloak_fr.png](files/locale_keycloak_fr.png)
+
+        ```java
+        public class DynamicLocaleResolver extends AcceptHeaderLocaleResolver {
+        
+            @NotNull
+            @Override
+            public Locale resolveLocale(@NotNull HttpServletRequest request) {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null || !(authentication.getPrincipal() instanceof Jwt jwt)) {
+                    return SupportedLanguages.getDefaultLocale();
+                }
+                return resolveFromJwt(jwt);
+            }
+        
+            private Locale resolveFromJwt(Jwt jwt) {
+                String localeClaim = jwt.getClaimAsString("locale");
+        
+                if (localeClaim == null || localeClaim.isBlank()) {
+                    return SupportedLanguages.getDefaultLocale();
+                }
+        
+                return SupportedLanguages.FRENCH.getLocale().getLanguage().equals(localeClaim.toLowerCase()) ?
+                        SupportedLanguages.FRENCH.getLocale() :
+                        SupportedLanguages.getDefaultLocale();
+	        }
+        }
+        ```
+
+    === "from the server"
+
+        LocaleContextHolder.getLocale().getLanguage()
+        
+        or, when using the system locale:
+        
+        Locale.getDefault()
+        
+        If for some reason it is not possible to configure the language correctly using the standard approach, a workaround can be used — set the default locale when the application starts:
+            
+        ```java
+            @SpringBootApplication
+            @ConfigurationPropertiesScan("org.demo.conf")
+            public class Application {
+            
+                public static void main(String[] args) {
+                    Locale.setDefault(new Locale("ru"));
+                    SpringApplication.run(Application.class, args);
+                }
+            }            
+        ```
+ 
+        ⚠️ Using Locale.setDefault(...) changes the locale for the entire JVM process, so this approach is recommended only as a temporary solution or for single-locale systems.
     
+
+    **To work with localization, perform pre-setup on both front-end and back-end,
+    which is necessary for correct handling of the added language.**
+ 
     **Front-end**:
     
     see more [Global Static Text (Front-end)](#global)

@@ -24,6 +24,7 @@ duplicate action buttons could appear in the Debug panel.
 === "Before" 
     ![CXBOX-1256_before.png](v2.0.18/CXBOX-1256_before.png)
 
+ 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.18)
 
@@ -36,8 +37,23 @@ See [cxbox-ui 2.8.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 
 
 ### CXBOX 4.0.0-M23 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M23))
-
 We have released a new 4.0.0-M23 CORE version.
+
+#### Fixed: Added to the API response  when no fields of BC
+<!-- CXBOX-1242 --> 
+Fixed when the BC has no visible fields but acts as a parent BC.
+
+We added includeIdWhenNoFieldsInWidgetsOnBc(default true).
+
+Determines whether the  id field should be 
+automatically added to the API response  when no fields of the Business Component (BC) are 
+added to widgets on the screen  during the initial load. 
+
+=== "After"
+    ![CXBOX-1242_after.png](v2.0.18/CXBOX-1242_after.png)
+=== "Before"
+    ![CXBOX-1242_before.png](v2.0.18/CXBOX-1242_before.png)
+
 #### Added:  
 #### Other Changes
 See [cxbox 4.0.0-M23 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M23).

@@ -12,19 +12,7 @@
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
-#### Fixed: Duplicate Actions in Debug Panel
-<!-- CXBOX-1256 -->  
-This issue occurred when the same action (button) was assigned to multiple roles that belong to a single user. 
 
-When the `widgetActionGroupsEnabled` = false and responsibilities are loaded from the standardized `RESPONSIBILITIES_ACTION.csv` file via Liquibase,
-duplicate action buttons could appear in the Debug panel.
-
-=== "After"
-    ![CXBOX-1256_after.png](v2.0.18/CXBOX-1256_after.png)
-=== "Before" 
-    ![CXBOX-1256_before.png](v2.0.18/CXBOX-1256_before.png)
-
- 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.18)
 
@@ -38,6 +26,22 @@ See [cxbox-ui 2.8.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2
 
 ### CXBOX 4.0.0-M23 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M23))
 We have released a new 4.0.0-M23 CORE version.
+#### Fixed: We have restored Oracle support in this release.
+<!-- CXBOX-730 --> 
+We have restored Oracle support in this release.
+
+#### Fixed: Duplicate Actions in Debug Panel
+<!-- CXBOX-1256 -->  
+This issue occurred when the same action (button) was assigned to multiple roles that belong to a single user.
+
+When the `widgetActionGroupsEnabled` = false and responsibilities are loaded from the standardized `RESPONSIBILITIES_ACTION.csv` file via Liquibase,
+duplicate action buttons could appear in the Debug panel.
+
+=== "After"
+![CXBOX-1256_after.png](v2.0.18/CXBOX-1256_after.png)
+=== "Before"
+![CXBOX-1256_before.png](v2.0.18/CXBOX-1256_before.png)
+
 
 #### Fixed: Added to the API response  when no fields of BC
 <!-- CXBOX-1242 --> 

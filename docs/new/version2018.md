@@ -12,6 +12,11 @@
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
+#### Fixed: Uniqueness check when saving a filter name.
+<!-- CXBOX-1268 --> 
+Сorrectly handle the uniqueness check when saving a filter name
+
+![CXBOX-1268.gif](v2.0.18/CXBOX-1268.gif)
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.18)
@@ -38,9 +43,9 @@ When the `widgetActionGroupsEnabled` = false and responsibilities are loaded fro
 duplicate action buttons could appear in the Debug panel.
 
 === "After"
-![CXBOX-1256_after.png](v2.0.18/CXBOX-1256_after.png)
+    ![CXBOX-1256_after.png](v2.0.18/CXBOX-1256_after.png)
 === "Before"
-![CXBOX-1256_before.png](v2.0.18/CXBOX-1256_before.png)
+    ![CXBOX-1256_before.png](v2.0.18/CXBOX-1256_before.png)
 
 
 #### Fixed: Added to the API response  when no fields of BC

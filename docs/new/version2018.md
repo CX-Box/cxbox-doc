@@ -12,6 +12,22 @@
 
 ### CXBOX ([Demo](http://demo.cxbox.org))  
 
+#### Added: Added localization
+<!-- CXBOX-1248 --> 
+Added localization works in the system and how to add translations for UI elements, dictionaries, and enums.
+
+The system supports localization for:
+
+* Static Text
+* Data Localization
+
+[see more](/features/locale/locale)
+
+=== "french"
+    ![CXBOX-1248_locale_fr.png](v2.0.18/CXBOX-1248_locale_fr.png)
+=== "english"
+    ![CXBOX-1248_locale_en.png](v2.0.18/CXBOX-1248_locale_en.png)
+
 #### Fixed: Uniqueness check when saving a filter name.
 <!-- CXBOX-1268 --> 
 Сorrectly handle the uniqueness check when saving a filter name
@@ -23,7 +39,17 @@ see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2
 
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0))  
 We have released a new 2.8.0 CORE UI version.  
- 
+#### Fixed: Added null handling for multivalue forceActive fields 
+<!-- CXBOX-1261 --> 
+Added null handling for multivalue fields when the value of the `forceActive` field changes(/row-meta,/data).
+
+Previously, the frontend correctly handled multivalue fields only when the backend returned an array in the response. Now, for AnySource entities, you can also return `null`.
+
+=== "null"
+    ![CXBOX-1261_after.png](v2.0.18/CXBOX-1261_after.png)
+=== "[]"
+    ![CXBOX-1261_before.png](v2.0.18/CXBOX-1261_before.png)
+
 
 #### Other Changes
 See [cxbox-ui 2.8.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0).
@@ -68,5 +94,7 @@ added to widgets on the screen  during the initial load.
 See [cxbox 4.0.0-M23 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M23).
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
-#### Added:  
-<!-- CXBOX-1212 -->    
+
+#### Added: Added description localization
+<!-- CXBOX-1248 -->    
+We have provided a description [localization](https://doc.cxbox.org/features/locale/locale/)

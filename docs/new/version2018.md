@@ -4,69 +4,84 @@
 
 * [cxbox/core 4.0.0-M23 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M23), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M23), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M23)
 
-* [cxbox-ui/core 2.8.0 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.0), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.0)
+* [cxbox-ui/core 2.8.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.1), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.1)
 
 * [cxbox/code-samples 2.0.18 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.2.0.18), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.2.0.18)  
 
 ## **Key updates March-May 2026**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  \
+### CXBOX ([Demo](http://demo.cxbox.org)) 
 
 #### Added: richText - NEW field type!  
 <!-- CXBOX-1286 -->  
 We have introduced a new richText field type with support for advanced text formatting. The field supports headings, font color, font styles (bold, italic, underline, strikethrough), and more.  
+![richTextWysiwyg.gif](v2.0.18/richTextWysiwyg.gif)  
 
 The richText field also supports switching between WYSIWYG <-> Markdown modes.  
+![richTextWysiwygMarkdown.gif](v2.0.18/richTextWysiwygMarkdown.gif)
 
-For technical details and limitations, see the [Core](https://doc.cxbox.org/new/version2018/#added-richtext-new-field-type_1) section below.  
+For technical details and limitations, see the [Core](/new/version2018/#added-richtext-new-field-type_1) section below.  
 
 !!! info
     A detailed article on richText will be available soon in our official documentation – stay tuned!  
 
-#### Added: Added support for signing and encrypting documents
+#### Added: support for signing and encrypting documents  
 <!-- CXBOX-970 -->  
-Added support for signing and encrypting documents using a Qualified Electronic Signature (QES) with CryptoPro software.
-[see more](/features/sign/sign)
+Added support for signing and encrypting documents using a Qualified Electronic Signature (QES) with CryptoPro software.  
 
-#### Added: Added localization
+<video controls width="800">
+<source src="./v2.0.18/signAndEncrypt.mp4" type="video/mp4">
+</video>  
+
+For more information see [Signing and encrypting](/features/sign/sign).  
+
+#### Added: localization support
 <!-- CXBOX-1248 --> 
-Added localization works in the system and how to add translations for UI elements, dictionaries, and enums.
+We have added localization support for UI elements, dictionaries, and enums.
 
 The system supports localization for:
 
 * Static Text
 * Data Localization
 
-[see more](/features/locale/locale)
+For more information see [Localization](/features/locale/locale)
 
 === "French"
-    ![CXBOX-1248_locale_fr.png](v2.0.18/CXBOX-1248_locale_fr.png)
+    ![localizationFr.png](v2.0.18/localizationFr.png)
 === "English"
-    ![CXBOX-1248_locale_en.png](v2.0.18/CXBOX-1248_locale_en.png)  
+    ![localizationEn.png](v2.0.18/localizationEn.png)  
 
-#### Added: RelationGraph widget - improved display for cyclic data
+#### Added: RelationGraph widget - display support for cyclic data
 <!-- CXBOX-1249 -->  
-We have enhanced the RelationGraph widget to better support complex relation structures, including cyclic connections between nodes. Scenarios that were previously limited or not recommended are now correctly supported in graph view.  
+We have added support for displaying cyclic relations in the RelationGraph widget, including both directional and non-directional cycles.  
 
-**Non-directional cycles case**:  
-Full display support for non-directional cycles (nodes are connected with each other, but arrows do not form a closed loop).  
-=== "After"  
-    ![NonDirectionalCycle.png](v2.0.18/NonDirectionalCycle.png)
-=== "Before"
+* **Directional cycles** - arrows form a loop and return to the staring node.  
 
-**Directional cycles case**:  
-Full support for directional cycles (arrows form a closed loop and return to the starting node). Now, the widget supports cyclic relations in the data and does not switch to table mode.  
-=== "After"
-    ![DirectionalCycleAfter.png](v2.0.18/DirectionalCycleAfter.png)
-=== "Before"
-    ![DirectionalCycleBefore.png](v2.0.18/DirectionalCycleBefore.png) 
+* **Non-directional cycles** - connections exist between nodes, but arrows do not form a loop.  
+
+=== "Directional Cycle"
+    === "After"  
+        Now, the widget supports cyclic relations in the data and does not switch to table mode.
+        ![DirectionalCycleAfter.png](v2.0.18/DirectionalCycleAfter.png)
+    === "Before"  
+        The widget did not support cyclic relations in the data and used to switch to table mode.  
+        ![DirectionalCycleBefore.png](v2.0.18/DirectionalCycleBefore.png)  
+=== "Non-directional Cycle"
+    ![NonDirectionalCycle.png](v2.0.18/NonDirectionalCycle.png)  
+
+!!! info
+    As mentioned in the previous release, cyclic data structures are still not recommended because the graph may not display as expected in some cases.  
 
 #### Added: browser navigation warnings  
-We have added support for warning messages when navigating with browser Back/Forward buttons. If a user has unsaved changes or interacted with the application, the system can display a warning before leaving the page. The warning text can also be customized.  
+<!-- CXBOX-1164 -->
+We have added support for warning messages when navigating with browser Back/Forward buttons to help prevent accidental data loss while working with the application.  
+When using these buttons, the browser may restore an outdated page state, which can lead to loss of unsaved changes. For more information, see [Browser navigation buttons](https://doc.cxbox.org/navigation/browsernavigationbuttons/browsernavigationbuttons/).  
+
+Now, if a user has unsaved changes or interacted with the application, the system can display a warning before leaving the page. The warning text can also be customized.  
 
 This behavior is controlled by the global setting. By default, the setting is set to false.  
 
-For technical configuration details, see the [Core](https://doc.cxbox.org/new/version2018/#added-browser-navigation-warnings_1) section below.  
+For technical configuration details, see the [Core](/new/version2018/#added-browser-navigation-warnings_1) section below.  
 === "false (default)"  
     ![noWarning.png](v2.0.18/noWarning.png)
 === "true"
@@ -74,48 +89,50 @@ For technical configuration details, see the [Core](https://doc.cxbox.org/new/ve
 
 !!! info 
     1. The warning is not shown when navigating back to the browser starting page. 
-    2. Warnings are not displayed on page refresh due to [CXBox behavior](https://doc.cxbox.org/navigation/browsernavigationbuttons/browsernavigationbuttons/?h=browser+navigation+buttons). 
+    2. Warnings are not displayed for the browser Refresh button. Refreshing the page while working with the application is not recommended.  
 
 #### Fixed: user label - improved text wrapping  
+<!-- CXBOX-1276 -->
 We have improved the display of user names by adding word wrapping for long values. If the name does not fit within the label, it now wraps correctly and is fully visible.  
 === "After" 
-    ![userAfter.gif](v2.0.18/userAfter.gif)
+    ![wordWrapAfter.jpg](v2.0.18/wordWrapAfter.jpg)
 === "Before"  
-    ![userBefore.gif](v2.0.18/userBefore.gif)  
+    ![wordWrapBefore.jpg](v2.0.18/wordWrapBefore.jpg)  
 
 #### Fixed: fileUpload field -  improved file preview display for Info widget  
+<!-- CXBOX-1288 -->
 We have updated [fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/) preview logic for [Info](https://doc.cxbox.org/widget/type/info/info/) widget. Files are now correctly opened in preview mode directly from the widget.  
 
 === "After"  
-    ![filePreviewInfoBefore.png](v2.0.18/filePreviewInfoBefore.png)
+    ![filePreviewInfoAfter.png](v2.0.18/filePreviewInfoAfter.png)
 === "Before"  
-    ![filePreviewInfoAfter.png](v2.0.18/filePreviewInfoAfter.png)  
+    ![filePreviewInfoBefore.png](v2.0.18/filePreviewInfoBefore.png)  
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.18)
 
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0))  
-We have released a new 2.8.0 CORE UI version.  
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.1))  
+We have released a new 2.8.1 CORE UI version.  
 
-#### Added: keycloak-js has been replaced with oidc-client-ts
+#### Added: keycloak-js replaced with oidc-client-ts
 <!-- CXBOX-1223 --> 
 The keycloak-js library has been replaced with oidc-client-ts to provide support for various OpenID Connect (OIDC) implementations.
 Unlike keycloak-js, which is focused solely on Keycloak, oidc-client-ts offers a universal integration approach for OIDC-compatible providers, including Keycloak.
 
-#### Fixed: Added null handling for multivalue forceActive fields 
+#### Added: null handling for multivalue forceActive fields 
 <!-- CXBOX-1261 --> 
 Added null handling for multivalue fields when the value of the `forceActive` field changes(/row-meta,/data).
 
 Previously, the frontend correctly handled multivalue fields only when the backend returned an array in the response. Now, for AnySource entities, you can also return `null`.
 
 === "null"
-    ![CXBOX-1261_after.png](v2.0.18/CXBOX-1261_after.png)
+    ![1261null.png](v2.0.18/1261null.png)
 === "[]"
-    ![CXBOX-1261_before.png](v2.0.18/CXBOX-1261_before.png)
+    ![1261empty.png](v2.0.18/1261empty.png)
 
 
 #### Other Changes
-See [cxbox-ui 2.8.0 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0).
+See [cxbox-ui 2.8.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.1).
 
 
 ### CXBOX 4.0.0-M23 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M23))
@@ -126,7 +143,7 @@ We have added support for the new richText field type. The field supports format
 !!! warning  
     The maximum supported content size for richText field is **8,000 characters**.  
 
-For feature overview and usage examples, see the [Demo](https://doc.cxbox.org/new/version2018/#added-richtext-new-field-type) section above.  
+For feature overview and usage examples, see the [Demo](/new/version2018/#added-richtext-new-field-type) section above.  
 
 #### Added: browser navigation warnings  
 We have added a new global setting `browserNavigationWarnEnabled` to control browser navigation warnings.  
@@ -134,44 +151,42 @@ We have added a new global setting `browserNavigationWarnEnabled` to control bro
 2) false (default) - browser navigation works as usual  
 
 The warning text is configurable on the frontend.  
-For feature overview, see the [Demo](https://doc.cxbox.org/new/version2018/#added-browser-navigation-warnings) section above.  
+For feature overview, see the [Demo](/new/version2018/#added-browser-navigation-warnings) section above.  
 
-#### Fixed: We have restored Oracle support
+#### Fixed: restored Oracle support
 <!-- CXBOX-730 --> 
 Oracle support has been restored.  
 
-#### Fixed: Duplicate Actions in Debug Panel
+#### Fixed: duplicate actions in Debug Panel
 <!-- CXBOX-1256 -->  
 This issue occurred when the same action (button) was assigned to multiple roles that belong to a single user.
 
 When the `widgetActionGroupsEnabled` = false and responsibilities are loaded from the standardized `RESPONSIBILITIES_ACTION.csv` file via Liquibase,
-duplicate action buttons could appear in the Debug panel.
+duplicate action buttons used to appear in the Debug panel.
 
 === "After"
-    ![CXBOX-1256_after.png](v2.0.18/CXBOX-1256_after.png)
+    ![duplicateAfter.png](v2.0.18/duplicateAfter.png)
 === "Before"
-    ![CXBOX-1256_before.png](v2.0.18/CXBOX-1256_before.png)
+    ![duplicateBefore.png](v2.0.18/duplicateBefore.png)
 
-#### Fixed: Added to the API response  when no fields of BC
+#### Fixed: API response for parent BC with hidden fields  
 <!-- CXBOX-1242 --> 
-Fixed when the BC has no visible fields but acts as a parent BC.
+We have improved API response handling for parent BC without visible fields.  
 
-We added includeIdWhenNoFieldsInWidgetsOnBc(default true).
+Previously, if no fields from the parent BC were added to widgets on the screen, the required data was not included in the API response. Now, the system correctly returns the data even when the parent BC has no visible fields.  
 
-Determines whether the  id field should be 
-automatically added to the API response  when no fields of the Business Component (BC) are 
-added to widgets on the screen  during the initial load. 
+We added `includeIdWhenNoFieldsInWidgetsOnBc`(true by default).  
 
 === "After"
-    ![CXBOX-1242_after.png](v2.0.18/CXBOX-1242_after.png)
+    ![1242After.png](v2.0.18/1242After.png)
 === "Before"
-    ![CXBOX-1242_before.png](v2.0.18/CXBOX-1242_before.png)
+    ![1242Before.png](v2.0.18/1242Before.png)
 
-#### Fixed: Uniqueness check when saving a filter name  
+#### Fixed: uniqueness check when saving a filter name  
 <!-- CXBOX-1268 --> 
 We have improved validation for user filter names to prevent duplicate names when saving filters.  
 
-![CXBOX-1268.gif](v2.0.18/CXBOX-1268.gif)  
+![uniqueFilter.gif](v2.0.18/uniqueFilter.gif)  
 
 #### Other Changes
 See [cxbox 4.0.0-M23 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M23).
@@ -181,10 +196,6 @@ See [cxbox 4.0.0-M23 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxb
 #### Added: Localization description  
 <!-- CXBOX-1248 -->  
 We have provided a description on [localization](https://doc.cxbox.org/features/locale/locale/).  
-
-#### Added: New Year theme 
-<!-- CXBOX-1212 -->  
-We have added a guide on how to add a snowy effect on the side menu in the application. See [New Year theme](https://doc.cxbox.org/features/happynewyear/happynewyear/).  
 
 #### Added: Signing and encrypting  
 <!-- CXBOX-1294 -->  

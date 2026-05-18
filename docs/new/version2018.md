@@ -24,7 +24,9 @@ For technical details and limitations, see the [Core](https://doc.cxbox.org/new/
     A detailed article on richText will be available soon in our official documentation – stay tuned!  
 
 #### Added: Added support for signing and encrypting documents
+<!-- CXBOX-970 -->  
 Added support for signing and encrypting documents using a Qualified Electronic Signature (QES) with CryptoPro software.
+[see more](/features/sign/sign)
 
 #### Added: Added localization
 <!-- CXBOX-1248 --> 

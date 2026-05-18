@@ -91,6 +91,12 @@ see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2
 
 ### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.0))  
 We have released a new 2.8.0 CORE UI version.  
+
+#### Added: keycloak-js has been replaced with oidc-client-ts
+<!-- CXBOX-1223 --> 
+The keycloak-js library has been replaced with oidc-client-ts to provide support for various OpenID Connect (OIDC) implementations.
+Unlike keycloak-js, which is focused solely on Keycloak, oidc-client-ts offers a universal integration approach for OIDC-compatible providers, including Keycloak.
+
 #### Fixed: Added null handling for multivalue forceActive fields 
 <!-- CXBOX-1261 --> 
 Added null handling for multivalue fields when the value of the `forceActive` field changes(/row-meta,/data).

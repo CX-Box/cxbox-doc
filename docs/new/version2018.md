@@ -10,7 +10,7 @@
 
 ## **Key updates March-May 2026**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](http://demo.cxbox.org))  \
 
 #### Added: richText - NEW field type!  
 <!-- CXBOX-1286 -->  
@@ -22,6 +22,9 @@ For technical details and limitations, see the [Core](https://doc.cxbox.org/new/
 
 !!! info
     A detailed article on richText will be available soon in our official documentation – stay tuned!  
+
+#### Added: Added support for signing and encrypting documents
+Added support for signing and encrypting documents using a Qualified Electronic Signature (QES) with CryptoPro software.
 
 #### Added: Added localization
 <!-- CXBOX-1248 --> 

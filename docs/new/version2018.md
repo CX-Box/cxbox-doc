@@ -77,7 +77,7 @@ We have added support for displaying cyclic relations in the RelationGraph widge
 We have added support for warning messages when navigating with browser Back/Forward buttons to help prevent accidental data loss while working with the application.  
 When using these buttons, the browser may restore an outdated page state, which can lead to loss of unsaved changes. For more information, see [Browser navigation buttons](https://doc.cxbox.org/navigation/browsernavigationbuttons/browsernavigationbuttons/).  
 
-Now, if a user has unsaved changes or interacted with the application, the system can display a warning before leaving the page. The warning text can also be customized.  
+Now, if a user has interacted with the application, the system can display a warning before leaving the page. The warning text can also be customized.  
 
 This behavior is controlled by the global setting. By default, the setting is set to false.  
 

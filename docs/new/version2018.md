@@ -25,15 +25,32 @@ For technical details and limitations, see the [Core](/new/version2018/#added-ri
 !!! info
     A detailed article on richText will be available soon in our official documentation – stay tuned!  
 
-#### Added: support for signing and encrypting documents  
+#### Added: single-click signing and encryption with CryptoPro (QES)    
 <!-- CXBOX-970 -->  
-Added support for signing and encrypting documents using a Qualified Electronic Signature (QES) with CryptoPro software.  
+Users can now sign and encrypt documents in CXBox in a single click using locally installed CryptoPro. This removes the need to manually download files, sign them in CryptoPro, upload signatures back to CXBox, and click Save.  
 
-<video controls width="800">
-<source src="/new/v2.0.18/signAndEncrypt.mp4" type="video/mp4">
-</video>  
+The examples below compare the signing process with and without CryptoPro integration enabled:  
+=== "With integration (1 click)"  
+    === "Signature"  
+        <video controls width="800">
+        <source src="/new/v2.0.18/WithSign.mp4" type="video/mp4">
+        </video>  
+    === "Signature verification"  
+        <video controls width="800">
+        <source src="/new/v2.0.18/WithSignVerification.mp4" type="video/mp4">
+        </video>
+=== "Without integration (multiple manual steps)"  
+    === "Signature"  
+        <video controls width="800">
+        <source src="/new/v2.0.18/WithoutSign.mp4" type="video/mp4">
+        </video>
+    === "Signature verification"  
+        <video controls width="800">
+        <source src="/new/v2.0.18/WithoutSignVerification.mp4" type="video/mp4">
+        </video>
 
-For more information see [Signing and encrypting](/features/sign/sign).  
+!!! info  
+    The signing process uses the same locally installed CryptoPro software in both cases. The integration only automates CryptoPro invocation via the browser plugin, so both CryptoPro software and the browser plugin must be installed locally. For more information, see [Signing and encrypting](/features/sign/sign).  
 
 #### Added: localization support
 <!-- CXBOX-1248 --> 

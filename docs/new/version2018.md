@@ -30,7 +30,7 @@ For technical details and limitations, see the [Core](/new/version2018/#added-ri
 Added support for signing and encrypting documents using a Qualified Electronic Signature (QES) with CryptoPro software.  
 
 <video controls width="800">
-<source src="./v2.0.18/signAndEncrypt.mp4" type="video/mp4">
+<source src="/new/v2.0.18/signAndEncrypt.mp4" type="video/mp4">
 </video>  
 
 For more information see [Signing and encrypting](/features/sign/sign).  
@@ -157,12 +157,15 @@ For feature overview, see the [Demo](/new/version2018/#added-browser-navigation-
 <!-- CXBOX-730 --> 
 Oracle support has been restored.  
 
-#### Fixed: duplicate actions in Debug Panel
-<!-- CXBOX-1256 -->  
-This issue occurred when the same action (button) was assigned to multiple roles that belong to a single user.
+We renamed the fields to support Oracle:
 
-When the `widgetActionGroupsEnabled` = false and responsibilities are loaded from the standardized `RESPONSIBILITIES_ACTION.csv` file via Liquibase,
-duplicate action buttons used to appear in the Debug panel.
+* ADDITIONAL_FIELDS.VIEW → ADDITIONAL_FIELDS.VIEW_NAME
+* USER_ROLE.MAIN → USER_ROLE.MAIN_FLG
+* RESPONSIBILITIES_ACTION.VIEW → USER_ROLE.VIEW_NAME 
+
+#### Fixed: duplicate actions in Debug Panel
+<!-- CXBOX-1256 -->
+In the debug panel, duplicate action buttons were displayed when `widgetActionGroupsEnabled` was set to `false` and responsibilities were loaded from the standardized `RESPONSIBILITIES_ACTION.csv` file via Liquibase. This issue occurred when the same action (button) was assigned to multiple roles belonging to a single user.
 
 === "After"
     ![duplicateAfter.png](v2.0.18/duplicateAfter.png)

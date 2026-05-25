@@ -11,7 +11,7 @@
 
 ## **Key updates October, November 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: CalendarList - NEW widget type!  
 <!-- CXBOX-756 -->  

@@ -10,7 +10,7 @@
 
 ## **Key updates August 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: notification banner – adaptive button display
 We’ve made the notification banner responsive to long button texts, so button labels are no longer cut off and the popup resizes accordingly.

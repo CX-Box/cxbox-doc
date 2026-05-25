@@ -10,7 +10,7 @@
 
 ## **Key updates January, February 2026**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: New Year atmosphere in the application
 <!-- CXBOX-1212 -->  

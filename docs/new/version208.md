@@ -10,7 +10,7 @@
 
 ## **Key updates November 2024**  
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: GroupingHierarchy widget - counter  
 

@@ -10,7 +10,7 @@
 
 ## **Key updates February, March 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))
+### CXBOX ([Demo](https://demo.cxbox.org))
 
 #### Added: Push Notifications - new display modes  
 

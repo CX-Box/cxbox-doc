@@ -10,7 +10,7 @@
 
 ## **Key updates March-May 2026**
 
-### CXBOX ([Demo](http://demo.cxbox.org)) 
+### CXBOX ([Demo](https://demo.cxbox.org)) 
 
 #### Added: richText - NEW field type!  
 <!-- CXBOX-1286 -->  

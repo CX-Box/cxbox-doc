@@ -11,7 +11,7 @@
 
 ## **Key updates January, February 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))
+### CXBOX ([Demo](https://demo.cxbox.org))
 
 #### Added: [GroupingHierarchy](https://doc.cxbox.org/widget/type/groupinghierarchy/groupinghierarchy/) widget - support for aggregate rows 
 

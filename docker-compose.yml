@@ -11,7 +11,7 @@ services:
       - github_raw=/docs/demo
       - GITHUB_BRANCH=main
       - CODE_SAMPLES=http://code-samples.cxbox.org
-      - DEMO=http://demo.cxbox.org
+      - DEMO=https://demo.cxbox.org
     ports:
       - "8000:8000"
     volumes:

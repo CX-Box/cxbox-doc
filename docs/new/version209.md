@@ -11,7 +11,7 @@
 
 ## **Key updates November, December 2024**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: AdditionalList widget - new display mode  
 

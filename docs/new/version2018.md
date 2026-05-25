@@ -2,7 +2,7 @@
 
 * [cxbox/demo 2.0.18 git](https://github.com/CX-Box/cxbox-demo/tree/v.2.0.18), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.2.0.18)
 
-* [cxbox/core 4.0.0-M23 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M23), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M23), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M23)
+* [cxbox/core 4.0.0-M24 git](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M24, [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M24), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/4.0.0-M24)
 
 * [cxbox-ui/core 2.8.1 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.1), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.1), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.1)
 
@@ -152,8 +152,8 @@ Previously, the frontend correctly handled multivalue fields only when the backe
 See [cxbox-ui 2.8.1 changelog](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.1).
 
 
-### CXBOX 4.0.0-M23 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M23))
-We have released a new 4.0.0-M23 CORE version.  
+### CXBOX 4.0.0-M24 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M24))
+We have released a new 4.0.0-M24 CORE version.  
 #### Added: richText - NEW field type!  
 <!-- CXBOX-1286 -->
 We have added support for the new richText field type. The field supports formatted content in both WYSIWYG and Markdown modes. 
@@ -209,7 +209,7 @@ We have improved validation for user filter names to prevent duplicate names whe
 ![uniqueFilter.gif](v2.0.18/uniqueFilter.gif)  
 
 #### Other Changes
-See [cxbox 4.0.0-M23 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M23).
+See [cxbox 4.0.0-M24 changelog](https://github.com/CX-Box/cxbox/releases/tag/cxbox-4.0.0-M24).
 
 ### CXBOX [documentation](https://doc.cxbox.org/)  
 

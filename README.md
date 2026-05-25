@@ -20,7 +20,7 @@
       Website
     </a>
     <span> | </span>
-    <a href="http://demo.cxbox.org/" target="_blank">
+    <a href="https://demo.cxbox.org/" target="_blank">
       Demo
     </a>
     <span> | </span>

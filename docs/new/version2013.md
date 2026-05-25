@@ -10,7 +10,7 @@
 
 ## **Key updates April, May 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: number, money, percent fields - range filter support
 

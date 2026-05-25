@@ -10,7 +10,7 @@
 
 ## **Key updates December 2024, January 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: [List widget](/list/) - alignment of numeric field types  
 

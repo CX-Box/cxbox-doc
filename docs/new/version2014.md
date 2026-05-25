@@ -10,7 +10,7 @@
 
 ## **Key updates June, July 2025**
 
-### CXBOX ([Demo](http://demo.cxbox.org))  
+### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: List widget – mass operations (NEW!)  
 We’ve introduced a new feature that allows you to apply actions to multiple rows at once – **mass operations**.  

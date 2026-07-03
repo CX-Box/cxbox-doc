@@ -2,7 +2,7 @@
 * [Spring Boot 3.5 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.5-Release-Notes)
 * [Hibernate 6.5 Migration Guide](https://docs.hibernate.org/orm/6.5/migration-guide/)
 * [Hibernate 6.6 Migration Guide](https://docs.hibernate.org/orm/6.6/migration-guide/)
-* [CXBOX core MR](https://github.com/CX-Box/cxbox/pull/133/changes)
+* [CXBOX core Pull Request](https://github.com/CX-Box/cxbox/pull/133/changes)
 
 After upgrading to CXBOX 4.0.0-M25, verify that all core application functionality works correctly, with special attention to:
 
@@ -15,9 +15,13 @@ After upgrading to CXBOX 4.0.0-M25, verify that all core application functionali
 The sections below highlight the required adjustments and explain what has changed in the core modules.
 
 ## What changes 
+
 ### **Сriteria API `cast` Behavior Changes**
 
-This change affects only custom providers  **extends AbstractClassifyDataProvider**.
+!!! info
+    You will not get a compile-time error — the issue will only become apparent at runtime when the request is executed
+
+This change affects only custom providers (i.e. **extends AbstractClassifyDataProvider**).
 
 If you use our standard providers, no changes are required.
 
@@ -44,29 +48,19 @@ If your custom providers use constructions like `.as(`, they must be replaced wi
 
 This ensures that Hibernate generates the correct SQL `CAST` expression and preserves the expected query behavior.
 
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/133/changes#diff-e9e8d790c82fd1231482b15eb921e4fa387513eadc3150d052335256627d276a)
+
 [Reference](https://docs.hibernate.org/orm/6.6/migration-guide/#criteria-query)
+ 
+### Changes in Sequence Generator Behavior
 
-### **Changes in Sequence Generator Behavior**
+If you are using our standard `BaseEntity`, which relies on `@ExtSequenceId` and is based on `@IdGeneratorType(ExtSequenceStyleGenerator.class)`, this change does **not** affect you.
 
-If your project uses a custom sequence generator based on `@ExtSequenceGenerator`,
-you may encounter the following Hibernate issue: [OptimisticLockException when manually setting the ID for the entity](https://discourse.hibernate.org/t/optimisticlockexception-when-manually-setting-the-id-for-the-entity/10975)
+However, if you are using `@IdGeneratorType(CustomSequenceStyleGenerator.class)`, you may encounter a Hibernate issue related to manually assigned identifiers, which can result in an `OptimisticLockException` during entity persistence.
 
-If you are using our default generator based on `SequenceStyleGenerator`, this issue does **not** affect you.
+For more details, see: [OptimisticLockException when manually setting the ID for the entity](https://discourse.hibernate.org/t/optimisticlockexception-when-manually-setting-the-id-for-the-entity/10975)
 
-Example of the supported generator configuration:
-
-```java
-@ExtSequenceGenerator(
-    parameters = {
-        @Parameter(name = SequenceStyleGenerator.SEQUENCE_PARAM, value = "META_SEQ"),
-        @Parameter(name = INITIAL_PARAM, value = "1"),
-        @Parameter(name = INCREMENT_PARAM, value = "100"),
-        @Parameter(name = OPT_PARAM, value = "pooled-lo")
-    }
-)
-```
-
-However, if you use your own **custom generator** that extends `SequenceStyleGenerator`, you need to explicitly allow manually assigned identifiers by overriding the following method:
+If you have your own custom `@IdGeneratorType` implementation extending `SequenceStyleGenerator`, you must explicitly allow manually assigned identifiers by overriding the following method:
 
 ```java
 @Override
@@ -75,7 +69,9 @@ public boolean allowAssignedIdentifiers() {
 }
 ```
 
-Without this override, Hibernate may treat manually assigned IDs as conflicting with generated identifiers and throw an `OptimisticLockException`.
+Without this override, Hibernate may treat manually assigned identifiers as conflicting with generated values and throw an `OptimisticLockException`.
+
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/133/changes#diff-534ee1e0f4d817fa96e0c343c8d0ee5ea07acc2ec4aa2611f65fd9a34951857d)
 
 [References](https://docs.hibernate.org/orm/6.6/javadocs/org/hibernate/id/Assigned.html)
 
@@ -100,4 +96,5 @@ To fix this behavior, the propagation logic was updated:
 
 * `@DiscriminatorColumn`
 * `@Inheritance`
- 
+
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/133/changes#diff-fc735952222c0d84f766a96110b970ded0612bf3509a93707085ca372b6754aa)

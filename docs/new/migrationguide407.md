@@ -107,7 +107,7 @@ preferred-json-mapper: jackson2
         </dependency>
     ```
 ### Dependency on postgres 
-[Minimum Database Version 13.0](https://docs.hibernate.org/orm/7.2/dialect/#_supported_dialects).
+The minimum supported PostgreSQL version is determined by Hibernate limitations.[Minimum Database Version 13.0](https://docs.hibernate.org/orm/7.2/dialect/#_supported_dialects).
 
 We use dependency on postgres:14.0.
 

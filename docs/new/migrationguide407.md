@@ -111,10 +111,9 @@ The minimum supported PostgreSQL version is determined by Hibernate limitations.
 
 We use dependency on postgres:14.0.
 
-### Updated  to core module `JpaDaoImpl`
-If you use our standard `org.cxbox.model.core.dao.impl.JpaDaoImpl`, no changes are required.
- 
-Deprecated `EntityManager` methods were replaced:
+### Updated  to core module `JpaDao`
+If you use our standard `JpaDao`, `BaseDao`, `SpringData` etc. no changes are required.
+If you use `EntityManager` directly -  deprecated  methods were replaced:
 
 | Old Method | New Method  |
 | ---------- | ----------- |
@@ -152,6 +151,8 @@ Deprecated `EntityManager` methods were replaced:
     ```java
     getSupportedEntityManager(clazz.getName()).unwrap(Session.class).remove(o);
     ```
+
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/135/changes#diff-9b8295d2e3746d13dbf5db34172c204cf3d9cab7266bdcfdcc20299d3073f610)
 
 ### @GenericGenerator was removed from core 
 
@@ -197,6 +198,8 @@ Example:
         protected Long id;
     ```
 
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/135/changes#diff-5eb3792a0e14dcc6f28e02071be6248eead214b6aa75fd0d0a2df4e0b7d97e04)
+
 [References](https://discourse.hibernate.org/t/hibernate-7-sequence-generator-broken/12155)
  
 ### `hibernate-jpamodelgen` was removed from core
@@ -218,9 +221,14 @@ Example:
         </dependency>
     ```
 
-### New dependency to core module `org.junit.platform:junit-platform-launcher`
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/135/changes#diff-9905460951c915aa721f69dd8d2762df8c19deb4f812bc47b0e1d6e720d07d9f)
+
+### New dependency `org.junit.platform:junit-platform-launcher` to core module
 A new dependency has been added to the core module: `org.junit.platform:junit-platform-launcher` for autotests.
 
-### New dependency  to core module `spring-cache`
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/135/changes#diff-9905460951c915aa721f69dd8d2762df8c19deb4f812bc47b0e1d6e720d07d9f)
+
+### New dependency `spring-cache` to core module
 A new dependency has been added to the core module: `spring-cache` for cache.
 
+[see example cxbox-core](https://github.com/CX-Box/cxbox/pull/135/changes#diff-9905460951c915aa721f69dd8d2762df8c19deb4f812bc47b0e1d6e720d07d9f)

@@ -15,6 +15,10 @@ See more [field types](/widget/fields/fieldtypes/)
 
 `Grouping Hierarchy` mode features :
 
+!!! Attention
+    This widget is not recommended for large datasets because selected rows are stored in memory.
+    The recommended maximum number of rows is less than 1000.
+
 * All data should be sourced from the backend (e.g., with a backend page size set to 1000), 
     grouping is handled in-memory on the front end.
 

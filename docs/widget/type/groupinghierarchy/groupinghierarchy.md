@@ -32,7 +32,7 @@ See more [field types](/widget/fields/fieldtypes/)
 
 * This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
  
-
+* Сортировка данных на вывод  происходит автоматически по сгрупированным полям 
 ### How does it look?
 === "Basic"
     ![groupinghierarhy.gif](groupinghierarhy.gif)

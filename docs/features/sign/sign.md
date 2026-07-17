@@ -43,9 +43,14 @@ Supported:
 
 How does it look?
 
-<video controls width="800">
-<source src="/features/sign/sign.mp4" type="video/mp4">
-</video>
+=== "Signature"
+    <video controls width="800">
+    <source src="/features/sign/sign.mp4" type="video/mp4">
+    </video>
+=== "Signature verification"
+    <video controls width="800">
+    <source src="/features/sign/check_sign.mp4" type="video/mp4">
+    </video>
 
 How to add?
 ??? Example
@@ -70,6 +75,13 @@ How to add?
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/base){:target="_blank"}
 
 ### Electronic Signature Type
+"CAdES_T"
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcadesbestlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/MyExample3711CadesTForm.widget.json){:target="_blank"}
+
+CAdES_BES
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcadesbeslist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/MyExample3711CadesBesForm.widget.json){:target="_blank"}
 
 The user can select the electronic signature type:
 
@@ -108,28 +120,49 @@ How to add?
 
 ### Signature Container Format
 
-The user can choose the format of the generated container:
+**The user can choose the format of the generated container:**
 
-- **detached (detached signature)**  
-  A separate signature file is generated that contains only the signature for the document.  
-  The document itself is not included in the container.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DetachedForm.widget.json){:target="_blank"}
 
-- **attached (attached signature)**  
-  A single container is generated that includes: original document and signature for the document
+**detached (detached signature)** 
 
-Two scenarios are possible in the UI:
+A separate signature file is generated that contains only the signature for the document.  
+The document itself is not included in the container.
 
-* **User selects the signature type**  
-   A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
-* **Signature type is predefined by the system**  
-   The dropdown is not shown in the interface.  
-   The signature is generated automatically according to the predefined configuration.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerattachedform){:target="_blank"} · [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711AttachedForm.widget.json){:target="_blank"}
+
+**attached (attached signature)**
+
+A single container is generated that includes: original document and signature for the document
+
+**Two scenarios are possible in the UI:**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontaineranyform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711AnyForm.widget.json){:target="_blank"}
+
+**User selects the signature type**
+
+ A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DetachedForm.widget.json){:target="_blank"}
+
+**Signature type is predefined by the system**
+
+The dropdown is not shown in the interface.  
+The signature is generated automatically according to the predefined configuration.
 
 How does it look?
 === "User selects the signature type"
-    ![any.png](any.png)
-=== "Signature type is predefined by the system"
-    ![detached.png](detached.png)
+    <video controls width="800">
+    <source src="/features/sign/sign_any.mp4" type="video/mp4">
+    </video>
+=== "attached (attached signature)"
+    <video controls width="800">
+    <source src="/features/sign/sign_attach.mp4" type="video/mp4">
+    </video>
+=== "detached (detached signature)"
+    <video controls width="800">
+    <source src="/features/sign/sign_deattch.mp4" type="video/mp4">
+    </video>
 
 How to add?
 ??? Example
@@ -139,7 +172,7 @@ How to add?
     `any` — user selects the signature type  
     `detached` (default) / `attached` — signature type is predefined by the system
 
-    === "any"
+    === "User selects the signature type"
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/MyExample3711AnyForm.widget.json
@@ -180,13 +213,15 @@ How to add?
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DefaultForm.widget.json){:target="_blank"}
 
 ### Override of the signed document name
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711overridesignform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/filebasename){:target="_blank"}
 
 You can override the name of the signed document file.
 
 How does it look?
 
 <video controls width="800">
-<source src="/features/sign/sign_override_name.mp4" type="video/mp4">
+<source src="/features/sign/sign_override.mp4" type="video/mp4">
 </video>
 
 How to add?
@@ -212,14 +247,14 @@ How to add?
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt){:target="_blank"}
 
 
-    | Parameter               | Description                                                                 |
-    |------------------------|-----------------------------------------------------------------------------|
-    | `type` (required)       | Operation type. `encrypt` — document encryption                             |
-    | `actionName` (required) | Name of the operation to be executed (e.g. `documentEncrypt`)               |
-    | `documentFileIdKey` (required) | Key used for the document file ID                                   |
-    | `documentFileNameKey` (required) | Key used for the document file name                              |
-    | `encryptedFileIdKey` (required) | Key for the encrypted file ID                                    |
-    | `encryptedFileNameKey` (required) | Key for the encrypted file name                                |
+| Parameter               | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `type` (required)       | Operation type. `encrypt` — document encryption                             |
+| `actionName` (required) | Name of the operation to be executed (e.g. `documentEncrypt`)               |
+| `documentFileIdKey` (required) | Key used for the document file ID                                   |
+| `documentFileNameKey` (required) | Key used for the document file name                              |
+| `encryptedFileIdKey` (required) | Key for the encrypted file ID                                    |
+| `encryptedFileNameKey` (required) | Key for the encrypted file name                                |
 
 How does it look?
 
@@ -250,13 +285,15 @@ How to add?
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/base){:target="_blank"}
 
 ### Override of the encrypted document name
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713overrideform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/filebasename){:target="_blank"}
 
 You can override the name of the encrypted document file.
 
 How does it look?
 
 <video controls width="800">
-<source src="/features/sign/encrypt_override_name.mp4" type="video/mp4">
+<source src="/features/sign/encrypt_override.mp4" type="video/mp4">
 </video>
 
 How to add?
@@ -325,7 +362,22 @@ How to add?
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/base){:target="_blank"}
 
 ### Electronic Signature Type
+"CAdES_T"
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcadesbeslist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/MyExample3714CadesBesForm.widget.json){:target="_blank"}
 
+CAdES_BES
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcadesbestlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/MyExample3714CadesTForm.widget.json){:target="_blank"}
+
+The user can select the electronic signature type:
+
+- **CAdES_BES** — basic electronic signature type  
+  Used for standard document signing without additional attributes.
+
+- **CAdES_T** — extended signature type  
+  Includes all properties of CAdES_BES and additionally contains a trusted timestamp that records the exact moment of signing.
+ 
 How to add?
 ??? Example
 
@@ -353,12 +405,60 @@ How to add?
 
 ### Signature Container Format
 
+**The user can choose the format of the generated container:**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerdetachedform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DetachedForm.widget.json){:target="_blank"}
+
+**detached (detached signature)**
+
+A separate signature file is generated that contains only the signature for the document.  
+The document itself is not included in the container.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerattachedform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714AttachedForm.widget.json){:target="_blank"}
+
+**attached (attached signature)**
+
+A single container is generated that includes: original document and signature for the document
+
+**Two scenarios are possible in the UI:**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontaineranyform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714AnyForm.widget.json){:target="_blank"}
+
+**User selects the signature type**
+
+A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerdetachedform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DetachedForm.widget.json){:target="_blank"}
+
+**Signature type is predefined by the system**
+
+The dropdown is not shown in the interface.  
+The signature is generated automatically according to the predefined configuration.
+
+How does it look?
+=== "User selects the signature type"
+    <video controls width="800">
+    <source src="/features/sign/signencrypt_any.mp4" type="video/mp4">
+    </video>
+=== "attached (attached signature)"
+    <video controls width="800">
+    <source src="/features/sign/signencrypt_attach.mp4" type="video/mp4">
+    </video>
+=== "detached (detached signature)"
+    <video controls width="800">
+    <source src="/features/sign/signencrypt_deatach.mp4" type="video/mp4">
+    </video>
+
 How to add?
 ??? Example
 
     **Step 1** Add the `signaturePackage` property to `options.cryptoGenerator` in the `.widget` configuration options.
 
-    === "any"
+    === "User selects the signature type"
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/MyExample3714AnyForm.widget.json
@@ -399,6 +499,16 @@ How to add?
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DefaultForm.widget.json){:target="_blank"}
 
 ### Override of the signed document name
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptoverridesignform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/filebasename){:target="_blank"}
+
+You can override the name of the signed document file.
+
+How does it look?
+
+<video controls width="800">
+<source src="/features/sign/signencrypt_override.mp4" type="video/mp4">
+</video>
 
 How to add?
 ??? Example
@@ -439,9 +549,9 @@ Encrypt first, then sign (`encryptAndSign`).
 How does it look?
 
 <video controls width="800">
-<source src="/features/sign/signAndEncrypt.mp4" type="video/mp4">
+<source src="/features/sign/signencrypt.mp4" type="video/mp4">
 </video>
-
+ 
 How to add?
 ??? Example
 
@@ -465,6 +575,21 @@ How to add?
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/base){:target="_blank"}
 
 ### Electronic Signature Type
+"CAdES_T"
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbestlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesTForm.widget.json){:target="_blank"}
+
+CAdES_BES
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbeslist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesBesForm.widget.json){:target="_blank"}
+
+The user can select the electronic signature type:
+
+- **CAdES_BES** — basic electronic signature type  
+  Used for standard document signing without additional attributes.
+
+- **CAdES_T** — extended signature type  
+  Includes all properties of CAdES_BES and additionally contains a trusted timestamp that records the exact moment of signing.
 
 How to add?
 ??? Example
@@ -493,12 +618,46 @@ How to add?
 
 ### Signature Container Format
 
+**The user can choose the format of the generated container:**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerdetachedform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712DetachedForm.widget.json){:target="_blank"}
+
+**detached (detached signature)**
+
+A separate signature file is generated that contains only the signature for the document.  
+The document itself is not included in the container.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerattachedform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AttachedForm.widget.json){:target="_blank"}
+
+**attached (attached signature)**
+
+A single container is generated that includes: original document and signature for the document
+
+**Two scenarios are possible in the UI:**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontaineranyform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AnyForm.widget.json){:target="_blank"}
+
+**User selects the signature type**
+
+A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerattachedform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AttachedForm.widget.json){:target="_blank"}
+
+**Signature type is predefined by the system**
+
+The dropdown is not shown in the interface.  
+The signature is generated automatically according to the predefined configuration.
+
 How to add?
 ??? Example
 
     **Step 1** Add the `signaturePackage` property to `options.cryptoGenerator` in the `.widget` configuration options.
 
-    === "any"
+    === "User selects the signature type"
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/MyExample3712AnyForm.widget.json
@@ -539,6 +698,10 @@ How to add?
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712DefaultForm.widget.json){:target="_blank"}
 
 ### Override of the signed document name
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptoverridesignform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/filebasename){:target="_blank"}
+
+You can override the name of the signed document file.
 
 How to add?
 ??? Example

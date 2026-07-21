@@ -849,11 +849,6 @@ Also, it optionally allows you to filter data on target view before it will be o
 
 3) Field level validation: shows error next to all fields, that validation failed for
 
-   `Option 1`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample293){:target="_blank"} ·
-   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationannotation){:target="_blank"}
-
-   `Option 2`:
    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample323){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationdynamic){:target="_blank"}
 
@@ -951,33 +946,6 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationconfirm){:target="_blank"}
 
     === "Field level validation"
-        === "Option 1"
-            Add javax.validation to corresponding **DataResponseDTO**.
-
-            Use if:
-
-            Requires a simple fields check (javax validation)
-            Add javax.validation to corresponding **DataResponseDTO**.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/validationannotation/MyExample293DTO.java
-            --8<--
-            ```
-    
-            === "List widget"
-                **Works for List.**
-
-                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample293){:target="_blank"} ·
-                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationannotation){:target="_blank"}
-            === "Info widget"
-                **_not applicable_**
-            === "Form widget"
-                **Works for Form.**
-
-                [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample293){:target="_blank"} ·
-                [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationannotation){:target="_blank"}
-
-        === "Option 2"
             Create сustom service for business logic check.
             
             Use if:

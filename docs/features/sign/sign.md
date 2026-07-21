@@ -336,7 +336,7 @@ Sign first, then encrypt (`signAndEncrypt`).
 How does it look?
 
 <video controls width="800">
-<source src="/features/sign/signAndEncrypt.mp4" type="video/mp4">
+<source src="/features/sign/signencrypt.mp4" type="video/mp4">
 </video>
 
 How to add?
@@ -549,7 +549,7 @@ Encrypt first, then sign (`encryptAndSign`).
 How does it look?
 
 <video controls width="800">
-<source src="/features/sign/signencrypt.mp4" type="video/mp4">
+<source src="/features/sign/encryptsign.mp4" type="video/mp4">
 </video>
  
 How to add?
@@ -652,6 +652,21 @@ A popup is displayed with a dropdown allowing the user to choose: container form
 The dropdown is not shown in the interface.  
 The signature is generated automatically according to the predefined configuration.
 
+How does it look?
+=== "User selects the signature type"
+    <video controls width="800">
+    <source src="/features/sign/encryptsign_any.mp4" type="video/mp4">
+    </video>
+=== "attached (attached signature)"
+    <video controls width="800">
+    <source src="/features/sign/encryptsign_attach.mp4" type="video/mp4">
+    </video>
+=== "detached (detached signature)"
+    <video controls width="800">
+    <source src="/features/sign/encryptsign_deatach.mp4" type="video/mp4">
+    </video>
+
+
 How to add?
 ??? Example
 
@@ -702,6 +717,13 @@ How to add?
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/filebasename){:target="_blank"}
 
 You can override the name of the signed document file.
+
+How does it look?
+
+<video controls width="800">
+<source src="/features/sign/encryptsign_override.mp4" type="video/mp4">
+</video>
+
 
 How to add?
 ??? Example

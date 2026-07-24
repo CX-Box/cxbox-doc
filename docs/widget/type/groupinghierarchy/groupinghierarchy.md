@@ -31,7 +31,8 @@ See more [field types](/widget/fields/fieldtypes/)
 * Fields containing either a single element or no elements are displayed in their expanded form by default.The line is expanded by default if the expanded branch occupies the same amount of space as it does when collapsed.
 
 * This widget is essentially a List widget with an added "grouping" feature, allowing users to toggle between a standard table view and a "grouping hierarchy" view.
- 
+
+* The query results are automatically ordered by the grouped fields. Custom sorting is not supported in this case.
 
 ### How does it look?
 === "Basic"

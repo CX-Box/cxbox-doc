@@ -255,3 +255,24 @@ Restrict pagination options to specific values (e.g., 10, 25, 50, or 100 items p
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
 
+
+## Pagination switch
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
+
+Pagination switch controlling the display of the pagination panel.
+
+* `enabled: false` — the pagination panel and limit selector block **will not be displayed**, regardless of the number of records.
+* `enabled: true` (or if the option is omitted) — the standard display logic applies, taking `defaultPageLimit` into account.
+
+
+Example configuration:
+
+```json
+"options": {
+  "pagination": {
+    "enabled": false
+  }
+}
+```

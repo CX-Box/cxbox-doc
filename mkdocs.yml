@@ -98,17 +98,17 @@ nav:
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
-      - Property:
-         - Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
-         - Export:
-            - Excel: widget/type/property/export/excel/excel.md
-         - File Options:
-            - Multi-upload files: widget/type/property/multiupload/multiupload.md
-         - Filtration: widget/type/property/filtration/filtration.md
-         - Pagination: widget/type/property/pagination/pagination.md
-         - Sorting: widget/type/property/sorting/sorting.md
-         - Show condition: widget/type/property/showcondition/showcondition.md
-         - Bulk operations: widget/type/property/massoperations/massoperations.md
+  - Widget property:
+     - Property Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
+     - Property Export:
+        - Excel: widget/type/property/export/excel/excel.md
+     - Property File Options:
+        - Multi-upload files: widget/type/property/multiupload/multiupload.md
+     - Property Filtration: widget/type/property/filtration/filtration.md
+     - Property Pagination: widget/type/property/pagination/pagination.md
+     - Property Sorting: widget/type/property/sorting/sorting.md
+     - Property Show condition: widget/type/property/showcondition/showcondition.md
+     - Property Bulk(Mass) operations: widget/type/property/massoperations/massoperations.md
   - About CXBOX work:
       - Frontend - Backend Interaction: basic/frontbackinteraction.md
   - Navigation:

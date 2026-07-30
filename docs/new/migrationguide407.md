@@ -112,8 +112,73 @@ The minimum supported PostgreSQL version is determined by Hibernate limitations.
 We use dependency on postgres:14.0.
 
 ### Updated  to core module `JpaDao`
-If you use our standard `JpaDao`, `BaseDao`, `SpringData` etc. no changes are required.
+If you are using our standard `JpaDao` or `BaseDao`, be aware that the behavior of the **save** method has changed: 
+it now returns the persisted **entity** instead of the **entity ID**, which was returned in previous versions.
+
+??? Example
+
+    **persist()**    
+    === "After"
+        ```java
+        @Override
+        public <T> T save(Object entity) {
+            getSupportedEntityManager(Hibernate.getClass(entity).getName()).unwrap(Session.class).persist(entity);
+            return (T) entity;
+        }
+        ```
+    === "Before"
+        ```java
+        @Override
+        public <T> T save(Object entity) {
+            return (T) getSupportedEntityManager(Hibernate.getClass(entity).getName()).unwrap(Session.class).save(entity);
+        }
+        ```
+    **find()**
+    === "After"
+        ```java
+        @Override
+        public <T extends BaseEntity> T findById(Class<T> clazz, Long id) {
+            return getSupportedEntityManager(clazz.getName()).unwrap(Session.class).find(clazz, id);
+        }
+        ```
+    === "Before"
+        ```java
+        @Override
+            public <T extends BaseEntity> T findById(Class<T> clazz, Long id) {
+                return getSupportedEntityManager(clazz.getName()).unwrap(Session.class).get(clazz, id);
+        }
+        ```
+ 
+    **remove()**
+    === "After"
+        ```java
+            @Override
+            public <T extends BaseEntity> T delete(Class<T> clazz, Long id) {
+            T o = findById(clazz, id);
+            if (o != null) {
+                getSupportedEntityManager(clazz.getName()).unwrap(Session.class).remove(o);
+            } else {
+                throw new EntityNotFoundException();
+            }
+            return o;
+            }
+        ```
+    === "Before"
+        ```java
+            public <T extends BaseEntity> T delete(Class<T> clazz, Long id) {
+            T o = findById(clazz, id);
+            if (o != null) {
+                getSupportedEntityManager(clazz.getName()).unwrap(Session.class).delete(o);
+            } else {
+                throw new EntityNotFoundException();
+            }	
+            return o;
+            }
+        ```
+
+ 
 If you use `EntityManager` directly -  deprecated  methods were replaced:
+ 
 
 | Old Method | New Method  |
 | ---------- | ----------- |
@@ -122,35 +187,38 @@ If you use `EntityManager` directly -  deprecated  methods were replaced:
 | `delete()` | `remove()`  |
 
 
-**find()**
-=== "After"
-    ```java
-    getSupportedEntityManager(clazz.getName()).unwrap(Session.class).find(clazz, id);
-    ```
-=== "Before"
-    ```java
-    getSupportedEntityManager(clazz.getName()).unwrap(Session.class).get(clazz, id);
-    ```
 
-**persist()**
-=== "After"
-    ```java
-    getSupportedEntityManager(Hibernate.getClass(entity).getName()).unwrap(Session.class).save(entity);
-    ```
-=== "Before"
-    ```java
-    getSupportedEntityManager(Hibernate.getClass(entity).getName()).unwrap(Session.class).persist(entity);
-    ```
+??? Example
 
-**remove()**
-=== "After"
-    ```java
-    getSupportedEntityManager(clazz.getName()).unwrap(Session.class).delete(o);
-    ```
-=== "Before"
-    ```java
-    getSupportedEntityManager(clazz.getName()).unwrap(Session.class).remove(o);
-    ```
+    **persist()**
+    === "After"
+        ```java
+            void persist(Object object);
+        ```
+    === "Before"
+        ```java
+            Object save(Object object);
+        ```
+ 
+    **find()**
+    === "After"
+        ```java
+        <T> T find(Class<T> entityType, Object id);
+        ```
+    === "Before"
+        ```java
+        <T> T get(Class<T> entityType, Object id);
+        ```
+      
+    **remove()**
+    === "After"
+        ```java
+	        void remove(Object object);
+        ```
+    === "Before"
+        ```java
+       	    void delete(Object object);
+        ```
 
 [see example cxbox-core](https://github.com/CX-Box/cxbox/pull/135/changes#diff-9b8295d2e3746d13dbf5db34172c204cf3d9cab7266bdcfdcc20299d3073f610)
 

@@ -112,15 +112,14 @@ The minimum supported PostgreSQL version is determined by Hibernate limitations.
 We use dependency on postgres:14.0.
 
 ### Updated  to core module `JpaDao`
-If you are using our standard `JpaDao` or `BaseDao`, be aware that the behavior of the **save** method has changed: 
-it now returns the persisted **entity** instead of the **entity ID**, which was returned in previous versions.
+
+If you use our standard `JpaDao`, `BaseDao`, `SpringData` etc. no changes are required.
 
 ??? Example
 
     **persist()**    
     === "After"
         ```java
-        @Override
         public <T> T save(Object entity) {
             getSupportedEntityManager(Hibernate.getClass(entity).getName()).unwrap(Session.class).persist(entity);
             return (T) entity;
@@ -128,7 +127,6 @@ it now returns the persisted **entity** instead of the **entity ID**, which was 
         ```
     === "Before"
         ```java
-        @Override
         public <T> T save(Object entity) {
             return (T) getSupportedEntityManager(Hibernate.getClass(entity).getName()).unwrap(Session.class).save(entity);
         }
@@ -136,15 +134,13 @@ it now returns the persisted **entity** instead of the **entity ID**, which was 
     **find()**
     === "After"
         ```java
-        @Override
         public <T extends BaseEntity> T findById(Class<T> clazz, Long id) {
             return getSupportedEntityManager(clazz.getName()).unwrap(Session.class).find(clazz, id);
         }
         ```
     === "Before"
         ```java
-        @Override
-            public <T extends BaseEntity> T findById(Class<T> clazz, Long id) {
+        public <T extends BaseEntity> T findById(Class<T> clazz, Long id) {
                 return getSupportedEntityManager(clazz.getName()).unwrap(Session.class).get(clazz, id);
         }
         ```
@@ -152,7 +148,6 @@ it now returns the persisted **entity** instead of the **entity ID**, which was 
     **remove()**
     === "After"
         ```java
-            @Override
             public <T extends BaseEntity> T delete(Class<T> clazz, Long id) {
             T o = findById(clazz, id);
             if (o != null) {
@@ -186,7 +181,8 @@ If you use `EntityManager` directly -  deprecated  methods were replaced:
 | `save()`   | `persist()` |
 | `delete()` | `remove()`  |
 
-
+Be aware that the behavior of the **persist** method has changed:
+it now returns the persisted **entity**, **save** returned of the **entity ID**.
 
 ??? Example
 

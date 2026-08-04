@@ -10,7 +10,7 @@ The navigation arrows and limit settings block are removed if the number of reco
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 
-**Pagination modes**:
+##**Pagination modes**:
 
 * Default (nextAndPreviousWithCount)
 * nextAndPreviousWithHasNext
@@ -51,7 +51,7 @@ If such a widget is present (as specified in the view’s metadata), the /count 
 * **`nextAndPreviousWithHasNext`**: Designed for microservice-based backends where the presence of the next page can be determined, allowing the `hasNext` flag to be populated.
 * **`nextAndPreviousSmart`**: Suitable for microservice-based backends where it is not possible to determine if there is a next page, and the `hasNext` flag cannot be populated.  
 
-## <a id="nextAndPreviousWithCount">Default (nextAndPreviousWithCount)</a>
+### <a id="nextAndPreviousWithCount">Default (nextAndPreviousWithCount)</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount){:target="_blank"}
  
@@ -60,10 +60,10 @@ Frontend Behavior:
 * All three responses are utilized, including the `/count` result.
 * This mode is best suited for backends that rely on database sources.
 
-### How does it look?
+#### How does it look?
 ![nextAndPreviousWithCount.gif](nextAndPreviousWithCount.gif)
 
-### How to add?
+#### How to add?
 ??? Example
     Option 1. By default 
 
@@ -85,7 +85,7 @@ Frontend Behavior:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
 
-## <a id="nextAndPreviousWithHasNext">nextAndPreviousWithHasNext</a>
+### <a id="nextAndPreviousWithHasNext">nextAndPreviousWithHasNext</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3860list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
@@ -101,10 +101,10 @@ Next button availability logic:
 * If hasNext (from /data) is true, Next button is available.
 * If hasNext (from /data) is false, Next button is disabled.
 
-### How does it look?
+#### How does it look?
 ![nextAndPreviousWithHasNext.gif](nextAndPreviousWithHasNext.gif)
 
-### How to add?
+#### How to add?
 ??? Example
 
     Add in **options** parameter **pagination** to corresponding **.widget.json**.
@@ -128,7 +128,7 @@ Next button availability logic:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
 
-## <a id="nextAndPreviousSmart">nextAndPreviousSmart</a>
+### <a id="nextAndPreviousSmart">nextAndPreviousSmart</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandprevioussmart){:target="_blank"}
 
@@ -145,10 +145,10 @@ Disadvantages of this mode:
 * If the number of records is a multiple of _limit, a request for the next page will be sent even if it does not exist. If this request returns an error, it should be handled with a try {} catch {} block.
   (For instance, when retrieving data for the next page from a microservice.)
 
-### How does it look?
+#### How does it look?
 ![nextAndPreviousSmart.gif](nextAndPreviousSmart.gif)
 
-### How to add?
+#### How to add?
 ??? Example
 
     Add in **options** parameter **pagination** to corresponding **.widget.json**.
@@ -255,3 +255,38 @@ Restrict pagination options to specific values (e.g., 10, 25, 50, or 100 items p
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
 
+
+## Pagination switch
+Available since [v2.0.14](/new/version2014/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3865listswitch){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/paginationswitch){:target="_blank"}
+
+Pagination switch controlling the display of the pagination panel.
+
+* the pagination panel and limit selector block **will not be displayed**, regardless of the number of records.
+* the standard display logic applies, taking `defaultPageLimit` into account.
+
+### How does it look?
+=== "Pagination switch false"
+    ![pagination_switch_false.png](pagination_switch_false.png)
+=== "Pagination switch true"
+    ![pagination_switch_true.png](pagination_switch_true.png)
+ 
+### How to add?
+??? Example
+
+    Add in **options** parameter **enabled** to corresponding **.widget.json**.
+    ```
+    "pagination": {
+        "enabled": false
+    }
+    ```
+    ```json
+      --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/MyExample3865PaginationSwitchList.widget.json
+      --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3865listswitch){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/paginationswitch){:target="_blank"}

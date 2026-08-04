@@ -182,7 +182,8 @@ If you use `EntityManager` directly -  deprecated  methods were replaced:
 | `delete()` | `remove()`  |
 
 Be aware that the behavior of the **persist** method has changed:
-it now returns the persisted **entity**, **save** returned of the **entity ID**.
+
+`persist` returns the persisted **entity**, **save** returned of the **entity ID**.
 
 ??? Example
 

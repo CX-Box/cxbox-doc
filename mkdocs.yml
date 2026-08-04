@@ -99,16 +99,16 @@ nav:
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
   - Widget property:
-     - Property Default page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
-     - Property Export:
-        - Excel: widget/type/property/export/excel/excel.md
-     - Property File Options:
-        - Multi-upload files: widget/type/property/multiupload/multiupload.md
-     - Property Filtration: widget/type/property/filtration/filtration.md
-     - Property Pagination: widget/type/property/pagination/pagination.md
-     - Property Sorting: widget/type/property/sorting/sorting.md
-     - Property Show condition: widget/type/property/showcondition/showcondition.md
-     - Property Bulk(Mass) operations: widget/type/property/massoperations/massoperations.md
+     - Widget property Page limit: widget/type/Widget property/defaultlimitpage/defaultlimitpage.md
+     - Widget property Export:
+        - Excel: widget/type/Widget property/export/excel/excel.md
+     - Widget property File Options:
+        - Multi-upload files: widget/type/Widget property/multiupload/multiupload.md
+     - Widget property Filtration: widget/type/Widget property/filtration/filtration.md
+     - Widget property Pagination: widget/type/Widget property/pagination/pagination.md
+     - Widget property Sorting: widget/type/Widget property/sorting/sorting.md
+     - Widget property Show condition: widget/type/Widget property/showcondition/showcondition.md
+     - Widget property Bulk(Mass) operations: widget/type/Widget property/massoperations/massoperations.md
   - About CXBOX work:
       - Frontend - Backend Interaction: basic/frontbackinteraction.md
   - Navigation:
@@ -290,7 +290,7 @@ extra:
     demo: !ENV [DEMO, 'https://demo.cxbox.org']
   analytics:
     provider: google
-    property: G-SEVVVTLFB8
+    Widget property: G-SEVVVTLFB8
     feedback:
       title: Was this page helpful?
       ratings:

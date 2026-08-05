@@ -290,7 +290,7 @@ extra:
     demo: !ENV [DEMO, 'https://demo.cxbox.org']
   analytics:
     provider: google
-    Widget property: G-SEVVVTLFB8
+    property: G-SEVVVTLFB8
     feedback:
       title: Was this page helpful?
       ratings:

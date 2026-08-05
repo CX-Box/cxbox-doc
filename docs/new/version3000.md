@@ -6,9 +6,9 @@
 
 ## **Key updates July 2026**
 
-## CXBOX 5.0.0 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.0))
+## CXBOX 5.0.1 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.1))
  
-## Breaking Changes. CXBOX 5.0.0 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.0))
+## Breaking Changes. CXBOX 5.0.1 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.1))
  
 ### Added. Upgrades the platform to Spring Boot 4.0.7
 <!-- CXBOX-1319 -->
@@ -26,7 +26,7 @@ we are upgrading the project to Spring Boot  4.0.7 and Hibernate ORM 7.2.19 to e
 
 1) Step 1. Upgrade to [CXBOX 4.0.0-M25](https://github.com/CX-Box/cxbox/tree/cxbox-4.0.0-M25) [CXBOX Migration Guide](/new/migrationguide3515/)
  
-2) Step 2. Upgrade to CXBOX 5.0.0
+2) Step 2. Upgrade to CXBOX 5.0.1
  
 | Old Version            | New Version       | Migration Guide                                                                                                                                                                                                                                                 |
 |------------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -2,7 +2,7 @@
 
 * [cxbox/demo 3.0.0 git](https://github.com/CX-Box/cxbox-demo/tree/v.3.0.0), [release notes](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.0)
 
-* [cxbox/core 5.0.0 git](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.0), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-5.0.0), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/5.0.0)
+* [cxbox/core 5.0.1 git](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.1), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-5.0.1), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/5.0.1)
 
 ## **Key updates July 2026**
 

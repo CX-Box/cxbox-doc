@@ -144,7 +144,7 @@ The `count` query is executed **only if at least one widget with mode `nextAndPr
 === "Before Form widget"
     ![befor_pagination.png](v2.0.14/befor_pagination.png)
 
-#### Added: Pagination switch
+#### Added: Pagination panel display 
 A new option has been added to `options -> pagination` in the `widget.json` configuration, controlling the display of the pagination panel.
 
 Example configuration:

@@ -51,7 +51,7 @@ If such a widget is present (as specified in the view’s metadata), the /count 
 * **`nextAndPreviousWithHasNext`**: Designed for microservice-based backends where the presence of the next page can be determined, allowing the `hasNext` flag to be populated.
 * **`nextAndPreviousSmart`**: Suitable for microservice-based backends where it is not possible to determine if there is a next page, and the `hasNext` flag cannot be populated.  
 
-### <a id="nextAndPreviousWithCount">Default (nextAndPreviousWithCount)</a>
+### <a id="nextAndPreviousWithCount">Pagination with Total Count (default)</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount){:target="_blank"}
  
@@ -85,7 +85,7 @@ Frontend Behavior:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
 
-### <a id="nextAndPreviousWithHasNext">nextAndPreviousWithHasNext</a>
+### <a id="nextAndPreviousWithHasNext">Pagination is based `/data` and hasNext</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3860list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
@@ -128,7 +128,7 @@ Next button availability logic:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
 
 
-### <a id="nextAndPreviousSmart">nextAndPreviousSmart</a>
+### <a id="nextAndPreviousSmart">Pagination is based `/data` and _limit</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandprevioussmart){:target="_blank"}
 
@@ -165,7 +165,7 @@ Disadvantages of this mode:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandprevioussmart){:target="_blank"}
 
-## hideLimitOptions
+## Controls the visibility of the records-per-page  
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3865list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/hidelimitoptions){:target="_blank"}
@@ -205,7 +205,7 @@ This function is available:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/hidelimitoptions){:target="_blank"}
 
 
-## availableLimitsList
+## Available Page Size Options
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
@@ -256,21 +256,21 @@ Restrict pagination options to specific values (e.g., 10, 25, 50, or 100 items p
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
 
 
-## Pagination switch
+## Pagination panel display 
 Available since [v2.0.14](/new/version2014/)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3865listswitch){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/paginationswitch){:target="_blank"}
 
-Pagination switch controlling the display of the pagination panel.
+Pagination panel display  controlling the display of the pagination panel.
 
 * the pagination panel and limit selector block **will not be displayed**, regardless of the number of records.
 * the standard display logic applies, taking `defaultPageLimit` into account.
 
 ### How does it look?
-=== "Pagination switch false"
+=== "Pagination panel display  false"
     ![pagination_switch_false.png](pagination_switch_false.png)
-=== "Pagination switch true"
+=== "Pagination panel display  true"
     ![pagination_switch_true.png](pagination_switch_true.png)
  
 ### How to add?

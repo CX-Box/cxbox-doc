@@ -297,9 +297,9 @@ The option to default filter by saved groups is currently unavailable.
         **Step 1** Add computed boolean field to corresponding **DataResponseDTO**. 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filtration/filtergrouphiddenfield/MyExample3628DTO.java
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergrouphiddenfield/MyExample3628DTO.java
         --8<--
-        ```   
+        ```  
         **Step 2** Add  business component in **BC_FILTER_GROUPS** TABLE
     
           `name` - name predefined filter

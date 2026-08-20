@@ -7,7 +7,7 @@
 ### How does it look?
 === "Assoc widget field"
     === "List"
-        _not applicable_
+        ![assoc_list_mv.gif](assoc_list_mv.gif)
     === "Info"
         _not applicable_
     === "Form"
@@ -33,18 +33,40 @@
     Recommendation
     If you plan to use a button-based association, you must add filtering to the opened association in order to exclude records that have already been selected and added to the table.
 
-Value selection
+**Value selection:**
 
 === "Assoc widget field "
     ![choose_aasoc.png](choose_aasoc.png)
 === "Assoc widget button"
     ![choose_button.png](choose_button.png)
 
+
+
+**Opening the widget:**
+
+=== "Assoc widget field "
+    ![choose_aasoc.png](choose_aasoc.png)
+=== "Assoc widget button"
+    ![up_assoc.png](up_assoc.png)
+
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
     === "Assoc widget field"
         === "List"
-            _not applicable_
+            **Step1** Add field with type **multivalue** see more [Fields](#fields)
+
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053List.widget.json
+            --8<--
+            ```
+       
+            **Step2** Add widget to corresponding ****_.view.json_** **.
+        
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053list.view.json
+            --8<--
         === "Info"
             _not applicable_
 

@@ -613,6 +613,19 @@ How to add?
         --8<--
         ```
 
+        To change the Time Stamping Authority (TSA) server address:
+        
+        * Navigate to the ui/.env and ui/.env.development files.
+        * Add the REACT_APP_CRYPTOPRO_TSA_URL variable:
+        
+        In ui/.env.development — set the test server address.
+        
+        In ui/.env — set the production server address (by default).
+        
+        !!! info
+            If this constant is not present, the application will default to http://testca2012.cryptopro.ru/tsp/tsp.srf.
+
+
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbestlist){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesTForm.widget.json){:target="_blank"}
 

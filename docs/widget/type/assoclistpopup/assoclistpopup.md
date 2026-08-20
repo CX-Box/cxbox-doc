@@ -20,6 +20,26 @@
     === "Form"
         _not applicable_
 
+!!! info
+
+    The button-based association differs from the MultiValue field association in the following way:
+    
+    Previously selected records are not shown.
+    
+    Records selected by the user in the opened association are also not displayed as selected chips.
+    
+    This behavior occurs because the button-based association is not directly tied. Instead, it is designed to add records to a table.
+    
+    Recommendation
+    If you plan to use a button-based association, you must add filtering to the opened association in order to exclude records that have already been selected and added to the table.
+
+Value selection
+
+=== "Assoc widget field "
+    ![choose_aasoc.png](choose_aasoc.png)
+=== "Assoc widget button"
+    ![choose_button.png](choose_button.png)
+
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
     === "Assoc widget field"
@@ -81,7 +101,7 @@
         
              ```java
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/assoc/base/CxboxMyExample3053Controller.java:EnumBcIdentifierBc
+             {{ external_links.github_raw_doc }}/widgets/assoc/base/CxboxMyExample3053Controller.java
              --8<--
              ```
 

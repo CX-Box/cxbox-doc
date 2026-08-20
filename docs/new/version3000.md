@@ -28,10 +28,10 @@ we are upgrading the project to Spring Boot  4.0.7 and Hibernate ORM 7.2.19 to e
  
 2) Step 2. Upgrade to CXBOX 5.0.1
  
-| Old Version            | New Version       | Migration Guide                                                                                                                                                                                                                                                 |
-|------------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Old Version            | New Version           | Migration Guide                                                                                                                                                                                                                                                 |
+|------------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Spring Boot 3.5.15** | **Spring Boot 4.0.7** | [Spring Boot 4.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide)                                                                                                                                          |
 | **Hibernate 6.6.53**   | **Hibernate  7.2.19** | [Hibernate 7.0 Migration Guide](https://docs.hibernate.org/orm/7.0/migration-guide/), [Hibernate 7.1 Migration Guide](https://docs.hibernate.org/orm/7.1/migration-guide/),[Hibernate 7.2 Migration Guide](https://docs.hibernate.org/orm/7.2/migration-guide/) |
-| **4.0.0-M26**          | **5.0.0**         | [CXBOX Migration Guide](/new/migrationguide407/)                                                                                                                                                                                                                |
+| **4.0.0-M26**          | **5.0.1**             | [CXBOX Migration Guide](/new/migrationguide407/)                                                                                                                                                                                                                |
 
  

@@ -169,3 +169,12 @@ We have released a new 5.0.2 CORE version.
 <!-- CXBOX-1361 --> 
 Fixed an issue where the uniqueness constraint could not be correctly identified when using the `ru_RU.UTF-8` locale.
 The uniqueness check is now handled correctly regardless of the system locale.
+
+#### Fixed: CIB seven migration compatibility
+<!-- CXBOX-1362 --> 
+
+Updated the core to simplify and streamline migration to CIB seven.
+
+Previously, using `@EnableWebMvc` caused Spring to create `WebMvcConfigurationSupport`, which prevented `WebMvcAutoConfiguration` from being applied. This could lead to additional configuration requirements during migration.
+
+The core has been updated to eliminate this issue, making migration to CIB seven more straightforward.

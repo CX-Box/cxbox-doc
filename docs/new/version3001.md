@@ -140,12 +140,14 @@ It works similarly to the existing multivalue field, but opens the new AssocTree
     Detailed documentation for the multivalueTree field will be available soon in our official documentation - stay tuned!
 
 #### Added: text and richText fields - configurable height  
+<!-- CXBOX-1350 -->  
 
-We've added support for configuring the height of text and richText fields on Form, List and Info widgets.  
+We've added support for configuring the height of text and richText fields on widgets.  
 
 The minimum and maximum number of rows can now be set separately for viewing and editing, making it easier to adjust the fields to the content and screen layout.   
+=== "List widget"
+    ![CXBOX-1350 List.png](v3.0.1/CXBOX-1350%20List.png)
 
-<!-- TODO>> pictures readonly and editing-->
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)

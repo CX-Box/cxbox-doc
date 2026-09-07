@@ -147,7 +147,10 @@ We've added support for configuring the height of text and richText fields on wi
 The minimum and maximum number of rows can now be set separately for viewing and editing, making it easier to adjust the fields to the content and screen layout.   
 === "List widget"
     ![CXBOX-1350 List.png](v3.0.1/CXBOX-1350%20List.png)
-
+=== "Info widget"
+    ![CXBOX-1350 Info.png](v3.0.1/CXBOX-1350%20Info.png)
+=== "Form widget"
+    ![CXBOX-1350 Form.png](v3.0.1/CXBOX-1350%20Form.png)
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)

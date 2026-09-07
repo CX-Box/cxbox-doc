@@ -150,7 +150,16 @@ The minimum and maximum number of rows can now be set separately for viewing and
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
 
+### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/???2.8.1))
+We have released a new ???2.8.1 CORE UI version.
 
+#### Fixed: `encryptAndSign` for detached signatures
+<!-- CXBOX-1383 --> 
+Fixed an issue with the `encryptAndSign` operation when creating a detached signature.
+
+Additional Base64 encoding has been removed for detached signatures. Previously, signatures created using `encryptAndSign` in detached mode could not be successfully verified by the Gosuslugi signature verification service.
+
+Detached signatures can now be successfully verified on Gosuslugi.
 
 
 ### CXBOX 5.0.2 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2))

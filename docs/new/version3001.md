@@ -150,3 +150,13 @@ The minimum and maximum number of rows can now be set separately for viewing and
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
 
+
+
+
+### CXBOX 5.0.2 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2))
+We have released a new 5.0.2 CORE version.
+
+#### Fixed: uniqueness check when saving a filter name
+<!-- CXBOX-1361 --> 
+Fixed an issue where the uniqueness constraint could not be correctly identified when using the `ru_RU.UTF-8` locale.
+The uniqueness check is now handled correctly regardless of the system locale.

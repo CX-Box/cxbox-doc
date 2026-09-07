@@ -98,6 +98,7 @@ nav:
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
+      - Widget Tree: widget/type/tree2/tree2.md
   - Widget property:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
      - Widget property Export:
@@ -269,6 +270,7 @@ plugins:
         'form.md': 'widget/type/form/form.md'
         'info.md': 'widget/type/info/info.md'
         'list.md': 'widget/type/list/list.md'
+        'tree2.md': 'widget/type/tree2/tree2.md'
         'widget_type_form_popup.md': 'widget/type/formpopup/formpopup.md'
         'widget_type_pick_list_popup.md': 'widget/type/picklistpopup/picklistpopup.md'
         'additionalinfo.md': 'widget/type/additionalinfo/additionalinfo.md'

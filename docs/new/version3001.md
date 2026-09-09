@@ -13,12 +13,13 @@
 ### CXBOX ([Demo](https://demo.cxbox.org))  
 
 #### Added: Tree - NEW widget type!  
+<!-- CXBOX-1341 -->  
 
 We’ve added a new Tree widget for displaying data in a tree-like structure.
 
 The widget is designed for working with large data sets and supports any number of nesting levels. Data is loaded on demand using lazy loading, so the entire data set does not need to be loaded at once. Initially, only the root-level rows are loaded. Upon expanding the nodes, child rows are loaded. The More option allows the user to load the next page of rows.  
 
-<!--TODO>> basic picture-->  
+![CXBOX-1341_tree.png](v3.0.1/CXBOX-1341_tree.png)
 
 The Tree widget supports the main functionality available in the List widget, including:
 
@@ -33,27 +34,41 @@ Search and filtering results can be displayed in two modes:
 * Collapse - only matching rows are highlighted and displayed, while the user can still navigate through the tree, expand nodes.  
 * Hide - only matching rows are highlighted and displayed, navigation through the tree is not supported.  
 
-<!-- TODO>> 
-=== "collapse"  
+=== "collapse" 
+    ![CXBOX-1341_tree_collapse.png](v3.0.1/CXBOX-1341_tree_collapse.png)
 === "hide"  
--->
+    ![CXBOX-1341_tree_hide.png](v3.0.1/CXBOX-1341_tree_hide.png)
 
 When matching rows are located deep in the tree, the path can be not fully displayed (for compact display reasons). The number of displayed parent nodes can be configured, and upper nodes can be loaded when needed to view the whole path.  
 
 <!--TODO>> path not fully restored picture -->
 
 !!! info  
-    Detailed documentation for the Tree widget will be available soon in our official documentation - stay tuned!  
+    Detailed documentation for the Tree(**вставить сюда ссылку на пустую страницу**) widget will be available soon in our official documentation - stay tuned!  
 
-#### Added: PickTreePopup - NEW widget type!  
+#### <a id="pickTree">Added: pickTree - NEW field type!</a>
+<!-- CXBOX-1341 -->  
+
+We have added a new pickTree field type for selecting a single value from tree-like data. The new field type triggers the new PickTreePopup widget.
+
+![CXBOX-1341_pickTree.gif](v3.0.1/CXBOX-1341_pickTree.gif)
+
+For more information about the PickTreePopup widget, see [PickTreePopup](#PickTreePopup) widget.
+
+!!! info  
+    Detailed documentation for the pickTree(**вставить сюда ссылку на пустую страницу**) field will be available soon in our official documentation - stay tuned!
+
+####  <a id="PickTreePopup">Added: PickTreePopup - NEW widget type!</a>
+<!-- CXBOX-1341 -->  
 
 We’ve added a new PickTreePopup widget for selecting a single value from data displayed in a tree-like structure.
 
-PickTreePopup is a tree-based alternative to the existing [PickListPopup](https://doc.cxbox.org/widget/type/picklistpopup/picklistpopup/). Unlike the List-based PickListPopup, PickTreePopup supports any number of nesting levels and lazy loading, making it suitable for working with large data sets.
+PickTreePopup is a tree-based alternative to the existing [PickListPopup](https://doc.cxbox.org/widget/type/picklistpopup/picklistpopup/). 
 
+PickTreePopup supports any number of nesting levels and lazy loading, making it suitable for working with large data sets.
 Just like with the new Tree widget, the root-level rows are loaded first, while child rows are loaded when the user expands a node. Next pages of data can be loaded using the More option.  
 
-<!--TODO>> basic picture -->
+![CXBOX-1341_pickTreePopup.png](v3.0.1/CXBOX-1341_pickTreePopup.png)
 
 The widget supports:
 
@@ -73,18 +88,30 @@ The selection behavior can be configured depending on the use case. The user can
 
 Just like in Tree widget, search and filtering results can be displayed in two modes: collapse and hide.  
 
-The PickTreePopup widget is opened from the new pickTree and inlinePickTree fields.
+The PickTreePopup widget is opened from the new [pickTree](#pickTree) field.
+
+!!! info
+    Detailed documentation for the PickTreePopup(**вставить сюда ссылку на пустую страницу**) widget will be available soon in our official documentation - stay tuned!
+
+#### <a id="multivalueTree">Added: multivalueTree - NEW field type!</a>
+<!-- CXBOX-1341 -->  
+
+We have added a new multivalueTree field for selecting multiple values from tree-like data.
+
+![CXBOX-1341_multivalueTree.gif](v3.0.1/CXBOX-1341_multivalueTree.gif)
+
+It works similarly to the existing multivalue field, but opens the new [AssocTreePopup](#AssocTreePopup) widget, where users navigate the tree and select multiple values using checkboxes.
 
 !!! info  
-    Detailed documentation for the PickTreePopup widget will be available soon. Stay tuned!  
+    Detailed documentation for the multivalueTree(**вставить сюда ссылку на пустую страницу**) field will be available soon in our official documentation - stay tuned!
 
-#### Added: AssocTreePopup - NEW widget type!  
+#### <a id="AssocTreePopup">Added: AssocTreePopup - NEW widget type!</a>
 
 We’ve added a new AssocTreePopup widget for selecting multiple values from data displayed in a tree-like structure.
 
 AssocTreePopup is a tree-based alternative to the existing AssocListPopup. It allows users to select multiple rows using checkboxes while keeping the tree structure visible.  
 
-<!--TODO>> basic picture -->
+![CXBOX-1341_assocTreePopup.png](v3.0.1/CXBOX-1341_assocTreePopup.png)
 
 The widget supports:
 
@@ -101,43 +128,10 @@ Selected values are displayed at the top of the popup.
 
 Search and filtering results can be displayed in two modes: collapse and hide.  
 
-The AssocTreePopup widget is opened from the new multivalueTree field.
+The AssocTreePopup widget is opened from the new [multivalueTree](#multivalueTree) field.
 
 !!! info  
-    Detailed documentation for the AssocTreePopup widget will be available soon in our official documentation - stay tuned!  
-
-#### Added: pickTree- NEW field type!  
-
-We have added a new pickTree field type for selecting a single value from tree-like data. The new field type triggers the new PickTreePopup widget.  
-
-<!--TODO>> basic picture -->
-
-For more information about the PickTreePopup widget, see PickTreePopup widget.  
-
-!!! info  
-    Detailed documentation for the pickTree field will be available soon in our official documentation - stay tuned!  
-
-#### Added: inlinePickTree - NEW field type!  
-
-We've added a new inlinePickTree field for selecting a single value from tree-like data.  
-
-<!-- TODO>> basic picture -->
-
-The field opens the new PickTreePopup widget, where users navigate the tree and select a value.  
-
-!!! info  
-    Detailed documentation for the inlinePickTree field will be available soon in our official documentation - stay tuned!  
-
-#### Added: multivalueTree - NEW field type!  
-
-We have added a new multivalueTree field for selecting multiple values from tree-like data.  
-
-<!-- TODO>> basic picture -->
-
-It works similarly to the existing multivalue field, but opens the new AssocTreePopup widget, where users navigate the tree and select multiple values using checkboxes.  
-
-!!! info  
-    Detailed documentation for the multivalueTree field will be available soon in our official documentation - stay tuned!
+    Detailed documentation for the AssocTreePopup(**вставить сюда ссылку на пустую страницу**) widget will be available soon in our official documentation - stay tuned!
 
 #### Added: text and richText fields - configurable height  
 <!-- CXBOX-1350 -->  

@@ -44,7 +44,7 @@ When matching rows are located deep in the tree, the path can be not fully displ
 <!--TODO>> path not fully restored picture -->
 
 !!! info  
-    Detailed documentation for the Tree(**вставить сюда ссылку на пустую страницу**) widget will be available soon in our official documentation - stay tuned!  
+    Detailed documentation for the [Tree](https://doc.cxbox.org/widget/type/tree/tree/) widget will be available soon in our official documentation - stay tuned!  
 
 #### <a id="pickTree">Added: pickTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
@@ -56,7 +56,7 @@ We have added a new pickTree field type for selecting a single value from tree-l
 For more information about the PickTreePopup widget, see [PickTreePopup](#PickTreePopup) widget.
 
 !!! info  
-    Detailed documentation for the pickTree(**вставить сюда ссылку на пустую страницу**) field will be available soon in our official documentation - stay tuned!
+    Detailed documentation for the [pickTree](https://doc.cxbox.org/widget/fields/field/picktree/picktree/)  field will be available soon in our official documentation - stay tuned!
 
 ####  <a id="PickTreePopup">Added: PickTreePopup - NEW widget type!</a>
 <!-- CXBOX-1341 -->  
@@ -91,7 +91,7 @@ Just like in Tree widget, search and filtering results can be displayed in two m
 The PickTreePopup widget is opened from the new [pickTree](#pickTree) field.
 
 !!! info
-    Detailed documentation for the PickTreePopup(**вставить сюда ссылку на пустую страницу**) widget will be available soon in our official documentation - stay tuned!
+    Detailed documentation for the [PickTreePopup](https://doc.cxbox.org/widget/type/picktreepopup/picktreepopup/) widget will be available soon in our official documentation - stay tuned!
 
 #### <a id="multivalueTree">Added: multivalueTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
@@ -103,7 +103,7 @@ We have added a new multivalueTree field for selecting multiple values from tree
 It works similarly to the existing multivalue field, but opens the new [AssocTreePopup](#AssocTreePopup) widget, where users navigate the tree and select multiple values using checkboxes.
 
 !!! info  
-    Detailed documentation for the multivalueTree(**вставить сюда ссылку на пустую страницу**) field will be available soon in our official documentation - stay tuned!
+    Detailed documentation for the [multivalueTree](https://doc.cxbox.org/widget/fields/field/multivalueTree/multivalueTree/)  field will be available soon in our official documentation - stay tuned!
 
 #### <a id="AssocTreePopup">Added: AssocTreePopup - NEW widget type!</a>
 
@@ -131,7 +131,7 @@ Search and filtering results can be displayed in two modes: collapse and hide.
 The AssocTreePopup widget is opened from the new [multivalueTree](#multivalueTree) field.
 
 !!! info  
-    Detailed documentation for the AssocTreePopup(**вставить сюда ссылку на пустую страницу**) widget will be available soon in our official documentation - stay tuned!
+    Detailed documentation for the [AssocTreePopup](https://doc.cxbox.org/widget/type/assoctreepopup/assoctreepopup/) widget will be available soon in our official documentation - stay tuned!
 
 #### Added: text and richText fields - configurable height  
 <!-- CXBOX-1350 -->  

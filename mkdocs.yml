@@ -74,12 +74,15 @@ nav:
       - Field money: widget/fields/field/money/money.md
       - Field multifield: widget/fields/field/multifield/multifield.md
       - Field multivalue: widget/fields/field/multivalue/multivalue.md
+      - Field multivalueTree: widget/fields/field/multivaluetree/multivaluetree.md
       - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
       - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
       - Field number: widget/fields/field/number/number.md
       - Field percent: widget/fields/field/percent/percent.md
       - Field pickList: widget/fields/field/pickList/pickList.md
+      - Field pickTree: widget/fields/field/multivaluetree/multivaluetree.md
       - Field radio: widget/fields/field/radio/radio.md
+      - Field richText: widget/fields/field/richtext/richtext.md
       - Field suggestionPickList: widget/fields/field/suggestionpicklist/suggestionPickList.md
       - Field text: widget/fields/field/text/text.md
       - Field time: widget/fields/field/time/time.md
@@ -88,6 +91,7 @@ nav:
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
       - Widget AdditionalList: widget/type/additionallist/additionallist.md
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
+      - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
       - Widget EmptyWidget: widget/type/emptywidget/emptywidget.md
       - Widget FilePreview: widget/type/filepreview/filepreview.md
       - Widget Form: widget/type/form/form.md
@@ -97,6 +101,7 @@ nav:
       - Widget Info: widget/type/info/info.md
       - Widget List: widget/type/list/list.md
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
+      - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
   - Widget property:

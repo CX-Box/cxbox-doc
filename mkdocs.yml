@@ -98,7 +98,7 @@ nav:
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
-      - Widget Tree: widget/type/tree2/tree.md
+      - Widget Tree: widget/type/tree/tree.md
   - Widget property:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
      - Widget property Export:

@@ -24,6 +24,7 @@ For the widget to work correctly, the following requirements must be met:
         Add existing field to a tree widget. see more [Fields](#fields)
     
         Parent-child nesting is stored on the row: set **parentId** on the DTO (and a hidden `parentId` field on the widget). Root rows leave `parentId` empty; child rows point to the parent record id. Set **isLeaf** on the DTO (and a hidden `isLeaf` field on the widget) so the UI knows whether a row can be expanded.
+
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/tree/base/any/myexample3261AnyTreeList.widget.json
@@ -37,6 +38,9 @@ For the widget to work correctly, the following requirements must be met:
         {{ external_links.github_raw_doc }}/widgets/tree/base/views/myexample3261anylist.view.json
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3281tree){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base){:target="_blank"}
+
     === "Custom name fields"
         You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
 
@@ -517,6 +521,43 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
 
 ### Additional properties
+
+#### Tree Search Modes
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3268){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/customizationcolumns){:target="_blank"}
+
+1. Search Results Only
+
+The tree displays only the items that match the search or filtering results. All other items are hidden.
+
+In this mode, the user works only with the search results and cannot navigate through the other items in the tree.
+
+2. Search Results and Tree
+
+The tree displays both the search results and the items required for navigation through the tree.
+
+The matching items are highlighted. The user can freely navigate through the tree, expand and collapse branches, view neighboring items, and load additional items.
+
+3. Switching Between Modes
+
+Both modes can be available at the same time. The user can switch between them and choose the mode that is most convenient for working with the search results.
+
+###### How does it look?
+=== "Search Results Only" 
+
+=== "Search Results and Tree"
+
+=== "Switching Between Modes"
+
+###### How to add?
+??? Example
+
+    === "Search Results Only"
+    
+    === "Search Results and Tree"
+    
+    === "Switching Between Modes"
+
 #### Customization of displayed columns
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3268){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/customizationcolumns){:target="_blank"}
@@ -623,3 +664,4 @@ see [Excel](/widget/type/property/export/excel/excel)
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
 see more [Multi-upload files](/widget/type/property/multiupload/multiupload)
+

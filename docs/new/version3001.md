@@ -171,6 +171,127 @@ The **`To default filter(s)`** button is displayed only default filters are conf
 
 ![CXBOX_1382 To_default_filters.gif](v3.0.1/CXBOX_1382%20To_default_filters.gif)
 
+#### Fixed: richText - formatting is preserved in the most common cases  
+<!-- CXBOX-1364 -->  
+
+The richText field stores content in Markdown, the same format that Yandex Wiki uses. Markdown cannot express some formatting combinations, and market leaders such as Yandex Wiki fail in these cases too. That is why we do not build our own editor. Instead, we add small patches to the underlying library and fix the most common cases, bringing the editor closer to market leaders.
+
+Summary of supported formatting: ✅ supported, ⚠️ supported with a caveat, ❌ not supported, — not checked.  
+
+**Basics**
+
+| #  | Feature                                        | Before | After | Yandex Wiki | Markdown example             |
+|----|------------------------------------------------|:------:|:-----:|:-----------:|------------------------------|
+| 1  | Bold                                           | ✅ | ✅ | ✅ | `**bold**`                   |
+| 2  | Italic                                         | ✅ | ✅ | ✅ | `*italic*`                   |
+| 3  | Underline                                      | ✅ | ✅ | ✅ | `++under++`                  |
+| 4  | Strikethrough                                  | ✅ | ✅ | ✅ | `~~strike~~`                 |
+| 5  | Inline code                                    | ✅ | ✅ | ✅ | `` `code` ``                 |
+| 6  | Text color                                     | ✅ | ✅ | ✅ | `{red}(text)`                |
+| 7  | Link                                           | ✅ | ✅ | ✅ | `[text](url)`                |
+| 8  | Heading H1–H6                                  | ✅ | ✅ | ✅ | `# Head` … `###### Head`     |
+| 9  | Bullet / ordered list                          | ✅ | ✅ | ✅ | `- item` / `1. item`         |
+| 10 | Blockquote                                     | ✅ | ✅ | ✅ | `> quote`                    |
+| 11 | Code block                                     | ✅ | ✅ | ✅ | ` ```\ncode\n``` `           |
+| 12 | Paragraph (Enter) / line break (Shift+Enter)   | ✅ | ✅ | ✅ | `a\n\nb` / `a  \nb`          |
+| 13 | Text starting with 4 spaces or a tab stays plain text | ❌ | ✅ | — | `    text` was a code block |
+
+**Combinations & overlaps**
+
+| #  | Feature                                              | Before | After | Yandex Wiki | Markdown example                   |
+|----|------------------------------------------------------|:------:|:-----:|:-----------:|------------------------------------|
+| 14 | Two+ styles combined                                 | ✅ | ✅ | ✅ | `***x***`, `{red}(**x**)`          |
+| 15 | Styles inside heading / list / quote                 | ✅ | ✅ | ✅ | `# **b** head`, `- {red}(c) item`  |
+| 16 | Three+ styles overlapping in a staircase             | ❌ | ✅ | ✅ | `++abc**def**++**gh~~ij~~**~~kl~~` |
+| 17 | Style across a line break (Shift+Enter)              | ❌ | ✅ | ✅ | `**a**  \n**b**`                   |
+| 18 | Bold and italic overlapping each other               | ❌ | ⚠️ | — | an invisible separator is inserted where they meet |
+| 19 | Bold or italic touching a parenthesis                | ❌ | ❌ | ❌ | `abc*def)*ghi` - cannot be written in Markdown; the toolbar disables such formatting |
+
+**Text color**
+
+| #  | Feature                                              | Before | After | Yandex Wiki | Markdown example                   |
+|----|------------------------------------------------------|:------:|:-----:|:-----------:|------------------------------------|
+| 20 | Color over text with parentheses                     | ❌ | ✅ | ✅ | `{red}(Hello \(world\))`           |
+| 21 | Color across line breaks (Shift+Enter)               | ❌ | ✅ | ✅ | `{red}(a)  \n{red}(b)`             |
+| 22 | Color on inline code                                 | ⚠️ | ⚠️ | — | impossible - inline code excludes other styles |
+
+The cases below were fixed in this release.
+
+**Text color on text with parentheses** (20)  
+=== "After"
+    In the editor: `Hello (world) and more` colored red.  
+    ![CXBOX-1364_color_editor_after.png](v3.0.1/CXBOX-1364_color_editor_after.png)  
+    After saving: the color is preserved.  
+    ![CXBOX-1364_color_saved_after.png](v3.0.1/CXBOX-1364_color_saved_after.png)  
+    Stored Markdown - the parentheses are escaped, so the color span is closed in the right place:  
+    ```
+    {red}(Hello \(world\) and more)
+    ```
+=== "Before"
+    In the editor: `Hello (world) and more` colored red.  
+    ![CXBOX-1364_color_editor_before.png](v3.0.1/CXBOX-1364_color_editor_before.png)  
+    After saving: the color ends at the first `)`, and the parenthesis itself moved to the end of the text.  
+    ![CXBOX-1364_color_saved_before.png](v3.0.1/CXBOX-1364_color_saved_before.png)  
+    Stored Markdown - the first `)` closed the color span too early:  
+    ```
+    {red}(Hello (world) and more)
+    ```
+
+**Overlapping formatting** (16)  
+=== "After"
+    In the editor: underline on `abcdefgh`, bold on `ghijkl`, strikethrough on `klmnop`.  
+    ![CXBOX-1364_overlap_editor_after.png](v3.0.1/CXBOX-1364_overlap_editor_after.png)  
+    After saving: all formatting is preserved.  
+    ![CXBOX-1364_overlap_saved_after.png](v3.0.1/CXBOX-1364_overlap_saved_after.png)  
+    Stored Markdown - every style is closed and reopened with Markdown tags:  
+    ```
+    ++abcdef**gh**++**ij~~kl~~**~~mnop~~
+    ```
+=== "Before"
+    In the editor: underline on `abcdefgh`, bold on `ghijkl`, strikethrough on `klmnop`.  
+    ![CXBOX-1364_overlap_editor_before.png](v3.0.1/CXBOX-1364_overlap_editor_before.png)  
+    After saving: bold is shifted and `~~` appears as plain text.  
+    ![CXBOX-1364_overlap_saved_before.png](v3.0.1/CXBOX-1364_overlap_saved_before.png)  
+    Stored Markdown - the editor fell back to raw HTML tags, which are not restored on reopen:  
+    ```
+    ++abcdef**gh**++<strong>ij~~kl~~</strong>~~mnop~~
+    ```
+
+**Text starting with spaces** (13)  
+=== "After"
+    In the editor: a line that starts with 4 spaces.  
+    ![CXBOX-1364_indent_editor_after.png](v3.0.1/CXBOX-1364_indent_editor_after.png)  
+    After saving: the text stays plain text.  
+    ![CXBOX-1364_indent_saved_after.png](v3.0.1/CXBOX-1364_indent_saved_after.png)  
+=== "Before"
+    In the editor: a line that starts with 4 spaces.  
+    ![CXBOX-1364_indent_editor_before.png](v3.0.1/CXBOX-1364_indent_editor_before.png)  
+    After saving: the text was turned into a code block.  
+    ![CXBOX-1364_indent_saved_before.png](v3.0.1/CXBOX-1364_indent_saved_before.png)  
+    Stored Markdown - in Markdown, 4 leading spaces mean a code block:  
+    ```
+        text with indent
+    ```
+
+**Bold or italic touching a parenthesis** (19)  
+=== "After"
+    The toolbar disables bold, italic, underline, strikethrough and inline code when the selection starts or ends at a parenthesis, the same way Yandex Wiki does. Text color stays available.  
+    ![CXBOX-1364_paren_editor_after.png](v3.0.1/CXBOX-1364_paren_editor_after.png)  
+=== "Before"
+    In the editor: `)def` selected and made bold.  
+    ![CXBOX-1364_paren_editor_before.png](v3.0.1/CXBOX-1364_paren_editor_before.png)  
+    After saving: the bold was lost and `**` appeared as text.  
+    ![CXBOX-1364_paren_saved_before.png](v3.0.1/CXBOX-1364_paren_saved_before.png)  
+    Stored Markdown - `**` right after `)` is not recognized as bold in Markdown (in Yandex Wiki too):  
+    ```
+    abc**)def**
+    ```
+
+We have also added autotests for richText to [cxbox/code-samples](https://github.com/CX-Box/cxbox-code-samples): a **RichText basic** sample and a [regression suite](https://github.com/CX-Box/cxbox-code-samples/blob/main/src/test/java/application/Samples/Form/RichTextOnFormTest.java) that checks every case from the table after user input, after saving and after reopening the record. Known limitations are fixed in the tests as well, so any change in their behavior is caught.
+
+!!! info  
+    Technical details for each case are available in [README_RICHTEXT.md](https://github.com/CX-Box/cxbox-demo/blob/768218b2db63ec05e1363a532302ff71dd962b4c/README_RICHTEXT.md).
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
 

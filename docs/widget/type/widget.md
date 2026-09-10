@@ -41,7 +41,7 @@ Steps
 === "Steps"
     ![steps.png](steps/steps.png)
 === "Tree"
-    ![tree.png](tree2/tree.png)
+    ![tree.png](tree/tree.png)
 
 *   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the right**.
 *   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the right**.

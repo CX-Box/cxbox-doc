@@ -146,6 +146,31 @@ The minimum and maximum number of rows can now be set separately for viewing and
 === "Form widget"
     ![CXBOX-1350 Form.png](v3.0.1/CXBOX-1350%20Form.png)
 
+
+#### Added: Default filter by saved group (`filter group`)
+<!-- CXBOX-1382 -->  
+A default filter can now be configured for a saved group (`filter group`).
+The configured filter is automatically applied when the page is initialized and refreshed.
+
+The default filter is marked with a **star ★**.
+
+![CXBOX-1382 filter_group.png](v3.0.1/CXBOX-1382%20filter_group.png)
+
+### Added: Button To default filter(s)
+<!-- CXBOX-1382 --> 
+The **`To default filter(s)`** button has been added next to the **`Clear N filter(s)`** button.
+
+The **`To default filter(s)`** button allows users to restore the filters to the default values defined by the developer.
+
+When resetting filters, the following priority is applied:
+
+1. **`bc_property`** — filters defined using `bc_property`;
+2. **`default filter group`** — filters defined in the default filter group.
+
+The **`To default filter(s)`** button is displayed only default filters are configured for the page.
+
+![CXBOX_1382 To_default_filters.gif](v3.0.1/CXBOX_1382%20To_default_filters.gif)
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
 

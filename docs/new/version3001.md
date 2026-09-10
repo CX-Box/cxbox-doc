@@ -197,7 +197,7 @@ The uniqueness check is now handled correctly regardless of the system locale.
 #### Fixed: CIB seven migration compatibility
 <!-- CXBOX-1362 --> 
 
-Updated the core to simplify and streamline migration to CIB seven.
+If you are planning to migrate from **Camunda 7 Community Edition to CIB seven** because the final **Camunda 7 Community Edition 7.24** release does not support **Spring Boot 4**, the core has been updated to simplify and streamline the migration process.
 
 Previously, using `@EnableWebMvc` caused Spring to create `WebMvcConfigurationSupport`, which prevented `WebMvcAutoConfiguration` from being applied. This could lead to additional configuration requirements during migration.
 

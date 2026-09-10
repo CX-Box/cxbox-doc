@@ -80,7 +80,7 @@ nav:
       - Field number: widget/fields/field/number/number.md
       - Field percent: widget/fields/field/percent/percent.md
       - Field pickList: widget/fields/field/pickList/pickList.md
-      - Field pickTree: widget/fields/field/multivaluetree/multivaluetree.md
+      - Field pickTree: widget/fields/field/picktree/picktree.md
       - Field radio: widget/fields/field/radio/radio.md
       - Field richText: widget/fields/field/richtext/richtext.md
       - Field suggestionPickList: widget/fields/field/suggestionpicklist/suggestionPickList.md

@@ -14,37 +14,68 @@ For the widget to work correctly, the following requirements must be met:
 ### How does it look?
 ![tree.png](tree.png)
 
-###  <a id="Howtoaddbacis">How to add?</a> 
+### How to add?
 ??? Example
     === "Default name fields"
-        You have the option to utilized default  field names for standard properties such as color, icon, etc. When doing so, you'll not need to establish mappings for these fields to standard criteria
-    
-        **Step1** Create file **_.widget.json_** with type = **"Tree"**
-    
-        Add existing field to a tree widget. see more [Fields](#fields)
-    
-        Parent-child nesting is stored on the row: set **parentId** on the DTO (and a hidden `parentId` field on the widget). Root rows leave `parentId` empty; child rows point to the parent record id. Set **isLeaf** on the DTO (and a hidden `isLeaf` field on the widget) so the UI knows whether a row can be expanded.
 
-        ```json
+       You have the option to utilized default  field names for standard properties such as parentId, isLeaf. When doing so, you'll not need to establish mappings for these fields to standard criteria
+
+        **Step1** Create field `parentId`, `isLeaf` to corresponding **DataResponseDTO**.
+
+        * `parentId` — identifies the parent record of the current record and defines the parent-child relationship in the tree. If the record is a root node, `parentId` must be empty.
+        * `isLeaf` — indicates whether the record can be expanded. The value `true` means that the record cannot be expanded, while `false` means that the record can be expanded to display child records.
+
+        ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/base/any/myexample3261AnyTreeList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/base/defaultfields/MyExample3281DTO.java
         --8<--
         ```
      
-        **Step2** Add widget to corresponding ****_.view.json_** **.
+        **Step2** Create file **_.widget.json_** with type = **"Tree"**
     
+        Add existing field to a tree widget. see more [Fields](#fields)
+    
+        For the tree to work correctly, the widget must contain the `parentId` and `isLeaf` fields. These fields should be configured as **hidden**.
+
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/base/views/myexample3261anylist.view.json
+        {{ external_links.github_raw_doc }}/widgets/tree/base/defaultfields/widget/MyExample3281Tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3281tree){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/defaultfields){:target="_blank"}
 
     === "Custom name fields"
-        You have the option to utilize custom field names for standard properties such as color, icon, etc. When doing so, you'll need to establish mappings for these fields to standard criteria
 
-## <a id="Title">Title</a>
+        You have the option to utilize custom field names for standard properties. When doing so, you'll need to establish mappings for these fields to standard criteria
+
+        **Step1** Create field `customParentId`, `customIsLeaf` to corresponding **DataResponseDTO**.
+
+        * `customParentId` — identifies the parent record of the current record and defines the parent-child relationship in the tree. If the record is a root node, `parentId` must be empty.
+        * `customIsLeaf` — indicates whether the record can be expanded. The value `true` means that the record cannot be expanded, while `false` means that the record can be expanded to display child records.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/base/customfields/MyExample3278DTO.java
+        --8<--
+        ```
+     
+        **Step2** Create file **_.widget.json_** with type = **"Tree"**
+    
+        Add existing field to a tree widget. see more [Fields](#fields)
+    
+        For the tree to work correctly, the widget must contain the `customParentId` and `customIsLeaf` fields. These fields should be configured as **hidden**.
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/base/customfields/widget/MyExample3278Tree.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3278tree){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/customfields){:target="_blank"}
+
+
+## Title
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3271){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/title){:target="_blank"}
 
@@ -183,7 +214,10 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 === "no show condition"
     ![tree.png](tree.png)
 === "show condition by current entity"
-    ![show_cond_current.gif](show_cond_current.gif)
+    <video controls width="800">
+    <source src="/widget/type/tree/show_cond_current.mp4" type="video/mp4">
+    </video>
+
 <!--
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)

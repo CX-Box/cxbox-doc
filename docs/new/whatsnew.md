@@ -2,6 +2,7 @@
 
 ## **cxbox**:
 
+### [v3.0.2](/new/version3002/)
 ### [v3.0.0](/new/version300/)  
 ### [v2.0.19](/new/version2019/)
 ### [v2.0.18](/new/version2018/)

@@ -18,7 +18,7 @@ For the widget to work correctly, the following requirements must be met:
 ??? Example
     === "Default name fields"
 
-       You have the option to utilized default  field names for standard properties such as parentId, isLeaf. When doing so, you'll not need to establish mappings for these fields to standard criteria
+        You have the option to utilized default  field names for standard properties such as parentId, isLeaf. When doing so, you'll not need to establish mappings for these fields to standard criteria
 
         **Step1** Create field `parentId`, `isLeaf` to corresponding **DataResponseDTO**.
 

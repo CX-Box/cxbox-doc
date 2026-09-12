@@ -900,9 +900,9 @@ The difference from a [List widget](/widget/type/list/list) is **what is refresh
 The position of a newly created row inside its node is defined by **options**.**tree**.**insertPosition**: `start` places it before the already loaded rows of the node, `end` places it after them. see [options.tree](#optionstree)
 
 !!! info
-    Sibling records and parent records are **not** refreshed automatically. If an action changes them, the backend must return **PostAction.refreshBC**. This is the **only** difference in the backend code between a List widget and a Tree widget.
+    Sibling records and parent records are **not** refreshed automatically.
 
-    `refreshBC` collapses the whole tree, so the user starts from the root records again.
+    `PostAction.refreshBC` is not supported for a Tree widget in this release: the root page is loaded again, but the expanded nodes and their already loaded child records stay as they are. If an action changes other records, reload the view.
 
 
 **Requests**
@@ -913,3 +913,14 @@ Because only the node is refreshed, a Tree widget performs fewer requests than a
 | Delete        | `DELETE /data` + `GET /data` + `GET /row-meta` + `GET /count` | `DELETE /data` + `GET /row-meta`  |
 | Save          | `PUT /data` + `GET /data` + `GET /row-meta` + `GET /count`    | `PUT /data` + `GET /row-meta`     |
 | Cancel-create | `DELETE /data` + `GET /data` + `GET /row-meta` + `GET /count` | `DELETE /data` + `GET /row-meta`  |
+
+**Example**: the record action `custom Save` of the sample below updates the record; the tree refreshes only its node.
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3265tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/create/basic){:target="_blank"}
+
+```java
+--8<--
+{{ external_links.github_raw_doc }}/widgets/tree/actions/create/basic/MyExample3265Service.java:getActions
+--8<--
+```

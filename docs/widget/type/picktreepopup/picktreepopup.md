@@ -441,12 +441,12 @@ _not applicable_
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/cancelcreate/oncancel){:target="_blank"}
 
 
-<!--
+#### Edit
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
 
 There are three methods to create a record:
-  [Inline edit](#editline): You can edit a line directly.
 
+* [Inline edit](#editline): You can edit a line directly.
 
 * [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 

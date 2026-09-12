@@ -454,7 +454,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         ![confirm_form.png](confirm_form.png)
     === "Field level validation"
-        <!-- TODO screenshot -->
+        ![img_javax_stat_list.png](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -465,7 +465,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     === "Confirm"
         ![confirm_form.png](confirm_form.png)
     === "Field level validation"
-        <!-- TODO screenshot -->
+        ![img_javax_stat_form.png](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"

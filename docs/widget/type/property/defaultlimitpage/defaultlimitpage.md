@@ -22,7 +22,7 @@ The page limit can be configured in two ways:
 === "AssocListPopup"
      ![assoc_default_limit.gif](assoc_default_limit.gif)
 === "Tree"
-     <!-- TODO screenshot -->
+     ![tree_default_limit.png](tree_default_limit.png)
 === "PickTreePopup"
      <!-- TODO screenshot -->
 === "AssocTreePopup"

@@ -550,7 +550,7 @@ There are three methods to create a record:
 With `Edit with view`, you can edit the entity from a separate view that displays only the data entry form. Click on the "Edit" option in the three-dot menu.  
 
 ###### How does it look? 
-<!-- TODO screenshot -->
+![edit_with_view.png](edit_with_view.png)
 
 ###### How to add?
 ??? Example

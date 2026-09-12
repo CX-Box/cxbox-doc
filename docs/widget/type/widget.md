@@ -19,7 +19,7 @@ Steps
 === "AssocListPopup"
     ![assoc.png](assoclistpopup/assoc.png)
 === "AssocTreePopup"
-    <!-- TODO screenshot -->
+    ![choose_assoc.png](assoctreepopup/choose_assoc.png)
 === "EmptyWidget"
     ![emptywidget.png](emptywidget/emptywidget.png)
 === "FilePreview"
@@ -39,7 +39,7 @@ Steps
 === "PickListPopup"
     ![picklist.png](picklistpopup/picklist.png)
 === "PickTreePopup"
-    <!-- TODO screenshot -->
+    ![pickTreePopupBasic.png](picktreepopup/pickTreePopupBasic.png)
 === "StatsBlock"
     ![img_stat.png](statblocks/img_stat.png)
 === "Steps"

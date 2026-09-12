@@ -299,7 +299,7 @@
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 ### How does it look?
 === "List widget"
-    <!-- TODO screenshot -->
+    ![img_filtr_list.png](img_filtr_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
@@ -378,24 +378,24 @@
 ### How does it look?
 === "List widget"
     === "BusinessException"
-        <!-- TODO screenshot -->
+        ![img_business_error_list.png](img_business_error_list.png)
     === "RuntimeException"
-        <!-- TODO screenshot -->
+        ![img_runtime_error_list.png](img_runtime_error_list.png)
     === "Confirm"
-        <!-- TODO screenshot -->
+        ![confirm_list.png](confirm_list.png)
     === "Field level validation"
-        <!-- TODO screenshot -->
+        ![img_javax_stat_list.png](img_javax_stat_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"
     === "BusinessException"
-        <!-- TODO screenshot -->
+        ![img_business_error.png](img_business_error.png)
     === "RuntimeException"
-        <!-- TODO screenshot -->
+        ![img_runtime_error.png](img_runtime_error.png)
     === "Confirm"
-        <!-- TODO screenshot -->
+        ![confirm_form.png](confirm_form.png)
     === "Field level validation"
-        <!-- TODO screenshot -->
+        ![img_javax_stat_form.png](img_javax_stat_form.png)
 ### How to add?
 ??? Example
     === "BusinessException"
@@ -566,7 +566,7 @@ Which rows may be selected at all - nodes, leaves or both - is defined by the `o
 === "Info widget"
     _not applicable_
 === "Form widget"
-    <!-- TODO screenshot -->
+    ![img_selection_form.png](img_selection_form.png)
 
 #### How to add?
 ??? Example

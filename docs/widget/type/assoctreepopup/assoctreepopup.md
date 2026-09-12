@@ -38,7 +38,7 @@
 === "Assoc widget field "
     ![choose_assoc.png](choose_assoc.png)
 === "Assoc widget button"
-    <!-- TODO screenshot -->
+    ![choose_button.png](choose_button.png)
 
 
 
@@ -47,7 +47,7 @@
 === "Assoc widget field "
     ![choose_assoc.png](choose_assoc.png)
 === "Assoc widget button"
-    <!-- TODO screenshot -->
+    ![up_assoc.png](up_assoc.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
@@ -504,7 +504,7 @@ _not applicable_
 `Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
 
 ###### How does it look?
-<!-- TODO screenshot -->
+![assoc_edit_with_widget.png](assoc_edit_with_widget.png)
 
 ###### How to add?
 ??? Example

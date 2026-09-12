@@ -62,7 +62,7 @@ This function is available:
 === "PickListPopup widget"
     ![fulltextsearch_picklist.gif](fulltextsearch_picklist.gif)
 === "Tree widget"
-    <!-- TODO screenshot -->
+    ![fulltextsearch_tree.png](fulltextsearch_tree.png)
 === "AssocTreePopup widget"
     <!-- TODO screenshot -->
 === "PickTreePopup widget"

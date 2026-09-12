@@ -326,8 +326,6 @@
 
 `Filtering` allows you to search data based on criteria. Search uses in operator which compares ids in this case.
 
-!!! info
-    In this release the column filter of a `pickTree` field is a text search (`contains` by the displayed value). Picking the value from the popup (filter by `id`, as for `pickList`) is planned for the next release.
 !!! tips
     Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
 ### How does it look?

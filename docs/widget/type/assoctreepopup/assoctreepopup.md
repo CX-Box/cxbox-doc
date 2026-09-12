@@ -342,9 +342,6 @@ There are three methods to create a record:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![assoc_create_inline.png](assoc_create_inline.png)
 
@@ -373,7 +370,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
     ``` 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
--->
 
 ##### <a id="withwidget">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331create){:target="_blank"} ·
@@ -381,9 +377,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
 After filling the information in and clicking "Save", the new row is added to the assoc.
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![assoc_create_with_widget.png](assoc_create_with_widget.png)
 
@@ -428,7 +421,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
--->
 
 ##### <a id="withview">With view</a>
 _not applicable_
@@ -443,9 +435,6 @@ _not applicable_
 !!! tips
     Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
 
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![actiondelete.png](actiondelete.png)
 
@@ -471,7 +460,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
     ``` 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331delete){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/delete){:target="_blank"}
--->
 
 #### Edit
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
@@ -490,9 +478,6 @@ There are three methods to create a record:
 
 
 `Edit Inline` implies inline-edit. Click twice on the value you want to change.
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![assoc_edit_basic.png](assoc_edit_basic.png)
 
@@ -508,12 +493,8 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331edit){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
--->
 
 ##### <a id="editwithwidger">Inline-form</a>
-_not applicable_
-
-<!--
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331editinlineform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
 
@@ -565,7 +546,6 @@ _not applicable_
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331editinlineform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
--->
 
 ##### <a id="editwithview">With view</a>
 not applicable

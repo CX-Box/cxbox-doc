@@ -228,9 +228,6 @@ There are three methods to create a record:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![create_inline.png](create_inline.png)
 
@@ -260,7 +257,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
--->
 
 ##### <a id="withwidget">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3348listinlineform){:target="_blank"} ·
@@ -268,9 +264,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
 After filling the information in and clicking "Save", the new row is added to the assoc.
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![create_with_widget.png](create_with_widget.png)
 
@@ -315,7 +308,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3348listinlineform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
--->
 
 ##### <a id="withview">With view</a>
 _not applicable_
@@ -459,7 +451,7 @@ There are three methods to create a record:
 
 `Edit Inline` implies inline-edit. Click twice on the value you want to change.
 
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
+_Not confirmed in this release: in the sample the popup could not be opened from the list row by the autotest. The section is kept so that the behaviour can be re-checked._
 
 <!--
 ###### How does it look?
@@ -492,9 +484,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
 
 `Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
 
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![edit_inline_form.png](edit_inline_form.png)
 
@@ -527,7 +516,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3353listinlineform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/edit){:target="_blank"}
--->
 
 #### **<a id="standart_delete">Delete</a>**
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3354form){:target="_blank"} ·
@@ -538,9 +526,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
 !!! tips
     Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
 
-_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
-
-<!--
 ###### How does it look?
 ![actiondelete.png](actiondelete.png)
 
@@ -572,7 +557,6 @@ _Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the b
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3354form){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/delete){:target="_blank"}
--->
 
 ### Additional properties
 #### Customization of displayed columns

@@ -228,6 +228,9 @@ There are three methods to create a record:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
+
+<!--
 ###### How does it look?
 ![create_inline.png](create_inline.png)
 
@@ -257,13 +260,17 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
- 
+-->
+
 ##### <a id="withwidget">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3348listinlineform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
 After filling the information in and clicking "Save", the new row is added to the assoc.
+_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
+
+<!--
 ###### How does it look?
 ![create_with_widget.png](create_with_widget.png)
 
@@ -308,6 +315,7 @@ After filling the information in and clicking "Save", the new row is added to th
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3348listinlineform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
+-->
 
 ##### <a id="withview">With view</a>
 _not applicable_
@@ -439,7 +447,6 @@ _not applicable_
 There are three methods to create a record:
   [Inline edit](#editline): You can edit a line directly.
 
-* Inline edit: not applicable.
 
 * [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 
@@ -447,25 +454,125 @@ There are three methods to create a record:
 
  
 ##### <a id="editline">Inline edit </a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3353listinline){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/edit){:target="_blank"}
+
+`Edit Inline` implies inline-edit. Click twice on the value you want to change.
+
+_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
+
+<!--
 ###### How does it look?
-Not supported in this release, see `CXBOX-1369`.
+![edit_inline.png](edit_inline.png)
 
 ###### How to add?
-Not supported in this release, see `CXBOX-1369`.
+??? Example
+
+    **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder** and `doUpdateEntity` to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/MyEntity3353PickPickService.java:doUpdateEntity
+    --8<--
+    ```
+
+    **Step2** Add button `save` to corresponding **.widget.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inline/myEntity3353PickTreePopupInline.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3353listinline){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/edit){:target="_blank"}
+-->
 
 ##### <a id="editwithwidger">Inline-form</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3353listinlineform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/edit){:target="_blank"}
+
+`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
+
+_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
+
+<!--
 ###### How does it look?
-Not supported in this release, see `CXBOX-1369`.
+![edit_inline_form.png](edit_inline_form.png)
 
 ###### How to add?
-Not supported in this release, see `CXBOX-1369`.
+??? Example
+
+    **Step1** Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inlineform/myEntity3353FormForEditPickTreeInlineForm.widget.json
+    --8<--
+    ```
+
+    **Step2** Add widget.json with type `Form` to corresponding **.view.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/myexample3353listinlineform.view.json
+    --8<--
+    ```
+
+    **Step3** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+
+    `options`.`edit`: Name widget that appears when you click a button
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inlineform/myEntity3353PickTreeInlineForm.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3353listinlineform){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/edit){:target="_blank"}
+-->
 
 #### **<a id="standart_delete">Delete</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3354form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/delete){:target="_blank"}
+
+`Delete` remove an existing record.
+
+!!! tips
+    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
+
+_Unavailable in this release, see `CXBOX-1369`. The sample is kept so that the behaviour can be re-checked._
+
+<!--
 ###### How does it look?
-Not supported in this release, see `CXBOX-1369`.
+![actiondelete.png](actiondelete.png)
 
 ###### How to add?
-Not supported in this release, see `CXBOX-1369`.
+??? Example
+
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**.
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/delete/forpicktreepopup/MyEntity3354PickPickService.java:getActions
+    --8<--
+    ```
+    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/delete/forpicktreepopup/MyEntity3354PickPickService.java:deleteEntity
+    --8<--
+    ```
+    **Step3** Add button ot group button to corresponding **.widget.json**.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/delete/forpicktreepopup/myEntity3354PickPickPickTreePopup.widget.json
+    --8<--
+    ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3354form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/delete){:target="_blank"}
+-->
 
 ### Additional properties
 #### Customization of displayed columns

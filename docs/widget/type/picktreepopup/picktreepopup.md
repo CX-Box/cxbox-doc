@@ -1,96 +1,47 @@
 # PickTreePopup
 
-`PickTreePopup` is a component that allows the user to select a value from a Popup tree of entities.
-
-It is the tree-shaped analogue of [PickListPopup](/widget/type/picklistpopup/picklistpopup): the records are shown not as a flat list, but as a hierarchical, lazily loaded tree. There are no checkboxes, a record is picked by a click on the row.
-
+`PickTreePopup` is a component that allows the user to select a value from a Popup list of entities.
+ 
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
-
-For the widget to work correctly, the same requirements as for the [Tree](/widget/type/tree/tree) widget must be met.
-
-The minimal data set of a record is:
-
-* `id` — the identifier of the record.
-* `parentId` — the identifier of the parent record. For a root record the value is `null`.
-  The backend must **always** return this field, and the field must be **filterable**. see more [Lazy load](/widget/type/tree/tree/#lazyload)
-* a name (title) field — the value shown in the tree column.
-* `isLeaf` — a computed boolean flag. The default value is `false`. The value `true` means that the record has no child records, so the expand arrow is not displayed for it.
-
-!!! info
-    The **first** field of the `fields` array is rendered as the tree column: the expand arrow and the indent of the nesting level are placed in it (Ant Design Tree style). All the other fields are rendered as ordinary columns.
-
-    `parentId` and `isLeaf` are service fields. They must be declared in the widget with type **hidden**.
-
-All tree specific settings are placed in **options**.**tree**. see more [options.tree](/widget/type/tree/tree/#optionstree)
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3343){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/basic){:target="_blank"}
 
 ### How does it look?
 ![pickTreePopupBasic.png](pickTreePopupBasic.png)
 
 ??? Example
-
-    **Step1** Create field `parentId`, `isLeaf` to corresponding **DataResponseDTO**.
-
-    * `parentId` — identifies the parent record of the current record and defines the parent-child relationship in the tree. If the record is a root node, `parentId` must be empty. The field must be **filterable**.
-    * `isLeaf` — indicates whether the record can be expanded. The value `true` means that the record cannot be expanded, while `false` means that the record can be expanded to display child records.
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/Myexample3261PickDTO.java
-    --8<--
-    ```
-
-    **Step2** Add field with type **pickTree**  see more [Fields](#fields)
+ 
+    **Step1** Add field with type **pickTree**  see more [Fields](#fields)
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/MyExample3263List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/MyExample3351List.widget.json
     --8<--
     ```
-
-    **Step3** Create file **_.widget.json_** with type = **"PickTreePopup"**
-
-    Add existing field to a popup widget. see more [Fields](#fields)
-
-    The widget must contain the `parentId` and `isLeaf` fields. These fields should be configured as **hidden**.
+ 
+    **Step2** Add widget and popup widget to corresponding ****_.view.json_** **.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261TreePickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/myexample3351list.view.json
     --8<--
     ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3343){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/basic){:target="_blank"}
 
-    **Step4** Add a dependency on parent BC for popup BC for to corresponding **EnumBcIdentifier**
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/CxboxMyExample3263Controller.java
-    --8<--
-    ```
-
-    **Step5** Add widget and popup widget to corresponding ****_.view.json_** **.
-
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/views/myexample3261list.view.json
-    --8<--
-    ```
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
-
+ 
 ## Title
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listall){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3344){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/title){:target="_blank"}
 
 ### Title Basic
-There are 3 types of titles for a PickTree Popup:
+There are 3 types of titles for a Picktree Popup:
 
-* `constant title`: displays a fixed piece of text which cannot be changed.
+* `constant title`: displays a fixed piece of text which cannot be changed. 
 * `constant title empty`: shows no text.
 * `calculated title`: displays a dynamic piece of text, meaning it can change based on business logic or data in the application.
-
+ 
 #### How does it look?
 === "Constant title"
     ![pickTreePopupWithTitle.png](pickTreePopupWithTitle.png)
@@ -101,34 +52,48 @@ There are 3 types of titles for a PickTree Popup:
 
 
 #### How to add?
+!!! info
+    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/tree/tree/#optionstree).
+
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/myEntity3267PicklistPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/title/withtitle/myEntity3344PickPickTreePopup.widget.json
         --8<--
         ```
-
+ 
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
-
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/title/withouttitle/myEntity3345PickPickTreePopup.widget.json
+        --8<--
+        ```
+ 
     === "Calculated title"
+        <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
-
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/title/calculatedtitle/myEntity3347PickPickTreePopup.widget.json
+        --8<--
+        ```
+ 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listcolorconstall){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3341/view/myexample3341formcolorconst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listall){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3341/view/myexample3341form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/colortitle){:target="_blank"}
 
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
@@ -145,28 +110,32 @@ There are 3 types of titles for a PickTree Popup:
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/MyExample3267DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/MyEntity3342PickDTO.java:colorDTO
         --8<--
-        ```
-
+        ```  
+ 
         **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
 
-        Add in `title` field with `${customField}`
+        Add in `title` field with `${customField}` 
 
-        ```
-        "bgColorKey": "customFieldColor"
-        ```
-
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myEntity3342PickTreePopupColorConst.widget.json
+        --8<--
+        ```       
+ 
     === "Constant color"
-
+ 
         Add **"bgColor"** :  `HEX color`  to .widget.json.
 
-        Add in `title` field with `${customField}`
+        Add in `title` field with `${customField}` 
 
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myEntity3342PickTreePopupColorConst.widget.json
+        --8<--
         ```
-        "bgColor": "#F5A623"
-        ```
-
+ 
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -205,10 +174,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
   Type: String(required).
 
-!!! info
-    The **first** field of the `fields` array is rendered as the tree column.
 
-    The fields `parentId` and `isLeaf` must be declared with type **hidden**.
 
 ### How to add?
 ??? Example
@@ -216,7 +182,7 @@ Fields Configuration. The fields array defines the individual fields present wit
     === "With plugin(recommended)"
         **Step 1** Download plugin
             [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
-
+    
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
     === "Example of writing code"
@@ -224,10 +190,10 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261TreePickListPopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/picktreepopup/picktree/myEntity3351PickPickPickTreePopup.widget.json
              --8<--
           ```
-
+ 
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.
 
@@ -241,9 +207,9 @@ Fields Configuration. The fields array defines the individual fields present wit
 * `Edit`  -  _not applicable_
 * [`Save`](#standart_save): Action to store the data entered or modified
 * [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
+ 
 
-
-####  <a id="standart_create">Create</a>
+####  <a id="standart_create">Create</a>  
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:
 
 There are three methods to create a record:
@@ -257,47 +223,229 @@ There are three methods to create a record:
 
 * [With view](#withview): not applicable.
 
-!!! info
-    The position of a newly created row inside its node is defined by **options**.**tree**.**insertPosition** (`start`, `end`). see more [options.tree](/widget/type/tree/tree/#optionstree)
-
 ##### <a id="createinline">Inline</a>
-With `Line Addition`, a new empty row is immediately added to the top of the widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
+
+With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
 ###### How does it look?
 ![create_inline.png](create_inline.png)
 
 ###### How to add?
-The action is configured in the same way as for the tree widget, see [Inline](/widget/type/tree/tree/#createinline).
+??? Example
 
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/MyEntity3348PickPickService.java:getActions
+    --8<--
+    ```
+
+    **Step2** Add button `create` to corresponding **.widget.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myEntity3348PickPickTreeCreateInlinePopup.widget.json
+    --8<--
+    ```
+ 
+    **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/MyEntity3348PickPickMeta.java:buildRowDependentMeta
+    --8<--
+    ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
+ 
 ##### <a id="withwidget">Inline-form</a>
-`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the tree of entities and the form for adding a new row.
-After filling the information in and clicking "Save", the new row is added to the tree.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3348listinlineform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
+
+`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
+After filling the information in and clicking "Save", the new row is added to the assoc.
 ###### How does it look?
 ![create_with_widget.png](create_with_widget.png)
 
 ###### How to add?
-The action is configured in the same way as for the tree widget, see [Inline-form](/widget/type/tree/tree/#withwidget).
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/MyEntity3348PickPickService.java:getActions
+    --8<--
+    ```
+    **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/MyEntity3348PickPickMeta.java:buildRowDependentMeta
+    --8<--
+    ```
+    **Step3** Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myEntity3348PickPickTreePopupForm.widget.json
+    --8<--
+    ```
+ 
+     **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myexample3348listinlineform.view.json
+    --8<--
+    ```
+ 
+     **Step5** Add button `create` and widget with type `Form` to corresponding **.widget.json**.
+       
+    `options`.`create`: Name widget that appears when you click a button
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myEntity3348PickPickTreePopup.widget.json
+    --8<--
+    ``` 
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3348listinlineform){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/create){:target="_blank"}
 
 ##### <a id="withview">With view</a>
 _not applicable_
 
 #### Delete
 _not applicable_
-
+ 
 #### Edit
 _not applicable_
 
 ###  **<a id="standart_save">Save</a>**
-`Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3355form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/save){:target="_blank"}
 
+`Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
+ 
 ###### How does it look?
 ![actionsave.png](actionsave.png)
 
+###### How to add?
+??? Example
+
+    **Step1** Add action *save* to corresponding **VersionAwareResponseService**. 
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/save/MyExample3355Service.java:getActions
+    --8<--
+    ```  
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/save/MyExample3355Form.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3355form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/save){:target="_blank"}
+
+
 ### **<a id="standart_cancel_create">Cancel-create</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3356form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/cancelcreate/basic){:target="_blank"}
+
 `Cancel-create` abort the creation of a new record, discarding any input without saving
-
+ 
 ###### How does it look?
-![actioncancel.png](actioncancel.png)
+=== "Basic"
+    ![actioncancel.png](actioncancel.png)
+=== "With drilldown"
+    <!-- TODO screenshot -->
 
+###### How to add?
+??? Example
+    === "Basic"
+
+        **Step1** Add standart action *cancelCreate* to corresponding **VersionAwareResponseService**. 
+        The interface displays "cancelCreate" as the default option.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/basic/MyEntity3356PickPickService.java:getActions
+        --8<--
+        ```
+         **Step2** Add action *cancel-create* to corresponding **PickTreePopup**. 
+ 
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/basic/myEntity3356PickPickPickTreePopup.widget.json
+        --8<--
+        ```
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3356form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/cancelcreate/basic){:target="_blank"}
+
+    === "With postAction"
+        **Step1** Add action *cancel* to corresponding **VersionAwareResponseService** with postAction. 
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/postaction/MyEntity3356PickPostActionPickService.java:getActions
+        --8<--
+        ``` 
+ 
+        **Step2** Add button ot group button to corresponding **.widget.json**.
+       
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/postaction/myEntity3356PickPostActionPickPickTreePopup.widget.json
+        --8<--
+        ```
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3356formpostaction){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/cancelcreate/postaction){:target="_blank"}
+
+    === "Method onCancel"
+        !!! info
+            Only for **Inner** Business Component see more [Business Component](/environment/businesscomponent/businesscomponent/)
+
+        **Step1** Add standart action *cancelCreate* to corresponding **VersionAwareResponseService**. 
+    
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/oncancel/MyEntity3356PickOnCancelPickService.java:getActions
+        --8<--
+        ```
+        **Step2** Add method *onCancel* to corresponding **VersionAwareResponseService**. 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/oncancel/MyEntity3356PickOnCancelPickService.java:onCancel
+        --8<--
+        ```
+        **Step3** Add button ot group button to corresponding **.widget.json**.
+       
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/oncancel/myEntity3356PickOnCancelPickPickTreePopup.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3356formoncancel){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/actions/cancelcreate/oncancel){:target="_blank"}
+
+
+<!--
+`Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
+
+There are three methods to create a record:
+  [Inline edit](#editline): You can edit a line directly.
+
+* Inline edit: not applicable.
+
+* [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
+
+* With view: not applicable
+
+ 
 ##### <a id="editline">Inline edit </a>
 ###### How does it look?
 Not supported in this release, see `CXBOX-1369`.
@@ -335,11 +483,9 @@ not applicable
 #### Pagination
 `Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 see [Pagination](/widget/type/property/pagination/pagination)
+
 #### Export to Excel
 not applicable
-
-!!! info
-    `Export to Excel` is **not available** for the tree widgets in this release.
 
 #### <a id="lazyload">Lazy load</a>
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination){:target="_blank"}

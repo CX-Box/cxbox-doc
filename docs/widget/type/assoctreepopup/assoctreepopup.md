@@ -1,35 +1,9 @@
 # AssocTreePopup
 
-`AssocTreePopup` widget is a popup component designed to the selection of multiple values from a hierarchical, lazily loaded tree.
-
-It is the tree-shaped analogue of [AssocListPopup](/widget/type/assoclistpopup/assoclistpopup): the records are shown not as a flat list, but as an expandable tree, and the user marks the required records with checkboxes.
-
+`AssocTreePopup` widget is a popup component designed to the selection of multiple values.
 ## Basics
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
-
-For the widget to work correctly, the same requirements as for the [Tree](/widget/type/tree/tree) widget must be met.
-
-The minimal data set of a record is:
-
-* `id` — the identifier of the record.
-* `parentId` — the identifier of the parent record. For a root record the value is `null`.
-  The backend must **always** return this field, and the field must be **filterable**. see more [Lazy load](/widget/type/tree/tree/#lazyload)
-* a name (title) field — the value shown in the tree column.
-* `isLeaf` — a computed boolean flag. The default value is `false`. The value `true` means that the record has no child records, so the expand arrow is not displayed for it.
-
-!!! info
-    The **first** field of the `fields` array is rendered as the tree column: the checkbox, the expand arrow and the indent of the nesting level are placed in it (Ant Design Tree style). All the other fields are rendered as ordinary columns.
-
-    `parentId` and `isLeaf` are service fields. They must be declared in the widget with type **hidden**.
-
-All tree specific settings are placed in **options**.**tree**. see more [options.tree](/widget/type/tree/tree/#optionstree)
-
-There are two ways to use the widget:
-
-* `Assoc widget field` — the popup is opened from a field with type `multivalueTree`. The values already selected are shown as tags at the top of the popup.
-* `Assoc widget button` — the popup is opened by the `associate` button. The selected values are added to a separate widget.
-
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3330){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/base){:target="_blank"}
 ### How does it look?
 === "Assoc widget field"
     === "List"
@@ -49,13 +23,13 @@ There are two ways to use the widget:
 !!! info
 
     The button-based association differs from the MultiValue field association in the following way:
-
+    
     Previously selected records are not shown.
-
+    
     Records selected by the user in the opened association are also not displayed as selected chips.
-
+    
     This behavior occurs because the button-based association is not directly tied. Instead, it is designed to add records to a table.
-
+    
     Recommendation
     If you plan to use a button-based association, you must add filtering to the opened association in order to exclude records that have already been selected and added to the table.
 
@@ -79,52 +53,20 @@ There are two ways to use the widget:
 ??? Example
     === "Assoc widget field"
         === "List"
-            **Step1** Create field `parentId`, `isLeaf` to corresponding **DataResponseDTO**.
-
-            * `parentId` — identifies the parent record of the current record and defines the parent-child relationship in the tree. If the record is a root node, `parentId` must be empty. The field must be **filterable**.
-            * `isLeaf` — indicates whether the record can be expanded. The value `true` means that the record cannot be expanded, while `false` means that the record can be expanded to display child records.
-
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/inner/Myexample3261Pick0DTO.java
-            --8<--
-            ```
-
-            **Step2** Add field with type **multivalueTree** see more [Fields](#fields)
+            **Step1** Add field with type **multivalueTree** see more [Fields](#fields)
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/inner/MyExample3263List.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330List.widget.json
             --8<--
             ```
-
-            **Step3** Create file **_.widget.json_** with type = **"AssocTreePopup"**
-
-            Add existing field to assoc widget. see more [Fields](#fields)
-
-            The widget must contain the `parentId` and `isLeaf` fields. These fields should be configured as **hidden**.
-
+       
+            **Step2** Add widget to corresponding ****_.view.json_** **.
+        
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330list.view.json
             --8<--
-            ```
-
-            **Step4** Add a dependency on parent BC for popup BC for to corresponding **EnumBcIdentifier**
-
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/CxboxMyExample3263Controller.java
-            --8<--
-            ```
-
-            **Step5** Add widget and popup widget to corresponding ****_.view.json_** **.
-
-            ```json
-            --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/views/myexample3261list.view.json
-            --8<--
-            ```
         === "Info"
             _not applicable_
 
@@ -133,64 +75,76 @@ There are two ways to use the widget:
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/inner/MyExample3263List.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330Form.widget.json
             --8<--
             ```
-
+       
             **Step2** Add widget to corresponding ****_.view.json_** **.
-
+        
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/views/myexample3261list.view.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330form.view.json
             --8<--
             ```
     === "Assoc widget button"
         === "List"
-            **Step1** Add button `associate` and method `doAssociate` to corresponding **VersionAwareResponseService**.
+            **Step1** Add button `associate` to corresponding **VersionAwareResponseService**. 
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330Service.java:getActions
+            --8<--
+            ```
+            **Step2** Add method `doAssociate` to corresponding **VersionAwareResponseService**. 
+
+            `associate`
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/inner/Myexample3263Service.java
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330Service.java:doAssociate
+            --8<--
+            ```
+            method `addNewRecords`
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330Service.java:addNewRecords
             --8<--
             ```
 
-            **Step2** Create file **_.widget.json_** with type = **"AssocTreePopup"** and name = parent bc + "Assoc"
+            **Step3** Create file **_.widget.json_** with type = **"assoc"** and name = parent bc + "Assoc"
 
             Add existing field to assoc widget. see more [Fields](#fields)
 
-            The widget must contain the `parentId` and `isLeaf` fields. These fields should be configured as **hidden**.
-
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreeButton.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330Assoc.widget.json
             --8<--
             ```
+            **Step4** Add a dependency on parent BC for Assoc BC for to corresponding **EnumBcIdentifier**
+        
+             ```java
+             --8<--
+             {{ external_links.github_raw_doc }}/widgets/assoctree/base/CxboxMyExample3330Controller.java
+             --8<--
+             ```
 
-            **Step3** Add a dependency on parent BC for Assoc BC for to corresponding **EnumBcIdentifier**
-
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/CxboxMyExample3263Controller.java
-            --8<--
-            ```
-
-            **Step4** Add assoc widget to corresponding ****_.view.json_** **.
-
+             **Step5** Add assoc widget to corresponding ****_.view.json_** **.
+        
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/tree/base/views/myexample3261list.view.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330list.view.json
             --8<--
             ```
-
+ 
         === "Info"
               _not applicable_
 
         === "Form"
               _not applicable_
 
+
 ## <a id="Title">Title</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listall){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle/forfields){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3336){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/title){:target="_blank"}
 
 ### Title Basic
 `Title` for widget (optional)
@@ -207,40 +161,52 @@ There are types of:
     ![empytitle.png](empytitle.png)
 
 #### How to add?
+!!! info
+    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/tree/tree/#optionstree).
+
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/forfields/myEntity3267MultiMultiAssocTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoctree/title/myEntity3336MultiPickAssocTreePopup.widget.json
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listall){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle/forfields){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3336){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/title){:target="_blank"}
 
     === "Constant title empty"
-
+    
         **Step1** Delete parameter **title** to **_.widget.json_**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/assoctree/title/myEntity3336MultiPickAssocEmptyListPopup.widget.json
+        --8<--
+        ```
+    
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3336/view/myexample3336emptytitle){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/title){:target="_blank"}
+    
 
 ### Title Color
 `Title Color` allows you to specify a color for a title. It can be constant or calculated.
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listcolorconstall){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3329/view/myexample3329formcolorconst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/colortitle){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listall){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3329/view/myexample3329form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/colortitle){:target="_blank"}
 
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalueTree, multivalueHover.
 
 ##### How does it look?
 ![colorwidget.png](colorwidget.png)
@@ -252,34 +218,38 @@ There are types of:
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/MyExample3267DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/color/MyEntity3332MultiPickDTO.java
         --8<--
-        ```
-
+        ```  
+ 
         **Step 2** Add **"bgColorKey"** :  `custom field for color` and  to .widget.json.
 
-        Add in `title` field with `${customField}`
+        Add in `title` field with `${customField}` 
 
-        ```
-        "bgColorKey": "customFieldColor"
-        ```
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/color/myEntity3332MultiPickAssocTreePopup.widget.json
+        --8<--
+        ``` 
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listall){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3329/view/myexample3332color){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/colortitle/color){:target="_blank"}
 
     === "Constant color"
-
+ 
         Add **"bgColor"** :  `HEX color`  to .widget.json.
 
-        Add in `title` field with `${customField}`
+        Add in `title` field with `${customField}` 
 
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/colorconst/myEntity3332MultiPickAssocTreePopup0.widget.json
+        --8<--
         ```
-        "bgColor": "#F5A623"
-        ```
-
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3267/view/myexample3267listcolorconstall){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/colortitle){:target="_blank"}
-
+ 
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3329/view/myexample3332colorconst){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/colortitle/colorconst){:target="_blank"}
+ 
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this form belongs.
 A business component represents a specific part of a system that handles a particular business logic or data.
@@ -287,7 +257,7 @@ A business component represents a specific part of a system that handles a parti
 see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="Showcondition">Show condition</a>
-
+  
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
@@ -318,10 +288,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
   Type: String(required).
 
-!!! info
-    The **first** field of the `fields` array is rendered as the tree column.
 
-    The fields `parentId` and `isLeaf` must be declared with type **hidden**.
 
 ### How to add?
 ??? Example
@@ -329,7 +296,7 @@ Fields Configuration. The fields array defines the individual fields present wit
     === "With plugin(recommended)"
         **Step 1** Download plugin
             [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
-
+    
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
     === "Example of writing code"
@@ -337,7 +304,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/assoctree/base/myEntity3330MultiAssocTreePopup.widget.json
              --8<--
           ```
 
@@ -355,8 +322,8 @@ Fields Configuration. The fields array defines the individual fields present wit
 * [`Save`](#standart_save): Action to store the data entered or modified
 * [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
 
-As for assoc tree widget, there are several actions.
-####  <a id="standart_create">Create</a>
+As for assoc widget, there are several actions.
+#### Create
 `Create` button enables you to create a new value by clicking the `Add` button. This action can be performed in three different ways, feel free to choose any, depending on your logic of application:
 
 There are three methods to create a record:
@@ -370,30 +337,99 @@ There are three methods to create a record:
 
 * [With view](#withview): not applicable.
 
-!!! info
-    The position of a newly created row inside its node is defined by **options**.**tree**.**insertPosition** (`start`, `end`). see more [options.tree](/widget/type/tree/tree/#optionstree)
-
 ##### <a id="createinline">Inline</a>
-With `Line Addition`, a new empty row is immediately added to the top of the widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331inlinecreate){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
+
+With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
 ###### How does it look?
 ![assoc_create_inline.png](assoc_create_inline.png)
 
 ###### How to add?
-The action is configured in the same way as for the tree widget, see [Inline](/widget/type/tree/tree/#createinline).
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueService.java:getActions
+    --8<--
+    ```
+ 
+    **Step2** Add button `create` to corresponding **.widget.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myEntity3331MultiAssocTreePopupCreateAssocTreePopup.widget.json
+    --8<--
+    ```
+
+    **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
+    --8<--
+    ``` 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 ##### <a id="withwidget">Inline-form</a>
-`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the tree of entities and the form for adding a new row.
-After filling the information in and clicking "Save", the new row is added to the tree.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331create){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
+
+`Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
+After filling the information in and clicking "Save", the new row is added to the assoc.
 ###### How does it look?
 ![assoc_create_with_widget.png](assoc_create_with_widget.png)
 
 ###### How to add?
-The action is configured in the same way as for the tree widget, see [Inline-form](/widget/type/tree/tree/#withwidget).
+??? Example
+
+    **Step1** Add button `create` to corresponding **VersionAwareResponseService**. 
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueService.java:getActions
+    --8<--
+    ```
+    **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}}/widgets/assoc/actions/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
+    --8<--
+    ```
+     **Step3** Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myEntity3331MultiFormForPopup.widget.json
+    --8<--
+    ```
+ 
+     **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myexample3331inlinecreate.view.json
+    --8<--
+    ```
+
+     **Step5** Add button `create` and widget with type `Form` to corresponding **.widget.json**.
+       
+    `options`.`create`: Name widget that appears when you click a button
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myEntity3331MultiAssocTreePopup.widget.json
+    --8<--
+    ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 ##### <a id="withview">With view</a>
 _not applicable_
 
+
 #### **<a id="standart_delete">Delete</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331delete){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/delete){:target="_blank"}
+
 `Delete` remove an existing record.
 
 !!! tips
@@ -403,29 +439,117 @@ _not applicable_
 ![actiondelete.png](actiondelete.png)
 
 ###### How to add?
-The action is configured in the same way as for the tree widget, see [Actions](/widget/type/tree/tree/#actions).
+??? Example
 
-#### <a id="standart_edit">Edit</a>
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Service.java:getActions
+    --8<--
+    ```  
+ 
+    **Step2** Add button ot group button to corresponding **.widget.json**.
+   
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/save/myEntity3331MultiAssocSaveListPopup.widget.json
+    --8<--
+    ``` 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331delete){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/delete){:target="_blank"}
+
+#### Edit
 `Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
 
 There are three methods to create a record:
 
 * [Inline edit](#editline): You can edit a line directly.
 
-* [Inline-form](#editwithwidger): You can edit data using a form widget without leaving your current view.
+* [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
 
 * [With view](#editwithview): not applicable
 
 ##### <a id="editline">Inline edit </a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331edit){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
+
+
 `Edit Inline` implies inline-edit. Click twice on the value you want to change.
 ###### How does it look?
 ![assoc_edit_basic.png](assoc_edit_basic.png)
 
 ###### How to add?
-The action is configured in the same way as for the tree widget, see [Inline edit](/widget/type/tree/tree/#editline).
+??? Example
+
+    **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+ 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331edit){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
 
 ##### <a id="editwithwidger">Inline-form</a>
 _not applicable_
+
+<!--
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331editinlineform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
+
+`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
+
+###### How does it look?
+<!-- TODO screenshot -->
+
+###### How to add?
+??? Example
+
+    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Service.java:getActions
+    --8<--
+    ```
+
+    **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+ 
+    **Step2**  Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/MyExample3331FormEdit.widget.json
+    --8<--
+    ```
+ 
+     **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/myexample3331editinlineform.view.json
+    --8<--
+    ```
+
+     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+       
+    `options`.`edit`: Name widget that appears when you click a button
+        
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/MyExample3331Edit.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331editinlineform){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
+-->
 
 ##### <a id="editwithview">With view</a>
 not applicable
@@ -446,11 +570,9 @@ not applicable
 #### Pagination
 `Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 see [Pagination](/widget/type/property/pagination/pagination)
+
 #### Export to Excel
 not applicable
-
-!!! info
-    `Export to Excel` is **not available** for the tree widgets in this release.
 
 #### <a id="lazyload">Lazy load</a>
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination){:target="_blank"}

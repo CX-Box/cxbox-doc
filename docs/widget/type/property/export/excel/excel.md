@@ -4,6 +4,9 @@
 This function is available:
  
 * for widgets: [List](/widget/type/list/list),only mode **basic** [AdditionalList](/widget/type/additionallist/additionallist.md),[GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
+
+!!! info
+    Export to Excel is **not available** for [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup) and [PickTreePopup](/widget/type/picktreepopup/picktreepopup) in this release, see `CXBOX-1369`.
 * for fields: Hint, Multivalue, Inline, Pick List,Radio, Money, Percent, Number, Dictionary, Date Time With Seconds, Date, Checkbox, Date Time, Text, Input.
 See more [field types](/widget/fields/fieldtypes/)
 

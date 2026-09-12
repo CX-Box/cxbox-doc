@@ -18,6 +18,8 @@ Steps
     ![basic.png](additionallist/basic.png)
 === "AssocListPopup"
     ![assoc.png](assoclistpopup/assoc.png)
+=== "AssocTreePopup"
+    <!-- TODO screenshot -->
 === "EmptyWidget"
     ![emptywidget.png](emptywidget/emptywidget.png)
 === "FilePreview"
@@ -36,6 +38,8 @@ Steps
     ![list.png](list/list.png)
 === "PickListPopup"
     ![picklist.png](picklistpopup/picklist.png)
+=== "PickTreePopup"
+    <!-- TODO screenshot -->
 === "StatsBlock"
     ![img_stat.png](statblocks/img_stat.png)
 === "Steps"
@@ -46,6 +50,7 @@ Steps
 *   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the right**.
 *   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the right**.
 *   [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
+*   [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup) is a popup component designed to the selection of multiple values from a hierarchical, lazily loaded tree.
 *   [EmptyWidget widget](/widget/type/emptywidget/emptywidget) is a component for displaying text.
 *   [FilePreview widget](/widget/type/filepreview/filepreview) is a component for file viewing. It always occupies 50% of the main screen area and stays fixed at the top while scrolling.
 *   [Form widget](/widget/type/form/form) is a component for data viewing and editing.
@@ -55,9 +60,10 @@ Steps
 *   [Info widget](/widget/type/info/info) is a component only for data viewing.
 *   [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
 *   [PickListPopup widget](/widget/type/picklistpopup/picklistpopup) is a component that allows the user to select a value from a Popup list of entities.
+*   [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup) is a component that allows the user to select a value from a Popup tree of entities.
 *   [StatsBlock widget](/widget/type/statblocks/statblocks) is a tool designed to display aggregated data in a visually accessible format.
 *   [Steps](/widget/type/steps/steps) is used to define and manage sequential actions or stages within a business process in the application. They allow developers and users to structure complex behavior into smaller, manageable steps, improving readability, maintainability.
-*   [Tree widget](/widget/type/tree2/tree2) presents hierarchical records as an expandable tree, so users can browse parent and child rows in one table.
+*   [Tree widget](/widget/type/tree/tree) presents hierarchical records as an expandable tree, so users can browse parent and child rows in one table.
  
 ## Structure .widget.json
 

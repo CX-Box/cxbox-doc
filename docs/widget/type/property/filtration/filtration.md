@@ -19,6 +19,9 @@ This function is available:
 * [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)  
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+* [Tree widget](/widget/type/tree/tree)
+* [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+* [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 
 ## <a id="by_fulltextsearch">by fulltextsearch</a>
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query
@@ -40,6 +43,16 @@ This function is available:
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 ) 
+* [Tree widget](/widget/type/tree/tree)
+(  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
+)
+* [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+(  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
+)
+* [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
+(  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+)
 
 ### How does it look?
 === "List widget"
@@ -48,6 +61,12 @@ This function is available:
     ![fulltextsearch_assoc.gif](fulltextsearch_assoc.gif)
 === "PickListPopup widget"
     ![fulltextsearch_picklist.gif](fulltextsearch_picklist.gif)
+=== "Tree widget"
+    <!-- TODO screenshot -->
+=== "AssocTreePopup widget"
+    <!-- TODO screenshot -->
+=== "PickTreePopup widget"
+    <!-- TODO screenshot -->
 ### How to add?
 ??? Example
 
@@ -177,6 +196,11 @@ This function is available:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
 )
 
+* [Tree](/widget/type/tree/tree) (
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+)
+
 * [AdditionalList](/widget/type/additionallist/additionallist.md) (
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
@@ -246,6 +270,10 @@ This function is available:
 * [List](/widget/type/list/list)
   ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"}
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
+  )
+* [Tree](/widget/type/tree/tree)
+  ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
   )
 * [AdditionalList](/widget/type/additionallist/additionallist.md)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}

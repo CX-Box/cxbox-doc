@@ -4,6 +4,9 @@ This function is available for:
 * [List](/widget/type/list/list),
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+* [Tree widget](/widget/type/tree/tree)
+* [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+* [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 
 The page limit can be configured in two ways: 
 
@@ -18,6 +21,12 @@ The page limit can be configured in two ways:
      ![picklistpopup_default_limit.gif](picklistpopup_default_limit.gif)
 === "AssocListPopup"
      ![assoc_default_limit.gif](assoc_default_limit.gif)
+=== "Tree"
+     <!-- TODO screenshot -->
+=== "PickTreePopup"
+     <!-- TODO screenshot -->
+=== "AssocTreePopup"
+     <!-- TODO screenshot -->
 
 ## <a id="bc-default-page-limit">Only current business component</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample359){:target="_blank"} ·

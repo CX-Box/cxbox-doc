@@ -145,7 +145,7 @@ The minimum and maximum number of rows can now be set separately for viewing and
 === "Form widget"
     ![CXBOX-1350 Form.png](v3.0.1/CXBOX-1350%20Form.png)
 
-#### Added: Default filter by saved group (`filter group`)
+#### Added: Filter group - NEW ability to make it default
 <!-- CXBOX-1382 -->  
 A default filter can now be configured for a saved group (`filter group`).
 The configured filter is automatically applied when the page is initialized and refreshed.
@@ -154,7 +154,7 @@ The default filter is marked with a **star ★**.
 
 ![CXBOX-1382 filter_group.png](v3.0.1/CXBOX-1382%20filter_group.png)
 
-### Added: Button To default filter(s)
+#### Added: Filtration - NEW button 'to default filters(s)'
 <!-- CXBOX-1382 --> 
 The **`To default filter(s)`** button has been added next to the **`Clear N filter(s)`** button.
 

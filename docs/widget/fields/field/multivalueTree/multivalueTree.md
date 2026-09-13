@@ -1,8 +1,8 @@
-# Multivalue
+# MultivalueTree
 
 Available since [v3.0.1](/new/version3001/)
 
-`Multivalue` is a component that allows to select multiple values from Popup List of entities
+`MultivalueTree` is a component that allows to select multiple values from Popup List of entities
 
 !!! tips
     For this field type we need to talk about number of rows in popup and number of selected rows.Number of rows in popup: Feel free to use this field type for large entities of any size (only one page is loaded in memory).Number of selected rows: should be <1000-10000, because selected rows are stored in memory

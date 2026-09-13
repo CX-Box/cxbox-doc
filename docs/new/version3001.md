@@ -4,8 +4,6 @@
 
 * [cxbox/core 5.0.2 git](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-5.0.2), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/5.0.2)
 
-* [cxbox-ui/core 2.8.2 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.2), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.2), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.2)
-
 * [cxbox/code-samples 3.0.1 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.3.0.1), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.3.0.1)
 
 ## **Key updates August 2026**
@@ -15,7 +13,8 @@
 #### Added: Tree - NEW widget type!  
 <!-- CXBOX-1341 -->  
 
-We’ve added a new Tree widget for displaying data in a tree-like structure.
+We’ve added a new [Tree](https://doc.cxbox.org/widget/type/tree/tree/) widget will be available soon in our official documentation - stay tuned!  
+for displaying data in a tree-like structure.
 
 The widget is designed for working with large data sets and supports any number of nesting levels. Data is loaded on demand using lazy loading, so the entire data set does not need to be loaded at once. Initially, only the root-level rows are loaded. Upon expanding the nodes, child rows are loaded. The More option allows the user to load the next page of rows.  
 
@@ -49,7 +48,7 @@ When matching rows are located deep in the tree, the path can be not fully displ
 #### <a id="pickTree">Added: pickTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
 
-We have added a new pickTree field type for selecting a single value from tree-like data. The new field type triggers the new PickTreePopup widget.
+We have added a new [pickTree](https://doc.cxbox.org/widget/fields/field/picktree/picktree/)  field type for selecting a single value from tree-like data. The new field type triggers the new PickTreePopup widget.
 
 ![CXBOX-1341_pickTree.gif](v3.0.1/CXBOX-1341_pickTree.gif)
 
@@ -61,7 +60,7 @@ For more information about the PickTreePopup widget, see [PickTreePopup](#PickTr
 ####  <a id="PickTreePopup">Added: PickTreePopup - NEW widget type!</a>
 <!-- CXBOX-1341 -->  
 
-We’ve added a new PickTreePopup widget for selecting a single value from data displayed in a tree-like structure.
+We’ve added a new [PickTreePopup](https://doc.cxbox.org/widget/type/picktreepopup/picktreepopup/) widget for selecting a single value from data displayed in a tree-like structure.
 
 PickTreePopup is a tree-based alternative to the existing [PickListPopup](https://doc.cxbox.org/widget/type/picklistpopup/picklistpopup/). 
 
@@ -96,7 +95,7 @@ The PickTreePopup widget is opened from the new [pickTree](#pickTree) field.
 #### <a id="multivalueTree">Added: multivalueTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
 
-We have added a new multivalueTree field for selecting multiple values from tree-like data.
+We have added a new [multivalueTree](#multivalueTree) field for selecting multiple values from tree-like data.
 
 ![CXBOX-1341_multivalueTree.gif](v3.0.1/CXBOX-1341_multivalueTree.gif)
 
@@ -107,7 +106,7 @@ It works similarly to the existing multivalue field, but opens the new [AssocTre
 
 #### <a id="AssocTreePopup">Added: AssocTreePopup - NEW widget type!</a>
 
-We’ve added a new AssocTreePopup widget for selecting multiple values from data displayed in a tree-like structure.
+We’ve added a new [AssocTreePopup](https://doc.cxbox.org/widget/type/assoctreepopup/assoctreepopup/) widget for selecting multiple values from data displayed in a tree-like structure.
 
 AssocTreePopup is a tree-based alternative to the existing AssocListPopup. It allows users to select multiple rows using checkboxes while keeping the tree structure visible.  
 
@@ -145,7 +144,6 @@ The minimum and maximum number of rows can now be set separately for viewing and
     ![CXBOX-1350 Info.png](v3.0.1/CXBOX-1350%20Info.png)
 === "Form widget"
     ![CXBOX-1350 Form.png](v3.0.1/CXBOX-1350%20Form.png)
-
 
 #### Added: Default filter by saved group (`filter group`)
 <!-- CXBOX-1382 -->  
@@ -292,12 +290,6 @@ We have also added autotests for richText to [cxbox/code-samples](https://github
 !!! info  
     Technical details for each case are available in [README_RICHTEXT.md](https://github.com/CX-Box/cxbox-demo/blob/768218b2db63ec05e1363a532302ff71dd962b4c/README_RICHTEXT.md).
 
-#### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
-
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/???2.8.1))
-We have released a new ???2.8.1 CORE UI version.
-
 #### Fixed: `encryptAndSign` for detached signatures
 <!-- CXBOX-1383 --> 
 Fixed an issue with the `encryptAndSign` operation when creating a detached signature.
@@ -306,6 +298,9 @@ Additional Base64 encoding has been removed for detached signatures. Previously,
 
 Detached signatures can now be successfully verified on Gosuslugi.
 
+
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
 
 ### CXBOX 5.0.2 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2))
 We have released a new 5.0.2 CORE version.

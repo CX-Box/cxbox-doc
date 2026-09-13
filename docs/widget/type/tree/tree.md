@@ -374,6 +374,12 @@ There are three methods to create a record:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/create/basic){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the tree widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+
+The position of the newly created line within the node can be determined as follows:
+
+* places it before the already loaded rows of the node
+* places it after them.
+
 ###### How does it look?
 ![create_inline.png](create_inline.png)
 
@@ -387,6 +393,11 @@ With `Line Addition`, a new empty row is immediately added to the top of the tre
     --8<--
     ```
      **Step2** Add button `create` to corresponding **.widget.json**. 
+
+     The position of a newly created row inside its node is defined by 
+ 
+    `options`.`tree`.`insertPosition` start places it before the already loaded rows of the node, end places it after them
+
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/tree/actions/create/basic/MyExample3265Tree.widget.json
@@ -407,6 +418,12 @@ With `Line Addition`, a new empty row is immediately added to the top of the tre
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the tree of entities and the form for adding a new row. 
 After filling the information in and clicking "Save", the new row is added to the Tree. 
+
+The position of a newly created row inside its node is defined : 
+
+* places it before the already loaded rows of the node
+* places it after them. 
+
 ###### How does it look?
 ![create_inline_form.png](create_inline_form.png)
 
@@ -441,9 +458,13 @@ After filling the information in and clicking "Save", the new row is added to th
     ```
 
      **Step5** Add button `create` and widget with type `Form` to corresponding **.widget.json**.
-       
+
     `options`.`create`: Name widget that appears when you click a button
-        
+    
+     The position of a newly created row inside its node is defined by 
+ 
+    `options`.`tree`.`insertPosition` start places it before the already loaded rows of the node, end places it after them
+
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/tree/actions/create/withwidget/MyExample3279Tree.widget.json
@@ -614,8 +635,7 @@ The difference from a [List widget](/widget/type/list/list) is **what is refresh
 * the row-meta of the row is requested again;
 * if the record is not returned any more, the row is removed from the tree;
 * the node is collapsed and its already loaded child records are forgotten, so they are loaded again on the next expand.
-
-The position of a newly created row inside its node is defined by **options**.**tree**.**insertPosition**: `start` places it before the already loaded rows of the node, `end` places it after them. see [options.tree](#optionstree)
+ 
 
 !!! info
     Sibling records and parent records are **not** refreshed automatically.

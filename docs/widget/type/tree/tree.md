@@ -906,6 +906,4 @@ see [Sorting](/widget/type/property/sorting/sorting)
 
 Sorting of a Tree widget works **inside a node**: the records are sorted among the children of the same parent, the hierarchy itself is not changed. In all other respects sorting is standard.
 
-###### How does it look?
-    ![sorting.png](sorting.png)
-
+ 

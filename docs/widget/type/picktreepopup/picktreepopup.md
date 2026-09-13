@@ -1,5 +1,7 @@
 # PickTreePopup
 
+Available since [v3.0.1](/new/version3001/)
+
 `PickTreePopup` is a component that allows the user to select a value from a Popup list of entities.
 
 !!! info

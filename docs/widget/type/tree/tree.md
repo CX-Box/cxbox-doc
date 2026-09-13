@@ -1,5 +1,7 @@
 # Tree
- 
+
+Available since [v3.0.1](/new/version3001/)
+
 Tree widget presents hierarchical records as an expandable tree, so users can browse parent and child rows in one table.
 
 !!! info

@@ -1,5 +1,7 @@
 # AssocTreePopup
 
+Available since [v3.0.1](/new/version3001/)
+
 `AssocTreePopup` widget is a popup component designed to the selection of multiple values.
 
 !!! info

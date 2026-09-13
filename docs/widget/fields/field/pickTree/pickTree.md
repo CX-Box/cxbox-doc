@@ -1,5 +1,7 @@
 # PickTree
 
+Available since [v3.0.1](/new/version3001/)
+
 `PickTree` is a component that allows to select a value from Popup list of entities
 
 !!! tips 

@@ -48,14 +48,14 @@ When matching rows are located deep in the tree, the path can be not fully displ
 #### <a id="pickTree">Added: pickTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
 
-We have added a new [pickTree](https://doc.cxbox.org/widget/fields/field/picktree/picktree/)  field type for selecting a single value from tree-like data. The new field type triggers the new PickTreePopup widget.
+We have added a new [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/)  field type for selecting a single value from tree-like data. The new field type triggers the new PickTreePopup widget.
 
 ![CXBOX-1341_pickTree.gif](v3.0.1/CXBOX-1341_pickTree.gif)
 
 For more information about the PickTreePopup widget, see [PickTreePopup](#PickTreePopup) widget.
 
 !!! info  
-    Detailed documentation for the [pickTree](https://doc.cxbox.org/widget/fields/field/picktree/picktree/)  field will be available soon in our official documentation - stay tuned!
+    Detailed documentation for the [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/)  field will be available soon in our official documentation - stay tuned!
 
 ####  <a id="PickTreePopup">Added: PickTreePopup - NEW widget type!</a>
 <!-- CXBOX-1341 -->  

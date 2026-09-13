@@ -1,9 +1,70 @@
 # AssocTreePopup
 
 `AssocTreePopup` widget is a popup component designed to the selection of multiple values.
+
+!!! info
+    The following features are **not available** for the `AssocTreePopup` widget in this release:
+
+    * fully or partially expanded initial load (the tree always opens collapsed)
+
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3330){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/base){:target="_blank"}
+
+The popup shows the records as a tree: the requirements of the [Tree widget](/widget/type/tree/tree/#basics) apply to the business component of the popup.
+
+The minimal data set of a record of the popup is:
+
+* `id` — the identifier of the record.
+* `parentId` — the identifier of the parent record. For a root record the value is `null`.
+  The backend must **always** return this field, and the field must be **filterable**, because the tree is built with the requests `parentId.specified=false` (root records) and `parentId.equals=<id>` (child records). see more [Lazy load](#lazyload)
+* a name (title) field — the value shown in the tree column.
+* `isLeaf` — a computed boolean flag. The default value is `false`. The value `true` means that the record has no child records, so the expand arrow is not displayed for it.
+
+!!! info
+    The **first** field of the `fields` array is rendered as the tree column: the expand arrow and the checkbox. All the other fields are rendered as ordinary columns.
+
+    `parentId` and `isLeaf` are service fields: they are declared in the popup widget with type **hidden**.
+
+**<a id="optionstree">options.tree</a>**
+
+All tree specific settings are placed in **options**.**tree** of **_.widget.json_**.
+
+??? Example
+
+    | Property                 | Type                                            | Default                  | Description                                                                                                       |
+    |--------------------------|-------------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------|
+    | `parentIdFieldKey`       | String                                          | `parentId`               | Name of the field that holds the identifier of the parent record.                                                   |
+    | `isLeafFieldKey`         | String                                          | `isLeaf`                 | Name of the field that holds the flag "the record has no child records".                                             |
+    | `searchModes`            | Array of `collapse`, `hide`                     | `["collapse", "hide"]`   | Modes of displaying the filtration result. The first item of the array is the active one. see [Search modes](#searchmodes) |
+    | `onFilterApplyNestLevel` | Number                                          | `0`                      | How many levels of the navigation path are shown above a found record in `collapse` mode. see [Search modes](#searchmodes) |
+    | `insertPosition`         | `start`, `end`                                  | —                        | Where a newly created row is inserted inside its node. see [Create](#createinline)                                  |
+    | `selection`              | `node`, `nodeAndLeaf`, `leaf`                   | —                        | What the user is allowed to check. see [Selection modes](#selectionmodes) |
+    | `confirms`               | Array of `paginationUnselect`, `paginationSelect` | `["paginationUnselect"]` | Confirmations shown when the selection touches a node whose records are not all loaded yet. see [Selection modes](#selectionmodes) |
+
+**<a id="lazyload">Lazy load</a>**
+
+The tree is always loaded **lazily** and always opens **collapsed**: only the root records are requested when the popup is opened, and the child records of a node are requested when the user expands it.
+
+!!! info
+    The operation `specified` is used **only** to select the records with an empty parent. For all the other requests the operation `equals` is used.
+    This is why the field that holds the parent identifier must be filterable on the backend.
+
+Every node keeps **its own pagination state**, so the records of one node are loaded page by page independently of the neighbouring nodes. see more [Pagination](#pagination)
+
+??? Example
+    * **Root records** are requested with the filter by an empty parent:
+
+    ```
+    ?parentId.specified=false&_page=1&_limit=5
+    ```
+
+    * **Child records** of a node are requested when the node is expanded:
+
+    ```
+    ?parentId.equals=<id>&_page=1&_limit=5
+    ```
+
 ### How does it look?
 === "Assoc widget field"
     === "List"
@@ -61,12 +122,23 @@
             --8<--
             ```
        
-            **Step2** Add widget to corresponding ****_.view.json_** **.
+            **Step2** Create popup widget **_.widget.json_** with type = **"AssocTreePopup"**.
+
+            For the tree to work correctly, the popup widget must contain the `parentId` and `isLeaf` fields. These fields should be configured as **hidden**.
+
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myEntity3330MultiAssocTreePopup.widget.json
+            --8<--
+            ```
+
+            **Step3** Add widget to corresponding ****_.view.json_** **.
         
             ```json
             --8<--
             {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330list.view.json
             --8<--
+            ```
         === "Info"
             _not applicable_
 
@@ -79,7 +151,17 @@
             --8<--
             ```
        
-            **Step2** Add widget to corresponding ****_.view.json_** **.
+            **Step2** Create popup widget **_.widget.json_** with type = **"AssocTreePopup"**.
+
+            For the tree to work correctly, the popup widget must contain the `parentId` and `isLeaf` fields. These fields should be configured as **hidden**.
+
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myEntity3330MultiAssocTreePopup.widget.json
+            --8<--
+            ```
+
+            **Step3** Add widget to corresponding ****_.view.json_** **.
         
             ```json
             --8<--
@@ -161,9 +243,6 @@ There are types of:
     ![empytitle.png](empytitle.png)
 
 #### How to add?
-!!! info
-    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/tree/tree/#optionstree).
-
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
@@ -342,8 +421,11 @@ There are three methods to create a record:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
+
+The position of the newly created row inside its node is defined by **options**.**tree**.**insertPosition**: `start` places it before the already loaded rows of the node, `end` places it after them. see [options.tree](#optionstree)
+
 ###### How does it look?
-![assoc_create_inline.png](assoc_create_inline.png)
+![assoc_create_inline.gif](assoc_create_inline.gif)
 
 ###### How to add?
 ??? Example
@@ -356,6 +438,9 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     ```
  
     **Step2** Add button `create` to corresponding **.widget.json**. 
+
+    The position of a newly created row inside its node is defined by `options`.`tree`.`insertPosition`: `start` places it before the already loaded rows of the node, `end` places it after them.
+
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myEntity3331MultiAssocTreePopupCreateAssocTreePopup.widget.json
@@ -377,8 +462,11 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
 After filling the information in and clicking "Save", the new row is added to the assoc.
+
+The position of the newly created row inside its node is defined by **options**.**tree**.**insertPosition**: `start` places it before the already loaded rows of the node, `end` places it after them. see [options.tree](#optionstree)
+
 ###### How does it look?
-![assoc_create_with_widget.png](assoc_create_with_widget.png)
+![assoc_create_with_widget.gif](assoc_create_with_widget.gif)
 
 ###### How to add?
 ??? Example
@@ -412,6 +500,9 @@ After filling the information in and clicking "Save", the new row is added to th
      **Step5** Add button `create` and widget with type `Form` to corresponding **.widget.json**.
        
     `options`.`create`: Name widget that appears when you click a button
+
+    The position of a newly created row inside its node is defined by `options`.`tree`.`insertPosition`: `start` places it before the already loaded rows of the node, `end` places it after them.
+
         
     ```json
     --8<--
@@ -436,7 +527,7 @@ _not applicable_
     Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
 
 ###### How does it look?
-![actiondelete.png](actiondelete.png)
+![actiondelete.gif](actiondelete.gif)
 
 ###### How to add?
 ??? Example
@@ -479,7 +570,7 @@ There are three methods to create a record:
 
 `Edit Inline` implies inline-edit. Click twice on the value you want to change.
 ###### How does it look?
-![assoc_edit_basic.png](assoc_edit_basic.png)
+![assoc_edit_basic.gif](assoc_edit_basic.gif)
 
 ###### How to add?
 ??? Example
@@ -501,7 +592,7 @@ There are three methods to create a record:
 `Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
 
 ###### How does it look?
-![assoc_edit_with_widget.png](assoc_edit_with_widget.png)
+![assoc_edit_with_widget.gif](assoc_edit_with_widget.gif)
 
 ###### How to add?
 ??? Example
@@ -551,91 +642,73 @@ There are three methods to create a record:
 not applicable
 
 ### Additional properties
+#### <a id="noderefresh">Node refresh</a>
+After an action (save, delete, cancel-create) the popup refreshes only the **node** the record belongs to, in the same way as a [Tree widget](/widget/type/tree/tree/#noderefresh):
+
+* the row is updated from the response of the action or, if the response does not contain it, re-read with the request `?id.equals=<id>`;
+* the row-meta of the row is requested again;
+* if the record is not returned any more, the row is removed from the tree;
+* the node is collapsed and its already loaded child records are forgotten, so they are loaded again on the next expand.
+
+!!! info
+    Sibling records and parent records are **not** refreshed automatically. `PostAction.refreshBC` is not supported for a tree in this release: the root page is loaded again, but the expanded nodes and their already loaded child records stay as they are.
+
 #### Customization of displayed columns
 not applicable
 #### Filtration
 ##### Basic
 see more  [Fields](/widget/type/property/filtration/filtration/)
+
+Filtration of the popup is a standard request. The rows that match the filter are returned by the backend without any hierarchy, and the popup decides how to display them, see [Search modes](#searchmodes).
+
+The panel above the tree shows:
+
+* `Clear N filter(s)` — the number of applied filters and the possibility to reset them;
+* `Shown N` — how many found records are currently displayed;
+* `More M` — how many found records are not displayed yet, where `M` is the number of found records minus the number of shown records.
+
+!!! info
+    With the pagination mode `nextAndPreviousWithCount` the `/count` request is **not** performed after filtration. Instead of the number of found records an `i` icon is displayed with the tooltip **"Load more and show count"**.
+
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
+
+The result of a full text search is displayed in the same way as the result of filtration, see [Search modes](#searchmodes).
 ##### Personal filter group
 not applicable
 ##### Filter group
 not applicable
-#### Pagination
-`Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
-see [Pagination](/widget/type/property/pagination/pagination)
-
-#### Export to Excel
-not applicable
-
-#### <a id="lazyload">Lazy load</a>
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination){:target="_blank"}
-
-Every node keeps **its own pagination state**, so the records of one node are loaded page by page independently of the neighbouring nodes.
-
-!!! info
-    Instead of the "next page" arrow the tree shows the `More` button in the last row of a node.
-
-    The page size selector `availableLimitsList` is placed in the gear menu of the widget.
-
-###### How does it look?
-![lazyload.png](lazyload.png)
-
-###### How to add?
-??? Example
-    Add in **options** parameter **pagination** to corresponding **.widget.json**.
-
-    ```
-    "pagination": {
-      "availableLimitsList": [1, 2, 3]
-    }
-    ```
-
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myEntity3867MultiPickAssocTreePopup.widget.json
-    --8<--
-    ```
-
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
-
-The default number of the records requested for a node is defined by the page limit, see [Page limit](/widget/type/property/defaultlimitpage/defaultlimitpage).
-
-```json
---8<--
-{{ external_links.github_raw_doc }}/widgets/property/defaultlimitpage/myEntity359AssocPickAssocTreePopup.widget.json
---8<--
-```
-
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/defaultlimitpage){:target="_blank"}
 
 #### <a id="searchmodes">Search modes</a>
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
 
-Filtration and full text search are performed with a standard request. The found records are displayed in one of two modes, defined by **options**.**tree**.**searchModes**:
+The way the result of filtration and full text search is displayed is defined by **options**.**tree**.**searchModes**.
 
-* `collapse` — the found records are displayed together with the navigation path. The number of the levels of the path shown above a found record is defined by **options**.**tree**.**onFilterApplyNestLevel** (default `0`).
-* `hide` — only the found records are displayed, everything else is hidden.
+There are two modes:
 
-Both modes can be available at the same time, the first item of the array is the active one. The user switches between them.
+* `collapse` — **search results and tree**. The tree displays the found records together with the records that are required for navigation: the navigation path above every found record is restored `onFilterApplyNestLevel` levels up. The user can navigate through the tree, expand and collapse branches, see the neighbouring records and load additional records.
+* `hide` — **search results only**. The tree displays only the found records, everything else is hidden. The user works with the search result only and cannot navigate through the other records of the tree.
 
-The panel above the tree shows:
+Both modes can be available at the same time. The **first** item of the `searchModes` array is the mode that is active when the filter is applied; the user switches between the available modes in the gear menu of the popup.
 
-* `Clear N filter(s)` — the number of the applied filters,
-* `Shown N` — the number of the displayed records,
-* `More M` — the number of the found records that are not displayed yet.
+**Restoring the path upwards**
+
+In `collapse` mode the records whose parents have not been loaded yet are placed under a pseudo node. The `>...` button loads the missing parents with the request `?id.equals=<parentId>` and moves the records into the hierarchy. One click restores up to **2** levels of nesting, so for a deep hierarchy the button has to be pressed several times.
 
 ###### How does it look?
-=== "collapse"
+=== "Search results and tree (collapse)"
     ![search_collapse.png](search_collapse.png)
-=== "hide"
+=== "Search results only (hide)"
     ![search_hide.png](search_hide.png)
+=== "Switching between modes"
+    ![search_modes_menu.png](search_modes_menu.png)
 
 ###### How to add?
 ??? Example
-    Add in **options** parameter **fullTextSearch** and parameter **tree** to corresponding **.widget.json**.
+    **Step1** Add **options**.**tree**.**searchModes** to corresponding **_.widget.json_**.
+
+    The first item of the array is the mode that is active when the filter is applied.
 
     ```
     "tree": {
@@ -651,6 +724,67 @@ The panel above the tree shows:
     ```
 
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
+
+#### <a id="pagination">Pagination</a>
+`Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
+see [Pagination](/widget/type/property/pagination/pagination)
+
+The popup has no navigation arrows. Instead of the "next" arrow the last row of a node is the **`More`** button, which loads the next page of the node and appends it to the already loaded records. The limit selector (`availableLimitsList`) is moved to the gear menu of the popup.
+
+The `More` button follows the same algorithm as the "next" arrow of the three pagination modes:
+
+| Pagination mode              | When `More` is displayed                                                                      | Counter                                     |
+|------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------|
+| `nextAndPreviousWithHasNext` | `hasNext` returned by the backend is `true`                                                     | not displayed                               |
+| `nextAndPreviousWithCount`   | `count` is greater than the number of already loaded records                                    | how many records are left to load           |
+| `nextAndPreviousSmart`       | the backend returned more records than the limit of the node                                    | not displayed                               |
+
+see more [Pagination modes](/widget/type/property/pagination/pagination)
+
+###### How does it look?
+![lazyload.png](lazyload.png)
+
+###### How to add?
+??? Example
+    === "availableLimitsList"
+        The list of available limits is displayed in the gear menu of the popup.
+
+        ```
+        "pagination": {
+          "availableLimitsList": [1, 2, 3]
+        }
+        ```
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myEntity3867MultiPickAssocTreePopup.widget.json
+        --8<--
+        ```
+
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
+
+    === "Page limit"
+        The default number of the records requested for a node is defined by the page limit, see [Page limit](/widget/type/property/defaultlimitpage/defaultlimitpage).
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/defaultlimitpage/myEntity359AssocPickAssocTreePopup.widget.json
+        --8<--
+        ```
+
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/defaultlimitpage){:target="_blank"}
+
+#### Export to Excel
+not applicable
+
+#### Multi-upload files
+not applicable
+
+##### Sorting
+`Sorting` allows the user to sort the records by a column.
+see [Sorting](/widget/type/property/sorting/sorting)
+
+Sorting of the popup works **inside a node**: the records are sorted among the children of the same parent, the hierarchy itself is not changed. In all other respects sorting is standard.
 
 #### <a id="selectionmodes">Selection modes</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
@@ -680,22 +814,22 @@ The following cases are possible:
 
 * **The user checks all the children of a group manually.** This is **not** the same as picking the group itself. The two selections are visually distinguishable, and they behave differently: when new records of that group appear, they are **not** selected in the manual case, while they are a part of the selection when the group itself is picked.
 
-##### Confirmation on page change
-**options**.**tree**.**confirms** defines the confirmation dialog shown when the user changes the page while a selection exists:
+##### Confirmation for a node that is not fully loaded
+A node may have records that are not loaded yet, hidden behind the `More` row. **options**.**tree**.**confirms** defines which actions on such a node are confirmed:
 
-| Value                | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| `paginationUnselect` | The confirmation is shown when the page is changed and the selection is lost.|
-| `paginationSelect`   | The confirmation is shown when the page is changed and the selection is kept.|
+| Value                | Description                                                                                                                                                                  |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `paginationUnselect` | The user unchecks a child of a selected node. After the confirmation the selection switches to the manual mode: only the loaded records stay selected, the hidden ones are lost. |
+| `paginationSelect`   | The user checks the node itself. After the confirmation the whole node is selected, including the records hidden behind `More`.                                                |
 
-The default value is `["paginationUnselect"]`. see more [options.tree](/widget/type/tree/tree/#optionstree)
+The default value is `["paginationUnselect"]`, an empty array disables the confirmations. see more [options.tree](#optionstree)
 
 ##### How does it look?
 === "Selection of a group"
     ![selection_group.png](selection_group.png)
 === "Manual selection of the children"
     ![selection_manual.png](selection_manual.png)
-=== "Confirmation on page change"
+=== "Confirmation for a node that is not fully loaded"
     ![selection_confirm.png](selection_confirm.png)
 
 ##### How to add?

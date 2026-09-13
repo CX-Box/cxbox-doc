@@ -21,7 +21,7 @@
 
 ### How to add?
 !!! info
-    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/tree/tree/#optionstree).
+    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/assoctreepopup/assoctreepopup/#optionstree).
 
 
 ??? Example
@@ -519,7 +519,7 @@
 
 ### How does it look?
 === "List widget"
-    _not applicable_
+    ![img_req_list.png](img_req_list.png)
 === "Info widget"
     _not applicable_
 === "Form widget"

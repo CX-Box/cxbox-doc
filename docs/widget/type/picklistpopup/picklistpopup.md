@@ -200,8 +200,8 @@ Fields Configuration. The fields array defines the individual fields present wit
 **Standard Actions**:
 
 * [`Create`](#standart_create): Action to initialize the process of creating a new record
-* `Delete` - _not applicable_
-* `Edit`  -  _not applicable_
+* [`Edit`](#standart_edit): Action to change a record of the popup (inline-form)
+* [`Delete`](#standart_delete): Action to remove a record of the popup
 * [`Save`](#standart_save): Action to store the data entered or modified
 * [`Cancel-create`](#standart_cancel_create): Action to abort the creation of a new record, discarding any input without saving
  
@@ -309,11 +309,102 @@ After filling the information in and clicking "Save", the new row is added to th
 ##### <a id="withview">With view</a>
 _not applicable_
 
-#### Delete
+#### <a id="standart_edit">Edit</a>
+`Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
+
+There are three methods to edit a record:
+
+* [Inline](#editline): not applicable
+
+* [Inline-form](#editwithwidger): You can edit data using a form widget without leaving your current view.
+
+* With view: not applicable
+
+##### <a id="editline">Inline</a>
+_not applicable_: a click on a row of the popup picks the value. A row is edited through the [inline-form](#editwithwidger) or right after it is created.
+
+##### <a id="editwithwidger">Inline-form</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3092listinlineform){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/edit){:target="_blank"}
+
+`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
+
+###### How does it look?
+![edit_with_widget.gif](edit_with_widget.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Create widget.json with type `Form` that appears when you click a button
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/picklistpopup/picklist/inlineform/myEntity3092FormForEditPickListInlineForm.widget.json
+    --8<--
+    ```
+
+    **Step2** Add widget.json with type `Form` to corresponding **.view.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/myexample3092listinlineform.view.json
+    --8<--
+    ```
+
+    **Step3** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+
+    `options`.`edit`: Name widget that appears when you click a button
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/picklistpopup/picklist/inlineform/myEntity3092PickListInlineForm.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3092listinlineform){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/edit){:target="_blank"}
+
+##### With view
 _not applicable_
- 
-#### Edit
-_not applicable_
+
+#### **<a id="standart_delete">Delete</a>**
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/delete){:target="_blank"}
+
+`Delete` remove an existing record.
+
+!!! tips
+    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
+
+###### How does it look?
+![actiondelete.gif](actiondelete.gif)
+
+###### How to add?
+??? Example
+
+    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**.
+
+    By default, the access button is available when a record exist.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/delete/forpicklistpopup/MyEntity3188PickPickService.java:getActions
+    --8<--
+    ```
+    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/delete/forpicklistpopup/MyEntity3188PickPickService.java:deleteEntity
+    --8<--
+    ```
+    **Step3** Add button ot group button to corresponding **.widget.json**.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/delete/forpicklistpopup/myEntity3188PickPickPickListPopup.widget.json
+    --8<--
+    ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/delete){:target="_blank"}
 
 ###  **<a id="standart_save">Save</a>**
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3197form){:target="_blank"} ·
@@ -322,7 +413,7 @@ _not applicable_
 `Save` to store the data entered or modified. see [information on autosave](/features/element/autosave/autosave)
  
 ###### How does it look?
-![actionsave.gif](actionsave.gif)
+![create_inline.gif](create_inline.gif)
 
 ###### How to add?
 ??? Example
@@ -429,139 +520,6 @@ _not applicable_
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3198formoncancel){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/cancelcreate/oncancel){:target="_blank"}
 
-
-<!--
-`Edit` enables you to change the field value. Just like with `Create` button, there are three ways of implementing this Action.
-
-There are three methods to create a record:
-  [Inline edit](#editline): You can edit a line directly.
-
-* Inline edit: not applicable.
-
-* [Inline-form](#editwithwidget): You can edit data using a form widget without leaving your current view.
-
-* With view: not applicable
-
- 
-##### <a id="editline">Inline edit </a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/basic){:target="_blank"}
-
-
-`Edit Inline` implies inline-edit. Click twice on the value you want to change.
-###### How does it look?
-![assoc_edit_basic.gif](assoc_edit_basic.gif)
-
-###### How to add?
-??? Example
-
-    **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/basic/MyExample3700Meta.java:buildRowDependentMeta
-    --8<--
-    ```
- 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3700){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/basic){:target="_blank"}
- 
-##### <a id="editwithwidger">Inline-form</a>
- 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
-
-`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
-
-###### How does it look?
-![edit_with_widget.gif](edit_with_widget.gif)
-
-###### How to add?
-??? Example
-
-    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/withwidget/MyExample3065Service.java:getActions
-    --8<--
-    ```
-
-    **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/withwidget/MyExample3065Meta.java:buildRowDependentMeta
-    --8<--
-    ```
- 
-    **Step2**  Create widget.json with type `Form` that appears when you click a button
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/withwidget/myEntity3065EditForm.widget.json
-    --8<--
-    ```
- 
-     **Step4** Add widget.json with type `Form` to corresponding **.view.json**. 
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/withwidget/myexample3065assoc.view.json
-    --8<--
-    ```
-
-     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
-       
-    `options`.`edit`: Name widget that appears when you click a button
-        
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/withwidget/MyExample3065assoc.widget.json
-    --8<--
-    ```
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/edit/withwidget){:target="_blank"}
-
-#### **<a id="standart_delete">Delete</a>**
-_not applicable_
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
-
-`Delete` remove an existing record.
-
-!!! tips
-    Please note that the row you are attempting to delete may be referenced by another part of the system or a parent entity. To ensure clarity, you should handle this exception and provide a explanation to the user.
-
-###### How does it look?
-![actiondelete.gif](actiondelete.gif)
-
-###### How to add?
-??? Example
-
-    **Step1** Add action *delete* to corresponding **VersionAwareResponseService**. 
-
-    By default, the access button is available when a record exist.
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:getActions
-    --8<--
-    ```  
-    **Step2** Optional. Add *deleteEntity* to corresponding **VersionAwareResponseService**. 
-
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueService.java:deleteEntity
-    --8<--
-    ```  
-    **Step3** Add button ot group button to corresponding **.widget.json**.
-   
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/save/myEntity3054MultiAssocSaveListPopup.widget.json
-    --8<--
-    ``` 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoc/actions/delete){:target="_blank"}
-
--->
 
 ### Additional properties
 #### Customization of displayed columns

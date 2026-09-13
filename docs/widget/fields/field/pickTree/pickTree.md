@@ -21,7 +21,7 @@
 
 ### How to add?
 !!! info
-    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/tree/tree/#optionstree).
+    The popup is a tree: the business component of the popup must return `parentId` (filterable, `null` for the roots) and `isLeaf`, both declared as **hidden** fields of the popup widget. The tree settings are described in [options.tree](/widget/type/picktreepopup/picktreepopup/#optionstree).
 
 
 ??? Example
@@ -330,7 +330,7 @@
     Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided
 ### How does it look?
 === "List widget"
-    ![img_filtr_list.png](img_filtr_list.png)
+    ![img_filtr_list.gif](img_filtr_list.gif)
 === "Info widget"
     _not applicable_
 === "Form widget"

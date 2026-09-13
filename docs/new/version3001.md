@@ -4,8 +4,6 @@
 
 * [cxbox/core 5.0.2 git](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2), [release notes](https://github.com/CX-Box/cxbox/releases/tag/cxbox-5.0.2), [maven](https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/5.0.2)
 
-* [cxbox-ui/core 2.8.2 git](https://github.com/CX-Box/cxbox-ui/tree/2.8.2), [release notes](https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.2), [npm](https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.2)
-
 * [cxbox/code-samples 3.0.1 git](https://github.com/CX-Box/cxbox-code-samples/tree/v.3.0.1), [release notes](https://github.com/CX-Box/cxbox-code-samples/releases/tag/v.3.0.1)
 
 ## **Key updates August 2026**
@@ -292,12 +290,6 @@ We have also added autotests for richText to [cxbox/code-samples](https://github
 !!! info  
     Technical details for each case are available in [README_RICHTEXT.md](https://github.com/CX-Box/cxbox-demo/blob/768218b2db63ec05e1363a532302ff71dd962b4c/README_RICHTEXT.md).
 
-#### Other Changes
-see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
-
-### CXBOX ([Core Ui](https://github.com/CX-Box/cxbox-ui/releases/tag/???2.8.1))
-We have released a new ???2.8.1 CORE UI version.
-
 #### Fixed: `encryptAndSign` for detached signatures
 <!-- CXBOX-1383 --> 
 Fixed an issue with the `encryptAndSign` operation when creating a detached signature.
@@ -306,6 +298,9 @@ Additional Base64 encoding has been removed for detached signatures. Previously,
 
 Detached signatures can now be successfully verified on Gosuslugi.
 
+
+#### Other Changes
+see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.1)
 
 ### CXBOX 5.0.2 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2))
 We have released a new 5.0.2 CORE version.

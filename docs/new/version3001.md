@@ -13,8 +13,7 @@
 #### Added: Tree - NEW widget type!  
 <!-- CXBOX-1341 -->  
 
-We’ve added a new [Tree](https://doc.cxbox.org/widget/type/tree/tree/) widget will be available soon in our official documentation - stay tuned!  
-for displaying data in a tree-like structure.
+We’ve added a new [Tree](https://doc.cxbox.org/widget/type/tree/tree/) widget for displaying data in a tree-like structure.
 
 The widget is designed for working with large data sets and supports any number of nesting levels. Data is loaded on demand using lazy loading, so the entire data set does not need to be loaded at once. Initially, only the root-level rows are loaded. Upon expanding the nodes, child rows are loaded. The More option allows the user to load the next page of rows.  
 
@@ -42,8 +41,8 @@ When matching rows are located deep in the tree, the path can be not fully displ
 
 <!--TODO>> path not fully restored picture -->
 
-!!! info  
-    Detailed documentation for the [Tree](https://doc.cxbox.org/widget/type/tree/tree/) widget will be available soon in our official documentation - stay tuned!  
+!!! info
+    See the [Tree](https://doc.cxbox.org/widget/type/tree/tree/) widget documentation.
 
 #### <a id="pickTree">Added: pickTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
@@ -54,8 +53,8 @@ We have added a new [pickTree](https://doc.cxbox.org/widget/fields/field/pickTre
 
 For more information about the PickTreePopup widget, see [PickTreePopup](#PickTreePopup) widget.
 
-!!! info  
-    Detailed documentation for the [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/)  field will be available soon in our official documentation - stay tuned!
+!!! info
+    See the [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/) field documentation.
 
 ####  <a id="PickTreePopup">Added: PickTreePopup - NEW widget type!</a>
 <!-- CXBOX-1341 -->  
@@ -90,19 +89,19 @@ Just like in Tree widget, search and filtering results can be displayed in two m
 The PickTreePopup widget is opened from the new [pickTree](#pickTree) field.
 
 !!! info
-    Detailed documentation for the [PickTreePopup](https://doc.cxbox.org/widget/type/picktreepopup/picktreepopup/) widget will be available soon in our official documentation - stay tuned!
+    See the [PickTreePopup](https://doc.cxbox.org/widget/type/picktreepopup/picktreepopup/) widget documentation.
 
 #### <a id="multivalueTree">Added: multivalueTree - NEW field type!</a>
 <!-- CXBOX-1341 -->  
 
-We have added a new [multivalueTree](#multivalueTree) field for selecting multiple values from tree-like data.
+We have added a new [multivalueTree](https://doc.cxbox.org/widget/fields/field/multivalueTree/multivalueTree/) field for selecting multiple values from tree-like data.
 
 ![CXBOX-1341_multivalueTree.gif](v3.0.1/CXBOX-1341_multivalueTree.gif)
 
 It works similarly to the existing multivalue field, but opens the new [AssocTreePopup](#AssocTreePopup) widget, where users navigate the tree and select multiple values using checkboxes.
 
-!!! info  
-    Detailed documentation for the [multivalueTree](https://doc.cxbox.org/widget/fields/field/multivalueTree/multivalueTree/)  field will be available soon in our official documentation - stay tuned!
+!!! info
+    See the [multivalueTree](https://doc.cxbox.org/widget/fields/field/multivalueTree/multivalueTree/) field documentation.
 
 #### <a id="AssocTreePopup">Added: AssocTreePopup - NEW widget type!</a>
 
@@ -129,8 +128,8 @@ Search and filtering results can be displayed in two modes: collapse and hide.
 
 The AssocTreePopup widget is opened from the new [multivalueTree](#multivalueTree) field.
 
-!!! info  
-    Detailed documentation for the [AssocTreePopup](https://doc.cxbox.org/widget/type/assoctreepopup/assoctreepopup/) widget will be available soon in our official documentation - stay tuned!
+!!! info
+    See the [AssocTreePopup](https://doc.cxbox.org/widget/type/assoctreepopup/assoctreepopup/) widget documentation.
 
 #### Added: text and richText fields - configurable height  
 <!-- CXBOX-1350 -->  
@@ -318,3 +317,23 @@ If you are planning to migrate from **Camunda 7 Community Edition to CIB seven**
 Previously, using `@EnableWebMvc` caused Spring to create `WebMvcConfigurationSupport`, which prevented `WebMvcAutoConfiguration` from being applied. This could lead to additional configuration requirements during migration.
 
 The core has been updated to eliminate this issue, making migration to CIB seven more straightforward.
+
+### CXBOX [documentation](https://doc.cxbox.org/)
+
+#### Added: Description Tree widget
+<!-- CXBOX-1341 -->
+We have provided a description of the [Tree widget](https://doc.cxbox.org/widget/type/tree/tree/): the data contract (`parentId`, `isLeaf`, `options.tree`), lazy load, actions with the node refresh, search modes and pagination with the `More` button.
+
+#### Added: Description PickTreePopup and AssocTreePopup widgets
+<!-- CXBOX-1341 -->
+We have provided descriptions of the [PickTreePopup](https://doc.cxbox.org/widget/type/picktreepopup/picktreepopup/) and [AssocTreePopup](https://doc.cxbox.org/widget/type/assoctreepopup/assoctreepopup/) widgets. The articles follow the structure of [PickListPopup](https://doc.cxbox.org/widget/type/picklistpopup/picklistpopup/) and [AssocListPopup](https://doc.cxbox.org/widget/type/assoclistpopup/assoclistpopup/) and add the tree specifics: `options.tree`, lazy load, search modes, selection modes.
+
+#### Added: Description pickTree and multivalueTree fields
+<!-- CXBOX-1341 -->
+We have provided descriptions of the [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/) and [multivalueTree](https://doc.cxbox.org/widget/fields/field/multivalueTree/multivalueTree/) fields on the List, Form and Info widgets, structured the same way as [pickList](https://doc.cxbox.org/widget/fields/field/pickList/pickList/) and [multivalue](https://doc.cxbox.org/widget/fields/field/multivalue/multivalue/).
+
+#### Updated: Description PickListPopup widget
+<!-- CXBOX-1341 -->
+The [PickListPopup](https://doc.cxbox.org/widget/type/picklistpopup/picklistpopup/) article has been aligned with PickTreePopup: the same Create, Edit, Delete, Save and Cancel-create sections, each with its own sample.
+
+All pictures and GIFs of these articles are produced by the autotests of [cxbox/code-samples](https://github.com/CX-Box/cxbox-code-samples) (packages `application.Samples.Tree` and `application.Samples.Popup`), so they always match the current behavior.

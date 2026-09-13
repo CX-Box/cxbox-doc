@@ -9,6 +9,9 @@ The navigation arrows and limit settings block are removed if the number of reco
 * [List widget](/widget/type/list/list)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+* [Tree widget](/widget/type/tree/tree)
+* [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+* [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 
 ##**Pagination modes**:
 
@@ -177,6 +180,9 @@ This function is available:
 * [List widget](/widget/type/list/list)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+* [Tree widget](/widget/type/tree/tree)
+* [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+* [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 
 **Values:**
 
@@ -217,6 +223,9 @@ This function is available:
 * [List widget](/widget/type/list/list)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+* [Tree widget](/widget/type/tree/tree)
+* [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+* [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 
 **Values:**
 

@@ -51,8 +51,22 @@ In cxbox add standard types
 |    `Sort`     | -    | -          | -               | -          | +              |    
 |  `Required`   | -    | -          | -               | +          | +              |    
                                                                            
+
+|     Type      | pickTree | multivalueTree |
+|:-------------:|----------|----------------|
+| `Placeholder` | +        | +              |
+|    `Color`    | +        | +              |
+|   `RO/Edit`   | +        | +              |
+|   `Filter`    | +        | +              |
+|  `Drilldown`  | +        | +              |
+| `Validation`  | +        | +              |
+|    `Sort`     | +        | -              |
+|  `Required`   | +        | +              |
+
    
  
+
+
 ## How to add block fields?
 ??? Example
 

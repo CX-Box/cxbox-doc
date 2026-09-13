@@ -9,6 +9,7 @@ This feature supports the following types:
 
 * [List widget](/widget/type/list/list)
 * [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
+* [Tree widget](/widget/type/tree/tree)
 
 This feature supports only field [fileUpload](/widget/fields/field/fileUpload/fileUpload)
 

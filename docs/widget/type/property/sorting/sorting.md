@@ -3,8 +3,12 @@
 
 This function is available:
 
-* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
+* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup).
+
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
+
+!!! info
+    For the tree widgets sorting works **inside a node**: the records are sorted among the children of the same parent, the hierarchy itself is not changed.
  
 ## Type sorting
 

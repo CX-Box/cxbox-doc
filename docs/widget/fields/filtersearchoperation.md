@@ -23,9 +23,11 @@ Here are the standard field types with their respective filtering methods.
 |               `fileUpload`               | .contains                                   |          
 |                `pickList`                | .contains                                   |          
 |             `inlinePickList`             | .contains                                   |            
+|                `pickTree`                | .contains                                   |          
 |                  `hint`                  | -                                           |         
 |               `multifield`               | .equals                                     | 
 |            `multivalueHover`             | .equalsOneOf                                |            
 |               `multivalue`               | .equalsOneOf                                |                
+|             `multivalueTree`             | .equalsOneOf                                |                
 |             `multipleSelect`             | .equalsOneOf                                | 
 |           `suggestionPickList`           | .contains                                   |

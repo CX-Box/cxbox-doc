@@ -55,7 +55,10 @@ Type: String/boolean/number/null (required).
 *   [HeaderWidget](/widget/type/headerwidget/headerwidget.md/#howdoesitlook)
 *   [Info widget](/widget/type/info/info.md/#howdoesitlook)
 *   [List widget](/widget/type/list/list/#howdoesitlook)
+*   [Tree widget](/widget/type/tree/tree/#howdoesitlook)
 *   PickListPopup widget - not applicable
+*   PickTreePopup widget - not applicable
+*   AssocTreePopup widget - not applicable
 *   Statistics blocks widget - not applicable
 
 ## How to add? 
@@ -67,7 +70,10 @@ Type: String/boolean/number/null (required).
 *   [HeaderWidget](/widget/type/headerwidget/headerwidget.md/#howtoadd)
 *   [Info widget](/widget/type/info/info.md/#howtoadd)
 *   [List widget](/widget/type/list/list/#howtoadd)
+*   [Tree widget](/widget/type/tree/tree/#howtoadd)
 *   PickListPopup widget - not applicable
+*   PickTreePopup widget - not applicable
+*   AssocTreePopup widget - not applicable
 *   Statistics blocks widget - not applicable
 
 ## Deprecated functions

@@ -3,12 +3,9 @@
 Tree widget presents hierarchical records as an expandable tree, so users can browse parent and child rows in one table.
 
 !!! info
-    The following features are **not available** for the `Tree` widget in this release and are tracked in `CXBOX-1369`:
+    The following features are **not available** for the `Tree` widget in this release:
 
     * fully or partially expanded initial load (the tree always opens collapsed)
-    * drag-and-drop of rows
-    * export to Excel
-    * create scope record
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261){:target="_blank"} ·
@@ -28,10 +25,44 @@ The minimal data set of a tree record is:
 * `isLeaf` — a computed boolean flag. The default value is `false`. The value `true` means that the record has no child records, so the expand arrow is not displayed for it.
 
 !!! info
-    The **first** field of the `fields` array is rendered as the tree column: the expand arrow, the indent of the nesting level and, for `AssocTreePopup`, the checkbox are placed in it (Ant Design Tree style). All the other fields are rendered as ordinary columns.
+    The **first** field of the `fields` array is rendered as the tree column: the expand arrow. All the other fields are rendered as ordinary columns.
 
-    `parentId` and `isLeaf` are service fields. They must be declared in the widget with type **hidden**.
+**options.tree**
 
+All tree specific settings are placed in **options**.**tree** of **_.widget.json_**.
+
+??? Example
+
+    | Property                 | Type                                            | Default                  | Description                                                                                                       |
+    |--------------------------|-------------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------|
+    | `parentIdFieldKey`       | String                                          | `parentId`               | Name of the field that holds the identifier of the parent record.                                                   |
+    | `isLeafFieldKey`         | String                                          | `isLeaf`                 | Name of the field that holds the flag "the record has no child records".                                             |
+    | `searchModes`            | Array of `collapse`, `hide`                     | `["collapse", "hide"]`   | Modes of displaying the filtration result. The first item of the array is the active one. see [Search modes](#searchmodes) |
+    | `onFilterApplyNestLevel` | Number                                          | `0`                      | How many levels of the navigation path are shown above a found record in `collapse` mode. see [Search modes](#searchmodes) |
+    | `insertPosition`         | `start`, `end`                                  | —                        | Where a newly created row is inserted inside its node. see [Actions](#actions)                                       |
+
+**Lazy load**
+
+The tree is always loaded **lazily** and always opens **collapsed**: only the root records are requested when the widget is opened, and the child records of a node are requested when the user expands it.
+!!! info
+    The operation `specified` is used **only** to select the records with an empty parent. For all the other requests the operation `equals` is used.
+    This is why the field that holds the parent identifier must be filterable on the backend.
+
+Every node keeps **its own pagination state**, so the records of one node are loaded page by page independently of the neighbouring nodes. see more [Pagination](#pagination)
+
+??? Example
+    * **Root records** are requested with the filter by an empty parent:
+
+    ```
+    ?parentId.specified=false&_page=1&_limit=5
+    ```
+
+    * **Child records** of a node are requested when the node is expanded:
+
+      ```
+      ?parentId.equals=<id>&_page=1&_limit=5
+      ```
+  
 ### How does it look?
 ![tree.png](tree.png)
 
@@ -319,7 +350,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 **options.layout** - no use in this type.
 
 
-## <a id="actions">Actions</a>
+## Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
 
 As for Tree widget, there are several actions. They are configured exactly like the actions of a [List widget](/widget/type/list/list): the same `create`, `edit`, `save`, `cancel-create`, `delete` actions and the same three ways of creating and editing a record — inline, inline-form and with view.
@@ -576,6 +607,44 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
 
 ### Additional properties
+#### <a id="noderefresh">Node refresh</a>
+The difference from a [List widget](/widget/type/list/list) is **what is refreshed after an action**. A List widget refreshes the whole page, a Tree widget refreshes only the **node** the record belongs to:
+
+* the row is updated from the response of the action or, if the response does not contain it, re-read with the request `?id.equals=<id>`;
+* the row-meta of the row is requested again;
+* if the record is not returned any more, the row is removed from the tree;
+* the node is collapsed and its already loaded child records are forgotten, so they are loaded again on the next expand.
+
+The position of a newly created row inside its node is defined by **options**.**tree**.**insertPosition**: `start` places it before the already loaded rows of the node, `end` places it after them. see [options.tree](#optionstree)
+
+!!! info
+    Sibling records and parent records are **not** refreshed automatically.
+    PostAction.refreshBC` is not supported for a Tree widget in this release: the root page is loaded again, but the expanded nodes and their already loaded child records stay as they are. If an action changes other records, reload the view.
+
+
+**Requests**
+Because only the node is refreshed, a Tree widget performs fewer requests than a List widget.
+
+| Action        | List widget                                                   | Tree widget                       |
+|---------------|---------------------------------------------------------------|-----------------------------------|
+| Delete        | `DELETE /data` + `GET /data` + `GET /row-meta` + `GET /count` | `DELETE /data` + `GET /row-meta`  |
+| Save          | `PUT /data` + `GET /data` + `GET /row-meta` + `GET /count`    | `PUT /data` + `GET /row-meta`     |
+| Cancel-create | `DELETE /data` + `GET /data` + `GET /row-meta` + `GET /count` | `DELETE /data` + `GET /row-meta`  |
+
+**Example**: the record action `custom Save` of the sample below updates the record; the tree refreshes only its node.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3265tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/create/basic){:target="_blank"}
+
+ 
+??? Example
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/basic/MyExample3265Service.java:getActions
+    --8<--
+    ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3265tree){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/create/basic){:target="_blank"}
+
 
 #### Customization of displayed columns
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3268){:target="_blank"} ·
@@ -691,85 +760,59 @@ see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
-#### <a id="pagination">Pagination</a>
-`Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
-see [Pagination](/widget/type/property/pagination/pagination)
 
-Every node of the tree keeps **its own pagination state**, so the records of one node are loaded independently of the neighbouring nodes. How many records are loaded at once for a node is defined by the page limit, see [Page limit](/widget/type/property/defaultlimitpage/defaultlimitpage)
-([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample359/view/myexample359tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/defaultlimitpage){:target="_blank"}).
+#### <a id="searchmodes">Search modes</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
 
-#### Export to Excel
-`Export to Excel` enables users to download a .xlsx file containing the table's data.
-see [Excel](/widget/type/property/export/excel/excel)
+The way the result of filtration and full text search is displayed is defined by **options**.**tree**.**searchModes**.
 
-!!! info
-    Export to Excel is **not available** for the `Tree` widget in this release, see `CXBOX-1369`.
+There are two modes:
 
-#### Multi-upload files
-We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
+* `collapse` — **search results and tree**. The tree displays the found records together with the records that are required for navigation: the navigation path above every found record is restored `onFilterApplyNestLevel` levels up. The user can navigate through the tree, expand and collapse branches, see the neighbouring records and load additional records.
+* `hide` — **search results only**. The tree displays only the found records, everything else is hidden. The user works with the search result only and cannot navigate through the other records of the tree.
 
-see more [Multi-upload files](/widget/type/property/multiupload/multiupload)
+Both modes can be available at the same time. The **first** item of the `searchModes` array is the mode that is active when the filter is applied; the user switches between the available modes in the widget.
 
-#### <a id="optionstree">options.tree</a>
-All tree specific settings are placed in **options**.**tree** of **_.widget.json_**.
+**Restoring the path upwards**
 
-| Property                 | Type                                            | Default                  | Description                                                                                                       |
-|--------------------------|-------------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------|
-| `parentIdFieldKey`       | String                                          | `parentId`               | Name of the field that holds the identifier of the parent record.                                                   |
-| `isLeafFieldKey`         | String                                          | `isLeaf`                 | Name of the field that holds the flag "the record has no child records".                                             |
-| `searchModes`            | Array of `collapse`, `hide`                     | `["collapse", "hide"]`   | Modes of displaying the filtration result. The first item of the array is the active one. see [Search modes](#searchmodes) |
-| `onFilterApplyNestLevel` | Number                                          | `0`                      | How many levels of the navigation path are shown above a found record in `collapse` mode. see [Search modes](#searchmodes) |
-| `insertPosition`         | `start`, `end`                                  | —                        | Where a newly created row is inserted inside its node. see [Actions](#actions)                                       |
-| `selection`              | `node`, `nodeAndLeaf`, `leaf`                   | —                        | What the user is allowed to select. Applicable to [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup) and [PickTreePopup](/widget/type/picktreepopup/picktreepopup). |
-| `confirms`               | Array of `paginationUnselect`, `paginationSelect` | `["paginationUnselect"]` | Confirmation shown when the page is changed. Applicable to [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup/#selectionmodes). |
-
-
-#### <a id="lazyload">Lazy load</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3281tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/defaultfields){:target="_blank"}
-
-The tree is always loaded **lazily** and always opens **collapsed**: only the root records are requested when the widget is opened, and the child records of a node are requested when the user expands it.
-
-* **Root records** are requested with the filter by an empty parent:
-
-    ```
-    ?parentId.specified=false&_page=1&_limit=5
-    ```
-
-* **Child records** of a node are requested when the node is expanded:
-
-    ```
-    ?parentId.equals=<id>&_page=1&_limit=5
-    ```
-
-!!! info
-    The operation `specified` is used **only** to select the records with an empty parent. For all the other requests the operation `equals` is used.
-
-    This is why the field that holds the parent identifier must be filterable on the backend.
-
-Every node keeps **its own pagination state**, so the records of one node are loaded page by page independently of the neighbouring nodes. see more [Pagination](#pagination)
+In `collapse` mode the records whose parents have not been loaded yet are placed under a pseudo node. The `>...` button loads the missing parents with the request `?id.equals=<parentId>` and moves the records into the hierarchy. One click restores up to **2** levels of nesting, so for a deep hierarchy the button has to be pressed several times.
 
 ###### How does it look?
-=== "Collapsed"
-    ![lazyload_collapsed.png](lazyload_collapsed.png)
-=== "Expanded"
-    ![lazyload.png](lazyload.png)
+=== "Search results and tree (collapse)"
+    ![search_collapse.png](search_collapse.png)
+=== "Search results only (hide)"
+    ![search_hide.png](search_hide.png)
+=== "Switching between modes"
+    ![search_modes_menu.png](search_modes_menu.png)
 
 ###### How to add?
 ??? Example
-    Lazy load is the standard behaviour of the widget and requires no additional settings, see [Basic](#Howtoaddbacis).
+    **Step1** Add **options**.**tree**.**searchModes** to corresponding **_.widget.json_**.
 
-    The `isLeaf` flag defines whether the expand arrow is shown for a record. Calculate it in the corresponding **DataResponseDTO**.
+    The first item of the array is the mode that is active when the filter is applied.
 
-    ```java
+    ```
+    "tree": {
+      "searchModes": ["collapse", "hide"],
+      "onFilterApplyNestLevel": 1
+    }
+    ```
+
+    ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/defaultfields/MyExample3281DTO.java
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Tree.widget.json
     --8<--
     ```
 
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
 
-##### <a id="more">More</a>
+
+#### <a id="pagination">Pagination</a>
+`Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
+see [Pagination](/widget/type/property/pagination/pagination)
+ 
 A Tree widget has no navigation arrows. Instead of the "next" arrow the last row of a node is the **`More`** button, which loads the next page of the node and appends it to the already loaded records. The limit selector (`availableLimitsList`) is moved to the gear menu of the widget.
 
 The `More` button follows the same algorithm as the "next" arrow of the three pagination modes:
@@ -830,6 +873,12 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867tree){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/availablelimitselist){:target="_blank"}
 
+#### Export to Excel
+!!! info
+    Export to Excel is **not available** for the `Tree` widget in this release
+
+#### Multi-upload files
+**not available**
 
 ##### Sorting
 `Sorting` allows the user to sort the records by a column.
@@ -838,89 +887,5 @@ see [Sorting](/widget/type/property/sorting/sorting)
 Sorting of a Tree widget works **inside a node**: the records are sorted among the children of the same parent, the hierarchy itself is not changed. In all other respects sorting is standard.
 
 ###### How does it look?
-![sorting.png](sorting.png)
+    ![sorting.png](sorting.png)
 
-
-#### <a id="searchmodes">Search modes</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
-
-The way the result of filtration and full text search is displayed is defined by **options**.**tree**.**searchModes**.
-
-There are two modes:
-
-* `collapse` — **search results and tree**. The tree displays the found records together with the records that are required for navigation: the navigation path above every found record is restored `onFilterApplyNestLevel` levels up. The user can navigate through the tree, expand and collapse branches, see the neighbouring records and load additional records.
-* `hide` — **search results only**. The tree displays only the found records, everything else is hidden. The user works with the search result only and cannot navigate through the other records of the tree.
-
-Both modes can be available at the same time. The **first** item of the `searchModes` array is the mode that is active when the filter is applied; the user switches between the available modes in the widget.
-
-**Restoring the path upwards**
-
-In `collapse` mode the records whose parents have not been loaded yet are placed under a pseudo node. The `>...` button loads the missing parents with the request `?id.equals=<parentId>` and moves the records into the hierarchy. One click restores up to **2** levels of nesting, so for a deep hierarchy the button has to be pressed several times.
-
-###### How does it look?
-=== "Search results and tree (collapse)"
-    ![search_collapse.png](search_collapse.png)
-=== "Search results only (hide)"
-    ![search_hide.png](search_hide.png)
-=== "Switching between modes"
-    ![search_modes_menu.png](search_modes_menu.png)
-
-###### How to add?
-??? Example
-    **Step1** Add **options**.**tree**.**searchModes** to corresponding **_.widget.json_**.
-
-    The first item of the array is the mode that is active when the filter is applied.
-
-    ```
-    "tree": {
-      "searchModes": ["collapse", "hide"],
-      "onFilterApplyNestLevel": 1
-    }
-    ```
-
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Tree.widget.json
-    --8<--
-    ```
-
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
-
-
-#### <a id="noderefresh">Node refresh</a>
-The difference from a [List widget](/widget/type/list/list) is **what is refreshed after an action**. A List widget refreshes the whole page, a Tree widget refreshes only the **node** the record belongs to:
-
-* the row is updated from the response of the action or, if the response does not contain it, re-read with the request `?id.equals=<id>`;
-* the row-meta of the row is requested again;
-* if the record is not returned any more, the row is removed from the tree;
-* the node is collapsed and its already loaded child records are forgotten, so they are loaded again on the next expand.
-
-The position of a newly created row inside its node is defined by **options**.**tree**.**insertPosition**: `start` places it before the already loaded rows of the node, `end` places it after them. see [options.tree](#optionstree)
-
-!!! info
-    Sibling records and parent records are **not** refreshed automatically.
-
-    `PostAction.refreshBC` is not supported for a Tree widget in this release: the root page is loaded again, but the expanded nodes and their already loaded child records stay as they are. If an action changes other records, reload the view.
-
-
-**Requests**
-Because only the node is refreshed, a Tree widget performs fewer requests than a List widget.
-
-| Action        | List widget                                                   | Tree widget                       |
-|---------------|---------------------------------------------------------------|-----------------------------------|
-| Delete        | `DELETE /data` + `GET /data` + `GET /row-meta` + `GET /count` | `DELETE /data` + `GET /row-meta`  |
-| Save          | `PUT /data` + `GET /data` + `GET /row-meta` + `GET /count`    | `PUT /data` + `GET /row-meta`     |
-| Cancel-create | `DELETE /data` + `GET /data` + `GET /row-meta` + `GET /count` | `DELETE /data` + `GET /row-meta`  |
-
-**Example**: the record action `custom Save` of the sample below updates the record; the tree refreshes only its node.
-
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3265tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/create/basic){:target="_blank"}
-
-```java
---8<--
-{{ external_links.github_raw_doc }}/widgets/tree/actions/create/basic/MyExample3265Service.java:getActions
---8<--
-```

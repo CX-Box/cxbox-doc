@@ -43,10 +43,10 @@ In cxbox add standard types
 |     Type      | hint | multifield | multivalueHover | multivalue | multipleSelect |    
 |:-------------:|------|------------|-----------------|------------|----------------|    
 | `Placeholder` | -    | -          | -               | +          | +              |    
-|    `Color`    | -    | -          | +               | +          | -              |    
+|    `Color`    | +    | -          | +               | +          | -              |    
 |   `RO/Edit`   | -    | -          | -               | +          | +              |    
-|   `Filter`    | -    | +          | +               | +          | +              |    
-|  `Drilldown`  | -    | -          | -               | +          | -              |    
+|   `Filter`    | +    | +          | +               | +          | +              |    
+|  `Drilldown`  | +    | -          | -               | +          | -              |    
 | `Validation`  | -    | -          | -               | +          | +              |    
 |    `Sort`     | -    | -          | -               | -          | +              |    
 |  `Required`   | -    | -          | -               | +          | +              |    

@@ -437,10 +437,10 @@ The records of the shown period are requested with the filter by the start and t
 
 ![calendar_pagination.gif](calendar_pagination.gif)
 
-#### <a id="scale">Scale</a>
-The buttons "Month", "Week", "Day" of the toolbar switch the scale of the calendar:
+#### <a id="monthweekday">Month / Week / Day</a>
+The buttons "Month", "Week", "Day" of the toolbar show the events of a month, a week or a day:
 
 * `Month` (default): the events of the month by days; a day shows up to 5 events, the others are behind "+N more";
 * `Week`, `Day`: the events are placed by hours.
 
-![calendar_scale.gif](calendar_scale.gif)
+![calendar_month_week_day.gif](calendar_month_week_day.gif)

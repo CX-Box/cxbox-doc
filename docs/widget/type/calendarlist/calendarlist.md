@@ -145,7 +145,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         ```
 
 ## <a id="fields">Fields</a>
-Fields Configuration. The fields array defines the fields of the event (see [options.calendar](#Basics)) and the fields available for filtration.
+Fields Configuration. The fields array defines the fields of the event (see [options.calendar](#basics)) and the fields available for filtration.
 
 ```json
 {

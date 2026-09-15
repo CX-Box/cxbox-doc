@@ -329,7 +329,7 @@ Available since [v3.0.1](/new/version3001/)
 `Filtering` allows you to search data based on criteria. The column filter has two modes, applying one of them clears the other:
 
 * `By text`: type a part of the value and press **Apply**. Search uses contains operator for the field referenced in `key`.
-* `By records`: click **...** and choose the records in the popup. Search uses in operator which compares ids (the field mapped to `id` in `pickMap`). While this filter is applied, **...** is shown dark and bold.
+* `By records`: click **...** and choose the records in the popup. Search uses in operator which compares ids (the field mapped to `id` in `pickMap`). While this filter is applied, **...** shows the number of chosen records.
 
 !!! tips
     Pop up widget for filtration is auto-generated based on widget for field editing (e.g. same fields, same filters and so on will be on both widgets). Optionally - separate widget for filtration can still be provided

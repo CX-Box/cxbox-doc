@@ -4,7 +4,7 @@
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/base/events){:target="_blank"}
 
 A record is shown as an event by three fields of the widget:
 
@@ -34,72 +34,34 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
     **Step1** Create file **_.widget.json_** with type = **"CalendarList"**. Add the fields of the event and **options.calendar**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5055List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/MyExample5055List.widget.json
     --8<--
     ```
 
     **Step2** Add widget to corresponding ****_.view.json_** **.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/title/myexample5055list.view.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/myexample5055list.view.json
     --8<--
     ```
 
 ## <a id="Title">Title</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
+**not available** in this release: the widget does not show a title.
 
-### Title Basic
-`Title` for widget (optional)
-
-There are types of:
-
-* `constant title`: shows constant text.
-* `constant title empty`: if you want to visually connect widgets by them to be placed one under another
-
-#### How does it look?
-=== "Constant title"
-    ![consttitle.png](consttitle.png)
-=== "Constant title empty"
-    ![empytitle.png](empytitle.png)
-
-#### How to add?
-??? Example
-    === "Constant title"
-        **Step1** Add name for **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5055List.widget.json
-        --8<--
-        ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
-
-    === "Constant title empty"
-        **Step1** Delete parameter **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5055EmptyTitle.widget.json
-        --8<--
-        ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055/view/myexample5055emptytitle){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
-
-### Title Color
-`Title Color` allows you to specify a color for a title. It can be constant or calculated.
-The color of the title field (`valueFieldKey`) is also the color of the events.
+## <a id="Color">Color</a>
+`Color` allows you to specify a color for the events. It is set for the title field of the event (`valueFieldKey`) and can be constant or calculated.
 
 **Calculated color**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5056/view/myexample5056list){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/colortitle){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/color){:target="_blank"}
 
-*Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
+*Calculated color* can be used to change the color of an event dynamically. It changes depending on business logic or data in the application.
 
 **Constant color**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5056/view/myexample5056listcolorconst){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/colortitle){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/color){:target="_blank"}
 
 *Constant color* is a fixed color that doesn't change. It remains the same regardless of any factors in the application.
 
@@ -113,37 +75,33 @@ The color of the title field (`valueFieldKey`) is also the color of the events.
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/colortitle/MyExample5056DTO.java:colorDTO
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/MyExample5056DTO.java:colorDTO
         --8<--
         ```
 
-        **Step 2** Add **"bgColorKey"** :  `custom field for color` to .widget.json.
-
-        Add in `title` field with `${customField}`
+        **Step 2** Add **"bgColorKey"** :  `custom field for color` to the title field of the event in .widget.json.
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/colortitle/MyExample5056.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/MyExample5056.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5056/view/myexample5056list){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/colortitle){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/color){:target="_blank"}
 
     === "Constant color"
 
-        Add **"bgColor"** :  `HEX color`  to .widget.json.
-
-        Add in `title` field with `${customField}`
+        Add **"bgColor"** :  `HEX color` to the title field of the event in .widget.json.
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/colortitle/MyExample5056ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/MyExample5056ColorConst.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5056/view/myexample5056listcolorconst){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/colortitle){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/color){:target="_blank"}
 
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this widget belongs.
@@ -156,7 +114,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 * `no show condition - recommended`: widget always visible
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/base/events){:target="_blank"}
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active. A click on an event selects its record.
 
@@ -222,7 +180,7 @@ Fields Configuration. The fields array defines the fields of the event (see [opt
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5055List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/MyExample5055List.widget.json
     --8<--
     ```
 
@@ -235,7 +193,7 @@ Fields Configuration. The fields array defines the fields of the event (see [opt
 #### Create
 `Create` button enables you to create a new record. There are the methods to create a record:
 
-<!-- TODO CXBOX-1360: Inline (the widget is switched to the table) — waiting for the decision -->
+* Inline: **not available** in this release.
 
 * [Inline-form](#withwidget): You can add data using a form widget in a popup over the calendar. This is the default when `options.create.widget` is set.
 
@@ -337,7 +295,7 @@ With `Create with view`, clicking the "Create" button opens a separate view that
 #### Edit
 `Edit` enables you to change the field value. There are the methods to edit a record:
 
-<!-- TODO CXBOX-1360: Inline edit — waiting for the decision -->
+* Inline edit: **not available** in this release.
 
 * [Inline-form](#editwithwidget): A click on the event opens the form widget in a popover next to the event.
 

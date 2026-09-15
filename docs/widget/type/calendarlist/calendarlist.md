@@ -52,36 +52,6 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
 !!! info
     Title is **not available** in this release: the widget does not show a title.
 
-### Title Basic
-`Title` for widget (optional)
-
-There are types of:
-
-* `constant title`: shows constant text.
-* `constant title empty`: if you want to visually connect widgets by them to be placed one under another
-
-#### How to add?
-??? Example
-    === "Constant title"
-        **Step1** Add name for **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5066List.widget.json
-        --8<--
-        ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5066/view/myexample5066list){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
-
-    === "Constant title empty"
-        **Step1** Delete parameter **title** to **_.widget.json_**.
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5066EmptyTitle.widget.json
-        --8<--
-        ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5066/view/myexample5066emptytitle){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
-
 ## <a id="Color">Color</a>
 `Color` allows you to specify a color for the events. It is set for the title field of the event (`valueFieldKey`) and can be constant or calculated.
 
@@ -150,10 +120,15 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/base/events){:target="_blank"}
 
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active. A click on an event selects its record.
+* `show condition by current entity`: **not recommended** for the calendar.
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5057){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/showcondition/bycurrententity){:target="_blank"}
+
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5057/view/myexample5059showcond){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/showcondition/byparententity){:target="_blank"}
 
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
@@ -161,8 +136,8 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
     ![calendar.png](calendar.png)
-=== "show condition by current entity"
-    ![show_cond_current.gif](show_cond_current.gif)
+=== "show condition by parent entity"
+    ![show_cond.gif](show_cond.gif)
 
 #### <a id="howtoadd">How to add?</a>
 ??? Example
@@ -170,13 +145,15 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
     === "no show condition"
         see [Basic](#Howtoaddbacis)
 
-    === "show condition by current entity"
+    === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/bycurrententity/MyExample5057ShowCond.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/byparententity/MyExample5059Child.widget.json
         --8<--
         ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5057/view/myexample5059showcond){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/showcondition/byparententity){:target="_blank"}
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the fields of the event (see [options.calendar](#basics)) and the fields available for filtration.

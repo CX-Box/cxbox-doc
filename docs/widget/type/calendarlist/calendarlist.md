@@ -136,6 +136,8 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
     ![calendar.png](calendar.png)
+=== "show condition by current entity"
+    **Not recommended** for the calendar.
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
 
@@ -144,6 +146,18 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
     === "no show condition"
         see [Basic](#Howtoaddbacis)
+
+    === "show condition by current entity"
+        **Not recommended** for the calendar.
+
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/bycurrententity/MyExample5057ShowCond.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5057){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/showcondition/bycurrententity){:target="_blank"}
 
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)

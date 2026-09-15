@@ -9,6 +9,8 @@ Available since [v3.0.1](/new/version3001/)
 
     * fully or partially expanded initial load (the tree always opens collapsed)
 
+![pickTreePopupBasic.png](pickTreePopupBasic.png)
+
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3343){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/basic){:target="_blank"}

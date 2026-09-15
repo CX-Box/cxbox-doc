@@ -7,7 +7,7 @@
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/base/events){:target="_blank"}
 
 ### How does it look?
-![calendar.png](calendar.png)
+![calendar.gif](calendar.gif)
 
 A record is shown as an event by three fields of the widget:
 

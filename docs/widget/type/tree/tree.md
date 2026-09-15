@@ -9,6 +9,8 @@ Tree widget presents hierarchical records as an expandable tree, so users can br
 
     * fully or partially expanded initial load (the tree always opens collapsed)
 
+![tree.png](tree.png)
+
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base){:target="_blank"}

@@ -46,7 +46,41 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
     ```
 
 ## <a id="Title">Title</a>
-**not available** in this release: the widget does not show a title.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5066){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
+
+!!! info
+    Title is **not available** in this release: the widget does not show a title.
+
+### Title Basic
+`Title` for widget (optional)
+
+There are types of:
+
+* `constant title`: shows constant text.
+* `constant title empty`: if you want to visually connect widgets by them to be placed one under another
+
+#### How to add?
+??? Example
+    === "Constant title"
+        **Step1** Add name for **title** to **_.widget.json_**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5066List.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5066/view/myexample5066list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
+
+    === "Constant title empty"
+        **Step1** Delete parameter **title** to **_.widget.json_**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/title/MyExample5066EmptyTitle.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5066/view/myexample5066emptytitle){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/title){:target="_blank"}
 
 ## <a id="Color">Color</a>
 `Color` allows you to specify a color for the events. It is set for the title field of the event (`valueFieldKey`) and can be constant or calculated.

@@ -24,7 +24,7 @@ Here are the standard field types with their respective filtering methods.
 |                `pickList`                | .contains                                   |          
 |             `inlinePickList`             | .contains                                   |            
 |                `pickTree`                | .contains                                   |          
-|                  `hint`                  | -                                           |         
+|                  `hint`                  | .contains                                   |         
 |               `multifield`               | .equals                                     | 
 |            `multivalueHover`             | .equalsOneOf                                |            
 |               `multivalue`               | .equalsOneOf                                |                

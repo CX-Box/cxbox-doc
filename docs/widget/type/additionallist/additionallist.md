@@ -235,6 +235,9 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
  
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 -->
+!!! info
+    When all widgets on the right are hidden, the other widgets of the view take the whole width.
+
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 

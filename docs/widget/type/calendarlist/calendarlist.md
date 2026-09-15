@@ -6,6 +6,9 @@
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5055){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/base/events){:target="_blank"}
 
+### How does it look?
+![calendar.png](calendar.png)
+
 A record is shown as an event by three fields of the widget:
 
 * a title field — the value shown in the event;
@@ -25,9 +28,6 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
 
 !!! info
     The title field can have a drilldown: a click on the title of the event opens the link, a click on the rest of the event opens the edit form. see [Edit](#editwithwidget)
-
-### How does it look?
-![calendar.png](calendar.png)
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example

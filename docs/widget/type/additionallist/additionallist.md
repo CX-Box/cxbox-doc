@@ -243,7 +243,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 #### <a id="howdoesitlook">How does it look?</a>
 === "no show condition"
-    see [Basic](#иasic)
+    see [Basic](#basic)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
 <!--

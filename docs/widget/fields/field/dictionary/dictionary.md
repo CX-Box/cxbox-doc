@@ -1608,3 +1608,24 @@ Compare the downloaded reference file with the release file to ensure consistenc
 
 * Proceed with Release:
 After verifying that the files align correctly, continue with the deployment process, ensuring that user changes are retained in the updated system.
+
+### Width of the drop-down list
+The drop-down list of a dictionary is never narrower than the field and grows with the longest value, but no wider
+than the limit set by a frontend constant (default value 1.3, in field widths).
+
+* If a value does not fit the resulting width, it is shortened with an ellipsis (...).
+* Hovering over an option shows the full value in a tooltip.
+* Whatever the constant is, the list never takes more than 70% of the view, so it cannot cover the menu.
+
+#### How does it look?
+![img_dropdown_width_form.png](img_dropdown_width_form.png)
+
+#### How to add?
+??? Example
+    Change constant **dictionary_dropDownMaxCols** .
+    ```
+    ui/src/fields/Dictionary/constants.ts
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3359){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/longvalues){:target="_blank"}

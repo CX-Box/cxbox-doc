@@ -1571,14 +1571,19 @@ Custom icons can be uploaded. Icons should be uploaded in SVG format.
 
 ### Width of the drop-down list
 The drop-down list of a dictionary is never narrower than the field and grows with the longest value, but no wider
-than the limit set by a frontend constant (default value 1.3, in field widths).
+than the limit set by a frontend constant (default value 5, in field widths).
 
 * If a value does not fit the resulting width, it is shortened with an ellipsis (...).
 * Hovering over an option shows the full value in a tooltip.
 * Whatever the constant is, the list never takes more than 70% of the view, so it cannot cover the menu.
 
 #### How does it look?
-![img_dropdown_width_form.png](img_dropdown_width_form.png)
+=== "List widget"
+    ![img_dropdown_width_list.png](img_dropdown_width_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_dropdown_width_form.png](img_dropdown_width_form.png)
 
 #### How to add?
 ??? Example
@@ -1586,6 +1591,13 @@ than the limit set by a frontend constant (default value 1.3, in field widths).
     ```
     ui/src/fields/Dictionary/constants.ts
     ```
+
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**, a read-only value has no drop-down list.
+    === "Form widget"
+        **Works for Form.**
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3359){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/longvalues){:target="_blank"}

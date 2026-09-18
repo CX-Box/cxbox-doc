@@ -455,7 +455,12 @@ than the limit set by a frontend constant (default value 1.3, in field widths).
 * Whatever the constant is, the list never takes more than 70% of the view, so it cannot cover the menu.
 
 #### How does it look?
-![img_dropdown_width_form.png](img_dropdown_width_form.png)
+=== "List widget"
+    ![img_dropdown_width_list.png](img_dropdown_width_list.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_dropdown_width_form.png](img_dropdown_width_form.png)
 
 #### How to add?
 ??? Example
@@ -463,6 +468,13 @@ than the limit set by a frontend constant (default value 1.3, in field widths).
     ```
     ui/src/fields/MultipleSelectField/constants.ts
     ```
+
+    === "List widget"
+        **Works for List.**
+    === "Info widget"
+        **_not applicable_**, a read-only value has no drop-down list.
+    === "Form widget"
+        **Works for Form.**
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3358){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multipleselect/longvalues){:target="_blank"}

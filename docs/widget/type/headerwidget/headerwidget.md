@@ -113,30 +113,18 @@ There are types of:
         --8<--
         ```   
  
-        **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
-        with the bgColorKey property.
+        **Step 2** Add in `title` field with `${customField}`.
 
-        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
-
-        Add in `title` field with `${customField}` 
+        Add this field to the `fields` array with the [Field hidden](/widget/fields/field/hidden/hidden/) type and **"bgColorKey"** :  `custom field for color`. The `custom field for color` itself is not needed in `fields`.
 
         ```json
         {
         "label": "Custom Field",
         "key": "customFieldText",
-        "type": "input",
+        "type": "hidden",
         "bgColorKey": "customFieldTextColor"
         }
         ```
-
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/headerwidget/colortitle/myExample5024Form.widget.json
-        --8<--
-        ```     
-
-        **Step 3** Add in `title` field with `${customField} . Add field to the `fields` array.
-        
 
         ```json
         --8<--
@@ -235,8 +223,9 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 ## <a id="fields">Fields</a>
 This array is usually empty.
 
-However, if you need to use field values for displaying data (for example, to dynamically generate a header based on a field value see [Title Color](#TitleColor) ),
-you should add the required field with the [Field hidden](/widget/fields/field/hidden/hidden/) type — this way the frontend will be able to retrieve its value.
+However, if you need to set properties of a field shown in the title (for example, a calculated color, see [Title Color](#TitleColor)),
+add this field with the [Field hidden](/widget/fields/field/hidden/hidden/) type.
+Only fields used in `title` as `${customField}` are taken from this array: a field that is not in the title and not in other widgets of the screen gets no value.
 
 
 ```json

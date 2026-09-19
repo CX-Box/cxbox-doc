@@ -398,7 +398,7 @@ Search uses (HH:MM:SS):
  
 
 ## Drilldown
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503![img_list.png](../../../../../../../Downloads/img_list.png)){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application

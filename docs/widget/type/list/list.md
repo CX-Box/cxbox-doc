@@ -142,22 +142,21 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 ## <a id="Showcondition">Show condition</a>
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
-
 * `no show condition - recommended`: widget always visible
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/base){:target="_blank"}
+
+* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/showcondition/bycurrententity){:target="_blank"}
 
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
-
-<!--
-  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/showcondition/bycurrententity){:target="_blank"}
- 
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
--->
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3101/view/myexample3106showcond){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/showcondition/byparententity){:target="_blank"}
+
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
@@ -166,10 +165,8 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
     ![list.png](list.png)
 === "show condition by current entity"
     ![show_cond_current.gif](show_cond_current.gif)
-<!--
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
--->
 
 #### <a id="howtoadd">How to add?</a>
 ??? Example
@@ -184,15 +181,14 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         {{ external_links.github_raw_doc }}/widgets/list/showcondition/bycurrententity/MyExample31012.widget.json
         --8<--
         ```
-<!--
+
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/MyExample3106child.widget.json
         --8<--
         ```
--->
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.

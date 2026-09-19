@@ -192,7 +192,48 @@ A business component represents a specific part of a system that handles a parti
 see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="Showcondition">Show condition</a>
-_not applicable_
+
+* `no show condition - recommended`: widget always visible
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4203){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/base/defaultfields){:target="_blank"}
+
+* `show condition by current entity`: **not recommended** for the statistics blocks.
+
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4230){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/showcondition/byparententity){:target="_blank"}
+
+!!! tips
+    It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
+
+#### <a id="howdoesitlook">How does it look?</a>
+=== "no show condition"
+    ![img_stat.png](img_stat.png)
+=== "show condition by current entity"
+    **Not recommended** for the statistics blocks.
+=== "show condition by parent entity"
+    ![show_cond.gif](show_cond.gif)
+
+#### <a id="howtoadd">How to add?</a>
+??? Example
+
+    === "no show condition"
+        see [Basics](#basics)
+
+    === "show condition by current entity"
+        **Not recommended** for the statistics blocks.
+
+    === "show condition by parent entity"
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/statsblock/showcondition/byparententity/MyExample4233Child.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4230){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/showcondition/byparententity){:target="_blank"}
 
 ## <a id="bc">Fields</a>
 

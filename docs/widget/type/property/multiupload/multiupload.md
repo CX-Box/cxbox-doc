@@ -1,9 +1,10 @@
 # Multi-upload files
 
+We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
+
+## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
-
-We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 
 This feature supports the following types:
 
@@ -33,7 +34,7 @@ This mode displays only the interactive drag-and-drop upload widget, without a s
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
 
-##### How does it look?
+### How does it look?
 === "Combined Mode (Button + Multi-upload)"
     ![default-and-file-upload-dnd.png](default-and-file-upload-dnd.png)
 === "Button-Only Mode (Button)"
@@ -62,8 +63,8 @@ There are five main colors used for the progress bar and icon:
 
 Uploaded:
 
-* If all files are uploaded successfully, the progress notification automatically disappears after 2 seconds.
-* If some files are skipped, the notification remains visible until it is closed manually or the user navigates to another screen. Information about successfully uploaded files still disappears after 2 seconds.
+* If all files are uploaded successfully, the progress notification automatically disappears after 5 seconds.
+* If some files are skipped, the notification remains visible until it is closed manually or the user navigates to another screen. Information about successfully uploaded files still disappears after 5 seconds.
 * When hovering over a notification, it will not disappear until the mouse is moved away (successful notifications also remain visible in this case)
 * Limitation: When navigating to another screen, the notification is hidden and the upload is canceled
 
@@ -75,7 +76,7 @@ Uploaded:
 !!! info
     For fields of type fileUpload, there is an option to cancel the upload: if a new file is added while the previous one is still uploading, the previous upload is canceled.
 
-##### How to add?
+### How to add?
 
 ??? Example
     === "Button And Multi-upload files"
@@ -128,41 +129,94 @@ Uploaded:
         ``` 
 
     `Step2`  Add **setFileAccept** to corresponding **FieldMetaBuilder**.
-        ```java
-            fields.setFileAccept(MyExampleDTO_.customFieldFile, List.of(".png",".pdf",".jpg",".jpeg"));
-        ```
-    
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Meta:buildIndependentMeta
-        --8<--
-        ```
+
+    ```java
+    fields.setFileAccept(MyExampleDTO_.customFieldFile, List.of(".png",".pdf",".jpg",".jpeg"));
+    ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/file/MyExample6100Meta.java:buildIndependentMeta
+    --8<--
+    ```
 
     `Step3`  Add **associate** to corresponding **ResponseService**.
-        
-        ```java
-            .associate(ast -> ast
-            .withCustomParameter(Map.of("subtype", "multiFileUpload"))
-            .text("Add Files"))
-        ```
-    
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service:getActions
-        --8<--
-        ```
-    `Step3.1`  Add **doAssociate** to corresponding **ResponseService**. 
-        In this service, it is necessary to describe what happens to the files during multiple upload, as well as how and with which properties they are stored.
 
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service:doAssociate
-        --8<--
-        ```
+    ```java
+    .associate(ast -> ast
+        .withCustomParameter(Map.of("subtype", "multiFileUpload"))
+        .text("Add Files"))
+    ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service.java:getActions
+    --8<--
+    ```
+
+    `Step3.1`  Add **doAssociate** to corresponding **ResponseService**.
+    In this service, it is necessary to describe what happens to the files during multiple upload, as well as how and with which properties they are stored.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service.java:doAssociate
+    --8<--
+    ```
+
     `Step3.2`  Add function **fileUpload** to corresponding **ResponseService**.
-    
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service:fileUpload
-        --8<--
-        ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/file/MyExample6100Service.java:fileUpload
+    --8<--
+    ```
+
+## <a id="action">Action</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
+
+!!! warning line end "Work in progress"
+
+The button and the drag-and-drop zone first upload the chosen files, then run one action for all of them on the backend.
+The backend decides what to do with the files: for example, create a row for each file and fill its fields, or reject the files with a message.
+
+## <a id="availability">Availability</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100availability){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file/availability){:target="_blank"}
+
+When adding files is not allowed, the button is hidden, and the drag-and-drop zone stays in its place but turns gray and does not accept files.
+
+For example, documents can be added to a task only while the task is open.
+When the task status is "Closed", the "Add Files" button is hidden and the drag-and-drop zone is gray.
+
+### How does it look?
+=== "Combined Mode (Button + Multi-upload)"
+    ![availability-default-and-file-upload-dnd.gif](availability-default-and-file-upload-dnd.gif)
+=== "Button-Only Mode (Button)"
+    ![availability-default-mode.gif](availability-default-mode.gif)
+=== "Widget-Only Mode (Multi-upload files)"
+    ![availability-file-upload-dnd.gif](availability-file-upload-dnd.gif)
+
+### How to add?
+
+??? Example
+    `Step1`  Add **available** to the action in corresponding **ResponseService**.
+
+    ```java
+    .associate(ast -> ast
+        .withCustomParameter(Map.of("subtype", "multiFileUpload"))
+        .text("Add Files")
+        .available(this::isTaskOpen))
+    ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/file/availability/MyExample6105Service.java:getActions
+    --8<--
+    ```
+
+    see more [Actions](/features/element/actions/actions)
+
+## PostAction
+
+!!! warning line end "Work in progress"

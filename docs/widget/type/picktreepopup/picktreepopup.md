@@ -167,7 +167,7 @@ There are 3 types of titles for a Picktree Popup:
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, pickList, inlinePickList, multivalue, multivalueHover.
 
 #### How does it look?
 ![pickTreePopupColor.png](pickTreePopupColor.png)
@@ -189,7 +189,7 @@ There are 3 types of titles for a Picktree Popup:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myEntity3342PickTreePopupColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myEntity3342PickTreePopup.widget.json
         --8<--
         ```       
  

@@ -31,3 +31,4 @@ Here are the standard field types with their respective filtering methods.
 |             `multivalueTree`             | .equalsOneOf                                |                
 |             `multipleSelect`             | .equalsOneOf                                | 
 |           `suggestionPickList`           | .contains                                   |
+|                `richText`                | .contains                                   |

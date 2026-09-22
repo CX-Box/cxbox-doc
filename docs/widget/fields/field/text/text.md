@@ -569,3 +569,61 @@ Support for truncating long values in text fields using a frontend constant(deaf
     ui/src/components/ui/TextArea/constants.ts
     ```
  
+### <a id="height">Field height</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample437){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/text/height){:target="_blank"}
+
+The height of the field is set in rows.
+
+| Parameter     | Mode                                                                        | Default |
+|---------------|-----------------------------------------------------------------------------|---------|
+| `minRows`     | view mode (List, Info)                                                      | 1       |
+| `maxRows`     | view mode (List, Info)                                                      | 10      |
+| `editMinRows` | edit mode (Form, inline editing in List); if not set, `minRows` is used     | 5       |
+| `editMaxRows` | edit mode (Form, inline editing in List); if not set, `maxRows` is used     | 10      |
+
+* In view mode, a value longer than `maxRows` is cut: the last row fades out and ends with **...**. Hovering over **...** shows the full value in a tooltip. The value is also shortened to [text_maxDisplayed](#support-for-truncating-long-values) characters, the first limit reached works.
+* In edit mode, the field grows with the text from `editMinRows` to `editMaxRows`, then a scroll bar appears. The user can drag the bottom right corner of the field within these limits.
+
+#### How does it look?
+=== "List widget"
+    ![img_height_list_default.png](img_height_list_default.png)
+    ![img_height_list.png](img_height_list.png)
+=== "Info widget"
+    ![img_height_info_default.png](img_height_info_default.png)
+    ![img_height_info.png](img_height_info.png)
+=== "Form widget"
+    ![img_height_form_default.png](img_height_form_default.png)
+    ![img_height_form.png](img_height_form.png)
+
+#### How to add?
+??? Example
+    === "List widget"
+        Add **"maxRows"**, **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437List.widget.json
+        --8<--
+        ```
+    === "Info widget"
+        Add **"minRows"**, **"maxRows"** to the field in .widget.json.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437Info.widget.json
+        --8<--
+        ```
+    === "Form widget"
+        Add **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437Form.widget.json
+        --8<--
+        ```
+
+    The defaults for all `text` fields are frontend constants **textMinRows**, **textMaxRows**, **textEditMinRows**, **textEditMaxRows**:
+    ```
+    ui/src/components/ui/TextArea/constants.ts
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample437){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/text/height){:target="_blank"}

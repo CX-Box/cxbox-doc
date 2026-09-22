@@ -59,7 +59,7 @@ Type: String/boolean/number/null (required).
 *   PickListPopup widget - not applicable
 *   PickTreePopup widget - not applicable
 *   AssocTreePopup widget - not applicable
-*   Statistics blocks widget - not applicable
+*   [Statistics blocks widget](/widget/type/statblocks/statblocks/#howdoesitlook)
 
 ## How to add? 
 
@@ -74,7 +74,7 @@ Type: String/boolean/number/null (required).
 *   PickListPopup widget - not applicable
 *   PickTreePopup widget - not applicable
 *   AssocTreePopup widget - not applicable
-*   Statistics blocks widget - not applicable
+*   [Statistics blocks widget](/widget/type/statblocks/statblocks/#howtoadd)
 
 ## Deprecated functions
 

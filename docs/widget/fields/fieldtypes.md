@@ -52,16 +52,16 @@ In cxbox add standard types
 |  `Required`   | -    | -          | -               | +          | +              |    
                                                                            
 
-|     Type      | pickTree | multivalueTree |
-|:-------------:|----------|----------------|
-| `Placeholder` | +        | +              |
-|    `Color`    | +        | +              |
-|   `RO/Edit`   | +        | +              |
-|   `Filter`    | +        | +              |
-|  `Drilldown`  | +        | +              |
-| `Validation`  | +        | +              |
-|    `Sort`     | +        | -              |
-|  `Required`   | +        | +              |
+|     Type      | pickTree | multivalueTree | richText |
+|:-------------:|----------|----------------|----------|
+| `Placeholder` | +        | +              | +        |
+|    `Color`    | +        | +              | -        |
+|   `RO/Edit`   | +        | +              | +        |
+|   `Filter`    | +        | +              | +        |
+|  `Drilldown`  | +        | +              | -        |
+| `Validation`  | +        | +              | +        |
+|    `Sort`     | +        | -              | +        |
+|  `Required`   | +        | +              | +        |
 
    
  

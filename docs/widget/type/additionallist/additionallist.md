@@ -149,7 +149,7 @@ There are types of:
 *Calculated color* can be used to change a title color dynamically. It changes depending on business logic or data in the application.
 
 !!! info
-    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, multivalue, multivalueHover.
+    Title colorization is **applicable** to the following [fields](/widget/fields/fieldtypes/): date, dateTime, dateTimeWithSeconds, number, money, percent, time, input, text, dictionary, radio, checkbox, pickList, inlinePickList, multivalue, multivalueHover.
 
 ##### How does it look?
 ![colorwidget.png](colorwidget.png)
@@ -172,12 +172,12 @@ There are types of:
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalConstant.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196Additional.widget.json
             --8<--
             ``` 
         === "Reading Mode"
             _not applicable_
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196listconstant){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3196/view/myexample3196list){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/colortitle){:target="_blank"}
     === "Constant color"
         _not applicable_

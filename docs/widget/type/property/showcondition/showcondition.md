@@ -48,7 +48,7 @@ Type: String/boolean/number/null (required).
 
 ## How does it look? 
  
-*   AdditionalInfo widget - not applicable
+*   [AdditionalInfo widget](/widget/type/additionalinfo/additionalinfo/#howdoesitlook)
 *   [EmptyWidget](/widget/type/emptywidget/emptywidget/#howdoesitlook)
 *   Form Popup widget - not applicable
 *   [Form widget](/widget/type/form/form/#howdoesitlook)
@@ -63,7 +63,7 @@ Type: String/boolean/number/null (required).
 
 ## How to add? 
 
-*   AdditionalInfo widget - not applicable
+*   [AdditionalInfo widget](/widget/type/additionalinfo/additionalinfo/#howtoadd)
 *   [EmptyWidget](/widget/type/emptywidget/emptywidget/#howtoadd)
 *   Form Popup widget - not applicable
 *   [Form widget](/widget/type/form/form/#howtoadd)

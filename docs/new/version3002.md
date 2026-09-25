@@ -83,7 +83,7 @@ All tabs of the application in one browser share the stored user and therefore o
     * after F5 or a closed tab in the middle of a renewal: the new page sent the token that was already on its way;
     * by the websocket of notifications, which called `signinSilent()` on its own before every reconnect;
     * and an expired token was sent as is, because `getUser()` does not renew anything: the backend answered 401 and the widgets were left empty.
-* Since 3.0.2 the new class `RotationSafeUserManager` (`ui/src/auth/rotationSafeUserManager`) is used instead of `UserManager`. It extends `UserManager`, overrides its methods and adds none. The folder depends only on `oidc-client-ts` and can be copied to any project as it is; its README is the JSDoc of the class.
+* Since 3.0.2 the new class `RotationSafeUserManager` (`ui/src/auth/rotationSafeUserManager`) is used instead of `UserManager`. It extends `UserManager`, overrides its methods and adds none. The folder depends only on `oidc-client-ts` and can be copied to any project as it is; see `README.md` in the folder.
     * **The invariant.** Each refresh token is sent to the provider at most once: for all tabs, after any page reload.
     * **The guard.** Before a tab sends a refresh token, it writes a lock for this token to IndexedDB. The write is atomic for all tabs and survives F5 and a browser crash. A tab that finds the token locked sends nothing and takes the tokens that the sender stored.
     * **A burnt token.** The token was sent, but no new tokens came: a refusal, a timeout, a lost answer, F5, a closed tab. Nobody knows if the provider used it, so it is never sent again. The session goes on with the SSO cookie of the provider, see the table below.

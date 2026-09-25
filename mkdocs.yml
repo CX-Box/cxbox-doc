@@ -100,6 +100,7 @@ nav:
       - Widget HeaderWidget: widget/type/headerwidget/headerwidget.md
       - Widget Info: widget/type/info/info.md
       - Widget List: widget/type/list/list.md
+      - Widget Line2D: widget/type/line2d/line2d.md
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md

@@ -92,6 +92,7 @@ nav:
       - Widget AdditionalList: widget/type/additionallist/additionallist.md
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
       - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
+      - Widget CalendarList: widget/type/calendarlist/calendarlist.md
       - Widget EmptyWidget: widget/type/emptywidget/emptywidget.md
       - Widget FilePreview: widget/type/filepreview/filepreview.md
       - Widget Form: widget/type/form/form.md

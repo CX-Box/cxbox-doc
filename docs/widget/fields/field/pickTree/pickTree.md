@@ -153,7 +153,7 @@ Available since [v3.0.1](/new/version3001/)
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3287){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picktree/placeholder){:target="_blank"}
 
-`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application. It is shown for a `Readonly` field as well.
 ### How does it look?
 === "List widget"
     ![img_plchldr_list.png](img_plchldr_list.png) 

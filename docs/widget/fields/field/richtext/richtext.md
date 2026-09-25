@@ -77,7 +77,7 @@ The formatting is shown in view mode and in edit mode. The toolbar is shown in e
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample426){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/richtext/placeholder){:target="_blank"}
 
-`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
+`Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application. It is shown for a `Readonly` field as well.
 
 !!! note "Visual editor: since release 3.0.2"
     Up to and including [release 3.0.1](https://doc.cxbox.org/new/version3001/), the placeholder is shown only in the **Markdown markup** mode, the visual editor shows an empty field.

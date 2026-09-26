@@ -105,10 +105,10 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
         You have the option to utilize custom field names for standard properties. When doing so, you'll need to establish mappings for these fields to standard criteria
 
-        **Step1** Create field `customParentId`, `customIsLeaf` to corresponding **DataResponseDTO**.
+        **Step1** Create field `customFieldParentId`, `customFieldIsLeaf` to corresponding **DataResponseDTO**.
 
-        * `customParentId` — identifies the parent record of the current record and defines the parent-child relationship in the tree. If the record is a root node, `parentId` must be empty.
-        * `customIsLeaf` — indicates whether the record can be expanded. The value `true` means that the record cannot be expanded, while `false` means that the record can be expanded to display child records.
+        * `customFieldParentId` — identifies the parent record of the current record and defines the parent-child relationship in the tree. If the record is a root node, `parentId` must be empty.
+        * `customFieldIsLeaf` — indicates whether the record can be expanded. The value `true` means that the record cannot be expanded, while `false` means that the record can be expanded to display child records.
 
         ```java
         --8<--
@@ -120,7 +120,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
     
         Add existing field to a tree widget. see more [Fields](#fields)
     
-        For the tree to work correctly, the widget must contain the `customParentId` and `customIsLeaf` fields. These fields should be configured as **hidden**.
+        For the tree to work correctly, the widget must contain the `customFieldParentId` and `customFieldIsLeaf` fields. These fields should be configured as **hidden**.
 
         ```json
         --8<--
@@ -337,7 +337,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -501,7 +501,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/tree/actions/create/newview/MyExample3266Service.java:doCreateEntity
     --8<--
     ```
-    **Step4** Add button `create` to corresponding **.widget.json**.
+    **Step3** Add button `create` to corresponding **.widget.json**.
   
     ```json
     --8<--
@@ -550,7 +550,7 @@ There are three methods to create a record:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3275tree){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/edit/withwidget){:target="_blank"}
 
-`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
+`Edit with widget` opens an additional widget when clicking the edit icon in the row. 
 
 ###### How does it look?
 ![edit_inline_form.png](edit_inline_form.png)
@@ -558,7 +558,7 @@ There are three methods to create a record:
 ###### How to add?
 ??? Example
 
-    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
+    **Step1** Add action `save` to corresponding **VersionAwareResponseService**: the form saves the record with it.
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/withwidget/MyExample3275Service.java:getActions
@@ -572,7 +572,7 @@ There are three methods to create a record:
     --8<--
     ```
  
-    **Step2**  Create widget.json with type `Form` that appears when you click a button
+    **Step3**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/withwidget/myEntity3275EditForm.widget.json
@@ -586,7 +586,7 @@ There are three methods to create a record:
     --8<--
     ```
 
-     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+     **Step5** Add widget with type `Form` to **options**.**edit**.**widget** of corresponding **.widget.json**: the edit icon appears in each row.
        
     `options`.`edit`: Name widget that appears when you click a button
         
@@ -620,7 +620,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
     {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/newview/MyExample3274Service.java:getActions
     --8<--
     ```
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
@@ -726,7 +726,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 
     === "Pre-hidden columns"
         
-        Сan also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
+        Can also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
         
         Add in **options** parameter **additional** to corresponding **.widget.json**.
         
@@ -776,18 +776,18 @@ The result of a full text search is displayed in the same way as the result of f
 A user-filled filter can be saved for each individual user.
 see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 ##### Filter group
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
 #### <a id="searchmodes">Search modes</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3280/view/myexample3280treecollapsehide){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/treesearchmodes){:target="_blank"}
 
 The way the result of filtration and full text search is displayed is defined by **options**.**tree**.**searchModes**.
 
@@ -825,12 +825,12 @@ In `collapse` mode the records whose parents have not been loaded yet are placed
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/treesearchmodes/widget/MyExample3280Tree.widget.json
     --8<--
     ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3280/view/myexample3280treecollapsehide){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/treesearchmodes){:target="_blank"}
 
 
 #### <a id="pagination">Pagination</a>

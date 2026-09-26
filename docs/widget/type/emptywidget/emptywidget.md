@@ -26,7 +26,7 @@
        --8<--
     ```
 
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
         --8<--
@@ -58,7 +58,7 @@ There are types of:
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myExample5034const.widget.json
         --8<--
@@ -70,9 +70,9 @@ There are types of:
         <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
 
-        Dynamic data output in the title only works if these fields are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
+        Dynamic data output in the title only works if these fields are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
 
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myExample5034.widget.json
         --8<--
@@ -113,10 +113,10 @@ There are types of:
         --8<--
         ```   
  
-         **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info)
+         **Step 2** Dynamic data output in the header only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info)
         with the bgColorKey property.
 
-        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info))
+        Add **"bgColorKey"** :  `custom field for color` and  to .widget.json .([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info))
 
         ```json
         {
@@ -145,9 +145,9 @@ There are types of:
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/colortitle){:target="_blank"}
 
     === "Constant color"
-        Constant color in the title only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
+        Constant color in the title only works if these fields are displayed on or passedas the [Field hidden](/widget/fields/field/hidden/hidden/) type from other  widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
 
-        Add **"bgColor"** :  `HEX color`  to .widget.json.([List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
+        Add **"bgColor"** :  `HEX color`  to .widget.json.([List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
 
         Add in `title` field with `${customField}` 
  
@@ -164,7 +164,7 @@ There are types of:
 ## <a id="Showcondition">Show condition</a> 
 see more [showCondition](/widget/type/property/showcondition/showcondition)
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5021){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5022){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/base){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
@@ -174,7 +174,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
 
 * `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5033/view/myexample5036form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/byparententity){:target="_blank"}
 
 * `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
@@ -200,7 +200,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/base){:target="_blank"}
 
     === "show condition by current entity"
-        `showCondition` only works if these fields for showCondition are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
+        `showCondition` only works if these fields for showCondition are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
 
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -213,7 +213,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/showcondition/bycurrententity){:target="_blank"}
 
     === "show condition by parent entity"
-        `showCondition` only works if these fields for showCondition are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/typeform),[Info widget](/widget/type/info/info).
+        `showCondition` only works if these fields for showCondition are displayed on or passed as the [Field hidden](/widget/fields/field/hidden/hidden/) type from other widget [List widget](/widget/type/list/list), [Form widget](/widget/type/form/form),[Info widget](/widget/type/info/info).
 
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json

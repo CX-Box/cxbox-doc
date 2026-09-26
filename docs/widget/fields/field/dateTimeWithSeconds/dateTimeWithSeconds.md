@@ -342,7 +342,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Info widget"
 
@@ -354,7 +354,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
@@ -362,7 +362,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeWithSecondsDrillDown){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetimewithseconds/drilldown){:target="_blank"}
 
-[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -370,7 +370,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample300){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetimewithseconds/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
@@ -434,7 +434,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateValidationBusinessEx){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample300){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetimewithseconds/validationbusinessex){:target="_blank"}
 
     === "RuntimeException"
@@ -458,7 +458,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetimewithseconds/validationruntimeex){:target="_blank"}
 
     === "Confirm"
-        Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
+        Add `PreAction.confirm` to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/datetimewithseconds/validationconfirm/DateTimeWithSecondsValidationBusinessExService.java:getActions
@@ -499,20 +499,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetimewithseconds/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/datetimewithseconds/validationdynamic/MyExample322Service.java:validateFields
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/datetimewithseconds/validationdynamic/MyExample322Service.java:doUpdateEntity

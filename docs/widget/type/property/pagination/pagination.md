@@ -85,7 +85,7 @@ Frontend Behavior:
     ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswihhasnext){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount){:target="_blank"}
 
 
 ### <a id="nextAndPreviousWithHasNext">Pagination is based `/data` and hasNext</a>
@@ -114,7 +114,7 @@ Next button availability logic:
 
     ```
       "pagination": {
-      "type": "nextAndPreviousWihHasNext"
+      "type": "nextAndPreviousWithHasNext"
       }
     ```
    
@@ -157,7 +157,7 @@ Disadvantages of this mode:
     Add in **options** parameter **pagination** to corresponding **.widget.json**.
     ```
     "pagination": {
-    "type": "nextAndPreviousWihHasNext"
+    "type": "nextAndPreviousSmart"
     }
     ```
     ```json
@@ -293,7 +293,7 @@ Pagination panel display  controlling the display of the pagination panel.
     ```
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/MyExample3865PaginationSwitchList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/MyExample3865PaginationSwitchFalseList.widget.json
       --8<--
     ```
 

@@ -3,7 +3,7 @@
 
 This function is available:
  
-* for widgets: [List](/widget/type/list/list),only mode **basic** [AdditionalList](/widget/type/additionallist/additionallist.md),[GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
+* for widgets: [List](/widget/type/list/list),only mode **basic** [AdditionalList](/widget/type/additionallist/additionallist),[GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy).
 
 !!! info
     Export to Excel is **not available** for [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup) and [PickTreePopup](/widget/type/picktreepopup/picktreepopup) in this release, see `CXBOX-1369`.

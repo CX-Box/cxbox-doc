@@ -19,7 +19,7 @@
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
 
@@ -111,7 +111,7 @@
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputColorConst){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/colorconst){:target="_blank"}
  
 ### How does it look?
@@ -170,7 +170,7 @@
         === "Form widget"
             _not applicable_        
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MoneyColorConst){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputColorConst){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/colorconst){:target="_blank"}
 
 ## Readonly/Editable
@@ -302,7 +302,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 === "Info widget"
     ![img_link_info](img_link_info.png)
 === "Form widget"
-    Сlick on clip ![clip](clip.png)
+    Click on clip ![clip](clip.png)
 
     ![img_link_form](img_link_form.png)
 ### How to add?
@@ -326,7 +326,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
  
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
 
     === "Info widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
@@ -337,7 +337,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
 
     === "Form widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
@@ -347,12 +347,12 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputDrilldown){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/drilldown){:target="_blank"}
 
-[Advanced customization](/advancedCustomization_drillDown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -360,7 +360,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 1) Exception:Displays a message to notify users about technical or business errors.
 
    `Business Exception`:
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67/view/InputValidationBusinessException){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputValidationBusinessException){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationbusinessex){:target="_blank"}
 
    `Runtime Exception`:
@@ -422,7 +422,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample67/view/InputValidationBusinessException){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputValidationBusinessException){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationbusinessex){:target="_blank"}
 
     === "RuntimeException"
@@ -488,20 +488,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/input/validationdynamic/MyExample326Service.java:validateFields
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/input/validationdynamic/MyExample326Service.java:doUpdateEntity

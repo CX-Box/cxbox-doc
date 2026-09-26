@@ -18,7 +18,7 @@
     --8<--
     ```
  
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
     --8<--
@@ -226,7 +226,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -368,7 +368,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:doCreateEntity
     --8<--
     ```
-    **Step4** Add button `create` to corresponding **.widget.json**.
+    **Step3** Add button `create` to corresponding **.widget.json**.
   
     ```json
     --8<--
@@ -417,7 +417,7 @@ There are three methods to create a record:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3065){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/list/actions/edit/withwidget){:target="_blank"}
 
-`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
+`Edit with widget` opens an additional widget when clicking the edit icon in the row. 
 
 ###### How does it look?
 ![list_edit_with_widget.gif](list_edit_with_widget.gif)
@@ -425,7 +425,7 @@ There are three methods to create a record:
 ###### How to add?
 ??? Example
 
-    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
+    **Step1** Add action `save` to corresponding **VersionAwareResponseService**: the form saves the record with it.
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065Service.java:getActions
@@ -439,7 +439,7 @@ There are three methods to create a record:
     --8<--
     ```
  
-    **Step2**  Create widget.json with type `Form` that appears when you click a button
+    **Step3**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myEntity3065EditForm.widget.json
@@ -453,7 +453,7 @@ There are three methods to create a record:
     --8<--
     ```
 
-     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+     **Step5** Add widget with type `Form` to **options**.**edit**.**widget** of corresponding **.widget.json**: the edit icon appears in each row.
        
     `options`.`edit`: Name widget that appears when you click a button
         
@@ -484,14 +484,14 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/newview/MyExample3075Service.java:getActions
     --8<--
     ```
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/newview/MyExample3075List.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
@@ -555,7 +555,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 
     === "Pre-hidden columns"
         
-        Сan also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
+        Can also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
         
         Add in **options** parameter **additional** to corresponding **.widget.json**.
         

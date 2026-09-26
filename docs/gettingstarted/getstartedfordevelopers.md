@@ -9,13 +9,13 @@ This tutorial serves as an introduction to the fundamentals, guiding you through
     git clone git@github.com:CX-Box/cxbox-demo.git
 
 ## :material-download-circle: Step 2  Download plugin
-[download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+[download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
 
 ## :material-check-underline: Step 3 Add new field to an existing screen
 Choose datasource:
 
-* [Postgres](/gettingstarted/postgres/getstartedfordeveloperspostgres.md)
-* [Microservices](/gettingstarted/microservice/getstartedfordevelopersmicroservice.md)
+* [Postgres](/gettingstarted/postgres/getstartedfordeveloperspostgres/)
+* [Microservices](/gettingstarted/microservice/getstartedfordevelopersmicroservice/)
 
 ## :material-play: Step 4 To deploy an application
 

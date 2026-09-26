@@ -25,7 +25,7 @@
        --8<--
     ```
 
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
         --8<--
@@ -57,7 +57,7 @@ There are types of:
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**. 
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/headerwidget/title/myExample5027const.widget.json
         --8<--
@@ -67,12 +67,12 @@ There are types of:
 
     === "Calculated title"
         <!--родитель??-->
-        **Step1** Add ${customField} for **title** to **_.widget.json_**. Add `customField` with type `hidden`  to corresponding ****_.widget.json_** **. 
+        **Step1** Add ${customField} for **title** to **_.widget.json_**. Add `customField` with type `hidden`  to corresponding **_.widget.json_**. 
 
         !!! info
             To ensure a field value is received by the frontend and displayed in the header, it must be specified within the `fields` array.
         
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/headerwidget/title/myExample5027.widget.json
         --8<--
@@ -135,7 +135,7 @@ There are types of:
         --8<--
         ```     
 
-        **Step 3** Add in `title` field with `${customField} . Add field to the `fields` array.
+        **Step 3** Add in `title` field with `${customField}`. Add field to the `fields` array.
         
 
         ```json
@@ -220,11 +220,11 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/headerwidget/showcondition/bycurrententity/myExample5026.widget.json
+        {{ external_links.github_raw_doc }}/widgets/headerwidget/showcondition/byparententity/child/myexample5029Header.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5026/view/myexample5030form){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/headerwidget/byparententity){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/headerwidget/showcondition/byparententity){:target="_blank"}
  
 ## <a id="bc">Business component</a>
 This specifies the business component (BC) to which this headerwidget belongs.
@@ -270,7 +270,7 @@ Type: hidden.
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing headerwidget widget
             ![addfield.gif](addfield.gif)
@@ -279,14 +279,18 @@ Type: hidden.
         Add field to **_.widget.json_**.
 
         ```json
-        "name": "myexampleHeader",
-        "title": "Header Widget",
-        "type": "HeaderWidget",
-        "bc": "myexample",
         {
-            "label": "Custom Field",
-            "key": "customField",
-            "type": "hidden"
+            "name": "myexampleHeader",
+            "title": "Header Widget",
+            "type": "HeaderWidget",
+            "bc": "myexample",
+            "fields": [
+                {
+                    "label": "Custom Field",
+                    "key": "customField",
+                    "type": "hidden"
+                }
+            ]
         }
         ```
         

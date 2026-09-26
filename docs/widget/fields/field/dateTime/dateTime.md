@@ -100,12 +100,12 @@
 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColor){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColorCalc){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/color){:target="_blank"}
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColorConst){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColor){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/colorconst){:target="_blank"}
 
 
@@ -148,7 +148,7 @@
         === "Form widget"
             _not applicable_   
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColor){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColorCalc){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/color){:target="_blank"}
 
     === "Constant color"
@@ -156,7 +156,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/color/DateTimeColorCalcForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/DateTimeColorList.widget.json
             --8<--
             ```
 
@@ -164,13 +164,13 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/color/DateTimeColorCalcInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/DateTimeColorInfo.widget.json
             --8<--
             ```
         === "Form widget"
            _not applicable_    
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColorConst){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeColor){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/colorconst){:target="_blank"}
 
 ## Readonly/Editable
@@ -338,7 +338,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Info widget"
 
@@ -351,7 +351,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
 
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
@@ -359,7 +359,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeDrilldown){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/drilldown){:target="_blank"}
 
-[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -376,7 +376,7 @@ Also, it optionally allows you to filter data on target view before it will be o
    
 2) Confirm: Presents a dialog with an optional message, requiring user confirmation or cancellation before proceeding.
 
-   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeConfirm){:target="_blank"} ·
+   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeValidation){:target="_blank"} ·
    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationconfirm){:target="_blank"}
 
 3) Field level validation: shows error next to all fields, that validation failed for
@@ -456,7 +456,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationruntimeex){:target="_blank"}
 
     === "Confirm"
-        Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
+        Add `PreAction.confirm` to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/datetime/validationconfirm/DateTimeValidationService.java:getActions
@@ -469,7 +469,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeConfirm){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateTimeValidation){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationconfirm){:target="_blank"}
 
     === "Field level validation"
@@ -495,20 +495,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
 
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/datetime/validationdynamic/MyExample321Service.java:validateFields
             --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
 
             ```java
             --8<--

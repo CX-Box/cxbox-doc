@@ -180,7 +180,7 @@ There are types of:
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4225/view/MyExample4225Stat){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/title/withtitle){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/title/withouttitle){:target="_blank"}
 
 ### Title Color
 _not applicable_
@@ -273,7 +273,7 @@ There are types of:
 #### How to add?
 ??? Example
     === "Icon"
-        **Step1** Add name for **title** to **_.widget.json_**.
+        **Step1** Add field **icon** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withicon/MyExample4223Stat.widget.json
@@ -284,7 +284,7 @@ There are types of:
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
 
     === "Icon empty"
-        **Step1** No use parameter **title** to **_.widget.json_**.
+        **Step1** Do not add field **icon** to **_.widget.json_**.
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withouticon/MyExample4224Stat.widget.json
@@ -292,19 +292,19 @@ There are types of:
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4223/view/MyExample4224Stat){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withicon){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/icon/withouticon){:target="_blank"}
 
 ### <a id="ColorField">Color</a>
 `Color` allows you to specify a field block.Optional. It can be calculated based on business logic of application
 
 **Calculated color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4205){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4206/view/myexample4206list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/color){:target="_blank"}
 
 **Constant color**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4205){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4206/view/myexample4205list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/color/colorconst){:target="_blank"}
 
 #### How does it look?
@@ -335,7 +335,7 @@ There are types of:
         Add **"bgColor"** :  `HEX color`  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/color/colorconst/MyExample4205List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/color/colorconst/MyExample4205.widget.json
         --8<--
         ```
 
@@ -407,7 +407,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     ```
 
     **Option 2**
-       Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization_drillDown) 
+       Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210/view/myexample4210list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/drilldown/drilldown){:target="_blank"}
@@ -454,12 +454,12 @@ Highlighting Functionality for the Current Item (Tile)
     `Step 2` Add **getParentSpecification** to corresponding **ResponseService**.
      Add filtering based on the assigned IDs corresponding **Dao*.
 
-    ```json
+    ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/data/MyExample4216Service.java:getParentSpecification
     --8<--
     ```
-    `Step 2` Add **bcCursor** to corresponding **widget.json**.
+    `Step 3` Add **bcCursor** to corresponding **widget.json**.
     A new `bcCursor` option has been introduced to control the visual highlighting of the selected UI element.
 
     *   **`bcCursor: show`**
@@ -495,4 +495,4 @@ Example: `gutter: 16, sm: 3, column: 6`- which results in 3 columns.
 **Current Value:** 
 `3`  which results in 3 columns
 
-[Advanced customization](/advancedCustomization_drillDown)
+[Advanced customization](/features/element/drilldown/drilldown)

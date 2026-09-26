@@ -63,7 +63,7 @@ See more [field types](/widget/fields/fieldtypes/)
     --8<--
     ```
  
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
     --8<--
@@ -288,7 +288,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -431,7 +431,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3149Service.java:doCreateEntity
     --8<--
     ```
-    **Step4** Add button `create` to corresponding **.widget.json**.
+    **Step3** Add button `create` to corresponding **.widget.json**.
   
     ```json
     --8<--
@@ -480,7 +480,7 @@ There are three methods to create a record:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3168gh){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/actions/edit/withwidget){:target="_blank"}
 
-`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu. 
+`Edit with widget` opens an additional widget when clicking the edit icon in the row. 
 
 ###### How does it look?
 ![groupinghierarchy_edit_with_widget.gif](groupinghierarchy_edit_with_widget.gif)
@@ -488,7 +488,7 @@ There are three methods to create a record:
 ###### How to add?
 ??? Example
 
-    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
+    **Step1** Add action `save` to corresponding **VersionAwareResponseService**: the form saves the record with it.
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3168Service.java:getActions
@@ -502,7 +502,7 @@ There are three methods to create a record:
     --8<--
     ```
  
-    **Step2**  Create widget.json with type `Form` that appears when you click a button
+    **Step3**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/myEntity3168EditForm.widget.json
@@ -516,7 +516,7 @@ There are three methods to create a record:
     --8<--
     ```
 
-     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+     **Step5** Add widget with type `Form` to **options**.**edit**.**widget** of corresponding **.widget.json**: the edit icon appears in each row.
        
     `options`.`edit`: Name widget that appears when you click a button
         
@@ -547,14 +547,14 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3149Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/newview/MyExample3167Service.java:getActions
     --8<--
     ```
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3168GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/newview/MyExample3167GH.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3167gh){:target="_blank"} ·
@@ -622,7 +622,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 
     === "Pre-hidden columns"
         
-        Сan also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
+        Can also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
         
         Add in **options** parameter **additional** to corresponding **.widget.json**.
         
@@ -641,7 +641,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         --8<--
         ```
         
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3135/view/myexample3175ghhidden){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3175/view/myexample3175ghhidden){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/customizationcolumns){:target="_blank"}
 
 ###### Handling Old Records
@@ -708,7 +708,7 @@ It operates in three modes:
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3201/view/myexample3201ghalways){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3201/view/myexample3201ghalways){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter){:target="_blank"}
     === "collapsed"
         Add in **groupingHierarchy**  **counterMode** to corresponding **.widget.json**.
@@ -728,7 +728,7 @@ It operates in three modes:
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3201/view/myexample3201ghalways){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3201/view/myexample3201ghcollapsed){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter){:target="_blank"}
 
     === "none"
@@ -749,7 +749,7 @@ It operates in three modes:
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3201/view/myexample3201gh){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3201/view/myexample3201gh){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter){:target="_blank"}
 
 #### Quick Transition to "Unallocated Rows"
@@ -770,24 +770,24 @@ This function can be used to display the grouping structure in advance, even whe
 The number of nesting levels is unlimited.
 
 `Level 1`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3164){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/onelevel){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3164){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/onelevel){:target="_blank"}
 
 `Level 2`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3157){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/twolevel){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3157){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/twolevel){:target="_blank"}
 
 `Level 3`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3165){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/threelevel){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3165){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/threelevel){:target="_blank"}
 
 `Level 4`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3155){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fourlevel){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3155){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/fourlevel){:target="_blank"}
 
 `Level 5`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3158){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fivelevel){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3158){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/fivelevel){:target="_blank"}
 
 ###### How does it look?
 === "Level 1"
@@ -814,7 +814,7 @@ The number of nesting levels is unlimited.
         ```
         `Step 2` Add  **defaultGroupingHierarchy** to corresponding `buildIndependentMeta` **FieldMetaBuilder**.
          
-         [defaultGroupingHierarchy()](/environment/meta/buildindependentmeta/defaultgh)
+         [defaultGroupingHierarchy()](/environment/meta/buildindependentmeta/defaultgh/defaultgh)
  
         ```java
         --8<--
@@ -822,20 +822,20 @@ The number of nesting levels is unlimited.
         --8<--
         ```
         `Level 1`
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3164){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/onelevel){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3164){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/onelevel){:target="_blank"}
         
         `Level 2`
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3157){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/twolevel){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3157){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/twolevel){:target="_blank"}
         
         `Level 3`
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3165){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/threelevel){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3165){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/threelevel){:target="_blank"}
         
         `Level 4`
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3155){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fourlevel){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3155){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/fourlevel){:target="_blank"}
 
     === "Level >=5"
 
@@ -848,7 +848,7 @@ The number of nesting levels is unlimited.
         ```
         `Step 2` Add  **defaultGroupingHierarchy** to corresponding `buildIndependentMeta` **FieldMetaBuilder**.
          
-         [defaultGroupingHierarchy()](/environment/meta/buildindependentmeta/defaultgh)
+         [defaultGroupingHierarchy()](/environment/meta/buildindependentmeta/defaultgh/defaultgh)
     
         
         ```java
@@ -858,8 +858,8 @@ The number of nesting levels is unlimited.
         ```
 
         `Level 5`
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#//screen/myexample3158){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/counter/defaultgroupinghierarchy/fivelevel){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3158){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/defaultgroupinghierarchy/fivelevel){:target="_blank"}
 
 
 #### <a id="default_expanded ">Default GroupingHierarchy. Default Expanded </a>
@@ -961,7 +961,7 @@ Supports **4 standard functions**:
 `min` — finds the **minimum value** in the column.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghmax){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json){:target="_blank"}
 
 `max` — finds the **maximum value** in the column.
 
@@ -1064,7 +1064,7 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
         --8<--
         ```  
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghmax){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json){:target="_blank"}
 
     === "avg"
         ```json
@@ -1425,7 +1425,6 @@ How to add?
          "options": {
             "groupingHierarchy": {
               "fields": [
-                "location",
                 "object"
               ],
               "aggLevels": [
@@ -1433,12 +1432,8 @@ How to add?
                   "level": 0,
                   "aggFields": [
                     {
-                      "fieldKey": "insuranceValue",
-                      "func": "sum",
-                      "argFieldKeys": [
-                        "insuranceValue"
-                      ],
-                      "description": "sum fields `Insured amount`"
+                      "fieldKey": "insuranceAmount",
+                      "func": "sum"
                     }
                   ]
                 },
@@ -1446,24 +1441,12 @@ How to add?
                   "level": 1,
                   "aggFields": [
                     {
-                      "fieldKey": "insuranceValue", // the column above which the aggregated value will be displayed.
-                      "func": "sum",  // aggregation function: sum/min/max/avg
-                      "argFieldKeys": [ // OPTIONAL. If you need to display an aggregated value not above the column being aggregated,or if you need to aggregate multiple fields at once, list the column names separated by commas.
-                        "annualPremium"
+                      "fieldKey": "insuranceAmount", // the column above which the aggregated value will be displayed
+                      "func": "min", // aggregation function: sum/min/max/avg
+                      "argFieldKeys": [ // the value is calculated from another column, here a hidden one
+                        "percentInsuranceAmount"
                       ],
-                      "description": "sum fields `Annual Premium`" // OPTIONAL. Description for UI
-                    }
-                  ]
-                },
-                {
-                  "level": 2,
-                  "aggFields": [
-                    {
-                      "fieldKey": "insuranceAmount",
-                      "func": "sum",
-                      "argFieldKeys": [
-                        "insuranceAmount"
-                      ]
+                      "description": "%" // OPTIONAL. Description for UI
                     }
                   ]
                 }

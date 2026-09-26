@@ -31,15 +31,15 @@
         ```
     ```json
        --8<--
-       {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample5003FilePreview.widget.json
+       {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample5003InlineFilePreview.widget.json
        --8<--
     ```
 
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
     
     ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample5003form.view.json
+        {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample5003Inlineform.view.json
         --8<--
     ```
 

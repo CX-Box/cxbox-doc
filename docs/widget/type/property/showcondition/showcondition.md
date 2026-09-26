@@ -12,7 +12,7 @@ It controls whether the widget appears on the user interface based on the value 
 
 !!! info
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3184/view/myexample3183hiddenparentchild ){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/showcondition/hiddenbc){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/showcondition/hiddenbc){:target="_blank"}
  
     Child entity data is loaded even when the parent is hidden based on the show condition.
 
@@ -52,8 +52,8 @@ Type: String/boolean/number/null (required).
 *   [EmptyWidget](/widget/type/emptywidget/emptywidget/#howdoesitlook)
 *   Form Popup widget - not applicable
 *   [Form widget](/widget/type/form/form/#howdoesitlook)
-*   [HeaderWidget](/widget/type/headerwidget/headerwidget.md/#howdoesitlook)
-*   [Info widget](/widget/type/info/info.md/#howdoesitlook)
+*   [HeaderWidget](/widget/type/headerwidget/headerwidget/#howdoesitlook)
+*   [Info widget](/widget/type/info/info/#howdoesitlook)
 *   [List widget](/widget/type/list/list/#howdoesitlook)
 *   [Tree widget](/widget/type/tree/tree/#howdoesitlook)
 *   PickListPopup widget - not applicable
@@ -67,8 +67,8 @@ Type: String/boolean/number/null (required).
 *   [EmptyWidget](/widget/type/emptywidget/emptywidget/#howtoadd)
 *   Form Popup widget - not applicable
 *   [Form widget](/widget/type/form/form/#howtoadd)
-*   [HeaderWidget](/widget/type/headerwidget/headerwidget.md/#howtoadd)
-*   [Info widget](/widget/type/info/info.md/#howtoadd)
+*   [HeaderWidget](/widget/type/headerwidget/headerwidget/#howtoadd)
+*   [Info widget](/widget/type/info/info/#howtoadd)
 *   [List widget](/widget/type/list/list/#howtoadd)
 *   [Tree widget](/widget/type/tree/tree/#howtoadd)
 *   PickListPopup widget - not applicable

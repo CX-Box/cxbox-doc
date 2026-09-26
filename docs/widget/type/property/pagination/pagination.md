@@ -31,7 +31,7 @@ However, for certain `exception widgets,` the default navigation mode is: `nextA
 * [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy) 
 * DashboardList
 * Pie1D
-* Column2D
+* [Column2D widget](/widget/type/column2d/column2d)
 * Line2D
 * DualAxes2D
 

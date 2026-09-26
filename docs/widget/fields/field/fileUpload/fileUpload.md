@@ -28,11 +28,11 @@
 ??? Example
     For the entire application, a single file storage solution needs to be defined.  In this example file storage is minio.
 
-    **Step1 FileStorage** Add file storage. `see more` [FileStorage](/features/element/fileStorage/fileStorage/)
+    **Step1 FileStorage** Add file storage. `see more` [FileStorage](/features/element/filestorage/fileStorage/)
  
     === "With plugin(recommended)"
         **Step 2** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 3** Add existing field to an existing form widget
 
@@ -370,20 +370,20 @@ For `FileUpload field` filtering is case-insensitive and retrieves records conta
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/fileupload/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/fileupload/validationdynamic/MyExample324Service.java:validateFields
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/fileupload/validationdynamic/MyExample324Service.java:doUpdateEntity

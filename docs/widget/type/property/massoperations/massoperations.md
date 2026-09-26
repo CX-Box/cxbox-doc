@@ -55,21 +55,24 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
         --8<--
         ``` 
     - **Step2** Create action massEdit to corresponding **AwareResponseService**.      
+
         === "With plugin(recommended)"
             **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
             **Step 2** Add existing field to an existing form widget
     
             ![addmass.gif](addmass.gif)
     
         === "Example of writing code"
-          ```java
-          --8<--
-          {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEdit
-          --8<--
-          ``` 
+            ```java
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEditCustomTitle
+            --8<--
+            ``` 
+
         Property:
+
         -  `.action("massEditCustomTitle", "Mass Edit With Custom Text")`
             
             * `"massEditCustomTitle"` — name button for internal used by backend and frontend.
@@ -88,18 +91,18 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             
             A configuration block where  properties are defined:
             
-                **`.noText("It is text no")`**
-                  Text for the **Cancel ** button.
-                
-                **`.title("Mass Edit Title")`**
-                    Title of the a confirmation dialog before the mass action executes.
-                
-                **`.yesText("It is text yes")`**
-                    Text for the **Apply** button.
+            **`.noText("It is text no")`**
+              Text for the **Cancel ** button.
+            
+            **`.title("Mass Edit Title")`**
+                Title of the a confirmation dialog before the mass action executes.
+            
+            **`.yesText("It is text yes")`**
+                Text for the **Apply** button.
             
             This allows customizing the buttons and title.
             
-        - `.scope(ActionScope.MASS)`**
+        - `.scope(ActionScope.MASS)`
                 
             Specifies that this is a **mass action**, applied to all selected rows in the grid.
                 
@@ -120,7 +123,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             * `MassDTO.fail(id, "message")` - result error 
         
                 
-        - `return new MassActionResultDTO<>(massResult)...`**
+        - `return new MassActionResultDTO<>(massResult)...`
                 
             The mass action result includes:
             
@@ -269,7 +272,7 @@ Filtering/sorting of selected rows is available for any column, including status
 
 
 ## Delete
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruelist){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
 Bulk record deletion can be performed. Successfully deleted records will no longer appear in the step results.

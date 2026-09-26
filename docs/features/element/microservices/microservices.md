@@ -63,7 +63,7 @@ When creating entities for microservices, the process is largely similar to crea
           ```
       - **Step1.4** Create **MetaBuilder** extends **AnySourceFieldMetaBuilder**
     
-           see more [Meta builder](/repository/meta/metabuilder)
+           see more [Meta builder](/environment/meta/metabuilder)
         
            ```java
            --8<--
@@ -91,7 +91,6 @@ When creating entities for microservices, the process is largely similar to crea
 
 !!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
-    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
 ??? Example
 
@@ -159,7 +158,7 @@ Combining these parameters allows users to control and customize the behavior of
 
     If the application lacks a filtration feature, it implies that the parameter associated with filtration would be absent.
   
-    This example demonstrates how to select filtering conditions for a field with the String type. For comprehensive information on all fields available for filtering, please refer to the article
+    This example demonstrates how to select filtering conditions for a field with the String type. For comprehensive information on all fields available for filtering, please refer to the article [SearchOperation for filtering](/widget/fields/filtersearchoperation/).
     
         queryParameters.getParameters().entrySet().stream().filter(f->f.getKey().contains("contains")).toList();
 
@@ -180,7 +179,6 @@ Combining these parameters allows users to control and customize the behavior of
 
 !!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
-    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
 ??? Example
 
@@ -202,7 +200,6 @@ Combining these parameters allows users to control and customize the behavior of
 
 !!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
-    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
 ??? Example
 
@@ -224,7 +221,6 @@ Combining these parameters allows users to control and customize the behavior of
 
 !!! tips
     In this example, we're addressing the scenario where the service obtaining data only by ID.
-    If your service relies solely on natural keys for data retrieval, you may find the following article helpful.
 
 ??? Example
 

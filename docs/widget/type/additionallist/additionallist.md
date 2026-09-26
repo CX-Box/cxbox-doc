@@ -33,7 +33,7 @@ The widget has two modes:
         --8<--
         ```
      
-        **Step2** Add widget to corresponding ****_.view.json_** **.
+        **Step2** Add widget to corresponding **_.view.json_**.
     
         ```json
         --8<--
@@ -59,7 +59,7 @@ The widget has two modes:
         --8<--
         ```
 
-        **Step3** Add widget to corresponding ****_.view.json_** **.
+        **Step3** Add widget to corresponding **_.view.json_**.
     
         ```json
         --8<--
@@ -204,7 +204,7 @@ There are types of:
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/MyExample3196AdditionalConstant.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalConstant.widget.json
             --8<--
             ```
     
@@ -219,7 +219,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 ## <a id="Showcondition">Show condition</a>
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3002){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3190){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionallist/base){:target="_blank"}
 
 * `no show condition - recommended`: widget always visible
@@ -319,7 +319,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -337,7 +337,7 @@ Fields Configuration. The fields array defines the individual fields present wit
     
               ```json
                  --8<--
-                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3193AdditionalRead.widget.json
+                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190AdditionalRead.widget.json
                  --8<--
               ```
 
@@ -405,7 +405,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 
     === "Pre-hidden columns"
         
-        Сan also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
+        Can also set columns to be pre-hidden, meaning they will be hidden when the widget opens.
         
         Add in **options** parameter **additional** to corresponding **.widget.json**.
         

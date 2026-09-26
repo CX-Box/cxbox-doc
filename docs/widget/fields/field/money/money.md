@@ -20,7 +20,7 @@
     
     One will usually use Long, Double or BigDecimal java types in DTO and Entity for storing this field type.
     
-    Next example shows Long usage:
+    Next example shows Double usage:
     **Step1** Add **Double** field  to corresponding **DataResponseDTO**.
     ```java
     --8<--
@@ -61,7 +61,7 @@
 
 ## Placeholder
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample64){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.gi_branch }}/src/main/java/org/demo/documentation/fields/money/placeholder){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/placeholder){:target="_blank"}
 
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application
 ### How does it look?
@@ -87,7 +87,7 @@
         **Works for Form.**
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample64){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.gi_branch }}/src/main/java/org/demo/documentation/fields/money/placeholder){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/placeholder){:target="_blank"}
 
 ## Color
 `Color` allows you to specify a field color. It can be calculated based on business logic of application
@@ -179,7 +179,7 @@
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/basic){:target="_blank"}
 
 `Readonly`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample61){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/ro){:target="_blank"}
 
 ### How does it look?
@@ -242,7 +242,7 @@
         === "Form widget"
             **Works for Form.**
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample56){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample61){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/ro){:target="_blank"}
 
 ## Filtering
@@ -330,7 +330,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown)
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown)
     === "Info widget"
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
@@ -339,7 +339,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
@@ -347,7 +347,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample62){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/drilldown){:target="_blank"}
 
-[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -482,20 +482,20 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/money/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/money/validationdynamic/MyExample333Service.java:validateFields
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/money/validationdynamic/MyExample333Service.java:doUpdateEntity

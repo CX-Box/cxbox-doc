@@ -19,7 +19,7 @@
     {{ external_links.github_raw_doc }}/widgets/steps/base/myExampleStep.widget.json
     --8<--
     ```
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
     --8<--
@@ -76,7 +76,7 @@ Type: String(required).
 
     === "With plugin"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)

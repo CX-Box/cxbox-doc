@@ -274,7 +274,7 @@ When the user changes the value of this field, the region and street fields shou
 ### <a id="formpopup">FormPopup </a>
 All widget types follow the described logic above [Independent BCs](#independentbcs),[dependent parent-child BCs](#parentchild), except for FormPopup.
 
-The reason for this exception is that when a [FormPopup](/widget/type/formpopup) is opened,
+The reason for this exception is that when a [FormPopup](/widget/type/formpopup/formpopup) is opened,
 it doesn’t just display existing data — it triggers a process similar to
 changing the active field and then updating its dependent fields.
 

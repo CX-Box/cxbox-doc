@@ -14,7 +14,7 @@ Parameters:
 
 Applies to:
 
-*   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo)  
+*   [AdditionalInfo widget](/widget/type/additionalinfo/additionalinfo)  
 *   [Form widget](/widget/type/form/form) 
 *   [FormPopup widget](/widget/type/formpopup/formpopup)   
 *   [Info widget](/widget/type/info/info) 

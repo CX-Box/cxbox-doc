@@ -49,7 +49,7 @@
         }
         ```
     **Step1** Add a button **"save-send"** that raises the widget Popup
-    ```java
+    ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400FormButton.widget.json
     --8<--
@@ -108,7 +108,7 @@ There are types of:
 ??? Example
 === "Constant title"
 **Step1** Add name for **title** to **_.widget.json_**.
-```java
+```json
 --8<--
 {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
 --8<--
@@ -117,7 +117,7 @@ There are types of:
     === "Calculated title"
  
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
@@ -232,7 +232,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
 
@@ -272,17 +272,17 @@ Widget size features:
 * The pop-up is always centered on the screen.
 
 #### How does it look?
-=== "view gridWidth 6 - recommended"
+=== "view gridWidth 6"
     ![gridwidth6.png](gridwidth6.png)
 === "view gridWidth 12"
     ![gridwidth12.png](gridwidth12.png) 
-=== "view gridWidth 24"
+=== "view gridWidth 24 - recommended"
     ![gridwidth24.png](gridwidth24.png)
 
 #### How to add?
 ??? Example
     === "gridWidth24 - recommended"
-        Change **gridWidth** = 24  to corresponding **view**
+        Change **gridWidth** = 24 of the popup widget in corresponding **view** (the sample view holds three popups with gridWidth 24, 12 and 6)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/formpopup/widgetsize/myexample3402form.view.json
@@ -290,7 +290,7 @@ Widget size features:
         ```
 
     === "gridWidth12"
-        Change **gridWidth** = 12  to corresponding **view**
+        Change **gridWidth** = 12 of the popup widget in corresponding **view** (the sample view holds three popups with gridWidth 24, 12 and 6)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/formpopup/widgetsize/myexample3402form.view.json
@@ -298,7 +298,7 @@ Widget size features:
         ``` 
 
     === "gridWidth6"
-        Change **gridWidth** = 6  to corresponding **view**
+        Change **gridWidth** = 6 of the popup widget in corresponding **view** (the sample view holds three popups with gridWidth 24, 12 and 6)
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/formpopup/widgetsize/myexample3402form.view.json
@@ -327,7 +327,7 @@ There are types of:
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
         --8<--
@@ -336,7 +336,7 @@ There are types of:
     === "Calculated title"
  
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--

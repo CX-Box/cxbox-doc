@@ -24,11 +24,11 @@
     {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/MyExample3600Additional.widget.json
     --8<--
     ```
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/MyExample3600List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/myexample3600list.view.json
     --8<--
     ```
 ## Title

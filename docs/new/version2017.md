@@ -145,7 +145,7 @@ Support has also been added for exporting the following field types to Excel:
 * [multivalueHover](https://doc.cxbox.org/widget/fields/field/multivalueHover/multivalueHover/)
 * [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/)
 * [fileUpload](https://doc.cxbox.org/widget/fields/field/fileUpload/fileUpload/)
-* [money with Сurrency](https://doc.cxbox.org/widget/fields/field/money/money/#currency)
+* [money with Currency](https://doc.cxbox.org/widget/fields/field/money/money/#currency)
 * [suggestionPickList](https://doc.cxbox.org/widget/fields/field/suggestionpicklist/suggestionPickList/)
 
 #### Fixed: CalendarYearList the buttons are displayed correctly depending on the type

@@ -93,7 +93,7 @@ All fields in a logical block are readonly.
 === "Form widget"
     _not applicable_
 
-Filter not working with field type hint. `see more` [hint](/features/element/hint/hint)
+Filter not working with field type hint. `see more` [hint](/widget/fields/field/hint/hint)
 
 ### How to add?
 ??? Example

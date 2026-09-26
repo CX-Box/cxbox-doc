@@ -136,7 +136,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
             --8<--
             ```
 
-            **Step3** Add widget to corresponding ****_.view.json_** **.
+            **Step3** Add widget to corresponding **_.view.json_**.
         
             ```json
             --8<--
@@ -165,7 +165,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
             --8<--
             ```
 
-            **Step3** Add widget to corresponding ****_.view.json_** **.
+            **Step3** Add widget to corresponding **_.view.json_**.
         
             ```json
             --8<--
@@ -213,7 +213,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
              --8<--
              ```
 
-             **Step5** Add assoc widget to corresponding ****_.view.json_** **.
+             **Step5** Add assoc widget to corresponding **_.view.json_**.
         
             ```json
             --8<--
@@ -378,7 +378,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -421,7 +421,7 @@ There are three methods to create a record:
 * [With view](#withview): not applicable.
 
 ##### <a id="createinline">Inline</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331inlinecreate){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331create){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 With `Line Addition`, a new empty row is immediately added to the top of the assoc widget when the "Add" button is clicked. This is a quick way to add rows without needing to input data beforehand.
@@ -454,14 +454,14 @@ The position of the newly created row inside its node is defined by **options**.
     **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ``` 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331create){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 ##### <a id="withwidget">Inline-form</a>
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331create){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331inlinecreate){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
@@ -484,13 +484,13 @@ The position of the newly created row inside its node is defined by **options**.
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/MyEntity3054MultiMultivalueMeta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ```
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myEntity3331MultiFormForPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myEntity3331MultiFormForPopup2.widget.json
     --8<--
     ```
  
@@ -514,7 +514,7 @@ The position of the newly created row inside its node is defined by **options**.
     --8<--
     ```
  
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331inlinecreate){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/create){:target="_blank"}
 
 ##### <a id="withview">With view</a>
@@ -546,11 +546,11 @@ _not applicable_
     --8<--
     ```  
  
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/save/myEntity3331MultiAssocSaveListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/delete/myEntity3331MultiAssocDeleteListPopup.widget.json
     --8<--
     ``` 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331delete){:target="_blank"} ·
@@ -582,7 +582,7 @@ There are three methods to create a record:
     **Step1** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ```
  
@@ -593,7 +593,7 @@ There are three methods to create a record:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331editinlineform){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/assoctree/actions/edit){:target="_blank"}
 
-`Edit with widget` opens an additional widget when clicking on the Edit option from a three-dot menu.
+`Edit with widget` opens an additional widget when clicking the edit icon in the row.
 
 ###### How does it look?
 ![assoc_edit_with_widget.gif](assoc_edit_with_widget.gif)
@@ -601,24 +601,24 @@ There are three methods to create a record:
 ###### How to add?
 ??? Example
 
-    **Step1** Add button `edit` to corresponding **VersionAwareResponseService**.
+    **Step1** Add action `save` to corresponding **VersionAwareResponseService**: the form saves the record with it.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueService.java:getActions
     --8<--
     ```
 
     **Step2** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyExample3331Meta.java:buildRowDependentMeta
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/MyEntity3331MultiMultivalueMeta.java:buildRowDependentMeta
     --8<--
     ```
  
     **Step2**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/MyExample3331FormEdit.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myEntity3331MultiFormForPopup.widget.json
     --8<--
     ```
  
@@ -629,13 +629,13 @@ There are three methods to create a record:
     --8<--
     ```
 
-     **Step5** Add button `edit` and widget with type `Form` to corresponding **.widget.json**.
+     **Step5** Add widget with type `Form` to **options**.**edit**.**widget** of corresponding **.widget.json**: the edit icon appears in each row.
        
     `options`.`edit`: Name widget that appears when you click a button
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/MyExample3331Edit.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/myEntity3331MultiAssocTreePopupEditInlineForm.widget.json
     --8<--
     ```
 

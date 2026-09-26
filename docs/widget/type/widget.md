@@ -47,7 +47,7 @@ Steps
 === "Tree"
     ![tree.png](tree/tree.png)
 
-*   [AdditionalInfo widget](widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the right**.
+*   [AdditionalInfo widget](/widget/type/additionalinfo/additionalinfo) is a component only for data viewing. Widget is always located **on the right**.
 *   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the right**.
 *   [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
 *   [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup) is a popup component designed to the selection of multiple values from a hierarchical, lazily loaded tree.

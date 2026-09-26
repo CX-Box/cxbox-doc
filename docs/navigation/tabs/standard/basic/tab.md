@@ -91,10 +91,10 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
 ###  How to add?
 ??? Example
     **Step1** Add widget **ThirdLevelMenu** after a widget **SecondLevelMenu** to **.view.json** using [widget position](/navigation/view/view/)
-        see more [Tab levels](/navigation/tab/typestandard/basic/tabfordevelop/#tab-levels)
+        see more [Tab levels](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/secondlevel/down/myexample3235seconddown.view.json
+    {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/thirdlevel/myexample3235thirdleveltab1.view.json
     --8<--
     ```
 
@@ -117,7 +117,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
 ### How to add?
 ??? Example
     **Step1** Add widget **FourthLevelMenu** after a widget **ThirdLevelMenu** to **.view.json** using [widget position](/navigation/view/view/)
-    see more [Tab levels](/navigation/tab/typestandard/basic/tabfordevelop/#tab-levels)
+    see more [Tab levels](/navigation/tabs/standard/basicdevelop/tabfordevelop/#tab-levels)
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/navigation/tab/typestandard/basic/fourthlevel/myexample3235fourthleveltab1.view.json

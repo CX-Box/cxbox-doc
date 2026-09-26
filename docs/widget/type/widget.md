@@ -40,6 +40,8 @@ Steps
     ![picklist.png](picklistpopup/picklist.png)
 === "PickTreePopup"
     ![pickTreePopupBasic.png](picktreepopup/pickTreePopupBasic.png)
+=== "Line2D"
+    ![line2d.png](line2d/line2d.png)
 === "StatsBlock"
     ![img_stat.png](statblocks/img_stat.png)
 === "Steps"
@@ -59,6 +61,7 @@ Steps
 *   [HeaderWidget widget](/widget/type/headerwidget/headerwidget) is a component for displaying a header.
 *   [Info widget](/widget/type/info/info) is a component only for data viewing.
 *   [List widget](/widget/type/list/list) is list the general information for many records and present it in a way that is easily interpretable for users.
+*   [Line2D widget](/widget/type/line2d/line2d) draws a line chart from the records of a business component: one point per record, one line per group.
 *   [PickListPopup widget](/widget/type/picklistpopup/picklistpopup) is a component that allows the user to select a value from a Popup list of entities.
 *   [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup) is a component that allows the user to select a value from a Popup tree of entities.
 *   [StatsBlock widget](/widget/type/statblocks/statblocks) is a tool designed to display aggregated data in a visually accessible format.

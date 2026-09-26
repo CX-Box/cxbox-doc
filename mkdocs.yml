@@ -102,6 +102,7 @@ nav:
       - Widget List: widget/type/list/list.md
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
+      - Widget Pie1D: widget/type/pie1d/pie1d.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
       - Widget Tree: widget/type/tree/tree.md

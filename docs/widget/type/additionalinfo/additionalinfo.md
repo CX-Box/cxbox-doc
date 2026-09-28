@@ -98,7 +98,46 @@ A business component represents a specific part of a system that handles a parti
 see more  [Business component](/environment/businesscomponent/businesscomponent/)
 
 ## <a id="Showcondition">Show condition</a>
-_not applicable_
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3600){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionalinfo/base){:target="_blank"}
+
+* `no show condition - recommended`: widget always visible
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4231){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionalinfo/showcondition){:target="_blank"}
+
+* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
+
+!!! info
+    When all widgets on the right are hidden, the other widgets of the view take the whole width.
+
+!!! tips
+    It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
+
+#### <a id="howdoesitlook">How does it look?</a>
+=== "no show condition"
+    ![additionalinfo.png](additionalinfo.png)
+=== "show condition by current entity"
+    ![show_cond_current.gif](show_cond_current.gif)
+
+#### <a id="howtoadd">How to add?</a>
+??? Example
+
+    === "no show condition"
+        see [Basic](#Howtoaddbacis)
+
+    === "show condition by current entity"
+        **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/additionalinfo/showcondition/MyExample4231AddInfo.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4231){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/additionalinfo/showcondition){:target="_blank"}
 
 ## <a id="bc">Fields</a>
 

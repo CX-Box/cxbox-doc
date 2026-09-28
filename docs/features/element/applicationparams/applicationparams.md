@@ -10,7 +10,7 @@ This parameter allows you to choose the filtering display mode for the following
 
 * [Number](/widget/fields/field/number/number/#filtering)
 * [Money](/widget/fields/field/money/money/#filtering)
-* [Percent](docs/widget/fields/field/percent/percent/#filtering)
+* [Percent](/widget/fields/field/percent/percent/#filtering)
 * [Date](/widget/fields/field/date/date/#filtering)
 * [DateTime](/widget/fields/field/dateTime/dateTime/#filtering)
 * [DateTimeWithSeconds](/widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/#filtering)

@@ -20,7 +20,7 @@
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
 
@@ -74,7 +74,7 @@
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/basic){:target="_blank"}
 
 ## Placeholder
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74list){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/placeholder){:target="_blank"}
  
 `Placeholder` allows you to provide a concise hint, guiding users on the expected value. This hint is displayed before any user input. It can be calculated based on business logic of application.
@@ -83,7 +83,7 @@
 === "List widget"
     ![img_plchldr_list.png](img_plchldr_list.png)
 === "Info widget"
-    _![img_plchldr_list.png](img_plchldr_list.png)
+    _not applicable_
 === "Form widget"
     ![form_label.png](img_plchldr_form.png)
 
@@ -105,7 +105,7 @@
     === "Form widget"
         **Works for Form.**
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74list){:target="_blank"} ·
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample74){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/checkbox/placeholder){:target="_blank"}
 
 ## Color
@@ -199,7 +199,7 @@
     _not applicable_
 === "Form widget"
     _not applicable_
- `
+
 
 
 ### How to add?
@@ -361,19 +361,19 @@
 
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/checkbox/validationdynamic/MyExample289Service.java:validateFields
             --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/checkbox/validationdynamic/MyExample289Service.java:doUpdateEntity

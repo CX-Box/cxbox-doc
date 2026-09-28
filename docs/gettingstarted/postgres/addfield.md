@@ -60,7 +60,7 @@ Create **Controller** implements **EnumBcIdentifier**
 ??? Example
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/getstarted/postgres/document/MyExample4000Form.widget.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/example/MyExample4002Form.widget.json
     --8<--
     ```
 
@@ -70,7 +70,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/getstarted/postgres/document/myexample4002form.view.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/example/myexample4002form.view.json
     --8<--
     ```
 
@@ -78,7 +78,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
 ??? Example
 
-    ```java
+    ```json
     --8<--
     {{ external_links.github_raw_doc }}/getstarted/postgres/example/myexample4002.screen.json
     --8<--

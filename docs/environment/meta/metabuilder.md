@@ -12,7 +12,7 @@
 
       ```java
       --8<--
-      {{ external_links.github_raw_doc }}/input/basic/InputBasicMeta.java
+      {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicMeta.java
       --8<--
       ```
 ### AnySourceFieldMetaBuilder
@@ -39,14 +39,12 @@ Overall, customizing properties in interfaces allows you to tailor the user expe
 
 ### buildRowDependentMeta
 
-RowDependentFieldsMeta
+`buildRowDependentMeta` builds meta for one record. It is called with the record `id`, so the field properties can depend on the record data.
 
+Use `RowDependentFieldsMeta` to set field properties, for example `setEnabled`, `setRequired`, [setHidden](/environment/meta/buildrowdependentmeta/sethidden/sethidden/).
 
-	/**
-	 * Adds a value to an existing list of selectable values
-	 *
-	 * @param field widget field with type dictionary
-	 * @param dictDTO DTO with dictionary value
-	 */
-
-
+```java
+--8<--
+{{ external_links.github_raw_doc }}/fields/input/basic/InputBasicMeta.java:buildRowDependentMeta
+--8<--
+```

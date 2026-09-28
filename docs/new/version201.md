@@ -113,7 +113,7 @@ Live sample [GroupingHierarchy]({{ external_links.demo }}/ui/#/screen/meeting/vi
 
 Added screen with responsivenes. Allows you to add or remove view accessibility.
 
-[Live sample]({{ external_links.demo }}/ui/#/screen/admin/view/resplist)
+[Live sample]({{ external_links.demo }}/ui/#/screen/admin/view/responsibilitiesAdmin)
 
 #### Added filtration by range for Date/DateTime/DateTimeWithSeconds
 ![filtrationdate.gif](v2.0.1/filtrationdate.gif)

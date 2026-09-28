@@ -1,10 +1,10 @@
 Standard repository elements:
 
-* [Entity](/enviroment/entity/entity)
-* [DTO](/enviroment/dto/dto)
-* [Service](/enviroment/service/service)
-* [MetaBuilder](/enviroment/meta/metabuilder)
-* [Controller](/enviroment/controller/controller)
+* [Entity](/environment/entity/entity)
+* [DTO](/environment/dto/dto)
+* [Service](/environment/service/service)
+* [MetaBuilder](/environment/meta/metabuilder)
+* [Controller](/environment/controller/controller)
 
 <!-- 
 Visual elements
@@ -22,37 +22,37 @@ Visual elements
         - **Step1.1** Create **Entity** 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/input/basic/InputBasic.java
+            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasic.java
             --8<--
             ```
     
         - **Step1.2** Create **DTO** extends **DataResponseDTO**
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/input/basic/InputBasicDTO.java
+            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicDTO.java
             --8<--
             ```
         - **Step1.3** Create **Meta** extends **FieldMetaBuilder**
         
-            see more [Meta builder](/repository/meta/metabuilder)
+            see more [Meta builder](/environment/meta/metabuilder)
             
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/input/basic/InputBasicMeta.java
+            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicMeta.java
             --8<--
             ```
         - **Step1.4** Create **Service** implements **VersionAwareResponseService**
         
              ```java
              --8<--
-             {{ external_links.github_raw_doc }}/input/basic/InputBasicService.java
+             {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicService.java
              --8<--
              ```
         - **Step1.5** Create **PlatformController** implements **EnumBcIdentifier**
         
              ```java
              --8<--
-             {{ external_links.github_raw_doc }}/input/basic/CxboxInputBasicController.java
+             {{ external_links.github_raw_doc }}/fields/input/basic/CxboxInputBasicController.java
              --8<--
              ```
     - **Step2** Create visual elements       

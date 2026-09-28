@@ -180,7 +180,7 @@ All fields are readonly.
 ??? Example
     === "With plugin(recommended)"
         **Step 1** Download plugin
-        [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+        [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
 
         **Step 2** Add existing field to an existing form widget
 
@@ -191,7 +191,7 @@ All fields are readonly.
             **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyEntity234DTO.java
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyExample233DTO.java
             --8<--
             ```
      
@@ -234,4 +234,4 @@ All fields are readonly.
 **_not applicable_**
 
 ## Required
-`**_not applicable_**
+**_not applicable_**

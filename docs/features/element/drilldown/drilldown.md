@@ -15,11 +15,11 @@ The following transition formats are possible:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3619){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/byscreen){:target="_blank"}
 
-Simple transition to a view without focusing on specific data.
+Simple transition to a screen without focusing on specific data.
 
 The link is formulated as follows:  `/screen/nameScreen`
 
-Example request: `/screen/myexample3618`
+Example request: `/screen/myexample3610`
 
 ##### How does it look?
 ![to_screen.gif](to_screen.gif)
@@ -127,7 +127,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     `Step2`  Add **drillDown** to corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownviewid/MyExample3610Form.widget.json
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownviewid/MyExample3610List.widget.json
     --8<--
     ```
  
@@ -151,11 +151,11 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     !!! tips
         To write this drilldown, follow these steps:
         
-            * Add a filter function for fields that require filtering.
-            * Visually fill in the necessary filters in the interface.
-            * Open the developer panel.
-            * Locate the required request.
-            * Use this query to substitute in your code to get a reference  
+        * Add a filter function for fields that require filtering.
+        * Visually fill in the necessary filters in the interface.
+        * Open the developer panel.
+        * Locate the required request.
+        * Use this query to substitute in your code to get a reference  
 
     The link consists of two parts:
     ```java
@@ -189,7 +189,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
 
 
 #### By fulltextsearch
-[see more about FullTextSearch](/features/element/filtration/fulltextsearch/fulltextsearch)
+[see more about FullTextSearch](/widget/type/property/filtration/filtration/#by_fulltextsearch)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3615){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/advancedfulltextsearchfilter){:target="_blank"}
@@ -247,13 +247,13 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     ```
 
 #### By filter group
-    _not applicable_
+_not applicable_
 <!-- 
 
 #### by personal filter group
 ### <a id=" AdvanceddrillDownmMultiBC"> Advanced drillDown multi bc</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3612){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/advancedoneview){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/advancedonebcfilter){:target="_blank"}
 
 The link is formulated as follows: `/screen/nameScreen/view/nameView/bc1/id1/bc2/id2`
 
@@ -267,7 +267,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     The link consists of two parts:
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:url
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:url
     --8<--
     ```
 
@@ -276,14 +276,14 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlBC
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:urlBC
     --8<--
     ```
     `Step 2`  Create a link with filter.
  
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/advancedoneview/MyExample3612Meta.java:urlFilter
+    {{ external_links.github_raw_doc }}/feature/drilldown/advancedonebcfilter/MyExample3612Meta.java:urlFilter
     --8<--
     ```
 

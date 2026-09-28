@@ -277,7 +277,7 @@ The time type supports various formats for representing and manipulating time va
 
 `Editable`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3500){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/base){:target="_blank"}
 
 `Readonly`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3507){:target="_blank"} ·
@@ -398,7 +398,7 @@ Search uses (HH:MM:SS):
  
 
 ## Drilldown
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503![img_list.png](../../../../../../../Downloads/img_list.png)){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3503){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/time/drilldown){:target="_blank"}
 
 `DrillDown` allows you to navigate to another view by simply tapping on it. Target view and other drill-down parts can be calculated based on business logic of application
@@ -433,7 +433,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Info widget"
 
@@ -444,11 +444,11 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 
 ## Validation
@@ -541,7 +541,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         === "Form widget"
             **Works for Form.**
     === "Confirm"
-        Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
+        Add `PreAction.confirm` to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/time/validationconfirm/MyExample4103Service.java:getActions
@@ -559,22 +559,22 @@ Also, it optionally allows you to filter data on target view before it will be o
             **Works for Form.**
     === "Field level validation"
 
-        Create сustom service for business logic check.
+        Create custom service for business logic check.
 
         Use if:
 
         Business logic check required for fields
 
-        `Step 1`  Create сustom method for check.
+        `Step 1`  Create custom method for check.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:validateFields
+        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExampleBc4106Service.java:validateFields
         --8<--
         ```
-        `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+        `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExample323Service.java:doUpdateEntity
+        {{ external_links.github_raw_doc }}/fields/time/validationdynamic/MyExampleBc4106Service.java:doUpdateEntity
         --8<--
         ```
 

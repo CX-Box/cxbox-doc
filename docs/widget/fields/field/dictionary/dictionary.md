@@ -34,7 +34,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     === "Enum"
         === "With plugin(recommended)"
             **Step 1** Download plugin
-                [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+                [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
         
             **Step 2** Add dictionary field to an existing form widget
                 ![addfield.gif](addfield.gif)
@@ -147,34 +147,34 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         **Step 4.** Add field with new record to corresponding **DataResponseDTO**.
 
         !!! info
-            if you microservice uses hibernate, then add dependency, that will allow you to use org. cxbox. dictionary. hibernate. DictionaryType under entity column, e. g. @Type(DictionaryType. class): 
+            if you microservice uses hibernate, then add dependency, that will allow you to use org.cxbox.dictionary.hibernate.DictionaryType under entity column, e.g. @Type(DictionaryType.class): 
             ```xml            
             <dependency>  
-                <groupId>org. cxbox</ groupId> 
-                <artifactId>cxbox-dictionary-hibernate</ artifactId> 
-            </ dependency>
+                <groupId>org.cxbox</groupId> 
+                <artifactId>cxbox-dictionary-hibernate</artifactId> 
+            </dependency>
             ```
 
-            Also, you can turn on auto type registration setting org. cxbox. dictionary. enable_types_contributor=true in hibernate properties, e. g. in spring:
+            Also, you can turn on auto type registration setting org.cxbox.dictionary.enable_types_contributor=true in hibernate properties, e.g. in spring:
             ```xml   
             <dependency>   
-                <groupId>org. cxbox</ groupId> 
-                <artifactId>cxbox-dictionary-api</ artifactId> 
-            </ dependency>
+                <groupId>org.cxbox</groupId> 
+                <artifactId>cxbox-dictionary-api</artifactId> 
+            </dependency>
             ```
 
             ```
             spring: 
-            jpa:   
+              jpa:   
                 properties:  
-                    org:       
-                        cxbox:        
-                            dictionary:         
-                                enable_types_contributor: true
+                  org:       
+                    cxbox:        
+                      dictionary:         
+                        enable_types_contributor: true
             ```
 
-            then @Type(DictionaryType. class) can be optionally skipped under column, because system will register type for all Dictionary implementations.
-            enable_types_contributor feature is experimental - please, use @Type(DictionaryType. class) under entity column as fallback varian
+            then @Type(DictionaryType.class) can be optionally skipped under column, because system will register type for all Dictionary implementations.
+            enable_types_contributor feature is experimental - please, use @Type(DictionaryType.class) under entity column as fallback varian
 
         ```java
         --8<--
@@ -323,7 +323,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
                 ```java
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/AdministeredDictionary.java
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/AdministeredDictionaryOld.java
                 --8<--
                 ```
             +  **Step 1.5**  Add in project AdministeredDictionaryType
@@ -407,7 +407,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Meta.java:buildRowDependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Meta.java:buildIndependentMeta
         --8<--
         ```
     
@@ -416,7 +416,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
             ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Info.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350List.widget.json
                 --8<--
             ```
 
@@ -428,7 +428,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample350Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Info.widget.json
             --8<--
             ```
 
@@ -441,7 +441,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample350Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Form.widget.json
             --8<--
             ```  
 
@@ -806,7 +806,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         ```
     
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
@@ -820,14 +820,14 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample86){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/drilldown){:target="_blank"}
 
     === "Form widget"
         _not applicable_
-[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -946,28 +946,28 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationconfirm){:target="_blank"}
 
     === "Field level validation"
-            Create сustom service for business logic check.
-            
-            Use if:
-            
-            Business logic check required for fields
-            
-            `Step 1`  Create сustom method for check.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/validationdynamic/MyExample323Service.java:validateFields
-            --8<--
-            ```
-            
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/validationdynamic/MyExample323Service.java:doUpdateEntity
-            --8<--
-            ```
+        Create custom service for business logic check.
+        
+        Use if:
+        
+        Business logic check required for fields
+        
+        `Step 1`  Create custom method for check.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/validationdynamic/MyExample323Service.java:validateFields
+        --8<--
+        ```
+        
+        `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/dictionary/validationdynamic/MyExample323Service.java:doUpdateEntity
+        --8<--
+        ```
 
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample323){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationdynamic){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample323){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/validationdynamic){:target="_blank"}
 
 ## <a id="sort">Sorting</a>
 `Enum`
@@ -1055,7 +1055,7 @@ Can also arrange the values in the drop-down list or list values for filter in t
                 ```
     
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample90){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/field/dictionary/sorting){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/sorting){:target="_blank"}
 
         === "Dictionary"
             === "Sorting data"
@@ -1071,7 +1071,7 @@ Can also arrange the values in the drop-down list or list values for filter in t
                 ```
  
             === "Drop-down list and List values for filter"
-                If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
+                If you use DictionaryProvider.getAll(Class), that delegates to org.cxbox.api.data.dictionary.DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
                 ```java
                 @Configuration
                 public class DictionaryConfig {
@@ -1140,7 +1140,7 @@ Can also arrange the values in the drop-down list or list values for filter in t
             === "Sorting data"
                 _not applicable_
             === "Drop-down list"
-                If you use DictionaryProvider. getAll(Class), that delegates to org. cxbox. api. data. dictionary. DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
+                If you use DictionaryProvider.getAll(Class), that delegates to org.cxbox.api.data.dictionary.DictionaryCache, then drop-down values are sorted by display_order, then by key (display_order can be null)
                 ```java
                 @Configuration
                 public class DictionaryConfig {
@@ -1299,7 +1299,7 @@ Applies to:
 
     === "Dictionary"
 
-        `Step 1` Add **fields.setDictionaryValues** to corresponding **FieldMetaBuilder**.
+        `Step 1` Add **fields.setDictionaryIcons** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355Meta.java:buildIndependentMeta
@@ -1405,14 +1405,14 @@ Applies to:
         `Step 1` Add **fields.setDictionaryTypeWithAllValues** to corresponding **FieldMetaBuilder**.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionarydictionary/icon/MyExample351Meta.java:buildIndependentMeta
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/MyExample351Meta.java:buildIndependentMeta
         --8<--
         ``` 
 
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample351ListModeIcon.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/MyExample351ListModeIcon.widget.json
         --8<--
         ```  
 
@@ -1468,7 +1468,7 @@ You can customize the color of the standard icon using a hex color code.
             --8<--
             ```
          
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample355){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
         === "LOV deprecated recommended use Dictionary"
@@ -1476,12 +1476,12 @@ You can customize the color of the standard icon using a hex color code.
             **ARROW_UP("arrow-up")**
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/enums/IconsEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/enums/IconsEnum.java
             --8<--
             ```
  
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/old/icon/enums){:target="_blank"}
 
     === "With Color"
         === "Enum"
@@ -1513,7 +1513,7 @@ You can customize the color of the standard icon using a hex color code.
             --8<--
             ```
 
-            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
+            [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample355){:target="_blank"} ·
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
 
         === "LOV deprecated recommended use Dictionary"
@@ -1525,12 +1525,12 @@ You can customize the color of the standard icon using a hex color code.
 
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/enums/IconsEnum.java
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/enums/IconsEnum.java
             --8<--
             ```
 
             [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample351){:target="_blank"} ·
-            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/icon/enums){:target="_blank"}
+            [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/old/icon/enums){:target="_blank"}
 
 ##### <a id="custom_icons">Custom icons</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3011){:target="_blank"} ·
@@ -1575,7 +1575,7 @@ Custom icons can be uploaded. Icons should be uploaded in SVG format.
 cxbox/core 4.0.0-M12
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample357){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/administrations){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/dictionary){:target="_blank"}
 
 This screen allows you to edit and create dictionaries .
 
@@ -1592,7 +1592,7 @@ To apply the changes, click the "Clear Cache" button  on the administration scre
     - **Step 2.** Check for the presence and relevance of the files from the demo project in the `/resources/meta/core/dictionary` folder.
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample357){:target="_blank"}
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/administrations){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/dictionary/dictionarydictionary/dictionary){:target="_blank"}
 
 ## Release
 

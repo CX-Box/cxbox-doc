@@ -17,14 +17,14 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add field **LocalDate** to corresponding **BaseEntity**.
+    **Step1** Add field **LocalDateTime** to corresponding **BaseEntity**.
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/fields/date/basic/DateBasic.java
     --8<--
     ```
 
-    **Step2**  Add field **LocalDate** to corresponding **DataResponseDTO**.
+    **Step2**  Add field **LocalDateTime** to corresponding **DataResponseDTO**.
     ```java
     --8<--
     {{ external_links.github_raw_doc }}/fields/date/basic/DateBasicDTO.java
@@ -333,7 +333,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Info widget"
 
@@ -344,7 +344,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         --8<--
         ```
         **Option 2**
-           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/advancedCustomization/element/drilldown/drilldown) 
+           Add **"drillDownKey"** :  `custom field`  to .widget.json. See more [Drilldown](/features/element/drilldown/drilldown) 
  
     === "Form widget"
         _not applicable_
@@ -352,7 +352,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/DateDrillDown){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/date/drilldown){:target="_blank"}
 
-[Advanced customization](/advancedCustomization/element/drilldown/drilldown)
+[Advanced customization](/features/element/drilldown/drilldown)
 
 ## Validation
 `Validation` allows you to check any business rules for user-entered value. There are types of validation:
@@ -447,7 +447,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/date/validationruntimeex){:target="_blank"}
 
     === "Confirm"
-        Add [PreAction.confirm](/advancedCustomization/element/confirm/confirm) to corresponding **VersionAwareResponseService**.
+        Add `PreAction.confirm` to corresponding **VersionAwareResponseService**.
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/fields/date/validationconfirm/DateConfirmService.java:getActions
@@ -486,19 +486,19 @@ Also, it optionally allows you to filter data on target view before it will be o
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/date/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/date/validationdynamic/MyExample320Service.java:validateFields
             --8<--
             ```
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/date/validationdynamic/MyExample320Service.java:doUpdateEntity

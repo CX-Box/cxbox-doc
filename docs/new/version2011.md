@@ -182,7 +182,7 @@ public static final Map<EnumBcIdentifier, List<CrudmaActionType>> SIEM_CONFIG_LO
     Arrays.stream(CrudmaActionType.values()).filter(e -> !e.isReadOnly()).toList()
 );
 ```
-#### Fixed: [dictionary](/dictionary/) field - filtering logic   
+#### Fixed: [dictionary](/widget/fields/field/dictionary/dictionary/) field - filtering logic   
 
 We have improved the filtering logic for Dictionary fields. Now, when all selected values are unchecked and Apply is clicked, the filter is properly cleared, and all data is displayed without requiring an additional Clear Filter action.  
 

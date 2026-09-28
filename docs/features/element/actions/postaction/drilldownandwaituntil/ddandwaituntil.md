@@ -87,11 +87,11 @@ Creates a post-action that performs a INNER drill-down and then waits until a sp
 
 ### How does it look?
 === "Without custom message"
-    ![waitUntilDD.gif](waitUntil.gif)
+    ![waitUntilandDD.gif](waitUntilandDD.gif)
 === "With `Success` and `In progress` custom message"
-    ![waitUntilDDSuccess.gif](waitUntilSuccess.gif)
+    ![waitUntilDDSuccess.gif](waitUntilDDSuccess.gif)
 === "With `Timeout` custom message"
-    ![waitUntilDDTimeoutSuccess.gif](waitUntilTimeoutSuccess.gif)
+    ![waitUntilDDTimeoutSuccess.gif](waitUntilDDTimeoutSuccess.gif)
 
 ```java
 PostAction.drillDownAndWaitUntil(

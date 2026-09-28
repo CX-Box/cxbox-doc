@@ -33,33 +33,33 @@ cxbox-ui/core 1.37.1
     === "Step 3. ActiveMQ"
         - see more [ActiveMQ](https://roytuts.com/messaging-with-stomp-over-websockets-using-spring-and-activemq/)
     
-            +  Step 3.1. Add pom.xml  new dependency.
-    
-                    ```
-                        <dependency>
-                          <groupId>org.springframework.boot</groupId>
-                          <artifactId>spring-boot-starter-activemq</artifactId>
-                        </dependency>
-                        <dependency>
-                          <groupId>org.springframework.boot</groupId>
-                          <artifactId>spring-boot-starter-reactor-netty</artifactId>
-                        </dependency>
-                    ```
-            +  Step 3.2. Convert the ACTIVEMQ_BROKER_TYPE environment variable to the 'activemq' value
-            
-                    ```
-                    ACTIVEMQ_BROKER_TYPE:activemq
-                    ```
-                    
-            +  Step 3.3 Other configurations:
-                    
-                    ```
-                    ACTIVEMQ_ADMIN_LOGIN: The default admin login is 'admin'
-                    ACTIVEMQ_ADMIN_PASSWORD: The default administrator password is 'admin'
-                    ACTIVEMQ_HOST: The default connection host is 'activemq'
-                    ACTIVEMQ_PORT: The default connection port is '61616'
-                    STOMP_PORT: The default STOMP connection port is '61613'
-                    ```
+        +  Step 3.1. Add pom.xml  new dependency.
+
+        ```
+            <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-activemq</artifactId>
+            </dependency>
+            <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-reactor-netty</artifactId>
+            </dependency>
+        ```
+        +  Step 3.2. Convert the ACTIVEMQ_BROKER_TYPE environment variable to the 'activemq' value
+
+        ```
+        ACTIVEMQ_BROKER_TYPE:activemq
+        ```
+
+        +  Step 3.3 Other configurations:
+
+        ```
+        ACTIVEMQ_ADMIN_LOGIN: The default admin login is 'admin'
+        ACTIVEMQ_ADMIN_PASSWORD: The default administrator password is 'admin'
+        ACTIVEMQ_HOST: The default connection host is 'activemq'
+        ACTIVEMQ_PORT: The default connection port is '61616'
+        STOMP_PORT: The default STOMP connection port is '61613'
+        ```
 
     - Step 4. Add WebSocketConfig.java
 

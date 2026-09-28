@@ -19,7 +19,7 @@
        --8<--
     ```
 
-    **Step2** Add widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget to corresponding **_.view.json_**.
 
     ```json
         --8<--
@@ -56,7 +56,7 @@ There are types of:
 ??? Example
     === "Constant title"
         **Step1** Add name for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
         --8<--
@@ -66,18 +66,18 @@ There are types of:
 
     === "Constant title empty"
         **Step1** Delete parameter **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003/view/myexample3003formemtytitle){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title/myexample3003formemtytitle.view.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title){:target="_blank"}
 
     === "Calculated title"
         <!--родитель??-->
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
         --8<--
@@ -246,7 +246,7 @@ Type: String(required).
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -338,7 +338,7 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004MultiColumnForm.widget.json
         --8<--
         ```
         
@@ -357,7 +357,7 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004/view/myexample3004emptyonlybuttonsform){:target="_blank"} ·
-        [:fontawesome-brands-gith
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json){:target="_blank"}
  
 ## Standard Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
@@ -438,7 +438,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Service.java:doCreateEntity
     --8<--
     ```
-    **Step4** Add button `create` to corresponding **.widget.json**.
+    **Step3** Add button `create` to corresponding **.widget.json**.
   
     ```json
     --8<--
@@ -471,7 +471,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     --8<--
     ``` 
  
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
@@ -536,7 +536,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
     {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Service.java:getActions
     --8<--
     ``` 
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
@@ -566,7 +566,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
     {{ external_links.github_raw_doc }}/widgets/form/actions/save/MyExample3181Service.java:getActions
     --8<--
     ```  
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
@@ -610,14 +610,14 @@ With `Edit with view`, you can edit the entity from a separate view that display
         --8<--
         ```
 
-        **Step2** Add button ot group button to corresponding **.widget.json**.
+        **Step2** Add button or group button to corresponding **.widget.json**.
        
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/postaction/MyExample3187FormCreate.widget.json
         --8<--
         ```
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3187){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
 
     === "Method onCancel"
@@ -637,7 +637,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
         {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/MyExample3186Service.java:onCancel
         --8<--
         ``` 
-        **Step3** Add button ot group button to corresponding **.widget.json**.
+        **Step3** Add button or group button to corresponding **.widget.json**.
        
         ```json
         --8<--
@@ -645,7 +645,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3182){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3186){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/actions/cancelcreate){:target="_blank"}
 
 

@@ -182,7 +182,7 @@ Available since [v3.0.1](/new/version3001/)
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluetree/color/MyEntity3315MultivalueDTO.java
+        {{ external_links.github_raw_doc }}/fields/multivaluetree/color/MyExample3315DTO.java
         --8<--
         ```    
  
@@ -226,7 +226,7 @@ Available since [v3.0.1](/new/version3001/)
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluetree/basic){:target="_blank"}
 
 `Readonly`
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3322/view/myexample180form){:target="_blank"} ·
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3322/view/myexample3322form){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluetree/ro){:target="_blank"}
 
 ### How does it look?
@@ -291,7 +291,7 @@ Available since [v3.0.1](/new/version3001/)
         === "Form widget"
             **Works for Form.**
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3322/view/myexample180form){:target="_blank"} ·
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3322/view/myexample3322form){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluetree/ro){:target="_blank"}
 
 ## Filtering
@@ -331,7 +331,7 @@ Available since [v3.0.1](/new/version3001/)
         
         assocValueKey - field for opening AssocTreePopup
 
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/fields/multivaluetree/filtration/MyExample3318List.widget.json
         --8<--
@@ -471,7 +471,7 @@ Available since [v3.0.1](/new/version3001/)
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/validationannotation/MyEntity3324MultivalueDTO.java
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/validationannotation/MyExample3324DTO.java
             --8<--
             ```
  
@@ -486,20 +486,20 @@ Available since [v3.0.1](/new/version3001/)
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluetree/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/multivaluetree/validationdynamic/MyExample3327Service.java:validateFields
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/multivaluetree/validationdynamic/MyExample3327Service.java:doUpdateEntity

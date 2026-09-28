@@ -280,7 +280,7 @@ How to add?
 ??? Example
     
     **Step 1**  
-    Use a translation key in screen JSON: `ui.client.name`       
+    Use a translation key in widget JSON: `ui.client.name`       
 
     ```json
     --8<--
@@ -292,7 +292,7 @@ How to add?
       Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
-      ui.screen.screenname=Nom du client
+      ui.client.name=Nom du client
       ```
 
     Use recommended key prefixes:
@@ -319,7 +319,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/locale/clientlist.view.json
+    {{ external_links.github_raw_doc }}/feature/locale/client.screen.json
     --8<--
     ``` 
 
@@ -350,7 +350,7 @@ How to add?
 ??? Example
     
     **Step 1**  
-    Define title in screen JSON:  `ui.screen.clients`
+    Define title in screen JSON:  `ui.screen.screenname`
 
     ```json
     --8<--
@@ -362,7 +362,7 @@ How to add?
       Add translation to `src/main/resources/ui/messages_fr.properties`:
     
       ```properties
-        ui.screen.screenname
+        ui.screen.screenname=Fonctionnalités locales
       ```
     
     Use recommended key prefixes:
@@ -382,7 +382,7 @@ How to add?
 ??? Example
 
     **Step 1**  
-    Use a translation key in screen JSON: `ui.client.find.placeholder`       
+    Use a translation key in widget JSON: `ui.client.find.placeholder`       
 
     ```json
     --8<--
@@ -465,7 +465,7 @@ How to add?
 
 ??? Example
     **Step 1**  
-    Add translation LocalizationFormatter.uiMessage() to button
+    Add translation LocalizationFormatter.uiMessage() to the exception message
 
     ```java
     --8<--
@@ -477,7 +477,7 @@ How to add?
       Add translation to `src/main/resources/ui/messages_fr.properties`:
     
     ```properties
-    business.exception.less.current.date=La valeur de ce champ ne peut pas Ãªtre antÃ©rieure Ã  la date actuelle
+    business.exception.less.current.date=La valeur de ce champ ne peut pas être antérieure à la date actuelle
     ``` 
 
 ## <a id="datalocalization">Data Localization</a>
@@ -523,7 +523,7 @@ How to add?
     {{ external_links.github_raw }}/conf/cxbox/extension/locale/LocaleEnum.java
     --8<--
     ```  
-    **Step 3**  implements LocaleEnum.java 
+    **Step 4**  implements LocaleEnum.java 
 
     ```java
     --8<--

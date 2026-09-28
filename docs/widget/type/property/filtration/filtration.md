@@ -15,7 +15,7 @@ Here are the standard field types with their respective filtering methods see [S
 This function is available:
 
 * [List widget](/widget/type/list/list)  
-* [AdditionalList widget](/widget/type/additionallist/additionallist.md) 
+* [AdditionalList widget](/widget/type/additionallist/additionallist) 
 * [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)  
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
@@ -33,15 +33,15 @@ This function is available:
 
 * [List widget](/widget/type/list/list)
 (  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614list){:target="_blank"}
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
 )
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 (  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614assoclistpopup){:target="_blank"}
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forassoc){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
 )
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 ) 
 * [Tree widget](/widget/type/tree/tree)
 (  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"}
@@ -103,14 +103,14 @@ This function is available:
         --8<--
         ```
      
-        `Step 4` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Service.java:getSpecification
         --8<--
         ```
      
-        `Step 5` Add **fullTextSearch** to corresponding **.widget.json**. 
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**. 
     
         `enabled` true/false  
     
@@ -122,7 +122,7 @@ This function is available:
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614list){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
 
     === "AssocListPopup widget"  
         `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**. 
@@ -132,14 +132,14 @@ This function is available:
         --8<--
         ```
      
-        `Step 4` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forassoc/MyEntity3625PickService.java:getSpecification
         --8<--
         ```
      
-        `Step 5` Add **fullTextSearch** to corresponding **.widget.json**. 
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**. 
     
         `enabled` true/false  
     
@@ -151,7 +151,7 @@ This function is available:
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614assoclistpopup){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forassoc){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
 
     === "PickListPopup widget"  
         `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**. 
@@ -161,14 +161,14 @@ This function is available:
         --8<--
         ```
      
-        `Step 4` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
         ```java
         --8<--
         {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forpicklist/MyEntity3614PickPickService.java:getSpecification
         --8<--
         ```
      
-        `Step 5` Add **fullTextSearch** to corresponding **.widget.json**. 
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**. 
     
         `enabled` true/false  
     
@@ -181,7 +181,7 @@ This function is available:
         ```
         
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 
 ## <a id="by_personal_filter_group">by personal filter group</a>
 
@@ -193,7 +193,7 @@ This function is available:
 
 * [List](/widget/type/list/list) (
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 )
 
 * [Tree](/widget/type/tree/tree) (
@@ -201,9 +201,9 @@ This function is available:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 )
 
-* [AdditionalList](/widget/type/additionallist/additionallist.md) (
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
+* [AdditionalList](/widget/type/additionallist/additionallist) (
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 )
 
 The "Save Filters" button is located within the gear icon.
@@ -245,7 +245,7 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 
     === "AdditionalList"
         **Step 3** Add **filterSetting** to corresponding **.widget.json**. 
@@ -254,12 +254,12 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
             
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroupsave/MyExample3618AdditionalList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616AdditionalList.widget.json
         --8<--
         ```
 
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroup){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 
 ## <a id="by_filter_group">by filter group</a>
 
@@ -269,15 +269,15 @@ This function is available:
 
 * [List](/widget/type/list/list)
   ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"}
-  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
   )
 * [Tree](/widget/type/tree/tree)
   ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"}
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
   )
-* [AdditionalList](/widget/type/additionallist/additionallist.md)
+* [AdditionalList](/widget/type/additionallist/additionallist)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 )
 
 The option to default filter by saved groups is currently unavailable.
@@ -290,15 +290,15 @@ The option to default filter by saved groups is currently unavailable.
 
 ### How to add?
 ??? Example
-    === "Bacis"
+    === "Basic"
         !!! tips
-            To write this drilldown, follow these steps:
+            To get the conditions for the `filters` column, follow these steps:
     
-                    * Add a filter function for fields 
-                    * Visually fill in the necessary filters in the interface.
-                    * Open the developer panel.
-                    * Locate the required request.
-                    * Use this query to substitute in your code to get a reference 
+            * Add a filter function for fields 
+            * Visually fill in the necessary filters in the interface.
+            * Open the developer panel.
+            * Locate the required request.
+            * Use the filter part of this request as the `filters` value
     
             ![how_add_search_spec.gif](how_add_search_spec.gif)
     
@@ -315,7 +315,7 @@ The option to default filter by saved groups is currently unavailable.
             Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%
           ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
     === "With computed field"
 
@@ -342,7 +342,7 @@ The option to default filter by saved groups is currently unavailable.
           ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergrouphiddenfield){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergrouphiddenfield){:target="_blank"}
 
 !!! info
 

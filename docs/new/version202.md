@@ -17,7 +17,7 @@ We have added the ability to create a line directly within the picklist popup wh
 The navigation arrows and limit settings block are removed if the number of records is less than the limit.
 Pagination modes:
 
-1) nextAndPreviousWithHasNext [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3860){:target="_blank"} ·
+1) nextAndPreviousWithHasNext [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3860list){:target="_blank"} ·
 
 ![nextAndPreviousWithHasNext.gif](v2.0.2/nextAndPreviousWithHasNext.gif)
    Next button availability logic:

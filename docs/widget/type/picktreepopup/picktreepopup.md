@@ -13,7 +13,7 @@ Available since [v3.0.1](/new/version3001/)
 
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3343){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/base){:target="_blank"}
 
 The popup shows the records as a tree: the requirements of the [Tree widget](/widget/type/tree/tree/#basics) apply to the business component of the popup.
 
@@ -91,7 +91,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
     --8<--
     ```
 
-    **Step3** Add widget and popup widget to corresponding ****_.view.json_** **.
+    **Step3** Add widget and popup widget to corresponding **_.view.json_**.
 
     ```json
     --8<--
@@ -100,7 +100,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
     ```
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3343){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/basic){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picktree/base){:target="_blank"}
 
  
 ## Title
@@ -250,7 +250,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -480,7 +480,7 @@ _not applicable_
     {{ external_links.github_raw_doc }}/widgets/picktree/actions/delete/forpicktreepopup/MyEntity3354PickPickService.java:deleteEntity
     --8<--
     ```
-    **Step3** Add button ot group button to corresponding **.widget.json**.
+    **Step3** Add button or group button to corresponding **.widget.json**.
 
     ```json
     --8<--
@@ -509,7 +509,7 @@ _not applicable_
     {{ external_links.github_raw_doc }}/widgets/picktree/actions/save/MyExample3355Service.java:getActions
     --8<--
     ```  
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
@@ -565,7 +565,7 @@ _not applicable_
         --8<--
         ``` 
  
-        **Step2** Add button ot group button to corresponding **.widget.json**.
+        **Step2** Add button or group button to corresponding **.widget.json**.
        
         ```json
         --8<--
@@ -593,7 +593,7 @@ _not applicable_
         {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/oncancel/MyEntity3356PickOnCancelPickService.java:onCancel
         --8<--
         ```
-        **Step3** Add button ot group button to corresponding **.widget.json**.
+        **Step3** Add button or group button to corresponding **.widget.json**.
        
         ```json
         --8<--

@@ -16,7 +16,7 @@
 
 ### How to add?
 ??? Example
-    **Step1** Add **String** field to corresponding **DataResponseDTO**.
+    **Step1** Add **String** field to corresponding **BaseEntity**.
 
     ```java
     --8<--
@@ -24,7 +24,7 @@
     --8<--
     ```
 
-    **Step2** Add **String** field to corresponding **BaseEntity**.
+    **Step2** Add **String** field to corresponding **DataResponseDTO**.
 
     ```java
     --8<--

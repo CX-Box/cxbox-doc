@@ -4,7 +4,7 @@
 ??? Example
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/getstarted/postgres/document/myexample4000form.view.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/example/myexample4002form.view.json
     --8<--
     ```
 

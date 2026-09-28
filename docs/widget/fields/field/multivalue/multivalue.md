@@ -177,7 +177,7 @@
         **Step 1**   Add `custom field for color` to corresponding **DataResponseDTO**. The field can contain a HEX color or be null.
         ```java
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivalue/color/MyEntity175MultivalueDTO.java
+        {{ external_links.github_raw_doc }}/fields/multivalue/color/MyExample174DTO.java
         --8<--
         ```    
  
@@ -326,7 +326,7 @@
         
         assocValueKey - field for opening AssocListPopup
 
-        ```java
+        ```json
         --8<--
         {{ external_links.github_raw_doc }}/fields/multivalue/filtration/MyExample184List.widget.json
         --8<--
@@ -466,7 +466,7 @@
             Requires a simple fields check (javax validation)
             ```java
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/validationannotation/MyEntity199MultivalueDTO.java
+            {{ external_links.github_raw_doc }}/fields/multivalue/validationannotation/MyExample198DTO.java
             --8<--
             ```
  
@@ -481,20 +481,20 @@
             [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivalue/validationannotation){:target="_blank"}
 
         === "Option 2"
-            Create сustom service for business logic check.
+            Create custom service for business logic check.
 
             Use if:
 
             Business logic check required for fields
 
-            `Step 1`  Create сustom method for check.
+            `Step 1`  Create custom method for check.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/multivalue/validationdynamic/MyExample335Service.java:validateFields
             --8<--
             ```
  
-            `Step 2` Add сustom method for check to corresponding **VersionAwareResponseService**.
+            `Step 2` Add custom method for check to corresponding **VersionAwareResponseService**.
             ```java
             --8<--
             {{ external_links.github_raw_doc }}/fields/multivalue/validationdynamic/MyExample335Service.java:doUpdateEntity

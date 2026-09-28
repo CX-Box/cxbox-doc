@@ -4,7 +4,7 @@
  
 ## Basics
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3067){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/basic){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/base){:target="_blank"}
 
 ### How does it look?
 ![pickListPopupBasic.gif](pickListPopupBasic.gif)
@@ -19,7 +19,7 @@
     --8<--
     ```
  
-    **Step2** Add widget and popup widget to corresponding ****_.view.json_** **.
+    **Step2** Add widget and popup widget to corresponding **_.view.json_**.
 
     ```json
     --8<--
@@ -28,7 +28,7 @@
     ```
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3067){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/basic){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/base){:target="_blank"}
 
  
 ## Title
@@ -179,7 +179,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
     === "With plugin(recommended)"
         **Step 1** Download plugin
-            [download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+            [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
         **Step 2** Add existing field to an existing form widget
             ![addfield.gif](addfield.gif)
@@ -258,7 +258,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
  
 ##### <a id="withwidget">Inline-form</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3072listinlineform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/actions/create){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/create){:target="_blank"}
 
 `Create with widget` opens an additional widget when the "Add" button is clicked. The form will appear on the same screen, allowing you to view both the assoc of entities and the form for adding a new row.
 After filling the information in and clicking "Save", the new row is added to the assoc.
@@ -305,7 +305,7 @@ After filling the information in and clicking "Save", the new row is added to th
     ``` 
  
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3072listinlineform){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/actions/create){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/picklist/actions/create){:target="_blank"}
 
 ##### <a id="withview">With view</a>
 _not applicable_
@@ -397,7 +397,7 @@ _not applicable_
     {{ external_links.github_raw_doc }}/widgets/picklist/actions/delete/forpicklistpopup/MyEntity3188PickPickService.java:deleteEntity
     --8<--
     ```
-    **Step3** Add button ot group button to corresponding **.widget.json**.
+    **Step3** Add button or group button to corresponding **.widget.json**.
 
     ```json
     --8<--
@@ -423,14 +423,14 @@ _not applicable_
 
     ```java
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/MyExample3197Service.java:getActions
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/forpicklistpopup/MyEntity3197PickPickService.java:getActions
     --8<--
     ```  
-    **Step2** Add button ot group button to corresponding **.widget.json**.
+    **Step2** Add button or group button to corresponding **.widget.json**.
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/MyExample3197Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/forpicklistpopup/myEntity3197PickPickPickListPopup.widget.json
     --8<--
     ```
 
@@ -482,7 +482,7 @@ _not applicable_
         --8<--
         ``` 
  
-        **Step2** Add button ot group button to corresponding **.widget.json**.
+        **Step2** Add button or group button to corresponding **.widget.json**.
        
         ```json
         --8<--
@@ -510,7 +510,7 @@ _not applicable_
         {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/oncancel/MyEntity3198PickOnCancelPickService.java:onCancel
         --8<--
         ```
-        **Step3** Add button ot group button to corresponding **.widget.json**.
+        **Step3** Add button or group button to corresponding **.widget.json**.
        
         ```json
         --8<--

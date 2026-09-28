@@ -17,7 +17,7 @@
  
 !!! tips 
     We recommend always using text with a string. 
-    If text is not specified, localized text will be used by default. see more [Localization](/features/element/localizaton/localization)
+    If text is not specified, localized text will be used by default. see more [Localization](/features/locale/locale)
 <!--
 
 ### How does it look?

@@ -49,7 +49,7 @@ We've resolved filtering issues across types of fields:
     [Radio](https://code-samples.cxbox.org/ui/#/screen/myexample25/view/myexample25list),
     [Money](https://code-samples.cxbox.org/ui/#/screen/myexample63/view/myexample63list),
     [Number](https://code-samples.cxbox.org/ui/#/screen/NumberFiltration/view/NumberFiltrationlist),
-    [DateTime](https://code-samples.cxbox.org/ui/#/screen//screen/DateTimeFiltration/view/DateTimeFiltrationlist),
+    [DateTime](https://code-samples.cxbox.org/ui/#/screen/DateTimeFiltration/view/DateTimeFiltrationlist),
     [DateTimeWithSeconds](https://code-samples.cxbox.org/ui/#/screen/DateTimeWithSecondsFiltration/view/DateTimeWithSecondsFiltrationlist),
     [FileUpload](https://code-samples.cxbox.org/ui/#/screen/myexample99/view/myexample99list),
     [Checkbox](https://code-samples.cxbox.org/ui/#/screen/myexample53/view/myexample53list)

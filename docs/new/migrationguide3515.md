@@ -16,7 +16,7 @@ The sections below highlight the required adjustments and explain what has chang
 
 ## What changes 
 
-### **Сriteria API `cast` Behavior Changes**
+### **Criteria API `cast` Behavior Changes**
 
 !!! info
     You will not get a compile-time error — the issue will only become apparent at runtime when the request is executed

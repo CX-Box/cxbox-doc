@@ -12,7 +12,7 @@ Task for the developer:
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/getstarted/microservice/example){:target="_blank"}
 === "With plugin(recommended)"
 
-    **Step 1** [Download Intellij Plugin](https://document.cxbox.org/plugin/plugininstalling)
+    **Step 1** [Download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
 
     **Step2** Add **screen**
 
@@ -20,9 +20,9 @@ Task for the developer:
 
     ```json 
     {
-      "name": "myexample",
+      "name": "myexample4001",
       "icon": "calendar",
-      "order": 4002,
+      "order": 4001,
       "title": "Get Started example microservice",
       "navigation": {
         "menu": [

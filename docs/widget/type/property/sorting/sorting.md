@@ -71,7 +71,7 @@ If the parameter is set to true, sorting is enabled by default for all fields in
 
 
 ## <a id="default_sort">Default sorting</a>
-If the parameter is set to true, sorting is enabled by default for all fields in the application.
+Default sorting sets the sort order of records when the widget is opened. It is set for a business component in the **BC_PROPERTIES** table.
  
  
 ### How to add?

@@ -42,7 +42,7 @@ The page limit can be configured in two ways:
 
       ```csv
       ID;BC;PAGE_LIMIT;SORT;FILTER
-      27;'myexample358';2;NULL;'""'
+      27;'myexample359';2;NULL;'""'
       ```
 
 ## <a id="app-default-page-limit">At the application level</a>

@@ -3,7 +3,7 @@
 
 This function is available:
 
-* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup).
+* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [Pie1D](/widget/type/pie1d/pie1d) (only in the table mode, see [Charts](#charts)).
 
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
 
@@ -88,3 +88,28 @@ Default sorting sets the sort order of records when the widget is opened. It is 
       dateSorting;1000;_sort.0.desc=customField;'""';
       ```
 
+## <a id="charts">Charts</a>
+Charts show the sorting only in the table mode. When the data of the chart come from an AnySource DAO, the DAO sorts the records itself.
+
+### How to add?
+??? Example
+    === "Pie1D widget"
+        Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws the records in the sorted order.
+
+        **Step 1** Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/sorting/MyExample4267Meta.java:buildIndependentMeta
+        --8<--
+        ```
+
+        **Step 2** Sort the records in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/sorting/MyExample4267Dao.java:getList
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4267){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/sorting){:target="_blank"}

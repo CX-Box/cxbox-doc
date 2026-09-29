@@ -22,6 +22,41 @@ This function is available:
 * [Tree widget](/widget/type/tree/tree)
 * [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
+* [Pie1D widget](/widget/type/pie1d/pie1d): works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4264){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtration){:target="_blank"}
+)
+
+### <a id="by_fields_how_to_add">How to add?</a>
+??? Example
+    === "Pie1D widget"
+        Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+        When the data of the chart come from an AnySource DAO, the DAO applies the filter itself.
+
+        `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/filtration/MyExample4264DTO.java
+        --8<--
+        ```
+
+        `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/filtration/MyExample4264Meta.java:buildIndependentMeta
+        --8<--
+        ```
+
+        `Step 3` Apply the filter in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/filtration/MyExample4264Dao.java:getList
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4264){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtration){:target="_blank"}
 
 ## <a id="by_fulltextsearch">by fulltextsearch</a>
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query
@@ -52,6 +87,10 @@ This function is available:
 )
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 (  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+)
+* [Pie1D widget](/widget/type/pie1d/pie1d): works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4265){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/fulltextsearch){:target="_blank"}
 )
 
 ### How does it look?
@@ -183,6 +222,33 @@ This function is available:
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 
+    === "Pie1D widget"
+        Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+        When the data of the chart come from an AnySource DAO, the DAO applies the search itself.
+
+        `Step 2` Apply the search text in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/fulltextsearch/MyExample4265Dao.java:getList
+        --8<--
+        ```
+
+        `Step 3` Add **fullTextSearch** to corresponding **.widget.json**.
+
+        `enabled` true/false
+
+        `placeholder` - description for  fullTextSearch
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/fulltextsearch/MyExample4265Pie.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4265){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/fulltextsearch){:target="_blank"}
+
 ## <a id="by_personal_filter_group">by personal filter group</a>
 
 `Personal filter group` - a user-filled filter can be saved for each individual user.
@@ -279,6 +345,10 @@ This function is available:
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 )
+* [Pie1D](/widget/type/pie1d/pie1d): works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4266){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtergroup){:target="_blank"}
+)
 
 The option to default filter by saved groups is currently unavailable.
  
@@ -343,6 +413,29 @@ The option to default filter by saved groups is currently unavailable.
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergrouphiddenfield){:target="_blank"}
+
+    === "Pie1D widget"
+        Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+        When the data of the chart come from an AnySource DAO, the DAO applies the filter of the group itself.
+
+        **Step 1** Add  business component in **BC_FILTER_GROUPS** TABLE
+
+        ```csv
+        name;bc;filters;ID
+        Sum from 5000;myExampleBc4266;value.greaterOrEqualThan=5000;
+        Sum under 5000;myExampleBc4266;value.lessThan=5000;
+        ```
+
+        **Step 2** Apply the filter in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/pie1d/filtergroup/MyExample4266Dao.java:getList
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4266){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtergroup){:target="_blank"}
 
 !!! info
 

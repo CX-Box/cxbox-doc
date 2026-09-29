@@ -12,6 +12,7 @@ The navigation arrows and limit settings block are removed if the number of reco
 * [Tree widget](/widget/type/tree/tree)
 * [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
+* [CardList widget](/widget/type/cardlist/cardlist)
 
 ##**Pagination modes**:
 
@@ -29,6 +30,7 @@ However, for certain `exception widgets,` the default navigation mode is: `nextA
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
 * [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy) 
+* [CardList widget](/widget/type/cardlist/cardlist)
 * DashboardList
 * Pie1D
 * Column2D
@@ -64,7 +66,10 @@ Frontend Behavior:
 * This mode is best suited for backends that rely on database sources.
 
 #### How does it look?
-![nextAndPreviousWithCount.gif](nextAndPreviousWithCount.gif)
+=== "List"
+    ![nextAndPreviousWithCount.gif](nextAndPreviousWithCount.gif)
+=== "CardList"
+    ![nextAndPreviousWithCount_cardlist.gif](nextAndPreviousWithCount_cardlist.gif)
 
 #### How to add?
 ??? Example
@@ -77,15 +82,25 @@ Frontend Behavior:
       "type": "nextAndPreviousWithCount"
       }
     ```
-   
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/MyExample3862List.widget.json
-    --8<--
-    ```
+    === "List"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/MyExample3862List.widget.json
+        --8<--
+        ```
 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount){:target="_blank"}
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount){:target="_blank"}
+
+    === "CardList"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/forcardlist/MyExample3862CardList.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862cardlist){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/pagination/nextandpreviouswithcount/forcardlist){:target="_blank"}
 
 
 ### <a id="nextAndPreviousWithHasNext">Pagination is based `/data` and hasNext</a>

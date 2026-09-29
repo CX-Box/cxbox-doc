@@ -368,7 +368,7 @@ The mode is not saved: the widget opens in the chart mode.
 The mode switch is available for every chart, no settings are needed.
 
 #### <a id="Icon">Icon</a>
-**not available** in this release.
+**not available**.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4214){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/icon){:target="_blank"}
@@ -494,7 +494,7 @@ You can set where the values of the segments are shown:
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/labelposition){:target="_blank"}
 
 #### Customization of displayed columns
-**not available** in this release.
+**not available**.
 
 #### Filtration
 ##### Basic
@@ -505,7 +505,7 @@ see more [Filtration](/widget/type/property/filtration/filtration/)
 Works only in the [table mode](#tablemode) with `options.fullTextSearch` in **_.widget.json_**: the search input is shown above the table. The widget sends the search text to the backend, and the AnySource DAO of the chart applies it itself.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
 ##### Personal filter group
-**not available** in this release: the settings menu of the chart has only the `Mode` items, so there is no `Save filters` item.
+**not available**: the settings menu of the chart has only the `Mode` items, so there is no `Save filters` item.
 ##### Filter group
 Works only in the [table mode](#tablemode): the filter groups of the business component are shown above the table, as in a List widget. The widget sends the filter of the chosen group to the backend, and the AnySource DAO of the chart applies it itself.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
@@ -514,7 +514,7 @@ see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 _not applicable_: the chart shows one page, see [Page limit](#pagelimit).
 
 #### Export to Excel
-**not available** in this release.
+**not available**.
 
 #### Multi-upload files
 _not applicable_
@@ -553,7 +553,7 @@ Set the page limit of the business component to the number of segments, see [Pag
 When the backend returns no records, the widget shows the "No data" placeholder instead of the chart.
 
 #### <a id="parentchild">Parent-child</a>
-**not available** in the chart mode in this release: a click on a segment does not select the record, the child widgets do not change.
+**not available** in the chart mode: a click on a segment does not select the record, the child widgets do not change.
 In the [table mode](#tablemode) a click on a row selects the record, and the child widgets show the data of this record.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4219/view/myexample4212pie){:target="_blank"} ·

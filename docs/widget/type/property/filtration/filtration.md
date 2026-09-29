@@ -53,6 +53,10 @@ This function is available:
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 (  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 )
+* [CardList widget](/widget/type/cardlist/cardlist)
+(  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614cardlist){:target="_blank"}
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forcardlist){:target="_blank"}
+)
 
 ### How does it look?
 === "List widget"
@@ -67,6 +71,8 @@ This function is available:
     <!-- TODO screenshot -->
 === "PickTreePopup widget"
     <!-- TODO screenshot -->
+=== "CardList widget"
+    ![fulltextsearch_cardlist.gif](fulltextsearch_cardlist.gif)
 ### How to add?
 ??? Example
 
@@ -182,6 +188,36 @@ This function is available:
         
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+
+    === "CardList widget"  
+        `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**. 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forcardlist/MyEntity3614CardRepository.java
+        --8<--
+        ```
+     
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**. 
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forcardlist/MyEntity3614CardService.java:getSpecification
+        --8<--
+        ```
+     
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**. 
+    
+        `enabled` true/false  
+    
+        `placeholder` - description for  fullTextSearch
+            
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forcardlist/MyExample3614CardList.widget.json
+        --8<--
+        ```
+        
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614cardlist){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forcardlist){:target="_blank"}
 
 ## <a id="by_personal_filter_group">by personal filter group</a>
 

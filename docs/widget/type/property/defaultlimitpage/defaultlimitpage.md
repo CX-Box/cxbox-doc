@@ -7,6 +7,7 @@ This function is available for:
 * [Tree widget](/widget/type/tree/tree)
 * [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
+* [CardList widget](/widget/type/cardlist/cardlist)
 
 The page limit can be configured in two ways: 
 
@@ -27,6 +28,8 @@ The page limit can be configured in two ways:
      <!-- TODO screenshot -->
 === "AssocTreePopup"
      <!-- TODO screenshot -->
+=== "CardList"
+     ![cardlist_default_limit.png](cardlist_default_limit.png)
 
 ## <a id="bc-default-page-limit">Only current business component</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample359){:target="_blank"} ·

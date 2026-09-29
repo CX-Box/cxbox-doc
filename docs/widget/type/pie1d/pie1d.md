@@ -22,11 +22,11 @@ The gear menu in the top right corner switches the widget between the chart and 
 
 Rules for the data:
 
-* one record is one segment. Aggregate the data in the DAO: for example, one record per client with the sum of his sales.
+* one record is one segment. Aggregate the data: for example, one record per client with the sum of his sales.
 * the segments go clockwise from the top in the order of the records returned by the backend.
 * every record has a unique `id`. It is required for the proper functioning of the widget and for the drilldown.
 
-`options.chart1D` sets which fields of the widget the chart uses:
+Options:
 
 | Parameter | Description |
 |---|---|
@@ -67,6 +67,18 @@ Rules for the data:
     ```
 
     **Step5** Create **.widget.json** with type **Pie1D**. Add the fields of the chart to **fields** and map them in **options.chart1D**.
+
+    `options.chart1D` sets which fields of the widget the chart uses:
+    
+    | Parameter | Description |
+    |---|---|
+    | `valueFieldKey` | Required. The field with the value of the segment. The field must be a number. |
+    | `titleFieldKey` | The field with the title of the segment: the legend, the tooltip and the colors of the segments. Without it the segments are colored by the value and the legend is not shown. |
+    | `descriptionFieldKey` | The list of fields for the tooltip, see [Tooltip](#tooltip). |
+    | `valuePosition` | Where the values are shown: `inner` (default) or `outer`, see [Label position](#labelposition). |
+    | `total` | The text in the center, see [Total](#total). |
+    
+
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/pie1d/base/defaultfields/MyExample4207Pie.widget.json
@@ -187,8 +199,7 @@ Give every record a unique `id`, see [Basics](#basics).
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/showcondition){:target="_blank"}
 
 ## <a id="fields">Fields</a>
-Fields Configuration. The fields array defines the fields of a segment. The chart uses the fields named in `options.chart1D`;
-the other fields are shown in the [table mode](#tablemode).
+Fields Configuration. The fields array defines the fields of a segment.The other fields are shown in the [table mode](#tablemode).
 
 ```json
 {
@@ -241,8 +252,7 @@ _not applicable_
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/tooltip){:target="_blank"}
 
 When the mouse is over a segment, the tooltip shows the title and the value of the segment.
-`options.chart1D.descriptionFieldKey` replaces them with the text of the listed fields, separated by commas.
-Without `titleFieldKey` and `descriptionFieldKey` the tooltip is not shown.
+You can configure the tooltip not to be displayed.
 
 ###### How does it look?
 ![tooltip.png](tooltip.png)
@@ -256,6 +266,9 @@ Without `titleFieldKey` and `descriptionFieldKey` the tooltip is not shown.
     --8<--
     ```
     **Step2** Add the field to **fields** and to **descriptionFieldKey** in **_.widget.json_**.
+
+    When the mouse is over a segment, the tooltip shows the title and the value of the segment. options.chart1D.descriptionFieldKey replaces them with the text of the listed fields, separated by commas. Without titleFieldKey and descriptionFieldKey the tooltip is not shown.
+
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/pie1d/tooltip/MyExample4211Pie.widget.json
@@ -277,7 +290,7 @@ In the sample the key clients are blue, the others are grey.
 
 **Constant color**
 
-**not recommended**: `bgColor` gives all segments one color, the segments cannot be told apart.
+**not recommended**: Gives all segments one color, the segments cannot be told apart.
 
 ###### How does it look?
 ![color.png](color.png)
@@ -364,7 +377,7 @@ The mode switch is available for every chart, no settings are needed.
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4261){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/total){:target="_blank"}
 
-`Total` is the text in the center of the pie. It is set by `options.chart1D.total`:
+`Total` is the text in the center of the pie.
 
 | Parameter | Description |
 |---|---|
@@ -387,6 +400,9 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
 ??? Example
     === "Aggregate function"
         Add **total** with **func** and **description** to **options.chart1D** in **_.widget.json_**.
+
+         `options.chart1D.total`
+
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/pie1d/total/MyExample4261Sum.widget.json
@@ -425,7 +441,7 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4261/view/myexample4261innerspace){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/total){:target="_blank"}
 
-`options.chart1D.total.innerSpace` sets the size of the hole in the center of the pie, from `0` to `1`, default `0.5`.
+You can set the size of the hole in the center of the pie, from `0` to `1`, default `0.5`.
 `0` draws a full pie without a hole, the [total](#total) is shown over the segments.
 
 ###### How does it look?
@@ -437,6 +453,9 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
 ###### How to add?
 ??? Example
     Add **total.innerSpace** to **options.chart1D** in **_.widget.json_**.
+
+    `options.chart1D.total.innerSpace`
+    
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/pie1d/total/MyExample4261InnerSpace.widget.json
@@ -449,7 +468,7 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4262){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/labelposition){:target="_blank"}
 
-`options.chart1D.valuePosition` sets where the values of the segments are shown:
+You can set where the values of the segments are shown:
 
 * `inner` (default): inside the segments.
 * `outer`: outside the pie, next to the segments.
@@ -463,6 +482,9 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
 ###### How to add?
 ??? Example
     Add **valuePosition** to **options.chart1D** in **_.widget.json_**.
+
+    `options.chart1D.valuePosition`
+
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/pie1d/labelposition/MyExample4262Outer.widget.json

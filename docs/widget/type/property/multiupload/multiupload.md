@@ -41,6 +41,8 @@ This mode displays only the interactive drag-and-drop upload widget, without a s
     ![default-mode.png](default-mode.png)
 === "Widget-Only Mode (Multi-upload files)"
     ![file-upload-dnd.png](file-upload-dnd.png)
+=== "CardList"
+    ![multiupload.gif](../../cardlist/multiupload.gif)
 
 There are five main colors used for the progress bar and icon:
 
@@ -127,6 +129,17 @@ Uploaded:
         {{ external_links.github_raw_doc }}/feature/file/MyExample6100DefaultList.widget.json
         --8<--
         ``` 
+    === "CardList"
+        `Step1`  Add actionKey **associate** to corresponding **.widget.json**.
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/feature/file/MyExample6100CardList.widget.json
+        --8<--
+        ``` 
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100/view/myexample6100cardlist){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
 
     `Step2`  Add **setFileAccept** to corresponding **FieldMetaBuilder**.
     ```java

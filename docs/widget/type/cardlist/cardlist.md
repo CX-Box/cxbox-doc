@@ -269,22 +269,38 @@ Record actions are shown as icons on the card. The widget actions (for example *
     Leave only the needed ones with **actionGroups**: `"actionGroups": {"include": ["create", "delete"]}`.
 
 ### Create
+`Create` button enables you to create a new card by clicking the `Add` button. This action can be performed in different ways, feel free to choose any, depending on your logic of application:
+
+There are four methods to create a record:
+
+* [Inline](#createinline): **not applicable**.
+
+* [Inline-form](#createinlineform): **not applicable**.
+
+* [Popup](#createpopup): You can upload a file and fill the fields in a popup without leaving your current view.
+
+* [With view](#createwithview): You can create a record by navigating to a view.
+
+#### <a id="createinline">Inline</a>
+_not applicable_: the card has no fields to fill in place, so an empty card can not get a file.
+
+#### <a id="createinlineform">Inline-form</a>
+_not applicable_: CardList does not show a form next to the cards. Use [Popup](#createpopup).
+
+#### <a id="createpopup">Popup</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5300){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/base){:target="_blank"}
 
-`Create` button enables you to create a new card by clicking the `Add` button. The file popup opens with a form under the file: the user uploads a file, fills the fields and saves the record.
-
-* `Inline`: **not applicable**: an empty card has no place to upload a file.
-* `With widget`: **Add** opens a popup with an empty file preview and the form from `options.create`. **Save** creates the record, **Cancel** removes the new card.
-* `With view`: **not applicable**
+`Create with popup` opens the file popup when the "Add" button is clicked. The popup shows an empty file preview and the form from `options.create` under it.
+The user uploads a file, fills the fields and clicks "Save": the new card is added. "Cancel" removes the new card.
 
 !!! warning
     The form must have type **Form**. A **FormPopup** is not shown in the popup.
 
-#### How does it look?
+##### How does it look?
 ![create.gif](create.gif)
 
-#### How to add?
+##### How to add?
 ??? Example
     **Step 1** Add action create to corresponding **VersionAwareResponseService**.
     ```java
@@ -293,28 +309,86 @@ Record actions are shown as icons on the card. The widget actions (for example *
     --8<--
     ```
 
-    **Step 2** Create a Form widget for the popup.
+    **Step 2** Create widget.json with type `Form` that appears in the popup.
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300Form.widget.json
     --8<--
     ```
 
-    **Step 3** Add **options.create** and **options.edit** with `"style": "popup"` to the CardList widget.
-    ```json
-    --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
-    --8<--
-    ```
-
-    **Step 4** Add both widgets to the **_.view.json_**.
+    **Step 3** Add widget.json with type `Form` to corresponding **.view.json**.
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300list.view.json
     --8<--
     ```
 
+    **Step 4** Add the widget with type `Form` to **options**.**create** with `"style": "popup"` of corresponding **.widget.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5300){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/base){:target="_blank"}
+
+#### <a id="createwithview">With view</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5309){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/actions/newview){:target="_blank"}
+
+With `Create with view`, clicking the "Add" button opens a separate view that displays only the data entry form. After completing the form and clicking "Save and Close", the system returns to the cards with the new card added.
+
+##### How does it look?
+![create_with_view.gif](create_with_view.gif)
+
+##### How to add?
+??? Example
+
+    **Step 1** Add button `create` to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309Service.java:getActions
+    --8<--
+    ```
+
+    **Step 2** Add **PostAction.drillDown** to method **doCreateEntity** to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309Service.java:doCreateEntity
+    --8<--
+    ```
+
+    **Step 3** Add button `create` to corresponding **.widget.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309CardList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5309){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/actions/newview){:target="_blank"}
+
 ### Edit
+`Edit` enables you to change the card. Just like with `Create` button, there are several ways of implementing this Action.
+
+There are four methods to edit a record:
+
+* [Inline edit](#editinline): **not applicable**.
+
+* [Inline-form](#editinlineform): **not applicable**.
+
+* [Popup](#editpopup): You can change the file and the fields in a popup without leaving your current view.
+
+* [With view](#editwithview): You can edit a record by navigating to a view.
+
+#### <a id="editinline">Inline edit</a>
+_not applicable_: the card has no fields to edit in place.
+
+#### <a id="editinlineform">Inline-form</a>
+_not applicable_: CardList does not show a form next to the cards. Use [Popup](#editpopup).
+
+#### <a id="editpopup">Popup</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5300){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/base){:target="_blank"}
 
@@ -323,15 +397,83 @@ Arrows at the bottom of the popup move to the previous or the next card.
 
 Without `options.edit` the card has the **eye** icon. It opens the file in a popup for viewing.
 
-#### How does it look?
+##### How does it look?
 === "With options.edit"
     ![edit.gif](edit.gif)
 === "Without options.edit"
     ![view.gif](view.gif)
 
-#### How to add?
+##### How to add?
 ??? Example
-    see [Create](#create), **Step 2** - **Step 4**.
+    **Step 1** Add action `save` to corresponding **VersionAwareResponseService**: the form saves the record with it.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300Service.java:getActions
+    --8<--
+    ```
+
+    **Step 2** Create widget.json with type `Form` that appears in the popup.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300Form.widget.json
+    --8<--
+    ```
+
+    **Step 3** Add widget.json with type `Form` to corresponding **.view.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300list.view.json
+    --8<--
+    ```
+
+    **Step 4** Add the widget with type `Form` to **options**.**edit** with `"style": "popup"` of corresponding **.widget.json**: the edit icon appears on each card.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5300){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/base){:target="_blank"}
+
+#### <a id="editwithview">With view</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5309){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/actions/newview){:target="_blank"}
+
+With `Edit with view`, you can edit the card from a separate view that displays only the data entry form. Click the **edit** icon of the card.
+
+##### How does it look?
+![edit_with_view.gif](edit_with_view.gif)
+
+##### How to add?
+??? Example
+
+    **Step 1** Add action *edit* to corresponding **VersionAwareResponseService**.
+
+    Add **PostAction.drillDown** to method *edit*. The card shows record actions as icons only, so set the icon with **withIcon**.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309Service.java:getActions
+    --8<--
+    ```
+
+    The icon is an **ActionIconSpecifier**:
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309ActionIcon.java
+    --8<--
+    ```
+
+    **Step 2** Add action *edit* to **actionGroups** of corresponding **.widget.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309CardList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5309){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardlist/actions/newview){:target="_blank"}
 
 ### Delete
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5300){:target="_blank"} ·
@@ -555,6 +697,23 @@ _not applicable_
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
 
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files. Every uploaded file becomes a new card.
+
+#### How does it look?
+![multiupload.gif](multiupload.gif)
+
+#### How to add?
+??? Example
+    **Step 1** Add actionKey **associate** to **options.buttons** of corresponding **.widget.json**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/file/MyExample6100CardList.widget.json
+    --8<--
+    ```
+
+    **Step 2** Add **setFileAccept**, **associate** and **doAssociate**, see [Multi-upload files](/widget/type/property/multiupload/multiupload), **Step 2** - **Step 3.2**.
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6100/view/myexample6100cardlist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/file){:target="_blank"}
 
 see more [Multi-upload files](/widget/type/property/multiupload/multiupload)
 

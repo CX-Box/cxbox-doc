@@ -22,6 +22,41 @@ This function is available:
 * [Tree widget](/widget/type/tree/tree)
 * [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
+* [Column2D widget](/widget/type/column2d/column2d): works only in the [table mode](/widget/type/column2d/column2d/#tablemode)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4268){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/filtration){:target="_blank"}
+)
+
+### <a id="by_fields_how_to_add">How to add?</a>
+??? Example
+    === "Column2D widget"
+        Works only in the [table mode](/widget/type/column2d/column2d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+        When the data of the chart come from an AnySource DAO, the DAO applies the filter itself.
+
+        `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/column2d/filtration/MyExample4268DTO.java
+        --8<--
+        ```
+
+        `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/column2d/filtration/MyExample4268Meta.java:buildIndependentMeta
+        --8<--
+        ```
+
+        `Step 3` Apply the filter in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/column2d/filtration/MyExample4268Dao.java:getList
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4268){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/filtration){:target="_blank"}
 
 ## <a id="by_fulltextsearch">by fulltextsearch</a>
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query
@@ -52,6 +87,10 @@ This function is available:
 )
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
 (  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+)
+* [Column2D widget](/widget/type/column2d/column2d): works only in the [table mode](/widget/type/column2d/column2d/#tablemode)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4269){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/fulltextsearch){:target="_blank"}
 )
 
 ### How does it look?
@@ -183,6 +222,33 @@ This function is available:
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 
+    === "Column2D widget"
+        Works only in the [table mode](/widget/type/column2d/column2d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+        When the data of the chart come from an AnySource DAO, the DAO applies the search itself.
+
+        `Step 2` Apply the search text in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/column2d/fulltextsearch/MyExample4269Dao.java:getList
+        --8<--
+        ```
+
+        `Step 3` Add **fullTextSearch** to corresponding **.widget.json**.
+
+        `enabled` true/false
+
+        `placeholder` - description for  fullTextSearch
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/column2d/fulltextsearch/MyExample4269Column2D.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4269){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/fulltextsearch){:target="_blank"}
+
 ## <a id="by_personal_filter_group">by personal filter group</a>
 
 `Personal filter group` - a user-filled filter can be saved for each individual user.
@@ -279,6 +345,10 @@ This function is available:
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergroupsave){:target="_blank"}
 )
+* [Column2D](/widget/type/column2d/column2d): works only in the [table mode](/widget/type/column2d/column2d/#tablemode)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4270){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/filtergroup){:target="_blank"}
+)
 
 The option to default filter by saved groups is currently unavailable.
  
@@ -343,6 +413,29 @@ The option to default filter by saved groups is currently unavailable.
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/property/filtration/filtergrouphiddenfield){:target="_blank"}
+
+    === "Column2D widget"
+        Works only in the [table mode](/widget/type/column2d/column2d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+        When the data of the chart come from an AnySource DAO, the DAO applies the filter of the group itself.
+
+        **Step 1** Add  business component in **BC_FILTER_GROUPS** TABLE
+
+        ```csv
+        name;bc;filters;ID
+        Sum from 4000;myExampleBc4270;sum.greaterOrEqualThan=4000;
+        Sum under 4000;myExampleBc4270;sum.lessThan=4000;
+        ```
+
+        **Step 2** Apply the filter in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/column2d/filtergroup/MyExample4270Dao.java:getList
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4270){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/filtergroup){:target="_blank"}
 
 !!! info
 

@@ -106,6 +106,8 @@ This function is available:
     <!-- TODO screenshot -->
 === "PickTreePopup widget"
     <!-- TODO screenshot -->
+=== "Pie1D widget"
+    <!-- TODO screenshot -->
 ### How to add?
 ??? Example
 

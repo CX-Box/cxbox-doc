@@ -501,7 +501,7 @@ You can set where the values of the segments are shown:
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4264){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtration){:target="_blank"}
 
-Works only in the [table mode](#tablemode): the column filters are shown for the fields with `enableFilter` in the Meta, as in a List widget. In the chart mode there are no filters. The widget sends the filter to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
+Works only in the [table mode](#tablemode). In the chart mode there are no filters. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see more [Filtration](/widget/type/property/filtration/filtration/)
 
 #### FullTextSearch

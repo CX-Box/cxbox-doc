@@ -498,16 +498,25 @@ You can set where the values of the segments are shown:
 
 #### Filtration
 ##### Basic
-Works only in the [table mode](#tablemode): the column filters are shown for the fields with `enableFilter` in the Meta, as in a List widget. In the chart mode there are no filters. The widget sends the filter to the backend, and the AnySource DAO of the chart applies it itself: the DAO of the samples does not, so there is no Live Sample.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4264){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtration){:target="_blank"}
+
+Works only in the [table mode](#tablemode). In the chart mode there are no filters. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see more [Filtration](/widget/type/property/filtration/filtration/)
 
 #### FullTextSearch
-Works only in the [table mode](#tablemode) with `options.fullTextSearch` in **_.widget.json_**: the search input is shown above the table. The widget sends the search text to the backend, and the AnySource DAO of the chart applies it itself.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4265){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/fulltextsearch){:target="_blank"}
+
+Works only in the [table mode](#tablemode) with `options.fullTextSearch` in **_.widget.json_**: the search input is shown above the table. The widget sends the search text to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
 ##### Personal filter group
 **not available**: the settings menu of the chart has only the `Mode` items, so there is no `Save filters` item.
 ##### Filter group
-Works only in the [table mode](#tablemode): the filter groups of the business component are shown above the table, as in a List widget. The widget sends the filter of the chosen group to the backend, and the AnySource DAO of the chart applies it itself.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4266){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtergroup){:target="_blank"}
+
+Works only in the [table mode](#tablemode): the filter groups of the business component are shown above the table, as in a List widget. The widget sends the filter of the chosen group to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 
 #### Pagination
@@ -520,7 +529,10 @@ _not applicable_: the chart shows one page, see [Page limit](#pagelimit).
 _not applicable_
 
 #### Sorting
-Works only in the [table mode](#tablemode) for the fields with `enableSort` in the Meta. The widget sends the sort to the backend, and the AnySource DAO of the chart applies it itself.
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4267){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/sorting){:target="_blank"}
+
+Works only in the [table mode](#tablemode) for the fields with `enableSort` in the Meta. The widget sends the sort to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws the records in the sorted order.
 see more [Sorting](/widget/type/property/sorting/sorting)
 
 #### <a id="pagelimit">Page limit</a>

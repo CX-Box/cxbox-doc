@@ -30,6 +30,8 @@
  
 ## **Plugin**:
 
+### [2.0.4](/new/plugin/plugin204)
+### [2.0.3](/new/plugin/plugin203)
 ### [2.0.2](/new/plugin/plugin202)
 ### [2.0.0](/new/plugin/plugin200)
 ### [1.8.0](/new/plugin/plugin180)

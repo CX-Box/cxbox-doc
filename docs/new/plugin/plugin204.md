@@ -4,7 +4,7 @@
 <!-- CXBOX-1376  -->
 IntelliJ 2026.2+ support added.
 
-## Changed. Navigation gutter icon
+## Fixed: Changed navigation gutter icon
 <!-- CXBOX-1376  -->
 The navigation gutter icon has been changed to a compact `AllIcons.Nodes.PpWeb` icon everywhere it was used:
 

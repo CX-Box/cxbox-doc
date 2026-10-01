@@ -14,39 +14,128 @@ Here are the standard field types with their respective filtering methods see [S
 
 This function is available:
 
-* [List widget](/widget/type/list/list)  
-* [AdditionalList widget](/widget/type/additionallist/additionallist) 
-* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)  
+* [List widget](/widget/type/list/list)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+)
+* [AdditionalList widget](/widget/type/additionallist/additionallist)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+)
+* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121/view/myexample3121gh){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
+)
 * [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616assoc){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup/forassoc){:target="_blank"}
+)
 * [PickListPopup widget](/widget/type/picklistpopup/picklistpopup)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+)
 * [Tree widget](/widget/type/tree/tree)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+)
 * [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
+)
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
+)
 * [Pie1D widget](/widget/type/pie1d/pie1d): works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4264){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/filtration){:target="_blank"}
 )
 
+### How does it look?
+=== "List widget"
+    ![filtration_list.gif](filtration_list.gif)
+=== "AdditionalList widget"
+    ![filtration_addlist.gif](filtration_addlist.gif)
+=== "GroupingHierarchy widget"
+    ![filtration_gh.gif](filtration_gh.gif)
+=== "AssocListPopup widget"
+    ![filtration_assoc.gif](filtration_assoc.gif)
+=== "PickListPopup widget"
+    ![filtration_picklist.gif](filtration_picklist.gif)
+=== "Tree widget"
+    ![filtration_tree.gif](filtration_tree.gif)
+=== "AssocTreePopup widget"
+    ![filtration_assoctree.gif](filtration_assoctree.gif)
+=== "PickTreePopup widget"
+    ![filtration_picktree.gif](filtration_picktree.gif)
+=== "Pie1D widget"
+    ![filtration_pie1d.gif](filtration_pie1d.gif)
+
 ### <a id="by_fields_how_to_add">How to add?</a>
 ??? Example
+    The steps are the same for all widgets.
+
+    `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+    === "List widget"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
+    === "AdditionalList widget"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
+    === "GroupingHierarchy widget"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121/view/myexample3121gh){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
+
+    === "AssocListPopup widget"
+        The steps are done for the business component of the popup.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616assoc){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup/forassoc){:target="_blank"}
+
+    === "PickListPopup widget"
+        The steps are done for the business component of the popup.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+
+    === "Tree widget"
+        The found records are shown by the [search modes](/widget/type/tree/tree/#searchmodes).
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
+    === "AssocTreePopup widget"
+        The steps are done for the business component of the popup.
+        The found records are shown by the [search modes](/widget/type/assoctreepopup/assoctreepopup/#searchmodes).
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
+
+    === "PickTreePopup widget"
+        The steps are done for the business component of the popup.
+        The found records are shown by the [search modes](/widget/type/picktreepopup/picktreepopup/#searchmodes).
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
+
     === "Pie1D widget"
         Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.
         After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
         When the data of the chart come from an AnySource DAO, the DAO applies the filter itself.
-
-        `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/filtration/MyExample4264DTO.java
-        --8<--
-        ```
-
-        `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
-        ```java
-        --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/filtration/MyExample4264Meta.java:buildIndependentMeta
-        --8<--
-        ```
 
         `Step 3` Apply the filter in **getList** of the AnySource DAO.
         ```java
@@ -83,10 +172,12 @@ This function is available:
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
 )
 * [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup)
-(  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
 )
 * [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup)
-(  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
+([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
 )
 * [Pie1D widget](/widget/type/pie1d/pie1d): works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode)
 ([:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4265){:target="_blank"}
@@ -101,13 +192,13 @@ This function is available:
 === "PickListPopup widget"
     ![fulltextsearch_picklist.gif](fulltextsearch_picklist.gif)
 === "Tree widget"
-    ![fulltextsearch_tree.png](fulltextsearch_tree.png)
+    ![fulltextsearch_tree.gif](fulltextsearch_tree.gif)
 === "AssocTreePopup widget"
-    <!-- TODO screenshot -->
+    ![fulltextsearch_assoctree.gif](fulltextsearch_assoctree.gif)
 === "PickTreePopup widget"
-    <!-- TODO screenshot -->
+    ![fulltextsearch_picktree.gif](fulltextsearch_picktree.gif)
 === "Pie1D widget"
-    <!-- TODO screenshot -->
+    ![fulltextsearch_pie1d.gif](fulltextsearch_pie1d.gif)
 ### How to add?
 ??? Example
 
@@ -224,6 +315,99 @@ This function is available:
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614picklistpopup){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forpicklist){:target="_blank"}
 
+    === "Tree widget"
+        The found records are shown by the [search modes](/widget/type/tree/tree/#searchmodes).
+
+        `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyEntity3614Repository.java
+        --8<--
+        ```
+
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Service.java:getSpecification
+        --8<--
+        ```
+
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**.
+
+        `enabled` true/false
+
+        `placeholder` - description for  fullTextSearch
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Tree.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614tree){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
+
+    === "AssocTreePopup widget"
+        The found records are shown by the [search modes](/widget/type/assoctreepopup/assoctreepopup/#searchmodes).
+
+        `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/data/inner/MyEntity3261Repository.java
+        --8<--
+        ```
+
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService** of the popup.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/base/inner/Myexample3261Pick0Service.java:getSpecification
+        --8<--
+        ```
+
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**.
+
+        `enabled` true/false
+
+        `placeholder` - description for  fullTextSearch
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
+
+    === "PickTreePopup widget"
+        The found records are shown by the [search modes](/widget/type/picktreepopup/picktreepopup/#searchmodes).
+
+        `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/data/inner/MyEntity3261Repository.java
+        --8<--
+        ```
+
+        `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService** of the popup.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/base/inner/Myexample3261PickService.java:getSpecification
+        --8<--
+        ```
+
+        `Step 4` Add **fullTextSearch** to corresponding **.widget.json**.
+
+        `enabled` true/false
+
+        `placeholder` - description for  fullTextSearch
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261TreePickListPopup.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
+
     === "Pie1D widget"
         Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.
         After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
@@ -282,6 +466,8 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
     ![filtergroup.gif](filtergroup.gif)
 === "AdditionalList"
     ![filtergroup_addlist.gif](filtergroup_addlist.gif)
+=== "Tree"
+    ![filtergroup_tree.gif](filtergroup_tree.gif)
 ### How to add?
 ??? Example
     The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
@@ -329,6 +515,22 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 
+    === "Tree"
+        The records of the saved filter are shown by the [search modes](/widget/type/tree/tree/#searchmodes).
+
+        **Step 3** Add **filterSetting** to corresponding **.widget.json**.
+
+        `enabled` true/false
+
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Tree.widget.json
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 ## <a id="by_filter_group">by filter group</a>
 
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
@@ -359,6 +561,10 @@ The option to default filter by saved groups is currently unavailable.
     ![filter_group_save_list.gif](filter_group_save_list.gif)
 === "AdditionalList"
     ![filter_group_save_add_list.gif](filter_group_save_add_list.gif)
+=== "Tree"
+    ![filter_group_save_tree.gif](filter_group_save_tree.gif)
+=== "Pie1D"
+    ![filter_group_save_pie1d.gif](filter_group_save_pie1d.gif)
 
 ### How to add?
 ??? Example
@@ -415,6 +621,18 @@ The option to default filter by saved groups is currently unavailable.
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergrouphiddenfield){:target="_blank"}
+
+    === "Tree widget"
+        The same as **Basic**: the group is a row of **BC_FILTER_GROUPS** for the business component of the tree.
+        The records of the group are shown by the [search modes](/widget/type/tree/tree/#searchmodes).
+
+        ```csv
+        name;bc;filters;ID
+        Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%5D;
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
     === "Pie1D widget"
         Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart.

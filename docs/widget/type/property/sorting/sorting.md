@@ -26,7 +26,19 @@ This function is available:
 * If the user has applied a sorting option, it will be preserved when navigating via drill-down or between screens.
 
 How does it look?
-![sorting.gif](sorting.gif)
+
+=== "List"
+    ![sorting.gif](sorting.gif)
+=== "GroupingHierarchy"
+    ![sorting_gh.gif](sorting_gh.gif)
+=== "Tree"
+    ![sorting_tree.gif](sorting_tree.gif)
+=== "AssocTreePopup"
+    ![sorting_assoctree.gif](sorting_assoctree.gif)
+=== "PickTreePopup"
+    ![sorting_picktree.gif](sorting_picktree.gif)
+=== "Pie1D"
+    ![sorting_pie1d.gif](sorting_pie1d.gif)
 
 ### <a id="on_field">On the field</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·
@@ -51,6 +63,39 @@ How does it look?
         {{ external_links.github_raw_doc }}/fields/input/sorting/InputSortMeta.java:buildIndependentMeta
         --8<--
         ```
+
+    The steps are the same for all widgets.
+
+    === "List"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/sorting){:target="_blank"}
+
+    === "GroupingHierarchy"
+        The records are sorted by the grouping columns first, then by the column chosen by the user.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121/view/myexample3121gh){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
+
+    === "Tree"
+        The records are sorted inside a node.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3281tree){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/defaultfields){:target="_blank"}
+
+    === "AssocTreePopup"
+        The steps are done for the business component of the popup. The records are sorted inside a node.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3323/view/myexample3323form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/multivaluetree/sorting){:target="_blank"}
+
+    === "PickTreePopup"
+        The steps are done for the business component of the popup. The records are sorted inside a node.
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3290/view/myexample3290form){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/picktree/sorting){:target="_blank"}
+
+    === "Pie1D"
+        Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart, see [Charts](#charts).
 
 ### <a id="app-default-sort">At the application level</a>
 `Not recommended.`

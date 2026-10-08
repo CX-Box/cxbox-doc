@@ -10,6 +10,7 @@
 This function is available for widgets:
 
  * [List](/widget/type/list/list) 
+ * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
 
 When the table contains at least one row, bulk operations become available. 
 After clicking on a bulk operation, the user enters the bulk-operation mode, which consists of several steps:
@@ -34,6 +35,8 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 !!! Specifics
     * Bulk operations become available only if there is at least one row in the table.
     * All requests are executed using the ID of the first selected row!
+    * In GroupingHierarchy only rows with records can be selected: a group row without its own record (an empty group, a row of totals) has a disabled checkbox. From Step 2 the table shows only the groups with selected rows.
+    * Rows are only viewed during a bulk operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
 
 
 ##### How to add?
@@ -290,3 +293,49 @@ Bulk record deletion can be performed. Successfully deleted records will no long
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
+## <a id="crypto">Signing and encrypting</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign){:target="_blank"}
+
+The files of the selected rows can be signed and encrypted with CryptoPro, see [Signing and encrypting](/features/sign/sign/).
+
+On [Step 3](#confirming) the confirmation of the action is shown first, if the action has one, with its own buttons.
+Then the user selects the certificates, as in the popup for one document, and clicks **Execute**.
+The files are processed row by row, the step shows how many rows are processed. Then the action is sent once for all rows.
+**Interrupt and next** ends the processing at once, the action is sent for the processed rows.
+
+On [Step 4](#result) a row that was not processed shows an error: a row without a file, a CryptoPro error, a row left after **Interrupt and next**.
+
+### How to add?
+??? Example
+    **Step 1** Add a mass action to the corresponding **Service**.
+
+    * `data.getMassIds_()` gives only the rows processed on the frontend.
+      The files of a row are in its options: `mass.getOption(MassOptionType.SIGNATURE_FILE_ID)` and other keys of `MassOptionType`.
+    * The rows that failed on the frontend get their errors in the result automatically.
+      If the handler returns its own result for such a row, its own result is shown.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/Myexample3711MassService.java:getActions
+    --8<--
+    ```
+
+    To react to the rows that failed on the frontend, read `data.getMassErrors_()`:
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/Myexample3711MassService.java:massErrors
+    --8<--
+    ```
+
+    **Step 2** Add an item with the name of the mass action to `options.cryptoGenerator` and the action to `actionGroups` in the `.widget` configuration options.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/MyExample3711MassList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign){:target="_blank"}

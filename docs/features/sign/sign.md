@@ -252,6 +252,36 @@ How to add?
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711overridesignform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/filebasename){:target="_blank"}
 
+### Mass operation
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign){:target="_blank"}
+
+The user can sign the files of several rows at once with a [bulk operation](/widget/type/property/massoperations/massoperations/#crypto).
+On the step *Confirm operation* the user selects the certificates once, as in the popup for one document, and clicks **Execute**.
+The files are signed one by one, the step shows how many rows are processed. **Interrupt and next** ends the processing at once, the action is sent for the processed rows.
+The step *View results* shows an error for each row that was not processed: a row without a file, a CryptoPro error, a row left after **Interrupt and next**.
+
+How to add?
+??? Example
+
+    **Step 1** Add a mass action to the corresponding **Service**. The files created on the frontend come with each row: `mass.getOption(MassOptionType.SIGNATURE_FILE_ID)`, `mass.getOption(MassOptionType.SIGNATURE_FILE_NAME)`.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/Myexample3711MassService.java:getActions
+    --8<--
+    ```
+
+    **Step 2** Add an item with the name of the mass action to `options.cryptoGenerator` and the action to `actionGroups` in the `.widget` configuration options.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/MyExample3711MassList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/mass){:target="_blank"}
 
 ## <a id="doc_encryption">Document encrypting</a>
 
@@ -324,6 +354,36 @@ How to add?
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713overrideform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/filebasename){:target="_blank"}
 
+### Mass operation
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt){:target="_blank"}
+
+The user can encrypt the files of several rows at once with a [bulk operation](/widget/type/property/massoperations/massoperations/#crypto).
+On the step *Confirm operation* the user selects the certificates once, as in the popup for one document, and clicks **Execute**.
+The files are encrypted one by one, the step shows how many rows are processed. **Interrupt and next** ends the processing at once, the action is sent for the processed rows.
+The step *View results* shows an error for each row that was not processed: a row without a file, a CryptoPro error, a row left after **Interrupt and next**.
+
+How to add?
+??? Example
+
+    **Step 1** Add a mass action to the corresponding **Service**. The files created on the frontend come with each row: `mass.getOption(MassOptionType.ENCRYPTED_FILE_ID)`, `mass.getOption(MassOptionType.ENCRYPTED_FILE_NAME)`.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/Myexample3713MassService.java:getActions
+    --8<--
+    ```
+
+    **Step 2** Add an item with the name of the mass action to `options.cryptoGenerator` and the action to `actionGroups` in the `.widget` configuration options.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/MyExample3713MassList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptlist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/mass){:target="_blank"}
 
 ## <a id="doc_signing_encryption">Document signing and encrypting</a>
 
@@ -549,6 +609,36 @@ How to add?
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptoverridesignform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/filebasename){:target="_blank"}
 
+### Mass operation
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt){:target="_blank"}
+
+The user can sign and encrypt the files of several rows at once with a [bulk operation](/widget/type/property/massoperations/massoperations/#crypto).
+On the step *Confirm operation* the user selects the certificates once, as in the popup for one document, and clicks **Execute**.
+The files are signed and encrypted one by one, the step shows how many rows are processed. **Interrupt and next** ends the processing at once, the action is sent for the processed rows.
+The step *View results* shows an error for each row that was not processed: a row without a file, a CryptoPro error, a row left after **Interrupt and next**.
+
+How to add?
+??? Example
+
+    **Step 1** Add a mass action to the corresponding **Service**. The files created on the frontend come with each row: `mass.getOption(MassOptionType.SIGNATURE_FILE_ID)`, `mass.getOption(MassOptionType.SIGNATURE_FILE_NAME)`, `mass.getOption(MassOptionType.ENCRYPTED_FILE_ID)`, `mass.getOption(MassOptionType.ENCRYPTED_FILE_NAME)`.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/Myexample3714MassService.java:getActions
+    --8<--
+    ```
+
+    **Step 2** Add an item with the name of the mass action to `options.cryptoGenerator` and the action to `actionGroups` in the `.widget` configuration options.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/MyExample3714MassList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptlist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
 
 ## <a id="doc_encryption_signing">Document encrypting and signing</a>
 
@@ -776,3 +866,35 @@ How to add?
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptoverridesignform){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/filebasename){:target="_blank"}
+
+### Mass operation
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign){:target="_blank"}
+
+The user can encrypt and sign the files of several rows at once with a [bulk operation](/widget/type/property/massoperations/massoperations/#crypto).
+On the step *Confirm operation* the user selects the certificates once, as in the popup for one document, and clicks **Execute**.
+The files are encrypted and signed one by one, the step shows how many rows are processed. **Interrupt and next** ends the processing at once, the action is sent for the processed rows.
+The step *View results* shows an error for each row that was not processed: a row without a file, a CryptoPro error, a row left after **Interrupt and next**.
+
+How to add?
+??? Example
+
+    **Step 1** Add a mass action to the corresponding **Service**. The files created on the frontend come with each row: `mass.getOption(MassOptionType.ENCRYPTED_FILE_ID)`, `mass.getOption(MassOptionType.ENCRYPTED_FILE_NAME)`, `mass.getOption(MassOptionType.SIGNATURE_FILE_ID)`, `mass.getOption(MassOptionType.SIGNATURE_FILE_NAME)`.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/Myexample3712MassService.java:getActions
+    --8<--
+    ```
+
+    **Step 2** Add an item with the name of the mass action to `options.cryptoGenerator` and the action to `actionGroups` in the `.widget` configuration options.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/MyExample3712MassList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
+

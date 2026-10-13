@@ -331,7 +331,14 @@ With `Create with view`, clicking the "Create" button opens a separate view that
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/calendarlist/actions/edit/withwidget){:target="_blank"}
 
 `Edit with widget` opens the form widget of `options.edit` in a popover when clicking on the event. The actions of the record are in the three-dot menu of the form.
-`options.edit.style` `inlineForm` (default) and `popup` both show the popover. The width of the popover is the `gridWidth` of the form widget in **_.view.json_**.
+
+`options.edit.style`:
+
+* `inlineForm` (default): the form is shown in a popover at the event;
+* `popup`: the form is shown in a popup over the calendar, like the form of `options.create`;
+* `none`: no form.
+
+The width of the popover or the popup is the `gridWidth` of the form widget in **_.view.json_**.
 
 ###### How does it look?
 ![calendar_edit_with_widget.gif](calendar_edit_with_widget.gif)

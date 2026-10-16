@@ -103,6 +103,7 @@ Legend:
 | `percent`             | ❌ No                                 | Triggered on click outside the field or on a button |
 | `hidden`              | `noValid`                            | Not editable                                        |
 | `text`                | ❌ No                                 | Triggered on click outside the field or on a button |
+| `richText`            | ❌ No                                 | Triggered on click outside the field or on a button. The toolbar and the switch to Markdown markup are a part of the field: a click on them does not trigger it |
 | `radio`               | ✅ Yes                                |                                                     |
 | `checkbox`            | ✅ Yes                                |                                                     |
 | `money`               | ❌ No                                 |                                                     |

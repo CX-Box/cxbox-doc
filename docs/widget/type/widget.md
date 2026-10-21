@@ -20,6 +20,8 @@ Steps
     ![assoc.png](assoclistpopup/assoc.png)
 === "AssocTreePopup"
     ![choose_assoc.png](assoctreepopup/choose_assoc.png)
+=== "Column2D"
+    ![column2d.png](column2d/column2d.png)
 === "CardList"
     ![cardlist.png](cardlist/cardlist.png)
 === "EmptyWidget"
@@ -53,6 +55,7 @@ Steps
 *   [AdditionalList widget](/widget/type/additionallist/additionallist) is list the general information for many records. Widget is always located **on the right**.
 *   [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
 *   [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup) is a popup component designed to the selection of multiple values from a hierarchical, lazily loaded tree.
+*   [Column2D widget](/widget/type/column2d/column2d) draws a column chart: a bar per category on the X axis, a number on the Y axis. The user can switch it to a table.
 *   [CardList widget](/widget/type/cardlist/cardlist) shows records as file cards in rows with pages, with a preview, a title and a description.
 *   [EmptyWidget widget](/widget/type/emptywidget/emptywidget) is a component for displaying text.
 *   [FilePreview widget](/widget/type/filepreview/filepreview) is a component for file viewing. It always occupies 50% of the main screen area and stays fixed at the top while scrolling.

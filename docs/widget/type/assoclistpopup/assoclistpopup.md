@@ -551,9 +551,95 @@ not applicable
 #### Filtration
 ##### Basic
 see more  [Fields](/widget/type/property/filtration/filtration/)
-#### FullTextSearch
+
+###### How does it look?
+![filtration_assoc.gif](../property/filtration/filtration_assoc.gif)
+
+###### How to add?
+??? Example
+    The steps are done for the business component of the popup.
+
+    `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616assoc){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup/forassoc){:target="_blank"}
+
+##### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
+
+###### How does it look?
+![fulltextsearch_assoc.gif](../property/filtration/fulltextsearch_assoc.gif)
+
+###### How to add?
+??? Example
+    `Step 1` Add extension file FullTextSearchExt.java
+    ```java
+    import java.util.Optional;
+    import jakarta.persistence.criteria.CriteriaBuilder;
+    import jakarta.persistence.criteria.Path;
+    import jakarta.persistence.criteria.Predicate;
+    import lombok.NonNull;
+    import lombok.experimental.UtilityClass;
+    import org.apache.commons.lang3.StringUtils;
+    import org.cxbox.core.crudma.bc.BusinessComponent;
+
+    @UtilityClass
+    public class FullTextSearchExt {
+
+        @NonNull
+        public static Optional<String> getFullTextSearchFilterParam(BusinessComponent bc) {
+            return Optional.ofNullable(bc.getParameters().getParameter("_fullTextSearch"));
+        }
+
+        public static Predicate likeIgnoreCase(String value, CriteriaBuilder cb, Path<String> path) {
+            return cb.like(cb.lower(path), StringUtils.lowerCase("%" + value + "%"));
+        }
+
+    }
+    ```
+
+    `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forassoc/MyEntity3625Repository.java
+    --8<--
+    ```
+
+    `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forassoc/MyEntity3625PickService.java:getSpecification
+    --8<--
+    ```
+
+    `Step 4` Add **fullTextSearch** to corresponding **.widget.json**.
+
+    `enabled` true/false
+
+    `placeholder` - description for  fullTextSearch
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forassoc/myEntity3625PickAssocListPopup.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614assoclistpopup){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch/forassoc){:target="_blank"}
+
 ##### Personal filter group
 not applicable
 ##### Filter group

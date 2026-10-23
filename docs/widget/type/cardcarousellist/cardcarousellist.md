@@ -502,18 +502,18 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
 ### Filtration
 _not applicable_
 
-### FullTextSearch
+#### FullTextSearch
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5068){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/cardcarousellist/fulltextsearch){:target="_blank"}
 
 `FullTextSearch` - when the user types in the search box of the widget, the widget shows the cards that match the search query. The service filters the records, like in List.
 
-#### How does it look?
+##### How does it look?
 ![fulltextsearch.gif](fulltextsearch.gif)
 
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
 
-#### How to add?
+##### How to add?
 ??? Example
     **Step 1** Add **fullTextSearch** to **options** of **_.widget.json_**.
     ```json

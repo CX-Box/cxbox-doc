@@ -435,14 +435,105 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 Works only for mode **basic**
 
 see more  [Fields](/widget/type/property/filtration/filtration/)
+
+##### How does it look?
+![filtration_addlist.gif](../property/filtration/filtration_addlist.gif)
+
+##### How to add?
+??? Example
+    `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 #### FullTextSearch
 _not applicable_
-##### Personal filter group
+#### Personal filter group
 A user-filled filter can be saved for each individual user.
 see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
-##### Filter group
+
+##### How does it look?
+![filtergroup_addlist.gif](../property/filtration/filtergroup_addlist.gif)
+
+##### How to add?
+??? Example
+    The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
+
+    For fields where individual filters are intended to be saved, it is essential to configure the filtering options. see `Step 1` and `Step 2`
+
+    **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    **Step 3** Add **filterSetting** to corresponding **.widget.json**.
+
+    `enabled` true/false
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616AdditionalList.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
+#### Filter group
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
+
+##### How does it look?
+![filter_group_save_add_list.gif](../property/filtration/filter_group_save_add_list.gif)
+
+##### How to add?
+??? Example
+    !!! tips
+        To get the conditions for the `filters` column, follow these steps:
+
+        * Add a filter function for fields
+        * Visually fill in the necessary filters in the interface.
+        * Open the developer panel.
+        * Locate the required request.
+        * Use the filter part of this request as the `filters` value
+
+        ![how_add_search_spec.gif](../property/filtration/how_add_search_spec.gif)
+
+    Add  business component in **BC_FILTER_GROUPS** TABLE
+
+      `name` - name predefined filter
+
+      `BC` - name business component
+
+      `filters` - conditions for filtration
+
+      ```csv
+        name;bc;filters;ID
+        Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%5D;
+      ```
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
 ### Pagination
 _not applicable_

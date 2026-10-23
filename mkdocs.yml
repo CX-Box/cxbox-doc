@@ -103,21 +103,6 @@ nav:
           - Widget Line2D: widget/type/line2d/line2d.md
           - Widget Pie1D: widget/type/pie1d/pie1d.md
           - Widget StatsBlock: widget/type/statblocks/statblocks.md
-      - Widgets Data Display:
-          - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
-          - Widget AdditionalList: widget/type/additionallist/additionallist.md
-          - Widget Info: widget/type/info/info.md
-      - Widgets Data Entry & Editing:
-          - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
-          - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
-          - Widget CalendarList: widget/type/calendarlist/calendarlist.md
-          - Widget Form: widget/type/form/form.md
-          - Widget FormPopup: widget/type/formpopup/formpopup.md
-          - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
-          - Widget List: widget/type/list/list.md
-          - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
-          - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
-          - Widget Tree: widget/type/tree/tree.md
       - Widgets File Widgets:
           - Widget CardCarouselList: widget/type/cardcarousellist/cardcarousellist.md
           - Widget CardList: widget/type/cardlist/cardlist.md
@@ -125,8 +110,24 @@ nav:
       - Widgets Layout & UI Elements:
           - Widget EmptyWidget: widget/type/emptywidget/emptywidget.md
           - Widget HeaderWidget: widget/type/headerwidget/headerwidget.md
+      - Widgets Lists & Tables:
+          - Widget AdditionalList: widget/type/additionallist/additionallist.md
+          - Widget CalendarList: widget/type/calendarlist/calendarlist.md
+          - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
+          - Widget List: widget/type/list/list.md
+          - Widget Tree: widget/type/tree/tree.md
       - Widgets Process & Workflow:
           - Widget Steps: widget/type/steps/steps.md
+      - Widgets Selection Popups:
+          - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
+          - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
+          - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
+          - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
+      - Widgets Single Record:
+          - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
+          - Widget Form: widget/type/form/form.md
+          - Widget FormPopup: widget/type/formpopup/formpopup.md
+          - Widget Info: widget/type/info/info.md
   - Widget property:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
      - Widget property Export:

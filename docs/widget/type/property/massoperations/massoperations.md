@@ -10,14 +10,15 @@
 This function is available for widgets:
 
  * [List](/widget/type/list/list) 
+ * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
 
 When the table contains at least one row, bulk operations become available. 
 After clicking on a bulk operation, the user enters the bulk-operation mode, which consists of several steps:
 
-1. [Selecting rows](#selecting_rows)
-2. [Reviewing the selected rows](#reviewing)
-3. [Confirming the action](#confirming) (this step is optional)
-4. [Viewing the result](#result) 
+1. [Select rows](#selecting_rows)
+2. [Review rows](#reviewing)
+3. [Confirm operation](#confirming) (this step is optional)
+4. [View results](#result)
 
 ### How does it look?
 === "With confirm"
@@ -34,6 +35,8 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 !!! Specifics
     * Bulk operations become available only if there is at least one row in the table.
     * All requests are executed using the ID of the first selected row!
+    * In GroupingHierarchy only rows with records can be selected: a group row without its own record (an empty group, a row of totals) has a disabled checkbox. From Step 2 the table shows only the groups with selected rows.
+    * Rows are only viewed during a bulk operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
 
 
 ##### How to add?
@@ -132,7 +135,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             
           - `.setAction(PostAction.showMessage(...))`
                 
-             Displays a message in the UI after the mass action completes.
+             Displays a message in the UI when the user clicks **Close** on [Step 4](#result), not when the action is executed.
             
              Parameters:
             
@@ -159,7 +162,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
              ``` 
 
 
-## <a id="selecting_rows">Step 1. Selecting rows</a>
+## <a id="selecting_rows">Step 1. Select rows</a>
 ### How does it look?
 ![mass_select_row2.png](mass_select_row2.png)
 
@@ -178,11 +181,11 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * **Cancel** — exits bulk-operation mode.
     * **Next** — proceeds to Step 2, where only the selected rows are displayed.
 
-## <a id="reviewing">Step 2. Reviewing the selected rows</a>
+## <a id="reviewing">Step 2. Review rows</a>
 ### How does it look?
 ![review.png](review.png)
 
-1.Selected rows from [Step 1. Selecting rows](#selecting_rows) are displayed in read-only mode.
+1.Selected rows from [Step 1. Select rows](#selecting_rows) are displayed in read-only mode.
 
 2.Checkboxes are disabled, and rows cannot be edited.
 
@@ -193,20 +196,29 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 4.1.Dynamic **“Next / Apply** button 
 
 * **Next** — moves the user to Step 3 (confirmation).
-* **Apply** — immediately executes the bulk action and navigates to the *View Results* step.
+* **Apply** — immediately executes the bulk action and navigates to the *View results* step.
 
 4.2.**Back** — returns the user to Step 1 (row selection).
     When returning to Step 1, the table resets to the first page and all filters are cleared.
 
 4.3.**Cancel** — exits bulk-operation mode without applying any changes.
 
-## <a id="confirming">Step 3. Confirming the action</a>
+## <a id="confirming">Step 3. Confirm operation</a>
 ### How does it look?
 === "Basic"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+
     ![confirm.png](confirm.png)
 === "With custom text"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101listtitle){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+
     ![confirmwithcustomtitle.png](confirmwithcustomtitle.png)
 === "Without title"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101listwithouttitle){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+
     ![confirmwithouttitle.png](confirmwithouttitle.png)
 
 You can enable or disable the confirmation step — if it’s disabled, the system moves directly to the *View results* stage.
@@ -240,7 +252,7 @@ In the confirmation step, you can customize
         --8<--
         ```  
 
-## <a id="result">Step 4. Viewing the result</a>
+## <a id="result">Step 4. View results</a>
 ### How does it look?
 ![result.png](result.png)
 
@@ -256,7 +268,8 @@ Filtering/sorting of selected rows is available for any column, including status
 
 **Available actions:**
 
-1. **Save and Close** – Exit the mass operation mode. The user returns to the normal table view, taking into account all changes made by the operation.
+1. **Close** – Exit the mass operation mode. The user returns to the normal table view, taking into account all changes made by the operation.
+   The postAction of the bulk action (for example, a message) runs at this moment, not when the action is executed.
 
 2. **Export** – Export rows to a file.
    2.1 Ability to filter/sort the table before export.
@@ -264,7 +277,7 @@ Filtering/sorting of selected rows is available for any column, including status
    2.3 Tooltip on hover:  “Export of selected rows. You can use this file on Step 1 via ‘Select from File.’”
    2.4 After export, display a notification:  "File exported successfully"
 
-3. **Export failed (for Retry)** – Export all rows with the status “Fail”
+3. **Retry**, menu item **Export failed** – Export all rows with the status “Fail”
    3.1 The table is automatically filtered by failed rows.
    3.2 File format fully compatible with uploading on Step 1 (Select from File).
    3.3 Tooltip on hover: A file with failed rows will be downloaded. To retry the operation for these rows, upload this file on Step 1 via ‘Select from File.’”
@@ -290,3 +303,5 @@ Bulk record deletion can be performed. Successfully deleted records will no long
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
+## <a id="crypto">Signing and encrypting</a>
+The files of the selected rows can be signed and encrypted with CryptoPro in a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/sign/).

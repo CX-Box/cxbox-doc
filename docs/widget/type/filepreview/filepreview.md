@@ -360,7 +360,7 @@ The examples are in [Switching records](#records).
 ### Filtration
 _not applicable_
 
-### FullTextSearch
+#### FullTextSearch
 _not applicable_
 
 ### <a id="pagination">Pagination</a>

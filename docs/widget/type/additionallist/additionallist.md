@@ -460,14 +460,14 @@ see more  [Fields](/widget/type/property/filtration/filtration/)
 
 #### FullTextSearch
 _not applicable_
-##### Personal filter group
+#### Personal filter group
 A user-filled filter can be saved for each individual user.
 see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
 
-###### How does it look?
+##### How does it look?
 ![filtergroup_addlist.gif](../property/filtration/filtergroup_addlist.gif)
 
-###### How to add?
+##### How to add?
 ??? Example
     The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
 
@@ -500,14 +500,14 @@ see [Personal filter group](/widget/type/property/filtration/filtration/#by-pers
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 
-##### Filter group
+#### Filter group
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
 
-###### How does it look?
+##### How does it look?
 ![filter_group_save_add_list.gif](../property/filtration/filter_group_save_add_list.gif)
 
-###### How to add?
+##### How to add?
 ??? Example
     !!! tips
         To get the conditions for the `filters` column, follow these steps:

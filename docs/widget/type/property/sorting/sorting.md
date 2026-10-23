@@ -3,7 +3,7 @@
 
 This function is available:
 
-* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [Pie1D](/widget/type/pie1d/pie1d) (only in the table mode, see [Charts](#charts)).
+* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [Pie1D](/widget/type/pie1d/pie1d), [Column2D](/widget/type/column2d/column2d) (only in the table mode, see [Charts](#charts)).
 
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
 
@@ -39,6 +39,8 @@ How does it look?
     ![sorting_picktree.gif](sorting_picktree.gif)
 === "Pie1D"
     ![sorting_pie1d.gif](sorting_pie1d.gif)
+=== "Column2D"
+    ![sorting_column2d.gif](sorting_column2d.gif)
 
 ### <a id="on_field">On the field</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·
@@ -96,6 +98,9 @@ How does it look?
 
     === "Pie1D"
         Works only in the [table mode](/widget/type/pie1d/pie1d/#tablemode) of the chart, see [Charts](#charts).
+
+    === "Column2D"
+        Works only in the [table mode](/widget/type/column2d/column2d/#tablemode) of the chart, see [Charts](#charts).
 
 ### <a id="app-default-sort">At the application level</a>
 `Not recommended.`

@@ -3,7 +3,7 @@
 
 This function is available:
 
-* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [Pie1D](/widget/type/pie1d/pie1d), [Column2D](/widget/type/column2d/column2d) (only in the table mode, see [Charts](#charts)).
+* for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [Pie1D](/widget/type/pie1d/pie1d), [Column2D](/widget/type/column2d/column2d), [Line2D](/widget/type/line2d/line2d) (only in the table mode, see [Charts](#charts)).
 
 * for fields: See more [field types](/widget/fields/fieldtypes/) 
 
@@ -183,11 +183,7 @@ Charts show the sorting only in the table mode. When the data of the chart come 
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4271){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/sorting){:target="_blank"}
-## <a id="charts">Charts</a>
-Charts show the sorting only in the table mode. When the data of the chart come from an AnySource DAO, the DAO sorts the records itself.
 
-### How to add?
-??? Example
     === "Line2D widget"
         Works only in the [table mode](/widget/type/line2d/line2d/#tablemode) of the chart.
         After the switch back to the chart, the chart draws the records in the sorted order.

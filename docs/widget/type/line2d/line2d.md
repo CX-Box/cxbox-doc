@@ -398,6 +398,35 @@ the charts share the X axis and can have separate Y axes.
 Works only in the [table mode](#tablemode): the column filters are shown for the fields with `enableFilter` in the Meta, as in a List widget.
 In the chart mode there are no filters. The widget sends the filter to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see more [Filtration](/widget/type/property/filtration/filtration/)
+
+###### How to add?
+??? Example
+    When the data of the chart come from an AnySource DAO, the DAO applies the filter itself.
+
+    `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/line2d/filtration/MyExample4272DTO.java
+    --8<--
+    ```
+
+    `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/line2d/filtration/MyExample4272Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    `Step 3` Apply the filter in **getList** of the AnySource DAO.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/line2d/filtration/MyExample4272Dao.java:getList
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4272){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/line2d/filtration){:target="_blank"}
+
 #### FullTextSearch
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4273){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/line2d/fulltextsearch){:target="_blank"}
@@ -405,6 +434,59 @@ see more [Filtration](/widget/type/property/filtration/filtration/)
 Works only in the [table mode](#tablemode) with `options.fullTextSearch` in **_.widget.json_**: the search input is shown above the table.
 The widget sends the search text to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
+
+###### How to add?
+??? Example
+    When the data of the chart come from an AnySource DAO, the DAO applies the search itself.
+
+    `Step 1` Add extension file FullTextSearchExt.java
+    ```java
+    import java.util.Optional;
+    import jakarta.persistence.criteria.CriteriaBuilder;
+    import jakarta.persistence.criteria.Path;
+    import jakarta.persistence.criteria.Predicate;
+    import lombok.NonNull;
+    import lombok.experimental.UtilityClass;
+    import org.apache.commons.lang3.StringUtils;
+    import org.cxbox.core.crudma.bc.BusinessComponent;
+
+    @UtilityClass
+    public class FullTextSearchExt {
+
+        @NonNull
+        public static Optional<String> getFullTextSearchFilterParam(BusinessComponent bc) {
+            return Optional.ofNullable(bc.getParameters().getParameter("_fullTextSearch"));
+        }
+
+        public static Predicate likeIgnoreCase(String value, CriteriaBuilder cb, Path<String> path) {
+            return cb.like(cb.lower(path), StringUtils.lowerCase("%" + value + "%"));
+        }
+
+    }
+    ```
+
+    `Step 2` Apply the search text in **getList** of the AnySource DAO.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/line2d/fulltextsearch/MyExample4273Dao.java:getList
+    --8<--
+    ```
+
+    `Step 3` Add **fullTextSearch** to corresponding **.widget.json**.
+
+    `enabled` true/false
+
+    `placeholder` - description for  fullTextSearch
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/line2d/fulltextsearch/MyExample4273Line2D.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4273){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/line2d/fulltextsearch){:target="_blank"}
+
 ##### Personal filter group
 **not available** in this release: the settings menu of the chart has only the `Mode` items, so there is no `Save filters` item.
 ##### Filter group
@@ -414,6 +496,39 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 Works only in the [table mode](#tablemode): the filter groups of the business component are shown above the table, as in a List widget.
 The widget sends the filter of the chosen group to the backend, and the AnySource DAO of the chart applies it itself. After the switch back to the chart, the chart draws only the filtered records. The chart mode does not show that a filter is applied: the filter is cleared in the table mode.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
+
+###### How to add?
+??? Example
+    When the data of the chart come from an AnySource DAO, the DAO applies the filter of the group itself.
+
+    !!! tips
+        To get the conditions for the `filters` column, follow these steps:
+
+        * Add a filter function for fields
+        * Visually fill in the necessary filters in the interface.
+        * Open the developer panel.
+        * Locate the required request.
+        * Use the filter part of this request as the `filters` value
+
+        ![how_add_search_spec.gif](../property/filtration/how_add_search_spec.gif)
+
+    **Step 1** Add  business component in **BC_FILTER_GROUPS** TABLE
+
+    ```csv
+    name;bc;filters;ID
+    Sum from 5000;myExampleBc4274;sum.greaterOrEqualThan=5000;
+    Sum under 5000;myExampleBc4274;sum.lessThan=5000;
+    ```
+
+    **Step 2** Apply the filter in **getList** of the AnySource DAO.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/line2d/filtergroup/MyExample4274Dao.java:getList
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4274){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/line2d/filtergroup){:target="_blank"}
 
 #### Pagination
 _not applicable_: the chart shows one page, see [Page limit](#pagelimit).

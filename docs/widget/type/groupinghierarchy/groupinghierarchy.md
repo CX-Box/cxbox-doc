@@ -649,6 +649,32 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
 
 When fields stored in the additional settings table are deleted from the widget, the functionality will continue to work correctly by ignoring these old fields.
 
+#### Filtration
+##### Basic
+see more  [Fields](/widget/type/property/filtration/filtration/)
+
+###### How does it look?
+![filtration_gh.gif](../property/filtration/filtration_gh.gif)
+
+###### How to add?
+??? Example
+    `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3121/view/myexample3121gh){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/base){:target="_blank"}
+
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)

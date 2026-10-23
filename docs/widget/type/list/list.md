@@ -584,15 +584,196 @@ When fields stored in the additional settings table are deleted from the widget,
 #### Filtration
 ##### Basic
 see more  [Fields](/widget/type/property/filtration/filtration/)
+
+###### How does it look?
+![filtration_list.gif](../property/filtration/filtration_list.gif)
+
+###### How to add?
+??? Example
+    `Step 1` Add **@SearchParameter** to corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    `Step 2` Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 #### FullTextSearch
 `FullTextSearch` - when the user types in the full text search input area, then widget filters the rows that match the search query.
 see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsearch)
+
+###### How does it look?
+![fulltextsearch.gif](../property/filtration/fulltextsearch.gif)
+
+###### How to add?
+??? Example
+    `Step 1` Add extension file FullTextSearchExt.java
+    ```java
+    import java.util.Optional;
+    import jakarta.persistence.criteria.CriteriaBuilder;
+    import jakarta.persistence.criteria.Path;
+    import jakarta.persistence.criteria.Predicate;
+    import lombok.NonNull;
+    import lombok.experimental.UtilityClass;
+    import org.apache.commons.lang3.StringUtils;
+    import org.cxbox.core.crudma.bc.BusinessComponent;
+
+    @UtilityClass
+    public class FullTextSearchExt {
+
+        @NonNull
+        public static Optional<String> getFullTextSearchFilterParam(BusinessComponent bc) {
+            return Optional.ofNullable(bc.getParameters().getParameter("_fullTextSearch"));
+        }
+
+        public static Predicate likeIgnoreCase(String value, CriteriaBuilder cb, Path<String> path) {
+            return cb.like(cb.lower(path), StringUtils.lowerCase("%" + value + "%"));
+        }
+
+    }
+    ```
+
+    `Step 2` Add **specifications** for fulltextsearch fields to corresponding **JpaRepository**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyEntity3614Repository.java
+    --8<--
+    ```
+
+    `Step 3` Add **getSpecification** to corresponding **VersionAwareResponseService**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Service.java:getSpecification
+    --8<--
+    ```
+
+    `Step 4` Add **fullTextSearch** to corresponding **.widget.json**.
+
+    `enabled` true/false
+
+    `placeholder` - description for  fullTextSearch
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614List.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
+
 ##### Personal filter group
 A user-filled filter can be saved for each individual user.
 see [Personal filter group](/widget/type/property/filtration/filtration/#by-personal-filter-group)
+
+###### How does it look?
+![filtergroup.gif](../property/filtration/filtergroup.gif)
+
+###### How to add?
+??? Example
+    The availability of filtering function depends on the type. See more [field types](/widget/fields/fieldtypes/)
+
+    For fields where individual filters are intended to be saved, it is essential to configure the filtering options. see `Step 1` and `Step 2`
+
+    **Step 1** Add **@SearchParameter** to corresponding **DataResponseDTO**. (Advanced customization [SearchParameter](/advancedCustomization/element/searchparameter/searchparameter))
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616DTO.java
+    --8<--
+    ```
+
+    **Step 2**  Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Meta.java:buildIndependentMeta
+    --8<--
+    ```
+
+    **Step 3** Add **filterSetting** to corresponding **.widget.json**.
+
+    `enabled` true/false
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616List.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 ##### Filter group
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
+
+###### How does it look?
+![filter_group_save_list.gif](../property/filtration/filter_group_save_list.gif)
+
+###### How to add?
+??? Example
+    === "Basic"
+        !!! tips
+            To get the conditions for the `filters` column, follow these steps:
+
+            * Add a filter function for fields
+            * Visually fill in the necessary filters in the interface.
+            * Open the developer panel.
+            * Locate the required request.
+            * Use the filter part of this request as the `filters` value
+
+            ![how_add_search_spec.gif](../property/filtration/how_add_search_spec.gif)
+
+        Add  business component in **BC_FILTER_GROUPS** TABLE
+
+          `name` - name predefined filter
+
+          `BC` - name business component
+
+          `filters` - conditions for filtration
+
+          ```csv
+            name;bc;filters;ID
+            Dictionary = High;myexample3618;customFieldDictionary.equalsOneOf=%5B%22High%22%5D;
+          ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
+
+    === "With computed field"
+
+        If the logic for selecting the Filter group is too complex and cannot be expressed using simple and conditions on widget fields,
+        you can add a separate computed hidden field. This field pre-calculates the required value, and then the Filter group is applied to it.
+
+        **Step 1** Add computed boolean field to corresponding **DataResponseDTO**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergrouphiddenfield/MyExample3628DTO.java
+        --8<--
+        ```
+        **Step 2** Add  business component in **BC_FILTER_GROUPS** TABLE
+
+          `name` - name predefined filter
+
+          `BC` - name business component
+
+          `filters` - conditions for filtration
+
+          ```csv
+            name;bc;filters;ID
+            Dictionary is null;myexample3628;customFieldHidden.equals=true;
+          ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3628list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergrouphiddenfield){:target="_blank"}
+
 #### Pagination
 `Pagination` is the process of dividing content into separate, discrete pages, making it easier to navigate and consume large amounts of information.
 see [Pagination](/widget/type/property/pagination/pagination)

@@ -183,3 +183,28 @@ Charts show the sorting only in the table mode. When the data of the chart come 
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4271){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/sorting){:target="_blank"}
+## <a id="charts">Charts</a>
+Charts show the sorting only in the table mode. When the data of the chart come from an AnySource DAO, the DAO sorts the records itself.
+
+### How to add?
+??? Example
+    === "Line2D widget"
+        Works only in the [table mode](/widget/type/line2d/line2d/#tablemode) of the chart.
+        After the switch back to the chart, the chart draws the records in the sorted order.
+
+        **Step 1** Add **fields.enableSort** to corresponding **FieldMetaBuilder**.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/line2d/sorting/MyExample4275Meta.java:buildIndependentMeta
+        --8<--
+        ```
+
+        **Step 2** Sort the records in **getList** of the AnySource DAO.
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/line2d/sorting/MyExample4275Dao.java:getList
+        --8<--
+        ```
+
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4275){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/line2d/sorting){:target="_blank"}

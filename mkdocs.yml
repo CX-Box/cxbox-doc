@@ -240,6 +240,7 @@ theme:
   favicon: assets/logo.svg
   logo: assets/logo.svg
   name: material
+  language: en
   highlightjs: true
   hljs_languages:
     - json
@@ -252,7 +253,173 @@ theme:
     edit: material/pencil
     view: material/eye
 plugins:
-  - search
+  - search:
+      lang:
+        - en
+        - ru
+  # Translations live next to the original page: page.md (en, default) and page.ru.md (ru).
+  # To add a language: add a block to `languages` and create page.<locale>.md files.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: ru
+          name: Русский
+          build: true
+          site_name: Документация CXBox
+          theme:
+            language: ru
+          extra:
+            # must repeat the root `extra` block: a per-language override replaces it entirely
+            external_links:
+              github_ui: !ENV [GITHUB_UI, 'https://github.com/CX-Box/cxbox-code-samples/tree']
+              github_raw_doc: !ENV [github_raw_doc, 'demo/documentation']
+              github_raw: !ENV [github_raw,'demo']
+              github_branch: !ENV [GITHUB_BRANCH, 'main']
+              code_samples: !ENV [CODE_SAMPLES, 'http://code-samples.cxbox.org']
+              demo: !ENV [DEMO, 'https://demo.cxbox.org']
+            analytics:
+              provider: google
+              property: G-SEVVVTLFB8
+              feedback:
+                title: Была ли эта страница полезной?
+                ratings:
+                  - icon: material/emoticon-happy-outline
+                    name: Страница была полезной
+                    data: 1
+                    note: >-
+                      Спасибо за отзыв!
+                  - icon: material/emoticon-sad-outline
+                    name: Страницу можно улучшить
+                    data: 0
+                    note: >-
+                      Спасибо за отзыв! Помогите нам улучшить эту страницу с помощью
+                      <a href="https://github.com/CX-Box/cxbox-doc/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">формы обратной связи</a>.
+          nav_translations:
+            Home: Главная
+            What’s new: Что нового
+            Versions: Версии
+            Guides for work with documentation: Руководства по работе с документацией
+            For analysts: Для аналитиков
+            For developers: Для разработчиков
+            Getting started cxbox: Начало работы с CXBox
+            Basic: Основы
+            basic: Основы
+            Add environment: Подготовка окружения
+            Add screen: Добавление экрана
+            Add view: Добавление представления
+            Add widget: Добавление виджета
+            Add field: Добавление поля
+            Add widget and field: Добавление виджета и поля
+            Microservice: Микросервис
+            Field types: Типы полей
+            Fields: Поля
+            SearchOperation for filtering: SearchOperation для фильтрации
+            Field checkbox: Поле checkbox
+            Field date: Поле date
+            Field dateTime: Поле dateTime
+            Field dateTimeWithSeconds: Поле dateTimeWithSeconds
+            Field dictionary: Поле dictionary
+            Field fileUpload: Поле fileUpload
+            Field hidden: Поле hidden
+            Field hint: Поле hint
+            Field inlinePickList: Поле inlinePickList
+            Field input: Поле input
+            Field money: Поле money
+            Field multifield: Поле multifield
+            Field multipleSelect: Поле multipleSelect
+            Field multivalue: Поле multivalue
+            Field multivalueHover: Поле multivalueHover
+            Field multivalueTree: Поле multivalueTree
+            Field number: Поле number
+            Field percent: Поле percent
+            Field pickList: Поле pickList
+            Field pickTree: Поле pickTree
+            Field radio: Поле radio
+            Field richText: Поле richText
+            Field suggestionPickList: Поле suggestionPickList
+            Field text: Поле text
+            Field time: Поле time
+            Widget types: Типы виджетов
+            Widgets: Виджеты
+            Widget AdditionalInfo: Виджет AdditionalInfo
+            Widget AdditionalList: Виджет AdditionalList
+            Widget AssocListPopup: Виджет AssocListPopup
+            Widget AssocTreePopup: Виджет AssocTreePopup
+            Widget CalendarList: Виджет CalendarList
+            Widget CardCarouselList: Виджет CardCarouselList
+            Widget CardList: Виджет CardList
+            Widget Column2D: Виджет Column2D
+            Widget EmptyWidget: Виджет EmptyWidget
+            Widget FilePreview: Виджет FilePreview
+            Widget Form: Виджет Form
+            Widget FormPopup: Виджет FormPopup
+            Widget GroupingHierarchy: Виджет GroupingHierarchy
+            Widget HeaderWidget: Виджет HeaderWidget
+            Widget Info: Виджет Info
+            Widget Line2D: Виджет Line2D
+            Widget List: Виджет List
+            Widget PickListPopup: Виджет PickListPopup
+            Widget PickTreePopup: Виджет PickTreePopup
+            Widget Pie1D: Виджет Pie1D
+            Widget StatsBlock: Виджет StatsBlock
+            Widget Steps: Виджет Steps
+            Widget Tree: Виджет Tree
+            Widget property: Свойства виджета
+            Widget property Page limit: Лимит записей на странице
+            Widget property Export: Экспорт
+            Widget property File Options: Работа с файлами
+            Multi-upload files: Множественная загрузка файлов
+            Widget property Filtration: Фильтрация
+            Widget property Pagination: Пагинация
+            Widget property Sorting: Сортировка
+            Widget property Show condition: Условие отображения
+            Widget property Bulk(Mass) operations: Массовые операции
+            Signing and encrypting: Подписание и шифрование
+            About CXBOX work: Как работает CXBox
+            Frontend - Backend Interaction: Взаимодействие фронтенда и бэкенда
+            Navigation: Навигация
+            Tabs: Вкладки
+            Standard: Стандартные
+            Basic for developer: Основы для разработчика
+            View: Представление (View)
+            Screen: Экран (Screen)
+            Browser navigation buttons: Кнопки навигации браузера
+            Repository elements: Элементы репозитория
+            Entity: Сущность (Entity)
+            Service: Сервис
+            Controller: Контроллер
+            Repository: Репозиторий
+            Features: Возможности
+            Actions: Действия
+            Authorization: Авторизация
+            Basic Authorization: Базовая авторизация
+            Keycloak Authorization: Авторизация через Keycloak
+            Database: База данных
+            DrillDown Types: Типы DrillDown
+            Localization: Локализация
+            Monitoring tools: Инструменты мониторинга
+            Performance Metrics: Метрики производительности
+            Microservices: Микросервисы
+            Get started: Начало работы
+            Connecting an existing microservices: Подключение существующих микросервисов
+            Work with DAO: Работа с DAO
+            Notifications: Уведомления
+            Sent to email: Отправка на email
+            Push: Push-уведомления
+            New Year Theme: Новогодняя тема
+            Advanced customization: Расширенная настройка
+            Filtration: Фильтрация
+            Validation: Валидация
+            Plugin: Плагин
+            plugin: плагин
+            Install and Update: Установка и обновление
   - markdownextradata
   - mermaid2
   - redirects:

@@ -184,6 +184,48 @@ When the "Save Filters" button is clicked, a modal window appears displaying all
 === "Tree"
     ![filtergroup_tree.gif](filtergroup_tree.gif)
 
+### <a id="personal_filter_group_with_fulltextsearch">with fulltextsearch</a>
+When the widget has both the [full text search](#by_fulltextsearch) and the personal filter group,
+the text of the full text search is saved in the group together with the filters of the columns.
+When the group is applied, the search field is filled with the saved text and the widget searches by it again.
+
+For example, the user searches "Soviet" and filters the column "customField" by "data".
+The request `POST /api/v1/personalFilterGroups` sends the group with the parameter `_fullTextSearch` among the filters:
+
+```json
+{
+  "bc": "myexample3614",
+  "filters": "_fullTextSearch=Soviet&customField.contains=data",
+  "name": "My filter"
+}
+```
+
+This function is available:
+
+* [List](/widget/type/list/list) (
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3614filtergroup){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/fulltextsearch){:target="_blank"}
+)
+
+#### How does it look?
+![filtergroup_fulltextsearch.gif](filtergroup_fulltextsearch.gif)
+
+#### How to add?
+Add the [full text search](/widget/type/list/list/#fulltextsearch) and the [personal filter group](/widget/type/list/list/#personal-filter-group) to the widget:
+enable both options `fullTextSearch` and `filterSetting` in the **.widget.json**. Nothing else is needed: the frontend saves `_fullTextSearch` as one of the filters of the group.
+
+```json
+"options": {
+  "fullTextSearch": {
+    "enabled": true,
+    "placeholder": "Find by Name or Address or Custom Field"
+  },
+  "filterSetting": {
+    "enabled": true
+  }
+}
+```
+
 ## <a id="by_filter_group">by filter group</a>
 
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.

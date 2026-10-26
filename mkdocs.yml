@@ -119,6 +119,9 @@ nav:
      - Widget property Show condition: widget/type/property/showcondition/showcondition.md
      - Widget property Mass operations:
         - Mass operation Basic: widget/type/property/massoperations/massoperations.md
+        - Mass operation Without confirmation: widget/type/property/massoperations/withoutconfirm/withoutconfirm.md
+        - Mass operation With confirmation: widget/type/property/massoperations/withconfirm.md
+        - Mass operation Delete: widget/type/property/massoperations/delete.md
         - Mass operation Signing and encrypting: widget/type/property/massoperations/sign/sign.md
   - About CXBOX work:
       - Frontend - Backend Interaction: basic/frontbackinteraction.md

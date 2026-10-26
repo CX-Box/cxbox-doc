@@ -123,6 +123,7 @@ nav:
      - Widget property Pagination: widget/type/property/pagination/pagination.md
      - Widget property Sorting: widget/type/property/sorting/sorting.md
      - Widget property Show condition: widget/type/property/showcondition/showcondition.md
+     - Widget property Groups (collapse): widget/type/property/collapse/collapse.md
      - Widget property Bulk(Mass) operations: widget/type/property/massoperations/massoperations.md
   - About CXBOX work:
       - Frontend - Backend Interaction: basic/frontbackinteraction.md

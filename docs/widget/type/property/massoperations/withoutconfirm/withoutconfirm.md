@@ -11,10 +11,10 @@
 
     ![mass_list_without_confirm.gif](mass_list_without_confirm.gif)
 === "GroupingHierarchy"
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101gh){:target="_blank"}
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruegh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
 
-    ![mass_gh.gif](../mass_gh.gif)
+    ![mass_gh_without_confirm.gif](mass_gh_without_confirm.gif)
 
 `Mass operation without confirmation` is a [mass operation](/widget/type/property/massoperations/massoperations/) that is executed right after the rows are selected: the user clicks **Apply**, and the action is applied to all selected rows. The user does not enter any values.
 
@@ -78,7 +78,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102GH.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102CheckboxTrueGH.widget.json
             --8<--
             ```
     - **Step2** Create action massCheckboxTrue to corresponding **AwareResponseService**.
@@ -92,11 +92,18 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
             ![addmass.gif](../addmass.gif)
     
         === "Example of writing code"
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massCheckboxTrue
-            --8<--
-            ``` 
+            === "List"
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massCheckboxTrue
+                --8<--
+                ```
+            === "GroupingHierarchy"
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/feature/massoperations/gh/MyExample6102Service.java:massCheckboxTrue
+                --8<--
+                ```
 
         Property:
 

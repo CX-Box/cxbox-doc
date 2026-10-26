@@ -8,10 +8,16 @@
 `Mass delete` is a [mass operation](/widget/type/property/massoperations/massoperations/) that removes all selected records in one run.
 
 ### How does it work?
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+=== "List"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-![mass_delete.gif](mass_delete.gif)
+    ![mass_delete.gif](mass_delete.gif)
+=== "GroupingHierarchy"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101deletegh){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
+
+    ![mass_delete_gh.gif](mass_delete_gh.gif)
 
 ## Basic
 It saves the user from deleting records one by one, for example:
@@ -65,11 +71,18 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
         }
         ```
 
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101Delete.widget.json
-        --8<--
-        ``` 
+        === "List"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101Delete.widget.json
+            --8<--
+            ```
+        === "GroupingHierarchy"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102DeleteGH.widget.json
+            --8<--
+            ```
     - **Step2** Create action massDelete to corresponding **AwareResponseService**.      
 
         === "With plugin(recommended)"
@@ -81,11 +94,18 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
             ![addmass.gif](addmass.gif)
     
         === "Example of writing code"
-            ```java
-            --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massDelete
-            --8<--
-            ``` 
+            === "List"
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massDelete
+                --8<--
+                ```
+            === "GroupingHierarchy"
+                ```java
+                --8<--
+                {{ external_links.github_raw_doc }}/feature/massoperations/gh/MyExample6102Service.java:massDelete
+                --8<--
+                ```
 
         Property:
 

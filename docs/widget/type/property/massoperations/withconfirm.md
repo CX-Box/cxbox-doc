@@ -8,10 +8,16 @@
 `Mass operation with confirmation` is a [mass operation](/widget/type/property/massoperations/massoperations/) with a confirmation step: before the action is executed, the user fills in a form once, and the values from the form are applied to all selected rows.
 
 ### How does it work?
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+=== "List"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-![mass_list.gif](mass_list.gif)
+    ![mass_list.gif](mass_list.gif)
+=== "GroupingHierarchy"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101gh){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
+
+    ![mass_gh.gif](mass_gh.gif)
 
 ## Basic
 It is used when the user must choose the values that are written to all selected rows, for example:
@@ -72,11 +78,33 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
         }
         ```
 
-        ```json
-        --8<--
-        {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101List.widget.json
-        --8<--
-        ``` 
+        === "List"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101List.widget.json
+            --8<--
+            ```
+        === "GroupingHierarchy"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102GH.widget.json
+            --8<--
+            ```
+
+        Add the confirmation widget (FormPopup) with the business component of the widget to the view, and pass its name to `PreAction.confirmWithWidget`.
+
+        === "List"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101Form.widget.json
+            --8<--
+            ```
+        === "GroupingHierarchy"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102Form.widget.json
+            --8<--
+            ```
     - **Step2** Create action massEdit to corresponding **AwareResponseService**.      
 
         === "With plugin(recommended)"
@@ -171,13 +199,22 @@ So one mass action with confirmation can:
     In the sample, `getMassDTO` writes the value of the dictionary field from the form and, in the same handler, the checkbox; the rows with the value `Error` get the status **Fail**.
     After the operation, the message is shown.
 
-    ```java
-    --8<--
-    {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEdit
-    --8<--
-    ``` 
-    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
-    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+    === "List"
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/feature/massoperations/MyExample6101Service.java:massEdit
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+    === "GroupingHierarchy"
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/feature/massoperations/gh/MyExample6102Service.java:massEdit
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101gh){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
 
 ## <a id="selecting_rows">Step 1. Select rows</a>
 ### How does it look?

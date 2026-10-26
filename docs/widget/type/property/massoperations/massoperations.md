@@ -12,7 +12,6 @@ This function is available for widgets:
  * [List](/widget/type/list/list) 
  * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
 
-When the table contains at least one row, bulk operations become available. 
 After clicking on a bulk operation, the user enters the bulk-operation mode, which consists of several steps:
 
 1. [Select rows](#selecting_rows)
@@ -63,7 +62,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             **Step 1** Download plugin
             [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
-            **Step 2** Add existing field to an existing form widget
+            **Step 2** Add a bulk action to the corresponding service
     
             ![addmass.gif](addmass.gif)
     
@@ -78,7 +77,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 
         -  `.action("massEditCustomTitle", "Mass Edit With Custom Text")`
             
-            * `"massEditCustomTitle"` — name button for internal used by backend and frontend.
+            * `"massEditCustomTitle"` — the action name used internally by the backend and frontend.
             * `"Mass Edit With Custom Text"` —  title displayed in the UI.
             
             
@@ -88,20 +87,18 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             
             Parameters:
             
-            - 1) The name widget used for the confirmation .
+            1. The name of the widget used for the confirmation.
             
-            - 2) **`cfw -> ...`**:
-            
-            A configuration block where  properties are defined:
+            2. **`cfw -> ...`** — a configuration block where the properties are defined:
             
             **`.noText("It is text no")`**
-              Text for the **Cancel ** button.
+                Text for the **Cancel** button.
             
             **`.title("Mass Edit Title")`**
-                Title of the a confirmation dialog before the mass action executes.
+                Title of the confirmation dialog before the mass action executes.
             
             **`.yesText("It is text yes")`**
-                Text for the **Apply** button.
+                Text for the **Save** button.
             
             This allows customizing the buttons and title.
             
@@ -120,7 +117,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             * **`ids`** — the set of IDs of all selected records.
             
             Inside the handler:
-             The  method processes each record and returns:
+             The method processes each record and returns:
             
             * `MassDTO.success(id)` - result success 
             * `MassDTO.fail(id, "message")` - result error 
@@ -133,14 +130,14 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             * success/failure information for each record,
             * a UI post-action.
             
-          - `.setAction(PostAction.showMessage(...))`
-                
-             Displays a message in the UI when the user clicks **Close** on [Step 4](#result), not when the action is executed.
-            
-             Parameters:
-            
-             * `MessageType.INFO` — message type.
-             * `"The fields mass operation was completed!"` — message text.
+            - `.setAction(PostAction.showMessage(...))`
+
+                Displays a message in the UI when the user clicks **Close** on [Step 4](#result), not when the action is executed.
+
+                Parameters:
+
+                * `MessageType.INFO` — message type.
+                * `"The fields mass operation was completed!"` — message text.
 
         === "With confirm"
              [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
@@ -173,9 +170,10 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 
     * If the number of chips exceeds **N**, only the first **N** are shown; the rest are collapsed and replaced with the label **“+N values”**. Hovering over **“+N values”** displays a tooltip: *“Move on to Step 2 to see all the chosen rows.”*
     * A **“Clear”** button is displayed next to the chips. Clicking **Clear** deselects all checkboxes and removes all chips.
-    * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing data from an Excel file [step 4](#result)).
-          ![import.png](import.png)
-  
+    * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing rows from a file exported on [Step 4](#result)).
+
+        ![import.png](import.png)
+
 5. **Available actions**:
 
     * **Cancel** — exits bulk-operation mode.
@@ -185,23 +183,19 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 ### How does it look?
 ![review.png](review.png)
 
-1.Selected rows from [Step 1. Select rows](#selecting_rows) are displayed in read-only mode.
+1. Selected rows from [Step 1. Select rows](#selecting_rows) are displayed in read-only mode.
+2. Checkboxes are disabled, and rows cannot be edited.
+3. Filtering and sorting of the selected rows remain available.
+4. **Available actions**:
 
-2.Checkboxes are disabled, and rows cannot be edited.
+    * Dynamic **Next / Apply** button:
 
-3.Filtering and sorting of the selected rows remain available.
+        * **Next** — moves the user to Step 3 (confirmation).
+        * **Apply** — immediately executes the bulk action and navigates to the *View results* step.
 
-4.Available actions:
-
-4.1.Dynamic **“Next / Apply** button 
-
-* **Next** — moves the user to Step 3 (confirmation).
-* **Apply** — immediately executes the bulk action and navigates to the *View results* step.
-
-4.2.**Back** — returns the user to Step 1 (row selection).
-    When returning to Step 1, the table resets to the first page and all filters are cleared.
-
-4.3.**Cancel** — exits bulk-operation mode without applying any changes.
+    * **Back** — returns the user to Step 1 (row selection).
+      When returning to Step 1, the table resets to the first page and all filters are cleared.
+    * **Cancel** — exits bulk-operation mode without applying any changes.
 
 ## <a id="confirming">Step 3. Confirm operation</a>
 ### How does it look?
@@ -230,7 +224,6 @@ In the confirmation step, you can customize
 * customize the text of the **Save** and **Cancel** buttons
 * the **Back** button is fixed and does not depend on the configuration
 
- 
 ### How to add?
 ??? Example
     === "Basic"
@@ -262,7 +255,7 @@ After performing a mass operation, the status for each row in the table is displ
 1. **Success** – the operation was completed successfully
 2. **Fail** – the operation was not completed
 
-The widget header on displays the number of processed rows (including the number of successful/failed rows).
+The widget header displays the number of processed rows (including the number of successful/failed rows).
 
 Filtering/sorting of selected rows is available for any column, including status.
 
@@ -270,18 +263,18 @@ Filtering/sorting of selected rows is available for any column, including status
 
 1. **Close** – Exit the mass operation mode. The user returns to the normal table view, taking into account all changes made by the operation.
    The postAction of the bulk action (for example, a message) runs at this moment, not when the action is executed.
-
 2. **Export** – Export rows to a file.
-   2.1 Ability to filter/sort the table before export.
-   2.2 File format fully compatible with uploading on Step 1 (Select from File).
-   2.3 Tooltip on hover:  “Export of selected rows. You can use this file on Step 1 via ‘Select from File.’”
-   2.4 After export, display a notification:  "File exported successfully"
 
-3. **Retry**, menu item **Export failed** – Export all rows with the status “Fail”
-   3.1 The table is automatically filtered by failed rows.
-   3.2 File format fully compatible with uploading on Step 1 (Select from File).
-   3.3 Tooltip on hover: A file with failed rows will be downloaded. To retry the operation for these rows, upload this file on Step 1 via ‘Select from File.’”
-  
+    * Ability to filter/sort the table before export.
+    * File format fully compatible with uploading on Step 1 (**Select from file**).
+    * Tooltip on hover: “Export of selected rows. You can use this file on Step 1 via ‘Select from File.’”
+    * After export, display a notification: “File exported successfully”
+
+3. **Retry**, menu item **Export failed** – Export all rows with the status “Fail”.
+
+    * The table is automatically filtered by failed rows.
+    * File format fully compatible with uploading on Step 1 (**Select from file**).
+    * Tooltip on hover: “A file with failed rows will be downloaded. To retry the operation for these rows, upload this file on Step 1 via ‘Select from File.’”
 
 
 ## Delete

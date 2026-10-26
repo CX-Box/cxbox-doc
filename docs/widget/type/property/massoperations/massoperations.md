@@ -1,14 +1,14 @@
-# Bulk operations (Mass operations)
+# Mass operations
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
 !!! Attention
     For small and medium data volumes. Use for synchronous processing within a single transaction when the data size is up to 10,000 rows.
 
-`Bulk operations` are a mechanism that allows the user to perform a single action on a large number of table rows at once. Instead of processing each row individually, the user can select a set of data and apply a common operation to it—such as updating, deleting, changing statuses, recalculating values, and other typical scenarios.
+`Mass operations` are a mechanism that allows the user to perform a single action on a large number of table rows at once. Instead of processing each row individually, the user can select a set of data and apply a common operation to it—such as updating, deleting, changing statuses, recalculating values, and other typical scenarios.
 
-### What are bulk operations for?
-Bulk operations save the user from repeating the same action row by row. They are used when the same change must be applied to many records at once, for example:
+## Basic
+Mass operations save the user from repeating the same action row by row. They are used when the same change must be applied to many records at once, for example:
 
 * **Set one value in all rows** — the user fills in the confirmation form once, and the values are written to every selected row (for example, assign a priority or a responsible employee to 200 requests).
 * **Change status** — move all selected records to another status (for example, close all processed requests).
@@ -23,7 +23,7 @@ This function is available for widgets:
  * [List](/widget/type/list/list) 
  * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
 
-After clicking on a bulk operation, the user enters the bulk-operation mode, which consists of several steps:
+After clicking on a mass operation, the user enters the mass-operation mode, which consists of several steps:
 
 1. [Select rows](#selecting_rows)
 2. [Review rows](#reviewing)
@@ -43,12 +43,12 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     ![massoperations3.png](massoperations3.png)
 
 !!! Specifics
-    * Bulk operations become available only if there is at least one row in the table.
+    * Mass operations become available only if there is at least one row in the table.
     * All requests are executed using the ID of the first selected row!
     * The operation runs in a single transaction: if an error occurs, the changes are rolled back for all selected rows.
     * An empty field in the confirmation form means "clear": the empty value is written to all selected rows.
     * In GroupingHierarchy only rows with records can be selected: a group row without its own record (an empty group, a row of totals) has a disabled checkbox. From Step 2 the table shows only the groups with selected rows.
-    * Rows are only viewed during a bulk operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
+    * Rows are only viewed during a mass operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
 
 
 ##### How to add?
@@ -75,7 +75,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             **Step 1** Download plugin
             [download Intellij Plugin](https://doc.cxbox.org/plugin/plugininstalling)
     
-            **Step 2** Add a bulk action to the corresponding service
+            **Step 2** Add a mass action to the corresponding service
     
             ![addmass.gif](addmass.gif)
     
@@ -178,7 +178,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 
 1. Checkboxes for selecting rows are displayed in the first column of the table (true = the row is selected).
 2. Filtering and sorting remain available.
-3. Rows become non-editable while in bulk-operation mode.
+3. Rows become non-editable while in mass-operation mode.
 4. All selected rows are displayed above the table as chips.
 
     * If the number of chips exceeds **N**, only the first **N** are shown; the rest are collapsed and replaced with the label **“+N values”**. Hovering over **“+N values”** displays a tooltip: *“Move on to Step 2 to see all the chosen rows.”*
@@ -190,7 +190,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 
 5. **Available actions**:
 
-    * **Cancel** — exits bulk-operation mode.
+    * **Cancel** — exits mass-operation mode.
     * **Next** — proceeds to Step 2, where only the selected rows are displayed.
 
 ## <a id="reviewing">Step 2. Review rows</a>
@@ -205,11 +205,11 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * Dynamic **Next / Apply** button:
 
         * **Next** — moves the user to Step 3 (confirmation).
-        * **Apply** — immediately executes the bulk action and navigates to the *View results* step.
+        * **Apply** — immediately executes the mass action and navigates to the *View results* step.
 
     * **Back** — returns the user to Step 1 (row selection).
       When returning to Step 1, the table resets to the first page and all filters are cleared.
-    * **Cancel** — exits bulk-operation mode without applying any changes.
+    * **Cancel** — exits mass-operation mode without applying any changes.
 
 ## <a id="confirming">Step 3. Confirm operation</a>
 ### How does it look?
@@ -279,7 +279,7 @@ Filtering/sorting of selected rows is available for any column, including status
 **Available actions:**
 
 1. **Close** – Exit the mass operation mode. The user returns to the normal table view, taking into account all changes made by the operation.
-   The postAction of the bulk action (for example, a message) runs at this moment, not when the action is executed.
+   The postAction of the mass action (for example, a message) runs at this moment, not when the action is executed.
 2. **Export** – Export rows to a file.
 
     * Ability to filter/sort the table before export.
@@ -297,16 +297,16 @@ Filtering/sorting of selected rows is available for any column, including status
 The operation is repeated for the failed rows in three steps:
 
 1. **Export** — on Step 4 click **Retry** → **Export failed**. An Excel file with the failed rows is downloaded.
-2. **Upload** — start the bulk operation again and on [Step 1](#selecting_rows) select **Select from file** in the gear menu. The rows from the file become selected.
+2. **Upload** — start the mass operation again and on [Step 1](#selecting_rows) select **Select from file** in the gear menu. The rows from the file become selected.
    Rows are matched only by ID: the exported file keeps it in a hidden column, so the file does not need to be edited.
-3. **Run again** — go through the steps of the bulk operation as usual.
+3. **Run again** — go through the steps of the mass operation as usual.
 
 
 ## Delete
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-Bulk record deletion can be performed. Successfully deleted records will no longer appear in the step results.
+Mass record deletion can be performed. Successfully deleted records will no longer appear in the step results.
 
 ### How does it look?
 ![deletemass.gif](deletemass.gif) 
@@ -322,4 +322,4 @@ Bulk record deletion can be performed. Successfully deleted records will no long
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
 ## <a id="crypto">Signing and encrypting</a>
-The files of the selected rows can be signed and encrypted with CryptoPro in a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/sign/).
+The files of the selected rows can be signed and encrypted with CryptoPro in a mass operation, see [Mass signing and encrypting](/widget/type/property/massoperations/sign/sign/).

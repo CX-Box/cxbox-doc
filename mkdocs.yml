@@ -117,9 +117,9 @@ nav:
      - Widget property Pagination: widget/type/property/pagination/pagination.md
      - Widget property Sorting: widget/type/property/sorting/sorting.md
      - Widget property Show condition: widget/type/property/showcondition/showcondition.md
-     - Widget property Bulk(Mass) operations:
-        - Basic: widget/type/property/massoperations/massoperations.md
-        - Signing and encrypting: widget/type/property/massoperations/sign/sign.md
+     - Widget property Mass operations:
+        - Mass operation Basic: widget/type/property/massoperations/massoperations.md
+        - Mass operation Signing and encrypting: widget/type/property/massoperations/sign/sign.md
   - About CXBOX work:
       - Frontend - Backend Interaction: basic/frontbackinteraction.md
   - Navigation:

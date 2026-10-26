@@ -7,6 +7,18 @@
 
 `Mass operations` are a mechanism that allows the user to perform a single action on a large number of table rows at once. Instead of processing each row individually, the user can select a set of data and apply a common operation to it—such as updating, deleting, changing statuses, recalculating values, and other typical scenarios.
 
+### How does it work?
+=== "List"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
+
+    ![mass_list.gif](mass_list.gif)
+=== "GroupingHierarchy"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101gh){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
+
+    ![mass_gh.gif](mass_gh.gif)
+
 ## Basic
 Mass operations save the user from repeating the same action row by row. They are used when the same change must be applied to many records at once, for example:
 
@@ -51,7 +63,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
     * Rows are only viewed during a mass operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
 
 
-##### How to add?
+#### How to add?
 
 ??? Example
     - **Step1**  Add actionGroups **massEdit**(Custom name) to corresponding **.widget.json**.

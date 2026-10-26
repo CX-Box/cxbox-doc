@@ -7,6 +7,17 @@
 
 `Bulk operations` are a mechanism that allows the user to perform a single action on a large number of table rows at once. Instead of processing each row individually, the user can select a set of data and apply a common operation to it—such as updating, deleting, changing statuses, recalculating values, and other typical scenarios.
 
+### What are bulk operations for?
+Bulk operations save the user from repeating the same action row by row. They are used when the same change must be applied to many records at once, for example:
+
+* **Set one value in all rows** — the user fills in the confirmation form once, and the values are written to every selected row (for example, assign a priority or a responsible employee to 200 requests).
+* **Change status** — move all selected records to another status (for example, close all processed requests).
+* **Delete** — remove the selected records, see [Delete](#delete).
+* **Recalculate** — recalculate the values of the selected rows by business rules without opening each record.
+* **Sign or encrypt** — sign or encrypt the files of the selected rows, see [Signing and encrypting](#crypto).
+
+The user sees the result for each row and can repeat the operation for the rows that failed, see [Retry for failed rows](#retry).
+
 This function is available for widgets:
 
  * [List](/widget/type/list/list) 
@@ -34,6 +45,8 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
 !!! Specifics
     * Bulk operations become available only if there is at least one row in the table.
     * All requests are executed using the ID of the first selected row!
+    * The operation runs in a single transaction: if an error occurs, the changes are rolled back for all selected rows.
+    * An empty field in the confirmation form means "clear": the empty value is written to all selected rows.
     * In GroupingHierarchy only rows with records can be selected: a group row without its own record (an empty group, a row of totals) has a disabled checkbox. From Step 2 the table shows only the groups with selected rows.
     * Rows are only viewed during a bulk operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
 
@@ -113,7 +126,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
             Parameters:
             
             * **`bc`** — business component context.
-            * **`data`** — data submitted from the confirmation dialog based on the *first row*.
+            * **`data`** — data submitted from the confirmation dialog based on the *first row*. An empty field means the field is cleared in every selected row.
             * **`ids`** — the set of IDs of all selected records.
             
             Inside the handler:
@@ -171,6 +184,7 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     * If the number of chips exceeds **N**, only the first **N** are shown; the rest are collapsed and replaced with the label **“+N values”**. Hovering over **“+N values”** displays a tooltip: *“Move on to Step 2 to see all the chosen rows.”*
     * A **“Clear”** button is displayed next to the chips. Clicking **Clear** deselects all checkboxes and removes all chips.
     * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing rows from a file exported on [Step 4](#result)).
+      Rows are matched only by ID: the exported Excel file keeps it in a hidden column.
 
         ![import.png](import.png)
 
@@ -216,6 +230,9 @@ After clicking on a bulk operation, the user enters the bulk-operation mode, whi
     ![confirmwithouttitle.png](confirmwithouttitle.png)
 
 You can enable or disable the confirmation step — if it’s disabled, the system moves directly to the *View results* stage.
+
+The values entered in the confirmation form are applied to all selected rows, for example, a new status or a priority.
+An empty field means "clear": after **Save** this field is empty in every selected row.
 
 In the confirmation step, you can customize 
 
@@ -275,6 +292,14 @@ Filtering/sorting of selected rows is available for any column, including status
     * The table is automatically filtered by failed rows.
     * File format fully compatible with uploading on Step 1 (**Select from file**).
     * Tooltip on hover: “A file with failed rows will be downloaded. To retry the operation for these rows, upload this file on Step 1 via ‘Select from File.’”
+
+### <a id="retry">Retry for failed rows</a>
+The operation is repeated for the failed rows in three steps:
+
+1. **Export** — on Step 4 click **Retry** → **Export failed**. An Excel file with the failed rows is downloaded.
+2. **Upload** — start the bulk operation again and on [Step 1](#selecting_rows) select **Select from file** in the gear menu. The rows from the file become selected.
+   Rows are matched only by ID: the exported file keeps it in a hidden column, so the file does not need to be edited.
+3. **Run again** — go through the steps of the bulk operation as usual.
 
 
 ## Delete

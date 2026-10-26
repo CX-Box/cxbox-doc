@@ -1,0 +1,41 @@
+# Что нового { #whats-new }
+
+## **cxbox**:
+
+### [v3.0.1](/ru/new/version3001/)
+### [v3.0.0](/ru/new/version3000/)  
+### [v2.0.19](/ru/new/version2019/)
+### [v2.0.18](/ru/new/version2018/)
+### [v2.0.17](/ru/new/version2017/)
+### [v2.0.16](/ru/new/version2016/)
+### [v2.0.15](/ru/new/version2015/)
+### [v2.0.14](/ru/new/version2014/)
+### [v2.0.13](/ru/new/version2013/)
+### [v2.0.12](/ru/new/version2012/)
+### [v2.0.11](/ru/new/version2011/)
+### [v2.0.10](/ru/new/version2010/)
+### [v2.0.9](/ru/new/version209/)
+### [v2.0.8](/ru/new/version208/)
+### [v2.0.7](/ru/new/version207/)
+### [v2.0.6](/ru/new/version206/)
+### [v2.0.5](/ru/new/version205/)
+### [v2.0.4](/ru/new/version204/)
+### [v2.0.3](/ru/new/version203/)
+### [v2.0.2](/ru/new/version202/)
+### [v2.0.2](/ru/new/version202/)
+### [v2.0.1](/ru/new/version201/)
+### [v2.0.0](/ru/new/version200/)
+### [v1.0.1](/ru/new/version101/)
+### [v1.0.0](/ru/new/version100/)
+ 
+## **Плагин**: { #plugin }
+
+### [2.0.4](/ru/new/plugin/plugin204)
+### [2.0.3](/ru/new/plugin/plugin203)
+### [2.0.2](/ru/new/plugin/plugin202)
+### [2.0.0](/ru/new/plugin/plugin200)
+### [1.8.0](/ru/new/plugin/plugin180)
+### [1.7.9](/ru/new/plugin/plugin179)
+### [1.7.8](/ru/new/plugin/plugin178)
+### [1.7.7](/ru/new/plugin/plugin177)
+### [1.7.1](/ru/new/plugin/plugin171)

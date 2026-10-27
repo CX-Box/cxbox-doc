@@ -9,12 +9,12 @@
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruelist){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-    ![mass_list_without_confirm.gif](mass_list_without_confirm.gif)
+    ![mass_list_without_confirm.gif](withoutconfirm/mass_list_without_confirm.gif)
 === "GroupingHierarchy"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruegh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
 
-    ![mass_gh_without_confirm.gif](mass_gh_without_confirm.gif)
+    ![mass_gh_without_confirm.gif](withoutconfirm/mass_gh_without_confirm.gif)
 
 `Mass operation without confirmation` is a [mass operation](/widget/type/property/massoperations/massoperations/) that is executed right after the rows are selected: the user clicks **Apply**, and the action is applied to all selected rows. The user does not enter any values.
 
@@ -27,15 +27,7 @@ It is used when the new values are known in advance or are calculated on the ser
 
 After the operation, the action can run a post-action, for example, show a message. It runs when the user clicks **Close** on [Step 3](#result).
 
-If the user must choose the values that are written to the rows, use [Mass operations with confirmation](/widget/type/property/massoperations/withconfirm/).
-To remove records, use [Mass delete](/widget/type/property/massoperations/delete/).
-
 The user sees the result for each row and can repeat the operation for the rows that failed, see [Retry for failed rows](#retry).
-
-This function is available for widgets:
-
- * [List](/widget/type/list/list) 
- * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
 
 After clicking on a mass operation, the user enters the mass-operation mode, which consists of several steps:
 
@@ -47,7 +39,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101checkboxtruelist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-![massoperations3.png](../massoperations3.png)
+![massoperations3.png](withoutconfirm/massoperations3.png)
 
 !!! Specifics
     * Mass operations become available only if there is at least one row in the table.
@@ -89,7 +81,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
     
             **Step 2** Add a mass action to the corresponding service
     
-            ![addmass.gif](../addmass.gif)
+            ![addmass.gif](addmass.gif)
     
         === "Example of writing code"
             === "List"
@@ -151,7 +143,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
 
 ## <a id="selecting_rows">Step 1. Select rows</a>
 ### How does it look?
-![mass_select_row2.png](../mass_select_row2.png)
+![mass_select_row2.png](mass_select_row2.png)
 
 1. Checkboxes for selecting rows are displayed in the first column of the table (true = the row is selected).
 2. Filtering and sorting remain available.
@@ -163,7 +155,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
     * A gear icon is available for chip-related actions, containing the option **“Select from file”** (importing rows from a file exported on [Step 3](#result)).
       Rows are matched only by ID: the exported Excel file keeps it in a hidden column.
 
-        ![import.png](../import.png)
+        ![import.png](import.png)
 
 5. **Available actions**:
 
@@ -172,7 +164,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
 
 ## <a id="reviewing">Step 2. Review rows</a>
 ### How does it look?
-![review.png](../review.png)
+![review.png](review.png)
 
 1. Selected rows from [Step 1. Select rows](#selecting_rows) are displayed in read-only mode.
 2. Checkboxes are disabled, and rows cannot be edited.
@@ -186,7 +178,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
 
 ## <a id="result">Step 3. View results</a>
 ### How does it look?
-![result.png](../result.png)
+![result.png](result.png)
 
 After performing a mass operation, the status for each row in the table is displayed:
 

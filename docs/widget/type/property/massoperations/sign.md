@@ -17,7 +17,7 @@ To use this functionality, the user must have the required [software CryptoPro](
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssigngh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/mass){:target="_blank"}
 
-    ![masssign.png](masssign.png)
+    ![masssign.png](sign/masssign.png)
 === "Encrypting"
     List:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptlist){:target="_blank"}
@@ -27,25 +27,27 @@ To use this functionality, the user must have the required [software CryptoPro](
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptgh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/mass){:target="_blank"}
 
-    ![massencrypt.png](massencrypt.png)
-=== "Signing and encrypting / Encrypting and signing"
-    Signing and encrypting, List:
+    ![massencrypt.png](sign/massencrypt.png)
+=== "Signing and encrypting"
+    List:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptlist){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
 
-    Signing and encrypting, GroupingHierarchy:
+    GroupingHierarchy:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptgh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
 
-    Encrypting and signing, List:
+    ![masssignencrypt.png](sign/masssignencrypt.png)
+=== "Encrypting and signing"
+    List:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
 
-    Encrypting and signing, GroupingHierarchy:
+    GroupingHierarchy:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsigngh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
 
-    ![masssignencrypt.png](masssignencrypt.png)
+    ![masssignencrypt.png](sign/masssignencrypt.png)
 
 ## Basic
 It saves the user from signing or encrypting documents one by one: the certificates are selected once, and the files of all selected rows are processed in one run. For example:
@@ -212,7 +214,7 @@ After clicking on the mass action, the user goes through the steps:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssigngh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/mass){:target="_blank"}
 
-    ![masssign.png](masssign.png)
+    ![masssign.png](sign/masssign.png)
 === "Encrypting"
     List:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptlist){:target="_blank"}
@@ -222,25 +224,27 @@ After clicking on the mass action, the user goes through the steps:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptgh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/mass){:target="_blank"}
 
-    ![massencrypt.png](massencrypt.png)
-=== "Signing and encrypting / Encrypting and signing"
-    Signing and encrypting, List:
+    ![massencrypt.png](sign/massencrypt.png)
+=== "Signing and encrypting"
+    List:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptlist){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
 
-    Signing and encrypting, GroupingHierarchy:
+    GroupingHierarchy:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptgh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
 
-    Encrypting and signing, List:
+    ![masssignencrypt.png](sign/masssignencrypt.png)
+=== "Encrypting and signing"
+    List:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
 
-    Encrypting and signing, GroupingHierarchy:
+    GroupingHierarchy:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsigngh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
 
-    ![masssignencrypt.png](masssignencrypt.png)
+    ![masssignencrypt.png](sign/masssignencrypt.png)
 
 The step works as [Select rows](/widget/type/property/massoperations/withconfirm/#selecting_rows) of mass operations: checkboxes in the first column, chips of the selected rows, **Clear** and **Select from file**.
 
@@ -251,7 +255,7 @@ The step works as [Select rows](/widget/type/property/massoperations/withconfirm
 
 ## <a id="reviewing">Step 2. Review rows</a>
 ### How does it look?
-![massreview.png](massreview.png)
+![massreview.png](sign/massreview.png)
 
 The step works as [Review rows](/widget/type/property/massoperations/withconfirm/#reviewing) of mass operations: only the selected rows are shown, read-only.
 
@@ -265,7 +269,7 @@ The step works as [Review rows](/widget/type/property/massoperations/withconfirm
 ### How does it look?
 If the CryptoPro browser plugin is not installed, the step shows a message with a link to the setup instructions, and only **Back** is available.
 
-![masscertificates.png](masscertificates.png)
+![masscertificates.png](sign/masscertificates.png)
 
 1. The user selects the certificates, as in the popup for one document: for signing, for encryption or both, by the operation type.
 2. **Available actions**:

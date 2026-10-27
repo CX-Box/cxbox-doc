@@ -5,19 +5,18 @@
 !!! Attention
     For small and medium data volumes. Use for synchronous processing within a single transaction when the data size is up to 10,000 rows.
 
-`Mass delete` is a [mass operation](/widget/type/property/massoperations/massoperations/) that removes all selected records in one run.
-
-### How does it work?
 === "List"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-    ![mass_delete.gif](mass_delete.gif)
+    ![mass_delete.gif](delete/mass_delete.gif)
 === "GroupingHierarchy"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101deletegh){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations/gh){:target="_blank"}
 
-    ![mass_delete_gh.gif](mass_delete_gh.gif)
+    ![mass_delete_gh.gif](delete/mass_delete_gh.gif)
+
+`Mass delete` is a [mass operation](/widget/type/property/massoperations/massoperations/) that removes all selected records in one run.
 
 ## Basic
 It saves the user from deleting records one by one, for example:
@@ -28,14 +27,7 @@ It saves the user from deleting records one by one, for example:
 Rows that cannot be deleted by business rules get the status **Fail**, the other rows are deleted.
 Successfully deleted records no longer appear in the results step.
 
-To change the data of the rows instead of deleting them, use [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/withoutconfirm/) or [Mass operations with confirmation](/widget/type/property/massoperations/withconfirm/).
-
 The user sees the result for each row and can repeat the operation for the rows that failed, see [Retry for failed rows](#retry).
-
-This function is available for widgets:
-
- * [List](/widget/type/list/list) 
- * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
 
 After clicking on a mass operation, the user enters the mass-operation mode, which consists of several steps:
 
@@ -47,7 +39,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101delete){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-![deletemass.gif](deletemass.gif) 
+![deletemass.gif](delete/deletemass.gif) 
 
 !!! Specifics
     * Mass operations become available only if there is at least one row in the table.
@@ -58,7 +50,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
     * In GroupingHierarchy only rows with records can be selected: a group row without its own record (an empty group, a row of totals) has a disabled checkbox. From Step 2 the table shows only the groups with selected rows.
     * Rows are only viewed during a mass operation, the file preview too: its arrows go through the rows, a row does not become active, the record form is not shown.
 
-#### How to add?
+### How to add?
 
 ??? Example
     - **Step1**  Add actionGroups **massDelete**(Custom name) to corresponding **.widget.json**.

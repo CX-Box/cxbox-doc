@@ -42,7 +42,7 @@ They differ in what the user does after the rows are selected. Choose the articl
 
 Steps: Select rows → Review rows → **Apply** → View results.
 
-:material-arrow-right: [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/withoutconfirm/)
+:material-arrow-right: [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/)
 
 ### <a id="withconfirm">Mass operations with confirmation</a>
 **When to use:** the user must choose the values that are written to all selected rows — the confirmation form is filled in once for all of them.
@@ -58,7 +58,7 @@ Steps: Select rows → Review rows → **Confirm operation** (form with values) 
 ### <a id="crypto">Mass signing and encrypting</a>
 **When to use:** the files of the selected rows must be signed or encrypted with CryptoPro in one run, the certificates are selected once.
 
-:material-arrow-right: [Mass signing and encrypting](/widget/type/property/massoperations/sign/sign/)
+:material-arrow-right: [Mass signing and encrypting](/widget/type/property/massoperations/sign/)
 
 ### <a id="delete">Mass delete</a>
 **When to use:** the user must remove many records at once.

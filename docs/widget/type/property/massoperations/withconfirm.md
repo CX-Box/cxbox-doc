@@ -4,10 +4,7 @@
 
 !!! Attention
     For small and medium data volumes. Use for synchronous processing within a single transaction when the data size is up to 10,000 rows.
-
-`Mass operation with confirmation` is a [mass operation](/widget/type/property/massoperations/massoperations/) with a confirmation step: before the action is executed, the user fills in a form once, and the values from the form are applied to all selected rows.
-
-### How does it work?
+ 
 === "List"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
@@ -19,6 +16,8 @@
 
     ![mass_gh.gif](mass_gh.gif)
 
+`Mass operation with confirmation` is a [mass operation](/widget/type/property/massoperations/massoperations/) with a confirmation step: before the action is executed, the user fills in a form once, and the values from the form are applied to all selected rows.
+
 ## Basic
 It is used when the user must choose the values that are written to all selected rows, for example:
 
@@ -26,16 +25,10 @@ It is used when the user must choose the values that are written to all selected
 * **Change status with user data** — set a new status together with a comment or a date chosen by the user.
 * **Clear a field** — leave the field empty in the form, and it is cleared in every selected row.
 
-The confirmation does not limit the action to writing the values from the form.
-In the same mass action, the server can also process the rows further and run a post-action, as in [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/withoutconfirm/):
-
 * write the values from the form and, in the same handler, change other fields, recalculate values or change the status;
 * return a post-action, for example, show a message. It runs when the user clicks **Close** on [Step 4](#result).
 
 See [Changing data and a post-action in one operation](#postaction).
-
-If the user does not have to enter anything, use [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/withoutconfirm/).
-To remove records, use [Mass delete](/widget/type/property/massoperations/delete/).
 
 The user sees the result for each row and can repeat the operation for the rows that failed, see [Retry for failed rows](#retry).
 
@@ -55,7 +48,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-![massoperations.png](massoperations.png)
+![massoperations.png](withconfirm/massoperations.png)
 
 !!! Specifics
     * Mass operations become available only if there is at least one row in the table.
@@ -187,7 +180,7 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
                 * `"The fields mass operation was completed!"` — message text.
 
 #### <a id="postaction">Changing data and a post-action in one operation</a>
-The confirmation step only collects the values. What happens to the rows is decided by `massInvoker`, the same handler as in [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/withoutconfirm/).
+The confirmation step only collects the values. What happens to the rows is decided by `massInvoker`, the same handler as in [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/).
 So one mass action with confirmation can:
 
 1. write the values from the confirmation form (`data`) to every selected row;
@@ -257,17 +250,17 @@ So one mass action with confirmation can:
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101list){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-    ![confirm.png](confirm.png)
+    ![confirm.png](withconfirm/confirm.png)
 === "With custom text"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101listtitle){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-    ![confirmwithcustomtitle.png](confirmwithcustomtitle.png)
+    ![confirmwithcustomtitle.png](withconfirm/confirmwithcustomtitle.png)
 === "Without title"
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6101/view/myexample6101listwithouttitle){:target="_blank"}
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/massoperations){:target="_blank"}
 
-    ![confirmwithouttitle.png](confirmwithouttitle.png)
+    ![confirmwithouttitle.png](withconfirm/confirmwithouttitle.png)
 
 The values entered in the confirmation form are applied to all selected rows, for example, a new status or a priority.
 An empty field means "clear": after **Save** this field is empty in every selected row.

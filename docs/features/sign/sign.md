@@ -256,7 +256,7 @@ How to add?
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign){:target="_blank"}
 
-The user can sign the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/sign/).
+The user can sign the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/).
 
 How to add?
 ??? Example
@@ -355,7 +355,7 @@ How to add?
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptlist){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt){:target="_blank"}
 
-The user can encrypt the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/sign/).
+The user can encrypt the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/).
 
 How to add?
 ??? Example
@@ -607,7 +607,7 @@ How to add?
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptlist){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt){:target="_blank"}
 
-The user can sign and encrypt the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/sign/).
+The user can sign and encrypt the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/).
 
 How to add?
 ??? Example
@@ -897,7 +897,7 @@ How to add?
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign){:target="_blank"}
 
-The user can encrypt and sign the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/sign/).
+The user can encrypt and sign the files of several rows at once with a bulk operation, see [Bulk signing and encrypting](/widget/type/property/massoperations/sign/).
 
 How to add?
 ??? Example

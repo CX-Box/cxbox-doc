@@ -30,13 +30,6 @@ It is used when the user must choose the values that are written to all selected
 
 See [Changing data and a post-action in one operation](#postaction).
 
-The user sees the result for each row and can repeat the operation for the rows that failed, see [Retry for failed rows](#retry).
-
-This function is available for widgets:
-
- * [List](/widget/type/list/list) 
- * [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
-
 After clicking on a mass operation, the user enters the mass-operation mode, which consists of several steps:
 
 1. [Select rows](#selecting_rows)

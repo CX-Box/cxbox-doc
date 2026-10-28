@@ -52,7 +52,7 @@ You can see the number of requests in different sections.
 
 [:material-play-circle: Live Sample]({{ external_links.demo }}/actuator/metrics/platform-requests){:target="_blank"} Statistics of all requests to UI
 
-[:material-play-circle: Live Sample]({{ external_links.demo }}/actuator/metrics/platform-requests?tag=screen:client&tag=user:JOHN%20SNOW){:target="_blank"} Statistics of all requests to screen clients and user
+[:material-play-circle: Live Sample]({{ external_links.demo }}/actuator/metrics/platform-requests?tag=screen:client&tag=user:DEMO){:target="_blank"} Statistics of all requests to screen clients and user
 
 Example request:
 
@@ -62,7 +62,7 @@ Example request:
 
 You can filter by several sections at once.
 
-`{{ external_links.demo }}/actuator/metrics/platform-requests?tag=screen:client&tag=user:JOHN%20SNOW` All requests to user and  screen clients
+`{{ external_links.demo }}/actuator/metrics/platform-requests?tag=screen:client&tag=user:DEMO` All requests to user and  screen clients
  
 ####  How does it look?
 === "Statistics of all requests to UI"
@@ -103,22 +103,8 @@ You can filter by several sections at once.
     Custom metrics start name: "platform-requests"
     
     ```java
-    package org.demo.conf.cxbox.metrics;
-    
-    import io.micrometer.core.instrument.Counter;
-    import io.micrometer.core.instrument.MeterRegistry;
-    import java.util.Optional;
-    import java.util.stream.Stream;
-    import org.cxbox.core.crudma.CrudmaActionHolder.CrudmaAction;
-    import org.cxbox.core.crudma.CrudmaEvent;
-    import org.cxbox.core.crudma.bc.BusinessComponent;
-    import org.demo.conf.security.cxboxkeycloak.CxboxKeycloakAccount;
-    import org.springframework.context.ApplicationListener;
-    import org.springframework.security.core.Authentication;
-    import org.springframework.security.core.context.SecurityContext;
-    import org.springframework.security.core.context.SecurityContextHolder;
-    import org.springframework.stereotype.Component;
-    
+
+    @Slf4j
     @Component
     public class CrudmaEventListener implements ApplicationListener<CrudmaEvent> {
     
@@ -126,8 +112,14 @@ You can filter by several sections at once.
     
         private final MeterRegistry registry;
     
-        public CrudmaEventListener(MeterRegistry registry) {
+        private final SessionService sessionService;
+    
+        private final UserRepository userRepository;
+    
+        public CrudmaEventListener(MeterRegistry registry, SessionService sessionService, UserRepository userRepository) {
             this.registry = registry;
+            this.sessionService = sessionService;
+            this.userRepository = userRepository;
             registry.counter("platform-requests");
         }
     
@@ -141,6 +133,7 @@ You can filter by several sections at once.
                     "bc", Optional.ofNullable(bc.getName()).orElse(UNDEFINED),
                     "crudmaAction", Optional.ofNullable(crudmaAction.getName()).orElse(UNDEFINED),
                     "user", Optional.ofNullable(getUserLogin()).orElse(UNDEFINED),
+                    "userFullName", Optional.ofNullable(getUserFullName()).orElse(UNDEFINED),
                     "error", event.getException() == null ? "false" : "true"
             );
             counter.increment();
@@ -149,14 +142,29 @@ You can filter by several sections at once.
         public static String getUserLogin() {
             return Stream.of(SecurityContextHolder.getContext())
                     .map(SecurityContext::getAuthentication)
-                    .map(Authentication::getDetails)
-                    .filter(CxboxKeycloakAccount.class::isInstance)
-                    .map(CxboxKeycloakAccount.class::cast)
+                    .map(Authentication::getName)
                     .findFirst()
-                    .map(CxboxKeycloakAccount::getUsername)
                     .orElse(null);
         }
     
+        /**
+         * Full name is not unique and may change, so it goes to a separate tag and the "user" tag keeps the login
+         */
+        private String getUserFullName() {
+            try {
+                return Optional.ofNullable(sessionService.getSessionUser())
+                        .map(IUser::getId)
+                        .flatMap(userRepository::findById)
+                        .map(User::getFullName)
+                        .filter(fullName -> !fullName.isEmpty())
+                        .orElse(null);
+            } catch (Exception e) {
+                log.debug("Cannot resolve user full name for metrics", e);
+                return null;
+            }
+        }
+    
     }
+
     ```
  

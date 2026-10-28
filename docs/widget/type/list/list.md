@@ -711,6 +711,13 @@ see [Personal filter group](/widget/type/property/filtration/filtration/#by-pers
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616list){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 
+###### Personal filter group with FullTextSearch
+When the widget has both the full text search and the personal filter group, the text of the full text search is saved in the group together with the filters of the columns
+(`_fullTextSearch` in `filters` of the group) and is searched again when the group is applied.
+see [Personal filter group with fulltextsearch](/widget/type/property/filtration/filtration/#personal_filter_group_with_fulltextsearch)
+
+![filtergroup_fulltextsearch.gif](../property/filtration/filtergroup_fulltextsearch.gif)
+
 ##### Filter group
 `Filter group` - predefined filters settings that users can use in an application. They allow users to quickly apply specific filtering criteria without having to manually input.
 see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)

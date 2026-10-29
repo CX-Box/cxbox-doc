@@ -61,7 +61,7 @@ Steps: Select rows → Review rows → **Confirm operation** (form with values) 
 
 ### <a id="crypto">Mass signing and encrypting</a>
 <video controls width="800">
-<source src="/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
+<source src="/widget/type/property/massoperations/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
 </video>
 **When to use:** the files of the selected rows must be signed or encrypted with CryptoPro in one run, the certificates are selected once.
 

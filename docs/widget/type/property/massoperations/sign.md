@@ -1,4 +1,5 @@
 # Mass signing and encrypting
+Available since [v3.0.2](/new/version3002/)
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign){:target="_blank"}
 

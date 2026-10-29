@@ -1,0 +1,5390 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.2.5">
+    
+    
+      
+        <title>3.0.2 - CXBox Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-SEVVVTLFB8"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-SEVVVTLFB8",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-SEVVVTLFB8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#302" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CXBox Documentation" class="md-header__button md-logo" aria-label="CXBox Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CXBox Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.0.2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CX-Box/cxbox-doc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CXBox Documentation" class="md-nav__button md-logo" aria-label="CXBox Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    CXBox Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CX-Box/cxbox-doc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../whatsnew/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What’s new
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Versions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Versions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    cxbox
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            cxbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version3001/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v3.0.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version3000/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v3.0.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.19
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.18
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.17
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.16
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.15
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2014/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2013/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.13
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2012/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.12
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version2010/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version209/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version208/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2.0.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v1.0.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version100/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v1.0.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    plugin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            plugin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.0.4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.0.3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.0.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.0.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin180/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin179/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7.9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin178/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7.8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin177/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7.7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/plugin171/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guides for work with documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Guides for work with documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/analystguide/analystguide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For analysts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/developerguide/developerguide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For developers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started cxbox
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started cxbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/getstartedfordevelopers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Postgres
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Postgres
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/postgres/getstartedfordeveloperspostgres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/postgres/addenvironment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/postgres/addscreen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add screen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/postgres/addview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add view
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/postgres/addwidget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add widget and field
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microservice
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Microservice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/microservice/getstartedfordevelopersmicroservice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/microservice/addenvironment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/microservice/addscreen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add screen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/microservice/addview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add view
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/microservice/addwidget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add widget
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/microservice/addfield/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add field
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Field types
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Field types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/fieldtypes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/filtersearchoperation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SearchOperation for filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/checkbox/checkbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field checkbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/date/date/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/dateTime/dateTime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field dateTime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field dateTimeWithSeconds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/dictionary/dictionary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field dictionary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/fileUpload/fileUpload/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field fileUpload
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/hidden/hidden/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field hidden
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/hint/hint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field hint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/inlinePickList/inlinePickList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field inlinePickList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/input/input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field input
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/money/money/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field money
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/multifield/multifield/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field multifield
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/multivalue/multivalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field multivalue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/multivalueHover/multivalueHover/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field multivalueHover
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/multivalueTree/multivalueTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field multivalueTree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/multipleSelect/multipleSelect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field multipleSelect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/number/number/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field number
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/percent/percent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field percent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/pickList/pickList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field pickList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/pickTree/pickTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field pickTree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/radio/radio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/richtext/richtext/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field richText
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/suggestionpicklist/suggestionPickList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field suggestionPickList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/text/text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field text
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/fields/field/time/time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Field time
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Widget types
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Widget types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/widget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widgets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/additionalinfo/additionalinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget AdditionalInfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/additionallist/additionallist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget AdditionalList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/assoclistpopup/assoclistpopup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget AssocListPopup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/assoctreepopup/assoctreepopup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget AssocTreePopup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/calendarlist/calendarlist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget CalendarList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/cardcarousellist/cardcarousellist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget CardCarouselList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/cardlist/cardlist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget CardList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/column2d/column2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Column2D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/emptywidget/emptywidget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget EmptyWidget
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/filepreview/filepreview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget FilePreview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/form/form/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Form
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/formpopup/formpopup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget FormPopup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/groupinghierarchy/groupinghierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget GroupingHierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/headerwidget/headerwidget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget HeaderWidget
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/info/info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Info
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/list/list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/line2d/line2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Line2D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/picklistpopup/picklistpopup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget PickListPopup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/picktreepopup/picktreepopup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget PickTreePopup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/pie1d/pie1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Pie1D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/statblocks/statblocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget StatsBlock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/steps/steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/tree/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Widget property
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Widget property
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/defaultlimitpage/defaultlimitpage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget property Page limit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Widget property Export
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Widget property Export
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/Widget property/export/excel/excel.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Widget property File Options
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Widget property File Options
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/multiupload/multiupload/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-upload files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/filtration/filtration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget property Filtration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/pagination/pagination/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget property Pagination
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/sorting/sorting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget property Sorting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/showcondition/showcondition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget property Show condition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Widget property Mass operations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Widget property Mass operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/massoperations/massoperations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mass operation Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/massoperations/withoutconfirm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mass operation Without confirmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/massoperations/withconfirm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mass operation With confirmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/massoperations/sign/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mass operation Signing and encrypting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../widget/type/property/massoperations/delete/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mass operation Delete
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About CXBOX work
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            About CXBOX work
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/frontbackinteraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frontend - Backend Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Navigation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Navigation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tabs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tabs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1_1" >
+        
+          <label class="md-nav__link" for="__nav_10_1_1" id="__nav_10_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Standard
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Standard
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/tabs/standard/basic/tab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/tabs/standard/basicdevelop/tabfordevelop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic for developer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    View
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            View
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/view/view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Screen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Screen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/screen/screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/browsernavigationbuttons/browsernavigationbuttons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browser navigation buttons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Repository elements
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Repository elements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/repository/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/entity/entity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/dto/dto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DTO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/service/service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5" >
+        
+          <label class="md-nav__link" for="__nav_11_5" id="__nav_11_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MetaBuilder
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_5">
+            <span class="md-nav__icon md-icon"></span>
+            MetaBuilder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/meta/metabuilder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5_2" >
+        
+          <label class="md-nav__link" for="__nav_11_5_2" id="__nav_11_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    buildIndependentMeta
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            buildIndependentMeta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/meta/buildindependentmeta/defaultgh/defaultgh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    defaultGroupingHierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5_3" >
+        
+          <label class="md-nav__link" for="__nav_11_5_3" id="__nav_11_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    buildRowDependentMeta
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            buildRowDependentMeta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/meta/buildrowdependentmeta/isfieldchangednow/isfieldchangednow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    isFieldChangedNow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/meta/buildrowdependentmeta/sethidden/sethidden/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    setHidden
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/controller/controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/jparepository/jparepository/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Actions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/actions/actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1_2" >
+        
+          <label class="md-nav__link" for="__nav_12_1_2" id="__nav_12_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    postAction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            postAction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/actions/postaction/drilldownandwaituntil/ddandwaituntil/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    waitUntil and drillDownAndWaitUntil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Authorization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/authorization/basic/basicauthorization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Authorization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/authorization/keycloak/keycloakauthorization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keycloak Authorization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
+        
+          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/database/oracle/oraclebd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oracle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/database/postgres/postgresbd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Postgres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DrillDown
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            DrillDown
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/drilldown/drilldown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/drilldown/drilldowntype/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DrillDown Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" >
+        
+          <label class="md-nav__link" for="__nav_12_5" id="__nav_12_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FileStorage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_5">
+            <span class="md-nav__icon md-icon"></span>
+            FileStorage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/filestorage/fileStorage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/filestorage/minio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/locale/locale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_7" >
+        
+          <label class="md-nav__link" for="__nav_12_7" id="__nav_12_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monitoring tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_7">
+            <span class="md-nav__icon md-icon"></span>
+            Monitoring tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/monitoringtools/metrics/performancemetrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_8" >
+        
+          <label class="md-nav__link" for="__nav_12_8" id="__nav_12_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microservices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_8">
+            <span class="md-nav__icon md-icon"></span>
+            Microservices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/microservices/microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_8_2" >
+        
+          <label class="md-nav__link" for="__nav_12_8_2" id="__nav_12_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/microservices/existingmicroservices/existingmicroservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connecting an existing microservices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/microservices/microservices_users_action/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work with DAO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_9" >
+        
+          <label class="md-nav__link" for="__nav_12_9" id="__nav_12_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notifications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_9">
+            <span class="md-nav__icon md-icon"></span>
+            Notifications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/notifications/email/email/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sent to email
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/element/notifications/push/websocket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Push
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/happynewyear/happynewyear/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New Year Theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sign/sign/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Signing and encrypting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Advanced customization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced customization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advancedCustomization/element/drilldown/drilldown.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DrillDown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advancedCustomization/element/validation/validation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advancedCustomization/element/filtration/filtration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advancedCustomization/element/searchparameter/searchparameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SearchParameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Plugin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Plugin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugin/plugininstalling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install and Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-updates-september-2026" class="md-nav__link">
+    Key updates September 2026
+  </a>
+  
+    <nav class="md-nav" aria-label="Key updates September 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cxbox-demo" class="md-nav__link">
+    CXBOX (Demo)
+  </a>
+  
+    <nav class="md-nav" aria-label="CXBOX (Demo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added-authorization-new-popup-on-expired-sessioninsufficient-roles" class="md-nav__link">
+    Added: Authorization - NEW popup on expired session/insufficient roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-authorization-improved-access-token-renewal-a-refresh-token-is-sent-once-for-all-tabs-and-through-f5" class="md-nav__link">
+    Fixed: Authorization - IMPROVED access token renewal: a refresh token is sent once, for all tabs and through F5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-authorization-improved-user_roles-db-sync-to-roles-from-keycloakoidc" class="md-nav__link">
+    Fixed: Authorization - IMPROVED user_roles db sync to roles from Keycloak/OIDC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added-error-popup-improved-button-copy-details" class="md-nav__link">
+    Added: Error popup - IMPROVED button 'Copy details'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-notifications-close-all-button-was-always-visible" class="md-nav__link">
+    Fixed: Notifications - "Close all" button was always visible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-changes" class="md-nav__link">
+    Other Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cxbox-503-core" class="md-nav__link">
+    CXBOX 5.0.3 (Core)
+  </a>
+  
+    <nav class="md-nav" aria-label="CXBOX 5.0.3 (Core)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added-drilldowns-with-field-based-filter-hint-field" class="md-nav__link">
+    Added: Drilldowns with field-based filter – hint field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/CX-Box/cxbox-doc/edit/main/docs/new/version3002.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="302">3.0.2</h1>
+<ul>
+<li>
+<p><a href="https://github.com/CX-Box/cxbox-demo/tree/v.3.0.2">cxbox/demo 3.0.2 git</a>, <a href="https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2">release notes</a></p>
+</li>
+<li>
+<p><a href="https://github.com/CX-Box/cxbox/tree/cxbox-5.0.2">cxbox/core 5.0.2 git</a>, <a href="https://github.com/CX-Box/cxbox/releases/tag/cxbox-5.0.2">release notes</a>, <a href="https://central.sonatype.com/artifact/org.cxbox/cxbox-starter-parent/5.0.2">maven</a></p>
+</li>
+<li>
+<p><a href="https://github.com/CX-Box/cxbox-ui/tree/2.8.2">cxbox-ui/core 2.8.2 git</a>, <a href="https://github.com/CX-Box/cxbox-ui/releases/tag/2.8.2">release notes</a>, <a href="https://www.npmjs.com/package/@cxbox-ui/core/v/2.8.2">npm</a></p>
+</li>
+</ul>
+<h2 id="key-updates-september-2026"><strong>Key updates September 2026</strong></h2>
+<h3 id="cxbox-demo">CXBOX (<a href="https://demo.cxbox.org">Demo</a>)</h3>
+<h4 id="added-authorization-new-popup-on-expired-sessioninsufficient-roles"><a id="signInAgain">Added: Authorization - NEW popup on expired session/insufficient roles</a></h4>
+<!-- CXBOX-1384 -->
+
+<p>When the backend answers <code>401 Unauthorized</code> (the session has expired) or <code>403 Forbidden</code> (the user has no roles), the user now sees a popup instead of empty widgets and endless spinners.</p>
+<p>The popup has two buttons and a cross:</p>
+<ul>
+<li><strong>Sign in again</strong> goes to the OIDC provider and back to the same screen. While the SSO session of the provider is alive, no password is asked. If it is over, the login page opens.</li>
+<li><strong>Sign out</strong> does the same as the <strong>Log out</strong> button in the user menu.</li>
+<li>The cross closes the popup, so the user can copy unsaved data. The popup does not come back for 30 seconds (<code>AUTH_ERROR_SNOOZE_SECONDS</code>), even if more requests fail.</li>
+<li>If the OIDC provider is not reachable, both buttons leave the popup open and it says so. What the user has typed is not lost, and the user can try again.</li>
+</ul>
+<p><strong>Session has expired (401)</strong>  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">After</label><label for="__tabbed_1_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>A popup is shown, every widget stays as it was.<br />
+<img alt="CXBOX-1384_401_after.png" src="../v3.0.2/CXBOX-1384_401_after.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>The request silently failed, widgets were left empty and nothing explained what happened.<br />
+<img alt="CXBOX-1384_401_before.png" src="../v3.0.2/CXBOX-1384_401_before.png" /></p>
+</div>
+</div>
+</div>
+<p><strong>Insufficient permissions (403)</strong>  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">After</label><label for="__tabbed_2_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The popup names the reason.<br />
+<img alt="CXBOX-1384_403_after.png" src="../v3.0.2/CXBOX-1384_403_after.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>An empty "Error" popup without any text.<br />
+<img alt="CXBOX-1384_403_before.png" src="../v3.0.2/CXBOX-1384_403_before.png" /></p>
+</div>
+</div>
+</div>
+<p><strong>Sign in of a user without roles</strong><br />
+The same popup is shown when a user without roles signs in. The application has not loaded yet at this point, so there is nothing behind the popup but the empty start page.  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The popup on the empty start page: <strong>Sign out</strong> lets the user sign in as someone else.<br />
+<img alt="CXBOX-1384_login_without_roles_after.png" src="../v3.0.2/CXBOX-1384_login_without_roles_after.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>The application stayed on the loading spinner forever.<br />
+<img alt="CXBOX-1384_login_without_roles_before.png" src="../v3.0.2/CXBOX-1384_login_without_roles_before.png" /></p>
+</div>
+</div>
+</div>
+<p><strong>Configuration</strong></p>
+<p>Three constants in <code>ui/src/constants/index.ts</code>. They do not depend on each other, and the application works with any combination. The second and the third are the way back to the old behavior if something goes wrong at your OIDC provider.</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AUTH_ERROR_MODE</code></td>
+<td><code>soft</code> (default): the popup can be closed with the cross. <br> <code>strict</code>: no cross, the user either signs in again or signs out.</td>
+</tr>
+<tr>
+<td><code>USER_MANAGER</code></td>
+<td><code>rotationSafe</code> (default): <code>RotationSafeUserManager</code>, see <a href="#tokenRenewal">token renewal</a>. <br> <code>original</code>: <code>UserManager</code> of oidc-client-ts with the settings as before 3.0.2. The token is renewed only in the background, in every tab. A request with an expired token opens the popup.</td>
+</tr>
+<tr>
+<td><code>SIGN_IN_CALLBACK_DETECTION</code></td>
+<td>How the page learns at load that the OIDC provider returned the browser to it. <br> <code>oidcResponse</code> (default): by the response of the provider in the URL, <code>state</code> with <code>code</code> or <code>error</code>. <br> <code>signInCallbackParam</code>: by our <code>sign_in_callback</code> parameter from <code>redirect_uri</code>, as before 3.0.2. It stands after <code>#</code>, and a provider may drop it.</td>
+</tr>
+</tbody>
+</table>
+<p><code>USER_MANAGER</code> and <code>SIGN_IN_CALLBACK_DETECTION</code> can also be switched for one browser, without a rebuild: the autotests compare the two values of each this way, and the support team can switch one user. Reload the page after it; <code>removeItem()</code> brings the build constant back.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'cxbox.userManager'</span><span class="p">,</span><span class="w"> </span><span class="s1">'original'</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'cxbox.signInCallbackDetection'</span><span class="p">,</span><span class="w"> </span><span class="s1">'signInCallbackParam'</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">soft</label><label for="__tabbed_4_2">strict</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The popup with the cross.<br />
+<img alt="CXBOX-1384_401_after.png" src="../v3.0.2/CXBOX-1384_401_after.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>The popup without the cross.<br />
+<img alt="CXBOX-1384_401_after_strict.png" src="../v3.0.2/CXBOX-1384_401_after_strict.png" /></p>
+</div>
+</div>
+</div>
+<h4 id="fixed-authorization-improved-access-token-renewal-a-refresh-token-is-sent-once-for-all-tabs-and-through-f5"><a id="tokenRenewal">Fixed: Authorization - IMPROVED access token renewal: a refresh token is sent once, for all tabs and through F5</a></h4>
+<!-- CXBOX-1384 -->
+
+<p>All tabs of the application in one browser share the stored user and therefore one refresh token (<code>localStorage</code>). With refresh token rotation in the OIDC provider (Keycloak <em>Revoke Refresh Token</em>, Blitz, Auth0, Okta; recommended by <a href="https://www.rfc-editor.org/rfc/rfc9700">RFC 9700</a>) a refresh token works once. A second use looks like theft: the provider rejects it and can close the whole session. The user sees 401 errors, and clearing the browser cache "helps".</p>
+<p><code>oidc-client-ts</code> does not protect against this. The issue is open since 2022: <a href="https://github.com/authts/oidc-client-ts/issues/430">oidc-client-ts #430</a>, the fix <a href="https://github.com/authts/oidc-client-ts/pull/434">PR #434</a> was never merged, the same within one tab: <a href="https://github.com/authts/oidc-client-ts/issues/1618">#1618</a>. Keycloak considers it the client's job: <a href="https://github.com/keycloak/keycloak/issues/16081">keycloak #16081</a>.</p>
+<ul>
+<li>Before 3.0.2 the same refresh token was sent twice:<ul>
+<li>by two tabs at the same moment: the background timer of <code>oidc-client-ts</code> fires in every tab;</li>
+<li>after F5 or a closed tab in the middle of a renewal: the new page sent the token that was already on its way;</li>
+<li>by the websocket of notifications, which called <code>signinSilent()</code> on its own before every reconnect;</li>
+<li>and an expired token was sent as is, because <code>getUser()</code> does not renew anything: the backend answered 401 and the widgets were left empty.</li>
+</ul>
+</li>
+<li>Since 3.0.2 the new class <code>RotationSafeUserManager</code> (<code>ui/src/auth/rotationSafeUserManager</code>) is used instead of <code>UserManager</code>. It extends <code>UserManager</code>, overrides its methods and adds none. The folder depends only on <code>oidc-client-ts</code> and can be copied to any project as it is; see <code>README.md</code> in the folder.<ul>
+<li><strong>The invariant.</strong> Each refresh token is sent to the provider at most once: for all tabs, after any page reload.</li>
+<li><strong>The guard.</strong> Before a tab sends a refresh token, it writes a lock for this token to IndexedDB. The write is atomic for all tabs and survives F5 and a browser crash. A tab that finds the token locked sends nothing and takes the tokens that the sender stored.</li>
+<li><strong>A burnt token.</strong> The token was sent, but no new tokens came: a refusal, a timeout, a lost answer, F5, a closed tab. Nobody knows if the provider used it, so it is never sent again. The session goes on with the SSO cookie of the provider, see the table below.</li>
+<li><code>getUser()</code> renews a token that expires within 5 seconds before it returns it, the way <code>keycloak.updateToken(5)</code> did before <code>oidc-client-ts</code>. The request interceptor and the websocket take the token through it, nobody calls <code>signinSilent()</code> on its own.</li>
+<li>The renewal ahead of expiry (60 seconds before) still starts in every tab, but the token is sent once.</li>
+<li>A <a href="https://developer.mozilla.org/docs/Web/API/Web_Locks_API">Web Lock</a> only lets a tab wait for the tab that is renewing. It is not the guard: without Web Locks (plain http) the token is still never sent twice.</li>
+<li>The websocket reconnects without a limit, the delay doubles after every failure up to 30 seconds (<code>maxReconnectDelay</code> in <code>ui/src/constants/notification.ts</code>). Without a valid token no handshake is sent: the popup is shown with the websocket request in its details, and the client tries again after the delay.</li>
+<li>When a renewal fails, the browser console gets a warning, and the reasons go to <strong>Copy details</strong> of the popup, for example <code>Refresh token: invalid_grant. Hidden iframe: IFrame timed out without a response</code>.</li>
+</ul>
+</li>
+</ul>
+<p>What the user sees:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>The provider shares the site with the application (the hidden iframe works)</th>
+<th>The provider is on another site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two tabs renew at the same time</td>
+<td>One tab sends the token, the other takes the result. Nothing is seen.</td>
+<td>The same.</td>
+</tr>
+<tr>
+<td>The provider is slow, the user presses F5 or closes the tab during a renewal</td>
+<td>The token is burnt, the renewal goes through the hidden iframe. Nothing is seen.</td>
+<td>The token is burnt. When the access token expires, the popup opens. <strong>Sign in again</strong> needs no password.</td>
+</tr>
+<tr>
+<td>A network failure or a lost answer during a renewal</td>
+<td>The same as above.</td>
+<td>The same as above.</td>
+</tr>
+<tr>
+<td>F5 during the sign in, while the code is exchanged for tokens</td>
+<td>The sign in restarts by itself, no password. After 2 restarts in a row the popup opens, so a broken provider does not cause endless redirects. Before 3.0.2: an endless spinner.</td>
+<td>The same.</td>
+</tr>
+<tr>
+<td>The browser has no IndexedDB</td>
+<td>The application creates the <code>original</code> <code>UserManager</code> for this browser, whatever <code>USER_MANAGER</code> says: the locks of <code>RotationSafeUserManager</code> live in IndexedDB. <strong>Copy details</strong> shows it as <code>indexedDb: false</code>.</td>
+<td>The same.</td>
+</tr>
+</tbody>
+</table>
+<p>Nothing in the application is switched off to test any of this. The UI tests in <code>cxbox-code-samples</code> provoke the races from the outside and read the refresh tokens out of the requests the browser really sent: the network of a tab is held or slowed down, a tab is frozen the way a browser freezes a background tab, the page is reloaded in the middle of a renewal, a refresh token is spent from the test itself. The same scenario runs with both values of <code>USER_MANAGER</code> and of <code>SIGN_IN_CALLBACK_DETECTION</code>, and the expected result of each value is written in the test (<code>TokenRenewalAcrossTabsTest</code>, <code>SignInAgainPopupTest</code>, <code>WebSocketSessionTest</code>).</p>
+<p><strong>Timings.</strong> Their ratio matters when a project tunes its OIDC provider:</p>
+<ul>
+<li>The token is renewed ahead of expiry 60 seconds before it expires (<code>accessTokenExpiringNotificationTimeInSeconds</code>, the library default).</li>
+<li><code>getUser()</code> renews a token that expires within 5 seconds.</li>
+<li>A request with the refresh token waits for the answer up to 50 seconds (<code>SILENT_REQUEST_TIMEOUT_SECONDS</code>), so it ends before the token expires. The other requests to the provider wait up to 60 seconds (<code>OIDC_REQUEST_TIMEOUT_SECONDS</code>). A renewal that ends by this timeout burns the token, so a stand with a slow provider may make both longer through <code>app.oidc</code> (<code>silentRequestTimeoutInSeconds</code>, <code>requestTimeoutInSeconds</code>), but cannot remove them.</li>
+<li>The hidden iframe is given 30 seconds: it loads the page of the provider and then the application itself at <code>silent_redirect_uri</code>. Where the provider forbids frames no answer comes at all.</li>
+<li>The closed popup stays closed for 30 seconds (<code>AUTH_ERROR_SNOOZE_SECONDS</code>).</li>
+</ul>
+<p>Recommended limits for the OIDC provider (Keycloak names in brackets):</p>
+<ul>
+<li>Access token lifetime (<em>Access Token Lifespan</em>, demo containers: 2 minutes, demo.cxbox.org: 5 minutes): not less than 2 minutes. It has to stay well above the 60 second renewal margin, otherwise every freshly renewed token is already "expiring" and is renewed in a loop.</li>
+<li>Idle timeout of the session (<em>SSO Session Idle</em>, demo: 30 minutes) and the refresh token lifetime derived from it: longer than the access token lifetime. It is the time a user may stay idle before the next request ends in the popup.</li>
+<li>Refresh token rotation (<em>Revoke Refresh Token</em>, on in the demo containers): allowed, this release is about it.</li>
+<li>Signing keys of the realm (<em>Realm settings - Keys</em>): the realm needs an HMAC key for HS512, and not only the HS256 an older export may carry. Keycloak signs the cookie that restarts a login with it, and when the key is missing it makes one at the first sign in - several first sign ins at once each start making their own, the cookie signed in one state is verified against another, and the log fills with <code>cookie_not_found</code> and <code>invalid_code</code> while the sign in hangs until its timeout. It cost the demo containers exactly that until the key was added to the realm export.</li>
+</ul>
+<p><strong>How to merge into a project</strong></p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ui/src/auth/rotationSafeUserManager/</code>, <code>ui/src/auth/platformSession.ts</code>, <code>ui/src/components/AuthErrorPopup/</code>, <code>ui/src/components/ui/RequestErrorDetails/</code>, <code>ui/src/utils/requestErrorInfo.ts</code></td>
+<td>New files: copy.</td>
+</tr>
+<tr>
+<td><code>ui/src/auth/index.ts</code></td>
+<td><code>Auth.init</code> builds one <code>UserManager</code> for callers that start together; <code>USER_MANAGER</code> chooses the class. The settings of the provider are as before.</td>
+</tr>
+<tr>
+<td><code>ui/src/api/index.ts</code></td>
+<td>The request interceptor is <code>platformSession.authorizeRequest</code>.</td>
+</tr>
+<tr>
+<td><code>ui/src/epics/session.ts</code></td>
+<td><code>ssoAuthEpic</code> and <code>logoutEpic</code> call <code>platformSession</code>. New <code>httpError401Epic</code> and <code>httpErrorDefaultEpic</code> open the popup on 401 and 403.</td>
+</tr>
+<tr>
+<td><code>useNotificationClient.ts</code></td>
+<td>The handshake token comes from <code>platformSession.authorizeWebSocketUrl</code>.</td>
+</tr>
+<tr>
+<td><code>AppLayout.tsx</code>, <code>constants/index.ts</code>, <code>actions</code>, <code>reducers/session.ts</code>, <code>reducers/view.ts</code>, <code>ErrorPopup</code>, i18n</td>
+<td>The popup is mounted, its state and texts, the three constants.</td>
+</tr>
+<tr>
+<td>Project code that calls <code>Auth.getInstance().getUser()</code> or <code>signinSilent()</code></td>
+<td>Keeps working: the methods are overridden, not replaced. ESLint warns about an import of <code>oidc-client-ts</code> outside <code>src/auth</code>: a <code>UserManager</code> created by hand has no guard.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="fixed-authorization-improved-user_roles-db-sync-to-roles-from-keycloakoidc">Fixed: Authorization - IMPROVED user_roles db sync to roles from Keycloak/OIDC</h4>
+<!-- CXBOX-1384 -->
+
+<p>When a user lost all roles in the OIDC provider, the roles were deactivated in the database on the next request, as before. But when the roles were returned in the OIDC provider, they stayed inactive in the database, because the comparison of token roles with database roles ignored the <code>active</code> flag. Now only active database roles take part in the comparison, so the roles are reactivated on the next login.</p>
+<h4 id="added-error-popup-improved-button-copy-details">Added: Error popup - IMPROVED button 'Copy details'</h4>
+<!-- CXBOX-1384 -->
+
+<p>Every error popup (the new 401/403 popup as well as the generic popup for business, system and network errors) now has a <strong>Copy details</strong> row:</p>
+<ul>
+<li><strong>Copy details</strong> copies a JSON with everything the support team needs to find the request in the server log: session id (the same value is written to the SIEM log as <code>session: ...</code>), current screen, view and browser URL, request method and URL, HTTP status, request start and finish time, response headers and body. The last lines say what the token renewal stands on in this browser (<code>webLocks</code>, <code>indexedDb</code>) and the three <a href="#signInAgain">authorization constants</a> it runs with.</li>
+<li>The arrow expands the same details on screen, so a screenshot is enough to start the investigation: session id, start and finish time, error code and request. Opening the details copies them as well.</li>
+</ul>
+<p><strong>Generic error popup (a <code>400</code> response)</strong>  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">After</label><label for="__tabbed_5_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The details row is always visible.<br />
+<img alt="CXBOX-1384_error_popup_after.png" src="../v3.0.2/CXBOX-1384_error_popup_after.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>The same error: an empty popup, nothing to copy or to show on a screenshot.<br />
+<img alt="CXBOX-1384_error_popup_before.png" src="../v3.0.2/CXBOX-1384_error_popup_before.png" /></p>
+</div>
+</div>
+</div>
+<p><strong>System error (a <code>500</code> response)</strong>  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">After</label><label for="__tabbed_6_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The details are expanded.<br />
+<img alt="CXBOX-1384_system_error_after_details.png" src="../v3.0.2/CXBOX-1384_system_error_after_details.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>System error: only the response body was available under "Details".<br />
+<img alt="CXBOX-1384_system_error_before.png" src="../v3.0.2/CXBOX-1384_system_error_before.png" /></p>
+</div>
+</div>
+</div>
+<p>The same <strong>Copy details</strong> row is present on the new <a href="#signInAgain">popup for 401 and 403</a>, see the before/after screenshots above.</p>
+<p>Example of the copied JSON:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3C1F67AF784230E3EB5DB594EA3B27EC"</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1789057000000</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEMO"</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/#/screen/meeting"</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">"screen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meeting"</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">"view"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meetinglist"</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">"statusText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forbidden"</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/v1/data/meeting/meetingStats?_page=1&amp;_limit=5"</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">"startedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-09-10T18:26:00.410Z"</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="nt">"finishedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-09-10T18:26:00.757Z"</span><span class="p">,</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">"responseHeaders"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"www-authenticate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer error=\"insufficient_scope\""</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nt">"responseBody"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nt">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 ..."</span><span class="p">,</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="nt">"webLocks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="nt">"indexedDb"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="nt">"userManager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rotationSafe"</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="nt">"authErrorMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"soft"</span><span class="p">,</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="nt">"signInCallbackDetection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oidcResponse"</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="fixed-notifications-close-all-button-was-always-visible">Fixed: Notifications - "Close all" button was always visible</h4>
+<!-- CXBOX-1384 -->
+
+<p>The <strong>Close all</strong> button in the top right corner was visible even when there were no notifications: the stylesheet of the notifications container is loaded before the antd stylesheet, so the antd button style overrode the rule that hides the button. The rule is now more specific and the button is hidden until a notification appears.</p>
+<h4 id="other-changes">Other Changes</h4>
+<p>see <a href="https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2">cxbox-demo changelog</a></p>
+<h3 id="cxbox-503-core">CXBOX 5.0.3 (<a href="https://github.com/CX-Box/cxbox/tree/cxbox-5.0.3">Core</a>)</h3>
+<h4 id="added-drilldowns-with-field-based-filter-hint-field">Added: Drilldowns with field-based filter – hint field</h4>
+<!-- CXBOX-1281 -->
+<p>The drilldown filter builder has a new method <code>fb.hint</code> for fields having <code>"type": "hint"</code> in *.widget.json.
+It filters the target view by part of the value, case-insensitive (same as for <code>input</code>).</p>
+<p><code>buildRowDependentMeta</code></p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">fields</span><span class="p">.</span><span class="na">setDrilldownWithFilter</span><span class="p">(</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="n">MyExampleDTO_</span><span class="p">.</span><span class="na">customFieldHint</span><span class="p">,</span><span class="w"> </span><span class="n">DrillDownType</span><span class="p">.</span><span class="na">INNER</span><span class="p">,</span><span class="w"> </span><span class="s">"/screen/MyExample/view/MyExamplelist/"</span><span class="p">,</span><span class="w"> </span><span class="n">fc</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">fc</span><span class="p">.</span><span class="na">add</span><span class="p">(</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">                </span><span class="n">CxboxMyExampleController</span><span class="p">.</span><span class="na">myexample</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">                </span><span class="n">MyExampleDTO</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">                </span><span class="n">fb</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">fb</span><span class="p">.</span><span class="na">hint</span><span class="p">(</span><span class="n">MyExampleDTO_</span><span class="p">.</span><span class="na">customFieldHint</span><span class="p">,</span><span class="w"> </span><span class="n">fields</span><span class="p">.</span><span class="na">getCurrentValue</span><span class="p">(</span><span class="n">MyExampleDTO_</span><span class="p">.</span><span class="na">customFieldHint</span><span class="p">).</span><span class="na">orElse</span><span class="p">(</span><span class="kc">null</span><span class="p">))</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">);</span>
+</span></code></pre></div>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/CX-Box/cxbox-doc/issues/new/?title=[Feedback]+3.0.2+-+/new/version3002/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 (Version 1.1)
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "search.highlight", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>

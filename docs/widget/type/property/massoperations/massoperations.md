@@ -33,6 +33,8 @@ All mass operations go through the same steps: select rows, review rows, (confir
 They differ in what the user does after the rows are selected. Choose the article by the task.
 
 ### <a id="withoutconfirm">Mass operations without confirmation</a>
+![mass_list_without_confirm.gif](withoutconfirm/mass_list_without_confirm.gif)
+
 **When to use:** the user only presses a button — the new values are known in advance or calculated on the server, the user does not enter anything.
 
 * Change status of all selected rows, for example, close all processed requests.
@@ -45,6 +47,8 @@ Steps: Select rows → Review rows → **Apply** → View results.
 :material-arrow-right: [Mass operations without confirmation](/widget/type/property/massoperations/withoutconfirm/)
 
 ### <a id="withconfirm">Mass operations with confirmation</a>
+![mass_list.gif](mass_list.gif)
+
 **When to use:** the user must choose the values that are written to all selected rows — the confirmation form is filled in once for all of them.
 
 * Assign a priority or a responsible employee to all selected requests.
@@ -56,11 +60,16 @@ Steps: Select rows → Review rows → **Confirm operation** (form with values) 
 :material-arrow-right: [Mass operations with confirmation](/widget/type/property/massoperations/withconfirm/)
 
 ### <a id="crypto">Mass signing and encrypting</a>
+<video controls width="800">
+<source src="/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
+</video>
 **When to use:** the files of the selected rows must be signed or encrypted with CryptoPro in one run, the certificates are selected once.
 
 :material-arrow-right: [Mass signing and encrypting](/widget/type/property/massoperations/sign/)
 
-### <a id="delete">Mass delete</a>
+### <a id="delete">Mass Specific Case</a>
+![mass_delete.gif](delete/mass_delete.gif)
+
 **When to use:** the user must remove many records at once.
 
 * Delete outdated or erroneous records selected by filter.

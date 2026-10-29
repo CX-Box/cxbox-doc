@@ -12,40 +12,56 @@ To use this functionality, the user must have the required [software CryptoPro](
     === "List"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssignlist){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/mass){:target="_blank"}
-        [01_sign_list_3711.mp4](sign/01_sign_list_3711.mp4)
+        <video controls width="800">
+        <source src="/sign/01_sign_list_3711.mp4" type="video/mp4">
+        </video>
     === "GroupingHierarchy"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711masssigngh){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/mass){:target="_blank"}
-        [02_sign_gh_3711.mp4](sign/02_sign_gh_3711.mp4)
- 
+        <video controls width="800">
+        <source src="/sign/02_sign_gh_3711.mp4" type="video/mp4">
+        </video> 
 === "Encrypting"
     === "List"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptlist){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/mass){:target="_blank"}
         [03_encrypt_list_3713.mp4](sign/03_encrypt_list_3713.mp4)
-    === "GroupingHierarchy"
+        <video controls width="800">
+        <source src="/sign/02_sign_gh_3711.mp4" type="video/mp4">
+        </video>
+=== "GroupingHierarchy"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3713/view/myexample3713massencryptgh){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encrypt/mass){:target="_blank"}
         [04_encrypt_gh_3713.mp4](sign/04_encrypt_gh_3713.mp4)
- 
+        <video controls width="800">
+        <source src="/sign/02_sign_gh_3711.mp4" type="video/mp4">
+        </video>  
 === "Signing and encrypting"
     === "List"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptlist){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
-        [05_sign_encrypt_list_3714.mp4](sign/05_sign_encrypt_list_3714.mp4)
-    === "GroupingHierarchy"
+        <video controls width="800">
+        <source src="/sign/05_sign_encrypt_list_3714.mp4" type="video/mp4">
+        </video>
+=== "GroupingHierarchy"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714masssignencryptgh){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/mass){:target="_blank"}
-        [06_sign_encrypt_gh_3714.mp4](sign/06_sign_encrypt_gh_3714.mp4)
+        <video controls width="800">
+        <source src="/sign/06_sign_encrypt_gh_3714.mp4" type="video/mp4">
+        </video> 
 === "Encrypting and signing"
     === "List"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
-        [07_encrypt_sign_list_3712.mp4](sign/07_encrypt_sign_list_3712.mp4)
+        <video controls width="800">
+        <source src="/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
+        </video> 
     === "GroupingHierarchy"
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsigngh){:target="_blank"}
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
-        [08_encrypt_sign_gh_3712.mp4](sign/08_encrypt_sign_gh_3712.mp4)
+        <video controls width="800">
+        <source src="/sign/08_encrypt_sign_gh_3712.mp4" type="video/mp4">
+        </video> 
 
 ## Basic
 It saves the user from signing or encrypting documents one by one: the certificates are selected once, and the files of all selected rows are processed in one run. For example:

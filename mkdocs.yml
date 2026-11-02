@@ -255,6 +255,7 @@ theme:
   favicon: assets/logo.svg
   logo: assets/logo.svg
   name: material
+  custom_dir: overrides
   highlightjs: true
   hljs_languages:
     - json
@@ -313,6 +314,10 @@ edit_uri: edit/main/docs/
 #  - logging/log_manager.py
 
 extra:
+  # Разделы меню, группы внутри которых открыты по умолчанию (см.Menu sections, groups within which are open by default (see overrides/partials/nav-item.html)
+  nav_expanded_sections:
+    - Field types
+    - Widget types
   external_links:
     github_ui: !ENV [GITHUB_UI, 'https://github.com/CX-Box/cxbox-code-samples/tree']
     github_raw_doc: !ENV [github_raw_doc, 'demo/documentation']

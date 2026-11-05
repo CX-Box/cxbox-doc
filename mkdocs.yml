@@ -314,7 +314,7 @@ edit_uri: edit/main/docs/
 #  - logging/log_manager.py
 
 extra:
-  # Разделы меню, группы внутри которых открыты по умолчанию (см.Menu sections, groups within which are open by default (see overrides/partials/nav-item.html)
+  # Menu sections, groups within which are open by default (see overrides/partials/nav-item.html)
   nav_expanded_sections:
     - Field types
     - Widget types

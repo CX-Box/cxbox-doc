@@ -24,8 +24,24 @@ This function is available for:
 * [Pie1D widget](/widget/type/pie1d/pie1d)
 * Funnel widget
 * RingProgress widget
+* Level menu widgets (SecondLevelMenu, ThirdLevelMenu, FourthLevelMenu)
 
 _Note!_ Popup widgets ([FormPopup](/widget/type/formpopup/formpopup), [PickListPopup](/widget/type/picklistpopup/picklistpopup), [AssocListPopup](/widget/type/assoclistpopup/assoclistpopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup)) are not supported.
+
+### Main widget of the group
+The main widget is the widget that controls the group:
+
+* it is the **first widget in the `widgetNames` list** of the group. The order of widgets on the view (`position`) does not matter: if the main widget has a larger `position` than the other widgets, it still controls the group;
+* the header of the main widget shows the collapse icon (`down` - expanded, `right` - collapsed). Clicking the header collapses or expands the whole group;
+* when the group is collapsed, only the header of the main widget stays visible. The content of the main widget and all other widgets of the group are hidden;
+* the header with the collapse icon is shown even if the main widget has no `title`.
+
+### Features
+* [CalendarList widget](/widget/type/calendarlist/calendarlist) can be added to a group, but **can not be the main widget**: it does not render a header with the collapse icon. As a non-main widget it is hidden when the group is collapsed.
+* Level menu widgets (SecondLevelMenu, ThirdLevelMenu, FourthLevelMenu) can be the main widget: the `title` of the menu widget is shown as a header with the collapse icon, the menu tabs are hidden when the group is collapsed. As a non-main widget the menu is hidden when the group is collapsed.
+* A widget should be included in only one group. If a widget is listed in several groups, the first group with this widget is used.
+* The collapse state is stored for each view separately.
+* `collapsedCondition: {"default": true}` is applied each time the view is opened: if the user expanded the group and then returned to the view, the group is collapsed again.
 
 The collapse state that the group has right after the page is loaded can be configured with the `collapsedCondition` tag:
 

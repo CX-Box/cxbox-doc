@@ -3,6 +3,30 @@ Widgets on a view can be combined into groups that can be collapsed and expanded
 The first widget of the group (main widget) gets an icon to control collapsing.
 When the group is collapsed, all widgets of the group are hidden except for the header of the main widget.
 
+This function is available for:
+
+* [List](/widget/type/list/list)
+* [Form](/widget/type/form/form)
+* [Info](/widget/type/info/info)
+* [GroupingHierarchy widget](/widget/type/groupinghierarchy/groupinghierarchy)
+* [Tree widget](/widget/type/tree/tree)
+* [CardList widget](/widget/type/cardlist/cardlist)
+* [CardCarouselList widget](/widget/type/cardcarousellist/cardcarousellist)
+* [HeaderWidget](/widget/type/headerwidget/headerwidget)
+* [AdditionalInfo widget](/widget/type/additionalinfo/additionalinfo)
+* [AdditionalList widget](/widget/type/additionallist/additionallist)
+* [StatsBlock widget](/widget/type/statblocks/statblocks)
+* [Steps widget](/widget/type/steps/steps)
+* [DashboardList widget](/widget/type/dashboardlist/dashboardlist)
+* [FilePreview widget](/widget/type/filepreview/filepreview)
+* [Column2D widget](/widget/type/column2d/column2d)
+* [Line2D widget](/widget/type/line2d/line2d)
+* [Pie1D widget](/widget/type/pie1d/pie1d)
+* Funnel widget
+* RingProgress widget
+
+_Note!_ Popup widgets ([FormPopup](/widget/type/formpopup/formpopup), [PickListPopup](/widget/type/picklistpopup/picklistpopup), [AssocListPopup](/widget/type/assoclistpopup/assoclistpopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup)) are not supported.
+
 The collapse state that the group has right after the page is loaded can be configured with the `collapsedCondition` tag:
 
 * [Widget group](#widget-group) - expanded by default

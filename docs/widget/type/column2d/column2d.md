@@ -408,7 +408,7 @@ For a text X field they are ignored, and the widget writes a message to the brow
     ```
 
 #### DualAxes2D
-A `Column2D` widget can be combined with a `Line2D` widget in one area with the `DualAxes2D` widget:
+A `Column2D` widget can be combined with a `Line2D` widget in one area with the [DualAxes2D](/widget/type/dualaxes2d/dualaxes2d) widget:
 the charts share the X axis and can have separate Y axes.
 
 #### Customization of displayed columns

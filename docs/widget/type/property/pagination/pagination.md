@@ -251,7 +251,34 @@ An array of integers.
 
 If not provided, the component use default values [5, 10,15, 20].
 
-The user will only be able to select from the specified values.
+The user will only be able to select from the specified values and the default page limit (see below).
+
+### <a id="limitrules">Available options and default page limit</a>
+
+Two different settings are used for the number of records per page:
+
+* `availableLimitsList` in **.widget.json** (`options` -> `pagination` -> `availableLimitsList`) – the options the user can **choose** in the dropdown.
+* `PAGE_LIMIT` of the business component in **BC_PROPERTIES.csv** – the **default** page limit: the number of records the user sees when the page is opened. See [Default page limit](/widget/type/property/defaultlimitpage/defaultlimitpage).
+
+`availableLimitsList` does not set the default page limit: the first (or any other) value of the list is not used when the page is opened.
+
+If `PAGE_LIMIT` is not set for the business component, the default page limit is taken from `cxbox.meta.bc-default-page-limit` in **application.yml** (5 if not specified).
+
+The dropdown always contains the default page limit: if it is not in `availableLimitsList`, it is added to the options. The options are sorted in ascending order.
+
+| `availableLimitsList`          | `PAGE_LIMIT` (BC_PROPERTIES.csv) | Records per page when the page is opened                 | Options in the dropdown |
+|--------------------------------|----------------------------------|----------------------------------------------------------|-------------------------|
+| `[10, 25, 50]`                 | `25` (in the list)               | 25                                                       | 10, 25, 50              |
+| `[10, 25, 50]`                 | `7` (not in the list)            | 7                                                        | 7, 10, 25, 50           |
+| `[10, 25, 50]`                 | not set                          | `bc-default-page-limit` (5 if not specified)             | 5, 10, 25, 50           |
+| not set (`[5, 10, 15, 20]`)    | `12`                             | 12                                                       | 5, 10, 12, 15, 20       |
+| not set (`[5, 10, 15, 20]`)    | not set                          | `bc-default-page-limit` (5 if not specified)             | 5, 10, 15, 20           |
+
+!!! info
+    The limit selected by the user is kept when the user switches to another screen and back, until the browser page is reloaded. After the reload, the default page limit (`PAGE_LIMIT`) is used again.
+
+!!! tip
+    To make the page open with a value from the dropdown, set `PAGE_LIMIT` to one of the values of `availableLimitsList`.
 
 **Use Case:**
 

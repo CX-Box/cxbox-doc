@@ -66,13 +66,13 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101Delete.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/widget/myexample6101delete.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102DeleteGH.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/widget/myexample6102deletegh.widget.json
             --8<--
             ```
     - **Step2** Create action massDelete to corresponding **AwareResponseService**.      

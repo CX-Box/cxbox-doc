@@ -15,7 +15,7 @@
 
     ```json
        --8<--
-       {{ external_links.github_raw_doc }}/widgets/form/base/onefield/MyExample3000Form.widget.json
+       {{ external_links.github_raw_doc }}/widgets/form/base/onefield/myexample3000form.widget.json
        --8<--
     ```
 
@@ -58,7 +58,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/myexample3003form.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003){:target="_blank"} ·
@@ -68,7 +68,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003EmptyTitleForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/myexample3003emptytitleform.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003/view/myexample3003formemtytitle){:target="_blank"} ·
@@ -79,11 +79,11 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/myexample3003formcustomtitle.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3003/view/myexample3003customtitleform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title/MyExample3003FormCustomTitle.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/title/myexample3003formcustomtitle.widget.json){:target="_blank"}
 
 
 ### Title Color
@@ -124,7 +124,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026dynamic.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/colortitle/myexample3026dynamic.widget.json
         --8<--
         ```     
 
@@ -139,7 +139,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/colortitle/MyExample3026const.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/colortitle/myexample3026const.widget.json
         --8<--
         ```
         
@@ -189,7 +189,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/showcondition/bycurrententity/MyExample30052Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/showcondition/bycurrententity/myexample30052form.widget.json
         --8<--
         ```
 
@@ -200,7 +200,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/MyExample3006Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/showcondition/byparententity/child/myexample3006form.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3005/view/myexample3007showcondform){:target="_blank"} ·
@@ -256,7 +256,7 @@ Type: String(required).
 
         ```json
            --8<--
-           {{ external_links.github_raw_doc }}/widgets/form/base/onefield/MyExample3000Form.widget.json
+           {{ external_links.github_raw_doc }}/widgets/form/base/onefield/myexample3000form.widget.json
            --8<--
         ```
         
@@ -310,12 +310,12 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/myexample3004form.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004Form.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/myexample3004form.widget.json){:target="_blank"}
 
     === "Multi column layout"
         **Step1** Create **"options": {"layout": {}}**.
@@ -338,12 +338,12 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004MultiColumnForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/myexample3004multicolumnform.widget.json
         --8<--
         ```
         
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004/view/myexample3004multicolumnform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004MultiColumnForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/myexample3004multicolumnform.widget.json){:target="_blank"}
 
     === "Empty only buttons"
         **Step1** Create **"options": {"layout": {}}**.
@@ -352,12 +352,12 @@ For example, you have three fields with widths of 12, 8, and 10 characters, resp
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/fieldslayoute/myexample3004emptyonlybuttonsform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3004/view/myexample3004emptyonlybuttonsform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/MyExample3004EmptyOnlyButtonsForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/form/fieldslayoute/myexample3004emptyonlybuttonsform.widget.json){:target="_blank"}
  
 ## Standard Actions
 `Actions` show available actions as separate buttons see more [Actions](/features/element/actions/actions).
@@ -402,7 +402,7 @@ There are two methods to create a record:
      **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/create/basic/MyExample3300Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/basic/myexample3300form.widget.json
     --8<--
     ```
      **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
@@ -442,7 +442,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
   
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/MyExample3302Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/create/withview/myexample3302form.widget.json
     --8<--
     ```  
 
@@ -475,7 +475,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/delete/MyExample3180Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/delete/myexample3180form.widget.json
     --8<--
     ```
     
@@ -540,7 +540,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/MyExample3303Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/edit/withview/myexample3303form.widget.json
     --8<--
     ```
 
@@ -570,7 +570,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/form/actions/save/MyExample3181Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/form/actions/save/myexample3181form.widget.json
     --8<--
     ```
 
@@ -614,7 +614,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/postaction/MyExample3187FormCreate.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/postaction/myexample3187formcreate.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3187){:target="_blank"} ·
@@ -641,7 +641,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/MyExample3186FormCreate.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/actions/cancelcreate/oncancel/myexample3186formcreate.widget.json
         --8<--
         ```
 

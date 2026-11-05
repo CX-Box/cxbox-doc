@@ -47,7 +47,7 @@ Example request: `/screen/myexample3610`
     `Step2`  Add **drillDown** to corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/byscreen/MyExample3619Info.widget.json
+    {{ external_links.github_raw_doc }}/feature/drilldown/byscreen/myexample3619info.widget.json
     --8<--
     ```
 
@@ -88,7 +88,7 @@ Example request: `/screen/myexample3611/view/myexample3611list`
     `Step2`  Add **drillDown** to corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/simple/MyExample3611Form.widget.json
+    {{ external_links.github_raw_doc }}/feature/drilldown/simple/myexample3611form.widget.json
     --8<--
     ```
 
@@ -127,7 +127,7 @@ Example request: `screen/myexample3610/view/myexample3610form/myexample3610/1100
     `Step2`  Add **drillDown** to corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownviewid/MyExample3610List.widget.json
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownviewid/myexample3610list.widget.json
     --8<--
     ```
  

@@ -37,14 +37,14 @@
         **Step3** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/basic/MyExample56List.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/basic/myexample56list.widget.json
         --8<--
         ```
     === "Info widget"
         **Step3** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/basic/MyExample56Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/basic/myexample56info.widget.json
         --8<--
         ```
     === "Form widget"
@@ -52,7 +52,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/basic/MyExample56Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/basic/myexample56form.widget.json
         --8<--
         ```
 
@@ -124,21 +124,21 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/color/MyExample59List.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/color/myexample59list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/color/MyExample59Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/color/myexample59info.widget.json
             --8<--
             ```
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/color/MyExample59Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/color/myexample59form.widget.json
             --8<--
             ```
 
@@ -150,21 +150,21 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/colorconst/MyExample60List.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/colorconst/myexample60list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/colorconst/MyExample60Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/colorconst/myexample60info.widget.json
             --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/colorconst/MyExample60Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/colorconst/myexample60form.widget.json
             --8<--
             ```
 
@@ -326,7 +326,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/drilldown/MyExample62List.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/drilldown/myexample62list.widget.json
         --8<--
         ```
         **Option 2**
@@ -335,7 +335,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/drilldown/MyExample62Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/drilldown/myexample62info.widget.json
         --8<--
         ```
         **Option 2**
@@ -591,7 +591,7 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/nullable/MyExample307List.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/nullable/myexample307list.widget.json
         --8<--
         ```
   
@@ -602,7 +602,7 @@ By default, UI sets `Money` value to 0 when user deletes it. If `nullable` equal
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/nullable/MyExample307Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/nullable/myexample307form.widget.json
         --8<--
         ```
 
@@ -657,7 +657,7 @@ If you only need to display a fixed currency value, you can use a constant curre
             **Step 2** Add **"currencyKey"** :  `custom field for currency`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151List.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/myexample3151list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -665,7 +665,7 @@ If you only need to display a fixed currency value, you can use a constant curre
             **Step 2** Add **"currencyKey"** :  `custom field for currency`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/myexample3151info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -673,7 +673,7 @@ If you only need to display a fixed currency value, you can use a constant curre
             **Step 2** Add **"currencyKey"** :  `custom field for currency`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/MyExample3151Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/money/currency/fieldkey/myexample3151form.widget.json
             --8<--
             ```
 
@@ -686,7 +686,7 @@ If you only need to display a fixed currency value, you can use a constant curre
         Add **"currency"**   to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150List.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/currency/constkey/myexample3150list.widget.json
         --8<--
         ```
     === "Info widget"
@@ -694,7 +694,7 @@ If you only need to display a fixed currency value, you can use a constant curre
         Add **"currency"**   to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/currency/constkey/myexample3150info.widget.json
         --8<--
         ```
     === "Form widget"
@@ -702,7 +702,7 @@ If you only need to display a fixed currency value, you can use a constant curre
         Add **"currency"**   to .widget.json. 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/money/currency/constkey/MyExample3150Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/money/currency/constkey/myexample3150form.widget.json
         --8<--
         ```
 

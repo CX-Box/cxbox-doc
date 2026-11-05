@@ -56,7 +56,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/myexample251list.widget.json
         --8<--
         ```
 
@@ -64,14 +64,14 @@
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/myexample251info.widget.json
         --8<--
         ```
     === "Form widget"
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/MyExample251Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/multipleselect/basic/myexample251form.widget.json
         --8<--
         ```
 

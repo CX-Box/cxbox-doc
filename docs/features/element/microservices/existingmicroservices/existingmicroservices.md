@@ -156,7 +156,7 @@ Create **Controller** implements **EnumBcIdentifier**
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/MyExample3800List.widget.json
+    {{ external_links.github_raw_doc }}/feature/microservice/existingmicroservices/myexample3800list.widget.json
     --8<--
     ```
 ### **Step8** Create **view.json**

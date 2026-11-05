@@ -77,7 +77,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/MyExample3351List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/myexample3351list.widget.json
     --8<--
     ```
  
@@ -87,7 +87,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/picktreepopup/picktree/myEntity3351PickPickPickTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/picktreepopup/picktree/myentity3351pickpickpicktreepopup.widget.json
     --8<--
     ```
 
@@ -129,7 +129,7 @@ There are 3 types of titles for a Picktree Popup:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/title/withtitle/myEntity3344PickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/title/withtitle/myentity3344pickpicktreepopup.widget.json
         --8<--
         ```
  
@@ -137,7 +137,7 @@ There are 3 types of titles for a Picktree Popup:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/title/withouttitle/myEntity3345PickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/title/withouttitle/myentity3345pickpicktreepopup.widget.json
         --8<--
         ```
  
@@ -146,7 +146,7 @@ There are 3 types of titles for a Picktree Popup:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/title/calculatedtitle/myEntity3347PickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/title/calculatedtitle/myentity3347pickpicktreepopup.widget.json
         --8<--
         ```
  
@@ -189,7 +189,7 @@ There are 3 types of titles for a Picktree Popup:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myEntity3342PickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myentity3342picktreepopup.widget.json
         --8<--
         ```       
  
@@ -201,7 +201,7 @@ There are 3 types of titles for a Picktree Popup:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myEntity3342PickTreePopupColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/colortitle/myentity3342picktreepopupcolorconst.widget.json
         --8<--
         ```
  
@@ -259,7 +259,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/picktreepopup/picktree/myEntity3351PickPickPickTreePopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/picktree/base/onefield/picktreepopup/picktree/myentity3351pickpickpicktreepopup.widget.json
              --8<--
           ```
  
@@ -319,7 +319,7 @@ The position of the newly created row inside its node is defined by **options**.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myEntity3348PickPickTreeCreateInlinePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myentity3348pickpicktreecreateinlinepopup.widget.json
     --8<--
     ```
  
@@ -363,7 +363,7 @@ The position of the newly created row inside its node is defined by **options**.
     **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myEntity3348PickPickTreePopupForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myentity3348pickpicktreepopupform.widget.json
     --8<--
     ```
  
@@ -383,7 +383,7 @@ The position of the newly created row inside its node is defined by **options**.
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myEntity3348PickPickTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/create/picktree/myentity3348pickpicktreepopup.widget.json
     --8<--
     ``` 
  
@@ -422,7 +422,7 @@ _not applicable_: a click on a row of the popup picks the value. A row is edited
     **Step1** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inlineform/myEntity3353FormForEditPickTreeInlineForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inlineform/myentity3353formforeditpicktreeinlineform.widget.json
     --8<--
     ```
 
@@ -439,7 +439,7 @@ _not applicable_: a click on a row of the popup picks the value. A row is edited
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inlineform/myEntity3353PickTreeInlineForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/edit/picktreepopup/picktree/inlineform/myentity3353picktreeinlineform.widget.json
     --8<--
     ```
 
@@ -484,7 +484,7 @@ _not applicable_
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/delete/forpicktreepopup/myEntity3354PickPickPickTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/delete/forpicktreepopup/myentity3354pickpickpicktreepopup.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3353/view/myexample3354form){:target="_blank"} ·
@@ -513,7 +513,7 @@ _not applicable_
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picktree/actions/save/MyExample3355Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picktree/actions/save/myexample3355form.widget.json
     --8<--
     ```
 
@@ -549,7 +549,7 @@ _not applicable_
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/basic/myEntity3356PickPickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/basic/myentity3356pickpickpicktreepopup.widget.json
         --8<--
         ```
  
@@ -569,7 +569,7 @@ _not applicable_
        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/postaction/myEntity3356PickPostActionPickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/postaction/myentity3356pickpostactionpickpicktreepopup.widget.json
         --8<--
         ```
  
@@ -597,7 +597,7 @@ _not applicable_
        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/oncancel/myEntity3356PickOnCancelPickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picktree/actions/cancelcreate/oncancel/myentity3356pickoncancelpickpicktreepopup.widget.json
         --8<--
         ```
 
@@ -718,7 +718,7 @@ The result of a full text search is displayed in the same way as the result of f
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261TreePickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261treepicklistpopup.widget.json
     --8<--
     ```
 
@@ -770,7 +770,7 @@ In `collapse` mode the records whose parents have not been loaded yet are placed
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261TreePickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261treepicklistpopup.widget.json
     --8<--
     ```
 
@@ -809,7 +809,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myEntity3867PickPickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myentity3867pickpickpicktreepopup.widget.json
         --8<--
         ```
 
@@ -820,7 +820,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/defaultlimitpage/myEntity359PickPickPickTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/defaultlimitpage/myentity359pickpickpicktreepopup.widget.json
         --8<--
         ```
 
@@ -871,7 +871,7 @@ The rows that cannot be picked are still displayed and can be expanded, so the u
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261TreePickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261treepicklistpopup.widget.json
     --8<--
     ```
 

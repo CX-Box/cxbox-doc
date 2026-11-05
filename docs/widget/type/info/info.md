@@ -14,7 +14,7 @@
  
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/info/base/onefield/MyExample3009Info.widget.json
+    {{ external_links.github_raw_doc }}/widgets/info/base/onefield/myexample3009info.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding **_.view.json_**.
@@ -56,7 +56,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102Title.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/title/myexample3102title.widget.json
         --8<--
         ```
 
@@ -67,7 +67,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/title/myexample3102emptytitle.widget.json
         --8<--
         ```
 
@@ -79,7 +79,7 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/title/MyExample3102CustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/title/myexample3102customtitle.widget.json
         --8<--
         ```
 
@@ -127,7 +127,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/colortitle/MyExample3040.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/colortitle/myexample3040.widget.json
         --8<--
         ```       
 
@@ -142,7 +142,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/colortitle/MyExample3040ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/colortitle/myexample3040colorconst.widget.json
         --8<--
         ```
 
@@ -198,7 +198,7 @@ The `showCondition` in configuration represents the condition under which the wi
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/showcondition/bycurrententity/MyExample31032.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/showcondition/bycurrententity/myexample31032.widget.json
         --8<--
         ```
 
@@ -209,7 +209,7 @@ The `showCondition` in configuration represents the condition under which the wi
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/showcondition/byparententity/child/myexample3107.widget.json
         --8<--
         ```
 
@@ -260,7 +260,7 @@ Type: String(required).
 
         ```json
            --8<--
-           {{ external_links.github_raw_doc }}/widgets/info/base/onefield/MyExample3009Info.widget.json
+           {{ external_links.github_raw_doc }}/widgets/info/base/onefield/myexample3009info.widget.json
            --8<--
         ```
 
@@ -311,7 +311,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008Info.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/myexample3008info.widget.json
         --8<--
         ```
 
@@ -339,7 +339,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008MultiColumnDefault.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/myexample3008multicolumndefault.widget.json
         --8<--
         ```
 
@@ -351,7 +351,7 @@ see more  [Fields](/widget/fields/fieldtypes/)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/MyExample3008EmptyOnlyButtons.widget.json
+        {{ external_links.github_raw_doc }}/widgets/info/fieldslayoute/myexample3008emptyonlybuttons.widget.json
         --8<--
         ```
 

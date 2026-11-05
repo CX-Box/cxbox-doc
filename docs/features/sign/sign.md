@@ -131,7 +131,7 @@ How to add?
  
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/base/MyExample3711Form.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/base/myexample3711form.widget.json
     --8<--
     ```
 
@@ -141,11 +141,11 @@ How to add?
 ### Electronic Signature Type
 "CAdES_T"
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcadesbestlist){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/MyExample3711CadesTForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/myexample3711cadestform.widget.json){:target="_blank"}
 
 CAdES_BES
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcadesbeslist){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/MyExample3711CadesBesForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/myexample3711cadesbesform.widget.json){:target="_blank"}
 
 The user can select the electronic signature type:
 
@@ -165,17 +165,17 @@ How to add?
     === "CAdES_BES"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/cades/MyExample3711CadesBesForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/cades/myexample3711cadesbesform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcadesbeslist){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/MyExample3711CadesBesForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/myexample3711cadesbesform.widget.json){:target="_blank"}
 
     === "CAdES_T"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/cades/MyExample3711CadesTForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/cades/myexample3711cadestform.widget.json
         --8<--
         ```
 
@@ -192,20 +192,20 @@ How to add?
             There is no default address. If the variable is not set, a `CAdES_T` signature is not created: the user sees the message *The time stamp service for CAdES-T signatures is not configured*. `CAdES_BES` signatures are created as usual.
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcadesbestlist){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/MyExample3711CadesTForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/cades/myexample3711cadestform.widget.json){:target="_blank"}
 
 ### Signature Container Format
 
 **The user can choose the format of the generated container:**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DetachedForm.widget.json){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711detachedform.widget.json){:target="_blank"}
 
 **detached (detached signature)** 
 
 A separate signature file is generated that contains only the signature for the document.  
 The document itself is not included in the container.
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerattachedform){:target="_blank"} · [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711AttachedForm.widget.json){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerattachedform){:target="_blank"} · [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711attachedform.widget.json){:target="_blank"}
 
 **attached (attached signature)**
 
@@ -216,13 +216,13 @@ A single container is generated that includes: original document and signature f
 
 **Two scenarios are possible in the UI:**
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontaineranyform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711AnyForm.widget.json){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontaineranyform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711anyform.widget.json){:target="_blank"}
 
 **User selects the signature type**
 
  A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DetachedForm.widget.json){:target="_blank"}
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711detachedform.widget.json){:target="_blank"}
 
 **Signature type is predefined by the system**
 
@@ -254,42 +254,42 @@ How to add?
     === "User selects the signature type"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/MyExample3711AnyForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/myexample3711anyform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontaineranyform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711AnyForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711anyform.widget.json){:target="_blank"}
 
     === "detached"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/MyExample3711DetachedForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/myexample3711detachedform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdetachedform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DetachedForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711detachedform.widget.json){:target="_blank"}
 
     === "attached"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/MyExample3711AttachedForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/myexample3711attachedform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerattachedform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711AttachedForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711attachedform.widget.json){:target="_blank"}
 
     === "default"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/MyExample3711DefaultForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/sign/attached/myexample3711defaultform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711signcontainerdefaultform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/MyExample3711DefaultForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/sign/attached/myexample3711defaultform.widget.json){:target="_blank"}
 
 ### Override of the signed document name
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3711/view/myexample3711overridesignform){:target="_blank"} ·
@@ -310,7 +310,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/filebasename/MyExample3711BaseNameForm.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/filebasename/myexample3711basenameform.widget.json
     --8<--
     ```
 
@@ -340,7 +340,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/MyExample3711MassList.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/myexample3711masslist.widget.json
     --8<--
     ```
 
@@ -383,7 +383,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/base/MyExample3713BaseForm.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/base/myexample3713baseform.widget.json
     --8<--
     ```
 
@@ -409,7 +409,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/filebasename/MyExample3713BaseNameForm.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/filebasename/myexample3713basenameform.widget.json
     --8<--
     ```
 
@@ -439,7 +439,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/MyExample3713MassList.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/myexample3713masslist.widget.json
     --8<--
     ```
 
@@ -487,7 +487,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/base/MyExample3714Form.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/base/myexample3714form.widget.json
     --8<--
     ```
 
@@ -497,11 +497,11 @@ How to add?
 ### Electronic Signature Type
 "CAdES_T"
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcadesbestlist){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/MyExample3714CadesTForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/myexample3714cadestform.widget.json){:target="_blank"}
 
 CAdES_BES
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcadesbeslist){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/MyExample3714CadesBesForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/myexample3714cadesbesform.widget.json){:target="_blank"}
 
 The user can select the electronic signature type:
 
@@ -519,17 +519,17 @@ How to add?
     === "CAdES_BES"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/cades/MyExample3714CadesBesForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/cades/myexample3714cadesbesform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcadesbeslist){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/MyExample3714CadesBesForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/myexample3714cadesbesform.widget.json){:target="_blank"}
 
     === "CAdES_T"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/cades/MyExample3714CadesTForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/cades/myexample3714cadestform.widget.json
         --8<--
         ```
         To set the Time Stamping Authority (TSA) server address:
@@ -545,14 +545,14 @@ How to add?
             There is no default address. If the variable is not set, a `CAdES_T` signature is not created: the user sees the message *The time stamp service for CAdES-T signatures is not configured*. `CAdES_BES` signatures are created as usual.
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcadesbestlist){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/MyExample3714CadesTForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/cades/myexample3714cadestform.widget.json){:target="_blank"}
 
 ### Signature Container Format
 
 **The user can choose the format of the generated container:**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerdetachedform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DetachedForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714detachedform.widget.json){:target="_blank"}
 
 **detached (detached signature)**
 
@@ -560,7 +560,7 @@ A separate signature file is generated that contains only the signature for the 
 The document itself is not included in the container.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerattachedform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714AttachedForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714attachedform.widget.json){:target="_blank"}
 
 **attached (attached signature)**
 
@@ -572,14 +572,14 @@ A single container is generated that includes: original document and signature f
 **Two scenarios are possible in the UI:**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontaineranyform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714AnyForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714anyform.widget.json){:target="_blank"}
 
 **User selects the signature type**
 
 A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerdetachedform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DetachedForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714detachedform.widget.json){:target="_blank"}
 
 **Signature type is predefined by the system**
 
@@ -608,42 +608,42 @@ How to add?
     === "User selects the signature type"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/MyExample3714AnyForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/myexample3714anyform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontaineranyform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714AnyForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714anyform.widget.json){:target="_blank"}
 
     === "detached"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/MyExample3714DetachedForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/myexample3714detachedform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerdetachedform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DetachedForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714detachedform.widget.json){:target="_blank"}
 
     === "attached"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/MyExample3714AttachedForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/myexample3714attachedform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerattachedform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714AttachedForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714attachedform.widget.json){:target="_blank"}
 
     === "default"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/MyExample3714DefaultForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/attached/myexample3714defaultform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptcontainerdefaultform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/MyExample3714DefaultForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/signencrypt/attached/myexample3714defaultform.widget.json){:target="_blank"}
 
 ### Override of the signed document name
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3714/view/myexample3714signencryptoverridesignform){:target="_blank"} ·
@@ -664,7 +664,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/filebasename/MyExample3714BaseNameForm.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/filebasename/myexample3714basenameform.widget.json
     --8<--
     ```
 
@@ -694,7 +694,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/MyExample3714MassList.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/myexample3714masslist.widget.json
     --8<--
     ```
 
@@ -741,7 +741,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/base/MyExample3712Form.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/base/myexample3712form.widget.json
     --8<--
     ```
 
@@ -751,11 +751,11 @@ How to add?
 ### Electronic Signature Type
 "CAdES_T"
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbestlist){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesTForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/myexample3712cadestform.widget.json){:target="_blank"}
 
 CAdES_BES
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbeslist){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesBesForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/myexample3712cadesbesform.widget.json){:target="_blank"}
 
 The user can select the electronic signature type:
 
@@ -773,17 +773,17 @@ How to add?
     === "CAdES_BES"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/cades/MyExample3712CadesBesForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/cades/myexample3712cadesbesform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbeslist){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesBesForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/myexample3712cadesbesform.widget.json){:target="_blank"}
 
     === "CAdES_T"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/cades/MyExample3712CadesTForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/cades/myexample3712cadestform.widget.json
         --8<--
         ```
 
@@ -801,14 +801,14 @@ How to add?
 
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcadesbestlist){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/MyExample3712CadesTForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/cades/myexample3712cadestform.widget.json){:target="_blank"}
 
 ### Signature Container Format
 
 **The user can choose the format of the generated container:**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerdetachedform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712DetachedForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712detachedform.widget.json){:target="_blank"}
 
 **detached (detached signature)**
 
@@ -816,7 +816,7 @@ A separate signature file is generated that contains only the signature for the 
 The document itself is not included in the container.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerattachedform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AttachedForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712attachedform.widget.json){:target="_blank"}
 
 **attached (attached signature)**
 
@@ -828,14 +828,14 @@ A single container is generated that includes: original document and signature f
 **Two scenarios are possible in the UI:**
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontaineranyform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AnyForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712anyform.widget.json){:target="_blank"}
 
 **User selects the signature type**
 
 A popup is displayed with a dropdown allowing the user to choose: container format (detached / attached)
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerattachedform){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AttachedForm.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712attachedform.widget.json){:target="_blank"}
 
 **Signature type is predefined by the system**
 
@@ -865,42 +865,42 @@ How to add?
     === "User selects the signature type"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/MyExample3712AnyForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/myexample3712anyform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontaineranyform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AnyForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712anyform.widget.json){:target="_blank"}
 
     === "detached"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/MyExample3712DetachedForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/myexample3712detachedform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerdetachedform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712DetachedForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712detachedform.widget.json){:target="_blank"}
 
     === "attached"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/MyExample3712AttachedForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/myexample3712attachedform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerattachedform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712AttachedForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712attachedform.widget.json){:target="_blank"}
 
     === "default"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/MyExample3712DefaultForm.widget.json
+        {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/attached/myexample3712defaultform.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptcontainerdefaultform){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/MyExample3712DefaultForm.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/attached/myexample3712defaultform.widget.json){:target="_blank"}
 
 ### Override of the signed document name
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712signencryptoverridesignform){:target="_blank"} ·
@@ -922,7 +922,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/filebasename/MyExample3712BaseNameForm.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/filebasename/myexample3712basenameform.widget.json
     --8<--
     ```
 
@@ -945,7 +945,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/postaction/MyExample3712ZipForm.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/postaction/myexample3712zipform.widget.json
     --8<--
     ```
 
@@ -987,7 +987,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/MyExample3712MassList.widget.json
+    {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/myexample3712masslist.widget.json
     --8<--
     ```
 

@@ -49,7 +49,7 @@
         +  **Step 1.6.AssocListPopup**  Create AssocListPopup to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/basic/myEntity177AssocListPopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivalue/basic/myentity177assoclistpopup.widget.json
             --8<--
             ```
         +  **Step2** Add **List** field to corresponding **BaseEntity**.
@@ -89,7 +89,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/basic/MyExample176List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivalue/basic/myexample176list.widget.json
             --8<--
             ```
     
@@ -97,7 +97,7 @@
             **Step 6** Add to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/basic/MyExample176Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivalue/basic/myexample176info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -109,7 +109,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/basic/MyExample176Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivalue/basic/myexample176form.widget.json
             --8<--
             ```
 
@@ -185,7 +185,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/color/MyExample174List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivalue/color/myexample174list.widget.json
             --8<--
             ``` 
  
@@ -202,7 +202,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivalue/colorconst/MyExample178List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivalue/colorconst/myexample178list.widget.json
             --8<--
             ``` 
         === "Info widget"
@@ -328,7 +328,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivalue/filtration/MyExample184List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multivalue/filtration/myexample184list.widget.json
         --8<--
         ```
  
@@ -581,7 +581,7 @@ Title primary field has default title `primary`.
         'title'- Title primary field (Optional. Default title `primary`)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivalue/primary/myEntity2001AssocListPopup.widget.json
+        {{ external_links.github_raw_doc }}/fields/multivalue/primary/myentity2001assoclistpopup.widget.json
         --8<--
         ```
 

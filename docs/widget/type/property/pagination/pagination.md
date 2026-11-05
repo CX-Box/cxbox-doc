@@ -85,7 +85,7 @@ Frontend Behavior:
     === "List"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/MyExample3862List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/myexample3862list.widget.json
         --8<--
         ```
 
@@ -95,7 +95,7 @@ Frontend Behavior:
     === "CardList"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/forcardlist/MyExample3862CardList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/forcardlist/myexample3862cardlist.widget.json
         --8<--
         ```
 
@@ -135,7 +135,7 @@ Next button availability logic:
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/MyExample3860List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/myexample3860list.widget.json
     --8<--
     ```
     !!! info
@@ -177,7 +177,7 @@ Disadvantages of this mode:
     ```
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/MyExample3861List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/myexample3861list.widget.json
       --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
@@ -218,7 +218,7 @@ This function is available:
 
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/hidelimitoptions/MyExample3865List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/hidelimitoptions/myexample3865list.widget.json
       --8<--
     ```
  
@@ -299,7 +299,7 @@ Restrict pagination options to specific values (e.g., 10, 25, 50, or 100 items p
 
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/MyExample3867List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myexample3867list.widget.json
       --8<--
     ```
  
@@ -335,7 +335,7 @@ Pagination panel display  controlling the display of the pagination panel.
     ```
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/MyExample3865PaginationSwitchFalseList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/myexample3865paginationswitchfalselist.widget.json
       --8<--
     ```
 

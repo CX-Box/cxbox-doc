@@ -36,7 +36,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/date/basic/DateBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/date/basic/datebasiclist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -44,7 +44,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/date/basic/DateBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/date/basic/datebasicinfo.widget.json
         --8<--
         ```
 
@@ -54,7 +54,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/date/basic/DateBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/date/basic/datebasicform.widget.json
         --8<--
         ```    
 
@@ -133,14 +133,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/date/color/DateColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/date/color/datecolorlist.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/date/color/DateColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/date/color/datecolorinfo.widget.json
             --8<--
             ```   
         === "Form widget"
@@ -154,7 +154,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/date/colorconst/DateColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/fields/date/colorconst/datecolorconstlist.widget.json
             --8<--
             ```
 
@@ -162,7 +162,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/date/colorconst/DateColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/date/colorconst/datecolorconstinfo.widget.json
             --8<--
             ```   
 
@@ -329,7 +329,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/date/drilldown/DateDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/date/drilldown/datedrilldownlist.widget.json
         --8<--
         ```
         **Option 2**
@@ -340,7 +340,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/date/drilldown/DateDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/date/drilldown/datedrilldowninfo.widget.json
         --8<--
         ```
         **Option 2**

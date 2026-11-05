@@ -38,7 +38,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/basic/DateTimeWithSecondsList.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/basic/datetimewithsecondslist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -46,7 +46,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/basic/DateTimeWithSecondsInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/basic/datetimewithsecondsinfo.widget.json
         --8<--
         ```
 
@@ -56,7 +56,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/basic/DateTimeWithSecondsForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/basic/datetimewithsecondsform.widget.json
         --8<--
         ```    
 
@@ -135,14 +135,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/color/DateTimeWithSecondsColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/color/datetimewithsecondscolorlist.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/color/DateTimeWithSecondsColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/color/datetimewithsecondscolorinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -157,7 +157,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/colorconst/datetimewithsecondscolorconstlist.widget.json
             --8<--
             ```
 
@@ -166,7 +166,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/colorconst/DateTimeWithSecondsColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetimewithseconds/colorconst/datetimewithsecondscolorconstinfo.widget.json
             --8<--
             ```
 
@@ -337,7 +337,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/drilldown/datetimewithsecondsdrilldownlist.widget.json
         --8<--
         ```
 
@@ -350,7 +350,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/drilldown/DateTimeWithSecondsDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetimewithseconds/drilldown/datetimewithsecondsdrilldowninfo.widget.json
         --8<--
         ```
         **Option 2**

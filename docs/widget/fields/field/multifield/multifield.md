@@ -39,7 +39,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
         Add `fields` and `style` to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multifield/basic/myexample160list.widget.json
         --8<--
         ```     
 
@@ -50,7 +50,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/multifield/basic/myexample160info.widget.json
         --8<--
         ```
 
@@ -62,7 +62,7 @@ Block containing with field type hint. `see more` [hint](/widget/fields/field/hi
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multifield/basic/MyExample160Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/multifield/basic/myexample160form.widget.json
         --8<--
         ```
 

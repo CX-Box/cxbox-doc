@@ -54,7 +54,7 @@ Available since [v3.0.1](/new/version3001/)
         +  **Step 1.6.AssocTreePopup**  Create AssocTreePopup to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/myEntity3314MultivalueAssocTreePopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/myentity3314multivalueassoctreepopup.widget.json
             --8<--
             ```
         +  **Step2** Add **List** field to corresponding **BaseEntity**.
@@ -94,7 +94,7 @@ Available since [v3.0.1](/new/version3001/)
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/MyExample3314List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/myexample3314list.widget.json
             --8<--
             ```
     
@@ -102,7 +102,7 @@ Available since [v3.0.1](/new/version3001/)
             **Step 6** Add to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/MyExample3314Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/myexample3314info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -114,7 +114,7 @@ Available since [v3.0.1](/new/version3001/)
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/MyExample3314Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/basic/myexample3314form.widget.json
             --8<--
             ```
 
@@ -190,7 +190,7 @@ Available since [v3.0.1](/new/version3001/)
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/color/MyExample3315List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/color/myexample3315list.widget.json
             --8<--
             ``` 
  
@@ -207,7 +207,7 @@ Available since [v3.0.1](/new/version3001/)
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluetree/colorconst/MyExample3316List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluetree/colorconst/myexample3316list.widget.json
             --8<--
             ``` 
         === "Info widget"
@@ -333,7 +333,7 @@ Available since [v3.0.1](/new/version3001/)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluetree/filtration/MyExample3318List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multivaluetree/filtration/myexample3318list.widget.json
         --8<--
         ```
  
@@ -580,7 +580,7 @@ Which rows may be selected at all - nodes, leaves or both - is defined by the `o
         Add **tree.selection** to corresponding Assoc **.widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261assoctreepopup.widget.json
         --8<--
         ```
 

@@ -44,7 +44,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/basic/myexample1list.widget.json
         --8<--
         ```
     === "Info widget"
@@ -52,7 +52,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/basic/myexample1info.widget.json
         --8<--
         ```
 
@@ -62,7 +62,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/basic/MyExample1Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/basic/myexample1form.widget.json
         --8<--
         ```
     **Option2** Add **Double** field  to corresponding **DataResponseDTO** in Step1.
@@ -137,7 +137,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73List.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/color/myexample73list.widget.json
             --8<--
             ```   
 
@@ -145,7 +145,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/color/myexample73info.widget.json
             --8<--
             ```  
 
@@ -153,7 +153,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/percent/color/MyExample73Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/color/myexample73form.widget.json
             --8<--
             ```  
 
@@ -165,21 +165,21 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/percent/colorconst/MyExample3List.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/colorconst/myexample3list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/percent/colorconst/MyExample3Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/colorconst/myexample3info.widget.json
             --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/percent/colorconst/MyExample3Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/percent/colorconst/myexample3form.widget.json
             --8<--
             ```
 
@@ -341,7 +341,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/drilldown/MyExample5List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/drilldown/myexample5list.widget.json
         --8<--
         ```   
         **Option 2**
@@ -352,7 +352,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/drilldown/MyExample5Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/drilldown/myexample5info.widget.json
         --8<--
         ``` 
         **Option 2**
@@ -606,21 +606,21 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/MyExample310List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/myexample310list.widget.json
         --8<--
         ```
     === "Info widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/MyExample310Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/myexample310info.widget.json
         --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/MyExample310Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/digits/myexample310form.widget.json
         --8<--
         ```
 
@@ -646,7 +646,7 @@ By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equ
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/nullable/MyExample58List.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/nullable/myexample58list.widget.json
         --8<--
         ```   
     === "Info widget"
@@ -656,7 +656,7 @@ By default, UI sets `Percent` value to 0 when user deletes it. If `nullable` equ
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/nullable/MyExample58Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/percent/additionalproperties/nullable/myexample58form.widget.json
         --8<--
         ```  
 

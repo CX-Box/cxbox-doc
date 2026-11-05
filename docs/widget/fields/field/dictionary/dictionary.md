@@ -81,7 +81,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
     
                 ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70List.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/myexample70list.widget.json
                 --8<--
                 ```
     
@@ -93,7 +93,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             
                 ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Info.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/myexample70info.widget.json
                 --8<--
                 ```
     
@@ -106,7 +106,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             
                 ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/basic/MyExample70Form.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/basic/myexample70form.widget.json
                 --8<--
                 ```  
     
@@ -209,7 +209,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352List.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/myexample352list.widget.json
             --8<--
             ```
         
@@ -221,7 +221,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/myexample352info.widget.json
             --8<--
             ```
         
@@ -234,7 +234,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/MyExample352Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/basic/myexample352form.widget.json
             --8<--
             ```  
         
@@ -416,7 +416,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
 
             ```json
                 --8<--
-                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350List.widget.json
+                {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/myexample350list.widget.json
                 --8<--
             ```
 
@@ -428,7 +428,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/myexample350info.widget.json
             --8<--
             ```
 
@@ -441,7 +441,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
         
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/MyExample350Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/basic/myexample350form.widget.json
             --8<--
             ```  
 
@@ -525,7 +525,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/color/MyExample71List.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/color/myexample71list.widget.json
             --8<--
             ```
 
@@ -536,7 +536,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/color/MyExample71Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/color/myexample71info.widget.json
             --8<--
             ```
 
@@ -550,7 +550,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/colorconst/MyExample84List.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/colorconst/myexample84list.widget.json
             --8<--
             ```
 
@@ -562,7 +562,7 @@ If the dictionary is tied to business logic, it is recommended to use `Enum` to 
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/dictionary/colorconst/MyExample84Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/dictionary/colorconst/myexample84info.widget.json
             --8<--
             ```
 
@@ -801,7 +801,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/drilldown/MyExample86List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/drilldown/myexample86list.widget.json
         --8<--
         ```
     
@@ -816,7 +816,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/drilldown/MyExample86Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/drilldown/myexample86info.widget.json
         --8<--
         ```
         **Option 2**
@@ -1293,7 +1293,7 @@ Applies to:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/myexample3011list.widget.json
         --8<--
         ```  
 
@@ -1314,7 +1314,7 @@ Applies to:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/myexample355list.widget.json
         --8<--
         ```
 
@@ -1332,7 +1332,7 @@ Applies to:
         Add **"mode": "default"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/MyExample351List.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/myexample351list.widget.json
         --8<--
         ```
 
@@ -1383,7 +1383,7 @@ Applies to:
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/MyExample3011ListIconMode.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/icon/list/myexample3011listiconmode.widget.json
         --8<--
         ```  
     === "Dictionary"
@@ -1397,7 +1397,7 @@ Applies to:
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/MyExample355ListOnlyIcon.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/icon/myexample355listonlyicon.widget.json
         --8<--
         ```  
 
@@ -1412,7 +1412,7 @@ Applies to:
         `Step 2 ` Add **"mode": "icon"** to corresponding **widget.json**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/MyExample351ListModeIcon.widget.json
+        {{ external_links.github_raw_doc }}/fields/dictionary/dictionarydictionary/old/icon/myexample351listmodeicon.widget.json
         --8<--
         ```  
 

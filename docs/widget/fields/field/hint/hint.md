@@ -39,7 +39,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hint/basic/MyExample156List.widget.json
+        {{ external_links.github_raw_doc }}/fields/hint/basic/myexample156list.widget.json
         --8<--
         ```
     === "Info widget"
@@ -47,7 +47,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hint/basic/MyExample156Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/hint/basic/myexample156info.widget.json
         --8<--
         ```
 
@@ -57,7 +57,7 @@ The typical scenario involves using in a logical block [Multifield](/widget/fiel
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hint/basic/MyExample156Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/hint/basic/myexample156form.widget.json
         --8<--
         ```
 
@@ -102,14 +102,14 @@ _not applicable_
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/hint/color/MyExample157List.widget.json
+            {{ external_links.github_raw_doc }}/fields/hint/color/myexample157list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/hint/color/MyExample157Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/hint/color/myexample157info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -123,14 +123,14 @@ _not applicable_
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/hint/colorconst/MyExample158List.widget.json
+            {{ external_links.github_raw_doc }}/fields/hint/colorconst/myexample158list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/hint/colorconst/MyExample158Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/hint/colorconst/myexample158info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -212,7 +212,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hint/drilldown/MyExample161List.widget.json
+        {{ external_links.github_raw_doc }}/fields/hint/drilldown/myexample161list.widget.json
         --8<--
         ```
  
@@ -224,7 +224,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hint/drilldown/MyExample161Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/hint/drilldown/myexample161info.widget.json
         --8<--
         ```
         **Option 2**
@@ -234,7 +234,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hint/drilldown/MyExample161Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/hint/drilldown/myexample161form.widget.json
         --8<--
         ```
         **Option 2**

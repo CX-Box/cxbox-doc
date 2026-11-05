@@ -60,7 +60,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94List.widget.json
+            {{ external_links.github_raw_doc }}/fields/fileupload/basic/myexample94list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -68,7 +68,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/fileupload/basic/myexample94info.widget.json
             --8<--
             ```
     
@@ -78,7 +78,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/fileupload/basic/MyExample94Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/fileupload/basic/myexample94form.widget.json
             --8<--
             ```    
     

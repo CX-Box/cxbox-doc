@@ -122,7 +122,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330List.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330list.widget.json
             --8<--
             ```
        
@@ -132,7 +132,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myEntity3330MultiAssocTreePopup.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myentity3330multiassoctreepopup.widget.json
             --8<--
             ```
 
@@ -151,7 +151,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoctree/base/MyExample3330Form.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330form.widget.json
             --8<--
             ```
        
@@ -161,7 +161,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myEntity3330MultiAssocTreePopup.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myentity3330multiassoctreepopup.widget.json
             --8<--
             ```
 
@@ -202,7 +202,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330Assoc.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoctree/base/myexample3330assoc.widget.json
             --8<--
             ```
             **Step4** Add a dependency on parent BC for Assoc BC for to corresponding **EnumBcIdentifier**
@@ -252,7 +252,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoctree/title/myEntity3336MultiPickAssocTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoctree/title/myentity3336multipickassoctreepopup.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3336){:target="_blank"} ·
@@ -263,7 +263,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoctree/title/myEntity3336MultiPickAssocEmptyListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoctree/title/myentity3336multipickassocemptylistpopup.widget.json
         --8<--
         ```
     
@@ -311,7 +311,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/color/myEntity3332MultiPickAssocTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/color/myentity3332multipickassoctreepopup.widget.json
         --8<--
         ``` 
 
@@ -326,7 +326,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/colorconst/myEntity3332MultiPickAssocTreePopup0.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoctree/colortitle/colorconst/myentity3332multipickassoctreepopup0.widget.json
         --8<--
         ```
  
@@ -387,7 +387,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/assoctree/base/myEntity3330MultiAssocTreePopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/assoctree/base/myentity3330multiassoctreepopup.widget.json
              --8<--
           ```
 
@@ -447,7 +447,7 @@ The position of the newly created row inside its node is defined by **options**.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myEntity3331MultiAssocTreePopupCreateAssocTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myentity3331multiassoctreepopupcreateassoctreepopup.widget.json
     --8<--
     ```
 
@@ -490,7 +490,7 @@ The position of the newly created row inside its node is defined by **options**.
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myEntity3331MultiFormForPopup2.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myentity3331multiformforpopup2.widget.json
     --8<--
     ```
  
@@ -510,7 +510,7 @@ The position of the newly created row inside its node is defined by **options**.
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myEntity3331MultiAssocTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/create/myentity3331multiassoctreepopup.widget.json
     --8<--
     ```
  
@@ -550,7 +550,7 @@ _not applicable_
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/delete/myEntity3331MultiAssocDeleteListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/delete/myentity3331multiassocdeletelistpopup.widget.json
     --8<--
     ``` 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3331/view/myexample3331delete){:target="_blank"} ·
@@ -618,7 +618,7 @@ There are three methods to create a record:
     **Step2**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myEntity3331MultiFormForPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/myentity3331multiformforpopup.widget.json
     --8<--
     ```
  
@@ -635,7 +635,7 @@ There are three methods to create a record:
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/myEntity3331MultiAssocTreePopupEditInlineForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoctree/actions/edit/myentity3331multiassoctreepopupeditinlineform.widget.json
     --8<--
     ```
 
@@ -758,7 +758,7 @@ The result of a full text search is displayed in the same way as the result of f
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261assoctreepopup.widget.json
     --8<--
     ```
 
@@ -810,7 +810,7 @@ In `collapse` mode the records whose parents have not been loaded yet are placed
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261assoctreepopup.widget.json
     --8<--
     ```
 
@@ -849,7 +849,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myEntity3867MultiPickAssocTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myentity3867multipickassoctreepopup.widget.json
         --8<--
         ```
 
@@ -860,7 +860,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/defaultlimitpage/myEntity359AssocPickAssocTreePopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/defaultlimitpage/myentity359assocpickassoctreepopup.widget.json
         --8<--
         ```
 
@@ -937,7 +937,7 @@ The default value is `["paginationUnselect"]`, an empty array disables the confi
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261AssocTreePopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/base/inner/myexample3261assoctreepopup.widget.json
     --8<--
     ```
 

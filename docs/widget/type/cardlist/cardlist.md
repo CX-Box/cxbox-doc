@@ -29,7 +29,7 @@ Without other settings the card title is the file name. In the sample the title 
     Add a field with type `fileUpload` and fields for the title and the description. Set them in `options.card`. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300cardlist.widget.json
     --8<--
     ```
 
@@ -79,7 +79,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardlist/title/MyExample5301CardList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardlist/title/myexample5301cardlist.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5301/view/myexample5301title){:target="_blank"} ·
@@ -89,7 +89,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardlist/title/MyExample5301EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardlist/title/myexample5301emptytitle.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5301/view/myexample5301emptytitle){:target="_blank"} ·
@@ -136,7 +136,7 @@ The title shows field values of the current record, that is of the selected card
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardlist/colortitle/MyExample5302CardList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardlist/colortitle/myexample5302cardlist.widget.json
         --8<--
         ```
 
@@ -151,7 +151,7 @@ The title shows field values of the current record, that is of the selected card
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardlist/colortitle/MyExample5302ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardlist/colortitle/myexample5302colorconst.widget.json
         --8<--
         ```
 
@@ -197,7 +197,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardlist/showcondition/MyExample5313CardList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardlist/showcondition/myexample5313cardlist.widget.json
         --8<--
         ```
 
@@ -252,7 +252,7 @@ Other fields are not shown on the card. They can be used in the create and edit 
 
       ```json
          --8<--
-         {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+         {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300cardlist.widget.json
          --8<--
       ```
 
@@ -312,7 +312,7 @@ The user uploads a file, fills the fields and clicks "Save": the new card is add
     **Step 2** Create widget.json with type `Form` that appears in the popup.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300form.widget.json
     --8<--
     ```
 
@@ -326,7 +326,7 @@ The user uploads a file, fills the fields and clicks "Save": the new card is add
     **Step 4** Add the widget with type `Form` to **options**.**create** with `"style": "popup"` of corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300cardlist.widget.json
     --8<--
     ```
 
@@ -362,7 +362,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
     **Step 3** Add button `create` to corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/myexample5309cardlist.widget.json
     --8<--
     ```
 
@@ -415,7 +415,7 @@ Without `options.edit` the card has the **eye** icon. It opens the file in a pop
     **Step 2** Create widget.json with type `Form` that appears in the popup.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300form.widget.json
     --8<--
     ```
 
@@ -429,7 +429,7 @@ Without `options.edit` the card has the **eye** icon. It opens the file in a pop
     **Step 4** Add the widget with type `Form` to **options**.**edit** with `"style": "popup"` of corresponding **.widget.json**: the edit icon appears on each card.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300cardlist.widget.json
     --8<--
     ```
 
@@ -468,7 +468,7 @@ With `Edit with view`, you can edit the card from a separate view that displays 
     **Step 2** Add action *edit* to **actionGroups** of corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/MyExample5309CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/actions/newview/myexample5309cardlist.widget.json
     --8<--
     ```
 
@@ -513,7 +513,7 @@ With a description the title and the description are cut to one line. Without a 
     Add **options.card** to **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300cardlist.widget.json
     --8<--
     ```
 
@@ -542,7 +542,7 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     Add **preview** with `"enabled": true` and `"mode": "inline"` to the fileUpload field in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/base/MyExample5300CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/base/myexample5300cardlist.widget.json
     --8<--
     ```
 
@@ -570,7 +570,7 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     **Step 2** Add the dictionary field with **"bgColorKey"** to **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/status/MyExample5305CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/status/myexample5305cardlist.widget.json
     --8<--
     ```
 
@@ -592,7 +592,7 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     `Step 1` Add **"drillDown": true** to the fileUpload field of the card in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/drilldown/MyExample5306CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/drilldown/myexample5306cardlist.widget.json
     --8<--
     ```
 
@@ -623,14 +623,14 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     **Step 1** Create an Info widget with the fileUpload field.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/read/MyExample5307Read.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/read/myexample5307read.widget.json
     --8<--
     ```
 
     **Step 2** Add **options.read.widget** to the CardList widget.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/read/MyExample5307CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/read/myexample5307cardlist.widget.json
     --8<--
     ```
 
@@ -660,7 +660,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
     **Step 1** Add **fullTextSearch** to **options** of **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardlist/fulltextsearch/MyExample5308CardList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardlist/fulltextsearch/myexample5308cardlist.widget.json
     --8<--
     ```
 
@@ -706,7 +706,7 @@ We have implemented multi-file upload. You can use a dedicated drag-and-drop zon
     **Step 1** Add actionKey **associate** to **options.buttons** of corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/file/MyExample6100CardList.widget.json
+    {{ external_links.github_raw_doc }}/feature/file/myexample6100cardlist.widget.json
     --8<--
     ```
 

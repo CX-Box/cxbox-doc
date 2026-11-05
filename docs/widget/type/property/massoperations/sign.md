@@ -123,13 +123,13 @@ After clicking on the mass action, the user goes through the steps:
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/MyExample3711MassList.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/myexample3711masslist.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/MyExample3711MassGH.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/sign/mass/myexample3711massgh.widget.json
             --8<--
             ```
     === "Encrypting"
@@ -148,13 +148,13 @@ After clicking on the mass action, the user goes through the steps:
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/MyExample3713MassList.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/myexample3713masslist.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/MyExample3713MassGH.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/encrypt/mass/myexample3713massgh.widget.json
             --8<--
             ```
     === "Signing and encrypting"
@@ -173,13 +173,13 @@ After clicking on the mass action, the user goes through the steps:
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/MyExample3714MassList.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/myexample3714masslist.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/MyExample3714MassGH.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/signencrypt/mass/myexample3714massgh.widget.json
             --8<--
             ```
     === "Encrypting and signing"
@@ -198,13 +198,13 @@ After clicking on the mass action, the user goes through the steps:
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/MyExample3712MassList.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/myexample3712masslist.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/MyExample3712MassGH.widget.json
+            {{ external_links.github_raw_doc }}/feature/encryptsign/encryptsign/mass/myexample3712massgh.widget.json
             --8<--
             ```
 

@@ -81,7 +81,7 @@ Options:
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/pie1d/base/defaultfields/MyExample4207Pie.widget.json
+    {{ external_links.github_raw_doc }}/widgets/pie1d/base/defaultfields/myexample4207pie.widget.json
     --8<--
     ```
 
@@ -124,7 +124,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/title/withtitle/MyExample4220Pie.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/title/withtitle/myexample4220pie.widget.json
         --8<--
         ```
 
@@ -135,7 +135,7 @@ There are types of:
         **Step1** Delete parameter **title** from **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/title/withouttitle/MyExample4217Pie.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/title/withouttitle/myexample4217pie.widget.json
         --8<--
         ```
 
@@ -192,7 +192,7 @@ Give every record a unique `id`, see [Basics](#basics).
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/showcondition/MyExample4215Pie.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/showcondition/myexample4215pie.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4215){:target="_blank"} ·
@@ -235,7 +235,7 @@ A field with type `hidden` is not shown in the table mode. Use it for the values
 
       ```json
          --8<--
-         {{ external_links.github_raw_doc }}/widgets/pie1d/base/defaultfields/MyExample4207Pie.widget.json
+         {{ external_links.github_raw_doc }}/widgets/pie1d/base/defaultfields/myexample4207pie.widget.json
          --8<--
       ```
 
@@ -271,7 +271,7 @@ You can configure the tooltip not to be displayed.
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/pie1d/tooltip/MyExample4211Pie.widget.json
+    {{ external_links.github_raw_doc }}/widgets/pie1d/tooltip/myexample4211pie.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4211){:target="_blank"} ·
@@ -308,7 +308,7 @@ In the sample the key clients are blue, the others are grey.
         **Step 2** Add **"bgColorKey"** : `custom field for color` to the field of `valueFieldKey` in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/color/MyExample4218Pie.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/color/myexample4218pie.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4218){:target="_blank"} ·
@@ -334,7 +334,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     **Step1** Add **"drillDown": true** to the field of `valueFieldKey` in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/pie1d/drilldown/drilldown/MyExample4219Pie.widget.json
+    {{ external_links.github_raw_doc }}/widgets/pie1d/drilldown/drilldown/myexample4219pie.widget.json
     --8<--
     ```
 
@@ -405,7 +405,7 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/total/MyExample4261Sum.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/total/myexample4261sum.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4261/view/myexample4261sum){:target="_blank"} ·
@@ -421,7 +421,7 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
         **Step2** Add the field to **fields** and to **total.argFieldKeys** in **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/total/MyExample4261ArgFields.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/total/myexample4261argfields.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4261/view/myexample4261argfields){:target="_blank"} ·
@@ -431,7 +431,7 @@ A click on a title in the legend hides the segment, `func` is recalculated over 
         Add **total.value** to **options.chart1D** in **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/pie1d/total/MyExample4261Value.widget.json
+        {{ external_links.github_raw_doc }}/widgets/pie1d/total/myexample4261value.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4261/view/myexample4261value){:target="_blank"} ·
@@ -458,7 +458,7 @@ You can set the size of the hole in the center of the pie, from `0` to `1`, defa
     
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/pie1d/total/MyExample4261InnerSpace.widget.json
+    {{ external_links.github_raw_doc }}/widgets/pie1d/total/myexample4261innerspace.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4261/view/myexample4261innerspace){:target="_blank"} ·
@@ -487,7 +487,7 @@ You can set where the values of the segments are shown:
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/pie1d/labelposition/MyExample4262Outer.widget.json
+    {{ external_links.github_raw_doc }}/widgets/pie1d/labelposition/myexample4262outer.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4262/view/myexample4262outer){:target="_blank"} ·
@@ -590,7 +590,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/pie1d/fulltextsearch/MyExample4265Pie.widget.json
+    {{ external_links.github_raw_doc }}/widgets/pie1d/fulltextsearch/myexample4265pie.widget.json
     --8<--
     ```
 

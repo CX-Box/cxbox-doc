@@ -49,7 +49,7 @@ The formatting is shown in view mode and in edit mode. The toolbar is shown in e
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/richtext/basic/MyExample425List.widget.json
+        {{ external_links.github_raw_doc }}/fields/richtext/basic/myexample425list.widget.json
         --8<--
         ```
     === "Info widget"
@@ -57,7 +57,7 @@ The formatting is shown in view mode and in edit mode. The toolbar is shown in e
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/richtext/basic/MyExample425Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/richtext/basic/myexample425info.widget.json
         --8<--
         ```
 
@@ -66,7 +66,7 @@ The formatting is shown in view mode and in edit mode. The toolbar is shown in e
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/richtext/basic/MyExample425Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/richtext/basic/myexample425form.widget.json
         --8<--
         ```
 
@@ -586,21 +586,21 @@ The height of the field is set in rows. A row is as high as a line of the `text`
         Add **"maxRows"**, **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/richtext/height/MyExample436List.widget.json
+        {{ external_links.github_raw_doc }}/fields/richtext/height/myexample436list.widget.json
         --8<--
         ```
     === "Info widget"
         Add **"minRows"**, **"maxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/richtext/height/MyExample436Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/richtext/height/myexample436info.widget.json
         --8<--
         ```
     === "Form widget"
         Add **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/richtext/height/MyExample436Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/richtext/height/myexample436form.widget.json
         --8<--
         ```
 

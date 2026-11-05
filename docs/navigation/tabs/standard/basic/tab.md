@@ -82,7 +82,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
         ```
         ![secondleveltopdev.gif](secondleveltopdev.gif)
 
-##  <a id="ThirdLevelMenu">ThirdLevelMenu</a>
+##  <a id="thirdlevelmenu">ThirdLevelMenu</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3235){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/basic/thirdlevel){:target="_blank"}
 ### How does it look?
@@ -107,7 +107,7 @@ The tabs are organized as a tab bar. If the number of tabs exceeds the space ava
     ```
     ![thirdleveltopdev.gif](thirdleveltopdev.gif)
 
-##  <a id="FourthLevelMenu">FourthLevelMenu</a>
+##  <a id="fourthlevelmenu">FourthLevelMenu</a>
  
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample32353){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/navigation/tab/typestandard/basic/fourthlevel){:target="_blank"}

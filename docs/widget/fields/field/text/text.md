@@ -39,7 +39,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/basic/MyExample40List.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/basic/myexample40list.widget.json
         --8<--
         ```
     === "Info widget"
@@ -47,7 +47,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/basic/MyExample40Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/basic/myexample40info.widget.json
         --8<--
         ```
 
@@ -57,7 +57,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/basic/MyExample40Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/basic/myexample40form.widget.json
         --8<--
         ```    
     
@@ -132,14 +132,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/color/MyExample41List.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/color/myexample41list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/color/MyExample41Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/color/myexample41info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -153,14 +153,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/colorconst/MyExample42List.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/colorconst/myexample42list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/colorconst/MyExample42Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/colorconst/myexample42info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -308,7 +308,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/drilldown/MyExample44List.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/drilldown/myexample44list.widget.json
         --8<--
         ```
         **Option 2**
@@ -318,7 +318,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/drilldown/MyExample44Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/drilldown/myexample44info.widget.json
         --8<--
         ```
         **Option 2**
@@ -602,21 +602,21 @@ The height of the field is set in rows.
         Add **"maxRows"**, **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437List.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/height/myexample437list.widget.json
         --8<--
         ```
     === "Info widget"
         Add **"minRows"**, **"maxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/height/myexample437info.widget.json
         --8<--
         ```
     === "Form widget"
         Add **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/height/myexample437form.widget.json
         --8<--
         ```
 

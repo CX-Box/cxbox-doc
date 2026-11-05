@@ -37,7 +37,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/basic/datetimebasiclist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -45,7 +45,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/basic/datetimebasicinfo.widget.json
         --8<--
         ```
 
@@ -55,7 +55,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/basic/datetimebasicform.widget.json
         --8<--
         ```    
 
@@ -135,14 +135,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/color/DateTimeColorCalcList.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/color/datetimecolorcalclist.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/color/DateTimeColorCalcInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/color/datetimecolorcalcinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -156,7 +156,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/DateTimeColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/datetimecolorlist.widget.json
             --8<--
             ```
 
@@ -164,7 +164,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/DateTimeColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/datetimecolorinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -333,7 +333,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/DateTimeDrilldownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/datetimedrilldownlist.widget.json
         --8<--
         ```
 
@@ -346,7 +346,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/DateTimeDrilldownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/datetimedrilldowninfo.widget.json
         --8<--
         ```
 

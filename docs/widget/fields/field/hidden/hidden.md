@@ -37,7 +37,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/hidden/basic/hiddenbasiclist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -45,7 +45,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/hidden/basic/hiddenbasicinfo.widget.json
         --8<--
         ```
 
@@ -55,7 +55,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/hidden/basic/HiddenBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/hidden/basic/hiddenbasicform.widget.json
         --8<--
         ```      
 

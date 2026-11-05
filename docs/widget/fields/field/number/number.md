@@ -43,7 +43,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/basic/NumberBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/basic/numberbasiclist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -51,7 +51,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/basic/NumberBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/basic/numberbasicinfo.widget.json
         --8<--
         ```
 
@@ -61,7 +61,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/basic/NumberBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/basic/numberbasicform.widget.json
         --8<--
         ```    
 
@@ -136,7 +136,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/color/NumberColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/color/numbercolorlist.widget.json
             --8<--
             ```
  
@@ -144,7 +144,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/color/NumberColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/color/numbercolorinfo.widget.json
             --8<--
             ```
  
@@ -152,7 +152,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/color/NumberColorForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/color/numbercolorform.widget.json
             --8<--
             ```
 
@@ -164,7 +164,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/colorconst/numbercolorconstlist.widget.json
             --8<--
             ```
  
@@ -172,7 +172,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/colorconst/numbercolorconstinfo.widget.json
             --8<--
             ```
 
@@ -180,7 +180,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/colorconst/numbercolorconstform.widget.json
             --8<--
             ```
 
@@ -346,7 +346,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/drilldown/NumberDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/drilldown/numberdrilldownlist.widget.json
         --8<--
         ```
  
@@ -358,7 +358,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/drilldown/NumberDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/drilldown/numberdrilldowninfo.widget.json
         --8<--
         ```
         **Option 2**
@@ -605,7 +605,7 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/DigitsNumberList.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/digitsnumberlist.widget.json
         --8<--
         ```
   
@@ -613,14 +613,14 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/DigitsNumberInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/digitsnumberinfo.widget.json
         --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/DigitsNumberForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/digitsnumberform.widget.json
         --8<--
         ```
 
@@ -646,7 +646,7 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/MyExample57List.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/myexample57list.widget.json
         --8<--
         ```
  
@@ -657,7 +657,7 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         Add **nullable** to **_.widget.json_**.        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/MyExample57Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/myexample57form.widget.json
         --8<--
         ```
 

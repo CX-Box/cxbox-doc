@@ -45,7 +45,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicList.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/basic/inputbasiclist.widget.json
             --8<--
             ```
         === "Info widget"
@@ -53,7 +53,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/basic/inputbasicinfo.widget.json
             --8<--
             ```
     
@@ -63,7 +63,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/basic/inputbasicform.widget.json
             --8<--
             ```    
     
@@ -136,14 +136,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/color/InputColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/color/inputcolorlist.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/color/InputColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/color/inputcolorinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -157,14 +157,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/colorconst/InputColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/colorconst/inputcolorconstlist.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/colorconst/InputColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/colorconst/inputcolorconstinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -321,7 +321,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/drilldown/InputDrilldownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/drilldown/inputdrilldownlist.widget.json
         --8<--
         ```
  
@@ -333,7 +333,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/drilldown/InputDrilldownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/drilldown/inputdrilldowninfo.widget.json
         --8<--
         ```
         **Option 2**
@@ -343,7 +343,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/drilldown/InputDrilldownForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/drilldown/inputdrilldownform.widget.json
         --8<--
         ```
         **Option 2**
@@ -598,7 +598,7 @@ Specifies the maximum number of characters to enter
         Add **maxInput** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/MaxInputList.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/maxinputlist.widget.json
         --8<--
         ```
   
@@ -608,7 +608,7 @@ Specifies the maximum number of characters to enter
         Add **maxInput** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/MaxInputForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/maxinputform.widget.json
         --8<--
         ```
     

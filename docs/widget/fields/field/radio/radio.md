@@ -56,7 +56,7 @@
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/radio/basic/MyExample20List.widget.json
+        {{ external_links.github_raw_doc }}/fields/radio/basic/myexample20list.widget.json
         --8<--
         ``` 
 
@@ -64,14 +64,14 @@
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/radio/basic/MyExample20Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/radio/basic/myexample20info.widget.json
         --8<--
         ``` 
     === "Form widget"
         **Step5** Add to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/radio/basic/MyExample20Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/radio/basic/myexample20form.widget.json
         --8<--
         ``` 
 
@@ -116,7 +116,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/radio/color/MyExample21List.widget.json
+            {{ external_links.github_raw_doc }}/fields/radio/color/myexample21list.widget.json
             --8<--
             ```
 
@@ -124,7 +124,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/radio/color/MyExample21Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/radio/color/myexample21info.widget.json
             --8<--
             ```
 
@@ -139,14 +139,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/radio/colorconst/MyExample22List.widget.json
+            {{ external_links.github_raw_doc }}/fields/radio/colorconst/myexample22list.widget.json
             --8<--
             ```   
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/radio/colorconst/MyExample22Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/radio/colorconst/myexample22info.widget.json
             --8<--
             ```   
 
@@ -317,7 +317,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/radio/drilldown/MyExample24List.widget.json
+        {{ external_links.github_raw_doc }}/fields/radio/drilldown/myexample24list.widget.json
         --8<--
         ``` 
 
@@ -329,7 +329,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/radio/drilldown/MyExample24Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/radio/drilldown/myexample24info.widget.json
         --8<--
         ``` 
         **Option 2**

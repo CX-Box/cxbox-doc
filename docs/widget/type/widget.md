@@ -81,7 +81,7 @@ Steps
 
 ```json
 {
-  "name": "MyExampleForm",
+  "name": "myexampleform",
   "title": "Title Form",
   "type": "Form",
   "bc": "myexample",

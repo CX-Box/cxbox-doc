@@ -34,7 +34,7 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
     **Step1** Create file **_.widget.json_** with type = **"CalendarList"**. Add the fields of the event and **options.calendar**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/MyExample5055List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/myexample5055list.widget.json
     --8<--
     ```
 
@@ -87,7 +87,7 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/MyExample5056.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/myexample5056.widget.json
         --8<--
         ```
 
@@ -100,7 +100,7 @@ The fields of the event are set in **options**.**calendar** of **_.widget.json_*
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/MyExample5056ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/color/myexample5056colorconst.widget.json
         --8<--
         ```
 
@@ -153,7 +153,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/bycurrententity/MyExample5057ShowCond.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/bycurrententity/myexample5057showcond.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5057){:target="_blank"} ·
@@ -163,7 +163,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/byparententity/MyExample5059Child.widget.json
+        {{ external_links.github_raw_doc }}/widgets/calendarlist/showcondition/byparententity/myexample5059child.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5057/view/myexample5059showcond){:target="_blank"} ·
@@ -205,7 +205,7 @@ Fields Configuration. The fields array defines the fields of the event (see [opt
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/MyExample5055List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/base/events/myexample5055list.widget.json
     --8<--
     ```
 
@@ -259,7 +259,7 @@ The width of the popup is the `gridWidth` of the form widget in **_.view.json_**
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/create/withwidget/myEntity5061CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/create/withwidget/myentity5061createform.widget.json
     --8<--
     ```
 
@@ -276,7 +276,7 @@ The width of the popup is the `gridWidth` of the form widget in **_.view.json_**
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/create/withwidget/MyExample5061.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/create/withwidget/myexample5061.widget.json
     --8<--
     ```
 
@@ -310,7 +310,7 @@ With `Create with view`, clicking the "Create" button opens a separate view that
     **Step3** Add button `create` to corresponding **.widget.json**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/create/newview/MyExample5062.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/create/newview/myexample5062.widget.json
     --8<--
     ```
 
@@ -363,7 +363,7 @@ The width of the popover or the popup is the `gridWidth` of the form widget in *
     **Step3**  Create widget.json with type `Form` that appears when you click an event
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/edit/withwidget/myEntity5064EditForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/edit/withwidget/myentity5064editform.widget.json
     --8<--
     ```
 
@@ -380,7 +380,7 @@ The width of the popover or the popup is the `gridWidth` of the form widget in *
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/edit/withwidget/MyExample5064.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/edit/withwidget/myexample5064.widget.json
     --8<--
     ```
 
@@ -412,7 +412,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/edit/newview/MyExample5065.widget.json
+    {{ external_links.github_raw_doc }}/widgets/calendarlist/actions/edit/newview/myexample5065.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5065){:target="_blank"} ·

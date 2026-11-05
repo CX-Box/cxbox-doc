@@ -207,12 +207,12 @@ For instance, we selected the view with the highest number of tabs (4) and will 
 
 **Level 1. List Tasks**:
 
-TaskList widget first level - adds widget first
+tasklist widget first level - adds widget first
 ??? Example
     ```json
     "widgets": [
         {
-            "widgetName": "TaskList",
+            "widgetName": "tasklist",
             "position": 10,
             "gridWidth": 12
         } 
@@ -220,22 +220,22 @@ TaskList widget first level - adds widget first
     ```
 **Level 2. Task Info**:
 
-For the TaskInfoForm widget at the second level, first include the system widget SecondLevelMenu, and then add the TaskInfoForm.
+For the taskinfoform widget at the second level, first include the system widget SecondLevelMenu, and then add the taskinfoform.
 ??? Example
     ```json
     "widgets": [
         {
-            "widgetName": "TaskList",
+            "widgetName": "tasklist",
             "position": 10,
             "gridWidth": 12
         } 
         {
-          "widgetName": "SecondLevelMenu",
+          "widgetName": "secondlevelmenu",
           "position": 20,
           "gridWidth": 12
         }
         {
-            "widgetName": "TaskInfoForm",
+            "widgetName": "taskinfoform",
             "position": 30,
             "gridWidth": 24
         }
@@ -243,33 +243,33 @@ For the TaskInfoForm widget at the second level, first include the system widget
     ```
 **Level 3. Client**:
 
-For the ClientsList widget at the third level, first include the system widget ThirdLevelMenu, and then add the ClientsList.
+For the clientslist widget at the third level, first include the system widget ThirdLevelMenu, and then add the clientslist.
  
 ??? Example
     ```json
     "widgets": [
         {
-          "widgetName": "TaskList",
+          "widgetName": "tasklist",
           "position": 10,
           "gridWidth": 12
         },
         {
-            "widgetName": "SecondLevelMenu",
+            "widgetName": "secondlevelmenu",
             "position": 20,
             "gridWidth": 12
         },
         {
-            "widgetName": "TaskInfoForm",
+            "widgetName": "taskinfoform",
             "position": 30,
             "gridWidth": 24
         },
         {
-            "widgetName": "ThirdLevelMenu",
+            "widgetName": "thirdlevelmenu",
             "position": 40,
             "gridWidth": 12
         },
         {
-            "widgetName": "ClientsList",
+            "widgetName": "clientslist",
             "position": 50,
             "gridWidth": 12
         } 
@@ -277,43 +277,43 @@ For the ClientsList widget at the third level, first include the system widget T
     ```
 **Level 4. Client Info**:
 
-For the ClientInformationForm widget at the third level, first include the system widget FourthLevelMenu, and then add the ClientInformationForm.
+For the clientinformationform widget at the third level, first include the system widget FourthLevelMenu, and then add the clientinformationform.
 
 ??? Example
     ```json
     "widgets": [
         {
-            "widgetName": "TaskList",
+            "widgetName": "tasklist",
             "position": 10,
             "gridWidth": 12
         },
         {
-            "widgetName": "SecondLevelMenu",
+            "widgetName": "secondlevelmenu",
             "position": 20,
             "gridWidth": 12
         },
         {
-            "widgetName": "TaskInfoForm",
+            "widgetName": "taskinfoform",
             "position": 30,
             "gridWidth": 24
         },
         {
-            "widgetName": "ThirdLevelMenu",
+            "widgetName": "thirdlevelmenu",
             "position": 40,
             "gridWidth": 12
         },
         {
-            "widgetName": "ClientsList",
+            "widgetName": "clientslist",
             "position": 50,
             "gridWidth": 12
         },
         {
-            "widgetName": "FourthLevelMenu",
+            "widgetName": "fourthlevelmenu",
             "position": 60,
             "gridWidth": 12
         },
         {
-            "widgetName": "ClientInformationForm",
+            "widgetName": "clientinformationform",
             "position": 70,
             "gridWidth": 12
         }

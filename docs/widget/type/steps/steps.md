@@ -16,7 +16,7 @@
  
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/steps/base/myExampleStep.widget.json
+    {{ external_links.github_raw_doc }}/widgets/steps/base/myexamplestep.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding **_.view.json_**.
@@ -86,7 +86,7 @@ Type: String(required).
 
         ```json
            --8<--
-           {{ external_links.github_raw_doc }}/widgets/steps/base/myExampleStep.widget.json
+           {{ external_links.github_raw_doc }}/widgets/steps/base/myexamplestep.widget.json
            --8<--
         ```
 

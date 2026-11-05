@@ -43,7 +43,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluehover/basic/MyExample224List.widget.json
+        {{ external_links.github_raw_doc }}/fields/multivaluehover/basic/myexample224list.widget.json
         --8<--
         ```
 
@@ -52,7 +52,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluehover/basic/MyExample224Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/multivaluehover/basic/myexample224info.widget.json
         --8<--
         ```
 
@@ -63,7 +63,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/multivaluehover/basic/MyExample224Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/multivaluehover/basic/myexample224form.widget.json
         --8<--
         ```
 
@@ -109,7 +109,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/color/MyExample225List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/color/myexample225list.widget.json
             --8<--
             ```
  
@@ -118,14 +118,14 @@
  
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/color/MyExample225Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/color/myexample225info.widget.json
             --8<--
             ```
         === "Form widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/color/MyExample225Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/color/myexample225form.widget.json
             --8<--
             ```
 
@@ -137,7 +137,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/colorconst/MyExample227List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/colorconst/myexample227list.widget.json
             --8<--
             ```
 
@@ -145,14 +145,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/colorconst/MyExample227Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/colorconst/myexample227info.widget.json
             --8<--
             ```
         === "Form widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/colorconst/MyExample227Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/colorconst/myexample227form.widget.json
             --8<--
             ```
 
@@ -206,7 +206,7 @@ All fields are readonly.
      
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/MyExample233List.widget.json
+            {{ external_links.github_raw_doc }}/fields/multivaluehover/filtration/myexample233list.widget.json
             --8<--
             ```
             **Step 4**  Add **popup** to corresponding **view.json**.

@@ -22,7 +22,7 @@
 
     ```json
        --8<--
-       {{ external_links.github_raw_doc }}/widgets/emptywidget/base/myexample5022EmptyWidget.widget.json
+       {{ external_links.github_raw_doc }}/widgets/emptywidget/base/myexample5022emptywidget.widget.json
        --8<--
     ```
 
@@ -60,7 +60,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myExample5034const.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myexample5034const.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5034){:target="_blank"} ·
@@ -74,11 +74,11 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myExample5034.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/title/myexample5034.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5034/view/myexample5034form){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/title/myExample5034.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/emptywidget/title/myexample5034.widget.json){:target="_blank"}
 
 ### <a id="TitleColor">Title Color</a>
  
@@ -129,7 +129,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myexample5031Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myexample5031form.widget.json
         --8<--
         ```     
 
@@ -137,7 +137,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5031EmptyWidget.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myexample5031emptywidget.widget.json
         --8<--
         ```     
 
@@ -153,7 +153,7 @@ There are types of:
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myExample5031EmptyWidgetConstColor.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/colortitle/myexample5031emptywidgetconstcolor.widget.json
         --8<--
         ```
         
@@ -205,7 +205,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/bycurrententity/myExample5033.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/bycurrententity/myexample5033.widget.json
         --8<--
         ```
 
@@ -218,7 +218,7 @@ see more [showCondition](/widget/type/property/showcondition/showcondition)
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/byparententity/child/myexample5037Empty.widget.json
+        {{ external_links.github_raw_doc }}/widgets/emptywidget/showcondition/byparententity/child/myexample5037empty.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5033/view/myexample5036form){:target="_blank"} ·

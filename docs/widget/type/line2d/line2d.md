@@ -64,7 +64,7 @@ Options of `options.chart2D`:
     Add the fields of the point and **options.chart2D** with `xValueFieldKey` and `yValueFieldKey`.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/base/MyExample4240Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/base/myexample4240line2d.widget.json
     --8<--
     ```
 
@@ -109,14 +109,14 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/line2d/title/MyExample4241Line2D.widget.json
+        {{ external_links.github_raw_doc }}/widgets/line2d/title/myexample4241line2d.widget.json
         --8<--
         ```
     === "Constant title empty"
         **Step1** Add empty **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/line2d/title/MyExample4241Line2DEmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/line2d/title/myexample4241line2demptytitle.widget.json
         --8<--
         ```
 
@@ -158,7 +158,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/line2d/showcondition/MyExample4242Line2D.widget.json
+        {{ external_links.github_raw_doc }}/widgets/line2d/showcondition/myexample4242line2d.widget.json
         --8<--
         ```
 
@@ -200,7 +200,7 @@ A field with type `hidden` is not shown in the table mode. Use it for the values
 
       ```json
          --8<--
-         {{ external_links.github_raw_doc }}/widgets/line2d/base/MyExample4240Line2D.widget.json
+         {{ external_links.github_raw_doc }}/widgets/line2d/base/myexample4240line2d.widget.json
          --8<--
       ```
 
@@ -227,7 +227,7 @@ The tooltip appears when the user moves the mouse over a point. By default it sh
     **Step1** Add the description field to **fields** and **descriptionFieldKey** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/tooltip/MyExample4246Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/tooltip/myexample4246line2d.widget.json
     --8<--
     ```
 
@@ -260,14 +260,14 @@ Without them the widget uses the default palette.
         **Step2** Add **bgColorKey** to the X field in **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/line2d/color/MyExample4247Line2DColorKey.widget.json
+        {{ external_links.github_raw_doc }}/widgets/line2d/color/myexample4247line2dcolorkey.widget.json
         --8<--
         ```
     === "Constant color"
         **Step1** Add **bgColor** to the X field in **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/line2d/color/MyExample4247Line2DColor.widget.json
+        {{ external_links.github_raw_doc }}/widgets/line2d/color/myexample4247line2dcolor.widget.json
         --8<--
         ```
 
@@ -289,7 +289,7 @@ In the table mode the X value is a link with the same drilldown.
     **Step1** Add **drillDown** to the X field in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/drilldown/MyExample4248Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/drilldown/myexample4248line2d.widget.json
     --8<--
     ```
     **Step2** Set the target view and the filter in **buildRowDependentMeta** of the **Meta**.
@@ -338,7 +338,7 @@ Without `groupFieldKey` the chart has one line, and the legend shows the title o
     The DAO returns one record per X value and group.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/groups/MyExample4243Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/groups/myexample4243line2d.widget.json
     --8<--
     ```
 
@@ -357,7 +357,7 @@ Use it with `groupFieldKey`.
     **Step1** Add **stack** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/stack/MyExample4244Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/stack/myexample4244line2d.widget.json
     --8<--
     ```
 
@@ -379,7 +379,7 @@ For a text X field they are ignored, and the widget writes a message to the brow
     **Step1** Add **yMin**, **yMax**, **yStep** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/axis/MyExample4245Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/axis/myexample4245line2d.widget.json
     --8<--
     ```
 
@@ -480,7 +480,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/line2d/fulltextsearch/MyExample4273Line2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/line2d/fulltextsearch/myexample4273line2d.widget.json
     --8<--
     ```
 

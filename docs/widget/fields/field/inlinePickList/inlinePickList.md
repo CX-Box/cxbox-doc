@@ -41,7 +41,7 @@
        
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myEntity132PickListPopupPickListPopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myentity132picklistpopuppicklistpopup.widget.json
             --8<--
             ```
         +  **Step 1.4** Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
@@ -97,7 +97,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133List.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133list.widget.json
         --8<--
         ``` 
 
@@ -107,7 +107,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133info.widget.json
         --8<--
         ``` 
 
@@ -118,7 +118,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133form.widget.json
         --8<--
         ``` 
 
@@ -193,7 +193,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/MyExample134List.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/myexample134list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -209,7 +209,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/colorconst/MyExample136List.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/colorconst/myexample136list.widget.json
             --8<--
             ```
 
@@ -371,7 +371,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140List.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/myexample140list.widget.json
         --8<--
         ```
 
@@ -384,7 +384,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/myexample140info.widget.json
         --8<--
         ```
         **Option 2**

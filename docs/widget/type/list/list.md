@@ -14,7 +14,7 @@
     Add existing field to a list widget. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/base/onefield/myexample3189list.widget.json
     --8<--
     ```
  
@@ -52,7 +52,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/title/myexample3104list.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3104){:target="_blank"} ·
@@ -64,7 +64,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/title/MyExample3104EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/title/myexample3104emptytitle.widget.json
         --8<--
         ```
 
@@ -112,7 +112,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/colortitle/myexample3050.widget.json
         --8<--
         ``` 
 
@@ -127,7 +127,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/colortitle/MyExample3050ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/colortitle/myexample3050colorconst.widget.json
         --8<--
         ```
 
@@ -178,7 +178,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/showcondition/bycurrententity/MyExample31012.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/showcondition/bycurrententity/myexample31012.widget.json
         --8<--
         ```
 
@@ -186,7 +186,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/MyExample3106child.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/showcondition/byparententity/myexample3106child.widget.json
         --8<--
         ```
 
@@ -235,7 +235,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/list/base/onefield/MyExample3189List.widget.json
+             {{ external_links.github_raw_doc }}/widgets/list/base/onefield/myexample3189list.widget.json
              --8<--
           ```
 
@@ -281,7 +281,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the lis
      **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/MyExample3059List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/basic/myexample3059list.widget.json
     --8<--
     ```
      **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
@@ -321,7 +321,7 @@ After filling the information in and clicking "Save", the new row is added to th
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myEntity3064CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myentity3064createform.widget.json
     --8<--
     ```
  
@@ -338,7 +338,7 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/MyExample3064List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/withwidget/myexample3064list.widget.json
     --8<--
     ```
 
@@ -372,7 +372,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
   
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/MyExample3066List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/create/newview/myexample3066list.widget.json
     --8<--
     ```
 
@@ -442,7 +442,7 @@ There are three methods to create a record:
     **Step3**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myEntity3065EditForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myentity3065editform.widget.json
     --8<--
     ```
  
@@ -459,7 +459,7 @@ There are three methods to create a record:
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/MyExample3065List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/withwidget/myexample3065list.widget.json
     --8<--
     ```
 
@@ -491,7 +491,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/newview/MyExample3075List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/list/actions/edit/newview/myexample3075list.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3075){:target="_blank"} ·
@@ -545,7 +545,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/MyExample3135List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/myexample3135list.widget.json
         --8<--
         ```
         
@@ -570,7 +570,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/MyExample3135ListHiddenFields.widget.json
+        {{ external_links.github_raw_doc }}/widgets/list/customizationcolumns/myexample3135listhiddenfields.widget.json
         --8<--
         ```
         
@@ -664,7 +664,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/myexample3614list.widget.json
     --8<--
     ```
 
@@ -704,7 +704,7 @@ see [Personal filter group](/widget/type/property/filtration/filtration/#by-pers
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/myexample3616list.widget.json
     --8<--
     ```
 

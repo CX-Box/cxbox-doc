@@ -5,7 +5,7 @@
 
 ```json
  {
-  "name": "MyExample4001Form",
+  "name": "myexample4001form",
   "title": "Form title",
   "type": "Form",
   "bc": "myExampleBc4001",

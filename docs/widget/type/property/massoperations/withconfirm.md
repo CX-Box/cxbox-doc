@@ -67,13 +67,13 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101List.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/widget/myexample6101list.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102GH.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/widget/myexample6102gh.widget.json
             --8<--
             ```
 
@@ -82,13 +82,13 @@ After clicking on a mass operation, the user enters the mass-operation mode, whi
         === "List"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/myexample6101Form.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/widget/myexample6101form.widget.json
             --8<--
             ```
         === "GroupingHierarchy"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/feature/massoperations/gh/myexample6102Form.widget.json
+            {{ external_links.github_raw_doc }}/feature/massoperations/widget/myexample6102form.widget.json
             --8<--
             ```
     - **Step2** Create action massEdit to corresponding **AwareResponseService**.      

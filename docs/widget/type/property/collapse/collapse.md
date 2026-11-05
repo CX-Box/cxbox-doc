@@ -71,17 +71,17 @@ The main widget is the widget that controls the group:
        "groups": [
          {
            "widgetNames": [
-             "MyExample3022RingProcessl",
-             "MyExample3022Funnel",
-             "MyExample3022DashboardList"
+             "myexample3022ringprocessl",
+             "myexample3022funnel",
+             "myexample3022dashboardlist"
            ]
          },
          {
            "widgetNames": [
-             "MyExample3022List",
-             "MyExample3022Form",
-             "MyExample3022Info",
-             "MyExample3022Header"
+             "myexample3022list",
+             "myexample3022form",
+             "myexample3022info",
+             "myexample3022header"
            ]
          }
        ]
@@ -119,9 +119,9 @@ The user can still expand or collapse the group with the icon of the main widget
        "groups": [
          {
            "widgetNames": [
-             "MyExample3022RingProcessl",
-             "MyExample3022Funnel",
-             "MyExample3022DashboardList"
+             "myexample3022ringprocessl",
+             "myexample3022funnel",
+             "myexample3022dashboardlist"
            ],
            "collapsedCondition": {
              "default": true
@@ -129,10 +129,10 @@ The user can still expand or collapse the group with the icon of the main widget
          },
          {
            "widgetNames": [
-             "MyExample3022List",
-             "MyExample3022Form",
-             "MyExample3022Info",
-             "MyExample3022Header"
+             "myexample3022list",
+             "myexample3022form",
+             "myexample3022info",
+             "myexample3022header"
            ]
          }
        ]

@@ -284,7 +284,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/locale/clientList.widget.json
+    {{ external_links.github_raw_doc }}/feature/locale/clientlist.widget.json
     --8<--
     ```  
  
@@ -386,7 +386,7 @@ How to add?
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/feature/locale/clientList.widget.json
+    {{ external_links.github_raw_doc }}/feature/locale/clientlist.widget.json
     --8<--
     ```  
 

@@ -115,6 +115,7 @@ nav:
       - Widget Tree: widget/type/tree/tree.md
   - Widget property:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
+     - Widget property Collapse: widget/type/property/collapse/collapse.md
      - Widget property Export:
         - Excel: widget/type/Widget property/export/excel/excel.md
      - Widget property File Options:

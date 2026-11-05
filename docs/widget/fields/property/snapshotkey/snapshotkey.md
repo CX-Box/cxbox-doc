@@ -139,9 +139,11 @@ In the sample the left Form has `snapshotKey`, the right Form has no `snapshotKe
 
 ![form.png](form.png)
 
-### The difference is built from saved data
-The difference is calculated from the record data received from the backend.
-Values that are entered but not saved yet are not shown: the field with `snapshotKey` is updated after the record is saved.
+### Values that are not saved yet
+Whether the difference is shown is decided by the record data received from the backend (saved values).
+The current (green) value is shown together with the changes that are not saved yet:
+if the value is changed in another widget of the same record, the green value changes at once,
+and the previous value stays as it was until the record is saved.
 
 ### Empty values: false and 0
 Before the comparison both values are converted to strings, and `false`, `0` and `null` are treated as an empty value.

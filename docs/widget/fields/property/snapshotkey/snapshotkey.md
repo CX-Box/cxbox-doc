@@ -40,6 +40,28 @@ and in the other widgets that show fields of a record (for example, [AdditionalI
      For the other field types `snapshotKey` is ignored and the field is shown as usual.
      [FileUpload](/widget/fields/field/fileUpload/fileUpload) has its own history mode: `snapshotKey` together with `snapshotFileIdKey`.
 
+### What data is used?
+
+Both values are taken from the same record (DTO) that the backend sends to the frontend:
+
+* **current value** - the DTO field set in `key`. It is the usual value of the field: it is edited and saved as usual;
+* **previous (snapshot) value** - the DTO field set in `snapshotKey`. It is a separate field of the same DTO
+  with the same type as the current value.
+
+CXBox does not keep the history of changes and does not fill the previous value itself.
+"Previous value" is any value that the application wants to compare the current value with,
+and the application decides where it comes from, for example:
+
+* the value at a certain moment: before the document was sent for approval, at the previous version, at the last export;
+* the value from an audit (history) table or from another system;
+* the value of a related record (for example, the parent or the original record that was copied).
+
+The frontend only compares the two values and shows the difference. It does not change the previous value:
+when the current value is saved, the previous value stays as the backend sends it.
+
+In the sample each field of the entity has a pair of columns: the current value (`inputField`) and the previous value (`inputFieldSnapshot`).
+The previous values are filled by the test data and are not changed on save: `doUpdateEntity` changes only the current values.
+
 ### How does it look?
 
 How the field is shown depends on the previous and the current value:

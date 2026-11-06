@@ -9,6 +9,8 @@ The following transition formats are possible:
 * [To view without id](#to_view) to a view without focusing on specific data
 * [To view by bc record id](#to_view_id).The most popular option.Transition to viewing by transmitting the ID record.
 * [To view with fields filtration](#to_view_with_fields_filtration) Apply a filter using additional fields (visually visible).
+
+To open a `drilldown` in a new browser tab or copy its link, see [Drilldown tooltip](#drilldown_tooltip).
  
 ## <a id="Transitionformats">Transition formats</a>
 ### <a id="to_screen">To screen</a>
@@ -305,6 +307,89 @@ screen/meeting/view/meetingview/meeting/1100012
 + ?filters =
   
 -->
+## <a id="drilldown_tooltip">Drilldown tooltip: open in a new tab and copy link</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3626){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/drilldowntooltip){:target="_blank"}
+To open a `drilldown` in a new tab, a tooltip can be turned on. It appears when the user hovers over a field with `drilldown` and has two buttons:
+
+* :material-export: **Open link in new tab** - opens the `drilldown` in a new browser tab, regardless of the [drilldown type](/features/element/drilldown/drilldowntype).
+* :material-content-copy: **Copy link address** - copies the `drilldown` link to the clipboard.
+
+### How does it look?
+=== "drill-down-tooltip: newAndCopy"
+    ![tooltipTrue.png](../../../new/v2.0.9/tooltipTrue.png)
+=== "drill-down-tooltip is not set"
+    ![tooltipFalse.png](../../../new/v2.0.9/tooltipFalse.png)
+
+The tooltip is supported for:
+
+* [List](/widget/type/list/list/)
+* [AdditionalList](/widget/type/additionallist/additionallist/)
+* [Info](/widget/type/info/info/) 
+* [AdditionalInfo](/widget/type/additionalinfo/additionalinfo/)
+* [Form](/widget/type/form/form/)
+* notifications with links: in the popup and in the notification bell
+
+The browser context menu item "Open link in new tab" does not work for `drilldown` fields:
+the link is not present in the HTML, it is built by the frontend only after the record is selected and the `drilldown` is clicked.
+
+The link is built the same way as when the user selects the record and clicks the `drilldown`. No additional requests to the backend are made.
+
+### How to add?
+??? Example
+    The tooltip is turned on in `application.yml` with the `cxbox.ui.drill-down-tooltip` parameter.
+    The frontend receives it in the `featureSettings` of the `/api/v1/login` response with the key `drillDownTooltip`
+    (the same way as the sorting and filtration settings).
+    
+    | `drill-down-tooltip` value | Behavior                                                                                    |
+    |----------------------------|---------------------------------------------------------------------------------------------|
+    | *not set* / `null`         | Default. The tooltip is never shown.                                                        |
+    | `false`                    | The tooltip is never shown.                                                                 |
+    | `newAndCopy`               | The tooltip with the **Open link in new tab** and **Copy link address** buttons is shown on hover.     |
+
+    **Step 1** Add the `drill-down-tooltip` parameter to `application.yml`
+
+    ```yml
+    cxbox:
+      ui:
+        drill-down-tooltip: newAndCopy
+    ```
+
+    **Step 2** Pass the parameter to the frontend in `featureSettings` (`LoginServiceImpl`)
+
+    ```java
+    public Collection<SimpleDictionary> getFeatureSettings() {
+        return Stream.of(
+                feature(
+                        UIProperties.DRILL_DOWN_TOOLTIP_NAME,
+                        uiProperties.getDrillDownTooltip()
+                )
+                // other feature settings
+        )...
+    }
+    ```
+
+    **Step 3** Add **fields.setDrilldown** to corresponding **FieldMetaBuilder** and **drillDown** to corresponding **.widget.json** as usual.
+    Nothing else is needed for a field: the tooltip is shown for every field with `drilldown`.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntooltip/MyExample3626Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldowntooltip/myexample3626list.widget.json
+    --8<--
+    ```
+
+!!! info
+     `drilldown` [to view with fields filtration](#to_view_with_fields_filtration) (by fields and by fulltextsearch):
+      the tooltip is shown, but its buttons do not open or copy the link.
+      A warning is shown in the corner of the screen instead:
+      *"Opening drill-downs with non-ID-based filtering in a new tab is currently not supported. Please contact your administrator"*.
+
 ## The operation mechanism of drilldown
 The operation mechanism of drilldown works as follows:
 

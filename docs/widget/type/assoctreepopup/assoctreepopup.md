@@ -768,7 +768,20 @@ The result of a full text search is displayed in the same way as the result of f
 ##### Personal filter group
 not applicable
 ##### Filter group
-not applicable
+The filter groups of the business component of the popup (**BC_FILTER_GROUPS**) are shown in the select above the tree.
+
+###### Default filter group
+The default filter group (`default_filter` = `true`) is applied when the popup is opened, together with the filter by `id` of the selected records.
+The link "To default filter(s)" ("To selected rows filter(s)", "To default and selected rows filter(s)") returns these filters.
+see [Default filter group](/widget/type/property/filtration/filtration/#default_filter_group), [Reset filters](/widget/type/property/filtration/filtration/#reset_filters)
+
+```csv
+name;bc;filters;default_filter
+Полномочия;myexample3261Pick0;department.contains=Полномочия;true
+```
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base/inner){:target="_blank"}
 
 #### <a id="searchmodes">Search modes</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3261list){:target="_blank"} ·

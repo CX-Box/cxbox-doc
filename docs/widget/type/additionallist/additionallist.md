@@ -535,6 +535,15 @@ see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
+#### Delete personal filter group
+The user deletes the saved personal filter group by the cross next to its name in the gear icon - "Save filters".
+see [Delete personal filter group](/widget/type/property/filtration/filtration/#delete_personal_filter_group)
+
+![delete_filter_group_addlist.gif](../property/filtration/delete_filter_group_addlist.gif)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 ### Pagination
 _not applicable_
 ### Export to Excel

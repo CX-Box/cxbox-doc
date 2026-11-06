@@ -95,9 +95,11 @@ nav:
       - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
       - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
       - Widget CalendarList: widget/type/calendarlist/calendarlist.md
+      - Widget CalendarYearList: widget/type/calendaryearlist/calendaryearlist.md
       - Widget CardCarouselList: widget/type/cardcarousellist/cardcarousellist.md
       - Widget CardList: widget/type/cardlist/cardlist.md
       - Widget Column2D: widget/type/column2d/column2d.md
+      - Widget DualAxes2D: widget/type/dualaxes2d/dualaxes2d.md
       - Widget EmptyWidget: widget/type/emptywidget/emptywidget.md
       - Widget FilePreview: widget/type/filepreview/filepreview.md
       - Widget Form: widget/type/form/form.md
@@ -110,6 +112,7 @@ nav:
       - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
       - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
       - Widget Pie1D: widget/type/pie1d/pie1d.md
+      - Widget RelationGraph: widget/type/relationgraph/relationgraph.md
       - Widget StatsBlock: widget/type/statblocks/statblocks.md
       - Widget Steps: widget/type/steps/steps.md
       - Widget Tree: widget/type/tree/tree.md

@@ -310,16 +310,10 @@ screen/meeting/view/meetingview/meeting/1100012
 ## <a id="drilldown_tooltip">Drilldown tooltip: open in a new tab and copy link</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3626){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/drilldowntooltip){:target="_blank"}
-
-The browser context menu item "Open link in new tab" does not work for `drilldown` fields:
-the link is not present in the HTML, it is built by the frontend only after the record is selected and the `drilldown` is clicked.
-
 To open a `drilldown` in a new tab, a tooltip can be turned on. It appears when the user hovers over a field with `drilldown` and has two buttons:
 
 * :material-export: **Open link in new tab** - opens the `drilldown` in a new browser tab, regardless of the [drilldown type](/features/element/drilldown/drilldowntype).
 * :material-content-copy: **Copy link address** - copies the `drilldown` link to the clipboard.
-
-The link is built the same way as when the user selects the record and clicks the `drilldown`. No additional requests to the backend are made.
 
 ### How does it look?
 === "drill-down-tooltip: newAndCopy"
@@ -327,19 +321,29 @@ The link is built the same way as when the user selects the record and clicks th
 === "drill-down-tooltip is not set"
     ![tooltipFalse.png](../../../new/v2.0.9/tooltipFalse.png)
 
-### Setting
-The tooltip is turned on in `application.yml` with the `cxbox.ui.drill-down-tooltip` parameter.
-The frontend receives it in the `featureSettings` of the `/api/v1/login` response with the key `drillDownTooltip`
-(the same way as the sorting and filtration settings).
+The tooltip is supported for:
 
-| `drill-down-tooltip` value | Behavior                                                                                    |
-|----------------------------|---------------------------------------------------------------------------------------------|
-| *not set* / `null`         | Default. The tooltip is never shown.                                                        |
-| `false`                    | The tooltip is never shown.                                                                 |
-| `newAndCopy`               | The tooltip with the **Open link in new tab** and **Copy link address** buttons is shown on hover.     |
+* [List](/widget/type/list/list/) and [AdditionalList](/widget/type/additionallist/additionallist/)
+* [Info](/widget/type/info/info/) and [AdditionalInfo](/widget/type/additionalinfo/additionalinfo/)
+* [Form](/widget/type/form/form/)
+* notifications with links: in the popup and in the notification bell
+
+The browser context menu item "Open link in new tab" does not work for `drilldown` fields:
+the link is not present in the HTML, it is built by the frontend only after the record is selected and the `drilldown` is clicked.
+
+The link is built the same way as when the user selects the record and clicks the `drilldown`. No additional requests to the backend are made.
 
 ### How to add?
 ??? Example
+    The tooltip is turned on in `application.yml` with the `cxbox.ui.drill-down-tooltip` parameter.
+    The frontend receives it in the `featureSettings` of the `/api/v1/login` response with the key `drillDownTooltip`
+    (the same way as the sorting and filtration settings).
+    
+    | `drill-down-tooltip` value | Behavior                                                                                    |
+    |----------------------------|---------------------------------------------------------------------------------------------|
+    | *not set* / `null`         | Default. The tooltip is never shown.                                                        |
+    | `false`                    | The tooltip is never shown.                                                                 |
+    | `newAndCopy`               | The tooltip with the **Open link in new tab** and **Copy link address** buttons is shown on hover.     |
 
     **Step 1** Add the `drill-down-tooltip` parameter to `application.yml`
 
@@ -378,22 +382,11 @@ The frontend receives it in the `featureSettings` of the `/api/v1/login` respons
     --8<--
     ```
 
-### Supported widgets
-The tooltip is supported for:
-
-* [List](/widget/type/list/list/) and [AdditionalList](/widget/type/additionallist/additionallist/)
-* [Info](/widget/type/info/info/) and [AdditionalInfo](/widget/type/additionalinfo/additionalinfo/)
-* [Form](/widget/type/form/form/)
-* notifications with links: in the popup and in the notification bell
-
-### Limitations
-
-* [StatsBlock](/widget/type/statblocks/statblocks/) widget: the tooltip is not shown.
-* `drilldown` [to view with fields filtration](#to_view_with_fields_filtration) (by fields and by fulltextsearch):
-  the tooltip is shown, but its buttons do not open or copy the link.
-  A warning is shown in the corner of the screen instead:
-  *"Opening drill-downs with non-ID-based filtering in a new tab is currently not supported. Please contact your administrator"*.
-  See the `Drill-down with fields filtration` field in the sample.
+!!! info
+     `drilldown` [to view with fields filtration](#to_view_with_fields_filtration) (by fields and by fulltextsearch):
+      the tooltip is shown, but its buttons do not open or copy the link.
+      A warning is shown in the corner of the screen instead:
+      *"Opening drill-downs with non-ID-based filtering in a new tab is currently not supported. Please contact your administrator"*.
 
 ## The operation mechanism of drilldown
 The operation mechanism of drilldown works as follows:

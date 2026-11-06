@@ -323,8 +323,10 @@ To open a `drilldown` in a new tab, a tooltip can be turned on. It appears when 
 
 The tooltip is supported for:
 
-* [List](/widget/type/list/list/) and [AdditionalList](/widget/type/additionallist/additionallist/)
-* [Info](/widget/type/info/info/) and [AdditionalInfo](/widget/type/additionalinfo/additionalinfo/)
+* [List](/widget/type/list/list/)
+* [AdditionalList](/widget/type/additionallist/additionallist/)
+* [Info](/widget/type/info/info/) 
+* [AdditionalInfo](/widget/type/additionalinfo/additionalinfo/)
 * [Form](/widget/type/form/form/)
 * notifications with links: in the popup and in the notification bell
 

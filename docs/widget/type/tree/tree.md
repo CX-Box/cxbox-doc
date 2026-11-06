@@ -943,6 +943,38 @@ see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
+###### Default filter group
+`Default filter group` - the filter group that is applied when the widget is opened and when the page is refreshed. It is marked by the star in the select of the filter groups.
+see [Default filter group](/widget/type/property/filtration/filtration/#default_filter_group)
+
+![default_filter_group_tree.gif](../property/filtration/default_filter_group_tree.gif)
+
+Add the group to the **BC_FILTER_GROUPS** table with `default_filter` = `true`:
+
+```csv
+name;bc;filters;default_filter
+Dictionary = High;myexample3629tree;customFieldDictionary.equalsOneOf=%5B%22High%22%5D;true
+```
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3629tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/defaultfiltergroup){:target="_blank"}
+
+##### Reset filters
+The link "To default filter(s)" above the tree returns the default filters (`FILTER` of **BC_PROPERTIES** or the default filter group) when the applied filters differ from them.
+see [Reset filters](/widget/type/property/filtration/filtration/#reset_filters)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3629tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/defaultfiltergroup){:target="_blank"}
+
+##### Delete personal filter group
+The user deletes the saved personal filter group by the cross next to its name in the gear icon - "Save filters".
+see [Delete personal filter group](/widget/type/property/filtration/filtration/#delete_personal_filter_group)
+
+![delete_filter_group_tree.gif](../property/filtration/delete_filter_group_tree.gif)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 #### <a id="searchmodes">Search modes</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3280/view/myexample3280treecollapsehide){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/treesearchmodes){:target="_blank"}

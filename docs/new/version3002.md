@@ -219,3 +219,118 @@ fields.setDrilldownWithFilter(
         )
 );
 ```
+
+### CXBOX [documentation](https://doc.cxbox.org/)
+
+#### Added: Description Pie1D widget
+<!-- CXBOX-1405 -->
+We have provided a description of the [Pie1D widget](https://doc.cxbox.org/widget/type/pie1d/pie1d/): a ring chart where every record is a segment and the total can be shown in the center.
+The [Filtration](https://doc.cxbox.org/widget/type/property/filtration/filtration/) and [Sorting](https://doc.cxbox.org/widget/type/property/sorting/sorting/) articles got Pie1D examples (they work in the table mode only) with Live Samples, and a "How does it look" and "How to add" section for every widget.
+
+#### Added: Description Column2D widget
+<!-- CXBOX-1406 -->
+We have provided a description of the [Column2D widget](https://doc.cxbox.org/widget/type/column2d/column2d/): a column chart with one bar per category, grouping of the bars by a field and switching the chart to a table.
+Column2D examples have been added to the Filtration, Sorting and [Pagination](https://doc.cxbox.org/widget/type/property/pagination/pagination/) articles, placed the same way as for Pie1D.
+
+#### Added: Description Line2D widget
+<!-- CXBOX-1407 -->
+We have provided a description of the [Line2D widget](https://doc.cxbox.org/widget/type/line2d/line2d/): a line chart with one value per category, several lines when the records are grouped by a field, switching the chart to a table. Line2D examples have been added to the Filtration and Sorting articles.
+
+#### Added: Description DualAxes2D widget
+<!-- CXBOX-1273 -->
+We have provided descriptions of the widget [DualAxes2D](https://doc.cxbox.org/widget/type/dualaxes2d/dualaxes2d/) - two 2D charts (Column2D and Line2D, or two charts of the same type) in one area with a shared X axis and own Y axes;
+
+#### Added: Description  RelationGraph widget
+<!-- CXBOX-1273 -->
+We have provided descriptions of the widget [RelationGraph](https://doc.cxbox.org/widget/type/relationgraph/relationgraph/) - the records of a business component as a graph of nodes connected by arrows;
+
+#### Added: Description CalendarYearList widgets
+<!-- CXBOX-1273 -->
+We have provided descriptions of the widgets [CalendarYearList](https://doc.cxbox.org/widget/type/calendaryearlist/calendaryearlist/) - a year calendar for the events of a whole day: holidays, deadlines, reports.
+
+#### Added: Description CalendarList widget
+<!-- CXBOX-1360 -->
+We have provided a description of the [CalendarList widget](https://doc.cxbox.org/widget/type/calendarlist/calendarlist/) by analogy with List: `options.calendar`, title, color, show condition, create and edit with an inline form and with a view, filtration, periods (month, week, day).
+
+#### Added: Description CardList widget
+<!-- CXBOX-1409 -->
+We have provided a description of the [CardList widget](https://doc.cxbox.org/widget/type/cardlist/cardlist/): records as file cards in rows with a preview, a title, a description and a status. Create and edit are described the same way as for List.
+CardList examples have been added to the Filtration, Pagination, [Default page limit](https://doc.cxbox.org/widget/type/property/defaultlimitpage/defaultlimitpage/) and [Multi-upload](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/) articles.
+
+#### Added: Description CardCarouselList widget
+<!-- CXBOX-1410 -->
+We have provided a description of the [CardCarouselList widget](https://doc.cxbox.org/widget/type/cardcarousellist/cardcarousellist/): file cards in one horizontal strip scrolled with arrows; open, edit and delete files right on the cards. An example has been added to the Multi-upload article.
+
+#### Added: Description FilePreview widget
+<!-- CXBOX-1411 -->
+We have provided a description of the [FilePreview widget](https://doc.cxbox.org/widget/type/filepreview/filepreview/): the file of the current record is shown right on the page and stays in view while the user fills in the form.
+
+#### Added: Description DashboardList widget
+<!-- CXBOX-1408 -->
+We have provided a description of the [DashboardList widget](https://doc.cxbox.org/widget/type/dashboardlist/dashboardlist/) (deprecated).
+
+#### Added: Description collapse widget group
+<!-- CXBOX-716 -->
+We have provided a description of the [collapse widget group](https://doc.cxbox.org/widget/type/property/collapse/collapse/): widgets of a view are combined into a group that can be collapsed and expanded, `collapsedCondition` sets the initial state. Supported for List, Form, Info, GroupingHierarchy, Tree, CardList, CardCarouselList, HeaderWidget, AdditionalInfo, AdditionalList and StatsBlock.
+
+#### Added: Description richText field
+<!-- CXBOX-1402 -->
+We have provided a description of the [richText field](https://doc.cxbox.org/widget/fields/field/richtext/richtext/): the toolbar formatting, storage as Markdown, the content size up to 8,000 characters. The [text field](https://doc.cxbox.org/widget/fields/field/text/text/) article describes the configurable height.
+
+#### Added: Description hint field
+<!-- CXBOX-1281 -->
+The [hint field](https://doc.cxbox.org/widget/fields/field/hint/hint/) article has got the color, readonly, filtering and drilldown sections; all screenshots are made by the autotests.
+
+#### Added: Drilldown tooltip - open in a new tab and copy link
+<!-- CXBOX-645 -->
+We have provided a description of the [drilldown tooltip](https://doc.cxbox.org/features/element/drilldown/drilldown/#drilldown_tooltip): when `cxbox.ui.drill-down-tooltip: newAndCopy` is set in `application.yml`, hovering over a `drilldown` field shows the buttons **Open link in new tab** and **Copy link address**. Supported for List, AdditionalList, Info, AdditionalInfo, Form and links in notifications.
+
+#### Added: Filtration - default filter group, reset filters, delete personal filter group
+<!-- CXBOX-1382 -->
+The [Filtration](https://doc.cxbox.org/widget/type/property/filtration/filtration/#default_filter_group) article describes the default filter group (`default_filter` = `true` in **BC_FILTER_GROUPS**) and the priority of the filters, the link "To default filter(s)" and deleting a personal filter group. The List, Tree, AdditionalList and AssocTreePopup articles link to these sections.
+
+#### Added: Filtration - personal filter group with full text search
+<!-- CXBOX-245 -->
+We have described how the [personal filter group works with the full text search](https://doc.cxbox.org/widget/type/property/filtration/filtration/#personal_filter_group_with_fulltextsearch): the search text is saved in the group together with the column filters (`_fullTextSearch`) and is searched again when the group is applied.
+
+#### Updated: Filtration - filter group for every widget
+<!-- CXBOX-1431 -->
+The filter group and personal filter group sections now have "How does it look" and "How to add" for every widget that supports them: List, AdditionalList, GroupingHierarchy, Tree, PickListPopup, AssocListPopup, PickTreePopup, AssocTreePopup, CardList, CardCarouselList, FilePreview, Pie1D, Column2D, Line2D.
+
+#### Added: pickList and pickTree - column filter by text and by records
+<!-- CXBOX-252 -->
+The [pickList](https://doc.cxbox.org/widget/fields/field/pickList/pickList/) and [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/) articles describe the two modes of the column filter: `By text` (contains) and `By records` (records chosen in the popup, the **...** button shows their number).
+
+#### Added: dictionary and multipleSelect - width of the drop-down list
+<!-- CXBOX-150 -->
+The [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/) and [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/) articles describe the width of the drop-down list: it grows with the longest value up to a frontend constant (`dictionary_dropDownMaxCols`, default 5, and `multipleSelect_dropDownMaxCols`, default 1.3, in field widths), long values are shortened with an ellipsis and shown in a tooltip.
+
+#### Added: Placeholder for a read-only field
+<!-- CXBOX-1404 -->
+The Placeholder sections of all field articles say that the placeholder is shown for a `Readonly` field as well, with samples and pictures.
+
+#### Added: AdditionalInfo - show condition
+<!-- CXBOX-318 -->
+The [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/) article has got a show condition section with a sample and a GIF. When all widgets on the right are hidden, the other widgets of the view take the whole width.
+
+#### Fixed: StatsBlock and List - show condition by parent entity
+<!-- CXBOX-317 -->
+The [StatsBlock](https://doc.cxbox.org/widget/type/statblocks/statblocks/) article describes the show condition by parent entity (by current entity is not recommended). In the [List](https://doc.cxbox.org/widget/type/list/list/) article the show condition by parent entity is shown again, each item leads to its own sample.
+
+#### Fixed: HeaderWidget - title fields
+<!-- CXBOX-1063 -->
+The [HeaderWidget](https://doc.cxbox.org/widget/type/headerwidget/headerwidget/) article: `bgColorKey` and other properties of the title fields work without other widgets of the business component. The field used in `title` as `${customField}` is added to `fields` with the `hidden` type.
+
+#### Fixed: Title Color - pickList and inlinePickList
+<!-- CXBOX-390 -->
+The Title Color sections of the widget articles list pickList and inlinePickList among the applicable fields; Live Sample links and code have been fixed.
+
+#### Added: Pagination - available options and default page limit
+<!-- CXBOX-951 -->
+The [Pagination](https://doc.cxbox.org/widget/type/property/pagination/pagination/#limitrules) article explains the difference between `availableLimitsList` (options in the dropdown) and `PAGE_LIMIT` (the default page limit), with a table of combinations.
+
+#### Added: Mass operations - signing and encryption
+<!-- CXBOX-1401 -->
+<!-- CXBOX-1428 -->
+The [Mass operations](https://doc.cxbox.org/widget/type/property/massoperations/massoperations/) article has been split into a hub page and the articles: without confirmation, with confirmation, mass delete and mass signing and encryption (List and GroupingHierarchy samples, "Interrupt and next", file preview during the operation).
+The [Signing](https://doc.cxbox.org/features/sign/sign/) article: the attached signature limit of 30 MB, `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY`, the time stamp service without a default address.

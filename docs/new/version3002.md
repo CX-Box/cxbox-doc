@@ -12,6 +12,7 @@
 
 #### <a id="signInAgain">Added: Authorization - NEW popup on expired session/insufficient roles</a>
 <!-- CXBOX-1384 -->
+<!-- CXBOX-1250 -->
 
 When the backend answers `401 Unauthorized` (the session has expired) or `403 Forbidden` (the user has no roles), the user now sees a popup instead of empty widgets and endless spinners.
 
@@ -73,6 +74,7 @@ localStorage.setItem('cxbox.signInCallbackDetection', 'signInCallbackParam')
 
 #### <a id="tokenRenewal">Fixed: Authorization - IMPROVED access token renewal: a refresh token is sent once, for all tabs and through F5</a>
 <!-- CXBOX-1384 -->
+<!-- CXBOX-1250 -->
 
 All tabs of the application in one browser share the stored user and therefore one refresh token (`localStorage`). With refresh token rotation in the OIDC provider (Keycloak *Revoke Refresh Token*, Blitz, Auth0, Okta; recommended by [RFC 9700](https://www.rfc-editor.org/rfc/rfc9700)) a refresh token works once. A second use looks like theft: the provider rejects it and can close the whole session. The user sees 401 errors, and clearing the browser cache "helps".
 
@@ -134,11 +136,13 @@ Recommended limits for the OIDC provider (Keycloak names in brackets):
 
 #### Fixed: Authorization - IMPROVED user_roles db sync to roles from Keycloak/OIDC
 <!-- CXBOX-1384 -->
+<!-- CXBOX-1250 -->
 
 When a user lost all roles in the OIDC provider, the roles were deactivated in the database on the next request, as before. But when the roles were returned in the OIDC provider, they stayed inactive in the database, because the comparison of token roles with database roles ignored the `active` flag. Now only active database roles take part in the comparison, so the roles are reactivated on the next login.
 
 #### Added: Error popup - IMPROVED button 'Copy details'
 <!-- CXBOX-1384 -->
+<!-- CXBOX-1250 -->
 
 Every error popup (the new 401/403 popup as well as the generic popup for business, system and network errors) now has a **Copy details** row:
 
@@ -195,9 +199,118 @@ Example of the copied JSON:
 
 The **Close all** button in the top right corner was visible even when there were no notifications: the stylesheet of the notifications container is loaded before the antd stylesheet, so the antd button style overrode the rule that hides the button. The rule is now more specific and the button is hidden until a notification appears.
 
+#### Fixed: Signing - the CryptoPro popup stays open with a spinner until signing ends
+<!-- CXBOX-1390 -->
+After - The user presses the button to sign or encrypt, the popup stays open and the button shows a spinner until CryptoPro has finished and the result is uploaded. While it is in progress, the popup cannot be closed by the cross, by a click outside or by Esc, so the user cannot leave the form and lose the result.
+
+Before - The popup closed at once after the button was pressed, signing went on in the background without any sign of progress. With a long signing the user did not know if it was going on and could leave the form in the middle of it.
+
+=== "After"
+    ![CXBOX-1390-after-1-signing.png](v3.0.2/CXBOX-1390-after-1-signing.png) 
+=== "Before"
+    ![CXBOX-1390-before-1-signing.png](v3.0.2/CXBOX-1390-before-1-signing.png)
+
+The search of the certificates in CryptoPro has also become faster.
+
+#### Fixed: Full text search - clearing the field no longer sends an empty search
+<!-- CXBOX-325 -->
+
+When the user cleared the full text search field, the application sent a request with `_fullTextSearch=null`, and the backend searched by the text "null". Now clearing the field just removes the search, and the list shows all records again.
+
+=== "After"
+    ![CXBOX-325-after.png](v3.0.2/CXBOX-325-after.png) 
+=== "Before"
+    ![CXBOX-325-before.png](v3.0.2/CXBOX-325-before.png)
+
+
+#### Fixed: Tooltips of truncated text and the richText toolbar in the calendar are shown on top
+<!-- CXBOX-1358 -->
+
+* The tooltip with the full value of a `text` field shortened by [`text_maxDisplayed`](/widget/fields/field/text/text/?h=textmaxrows#support-for-truncating-long-values) is now shown over the widget. Before, it could be cut off by the borders of the widget.
+=== "After"
+    ![CXBOX-1358-list-after.png](v3.0.2/CXBOX-1358-list-after.png)
+=== "Before"
+    ![CXBOX-1358-list-before.png](v3.0.2/CXBOX-1358-list-before.png)
+
+* In the inline form of [CalendarList](https://doc.cxbox.org/widget/type/calendarlist/calendarlist/) and [CalendarYearList](https://doc.cxbox.org/widget/type/calendaryearlist/calendaryearlist/), the drop-down lists of the `richText` toolbar (for example, headings and text color) are shown over the form. Before, they were cut off by the form, and the event popup could close.
+
+=== "After"
+    ![CXBOX-1358-calendar-after.png](v3.0.2/CXBOX-1358-calendar-after.png)
+=== "Before"
+    ![CXBOX-1358-calendar-before.png](v3.0.2/CXBOX-1358-calendar-before.png)
+
+#### Fixed: Child widget shown by forceActive gets its data at once
+<!-- CXBOX-1432 -->
+
+!!! warning
+    Not merged into `main` yet: branch [feature/CXBOX-1432](https://github.com/CX-Box/cxbox-demo/tree/feature/CXBOX-1432).
+
+=== "After"
+    When the user changes a `forceActive` field of the parent and a child widget hidden by `showCondition` becomes visible, the child widget loads its data at once. Save of the parent is not needed.
+=== "Before"
+    Only the meta of the child widget was requested, its data was not, so the list stayed empty until the user pressed Save.
+
+Unnecessary requests have also been removed:
+
+* the data of a popup widget is not loaded by `forceActive` before the popup is opened, it is loaded when the popup opens;
+* the same requests of related business components are not sent twice, missing parent business components are loaded first;
+* if a parent business component is loaded and has no records, nothing is requested for its children.
+
+#### Fixed: FormPopup and confirmation with a form no longer "jump" on forceActive fields
+<!-- CXBOX-1433 -->
+
+!!! warning
+    Not merged into `main` yet: branch [feat/CXBOX-1433](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1433).
+
+=== "After"
+    While the meta is refreshed after a change of a `forceActive` field, the form stays on screen and a spinner is shown over it, the same way as on ordinary widgets.
+=== "Before"
+    The form of a [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/) or of a mass operation confirmation with a form was replaced by a loading skeleton after each change of a `forceActive` field and then drawn again: the popup "jumped", and the user lost the place in the form.
+
+#### Fixed: Multi-upload - drag-and-drop zone is disabled when upload is unavailable
+<!-- CXBOX-1218 -->
+
+!!! warning
+    Not merged into `main` yet: branch [feat/CXBOX-1218](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1218).
+
+The drag-and-drop zone of [multi-upload](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/) is always shown, but it is disabled while the meta of the widget is loading and while the upload action is not available (for example, hidden by business logic). Before, a file could be dropped while upload was not available. A file dropped on a disabled zone is ignored: the browser does not open it instead of the application.
+
+#### Added: radio - vertical layout and limit of rows for values
+<!-- CXBOX-1422 -->
+
+!!! warning
+    Not merged into `main` yet: branch [CXBOX-1422](https://github.com/CX-Box/cxbox-demo/tree/CXBOX-1422).
+
+New options of the [radio field](https://doc.cxbox.org/widget/fields/field/radio/radio/) in **.widget.json**:
+
+| Option                | Values                                                                                                       |
+|-----------------------|--------------------------------------------------------------------------------------------------------------|
+| `displayMode`         | `horizontal` (default): the values in a row. <br> `vertical`: each value on its own line.                    |
+| `maxRowsPerValue`     | How many rows of a long value are shown in view mode, the rest is cut off. Default 1.                       |
+| `editMaxRowsPerValue` | The same in edit mode. If not set, `maxRowsPerValue` is used, and then the default 1.                       |
+
+Long values no longer overflow narrow fields.
+
+```json
+{
+  "label": "Custom Field",
+  "key": "customField",
+  "type": "radio",
+  "displayMode": "vertical",
+  "maxRowsPerValue": 2
+}
+```
+
+
+#### Fixed: File download - IMPROVED one automatic retry after a 502/503/504 error
+<!-- CXBOX-1438 -->
+
+Sometimes downloading or opening a file ended with the error `502 Bad Gateway`, although the file was in place and the second attempt worked. The reason is a bug in Spring Security ([spring-security #15510](https://github.com/spring-projects/spring-security/issues/15510)): when a file is streamed, the response headers are written from two threads at once, the response breaks and the proxy answers 502.
+
+Now the application repeats the file request once by itself if the first attempt ends with a network error or with `502`, `503` or `504`. The user gets the file and does not see the error. If the second attempt fails too, the error is shown as before. Only requests to the file controller of the application itself are repeated, other requests are not affected. The retry is written to the browser console as a warning (`[file retry]`), so the support team can see it.
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2)
-
 
 
 ### CXBOX 5.0.3 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.3))
@@ -218,6 +331,53 @@ fields.setDrilldownWithFilter(
                 fb -> fb.hint(MyExampleDTO_.customFieldHint, fields.getCurrentValue(MyExampleDTO_.customFieldHint).orElse(null))
         )
 );
+```
+
+#### Added: Mass operations - row values from the frontend and rows that failed on the frontend
+<!-- CXBOX-1401 -->
+For [mass signing and encryption](https://doc.cxbox.org/widget/type/property/massoperations/massoperations/) the frontend does a part of the work itself (CryptoPro signs or encrypts the files in the browser) and sends the result of each row to the backend. The core now accepts this result:
+
+* **Values of a row.** `MassDTO` has a new map `options`: the frontend sends with each row, for example, the ids and names of the signature and encrypted files. They are read with `mass.getOption(...)`. The platform keys are in `MassOptionType` (`SIGNATURE_FILE_ID`, `SIGNATURE_FILE_NAME`, `ENCRYPTED_FILE_ID`, `ENCRYPTED_FILE_NAME`); a project can add its own keys with an enum that implements `MassOptionTypeSpecifier`.
+* **Rows that failed on the frontend.** If the browser could not process a row (for example, it could not sign the file), the frontend sends it with `success = false` and the reason in `errorMessage`.
+    * `getMassIds_()` now returns only the rows that the backend has to process.
+    * The new `getMassErrors_()` returns the rows that failed on the frontend, so the project can react to them, for example write a log.
+    * The core adds these rows to the result of the action with the message from the frontend, so the user sees them in the result of the mass operation. The handler does not have to do anything; to show another message, return your own `MassDTO` with the id of the row.
+
+```java
+String signatureFileId = mass.getOption(MassOptionType.SIGNATURE_FILE_ID);
+```
+
+#### Fixed: Build with Maven 3.10
+<!-- CXBOX-1427 -->
+A project could not be built with Maven 3.10: the dictionary modules were declared twice in `cxbox-bom`, and Maven 3.10 does not allow this. Now each module is declared once. Nothing has to be changed in a project.
+
+#### Fixed: HeaderWidget - bgColorKey and other links of title fields
+<!-- CXBOX-1063 -->
+A field shown in the title of a [HeaderWidget](https://doc.cxbox.org/widget/type/headerwidget/headerwidget/) as `${customField}` got its color (`bgColorKey`), drilldown and other linked values only if the same field was also on another widget of the business component. Now it is enough to add the field to `fields` of the HeaderWidget itself with the `hidden` type. Only fields used in the title are read from `fields`. A field with broken meta is skipped with a warning in the log, and the title is shown without its color, as before.
+
+!!! warning
+    This fix was made in the core after the `cxbox-5.0.3` tag, so it is not part of the published 5.0.3 version. It will be released in the core version 5.0.4.
+
+#### Added: Meta validation - widgets of an unknown type
+<!-- CXBOX-1110 -->
+
+!!! warning
+    Not merged into `main` yet: branch [feature/CXBOX-1110](https://github.com/CX-Box/cxbox/tree/feature/CXBOX-1110).
+
+When a project adds its own widget type and does not register a field extractor (`FieldExtractor`) for it, field security hides all fields of such a widget: the widget is shown empty and nothing explains why. Now the core can check the meta and report such widgets.
+
+* The check runs at startup and on every meta refresh, if it is turned on. Problems are written to the log; meta loading is not stopped.
+* When the dev panel is on, the results of the check are also sent to the frontend at login.
+* A project can add its own checks: a Spring bean that implements `MetaValidator`. A check that fails itself is written to the log as a warning and does not stop the other checks.
+
+`application.yml`
+
+```yaml
+cxbox:
+  meta:
+    validation:
+      enabled: true     # default false: the check is off
+      log-level: ERROR  # default ERROR; OFF - do not write problems to the log
 ```
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
@@ -271,6 +431,7 @@ We have provided a description of the [DashboardList widget](https://doc.cxbox.o
 
 #### Added: Description collapse widget group
 <!-- CXBOX-716 -->
+<!-- CXBOX-449 -->
 We have provided a description of the [collapse widget group](https://doc.cxbox.org/widget/type/property/collapse/collapse/): widgets of a view are combined into a group that can be collapsed and expanded, `collapsedCondition` sets the initial state. Supported for List, Form, Info, GroupingHierarchy, Tree, CardList, CardCarouselList, HeaderWidget, AdditionalInfo, AdditionalList and StatsBlock.
 
 #### Added: Description richText field
@@ -283,10 +444,12 @@ The [hint field](https://doc.cxbox.org/widget/fields/field/hint/hint/) article h
 
 #### Added: Drilldown tooltip - open in a new tab and copy link
 <!-- CXBOX-645 -->
+<!-- CXBOX-778 -->
 We have provided a description of the [drilldown tooltip](https://doc.cxbox.org/features/element/drilldown/drilldown/#drilldown_tooltip): when `cxbox.ui.drill-down-tooltip: newAndCopy` is set in `application.yml`, hovering over a `drilldown` field shows the buttons **Open link in new tab** and **Copy link address**. Supported for List, AdditionalList, Info, AdditionalInfo, Form and links in notifications.
 
 #### Added: Filtration - default filter group, reset filters, delete personal filter group
 <!-- CXBOX-1382 -->
+<!-- CXBOX-603 -->
 The [Filtration](https://doc.cxbox.org/widget/type/property/filtration/filtration/#default_filter_group) article describes the default filter group (`default_filter` = `true` in **BC_FILTER_GROUPS**) and the priority of the filters, the link "To default filter(s)" and deleting a personal filter group. The List, Tree, AdditionalList and AssocTreePopup articles link to these sections.
 
 #### Added: Filtration - personal filter group with full text search

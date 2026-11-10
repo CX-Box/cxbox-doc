@@ -284,9 +284,47 @@ The form of a [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/
 === "Before"
     ![CXBOX-1433-before.png](v3.0.2/CXBOX-1433-before.png)
 -->
-#### Added: Mass operations -  the attached signature limit of 30 MB
+#### Added: Signing and encryption with CryptoPro - large files
 <!-- CXBOX-1428 -->
-The [Signing](https://doc.cxbox.org/features/sign/sign/) article: the attached signature limit of 30 MB, `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY`, the time stamp service without a default address.
+Signing and encryption with [CryptoPro](https://doc.cxbox.org/features/sign/sign/) now work with large files, both in the signing popup and in [mass operations](https://doc.cxbox.org/widget/type/property/massoperations/sign/).
+
+**For the analyst - what the user gets**
+
+* **Detached signature and encryption of a file of any size.** The file is read in parts of 3 MiB, the CryptoPro plugin signs the hash of the file and encrypts the file in parts. Before, the whole file was given to the plugin in one call: the plugin signs files of only 10–60 MB depending on the computer, on a larger file it could hang without an error ("Lost connection to extension"), and the browser extension had to be restarted. The result of encryption is still one `.enc` file.
+* **Attached signature (the file inside the signature) - up to 30 MB by default.** A larger file is rejected at once, before the file is read and the plugin is called: the user sees "The file is too large for an attached signature" with the file size and the limit (in MB and MiB, as Windows Explorer and Finder count them differently). The limit applies to every attached operation, also to "encrypt and sign": the encrypted file the plugin receives is ≈ 1.78 times the original one.
+* **Attached signature without the size limit - optional.** With `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY=true` every attached signature is assembled: the plugin signs the hash, the application inserts the file into the signature. The result is an ordinary attached signature of the same file, made by CryptoPro. Limits: such a signature is not verified in the browser after the file is inserted; `csptest` verified assembled signatures up to 100 MB (above 100 MB a warning is written to the browser console, the signature is still made); check that the software of the recipient accepts attached signatures.
+* **Checks of the result.** The signature returned by the plugin is checked: an empty signature (the plugin returns it without an error, for example for RSA keys with SHA-2) and an unknown signature type are errors, not a "signed" file. The hash algorithm is chosen by the key of the certificate (GOST R 34.10-2012 256/512).
+* **Clear errors.** A plugin failure is shown as a notification with a short title, advice what to do and the plugin text in the details: PIN dialog cancelled, certificate expired or not trusted, unsupported key, plugin not found / outdated / not responding, file too large, time stamp service not configured.
+* **Progress and stop.** In the signing popup the button shows a spinner until the end; for a native attached signature the user can press **Cancel** to stop waiting (the plugin has no method to cancel a call already running: its result is ignored, an open PIN dialog of CryptoPro must be closed with "Cancel"). In a mass operation the step shows the progress of the rows (`done / total`), and the processing is stopped with its own button.
+* **Not supported:** decrypting and verifying existing signatures, encryption with a plugin older than 2.0.15260, plugins without the async API.
+
+**Settings** (environment variables of the frontend, `ui/.env*`)
+
+| Variable | Meaning | Default |
+|----------|---------|---------|
+| `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY` | `true` - every attached signature, of any size, is assembled from a detached one and the file | `false` - attached signature by the plugin up to 30 MB |
+| `REACT_APP_CRYPTOPRO_TSA_URL` | time stamp service, required for `CADES_T` | not set - signing with `CADES_T` fails before the plugin is called (`TSA_NOT_CONFIGURED`) |
+| `REACT_APP_CRYPTOPRO_INSTRUCTION_LINK` | link to the setup instruction when the plugin or certificates are not found | `https://doc.cxbox.org/features/sign/sign/` |
+
+**Constants** (`CRYPTOPRO_CONFIG` in `ui/src/features/cryptoPro/config.ts`; MB = 1 000 000 bytes, MiB = 1 048 576 bytes)
+
+| Constant | Value | Meaning |
+|----------|-------|---------|
+| `chunkSize` | 3 MiB | part of the file for hashing and encryption, a multiple of 3 (as in the CryptoPro sample `plugin-samples-fileapi_stream`) |
+| `nativeAttachedMaxSize` | 30 MB (30 000 000 bytes) | the largest original file for an attached signature by the plugin (`SignCades`); a setting with a margin, not a documented limit of the plugin (testing: 34 MiB was signed, 35 MiB hung the plugin). Not used when `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY=true` |
+| `chunkTimeout` | 60 s | time to wait for the plugin to take one part of the file, then "The CryptoPro plugin is not responding" (`PLUGIN_NOT_RESPONDING`) |
+| `minPluginVersion` | `2.0.15260` | the oldest plugin for encryption in parts: since this version the parts of `StreamEncrypt` can be joined (CADES-2639); older - "The CryptoPro plugin is outdated" (`PLUGIN_OUTDATED`) |
+| `DEFAULT_SIGNATURE_TYPE` | `CADES_BES` | signature type when `options.cryptoGenerator[].signatureType` is not set in the widget meta (`CADES_BES`, `CADES_T`) |
+| `DEFAULT_SIGNATURE_PACKAGE` | `detached` | the signature without the file; `attached` - the file inside the signature |
+
+| Path | Size limit |
+|------|------------|
+| detached signature (hash in 3 MiB parts, `SignHash`) | no configured limit |
+| attached signature by the plugin (`SignCades`, the whole file) | 30 MB of the original file |
+| attached signature with assembly | no configured limit |
+| encryption (`StreamEncrypt` in 3 MiB parts, one `.enc`) | no configured limit; plugin 2.0.15260 or newer |
+
+"No configured limit" does not mean any size works: the memory of the browser, the plugin and the software of the recipient still have their own limits.
 
 #### Added: Mass operations - signing and encryption
 <!-- CXBOX-1401 -->

@@ -270,20 +270,45 @@ The [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary
         ![CXBOX-150-multipleselect-after.jpg](v3.0.2/CXBOX-150-multipleselect-after.jpg)
     === "Before"
         ![CXBOX-150-multipleselect-before.jpg](v3.0.2/CXBOX-150-multipleselect-before.jpg)
-<!--
-#### Fixed: FormPopup and confirmation with a form no longer "jump" on forceActive fields-->
+#### Fixed: FormPopup and confirmation with a form no longer "jump" on forceActive fields
 <!-- CXBOX-1433 -->
-<!--
+
 !!! warning
-    Not merged into `main` yet: branch [feat/CXBOX-1433](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1433).
-While the meta is refreshed after a change of a `forceActive` field, the form stays on screen and a spinner is shown over it, the same way as on ordinary widgets.
-The form of a [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/) or of a mass operation confirmation with a form was replaced by a loading skeleton after each change of a `forceActive` field and then drawn again: the popup "jumped", and the user lost the place in the form.
+    Not merged into `main` yet: [cxbox-demo #724](https://github.com/CX-Box/cxbox-demo/pull/724) (branch `feat/CXBOX-1433`), [cxbox-code-samples #777](https://github.com/CX-Box/cxbox-code-samples/pull/777).
+
+After - the user changes a `forceActive` field in a [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/) or in the confirmation of a [mass operation](https://doc.cxbox.org/widget/type/property/massoperations/massoperations/) with a form. While the meta of the row is refreshed, the form stays on screen with the values the user has typed, and a spinner is shown over it, the same way as on ordinary widgets (List, Form, Info).
+
+Before - after each change of a `forceActive` field the whole form was replaced by a loading skeleton and then drawn again. The popup "jumped", the user lost the place in the form and the focus, and on a slow network did not see the form at all until the answer came.
+
+The skeleton is still shown when the popup opens and the form has nothing to show yet: neither the data nor the meta of the row.
+
+For the analyst:
+
+* Where it is seen: every FormPopup and every mass operation confirmation with a form (`preInvoke` with a widget) that has a `forceActive` field; most visible on a slow network or with a heavy `buildRowDependentMeta`.
+* What the user sees now: the values stay in the fields, the fields are not available while the meta is loading (a spinner over the form), then the form shows what the new meta says (required, readonly, hidden fields, values of dependent fields).
+* Nothing has to be changed in the meta or on the backend: the requests are the same as before (`row-meta` after each change of a `forceActive` field), only the way the popup waits for them has changed.
+* What to check in a project: popups with several `forceActive` fields one after another, a dependent field that becomes visible or required, the buttons of the popup while the meta is loading, closing the popup during loading.
+
+The videos are recorded by the autotest `FormPopupForceActiveTest` (cxbox-code-samples, screen "Input basic", view "FormPopup"). The network is slowed down, so the refresh of the meta is seen: the value `5700` is typed into `customField`, a `forceActive` field.
+
+=== "After"
+    The field keeps the typed value, a spinner is shown over it until the meta comes.
+    <video controls width="800">
+    <source src="/new/v3.0.2/CXBOX-1433-after.mp4" type="video/mp4">
+    </video>
+=== "Before"
+    The form is replaced by a skeleton right after the value is typed.
+    <video controls width="800">
+    <source src="/new/v3.0.2/CXBOX-1433-before.mp4" type="video/mp4">
+    </video>
+
+The same in the demo (a FormPopup on the Meeting screen):
 
 === "After"
     ![CXBOX-1433-after.png](v3.0.2/CXBOX-1433-after.png)
 === "Before"
     ![CXBOX-1433-before.png](v3.0.2/CXBOX-1433-before.png)
--->
+
 #### Added: Signing and encryption with CryptoPro - large files
 <!-- CXBOX-1428 -->
 Signing and encryption with [CryptoPro](https://doc.cxbox.org/features/sign/sign/) now work with large files, both in the signing popup and in [mass operations](https://doc.cxbox.org/widget/type/property/massoperations/sign/).

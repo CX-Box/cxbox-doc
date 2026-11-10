@@ -239,33 +239,101 @@ When the user cleared the full text search field, the application sent a request
 === "Before"
     ![CXBOX-1358-calendar-before.png](v3.0.2/CXBOX-1358-calendar-before.png)
 
+#### Fixed: AdditionalInfo - show condition
+<!-- CXBOX-318 -->
+When all widgets [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/) on the right are hidden, the other widgets of the view take the whole width.
+
+=== "widgets with AdditionalInfo"
+    ![CXBOX-318-withAI.png](v3.0.2/CXBOX-318-withAI.png)
+=== "widget with hidden AdditionalInfo"
+    ![CXBOX-318-withoutAI.png](v3.0.2/CXBOX-318-withoutAI.png)
+
+#### Added: pickList and pickTree - filter display the number of selected records
+<!-- CXBOX-252 -->
+The [pickList](https://doc.cxbox.org/widget/fields/field/pickList/pickList/) and [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/) while the filter selected in the popup is applied, the "..." badge will display the number of selected records
+=== "After" 
+    ![CXBOX-252-after.png](v3.0.2/CXBOX-252-after.png)
+=== "Before"
+    ![CXBOX-252-before.png](v3.0.2/CXBOX-252-before.png)
+
+#### Added: dictionary and multipleSelect - width of the drop-down list
+<!-- CXBOX-150 -->
+The [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/) and [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/) articles describe the width of the drop-down list: it grows with the longest value up to a frontend constant (`dictionary_dropDownMaxCols`, default 5, and `multipleSelect_dropDownMaxCols`, default 1.3, in field widths), long values are shortened with an ellipsis and shown in a tooltip.
+
+=== "dictionary"
+    === "After"
+        ![CXBOX-150-dictionary-after.jpg](v3.0.2/CXBOX-150-dictionary-after.jpg)
+    === "Before"
+        ![CXBOX-150-dictionary-before.jpg](v3.0.2/CXBOX-150-dictionary-before.jpg)
+=== "multipleSelect"
+    === "After"
+        ![CXBOX-150-multipleselect-after.jpg](v3.0.2/CXBOX-150-multipleselect-after.jpg)
+    === "Before"
+        ![CXBOX-150-multipleselect-before.jpg](v3.0.2/CXBOX-150-multipleselect-before.jpg)
+<!--
+#### Fixed: FormPopup and confirmation with a form no longer "jump" on forceActive fields-->
+<!-- CXBOX-1433 -->
+<!--
+!!! warning
+    Not merged into `main` yet: branch [feat/CXBOX-1433](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1433).
+While the meta is refreshed after a change of a `forceActive` field, the form stays on screen and a spinner is shown over it, the same way as on ordinary widgets.
+The form of a [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/) or of a mass operation confirmation with a form was replaced by a loading skeleton after each change of a `forceActive` field and then drawn again: the popup "jumped", and the user lost the place in the form.
+
+=== "After"
+    ![CXBOX-1433-after.png](v3.0.2/CXBOX-1433-after.png)
+=== "Before"
+    ![CXBOX-1433-before.png](v3.0.2/CXBOX-1433-before.png)
+-->
+#### Added: Mass operations -  the attached signature limit of 30 MB
+<!-- CXBOX-1428 -->
+The [Signing](https://doc.cxbox.org/features/sign/sign/) article: the attached signature limit of 30 MB, `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY`, the time stamp service without a default address.
+
+#### Added: Mass operations - signing and encryption
+<!-- CXBOX-1401 -->
+Mass signing and encrypting is a mass operation that signs and encrypts the files of the selected rows with CryptoPro. All operation types of Signing and encrypting are available: signing, encrypting, signing and encrypting, encrypting and signing.
+
+This function is available for widgets:
+
+* List
+* GroupingHierarchy
+
+=== "Encrypting and signing"
+    === "List"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
+        <video controls width="800">
+        <source src="/widget/type/property/massoperations/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
+        </video>
+    === "GroupingHierarchy"
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsigngh){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
+        <video controls width="800">
+        <source src="/widget/type/property/massoperations/sign/08_encrypt_sign_gh_3712.mp4" type="video/mp4">
+        </video>
+
+see more [Mass operations](https://doc.cxbox.org/widget/type/property/massoperations/sign/)
+#### Fixed:  Fixed filter – hint field
+<!-- CXBOX-1281 -->
+The filter for the hint field has been changed.
+
+After - `.contains` request is sent, so data is displayed when entering partial values into the filter.
+
+`/api/v1/count/myexample162/myExampleBc162?customField.contains=123`
+
+Before - an `.equals` request was sent, so data was not displayed when entering partial values  into the filter.
+
+`/api/v1/count/myexample162/myExampleBc162?customField.equals=123`
+
+=== "After"
+    ![CXBOX-1281-after.gif](v3.0.2/CXBOX-1281-after.gif)
+=== "Before"
+    ![CXBOX-1281-before.gif](v3.0.2/CXBOX-1281-before.gif)
+
 #### Fixed: Child widget shown by forceActive gets its data at once
 <!-- CXBOX-1432 -->
 
-!!! warning
-    Not merged into `main` yet: branch [feature/CXBOX-1432](https://github.com/CX-Box/cxbox-demo/tree/feature/CXBOX-1432).
-
-=== "After"
-    When the user changes a `forceActive` field of the parent and a child widget hidden by `showCondition` becomes visible, the child widget loads its data at once. Save of the parent is not needed.
-=== "Before"
-    Only the meta of the child widget was requested, its data was not, so the list stayed empty until the user pressed Save.
-
-Unnecessary requests have also been removed:
-
-* the data of a popup widget is not loaded by `forceActive` before the popup is opened, it is loaded when the popup opens;
-* the same requests of related business components are not sent twice, missing parent business components are loaded first;
-* if a parent business component is loaded and has no records, nothing is requested for its children.
-
-#### Fixed: FormPopup and confirmation with a form no longer "jump" on forceActive fields
-<!-- CXBOX-1433 -->
-
-!!! warning
-    Not merged into `main` yet: branch [feat/CXBOX-1433](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1433).
-
-=== "After"
-    While the meta is refreshed after a change of a `forceActive` field, the form stays on screen and a spinner is shown over it, the same way as on ordinary widgets.
-=== "Before"
-    The form of a [FormPopup](https://doc.cxbox.org/widget/type/formpopup/formpopup/) or of a mass operation confirmation with a form was replaced by a loading skeleton after each change of a `forceActive` field and then drawn again: the popup "jumped", and the user lost the place in the form.
+After : When the user changes a `forceActive` field of the parent and a child widget hidden by `showCondition` becomes visible, the child widget loads its data at once. Save of the parent is not needed.
+Before : Only the meta of the child widget was requested, its data was not, so the list stayed empty until the user pressed Save.
 
 #### Fixed: Multi-upload - drag-and-drop zone is disabled when upload is unavailable
 <!-- CXBOX-1218 -->
@@ -301,13 +369,13 @@ Long values no longer overflow narrow fields.
 }
 ```
 
-
 #### Fixed: File download - IMPROVED one automatic retry after a 502/503/504 error
 <!-- CXBOX-1438 -->
 
 Sometimes downloading or opening a file ended with the error `502 Bad Gateway`, although the file was in place and the second attempt worked. The reason is a bug in Spring Security ([spring-security #15510](https://github.com/spring-projects/spring-security/issues/15510)): when a file is streamed, the response headers are written from two threads at once, the response breaks and the proxy answers 502.
 
 Now the application repeats the file request once by itself if the first attempt ends with a network error or with `502`, `503` or `504`. The user gets the file and does not see the error. If the second attempt fails too, the error is shown as before. Only requests to the file controller of the application itself are repeated, other requests are not affected. The retry is written to the browser console as a warning (`[file retry]`), so the support team can see it.
+
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2)
@@ -351,13 +419,6 @@ String signatureFileId = mass.getOption(MassOptionType.SIGNATURE_FILE_ID);
 <!-- CXBOX-1427 -->
 A project could not be built with Maven 3.10: the dictionary modules were declared twice in `cxbox-bom`, and Maven 3.10 does not allow this. Now each module is declared once. Nothing has to be changed in a project.
 
-#### Fixed: HeaderWidget - bgColorKey and other links of title fields
-<!-- CXBOX-1063 -->
-A field shown in the title of a [HeaderWidget](https://doc.cxbox.org/widget/type/headerwidget/headerwidget/) as `${customField}` got its color (`bgColorKey`), drilldown and other linked values only if the same field was also on another widget of the business component. Now it is enough to add the field to `fields` of the HeaderWidget itself with the `hidden` type. Only fields used in the title are read from `fields`. A field with broken meta is skipped with a warning in the log, and the title is shown without its color, as before.
-
-!!! warning
-    This fix was made in the core after the `cxbox-5.0.3` tag, so it is not part of the published 5.0.3 version. It will be released in the core version 5.0.4.
-
 #### Added: Meta validation - widgets of an unknown type
 <!-- CXBOX-1110 -->
 
@@ -379,6 +440,7 @@ cxbox:
       enabled: true     # default false: the check is off
       log-level: ERROR  # default ERROR; OFF - do not write problems to the log
 ```
+
 
 ### CXBOX [documentation](https://doc.cxbox.org/)
 
@@ -460,21 +522,9 @@ We have described how the [personal filter group works with the full text search
 <!-- CXBOX-1431 -->
 The filter group and personal filter group sections now have "How does it look" and "How to add" for every widget that supports them: List, AdditionalList, GroupingHierarchy, Tree, PickListPopup, AssocListPopup, PickTreePopup, AssocTreePopup, CardList, CardCarouselList, FilePreview, Pie1D, Column2D, Line2D.
 
-#### Added: pickList and pickTree - column filter by text and by records
-<!-- CXBOX-252 -->
-The [pickList](https://doc.cxbox.org/widget/fields/field/pickList/pickList/) and [pickTree](https://doc.cxbox.org/widget/fields/field/pickTree/pickTree/) articles describe the two modes of the column filter: `By text` (contains) and `By records` (records chosen in the popup, the **...** button shows their number).
-
-#### Added: dictionary and multipleSelect - width of the drop-down list
-<!-- CXBOX-150 -->
-The [dictionary](https://doc.cxbox.org/widget/fields/field/dictionary/dictionary/) and [multipleSelect](https://doc.cxbox.org/widget/fields/field/multipleSelect/multipleSelect/) articles describe the width of the drop-down list: it grows with the longest value up to a frontend constant (`dictionary_dropDownMaxCols`, default 5, and `multipleSelect_dropDownMaxCols`, default 1.3, in field widths), long values are shortened with an ellipsis and shown in a tooltip.
-
 #### Added: Placeholder for a read-only field
 <!-- CXBOX-1404 -->
 The Placeholder sections of all field articles say that the placeholder is shown for a `Readonly` field as well, with samples and pictures.
-
-#### Added: AdditionalInfo - show condition
-<!-- CXBOX-318 -->
-The [AdditionalInfo](https://doc.cxbox.org/widget/type/additionalinfo/additionalinfo/) article has got a show condition section with a sample and a GIF. When all widgets on the right are hidden, the other widgets of the view take the whole width.
 
 #### Fixed: StatsBlock and List - show condition by parent entity
 <!-- CXBOX-317 -->
@@ -496,4 +546,4 @@ The [Pagination](https://doc.cxbox.org/widget/type/property/pagination/paginatio
 <!-- CXBOX-1401 -->
 <!-- CXBOX-1428 -->
 The [Mass operations](https://doc.cxbox.org/widget/type/property/massoperations/massoperations/) article has been split into a hub page and the articles: without confirmation, with confirmation, mass delete and mass signing and encryption (List and GroupingHierarchy samples, "Interrupt and next", file preview during the operation).
-The [Signing](https://doc.cxbox.org/features/sign/sign/) article: the attached signature limit of 30 MB, `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY`, the time stamp service without a default address.
+ 

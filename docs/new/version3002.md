@@ -282,15 +282,6 @@ Before - after each change of a `forceActive` field the whole form was replaced 
 
 The skeleton is still shown when the popup opens and the form has nothing to show yet: neither the data nor the meta of the row.
 
-For the analyst:
-
-* Where it is seen: every FormPopup and every mass operation confirmation with a form (`preInvoke` with a widget) that has a `forceActive` field; most visible on a slow network or with a heavy `buildRowDependentMeta`.
-* What the user sees now: the values stay in the fields, the fields are not available while the meta is loading (a spinner over the form), then the form shows what the new meta says (required, readonly, hidden fields, values of dependent fields).
-* Nothing has to be changed in the meta or on the backend: the requests are the same as before (`row-meta` after each change of a `forceActive` field), only the way the popup waits for them has changed.
-* What to check in a project: popups with several `forceActive` fields one after another, a dependent field that becomes visible or required, the buttons of the popup while the meta is loading, closing the popup during loading.
-
-The videos are recorded by the autotest `FormPopupForceActiveTest` (cxbox-code-samples, screen "Input basic", view "FormPopup"). The network is slowed down, so the refresh of the meta is seen: the value `5700` is typed into `customField`, a `forceActive` field.
-
 === "After"
     The field keeps the typed value, a spinner is shown over it until the meta comes.
     <video controls width="800">
@@ -301,19 +292,10 @@ The videos are recorded by the autotest `FormPopupForceActiveTest` (cxbox-code-s
     <video controls width="800">
     <source src="/new/v3.0.2/CXBOX-1433-before.mp4" type="video/mp4">
     </video>
-
-The same in the demo (a FormPopup on the Meeting screen):
-
-=== "After"
-    ![CXBOX-1433-after.png](v3.0.2/CXBOX-1433-after.png)
-=== "Before"
-    ![CXBOX-1433-before.png](v3.0.2/CXBOX-1433-before.png)
-
+ 
 #### Added: Signing and encryption with CryptoPro - large files
 <!-- CXBOX-1428 -->
 Signing and encryption with [CryptoPro](https://doc.cxbox.org/features/sign/sign/) now work with large files, both in the signing popup and in [mass operations](https://doc.cxbox.org/widget/type/property/massoperations/sign/).
-
-**For the analyst - what the user gets**
 
 * **Detached signature and encryption of a file of any size.** The file is read in parts of 3 MiB, the CryptoPro plugin signs the hash of the file and encrypts the file in parts. Before, the whole file was given to the plugin in one call: the plugin signs files of only 10–60 MB depending on the computer, on a larger file it could hang without an error ("Lost connection to extension"), and the browser extension had to be restarted. The result of encryption is still one `.enc` file.
 * **Attached signature (the file inside the signature) - up to 30 MB by default.** A larger file is rejected at once, before the file is read and the plugin is called: the user sees "The file is too large for an attached signature" with the file size and the limit (in MB and MiB, as Windows Explorer and Finder count them differently). The limit applies to every attached operation, also to "encrypt and sign": the encrypted file the plugin receives is ≈ 1.78 times the original one.
@@ -360,19 +342,18 @@ This function is available for widgets:
 * List
 * GroupingHierarchy
 
-=== "Encrypting and signing"
-    === "List"
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
-        <video controls width="800">
-        <source src="/widget/type/property/massoperations/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
-        </video>
-    === "GroupingHierarchy"
-        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsigngh){:target="_blank"}
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
-        <video controls width="800">
-        <source src="/widget/type/property/massoperations/sign/08_encrypt_sign_gh_3712.mp4" type="video/mp4">
-        </video>
+=== "List"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
+    <video controls width="800">
+    <source src="/widget/type/property/massoperations/sign/07_encrypt_sign_list_3712.mp4" type="video/mp4">
+    </video>
+=== "GroupingHierarchy"
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsigngh){:target="_blank"}
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
+    <video controls width="800">
+    <source src="/widget/type/property/massoperations/sign/08_encrypt_sign_gh_3712.mp4" type="video/mp4">
+    </video>
 
 see more [Mass operations](https://doc.cxbox.org/widget/type/property/massoperations/sign/)
 #### Fixed:  Fixed filter – hint field
@@ -523,10 +504,6 @@ For [mass signing and encryption](https://doc.cxbox.org/widget/type/property/mas
 String signatureFileId = mass.getOption(MassOptionType.SIGNATURE_FILE_ID);
 ```
 
-#### Fixed: Build with Maven 3.10
-<!-- CXBOX-1427 -->
-A project could not be built with Maven 3.10: the dictionary modules were declared twice in `cxbox-bom`, and Maven 3.10 does not allow this. Now each module is declared once. Nothing has to be changed in a project.
-
 #### Added: Meta validation - widgets of an unknown type
 <!-- CXBOX-1110 -->
 
@@ -650,9 +627,4 @@ The Title Color sections of the widget articles list pickList and inlinePickList
 #### Added: Pagination - available options and default page limit
 <!-- CXBOX-951 -->
 The [Pagination](https://doc.cxbox.org/widget/type/property/pagination/pagination/#limitrules) article explains the difference between `availableLimitsList` (options in the dropdown) and `PAGE_LIMIT` (the default page limit), with a table of combinations.
-
-#### Added: Mass operations - signing and encryption
-<!-- CXBOX-1401 -->
-<!-- CXBOX-1428 -->
-The [Mass operations](https://doc.cxbox.org/widget/type/property/massoperations/massoperations/) article has been split into a hub page and the articles: without confirmation, with confirmation, mass delete and mass signing and encryption (List and GroupingHierarchy samples, "Interrupt and next", file preview during the operation).
  

@@ -439,6 +439,51 @@ Sometimes downloading or opening a file ended with the error `502 Bad Gateway`, 
 
 Now the application repeats the file request once by itself if the first attempt ends with a network error or with `502`, `503` or `504`. The user gets the file and does not see the error. If the second attempt fails too, the error is shown as before. Only requests to the file controller of the application itself are repeated, other requests are not affected. The retry is written to the browser console as a warning (`[file retry]`), so the support team can see it.
 
+#### Added: Dev panel - runtime errors of the meta and of the frontend
+<!-- CXBOX-1110 -->
+
+!!! warning
+    Not merged into `main` yet: [cxbox-demo #731](https://github.com/CX-Box/cxbox-demo/pull/731) (branch [feature/CXBOX-1110](https://github.com/CX-Box/cxbox-demo/tree/feature/CXBOX-1110)), needs the core from [cxbox #148](https://github.com/CX-Box/cxbox/pull/148) (see [Meta validation - widgets of an unknown type](#added-meta-validation-widgets-of-an-unknown-type)).
+
+When a widget has a type that the core does not know (for example, a project widget type without a `FieldExtractor`), the backend hides all its fields, and the widget is not shown on the view. Before, the developer saw an empty place on the view and had to look for the reason in the server log and in the browser console.
+
+Now the dev panel has a new indicator **Runtime errors** next to the **Refresh meta** and **Debug mode** buttons. It shows the number of errors (red) and warnings (yellow) on the current view; a click opens a list:
+
+* **Backend** - problems found by the meta validation of the core (they come at login, in `metaValidation`). Each problem shows the check (`Widget type without FieldExtractor`), the widget or the view it belongs to, and the text, for example `Type "MyCustomList" (bc "client") is unknown to FieldExtractor beans, fields are hidden`. The name of the widget can be copied.
+* **Failed validators** - checks that failed themselves: their problems are unknown, see the server log.
+* **Frontend** - `console.error` and `console.warn`, uncaught errors and unhandled promise rejections of the browser. The same messages are counted, not repeated.
+
+Only the problems of the current view are shown: problems of widgets on other views are hidden. Frontend messages are cleared when the user goes to another view and at logout.
+
+In **Debug mode** the widget with a problem gets a red (error) or yellow (warning) frame, and the screen/view label of the debug panel is colored the same way when the view itself has problems.
+
+Errors are collected only when the dev panel is on (`cxbox.meta.dev-panel-enabled`); for users without the dev panel nothing changes.
+
+=== "After"
+    The widget `clientList` has the type `MyCustomList`. The indicator shows 1 error and 1 warning, the list explains why the widget is not shown.  
+    ![CXBOX-1110-after.png](v3.0.2/CXBOX-1110-after.png)
+=== "Before"
+    The same meta: the widget is not shown, the dev panel says nothing.  
+    ![CXBOX-1110-before.png](v3.0.2/CXBOX-1110-before.png)
+
+In cxbox-demo the check is on by default (`application.yml`):
+
+```yaml
+cxbox:
+  meta:
+    dev-panel-enabled: ${DEV_PANEL_ENABLED:true}
+    validation:
+      enabled: ${META_VALIDATION_ENABLED:true}
+      log-level: ${META_VALIDATION_LOG_LEVEL:error}
+```
+
+The results are given to the frontend in `LoginServiceImpl`:
+
+```java
+.devPanelEnabled(metaConfigurationProperties.isDevPanelEnabled())
+.metaValidation(metaHotReloadService.validateMeta())
+```
+
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2)
@@ -486,12 +531,13 @@ A project could not be built with Maven 3.10: the dictionary modules were declar
 <!-- CXBOX-1110 -->
 
 !!! warning
-    Not merged into `main` yet: branch [feature/CXBOX-1110](https://github.com/CX-Box/cxbox/tree/feature/CXBOX-1110).
+    Not merged into `main` yet: [cxbox #148](https://github.com/CX-Box/cxbox/pull/148) (branch [feature/CXBOX-1110](https://github.com/CX-Box/cxbox/tree/feature/CXBOX-1110)).
 
 When a project adds its own widget type and does not register a field extractor (`FieldExtractor`) for it, field security hides all fields of such a widget: the widget is shown empty and nothing explains why. Now the core can check the meta and report such widgets.
 
 * The check runs at startup and on every meta refresh, if it is turned on. Problems are written to the log; meta loading is not stopped.
-* When the dev panel is on, the results of the check are also sent to the frontend at login.
+* The built-in check `WidgetFieldExtractorValidator` (title `Widget type without FieldExtractor`) reports every widget with a `bc` whose type no `FieldExtractor` supports. The server log also gets a hint: change the type to a known one or register a `FieldExtractor` bean for the custom type.
+* When the dev panel is on, the results of the check are also sent to the frontend at login: `MetaHotReloadService.validateMeta()` returns a list of `MetaValidationResult` (check, title, message, views, widgets, `executionFailed`), and `LoggedUser` has the new field `metaValidation`. The frontend shows them in the dev panel, see [Dev panel - runtime errors](#added-dev-panel-runtime-errors-of-the-meta-and-of-the-frontend).
 * A project can add its own checks: a Spring bean that implements `MetaValidator`. A check that fails itself is written to the log as a warning and does not stop the other checks.
 
 `application.yml`

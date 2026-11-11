@@ -7,15 +7,6 @@ Every event is one line that starts with `SIEM event.`: who did what, with which
 Events are only written to the log. They are not saved to the database, there are no tables, Liquibase changes or screens for them.
 The SIEM agent (or the log collector of your infrastructure) reads the log and sends the events to SIEM.
 
-## What has been done
-
-| Release | Task | What was added |
-|---------|------|----------------|
-| [2.0.3](https://doc.cxbox.org/new/version203/) | [Demo PR #206](https://github.com/CX-Box/cxbox-demo/pull/206) | SIEM integration example: every CRUD-MA action is logged with the user, role, session, IP address and the returned data |
-| [2.0.11](https://doc.cxbox.org/new/version2011/) | [Demo PR #350](https://github.com/CX-Box/cxbox-demo/pull/350) | Login is logged. For `invoke` the action name is logged. Changes of `Responsibility View` and `Responsibility Action` are logged with `WARN` level. Settings: which CRUD-MA actions to log, logging only the record IDs, WARN level for BC + action pairs. Errors are logged with the error message |
-| [2.0.16](https://doc.cxbox.org/new/version2016/) | [Demo PR #530](https://github.com/CX-Box/cxbox-demo/pull/530) | The level of an event that ended with a business error is taken from `logging.global-handler.business-exception.log-level` |
-| [3.0.2](https://doc.cxbox.org/new/version3002/) | | The error popup copies the session id. It is the same value as `session: ...` in the SIEM log, so support can find all requests of the user |
-
 ## How does it look?
 ![siem.gif](../../../new/v2.0.3/siem.gif)
 
@@ -36,6 +27,30 @@ Examples of log lines:
     WARN o.d.c.c.extension.siem.SecurityLogger : SIEM event. Operation: UPDATE, endpoint (resource): responsibilities (1100342), user: DEMO (CXBOX_USER,BUSINESS_ADMIN), session: F2DBA42C1BAED2599339101D5FA3280F, ipAddress: 0:0:0:0:0:0:0:1, data: {"id":"1100342","vstamp":1,"internalRoleCD":"BUSINESS_ADMIN","view":"meetingview", ...}
     ```
 
+## How to add?
+??? Example
+    Step 1. Copy the package [org.demo.conf.cxbox.extension.siem](https://github.com/CX-Box/cxbox-demo/tree/main/src/main/java/org/demo/conf/cxbox/extension/siem) from CXBOX Demo to your project: `SecurityLogger`, `SiemCrudmaEventListener`, `SiemLoginEventListener`.
+
+    Step 2. Change `SIEM_CONFIG_LOG_LEVEL_WARN` in `SiemCrudmaEventListener`: specify the BC of your project which changes should be logged with `WARN` level.
+
+    Step 3. To log login, publish `LoginEvent` after login, as it is done in `LoginServiceImpl` of CXBOX Demo:
+    ```java
+    try {
+        // ... build LoggedUser
+        return result;
+    } catch (Exception ex) {
+        exception = ex;
+        throw ex;
+    } finally {
+        eventPublisher.publishEvent(new LoginEvent<>(this, result, exception));
+    }
+    ```
+
+    Step 4. Configure your log collector to send to SIEM the lines of the logger `SecurityLogger` (they start with `SIEM event.`).
+
+    !!! warning
+        With `SIEM_CONFIG_LOG_DATA_ID_ONLY = false` the log contains the full data of the records, including personal data. Use `true`, if the log must not contain it.
+
 ## Event format
 
 ```
@@ -51,7 +66,7 @@ SIEM event. Operation: <operation>, endpoint (resource): <endpoint>, user: <user
 | `ipAddress` | The `X-Forwarded-For` header, if it is a valid IPv4 address. Otherwise the remote address of the request |
 | `data` | The data returned by the action as JSON (see [What data is written](#what-data-is-written)). For login - the user id. For an error with `ERROR` level - the error message |
 
-### What data is written
+## What data is written
 
 The data is taken from the result of the CRUD-MA action:
 
@@ -64,7 +79,7 @@ The data is taken from the result of the CRUD-MA action:
 | `AssociateResultDTO` | associated records | ids of associated records |
 | `Long` (count) | the number | `null` |
 
-### Log level
+## Log level
 
 | Situation | Level |
 |-----------|-------|
@@ -123,26 +138,5 @@ The demo has three classes in the package `org.demo.conf.cxbox.extension.siem`:
 * `SiemCrudmaEventListener` - listens to `CrudmaEvent`, applies the [settings](#settings) and logs the action.
 * `SiemLoginEventListener` - listens to `LoginEvent`, which `LoginServiceImpl` publishes after login (successful or not), and logs the login.
 
-## How to add?
-??? Example
-    Step 1. Copy the package [org.demo.conf.cxbox.extension.siem](https://github.com/CX-Box/cxbox-demo/tree/main/src/main/java/org/demo/conf/cxbox/extension/siem) from CXBOX Demo to your project: `SecurityLogger`, `SiemCrudmaEventListener`, `SiemLoginEventListener`.
 
-    Step 2. Change `SIEM_CONFIG_LOG_LEVEL_WARN` in `SiemCrudmaEventListener`: specify the BC of your project which changes should be logged with `WARN` level.
-
-    Step 3. To log login, publish `LoginEvent` after login, as it is done in `LoginServiceImpl` of CXBOX Demo:
-    ```java
-    try {
-        // ... build LoggedUser
-        return result;
-    } catch (Exception ex) {
-        exception = ex;
-        throw ex;
-    } finally {
-        eventPublisher.publishEvent(new LoginEvent<>(this, result, exception));
-    }
-    ```
-
-    Step 4. Configure your log collector to send to SIEM the lines of the logger `SecurityLogger` (they start with `SIEM event.`).
-
-!!! warning
-    With `SIEM_CONFIG_LOG_DATA_ID_ONLY = false` the log contains the full data of the records, including personal data. Use `true`, if the log must not contain it.
+ 

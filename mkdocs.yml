@@ -122,7 +122,7 @@ nav:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
      - Widget property Collapse: widget/type/property/collapse/collapse.md
      - Widget property Export:
-        - Excel: widget/type/Widget property/export/excel/excel.md
+        - Excel: widget/type/property/export/excel/excel.md
      - Widget property File Options:
         - Multi-upload files: widget/type/property/multiupload/multiupload.md
      - Widget property Filtration: widget/type/property/filtration/filtration.md
@@ -191,6 +191,7 @@ nav:
         - Sent to email: features/element/notifications/email/email.md
         - Push: features/element/notifications/push/websocket.md
       - New Year Theme: features/happynewyear/happynewyear.md
+      - SIEM (security events): features/element/siem/siem.md
       - Signing and encrypting: features/sign/sign.md
   - Advanced customization:
       - DrillDown: advancedCustomization/element/drilldown/drilldown.md

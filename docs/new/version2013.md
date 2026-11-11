@@ -120,7 +120,7 @@ The Steps widget now supports optional descriptions for each step. If no descrip
     ![stepsDescriptionBefore.png](v2.0.13/stepsDescriptionBefore.png)
 
 #### Added: List widget – configurable Excel export limit  
-You can now set a row limit for Excel export in [List](https://doc.cxbox.org/widget/type/list/list/) widget at the application level. If the number of rows to export exceeds the configured limit, a warning message will inform the user that only **N** rows were exported. To ensure stable performance, the maximum export limit is **10,000 rows**, even if a higher value is set in the configuration.  
+You can now set a row limit for [Excel export](https://doc.cxbox.org/widget/type/property/export/excel/excel/#exportlimit) in [List](https://doc.cxbox.org/widget/type/list/list/) widget at the application level. If the number of rows to export exceeds the configured limit, a warning message will inform the user that only **N** rows were exported. To ensure stable performance, the maximum export limit is **10,000 rows**, even if a higher value is set in the configuration.  
 
 #### Fixed: date field - applied filtration display after drillDown  
 Previously, when opening the filter window for a [date](https://doc.cxbox.org/widget/fields/field/date/date/) field after a drillDown, the applied filter values were not displayed.

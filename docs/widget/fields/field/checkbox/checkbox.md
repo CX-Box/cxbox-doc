@@ -443,3 +443,7 @@
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+## Additional properties
+### <a id="snapshotKey">snapshotKey</a>
+_not applicable_

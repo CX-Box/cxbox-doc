@@ -88,6 +88,8 @@ nav:
       - Field suggestionPickList: widget/fields/field/suggestionpicklist/suggestionPickList.md
       - Field text: widget/fields/field/text/text.md
       - Field time: widget/fields/field/time/time.md
+  - Field property:
+     - Field property History of field changes: widget/fields/property/snapshotkey/snapshotkey.md
   - Widget types:
       - Widgets: widget/type/widget.md
       - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md

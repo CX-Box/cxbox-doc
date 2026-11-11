@@ -32,12 +32,78 @@ This function is available for:
 * [Dictionary](/widget/fields/field/dictionary/dictionary)
 * [Radio](/widget/fields/field/radio/radio)
 
-It works in [List](/widget/type/list/list), [Info](/widget/type/info/info), [Form](/widget/type/form/form)
-and in the other widgets that show fields of a record (for example, [AdditionalInfo](/widget/type/additionalinfo/additionalinfo)).
-
 !!! info
      For the other field types `snapshotKey` is ignored and the field is shown as usual.
-     [FileUpload](/widget/fields/field/fileUpload/fileUpload) has its own history mode: `snapshotKey` together with `snapshotFileIdKey`.
+     [FileUpload](/widget/fields/field/fileUpload/fileUpload) has its own history mode: `snapshotKey` together with `snapshotFileIdKey`,
+     see [FileUpload](#fileupload).
+
+### Which widgets show the history?
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900widgets){:target="_blank"}
+
+The history is shown in the widgets that show the fields of a record:
+
+* [List](/widget/type/list/list), [Info](/widget/type/info/info), [Form](/widget/type/form/form) - see the pictures above;
+* [AdditionalInfo](/widget/type/additionalinfo/additionalinfo), [AdditionalList](/widget/type/additionallist/additionallist);
+* [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree);
+* [FormPopup](/widget/type/formpopup/formpopup);
+* [PickListPopup](/widget/type/picklistpopup/picklistpopup) - the field of the popup widget has `snapshotKey`,
+  the previous value is a field of the popup business component.
+
+=== "AdditionalInfo"
+     ![additionalinfo.png](additionalinfo.png)
+=== "AdditionalList"
+     ![additionallist.png](additionallist.png)
+=== "GroupingHierarchy"
+     ![groupinghierarchy.png](groupinghierarchy.png)
+=== "Tree"
+     ![tree.png](tree.png)
+=== "FormPopup"
+     ![formpopup.png](formpopup.png)
+=== "PickListPopup"
+     ![picklistpopup.png](picklistpopup.png)
+
+The setting is the same in every widget: `snapshotKey` of the field and the field with the previous value with type `hidden`.
+
+??? Example
+     === "AdditionalInfo"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900additionalinfo.widget.json
+         --8<--
+         ```
+     === "AdditionalList"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900additionallist.widget.json
+         --8<--
+         ```
+     === "GroupingHierarchy"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900groupinghierarchy.widget.json
+         --8<--
+         ```
+     === "Tree"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900tree.widget.json
+         --8<--
+         ```
+     === "FormPopup"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900formpopup.widget.json
+         --8<--
+         ```
+     === "PickListPopup"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900pickpopup.widget.json
+         --8<--
+         ```
+
+The widgets [CardList](/widget/type/cardlist/cardlist) and [CardCarouselList](/widget/type/cardcarousellist/cardcarousellist)
+show the values of the fields without the field components, `snapshotKey` is ignored there.
 
 ### What data is used?
 
@@ -131,6 +197,79 @@ deleted words have a red background and are struck through, added words have a g
      [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
      [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
 
+## <a id="fileupload">FileUpload</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900fileupload){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
+
+A file is set by two values: the name of the file (`key`) and the id of the file (`fileIdKey`).
+The previous file is set the same way: its name in `snapshotKey` and its id in `snapshotFileIdKey`.
+
+### With snapshotKey and snapshotFileIdKey
+The field shows the previous file (red background, strikethrough) and the current file (green background).
+Both files can be downloaded. The files are compared by id: if the id of the previous file is the same as the id
+of the current file, the field is shown as usual.
+
+![fileupload.png](fileupload.png)
+
+```json
+{
+  "title": "FileUpload",
+  "key": "fileUploadField",
+  "type": "fileUpload",
+  "fileIdKey": "fileUploadFieldId",
+  "snapshotKey": "fileUploadFieldSnapshot",
+  "snapshotFileIdKey": "fileUploadFieldSnapshotId"
+}
+```
+
+### Only snapshotKey (without snapshotFileIdKey)
+Without `snapshotFileIdKey` the history mode is off: the field shows only the current file as usual,
+the name from `snapshotKey` is not shown.
+
+![fileupload_without_id.png](fileupload_without_id.png)
+
+```json
+{
+  "title": "FileUpload",
+  "key": "fileUploadField",
+  "type": "fileUpload",
+  "fileIdKey": "fileUploadFieldId",
+  "snapshotKey": "fileUploadFieldSnapshot"
+}
+```
+
+### How to add?
+??? Example
+
+     **Step 1.** Add the name and the id of the previous file to **DTO** next to the name and the id of the current file.
+
+     ```java
+     --8<--
+     {{ external_links.github_raw_doc }}/fields/property/snapshotkey/MyExample5900DTO.java:fileUpload
+     --8<--
+     ```
+
+     **Step 2.** Add `snapshotKey` and `snapshotFileIdKey` to the field in **_.widget.json_**
+     and add both fields of the previous file to the widget with type `hidden`.
+
+     === "snapshotKey and snapshotFileIdKey"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900filelist.widget.json
+         --8<--
+         ```
+     === "Only snapshotKey"
+         ```json
+         --8<--
+         {{ external_links.github_raw_doc }}/fields/property/snapshotkey/myexample5900filelistnoid.widget.json
+         --8<--
+         ```
+
+!!! info
+     Unlike the other field types, a FileUpload field with `snapshotKey` is not made read-only.
+     The history is shown only when the field is read-only, for example in List and Info.
+     An editable FileUpload field is shown as the usual upload with the current file.
+
 ## Features and limitations
 
 ### The previous value is sent only as a field of the widget
@@ -154,6 +293,7 @@ If it is not added, the previous value is empty on the frontend, and the field l
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900form){:target="_blank"}
 
 A field with `snapshotKey` is always shown in read-only mode, even in the Form widget and even if the field is enabled in row meta (`setEnabled`).
+FileUpload is an exception, see [FileUpload](#fileupload).
 
 To edit the value, show the field in another widget without `snapshotKey`.
 In the sample the left Form has `snapshotKey`, the right Form has no `snapshotKey` and is used to change the current values.

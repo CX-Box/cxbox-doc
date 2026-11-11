@@ -46,7 +46,7 @@ After every click the widget data is requested again with the new sorting.
 For a widget with infinite pagination all pages loaded before are requested again.
 
 !!! info
-The user can remove only the sorting applied by the user. The [default sorting](#default_sort) can not be removed: the third click returns it, and only the **first** field of the default sorting is restored.
+    The user can remove only the sorting applied by the user. The [default sorting](#default_sort) can not be removed: the third click returns it, and only the **first** field of the default sorting is restored.
 
 **GroupingHierarchy widget**
 

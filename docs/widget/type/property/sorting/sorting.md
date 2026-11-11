@@ -1,6 +1,23 @@
 # Sorting
 `Sorting` allows you to sort data in ascending or descending order.
 
+How does it look?
+
+=== "List"
+    ![sorting.gif](sorting.gif)
+=== "GroupingHierarchy"
+    ![sorting_gh.gif](sorting_gh.gif)
+=== "Tree"
+    ![sorting_tree.gif](sorting_tree.gif)
+=== "AssocTreePopup"
+    ![sorting_assoctree.gif](sorting_assoctree.gif)
+=== "PickTreePopup"
+    ![sorting_picktree.gif](sorting_picktree.gif)
+=== "Pie1D"
+    ![sorting_pie1d.gif](sorting_pie1d.gif)
+=== "Column2D"
+    ![sorting_column2d.gif](sorting_column2d.gif)
+
 This function is available:
 
 * for widgets: [List](/widget/type/list/list), [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree), [AssocTreePopup](/widget/type/assoctreepopup/assoctreepopup), [PickTreePopup](/widget/type/picktreepopup/picktreepopup), [Pie1D](/widget/type/pie1d/pie1d), [Column2D](/widget/type/column2d/column2d) (only in the table mode, see [Charts](#charts)).
@@ -37,23 +54,6 @@ The sorting of the grouping columns is always kept, the sorting of the column ch
 
 * A column is sorted in the order `desc` → `asc` → no sorting, as described above.
 * If the column is a part of the [default sorting](#default_sort), its sorting can not be removed: after `asc` the next click returns `desc`.
-
-How does it look?
-
-=== "List"
-    ![sorting.gif](sorting.gif)
-=== "GroupingHierarchy"
-    ![sorting_gh.gif](sorting_gh.gif)
-=== "Tree"
-    ![sorting_tree.gif](sorting_tree.gif)
-=== "AssocTreePopup"
-    ![sorting_assoctree.gif](sorting_assoctree.gif)
-=== "PickTreePopup"
-    ![sorting_picktree.gif](sorting_picktree.gif)
-=== "Pie1D"
-    ![sorting_pie1d.gif](sorting_pie1d.gif)
-=== "Column2D"
-    ![sorting_column2d.gif](sorting_column2d.gif)
 
 ## Type sorting
 

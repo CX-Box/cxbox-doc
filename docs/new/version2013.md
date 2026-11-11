@@ -68,11 +68,11 @@ Visual updates make the sorting state more intuitive:
 * The active direction is highlighted (ascending or descending), while the other remains faded.   
 * When no sorting is applied, both arrows are faded and only visible on hover.
 
-=== "1st click (ascending)"  
+=== "1st click (descending)"  
     ![sortAsc.png](v2.0.13/sortAsc.png)
-=== "2nd click (descending)"
+=== "2nd click (ascending)"
     ![sortDesc.png](v2.0.13/sortDesc.png)
-=== "3d click (no sorting)"
+=== "3rd click (no sorting)"
     ![sortOff.png](v2.0.13/sortOff.png)  
 
 !!! info

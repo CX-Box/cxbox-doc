@@ -13,11 +13,25 @@
      ![info.png](info.png)
 === "Form widget"
      ![form.png](form.png)
+=== "AdditionalInfo"
+    ![additionalinfo.png](additionalinfo.png)
+=== "AdditionalList"
+    ![additionallist.png](additionallist.png)
+=== "GroupingHierarchy"
+    ![groupinghierarchy.png](groupinghierarchy.png)
+=== "Tree"
+    ![tree.png](tree.png)
+=== "FormPopup"
+    ![formpopup.png](formpopup.png)
+=== "PickListPopup"
+    ![picklistpopup.png](picklistpopup.png)
 
 ## Basic
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900widgets){:target="_blank"}
 
 This function is available for:
 
+* [FileUpload](/widget/fields/field/fileUpload/fileUpload/)
 * [Input](/widget/fields/field/input/input)
 * [Text](/widget/fields/field/text/text)
 * [Hint](/widget/fields/field/hint/hint)
@@ -31,40 +45,46 @@ This function is available for:
 * [InlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 * [Dictionary](/widget/fields/field/dictionary/dictionary)
 * [Radio](/widget/fields/field/radio/radio)
-
-!!! info
-     For the other field types `snapshotKey` is ignored and the field is shown as usual.
-     [FileUpload](/widget/fields/field/fileUpload/fileUpload) has its own history mode: `snapshotKey` together with `snapshotFileIdKey`,
-     see [FileUpload](#fileupload).
-
-### Which widgets show the history?
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900widgets){:target="_blank"}
+ 
 
 The history is shown in the widgets that show the fields of a record:
 
-* [List](/widget/type/list/list), [Info](/widget/type/info/info), [Form](/widget/type/form/form) - see the pictures above;
-* [AdditionalInfo](/widget/type/additionalinfo/additionalinfo), [AdditionalList](/widget/type/additionallist/additionallist);
-* [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy), [Tree](/widget/type/tree/tree);
-* [FormPopup](/widget/type/formpopup/formpopup);
-* [PickListPopup](/widget/type/picklistpopup/picklistpopup) - the field of the popup widget has `snapshotKey`,
-  the previous value is a field of the popup business component.
+* [List](/widget/type/list/list)
+* [Info](/widget/type/info/info)
+* [Form](/widget/type/form/form) 
+* [AdditionalInfo](/widget/type/additionalinfo/additionalinfo)
+* [AdditionalList](/widget/type/additionallist/additionallist);
+* [GroupingHierarchy](/widget/type/groupinghierarchy/groupinghierarchy)
+* [Tree](/widget/type/tree/tree)
+* [FormPopup](/widget/type/formpopup/formpopup)
+* [PickListPopup](/widget/type/picklistpopup/picklistpopup) 
 
-=== "AdditionalInfo"
-     ![additionalinfo.png](additionalinfo.png)
-=== "AdditionalList"
-     ![additionallist.png](additionallist.png)
-=== "GroupingHierarchy"
-     ![groupinghierarchy.png](groupinghierarchy.png)
-=== "Tree"
-     ![tree.png](tree.png)
-=== "FormPopup"
-     ![formpopup.png](formpopup.png)
-=== "PickListPopup"
-     ![picklistpopup.png](picklistpopup.png)
 
-The setting is the same in every widget: `snapshotKey` of the field and the field with the previous value with type `hidden`.
+Both values are taken from the same record (DTO) that the backend sends to the frontend:
 
+* **current value** - the DTO field set in `key`. It is the usual value of the field: it is edited and saved as usual;
+* **previous (snapshot) value** - the DTO field set in `snapshotKey`. It is a separate field of the same DTO
+  with the same type as the current value.
+
+CXBox does not keep the history of changes and does not fill the previous value itself.
+"Previous value" is any value that the application wants to compare the current value with,
+and the application decides where it comes from, for example:
+
+* the value at a certain moment: before the document was sent for approval, at the previous version, at the last export;
+* the value from an audit (history) table or from another system;
+* the value of a related record (for example, the parent or the original record that was copied).
+
+The frontend only compares the two values and shows the difference. It does not change the previous value:
+when the current value is saved, the previous value stays as the backend sends it.
+
+In the sample each field of the entity has a pair of columns: the current value (`inputField`) and the previous value (`inputFieldSnapshot`).
+The previous values are filled by the test data and are not changed on save: `doUpdateEntity` changes only the current values.
+
+
+### How to add?
 ??? Example
+    The setting is the same in every widget: `snapshotKey` of the field and the field with the previous value with type `hidden`.
+
      === "AdditionalInfo"
          ```json
          --8<--
@@ -102,32 +122,6 @@ The setting is the same in every widget: `snapshotKey` of the field and the fiel
          --8<--
          ```
 
-The widgets [CardList](/widget/type/cardlist/cardlist) and [CardCarouselList](/widget/type/cardcarousellist/cardcarousellist)
-show the values of the fields without the field components, `snapshotKey` is ignored there.
-
-### What data is used?
-
-Both values are taken from the same record (DTO) that the backend sends to the frontend:
-
-* **current value** - the DTO field set in `key`. It is the usual value of the field: it is edited and saved as usual;
-* **previous (snapshot) value** - the DTO field set in `snapshotKey`. It is a separate field of the same DTO
-  with the same type as the current value.
-
-CXBox does not keep the history of changes and does not fill the previous value itself.
-"Previous value" is any value that the application wants to compare the current value with,
-and the application decides where it comes from, for example:
-
-* the value at a certain moment: before the document was sent for approval, at the previous version, at the last export;
-* the value from an audit (history) table or from another system;
-* the value of a related record (for example, the parent or the original record that was copied).
-
-The frontend only compares the two values and shows the difference. It does not change the previous value:
-when the current value is saved, the previous value stays as the backend sends it.
-
-In the sample each field of the entity has a pair of columns: the current value (`inputField`) and the previous value (`inputFieldSnapshot`).
-The previous values are filled by the test data and are not changed on save: `doUpdateEntity` changes only the current values.
-
-### How does it look?
 
 How the field is shown depends on the previous and the current value:
 
@@ -150,6 +144,8 @@ dictionary shows its icon and so on.
 === "Value deleted (current value is empty)"
      ![deleted.png](deleted.png)
 
+
+### Exception
 #### Text field
 
 For the `text` field type changes are shown word by word inside one text:
@@ -157,7 +153,8 @@ deleted words have a red background and are struck through, added words have a g
 
 ![text.png](text.png)
 
-### How to add?
+**How to add?**
+
 ??? Example
 
      **Step 1.** Add the field with the previous value to **DTO**. It must have the same type as the main field.
@@ -197,48 +194,29 @@ deleted words have a red background and are struck through, added words have a g
      [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
      [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
 
-## <a id="fileupload">FileUpload</a>
+#### <a id="fileupload">FileUpload</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900fileupload){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
 
 A file is set by two values: the name of the file (`key`) and the id of the file (`fileIdKey`).
 The previous file is set the same way: its name in `snapshotKey` and its id in `snapshotFileIdKey`.
 
-### With snapshotKey and snapshotFileIdKey
-The field shows the previous file (red background, strikethrough) and the current file (green background).
-Both files can be downloaded. The files are compared by id: if the id of the previous file is the same as the id
-of the current file, the field is shown as usual.
+!!! info
+    Unlike the other field types, a FileUpload field with `snapshotKey` is not made read-only.
+    The history is shown only when the field is read-only, for example in List and Info.
+    An editable FileUpload field is shown as the usual upload with the current file.
 
-![fileupload.png](fileupload.png)
-
-```json
-{
-  "title": "FileUpload",
-  "key": "fileUploadField",
-  "type": "fileUpload",
-  "fileIdKey": "fileUploadFieldId",
-  "snapshotKey": "fileUploadFieldSnapshot",
-  "snapshotFileIdKey": "fileUploadFieldSnapshotId"
-}
-```
-
-### Only snapshotKey (without snapshotFileIdKey)
-Without `snapshotFileIdKey` the history mode is off: the field shows only the current file as usual,
-the name from `snapshotKey` is not shown.
-
-![fileupload_without_id.png](fileupload_without_id.png)
-
-```json
-{
-  "title": "FileUpload",
-  "key": "fileUploadField",
-  "type": "fileUpload",
-  "fileIdKey": "fileUploadFieldId",
-  "snapshotKey": "fileUploadFieldSnapshot"
-}
-```
-
-### How to add?
+=== "With snapshotKey and snapshotFileIdKey"
+    The field shows the previous file (red background, strikethrough) and the current file (green background).
+    Both files can be downloaded. The files are compared by id: if the id of the previous file is the same as the id
+    of the current file, the field is shown as usual.
+    ![fileupload.png](fileupload.png)
+=== "Only snapshotKey (without snapshotFileIdKey)"
+    Without `snapshotFileIdKey` the history mode is off: the field shows only the current file as usual,
+    the name from `snapshotKey` is not shown.
+    ![fileupload_without_id.png](fileupload_without_id.png)
+ 
+**How to add?**
 ??? Example
 
      **Step 1.** Add the name and the id of the previous file to **DTO** next to the name and the id of the current file.
@@ -265,31 +243,16 @@ the name from `snapshotKey` is not shown.
          --8<--
          ```
 
-!!! info
-     Unlike the other field types, a FileUpload field with `snapshotKey` is not made read-only.
-     The history is shown only when the field is read-only, for example in List and Info.
-     An editable FileUpload field is shown as the usual upload with the current file.
 
-## Features and limitations
 
-### The previous value is sent only as a field of the widget
+## Features
+
+**The previous value is sent only as a field of the widget**
 The backend sends to the frontend only the fields that are used in the widgets of the view.
 The field from `snapshotKey` is not added automatically: add it to the widget as a field with type `hidden`.
 
-If it is not added, the previous value is empty on the frontend, and the field looks like this:
+**The field is always read-only**
 
-* the previous value is empty, the current value is not empty - only the current value (green background);
-* the current value is empty too - an empty field, the deleted value is not shown.
-
-```json
-{
-  "title": "Input snapshot",
-  "key": "inputFieldSnapshot",
-  "type": "hidden"
-}
-```
-
-### The field is always read-only
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900form){:target="_blank"}
 
 A field with `snapshotKey` is always shown in read-only mode, even in the Form widget and even if the field is enabled in row meta (`setEnabled`).
@@ -300,19 +263,19 @@ In the sample the left Form has `snapshotKey`, the right Form has no `snapshotKe
 
 ![form.png](form.png)
 
-### Values that are not saved yet
+**Values that are not saved yet**
 Whether the difference is shown is decided by the record data received from the backend (saved values).
 The current (green) value is shown together with the changes that are not saved yet:
 if the value is changed in another widget of the same record, the green value changes at once,
 and the previous value stays as it was until the record is saved.
 
-### Empty value: 0
+**Empty value: 0**
 Before the comparison both values are converted to strings, and `0` and `null` are treated as an empty value.
 Because of this for `number`, `money`, `percent` the previous value `0` is not shown, the current value `0` is not shown.
 
 ![falsezero.png](falsezero.png)
 
-### Values are compared as strings
+**Values are compared as strings**
 The previous and the current values are compared as strings, exactly as they are received from the backend:
 
 * the previous value must be sent in the same format as the current value. For example, for dates both values must
@@ -320,6 +283,4 @@ The previous and the current values are compared as strings, exactly as they are
 * for `pickList` and `inlinePickList` the displayed value (`key`) is compared, not the id of the selected record.
   Send the displayed value of the previous record in `snapshotKey`.
 
-### What else is not shown in history mode
-* the validation error popup of the field is not shown;
-* drilldown works only for the current value, the previous value has no drilldown.
+**drilldown works only for the current value, the previous value has no drilldown.**

@@ -25,6 +25,34 @@ This function is available:
 * If the user has not set a sorting option, the default sorting is applied if it is defined.
 * If the user has applied a sorting option, it will be preserved when navigating via drill-down or between screens.
 
+### <a id="user_sort">How the user adds, changes and removes sorting</a>
+The sorting icon is shown only for the sortable fields (see [Type sorting](#type-sorting)).
+The icon consists of two arrows: the "up" arrow means ascending order (`asc`), the "down" arrow means descending order (`desc`).
+
+* If the column is not sorted, the icon appears when the cursor is over the column header, both arrows are grey.
+* If the column is sorted, the icon is always visible, and the arrow of the current direction is highlighted.
+
+Each click on the icon moves the column to the next state:
+
+| Click  | Result                                                                                                                                                                                      |
+|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| first  | **Add** sorting: the records are sorted in descending order (`desc`). The user sorting of another column is replaced: in the UI only one sortable column can be sorted at a time.        |
+| second | **Change** sorting: the records are sorted in ascending order (`asc`).                                                                                                                    |
+| third  | **Remove** sorting: the [default sorting](#default_sort) is restored, if it is set for the business component. If the default sorting is not set, the records are shown without sorting. |
+
+After every click the widget data is requested again with the new sorting.
+For a widget with infinite pagination all pages loaded before are requested again.
+
+!!! info
+    The user can remove only the sorting applied by the user. The [default sorting](#default_sort) can not be removed: the third click returns it, and only the **first** field of the default sorting is restored.
+
+**GroupingHierarchy widget**
+
+The sorting of the grouping columns is always kept, the sorting of the column chosen by the user is added after it.
+
+* A column is sorted in the order `desc` → `asc` → no sorting, as described above.
+* If the column is a part of the [default sorting](#default_sort), its sorting can not be removed: after `asc` the next click returns `desc`.
+
 How does it look?
 
 === "List"

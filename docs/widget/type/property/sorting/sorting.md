@@ -9,23 +9,8 @@ This function is available:
 
 !!! info
     For the tree widgets sorting works **inside a node**: the records are sorted among the children of the same parent, the hierarchy itself is not changed.
- 
-## Type sorting
 
-`Sorting` can be enabled in two ways:
 
-*  [On the field](#on_field) Sorting must be enabled explicitly at the field level
-* `Not recommended.`  [At the application level](#app-default-sort) Sorting is enabled by default for all fields in the application.
-
-!!! info
-    Sorting won't function until the page is refreshed after adding or updating records. 
-
-**Please pay attention to the sorting behavior:**
-
-* If the user has not set a sorting option, the default sorting is applied if it is defined.
-* If the user has applied a sorting option, it will be preserved when navigating via drill-down or between screens.
-
-### <a id="user_sort">How the user adds, changes and removes sorting</a>
 The sorting icon is shown only for the sortable fields (see [Type sorting](#type-sorting)).
 The icon consists of two arrows: the "up" arrow means ascending order (`asc`), the "down" arrow means descending order (`desc`).
 
@@ -44,7 +29,7 @@ After every click the widget data is requested again with the new sorting.
 For a widget with infinite pagination all pages loaded before are requested again.
 
 !!! info
-    The user can remove only the sorting applied by the user. The [default sorting](#default_sort) can not be removed: the third click returns it, and only the **first** field of the default sorting is restored.
+The user can remove only the sorting applied by the user. The [default sorting](#default_sort) can not be removed: the third click returns it, and only the **first** field of the default sorting is restored.
 
 **GroupingHierarchy widget**
 
@@ -69,6 +54,21 @@ How does it look?
     ![sorting_pie1d.gif](sorting_pie1d.gif)
 === "Column2D"
     ![sorting_column2d.gif](sorting_column2d.gif)
+
+## Type sorting
+
+`Sorting` can be enabled in two ways:
+
+*  [On the field](#on_field) Sorting must be enabled explicitly at the field level
+* `Not recommended.`  [At the application level](#app-default-sort) Sorting is enabled by default for all fields in the application.
+
+!!! info
+    Sorting won't function until the page is refreshed after adding or updating records. 
+
+**Please pay attention to the sorting behavior:**
+
+* If the user has not set a sorting option, the default sorting is applied if it is defined.
+* If the user has applied a sorting option, it will be preserved when navigating via drill-down or between screens.
 
 ### <a id="on_field">On the field</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/InputSort){:target="_blank"} ·

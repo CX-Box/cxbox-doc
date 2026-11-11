@@ -27,7 +27,6 @@ This function is available for:
 * [Date](/widget/fields/field/date/date)
 * [DateTime](/widget/fields/field/dateTime/dateTime)
 * [DateTimeWithSeconds](/widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds)
-* [Checkbox](/widget/fields/field/checkbox/checkbox)
 * [PickList](/widget/fields/field/pickList/pickList)
 * [InlinePickList](/widget/fields/field/inlinePickList/inlinePickList)
 * [Dictionary](/widget/fields/field/dictionary/dictionary)
@@ -74,7 +73,7 @@ How the field is shown depends on the previous and the current value:
 | A              | empty         | only previous value (red background, strikethrough)                                                  |
 
 The previous value is shown with the same component as the field type: dates and numbers are formatted,
-dictionary shows its icon, checkbox shows a checkbox and so on.
+dictionary shows its icon and so on.
 
 === "Value changed"
      ![changed.png](changed.png)
@@ -167,13 +166,9 @@ The current (green) value is shown together with the changes that are not saved 
 if the value is changed in another widget of the same record, the green value changes at once,
 and the previous value stays as it was until the record is saved.
 
-### Empty values: false and 0
-Before the comparison both values are converted to strings, and `false`, `0` and `null` are treated as an empty value.
-Because of this:
-
-* `checkbox`: if the previous value is `false` and the current value is `true`, only the current value is shown;
-  if the previous value is `true` and the current value is `false`, only the previous (struck through) value is shown;
-* `number`, `money`, `percent`: the previous value `0` is not shown, the current value `0` is not shown.
+### Empty value: 0
+Before the comparison both values are converted to strings, and `0` and `null` are treated as an empty value.
+Because of this for `number`, `money`, `percent` the previous value `0` is not shown, the current value `0` is not shown.
 
 ![falsezero.png](falsezero.png)
 

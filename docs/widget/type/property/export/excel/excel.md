@@ -87,21 +87,6 @@ with the `cxbox.ui.app-export-excel-limit` parameter and is applied to all widge
 
 The maximum `10000` cannot be changed by the parameter: it protects the browser and the backend from too large exports.
 
-### Which rows are exported
-Export is a single request to the backend `GET ../api/v1/data/..` with the current filters and sorting of the widget
-and the parameters `_export=Excel`, `_limit`, `_page`:
-
-* `_limit` = export limit + page size of the widget (`limit` of the BC)
-* `_page` = the "export page" that contains the first record of the page currently opened in the widget
-
-Example. Export limit `500`, page size `10`:
-
-* the user is on page 1 → `_limit=510&_page=1` → records 1 – 510 are exported
-* the user is on page 60 (records 591 – 600) → `_limit=510&_page=2` → records 511 – 1020 are exported
-
-So the records of the currently opened page are always in the file.
-
-### Warning about not all rows exported
 If the file contains fewer rows than the table has (the total count of records of the BC with the applied filters),
 a warning notification is shown:
 

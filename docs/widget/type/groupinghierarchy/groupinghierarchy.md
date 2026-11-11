@@ -794,6 +794,7 @@ By default
 #### Default GroupingHierarchy
 This function can be used to display the grouping structure in advance, even when no data is available.
 The number of nesting levels is unlimited.
+The default hierarchy can also be loaded dynamically (from DB, a microservice), see [defaultGroupingHierarchy() with Hierarchy.toHierarchy()](/environment/meta/buildindependentmeta/dynamicdefaultgh/dynamicdefaultgh) and [Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3296){:target="_blank"}.
 
 `Level 1`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3164){:target="_blank"} ·
@@ -1012,6 +1013,11 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
 
 !!! Attention    
     Field cannot be both a grouping field and an aggregated field
+
+!!! Attention
+    Standard functions work only with numeric values: `number`, `money`, `percent`.
+    For `date`, `dateTime` and other non-numeric fields the aggregated value is empty.
+    See [Supported field types](#supported-field-types).
 
 ###### How does it look?
 === "sum"
@@ -1487,7 +1493,94 @@ How to add?
         ``` 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3126customfunctgh){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/myexample3126gh.widget.json){:target="_blank"}
- 
+
+###### Supported field types
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297fieldtypes){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297fieldtypesgh.widget.json){:target="_blank"}
+
+Standard functions (`sum`, `min`, `max`, `avg`) are calculated on the UI from the values of the data rows of the group.
+A value is used only if it is a number. Empty values (`null`, `""`) are skipped.
+If at least one value of the group is not a number, the aggregated value of the group is empty
+(the browser console shows `Error: Some field value for aggregate <fieldKey> contains NaN`).
+
+| Field type                                        | Standard functions                                     | Note                                                                                                    |
+|---------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `number`                                          | work                                                   | The result is formatted as the field                                                                    |
+| `money`                                           | work                                                   | The result is formatted as the field                                                                    |
+| `percent`                                         | work                                                   | The result is shown with `%`. `sum` of percents is a plain sum (`10 % + 30 % = 40 %`)                    |
+| `input`, `text`, `hidden`                         | work only if all values are numeric strings (`"200"`)  | Not recommended: use `number`                                                                           |
+| `date`, `dateTime`, `dateTimeWithSeconds`, `time` | **do not work**                                        | The value is an ISO string, not a number. The aggregated value is empty                                 |
+| `dictionary`, `radio`, `checkbox`, `multivalue`, `pickList` and other | **do not work**                    | Calculate the value on the backend into a hidden numeric field and aggregate it (see [Custom functions](#custom-functions)) |
+
+!!! info
+    `fieldKey` and all `argFieldKeys` of one aggregation must have the same field type.
+    Otherwise the browser console shows `Error: Aggregate field type for key ... do not match field type ...`.
+
+How does it look?
+
+![aggFieldTypes.png](aggFieldTypes.png)
+
+How to add?
+
+??? Example
+
+    Add `aggFields` with the numeric fields to corresponding **.widget.json**.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297fieldtypesgh.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297fieldtypes){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes){:target="_blank"}
+
+###### Color and drillDown of aggregated fields
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297colordrilldown){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297colordrilldowngh.widget.json){:target="_blank"}
+
+The aggregated value is shown by the same field component as the data rows, so the field properties are applied to the group and **Total** rows too:
+
+| Property of the aggregated field      | Data row | Group row                                                                                      | Total row                  |
+|---------------------------------------|----------|------------------------------------------------------------------------------------------------|----------------------------|
+| `bgColor` (constant color)            | works    | works                                                                                          | works                      |
+| `bgColorKey` (color from a DTO field) | works    | the color is taken from one of the data rows of the group, it is not calculated for the group  | no color                   |
+| `drillDown`                           | works    | **does not work**: the value is shown as a link, a click shows an error                        | **does not work**: the same |
+
+!!! warning
+    Do not use `drillDown` on aggregated fields. A click on the aggregated value of a group or of the **Total** row
+    requests the row meta with the group id instead of a record id (for example `GET /row-meta/<bc>/Movable%20property`),
+    the backend returns an error and the UI shows "System error has been occurred".
+
+    If a link to the record is needed, add `drillDown` to another (not aggregated) field.
+
+!!! tip
+    If the aggregated value of a group needs its own color, use the constant `bgColor`
+    or change the background of the aggregate rows (see **Appearance customization** in [Data Aggregation](#data-aggregation)).
+
+How does it look?
+
+![aggColorDrillDown.png](aggColorDrillDown.png)
+
+How to add?
+
+??? Example
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297colordrilldowngh.widget.json
+    --8<--
+    ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/fieldtypes/MyExample3297Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297colordrilldown){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes){:target="_blank"}
+
 #### Multi-upload files
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 

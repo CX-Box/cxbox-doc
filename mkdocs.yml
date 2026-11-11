@@ -154,6 +154,7 @@ nav:
           - Basic: environment/meta/metabuilder.md
           - buildIndependentMeta:
             - defaultGroupingHierarchy: environment/meta/buildindependentmeta/defaultgh/defaultgh.md
+            - defaultGroupingHierarchy dynamic (toHierarchy): environment/meta/buildindependentmeta/dynamicdefaultgh/dynamicdefaultgh.md
           - buildRowDependentMeta:
             - isFieldChangedNow: environment/meta/buildrowdependentmeta/isfieldchangednow/isfieldchangednow.md
             - setHidden: environment/meta/buildrowdependentmeta/sethidden/sethidden.md

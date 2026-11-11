@@ -284,3 +284,8 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
   Default (same as false)
 
  see more [GroupingHierarchy.defaultExpanded](/widget/type/groupinghierarchy/groupinghierarchy/#default-groupinghierarchy)
+
+## Dynamic hierarchy
+If the default hierarchy is loaded from DB or a microservice, collect it with `Hierarchy.toHierarchy(...)`.
+
+see more [defaultGroupingHierarchy() with Hierarchy.toHierarchy()](/environment/meta/buildindependentmeta/dynamicdefaultgh/dynamicdefaultgh)

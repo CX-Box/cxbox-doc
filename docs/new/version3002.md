@@ -419,6 +419,7 @@ The pictures are taken with every request delayed by 1.5 s; on a usual network t
 * An action placed in an action group on the backend is now found: the zone is active while the action is available and gray while it is not. Before, such an action was not found, and the zone was always active.
 * A child widget whose parent BC has no record (for example, the parent list is empty) has no row meta, so its zone is gray. When the parent has a record, the cursor is set on it automatically and the zone is active.
 * The multi-upload button (`"subtype": "multiFileUpload"`) works as before: it is shown only while its action is available.
+
 #### Fixed: File upload - the error of each file is shown in the upload progress
 <!-- CXBOX-1038 -->
 

@@ -387,6 +387,29 @@ Before : Only the meta of the child widget was requested, its data was not, so t
 
 The drag-and-drop zone of [multi-upload](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/) is always shown, but it is disabled while the meta of the widget is loading and while the upload action is not available (for example, hidden by business logic). Before, a file could be dropped while upload was not available. A file dropped on a disabled zone is ignored: the browser does not open it instead of the application.
 
+#### Fixed: File upload - the error of each file is shown in the upload progress
+<!-- CXBOX-1038 -->
+
+!!! warning
+    Not merged into `main` yet: branch [feat/CXBOX-1038](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1038), [cxbox-code-samples feat/CXBOX-1038](https://github.com/CX-Box/cxbox-code-samples/tree/feat/CXBOX-1038).
+
+After - when the upload of a file fails, the tooltip of its line in the **Upload progress** window shows the error from the answer to the request of this file. Each file of a [multi-upload](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/) gets its own text, so the user sees what happened to each file. The same works for a single file uploaded to a [fileUpload](https://doc.cxbox.org/widget/fields/field/fileupload/fileupload/) field.
+
+The text is taken from the answer of the file controller:
+
+* `errorMessage` - any exception of the backend (`500`);
+* `error.popup` - `BusinessException` (`418`); several messages are joined with `; `. A popup is not meant for upload errors, so a warning is also written to the browser console.
+
+If the answer has no text (for example, a network error or a cancelled request), the standard text is shown as before.
+
+Before - every failed file showed the same text: "Error. File not loaded and no new row created" for multi-upload and "Error. File not loaded to current row" for a field. It was not possible to tell why a file was not uploaded.
+
+=== "After"
+    ![CXBOX-1038-after.jpg](v3.0.2/CXBOX-1038-after.jpg)
+    ![CXBOX-1038-after-2.jpg](v3.0.2/CXBOX-1038-after-2.jpg)
+=== "Before"
+    ![CXBOX-1038-before.jpg](v3.0.2/CXBOX-1038-before.jpg)
+
 #### Added: radio - vertical layout and limit of rows for values
 <!-- CXBOX-1422 -->
 

@@ -398,15 +398,22 @@ After - when the upload of a file fails, the tooltip of its line in the **Upload
 The text is taken from the answer of the file controller:
 
 * `errorMessage` - any exception of the backend (`500`);
-* `error.popup` - `BusinessException` (`418`); several messages are joined with `; `. A popup is not meant for upload errors, so a warning is also written to the browser console.
+* `error.popup` - `BusinessException` (`418`). A popup is not meant for upload errors, so a warning is also written to the browser console.
 
-If the answer has no text (for example, a network error or a cancelled request), the standard text is shown as before.
+Each message of the answer is shown on its own line. A short error is shown in a compact tooltip, as before. A long error (for example, with a stack trace) does not go beyond the screen: the tooltip is not higher than 300 px and the text is scrolled inside it. The tooltip stays open while the mouse is on the line of the file or on the tooltip itself, so the user can move the mouse to the tooltip and scroll it; when the mouse leaves both, the tooltip is hidden.
+
+If the answer has no text of the application, the standard text is shown as before: for example, `502 Bad Gateway` of a proxy (an HTML page or an empty body), a network error or a cancelled request.
 
 Before - every failed file showed the same text: "Error. File not loaded and no new row created" for multi-upload and "Error. File not loaded to current row" for a field. It was not possible to tell why a file was not uploaded.
 
-=== "After"
+=== "After - short error"
     ![CXBOX-1038-after.jpg](v3.0.2/CXBOX-1038-after.jpg)
     ![CXBOX-1038-after-2.jpg](v3.0.2/CXBOX-1038-after-2.jpg)
+=== "After - long error"
+    The tooltip is not higher than 300 px, the text is scrolled inside it.
+    ![CXBOX-1038-after-long.jpg](v3.0.2/CXBOX-1038-after-long.jpg)
+    Several messages of `error.popup` - each on its own line.
+    ![CXBOX-1038-after-popup.jpg](v3.0.2/CXBOX-1038-after-popup.jpg)
 === "Before"
     ![CXBOX-1038-before.jpg](v3.0.2/CXBOX-1038-before.jpg)
 

@@ -41,7 +41,7 @@
        
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myEntity132PickListPopupPickListPopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myentity132picklistpopuppicklistpopup.widget.json
             --8<--
             ```
         +  **Step 1.4** Add **fields.enableFilter** to corresponding **FieldMetaBuilder**.
@@ -97,7 +97,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133List.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133list.widget.json
         --8<--
         ``` 
 
@@ -107,7 +107,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133info.widget.json
         --8<--
         ``` 
 
@@ -118,7 +118,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/MyExample133Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/basic/myexample133form.widget.json
         --8<--
         ``` 
 
@@ -193,7 +193,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/MyExample134List.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/color/myexample134list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -209,7 +209,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/inlinepicklist/colorconst/MyExample136List.widget.json
+            {{ external_links.github_raw_doc }}/fields/inlinepicklist/colorconst/myexample136list.widget.json
             --8<--
             ```
 
@@ -371,7 +371,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140List.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/myexample140list.widget.json
         --8<--
         ```
 
@@ -384,7 +384,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/MyExample140Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/inlinepicklist/drilldown/myexample140info.widget.json
         --8<--
         ```
         **Option 2**
@@ -621,5 +621,48 @@ Also, it optionally allows you to filter data on target view before it will be o
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample146){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/inlinepicklist/required){:target="_blank"}
 
+## Additional properties
+### <a id="snapshotKey">snapshotKey</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
 
+Shows the difference between the previous (snapshot) value and the current value of the field:
+the previous value is struck through on a red background, the current value is on a green background.
+The field with `snapshotKey` is always read-only.
 
+See [snapshotKey](/widget/fields/property/snapshotkey/snapshotkey) for all features and limitations.
+
+#### How does it look?
+![snapshotKey.png](snapshotKey.png)
+
+#### How to add?
+??? Example
+    **Step 1.** Add the field with the previous value to **DTO**. It must have the same type as the main field.
+
+    **Step 2.** Add **snapshotKey** to the field in **_.widget.json_**. Works for List, Info, Form.
+
+    **Step 3.** Add the field with the previous value to the same **_.widget.json_** with type **hidden**:
+    the backend sends only the fields of the widgets, without it the previous value is not sent.
+    ```json
+    [
+      {
+        "label": "Custom Field",
+        "key": "inlinePickListField",
+        "type": "inline-pickList",
+        "snapshotKey": "inlinePickListFieldSnapshot",
+        "popupBcName": "myexample5900pick",
+        "pickMap": {
+          "inlinePickListField": "customField",
+          "inlinePickListFieldId": "id"
+        }
+      },
+      {
+        "label": "Custom Field snapshot",
+        "key": "inlinePickListFieldSnapshot",
+        "type": "hidden"
+      }
+    ]
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}

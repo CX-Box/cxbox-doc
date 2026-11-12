@@ -29,7 +29,7 @@ The file is shown at once, without a popup.
     Add a field with type `fileUpload` and `"preview": {"enabled": true, "mode": "inline"}`. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/filepreview/base/MyExample5003InlineFilePreview.widget.json
+    {{ external_links.github_raw_doc }}/widgets/filepreview/base/myexample5003inlinefilepreview.widget.json
     --8<--
     ```
 
@@ -75,7 +75,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filepreview/title/MyExample5007FilePreview.widget.json
+        {{ external_links.github_raw_doc }}/widgets/filepreview/title/myexample5007filepreview.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5007/view/MyExample5007form){:target="_blank"} ·
@@ -85,7 +85,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filepreview/title/MyExample5007FilePreviewTitleEmpty.widget.json
+        {{ external_links.github_raw_doc }}/widgets/filepreview/title/myexample5007filepreviewtitleempty.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5007/view/MyExample5007formemptytitle){:target="_blank"} ·
@@ -132,7 +132,7 @@ The title shows field values of the current record.
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filepreview/colortitle/MyExample5004FilePreviewCalc.widget.json
+        {{ external_links.github_raw_doc }}/widgets/filepreview/colortitle/myexample5004filepreviewcalc.widget.json
         --8<--
         ```
 
@@ -147,7 +147,7 @@ The title shows field values of the current record.
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filepreview/colortitle/MyExample5004FilePreview.widget.json
+        {{ external_links.github_raw_doc }}/widgets/filepreview/colortitle/myexample5004filepreview.widget.json
         --8<--
         ```
 
@@ -194,7 +194,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/filepreview/showcondition/MyExample5006FilePreview.widget.json
+        {{ external_links.github_raw_doc }}/widgets/filepreview/showcondition/myexample5006filepreview.widget.json
         --8<--
         ```
 
@@ -250,7 +250,7 @@ Without such a field the widget shows nothing, and the browser console says why.
 
       ```json
          --8<--
-         {{ external_links.github_raw_doc }}/widgets/filepreview/allpropertiesfield/MyExample5002FilePreview.widget.json
+         {{ external_links.github_raw_doc }}/widgets/filepreview/allpropertiesfield/myexample5002filepreview.widget.json
          --8<--
       ```
 
@@ -307,7 +307,7 @@ The header above the file shows the file name. It can show fields of the record 
     Add **titleKey** and **hintKey** to **preview** of the field in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/filepreview/header/MyExample5008FilePreview.widget.json
+    {{ external_links.github_raw_doc }}/widgets/filepreview/header/myexample5008filepreview.widget.json
     --8<--
     ```
 

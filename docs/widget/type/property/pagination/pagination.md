@@ -85,7 +85,7 @@ Frontend Behavior:
     === "List"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/MyExample3862List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/myexample3862list.widget.json
         --8<--
         ```
 
@@ -95,7 +95,7 @@ Frontend Behavior:
     === "CardList"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/forcardlist/MyExample3862CardList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/forcardlist/myexample3862cardlist.widget.json
         --8<--
         ```
 
@@ -135,7 +135,7 @@ Next button availability logic:
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/MyExample3860List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/myexample3860list.widget.json
     --8<--
     ```
     !!! info
@@ -177,7 +177,7 @@ Disadvantages of this mode:
     ```
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/MyExample3861List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/myexample3861list.widget.json
       --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861list){:target="_blank"} ·
@@ -218,7 +218,7 @@ This function is available:
 
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/hidelimitoptions/MyExample3865List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/hidelimitoptions/myexample3865list.widget.json
       --8<--
     ```
  
@@ -251,7 +251,34 @@ An array of integers.
 
 If not provided, the component use default values [5, 10,15, 20].
 
-The user will only be able to select from the specified values.
+The user will only be able to select from the specified values and the default page limit (see below).
+
+### <a id="limitrules">Available options and default page limit</a>
+
+Two different settings are used for the number of records per page:
+
+* `availableLimitsList` in **.widget.json** (`options` -> `pagination` -> `availableLimitsList`) – the options the user can **choose** in the dropdown.
+* `PAGE_LIMIT` of the business component in **BC_PROPERTIES.csv** – the **default** page limit: the number of records the user sees when the page is opened. See [Default page limit](/widget/type/property/defaultlimitpage/defaultlimitpage).
+
+`availableLimitsList` does not set the default page limit: the first (or any other) value of the list is not used when the page is opened.
+
+If `PAGE_LIMIT` is not set for the business component, the default page limit is taken from `cxbox.meta.bc-default-page-limit` in **application.yml** (5 if not specified).
+
+The dropdown always contains the default page limit: if it is not in `availableLimitsList`, it is added to the options. The options are sorted in ascending order.
+
+| `availableLimitsList`          | `PAGE_LIMIT` (BC_PROPERTIES.csv) | Records per page when the page is opened                 | Options in the dropdown |
+|--------------------------------|----------------------------------|----------------------------------------------------------|-------------------------|
+| `[10, 25, 50]`                 | `25` (in the list)               | 25                                                       | 10, 25, 50              |
+| `[10, 25, 50]`                 | `7` (not in the list)            | 7                                                        | 7, 10, 25, 50           |
+| `[10, 25, 50]`                 | not set                          | `bc-default-page-limit` (5 if not specified)             | 5, 10, 25, 50           |
+| not set (`[5, 10, 15, 20]`)    | `12`                             | 12                                                       | 5, 10, 12, 15, 20       |
+| not set (`[5, 10, 15, 20]`)    | not set                          | `bc-default-page-limit` (5 if not specified)             | 5, 10, 15, 20           |
+
+!!! info
+    The limit selected by the user is kept when the user switches to another screen and back, until the browser page is reloaded. After the reload, the default page limit (`PAGE_LIMIT`) is used again.
+
+!!! tip
+    To make the page open with a value from the dropdown, set `PAGE_LIMIT` to one of the values of `availableLimitsList`.
 
 **Use Case:**
 
@@ -272,7 +299,7 @@ Restrict pagination options to specific values (e.g., 10, 25, 50, or 100 items p
 
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/MyExample3867List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myexample3867list.widget.json
       --8<--
     ```
  
@@ -308,7 +335,7 @@ Pagination panel display  controlling the display of the pagination panel.
     ```
     ```json
       --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/MyExample3865PaginationSwitchFalseList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/paginationswitch/myexample3865paginationswitchfalselist.widget.json
       --8<--
     ```
 

@@ -57,7 +57,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053List.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053list.widget.json
             --8<--
             ```
        
@@ -76,7 +76,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoc/base/MyExample3053Form.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053form.widget.json
             --8<--
             ```
        
@@ -117,7 +117,7 @@
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053Assoc.widget.json
+            {{ external_links.github_raw_doc }}/widgets/assoc/base/myexample3053assoc.widget.json
             --8<--
             ```
             **Step4** Add a dependency on parent BC for Assoc BC for to corresponding **EnumBcIdentifier**
@@ -167,7 +167,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/title/myEntity3090MultiPickAssocListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/title/myentity3090multipickassoclistpopup.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3090){:target="_blank"} ·
@@ -178,7 +178,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/title/myEntity3090MultiPickAssocEmptyListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/title/myentity3090multipickassocemptylistpopup.widget.json
         --8<--
         ```
     
@@ -226,7 +226,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/color/myEntity3056MultiPickAssocListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/color/myentity3056multipickassoclistpopup.widget.json
         --8<--
         ``` 
 
@@ -241,7 +241,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/colorconst/myEntity3056MultiPickAssocListPopup0.widget.json
+        {{ external_links.github_raw_doc }}/widgets/assoc/colortitle/colorconst/myentity3056multipickassoclistpopup0.widget.json
         --8<--
         ```
  
@@ -302,7 +302,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/assoc/base/myEntity3053MultiAssocListPopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/assoc/base/myentity3053multiassoclistpopup.widget.json
              --8<--
           ```
 
@@ -356,7 +356,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myEntity3054MultiAssocListPopupCreateAssocListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myentity3054multiassoclistpopupcreateassoclistpopup.widget.json
     --8<--
     ```
 
@@ -396,7 +396,7 @@ After filling the information in and clicking "Save", the new row is added to th
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/myEntity3054MultiFormForPopup2.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/myentity3054multiformforpopup2.widget.json
     --8<--
     ```
  
@@ -413,7 +413,7 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myEntity3054MultiAssocListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/create/myentity3054multiassoclistpopup.widget.json
     --8<--
     ```
  
@@ -453,7 +453,7 @@ _not applicable_
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/delete/myEntity3054MultiAssocDeleteListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/delete/myentity3054multiassocdeletelistpopup.widget.json
     --8<--
     ``` 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3054/view/myexample3054delete){:target="_blank"} ·
@@ -521,7 +521,7 @@ There are three methods to create a record:
     **Step3** Create widget.json with type `Form` that appears when you click the edit icon.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/myEntity3054MultiFormForPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/myentity3054multiformforpopup.widget.json
     --8<--
     ```
 
@@ -535,7 +535,7 @@ There are three methods to create a record:
     **Step5** Add widget with type `Form` to **options**.**edit**.**widget** of corresponding **.widget.json**: the edit icon appears in each row.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/myEntity3054MultiAssocListPopupEditInlineForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/assoc/actions/edit/myentity3054multiassoclistpopupeditinlineform.widget.json
     --8<--
     ```
 
@@ -633,7 +633,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forassoc/myEntity3625PickAssocListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forassoc/myentity3625pickassoclistpopup.widget.json
     --8<--
     ```
 

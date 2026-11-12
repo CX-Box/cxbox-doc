@@ -60,6 +60,8 @@ Steps
 *   [AssocListPopup widget](/widget/type/assoclistpopup/assoclistpopup) is a popup component designed to the selection of multiple values.
 *   [AssocTreePopup widget](/widget/type/assoctreepopup/assoctreepopup) is a popup component designed to the selection of multiple values from a hierarchical, lazily loaded tree.
 *   [Column2D widget](/widget/type/column2d/column2d) draws a column chart: a bar per category on the X axis, a number on the Y axis. The user can switch it to a table.
+*   [CalendarYearList widget](/widget/type/calendaryearlist/calendaryearlist) shows records as one-day events of a year calendar: twelve months, one event per day.
+*   [DualAxes2D widget](/widget/type/dualaxes2d/dualaxes2d) combines a Column2D chart and a Line2D chart in one area with a common X axis and two Y axes.
 *   [CardCarouselList widget](/widget/type/cardcarousellist/cardcarousellist) shows records as file cards in a horizontal strip with a preview, a title and a description.
 *   [CardList widget](/widget/type/cardlist/cardlist) shows records as file cards in rows with pages, with a preview, a title and a description.
 *   [EmptyWidget widget](/widget/type/emptywidget/emptywidget) is a component for displaying text.
@@ -73,6 +75,7 @@ Steps
 *   [Line2D widget](/widget/type/line2d/line2d) draws a line chart from the records of a business component: one point per record, one line per group.
 *   [PickListPopup widget](/widget/type/picklistpopup/picklistpopup) is a component that allows the user to select a value from a Popup list of entities.
 *   [PickTreePopup widget](/widget/type/picktreepopup/picktreepopup) is a component that allows the user to select a value from a Popup tree of entities.
+*   [RelationGraph widget](/widget/type/relationgraph/relationgraph) draws records as a graph of relations: nodes connected by edges "source node -> target node".
 *   [StatsBlock widget](/widget/type/statblocks/statblocks) is a tool designed to display aggregated data in a visually accessible format.
 *   [Steps](/widget/type/steps/steps) is used to define and manage sequential actions or stages within a business process in the application. They allow developers and users to structure complex behavior into smaller, manageable steps, improving readability, maintainability.
 *   [Tree widget](/widget/type/tree/tree) presents hierarchical records as an expandable tree, so users can browse parent and child rows in one table.
@@ -81,7 +84,7 @@ Steps
 
 ```json
 {
-  "name": "MyExampleForm",
+  "name": "myexampleform",
   "title": "Title Form",
   "type": "Form",
   "bc": "myexample",

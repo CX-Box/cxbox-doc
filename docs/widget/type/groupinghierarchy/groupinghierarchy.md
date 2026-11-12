@@ -59,7 +59,7 @@ See more [field types](/widget/fields/fieldtypes/)
     Add existing field to a GroupingHierarchy widget. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/MyExample3121GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/myexample3121gh.widget.json
     --8<--
     ```
  
@@ -106,7 +106,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/title/MyExample3139GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/title/myexample3139gh.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3139){:target="_blank"} ·
@@ -118,7 +118,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/title/MyExample3139EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/title/myexample3139emptytitle.widget.json
         --8<--
         ```
 
@@ -166,7 +166,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/MyExample3133List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/myexample3133list.widget.json
         --8<--
         ``` 
 
@@ -181,7 +181,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/MyExample3133ColorConstList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/colortitle/myexample3133colorconstlist.widget.json
         --8<--
         ```
 
@@ -238,7 +238,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/bycurrententity/MyExample3171showcond.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/bycurrententity/myexample3171showcond.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3169/view/myexample3171gh){:target="_blank"} ·
@@ -249,7 +249,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/showcondition/byparententity/child/myexample3107.widget.json
         --8<--
         ```
 -->
@@ -298,7 +298,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/MyExample3121GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/base/myexample3121gh.widget.json
         --8<--
         ```
 
@@ -344,7 +344,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the Gro
      **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/basic/MyExample3148GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/basic/myexample3148gh.widget.json
     --8<--
     ```
      **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
@@ -384,7 +384,7 @@ After filling the information in and clicking "Save", the new row is added to th
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/myEntity3159CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/myentity3159createform.widget.json
     --8<--
     ```
  
@@ -401,7 +401,7 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/MyExample3159GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/withwidget/myexample3159gh.widget.json
     --8<--
     ```
 
@@ -435,7 +435,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
   
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/MyExample3149GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/create/newview/myexample3149gh.widget.json
     --8<--
     ```
 
@@ -505,7 +505,7 @@ There are three methods to create a record:
     **Step3**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/myEntity3168EditForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/myentity3168editform.widget.json
     --8<--
     ```
  
@@ -522,7 +522,7 @@ There are three methods to create a record:
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/MyExample3168GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/withwidget/myexample3168gh.widget.json
     --8<--
     ```
 
@@ -554,7 +554,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/newview/MyExample3167GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/actions/edit/newview/myexample3167gh.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3166/view/myexample3167gh){:target="_blank"} ·
@@ -612,7 +612,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/customizationcolumns/MyExample3175GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/customizationcolumns/myexample3175gh.widget.json
         --8<--
         ```
         
@@ -637,7 +637,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/customizationcolumns/MyExample3175GHHiddenFields.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/customizationcolumns/myexample3175ghhiddenfields.widget.json
         --8<--
         ```
         
@@ -730,7 +730,7 @@ It operates in three modes:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/MyExample3201GHAlways.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/myexample3201ghalways.widget.json
         --8<--
         ```
 
@@ -750,7 +750,7 @@ It operates in three modes:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/MyExample3201GHCollapsed.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/myexample3201ghcollapsed.widget.json
         --8<--
         ```
 
@@ -771,7 +771,7 @@ It operates in three modes:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/MyExample3201GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/counter/myexample3201gh.widget.json
         --8<--
         ```
 
@@ -794,6 +794,7 @@ By default
 #### Default GroupingHierarchy
 This function can be used to display the grouping structure in advance, even when no data is available.
 The number of nesting levels is unlimited.
+The default hierarchy can also be loaded dynamically (from DB, a microservice), see [defaultGroupingHierarchy() with Hierarchy.toHierarchy()](/environment/meta/buildindependentmeta/dynamicdefaultgh/dynamicdefaultgh) and [Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3296){:target="_blank"}.
 
 `Level 1`
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3164){:target="_blank"} ·
@@ -835,7 +836,7 @@ The number of nesting levels is unlimited.
             
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fourlevel/MyExample3155GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fourlevel/myexample3155gh.widget.json
         --8<--
         ```
         `Step 2` Add  **defaultGroupingHierarchy** to corresponding `buildIndependentMeta` **FieldMetaBuilder**.
@@ -869,7 +870,7 @@ The number of nesting levels is unlimited.
             
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fivelevel/MyExample3158GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/fivelevel/myexample3158gh.widget.json
         --8<--
         ```
         `Step 2` Add  **defaultGroupingHierarchy** to corresponding `buildIndependentMeta` **FieldMetaBuilder**.
@@ -921,7 +922,7 @@ The defaultExpanded parameter determines whether a group in the hierarchy is exp
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/MyExample3203GH.widget.json
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/defaultgroupinghierarchy/defaultexpanded/myexample3203gh.widget.json
     --8<--
     ```
 
@@ -977,22 +978,22 @@ You can enable aggregation mode to calculate summary values for groups and for t
 Supports **4 standard functions**:
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghsum){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumgh.widget.json){:target="_blank"}
 
 `sum` — calculates the **total sum** of the values in the column.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghmin){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MinGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124mingh.widget.json){:target="_blank"}
 
 `min` — finds the **minimum value** in the column.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghmax){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124maxgh.widget.json){:target="_blank"}
 
 `max` — finds the **maximum value** in the column.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghavg){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124AvgGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124avggh.widget.json){:target="_blank"}
 
 `avg` — calculates the **average value** of the column.
 
@@ -1012,6 +1013,11 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
 
 !!! Attention    
     Field cannot be both a grouping field and an aggregated field
+
+!!! Attention
+    Standard functions work only with numeric values: `number`, `money`, `percent`.
+    For `date`, `dateTime` and other non-numeric fields the aggregated value is empty.
+    See [Supported field types](#supported-field-types).
 
 ###### How does it look?
 === "sum"
@@ -1066,41 +1072,41 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
     === "sum"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumgh.widget.json
         --8<--
         ```  
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghsum){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumgh.widget.json){:target="_blank"}
         
     === "min"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MinGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/myexample3124mingh.widget.json
         --8<--
         ```  
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghmin){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MinGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124mingh.widget.json){:target="_blank"}
 
     === "max"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/myexample3124maxgh.widget.json
         --8<--
         ```  
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghmax){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124MaxGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124maxgh.widget.json){:target="_blank"}
 
     === "avg"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124AvgGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/myexample3124avggh.widget.json
         --8<--
         ```
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghavg){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124AvgGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124avggh.widget.json){:target="_blank"}
 
              
 ##### Options
@@ -1108,12 +1114,12 @@ You can adjust the **color and transparency** of aggregate rows in the settings.
 Options for displaying aggregated values:
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghsum){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumgh.widget.json){:target="_blank"}
 
 * **Above the same column** — show the aggregated value directly above the column that is being aggregated.
 
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghsum){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGHForOptionalParameter.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumghforoptionalparameter.widget.json){:target="_blank"}
 
 * **Above another column** — show the aggregated value above a different column of your choice.
 
@@ -1172,12 +1178,12 @@ How to add?
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumgh.widget.json
         --8<--
         ```  
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghsum){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumgh.widget.json){:target="_blank"}
 
     === "Above another column and aggregations for multiple fields"
 
@@ -1225,15 +1231,15 @@ How to add?
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGHForOptionalParameter.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumghforoptionalparameter.widget.json
         --8<--
         ```  
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3124ghsum){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/MyExample3124SumGHForOptionalParameter.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/aggfields/myexample3124sumghforoptionalparameter.widget.json){:target="_blank"}
 
 ###### Aggregated Total
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevelwithouttotal){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsWithoutCountGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/myexample3125agglevelswithoutcountgh.widget.json){:target="_blank"}
 
 You can enable or hide the grand total row (aggregation).
 
@@ -1301,16 +1307,16 @@ How to add?
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsWithoutCountGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/agglevels/myexample3125agglevelswithoutcountgh.widget.json
         --8<--
         ```  
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevelwithouttotal){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsWithoutCountGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/myexample3125agglevelswithoutcountgh.widget.json){:target="_blank"}
 
 ###### Aggregated values in different levels
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevel){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/myexample3125agglevelsgh.widget.json){:target="_blank"}
 
 Apply different aggregation standard functions at grouping levels and total level.
 
@@ -1404,16 +1410,16 @@ How to add?
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/agglevels/myexample3125agglevelsgh.widget.json
         --8<--
         ``` 
 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3125agglevel){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/MyExample3125AggLevelsGH.widget.json){:target="_blank"}
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/agglevels/myexample3125agglevelsgh.widget.json){:target="_blank"}
 
 ###### Custom functions
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3126customfunctgh){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/myexample3126gh.widget.json){:target="_blank"}
 
 **Custom functions** — define your own aggregation rules when standard ones are not enough.
 
@@ -1482,12 +1488,99 @@ How to add?
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json
+        {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/customfunction/myexample3126gh.widget.json
         --8<--
         ``` 
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3124/view/myexample3126customfunctgh){:target="_blank"} ·
-        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/MyExample3126GH.widget.json){:target="_blank"}
- 
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/customfunction/myexample3126gh.widget.json){:target="_blank"}
+
+###### Supported field types
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297fieldtypes){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297fieldtypesgh.widget.json){:target="_blank"}
+
+Standard functions (`sum`, `min`, `max`, `avg`) are calculated on the UI from the values of the data rows of the group.
+A value is used only if it is a number. Empty values (`null`, `""`) are skipped.
+If at least one value of the group is not a number, the aggregated value of the group is empty
+(the browser console shows `Error: Some field value for aggregate <fieldKey> contains NaN`).
+
+| Field type                                        | Standard functions                                     | Note                                                                                                    |
+|---------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `number`                                          | work                                                   | The result is formatted as the field                                                                    |
+| `money`                                           | work                                                   | The result is formatted as the field                                                                    |
+| `percent`                                         | work                                                   | The result is shown with `%`. `sum` of percents is a plain sum (`10 % + 30 % = 40 %`)                    |
+| `input`, `text`, `hidden`                         | work only if all values are numeric strings (`"200"`)  | Not recommended: use `number`                                                                           |
+| `date`, `dateTime`, `dateTimeWithSeconds`, `time` | **do not work**                                        | The value is an ISO string, not a number. The aggregated value is empty                                 |
+| `dictionary`, `radio`, `checkbox`, `multivalue`, `pickList` and other | **do not work**                    | Calculate the value on the backend into a hidden numeric field and aggregate it (see [Custom functions](#custom-functions)) |
+
+!!! info
+    `fieldKey` and all `argFieldKeys` of one aggregation must have the same field type.
+    Otherwise the browser console shows `Error: Aggregate field type for key ... do not match field type ...`.
+
+How does it look?
+
+![aggFieldTypes.png](aggFieldTypes.png)
+
+How to add?
+
+??? Example
+
+    Add `aggFields` with the numeric fields to corresponding **.widget.json**.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297fieldtypesgh.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297fieldtypes){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes){:target="_blank"}
+
+###### Color and drillDown of aggregated fields
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297colordrilldown){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297colordrilldowngh.widget.json){:target="_blank"}
+
+The aggregated value is shown by the same field component as the data rows, so the field properties are applied to the group and **Total** rows too:
+
+| Property of the aggregated field      | Data row | Group row                                                                                      | Total row                  |
+|---------------------------------------|----------|------------------------------------------------------------------------------------------------|----------------------------|
+| `bgColor` (constant color)            | works    | works                                                                                          | works                      |
+| `bgColorKey` (color from a DTO field) | works    | the color is taken from one of the data rows of the group, it is not calculated for the group  | no color                   |
+| `drillDown`                           | works    | **does not work**: the value is shown as a link, a click shows an error                        | **does not work**: the same |
+
+!!! warning
+    Do not use `drillDown` on aggregated fields. A click on the aggregated value of a group or of the **Total** row
+    requests the row meta with the group id instead of a record id (for example `GET /row-meta/<bc>/Movable%20property`),
+    the backend returns an error and the UI shows "System error has been occurred".
+
+    If a link to the record is needed, add `drillDown` to another (not aggregated) field.
+
+!!! tip
+    If the aggregated value of a group needs its own color, use the constant `bgColor`
+    or change the background of the aggregate rows (see **Appearance customization** in [Data Aggregation](#data-aggregation)).
+
+How does it look?
+
+![aggColorDrillDown.png](aggColorDrillDown.png)
+
+How to add?
+
+??? Example
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/fieldtypes/myexample3297colordrilldowngh.widget.json
+    --8<--
+    ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/groupinghierarhy/aggregate/fieldtypes/MyExample3297Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3297/view/myexample3297colordrilldown){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/groupinghierarhy/aggregate/fieldtypes){:target="_blank"}
+
 #### Multi-upload files
 We have implemented multi-file upload. You can use a dedicated drag-and-drop zone or a standard button to select your files.
 

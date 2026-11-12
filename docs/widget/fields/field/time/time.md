@@ -80,7 +80,7 @@ The time type supports various formats for representing and manipulating time va
             By default, there will be a standard format applied: "HH : mm:ss"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500List.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/base/myexample3500list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -88,7 +88,7 @@ The time type supports various formats for representing and manipulating time va
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/base/myexample3500info.widget.json
             --8<--
             ```
     
@@ -98,7 +98,7 @@ The time type supports various formats for representing and manipulating time va
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/base/MyExample3500Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/base/myexample3500form.widget.json
             --8<--
             ```    
     
@@ -134,7 +134,7 @@ The time type supports various formats for representing and manipulating time va
             By default, there will be a standard format applied: "HH : mm:ss"
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512List.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/myexample3512list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -142,7 +142,7 @@ The time type supports various formats for representing and manipulating time va
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/myexample3512info.widget.json
             --8<--
             ```
     
@@ -152,7 +152,7 @@ The time type supports various formats for representing and manipulating time va
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/MyExample3512Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/baselocaltime/myexample3512form.widget.json
             --8<--
             ```    
     
@@ -231,14 +231,14 @@ The time type supports various formats for representing and manipulating time va
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/color/MyExample3501List.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/color/myexample3501list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/color/MyExample3501Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/color/myexample3501info.widget.json
             --8<--
             ```   
         === "Form widget"
@@ -252,7 +252,7 @@ The time type supports various formats for representing and manipulating time va
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/colorconst/MyExample3502List.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/colorconst/myexample3502list.widget.json
             --8<--
             ```
 
@@ -260,7 +260,7 @@ The time type supports various formats for representing and manipulating time va
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/time/colorconst/MyExample3502Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/time/colorconst/myexample3502info.widget.json
             --8<--
             ```   
 
@@ -429,7 +429,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/drilldown/MyExample3503List.widget.json
+        {{ external_links.github_raw_doc }}/fields/time/drilldown/myexample3503list.widget.json
         --8<--
         ```
         **Option 2**
@@ -440,7 +440,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/time/drilldown/MyExample3503Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/time/drilldown/myexample3503info.widget.json
         --8<--
         ```
         **Option 2**

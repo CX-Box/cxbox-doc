@@ -95,7 +95,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/base/defaultfields/widget/MyExample3281Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/base/defaultfields/widget/myexample3281tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3281tree){:target="_blank"} ·
@@ -124,7 +124,7 @@ Every node keeps **its own pagination state**, so the records of one node are lo
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/base/customfields/widget/MyExample3278Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/base/customfields/widget/myexample3278tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261/view/myexample3278tree){:target="_blank"} ·
@@ -156,7 +156,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/title/widget/MyExample3271Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/title/widget/myexample3271tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3271){:target="_blank"} ·
@@ -168,7 +168,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/title/widget/MyExample3271EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/title/widget/myexample3271emptytitle.widget.json
         --8<--
         ```
 
@@ -216,7 +216,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/widget/MyExample3267.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/widget/myexample3267.widget.json
         --8<--
         ``` 
 
@@ -231,7 +231,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/widget/MyExample3267ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/colortitle/widget/myexample3267colorconst.widget.json
         --8<--
         ```
 
@@ -288,7 +288,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/showcondition/bycurrententity/MyExample32692.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/showcondition/bycurrententity/myexample32692.widget.json
         --8<--
         ```
 <!--
@@ -296,7 +296,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/showcondition/byparententity/MyExample3277child.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/showcondition/byparententity/myexample3277child.widget.json
         --8<--
         ```
 -->
@@ -346,7 +346,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/tree/title/widget/MyExample3271Tree.widget.json
+             {{ external_links.github_raw_doc }}/widgets/tree/title/widget/myexample3271tree.widget.json
              --8<--
           ```
 
@@ -404,7 +404,7 @@ The position of the newly created line within the node can be determined as foll
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/basic/MyExample3265Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/basic/myexample3265tree.widget.json
     --8<--
     ```
      **Step3** Add **fields.setEnabled** to corresponding **FieldMetaBuilder**.
@@ -450,7 +450,7 @@ The position of a newly created row inside its node is defined :
      **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/withwidget/myEntity3279CreateForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/withwidget/myentity3279createform.widget.json
     --8<--
     ```
  
@@ -471,7 +471,7 @@ The position of a newly created row inside its node is defined :
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/withwidget/MyExample3279Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/withwidget/myexample3279tree.widget.json
     --8<--
     ```
 
@@ -505,7 +505,7 @@ With `Create with view`, clicking the "Add" button opens a separate view that di
   
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/newview/MyExample3266Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/create/newview/myexample3266tree.widget.json
     --8<--
     ```
 
@@ -575,7 +575,7 @@ There are three methods to create a record:
     **Step3**  Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/withwidget/myEntity3275EditForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/withwidget/myentity3275editform.widget.json
     --8<--
     ```
  
@@ -592,7 +592,7 @@ There are three methods to create a record:
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/withwidget/MyExample3275Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/withwidget/myexample3275tree.widget.json
     --8<--
     ```
 
@@ -624,7 +624,7 @@ With `Edit with view`, you can edit the entity from a separate view that display
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/newview/MyExample3274Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/actions/edit/newview/myexample3274tree.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3274tree){:target="_blank"} ·
@@ -716,7 +716,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/customizationcolumns/widget/MyExample3268Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/customizationcolumns/widget/myexample3268tree.widget.json
         --8<--
         ```
         
@@ -741,7 +741,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/tree/customizationcolumns/widget/MyExample3268TreeHiddenFields.widget.json
+        {{ external_links.github_raw_doc }}/widgets/tree/customizationcolumns/widget/myexample3268treehiddenfields.widget.json
         --8<--
         ```
         
@@ -850,7 +850,7 @@ The result of a full text search is displayed in the same way as the result of f
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/MyExample3614Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/myexample3614tree.widget.json
     --8<--
     ```
 
@@ -895,7 +895,7 @@ see [Personal filter group](/widget/type/property/filtration/filtration/#by-pers
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/myexample3616tree.widget.json
     --8<--
     ```
 
@@ -943,6 +943,38 @@ see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618tree){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
 
+###### Default filter group
+`Default filter group` - the filter group that is applied when the widget is opened and when the page is refreshed. It is marked by the star in the select of the filter groups.
+see [Default filter group](/widget/type/property/filtration/filtration/#default_filter_group)
+
+![default_filter_group_tree.gif](../property/filtration/default_filter_group_tree.gif)
+
+Add the group to the **BC_FILTER_GROUPS** table with `default_filter` = `true`:
+
+```csv
+name;bc;filters;default_filter
+Dictionary = High;myexample3629tree;customFieldDictionary.equalsOneOf=%5B%22High%22%5D;true
+```
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3629tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/defaultfiltergroup){:target="_blank"}
+
+##### Reset filters
+The link "To default filter(s)" above the tree returns the default filters (`FILTER` of **BC_PROPERTIES** or the default filter group) when the applied filters differ from them.
+see [Reset filters](/widget/type/property/filtration/filtration/#reset_filters)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3629tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/defaultfiltergroup){:target="_blank"}
+
+##### Delete personal filter group
+The user deletes the saved personal filter group by the cross next to its name in the gear icon - "Save filters".
+see [Delete personal filter group](/widget/type/property/filtration/filtration/#delete_personal_filter_group)
+
+![delete_filter_group_tree.gif](../property/filtration/delete_filter_group_tree.gif)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
+
 #### <a id="searchmodes">Search modes</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3280/view/myexample3280treecollapsehide){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/treesearchmodes){:target="_blank"}
@@ -983,7 +1015,7 @@ In `collapse` mode the records whose parents have not been loaded yet are placed
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/tree/treesearchmodes/widget/MyExample3280Tree.widget.json
+    {{ external_links.github_raw_doc }}/widgets/tree/treesearchmodes/widget/myexample3280tree.widget.json
     --8<--
     ```
 
@@ -1020,7 +1052,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
     === "nextAndPreviousWithHasNext"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/MyExample3860Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswihhasnext/myexample3860tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3860tree){:target="_blank"} ·
@@ -1029,7 +1061,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
     === "nextAndPreviousWithCount"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/MyExample3862Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandpreviouswithcount/myexample3862tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3862tree){:target="_blank"} ·
@@ -1038,7 +1070,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
     === "nextAndPreviousSmart"
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/MyExample3861Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/nextandprevioussmart/myexample3861tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3861tree){:target="_blank"} ·
@@ -1049,7 +1081,7 @@ see more [Pagination modes](/widget/type/property/pagination/pagination)
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/MyExample3867Tree.widget.json
+        {{ external_links.github_raw_doc }}/widgets/property/pagination/availablelimitselist/myexample3867tree.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3861/view/myexample3867tree){:target="_blank"} ·

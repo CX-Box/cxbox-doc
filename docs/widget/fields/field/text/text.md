@@ -39,7 +39,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/basic/MyExample40List.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/basic/myexample40list.widget.json
         --8<--
         ```
     === "Info widget"
@@ -47,7 +47,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/basic/MyExample40Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/basic/myexample40info.widget.json
         --8<--
         ```
 
@@ -57,7 +57,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/basic/MyExample40Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/basic/myexample40form.widget.json
         --8<--
         ```    
     
@@ -132,14 +132,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/color/MyExample41List.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/color/myexample41list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/color/MyExample41Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/color/myexample41info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -153,14 +153,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/colorconst/MyExample42List.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/colorconst/myexample42list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/text/colorconst/MyExample42Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/text/colorconst/myexample42info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -308,7 +308,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/drilldown/MyExample44List.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/drilldown/myexample44list.widget.json
         --8<--
         ```
         **Option 2**
@@ -318,7 +318,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/drilldown/MyExample44Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/drilldown/myexample44info.widget.json
         --8<--
         ```
         **Option 2**
@@ -602,21 +602,21 @@ The height of the field is set in rows.
         Add **"maxRows"**, **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437List.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/height/myexample437list.widget.json
         --8<--
         ```
     === "Info widget"
         Add **"minRows"**, **"maxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/height/myexample437info.widget.json
         --8<--
         ```
     === "Form widget"
         Add **"editMinRows"**, **"editMaxRows"** to the field in .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/text/height/MyExample437Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/text/height/myexample437form.widget.json
         --8<--
         ```
 
@@ -627,3 +627,45 @@ The height of the field is set in rows.
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample437){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/text/height){:target="_blank"}
+
+### <a id="snapshotKey">snapshotKey</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
+
+Shows the difference between the previous (snapshot) value and the current value of the field:
+the previous value is struck through on a red background, the current value is on a green background.
+The field with `snapshotKey` is always read-only.
+
+For the `text` field type the changes are shown word by word inside one text.
+
+See [snapshotKey](/widget/fields/property/snapshotkey/snapshotkey) for all features and limitations.
+
+#### How does it look?
+![snapshotKey.png](snapshotKey.png)
+
+#### How to add?
+??? Example
+    **Step 1.** Add the field with the previous value to **DTO**. It must have the same type as the main field.
+
+    **Step 2.** Add **snapshotKey** to the field in **_.widget.json_**. Works for List, Info, Form.
+
+    **Step 3.** Add the field with the previous value to the same **_.widget.json_** with type **hidden**:
+    the backend sends only the fields of the widgets, without it the previous value is not sent.
+    ```json
+    [
+      {
+        "label": "Custom Field",
+        "key": "textField",
+        "type": "text",
+        "snapshotKey": "textFieldSnapshot"
+      },
+      {
+        "label": "Custom Field snapshot",
+        "key": "textFieldSnapshot",
+        "type": "hidden"
+      }
+    ]
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}

@@ -21,7 +21,7 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/MyExample3600Additional.widget.json
+    {{ external_links.github_raw_doc }}/widgets/additionalinfo/base/myexample3600additional.widget.json
     --8<--
     ```
     **Step2** Add widget to corresponding **_.view.json_**.
@@ -74,7 +74,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionalinfo/colortitle/MyExample3025.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionalinfo/colortitle/myexample3025.widget.json
         --8<--
         ```       
 
@@ -86,7 +86,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionalinfo/colortitle/MyExample3025ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionalinfo/colortitle/myexample3025colorconst.widget.json
         --8<--
         ```
 
@@ -132,7 +132,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionalinfo/showcondition/MyExample4231AddInfo.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionalinfo/showcondition/myexample4231addinfo.widget.json
         --8<--
         ```
 

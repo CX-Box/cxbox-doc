@@ -95,7 +95,7 @@ Uploaded:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100AllList.widget.json
+        {{ external_links.github_raw_doc }}/feature/file/myexample6100alllist.widget.json
         --8<--
         ``` 
     === "Multi-upload files"
@@ -111,7 +111,7 @@ Uploaded:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100FileList.widget.json
+        {{ external_links.github_raw_doc }}/feature/file/myexample6100filelist.widget.json
         --8<--
         ``` 
     === "Button"
@@ -127,7 +127,7 @@ Uploaded:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100DefaultList.widget.json
+        {{ external_links.github_raw_doc }}/feature/file/myexample6100defaultlist.widget.json
         --8<--
         ``` 
     === "CardList"
@@ -135,7 +135,7 @@ Uploaded:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/feature/file/MyExample6100CardList.widget.json
+        {{ external_links.github_raw_doc }}/feature/file/myexample6100cardlist.widget.json
         --8<--
         ``` 
 

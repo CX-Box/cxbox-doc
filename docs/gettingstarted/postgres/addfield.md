@@ -60,7 +60,7 @@ Create **Controller** implements **EnumBcIdentifier**
 ??? Example
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/getstarted/postgres/example/MyExample4002Form.widget.json
+    {{ external_links.github_raw_doc }}/getstarted/postgres/example/myexample4002form.widget.json
     --8<--
     ```
 

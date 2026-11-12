@@ -48,7 +48,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82List.widget.json
+            {{ external_links.github_raw_doc }}/fields/checkbox/basic/myexample82list.widget.json
             --8<--
             ```
         === "Info widget"
@@ -56,7 +56,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/checkbox/basic/myexample82info.widget.json
             --8<--
             ```
     
@@ -66,7 +66,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/checkbox/basic/MyExample82Form.widget.json
+            {{ external_links.github_raw_doc }}/fields/checkbox/basic/myexample82form.widget.json
             --8<--
             ```     
     
@@ -443,3 +443,7 @@
         **_not applicable_**
     === "Form widget"
         **Works for Form.**
+
+## Additional properties
+### <a id="snapshotKey">snapshotKey</a>
+_not applicable_

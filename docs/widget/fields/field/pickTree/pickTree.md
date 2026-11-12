@@ -50,7 +50,7 @@ Available since [v3.0.1](/new/version3001/)
         +  **Step 1.3**  Create Popup List **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/picktree/basic/myEntity3282PickTreePopup.widget.json
+            {{ external_links.github_raw_doc }}/fields/picktree/basic/myentity3282picktreepopup.widget.json
             --8<--
             ```
 
@@ -110,7 +110,7 @@ Available since [v3.0.1](/new/version3001/)
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/picktree/basic/MyExample3282List.widget.json
+        {{ external_links.github_raw_doc }}/fields/picktree/basic/myexample3282list.widget.json
         --8<--
         ```    
 
@@ -125,7 +125,7 @@ Available since [v3.0.1](/new/version3001/)
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/picktree/basic/MyExample3282Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/picktree/basic/myexample3282info.widget.json
         --8<--
         ``` 
 
@@ -142,7 +142,7 @@ Available since [v3.0.1](/new/version3001/)
         When the user selects a record in the popup, take the value from the right-side field and place it into the left-side field.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/picktree/basic/MyExample3282Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/picktree/basic/myexample3282form.widget.json
         --8<--
         ``` 
 
@@ -214,14 +214,14 @@ Available since [v3.0.1](/new/version3001/)
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/picktree/color/MyExample3283List.widget.json
+            {{ external_links.github_raw_doc }}/fields/picktree/color/myexample3283list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/picktree/color/MyExample3283Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/picktree/color/myexample3283info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -235,14 +235,14 @@ Available since [v3.0.1](/new/version3001/)
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/picktree/colorconst/MyExample3284List.widget.json
+            {{ external_links.github_raw_doc }}/fields/picktree/colorconst/myexample3284list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/picktree/colorconst/MyExample3284Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/picktree/colorconst/myexample3284info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -400,7 +400,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/picktree/drilldown/MyExample3285List.widget.json
+        {{ external_links.github_raw_doc }}/fields/picktree/drilldown/myexample3285list.widget.json
         --8<--
         ```
         **Option 2**
@@ -411,7 +411,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/picktree/drilldown/MyExample3285Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/picktree/drilldown/myexample3285info.widget.json
         --8<--
         ```
         **Option 2**

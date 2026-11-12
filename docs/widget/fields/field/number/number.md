@@ -43,7 +43,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/basic/NumberBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/basic/numberbasiclist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -51,7 +51,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/basic/NumberBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/basic/numberbasicinfo.widget.json
         --8<--
         ```
 
@@ -61,7 +61,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/basic/NumberBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/basic/numberbasicform.widget.json
         --8<--
         ```    
 
@@ -136,7 +136,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/color/NumberColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/color/numbercolorlist.widget.json
             --8<--
             ```
  
@@ -144,7 +144,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/color/NumberColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/color/numbercolorinfo.widget.json
             --8<--
             ```
  
@@ -152,7 +152,7 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/color/NumberColorForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/color/numbercolorform.widget.json
             --8<--
             ```
 
@@ -164,7 +164,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/colorconst/numbercolorconstlist.widget.json
             --8<--
             ```
  
@@ -172,7 +172,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/colorconst/numbercolorconstinfo.widget.json
             --8<--
             ```
 
@@ -180,7 +180,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.  
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/number/colorconst/NumberColorConstForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/number/colorconst/numbercolorconstform.widget.json
             --8<--
             ```
 
@@ -346,7 +346,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/drilldown/NumberDrillDownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/drilldown/numberdrilldownlist.widget.json
         --8<--
         ```
  
@@ -358,7 +358,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/drilldown/NumberDrillDownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/drilldown/numberdrilldowninfo.widget.json
         --8<--
         ```
         **Option 2**
@@ -605,7 +605,7 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/DigitsNumberList.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/digitsnumberlist.widget.json
         --8<--
         ```
   
@@ -613,14 +613,14 @@ Property denotes number of digits after the decimal point. Additionally, UI will
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/DigitsNumberInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/digitsnumberinfo.widget.json
         --8<--
         ```
     === "Form widget"
         Add **digits** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/DigitsNumberForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/digits/digitsnumberform.widget.json
         --8<--
         ```
 
@@ -646,7 +646,7 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         Add **nullable** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/MyExample57List.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/myexample57list.widget.json
         --8<--
         ```
  
@@ -657,11 +657,49 @@ By default, UI sets `Number` value to 0 when user deletes it. If `nullable` equa
         Add **nullable** to **_.widget.json_**.        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/MyExample57Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/number/additionalproperties/nullable/myexample57form.widget.json
         --8<--
         ```
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample57){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/number/additionalproperties/nullable){:target="_blank"}
-    
 
+### <a id="snapshotKey">snapshotKey</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
+
+Shows the difference between the previous (snapshot) value and the current value of the field:
+the previous value is struck through on a red background, the current value is on a green background.
+The field with `snapshotKey` is always read-only.
+
+See [snapshotKey](/widget/fields/property/snapshotkey/snapshotkey) for all features and limitations.
+
+#### How does it look?
+![snapshotKey.png](snapshotKey.png)
+
+#### How to add?
+??? Example
+    **Step 1.** Add the field with the previous value to **DTO**. It must have the same type as the main field.
+
+    **Step 2.** Add **snapshotKey** to the field in **_.widget.json_**. Works for List, Info, Form.
+
+    **Step 3.** Add the field with the previous value to the same **_.widget.json_** with type **hidden**:
+    the backend sends only the fields of the widgets, without it the previous value is not sent.
+    ```json
+    [
+      {
+        "label": "Custom Field",
+        "key": "numberField",
+        "type": "number",
+        "snapshotKey": "numberFieldSnapshot"
+      },
+      {
+        "label": "Custom Field snapshot",
+        "key": "numberFieldSnapshot",
+        "type": "hidden"
+      }
+    ]
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}

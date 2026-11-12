@@ -70,7 +70,7 @@ Options of `options.chart2D`:
     Add the fields of the bar and **options.chart2D** with `xValueFieldKey` and `yValueFieldKey`.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/base/MyExample4252Column2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/base/myexample4252column2d.widget.json
     --8<--
     ```
 
@@ -115,14 +115,14 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/column2d/title/MyExample4253Column2D.widget.json
+        {{ external_links.github_raw_doc }}/widgets/column2d/title/myexample4253column2d.widget.json
         --8<--
         ```
     === "Constant title empty"
         **Step1** Delete parameter **title** from **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/column2d/title/MyExample4253Column2DEmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/column2d/title/myexample4253column2demptytitle.widget.json
         --8<--
         ```
 
@@ -170,7 +170,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step2** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/column2d/showcondition/MyExample4276Column2D.widget.json
+        {{ external_links.github_raw_doc }}/widgets/column2d/showcondition/myexample4276column2d.widget.json
         --8<--
         ```
 
@@ -212,7 +212,7 @@ A field with type `hidden` is not shown in the table mode. Use it for the values
 
       ```json
          --8<--
-         {{ external_links.github_raw_doc }}/widgets/column2d/base/MyExample4252Column2D.widget.json
+         {{ external_links.github_raw_doc }}/widgets/column2d/base/myexample4252column2d.widget.json
          --8<--
       ```
 
@@ -245,7 +245,7 @@ The tooltip appears when the user moves the mouse over a bar. By default it show
     **Step2** Add the description field to **fields** and **descriptionFieldKey** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/tooltip/MyExample4256Column2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/tooltip/myexample4256column2d.widget.json
     --8<--
     ```
 
@@ -279,14 +279,14 @@ Without them the widget uses the default palette.
         **Step2** Add **bgColorKey** to the X field in **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/column2d/color/MyExample4257Column2D.widget.json
+        {{ external_links.github_raw_doc }}/widgets/column2d/color/myexample4257column2d.widget.json
         --8<--
         ```
     === "Constant color"
         **Step1** Add **bgColor** to the X field in **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/column2d/color/MyExample4257Column2DColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/column2d/color/myexample4257column2dcolorconst.widget.json
         --8<--
         ```
 
@@ -308,7 +308,7 @@ In the table mode the X value is a link with the same drilldown.
     **Step1** Add **drillDown** to the X field in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/drilldown/MyExample4258Column2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/drilldown/myexample4258column2d.widget.json
     --8<--
     ```
     **Step2** Set the target view and the filter in **buildRowDependentMeta** of the **Meta**.
@@ -356,7 +356,7 @@ Without `groupFieldKey` the chart has one bar per category, and the legend shows
     **Step1** Add **groupFieldKey** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/group/MyExample4254Column2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/group/myexample4254column2d.widget.json
     --8<--
     ```
     **Step2** The DAO returns one record per X value and group.
@@ -381,7 +381,7 @@ Use it with `groupFieldKey`.
     **Step1** Add **stack** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/group/MyExample4254Column2DStack.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/group/myexample4254column2dstack.widget.json
     --8<--
     ```
 
@@ -403,12 +403,12 @@ For a text X field they are ignored, and the widget writes a message to the brow
     **Step1** Add **yMin**, **yMax**, **yStep** to **options.chart2D** in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/axes/MyExample4255Column2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/axes/myexample4255column2d.widget.json
     --8<--
     ```
 
 #### DualAxes2D
-A `Column2D` widget can be combined with a `Line2D` widget in one area with the `DualAxes2D` widget:
+A `Column2D` widget can be combined with a `Line2D` widget in one area with the [DualAxes2D](/widget/type/dualaxes2d/dualaxes2d) widget:
 the charts share the X axis and can have separate Y axes.
 
 #### Customization of displayed columns
@@ -511,7 +511,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/column2d/fulltextsearch/MyExample4269Column2D.widget.json
+    {{ external_links.github_raw_doc }}/widgets/column2d/fulltextsearch/myexample4269column2d.widget.json
     --8<--
     ```
 

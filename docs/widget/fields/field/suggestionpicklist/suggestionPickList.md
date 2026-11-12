@@ -25,7 +25,7 @@
         +  **Step 1.1**  Create Popup List **_.widget.json_**. We create based on an entity that accesses the microservice.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/MyExample3080Suggest.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3080suggest.widget.json
             --8<--
             ```  
     -   **Step 2** Add **Popup** to **_.view.json_**.
@@ -63,7 +63,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/MyExample3091List.widget.json
+        {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3091list.widget.json
         --8<--
         ```    
 
@@ -84,7 +84,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/MyExample3091Form.widget.json
+        {{ external_links.github_raw_doc }}/fields/suggestion/basic/microservice/myexample3091form.widget.json
         --8<--
         ```   
 
@@ -157,14 +157,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorcalc/MyExample3093List.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorcalc/myexample3093list.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorcalc/MyExample3093Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorcalc/myexample3093info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -178,14 +178,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorconst/MyExample3094List.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorconst/myexample3094list.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorconst/MyExample3094Info.widget.json
+            {{ external_links.github_raw_doc }}/fields/suggestion/color/colorconst/myexample3094info.widget.json
             --8<--
             ```
         === "Form widget"
@@ -359,7 +359,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/suggestion/drilldown/MyExample3095List.widget.json
+        {{ external_links.github_raw_doc }}/fields/suggestion/drilldown/myexample3095list.widget.json
         --8<--
         ```
         **Option 2**
@@ -370,7 +370,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/suggestion/drilldown/MyExample3095Info.widget.json
+        {{ external_links.github_raw_doc }}/fields/suggestion/drilldown/myexample3095info.widget.json
         --8<--
         ```
         **Option 2**

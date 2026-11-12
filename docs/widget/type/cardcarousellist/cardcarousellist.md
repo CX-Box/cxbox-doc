@@ -29,7 +29,7 @@ Without other settings the card title is the file name. In the sample the title 
     Add a field with type `fileUpload` and fields for the title and the description. Set them in `options.card`. see more [Fields](#fields)
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/MyExample5060CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/myexample5060cardcarousellist.widget.json
     --8<--
     ```
 
@@ -79,7 +79,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/title/MyExample5061CardCarouselList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/title/myexample5061cardcarousellist.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5061/view/myexample5061title){:target="_blank"} ·
@@ -89,7 +89,7 @@ There are types of:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/title/MyExample5061EmptyTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/title/myexample5061emptytitle.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5061/view/myexample5061emptytitle){:target="_blank"} ·
@@ -136,7 +136,7 @@ The title shows field values of the current record, that is of the selected card
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/colortitle/MyExample5062CardCarouselList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/colortitle/myexample5062cardcarousellist.widget.json
         --8<--
         ```
 
@@ -151,7 +151,7 @@ The title shows field values of the current record, that is of the selected card
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/colortitle/MyExample5062ColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/colortitle/myexample5062colorconst.widget.json
         --8<--
         ```
 
@@ -197,7 +197,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/showcondition/MyExample5064CardCarouselList.widget.json
+        {{ external_links.github_raw_doc }}/widgets/cardcarousellist/showcondition/myexample5064cardcarousellist.widget.json
         --8<--
         ```
 
@@ -252,7 +252,7 @@ Other fields are not shown on the card. They can be used in the create and edit 
 
       ```json
          --8<--
-         {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/MyExample5060CardCarouselList.widget.json
+         {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/myexample5060cardcarousellist.widget.json
          --8<--
       ```
 
@@ -296,14 +296,14 @@ Record actions are shown as icons on the card. The widget actions (for example *
     **Step 2** Create a Form widget for the popup.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/MyExample5060Form.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/myexample5060form.widget.json
     --8<--
     ```
 
     **Step 3** Add **options.create** and **options.edit** with `"style": "popup"` to the CardCarouselList widget.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/MyExample5060CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/myexample5060cardcarousellist.widget.json
     --8<--
     ```
 
@@ -371,7 +371,7 @@ With a description the title and the description are cut to one line. Without a 
     Add **options.card** to **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/MyExample5060CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/myexample5060cardcarousellist.widget.json
     --8<--
     ```
 
@@ -400,7 +400,7 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     Add **preview** with `"enabled": true` and `"mode": "inline"` to the fileUpload field in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/MyExample5060CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/base/myexample5060cardcarousellist.widget.json
     --8<--
     ```
 
@@ -428,7 +428,7 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     **Step 2** Add the dictionary field with **"bgColorKey"** to **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/status/MyExample5065CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/status/myexample5065cardcarousellist.widget.json
     --8<--
     ```
 
@@ -450,7 +450,7 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     `Step 1` Add **"drillDown": true** to the fileUpload field of the card in **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/drilldown/MyExample5066CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/drilldown/myexample5066cardcarousellist.widget.json
     --8<--
     ```
 
@@ -481,14 +481,14 @@ The card shows a preview of the file when `preview` of the fileUpload field has 
     **Step 1** Create an Info widget with the fileUpload field.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/read/MyExample5067Read.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/read/myexample5067read.widget.json
     --8<--
     ```
 
     **Step 2** Add **options.read.widget** to the CardCarouselList widget.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/read/MyExample5067CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/read/myexample5067cardcarousellist.widget.json
     --8<--
     ```
 
@@ -518,7 +518,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
     **Step 1** Add **fullTextSearch** to **options** of **_.widget.json_**.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/fulltextsearch/MyExample5068CardCarouselList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/cardcarousellist/fulltextsearch/myexample5068cardcarousellist.widget.json
     --8<--
     ```
 

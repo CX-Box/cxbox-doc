@@ -37,7 +37,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicList.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/basic/datetimebasiclist.widget.json
         --8<--
         ```
     === "Info widget"
@@ -45,7 +45,7 @@
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/basic/datetimebasicinfo.widget.json
         --8<--
         ```
 
@@ -55,7 +55,7 @@
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/basic/DateTimeBasicForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/basic/datetimebasicform.widget.json
         --8<--
         ```    
 
@@ -135,14 +135,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/color/DateTimeColorCalcList.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/color/datetimecolorcalclist.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/color/DateTimeColorCalcInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/color/datetimecolorcalcinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -156,7 +156,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/DateTimeColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/datetimecolorlist.widget.json
             --8<--
             ```
 
@@ -164,7 +164,7 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/DateTimeColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/datetime/colorconst/datetimecolorinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -333,7 +333,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/DateTimeDrilldownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/datetimedrilldownlist.widget.json
         --8<--
         ```
 
@@ -346,7 +346,7 @@ Also, it optionally allows you to filter data on target view before it will be o
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/DateTimeDrilldownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/datetime/drilldown/datetimedrilldowninfo.widget.json
         --8<--
         ```
 
@@ -582,3 +582,44 @@ Also, it optionally allows you to filter data on target view before it will be o
 
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/RequiredDateTime){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/datetime/required){:target="_blank"}
+
+## Additional properties
+### <a id="snapshotKey">snapshotKey</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
+
+Shows the difference between the previous (snapshot) value and the current value of the field:
+the previous value is struck through on a red background, the current value is on a green background.
+The field with `snapshotKey` is always read-only.
+
+See [snapshotKey](/widget/fields/property/snapshotkey/snapshotkey) for all features and limitations.
+
+#### How does it look?
+![snapshotKey.png](snapshotKey.png)
+
+#### How to add?
+??? Example
+    **Step 1.** Add the field with the previous value to **DTO**. It must have the same type as the main field.
+
+    **Step 2.** Add **snapshotKey** to the field in **_.widget.json_**. Works for List, Info, Form.
+
+    **Step 3.** Add the field with the previous value to the same **_.widget.json_** with type **hidden**:
+    the backend sends only the fields of the widgets, without it the previous value is not sent.
+    ```json
+    [
+      {
+        "label": "Custom Field",
+        "key": "dateTimeField",
+        "type": "dateTime",
+        "snapshotKey": "dateTimeFieldSnapshot"
+      },
+      {
+        "label": "Custom Field snapshot",
+        "key": "dateTimeFieldSnapshot",
+        "type": "hidden"
+      }
+    ]
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}

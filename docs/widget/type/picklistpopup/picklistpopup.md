@@ -15,7 +15,7 @@
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/base/onefield/MyExample3079List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/base/onefield/myexample3079list.widget.json
     --8<--
     ```
  
@@ -57,7 +57,7 @@ There are 3 types of titles for a Picklist Popup:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/title/withtitle/myEntity3068PickPickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/title/withtitle/myentity3068pickpicklistpopup.widget.json
         --8<--
         ```
  
@@ -65,7 +65,7 @@ There are 3 types of titles for a Picklist Popup:
         **Step1** Delete parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/title/withouttitle/myEntity3069PickPickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/title/withouttitle/myentity3069pickpicklistpopup.widget.json
         --8<--
         ```
  
@@ -74,7 +74,7 @@ There are 3 types of titles for a Picklist Popup:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/title/calculatedtitle/myEntity3071PickPickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/title/calculatedtitle/myentity3071pickpicklistpopup.widget.json
         --8<--
         ```
  
@@ -118,7 +118,7 @@ There are 3 types of titles for a Picklist Popup:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myentity3061picklistpopup.widget.json
         --8<--
         ```       
  
@@ -130,7 +130,7 @@ There are 3 types of titles for a Picklist Popup:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myEntity3061PickListPopupColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/colortitle/myentity3061picklistpopupcolorconst.widget.json
         --8<--
         ```
  
@@ -188,7 +188,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/picklist/base/onefield/picklistpopup/picklist/myEntity3079PickPickPickListPopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/picklist/base/onefield/picklistpopup/picklist/myentity3079pickpickpicklistpopup.widget.json
              --8<--
           ```
  
@@ -242,7 +242,7 @@ With `Line Addition`, a new empty row is immediately added to the top of the ass
     **Step2** Add button `create` to corresponding **.widget.json**. 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myEntity3072InlinePickPickListPopup2.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myentity3072inlinepickpicklistpopup2.widget.json
     --8<--
     ```
  
@@ -283,7 +283,7 @@ After filling the information in and clicking "Save", the new row is added to th
     **Step3** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myEntity3072InlinePickListForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myentity3072inlinepicklistform.widget.json
     --8<--
     ```
  
@@ -300,7 +300,7 @@ After filling the information in and clicking "Save", the new row is added to th
         
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myEntity3072InlinePickPickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/create/inlinepicklist/myentity3072inlinepickpicklistpopup.widget.json
     --8<--
     ``` 
  
@@ -339,7 +339,7 @@ _not applicable_: a click on a row of the popup picks the value. A row is edited
     **Step1** Create widget.json with type `Form` that appears when you click a button
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/picklistpopup/picklist/inlineform/myEntity3092FormForEditPickListInlineForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/picklistpopup/picklist/inlineform/myentity3092formforeditpicklistinlineform.widget.json
     --8<--
     ```
 
@@ -356,7 +356,7 @@ _not applicable_: a click on a row of the popup picks the value. A row is edited
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/picklistpopup/picklist/inlineform/myEntity3092PickListInlineForm.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/edit/picklistpopup/picklist/inlineform/myentity3092picklistinlineform.widget.json
     --8<--
     ```
 
@@ -401,7 +401,7 @@ _not applicable_
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/delete/forpicklistpopup/myEntity3188PickPickPickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/delete/forpicklistpopup/myentity3188pickpickpicklistpopup.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3092/view/myexample3188form){:target="_blank"} ·
@@ -430,7 +430,7 @@ _not applicable_
    
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/forpicklistpopup/myEntity3197PickPickPickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/picklist/actions/save/forpicklistpopup/myentity3197pickpickpicklistpopup.widget.json
     --8<--
     ```
 
@@ -466,7 +466,7 @@ _not applicable_
  
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/basic/myEntity3198PickPickPickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/basic/myentity3198pickpickpicklistpopup.widget.json
         --8<--
         ```
  
@@ -486,7 +486,7 @@ _not applicable_
        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/postaction/myEntity3198PickPostActionPickPickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/postaction/myentity3198pickpostactionpickpicklistpopup.widget.json
         --8<--
         ```
  
@@ -514,7 +514,7 @@ _not applicable_
        
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/oncancel/myEntity3198PickOnCancelPickPickListPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/picklist/actions/cancelcreate/oncancel/myentity3198pickoncancelpickpicklistpopup.widget.json
         --8<--
         ```
 
@@ -610,7 +610,7 @@ see [FullTextSearch](/widget/type/property/filtration/filtration/#by-fulltextsea
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forpicklist/myEntity3614PickPickPickListPopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/fulltextsearch/forpicklist/myentity3614pickpickpicklistpopup.widget.json
     --8<--
     ```
 

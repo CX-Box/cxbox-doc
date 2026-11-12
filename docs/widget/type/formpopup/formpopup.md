@@ -51,13 +51,13 @@
     **Step1** Add a button **"save-send"** that raises the widget Popup
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400FormButton.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/myexample3400formbutton.widget.json
     --8<--
     ```
     **Step2** Add widget with type **FormPopup**
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400Formpopup.widget.json
+    {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/myexample3400formpopup.widget.json
     --8<--
     ```
     **Step3** Add widget **FormPopup** on view
@@ -110,7 +110,7 @@ There are types of:
 **Step1** Add name for **title** to **_.widget.json_**.
 ```json
 --8<--
-{{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
+{{ external_links.github_raw_doc }}/widgets/form/title/myexample3003form.widget.json
 --8<--
 ```
 
@@ -119,7 +119,7 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/myexample3003formcustomtitle.widget.json
         --8<--
         ```  
 -->
@@ -164,7 +164,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027FormPopup.widget.json
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/myexample3027formpopup.widget.json
         --8<--
         ```  
 
@@ -179,7 +179,7 @@ There are types of:
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/MyExample3027FormPopupColorConst.widget.json
+        {{ external_links.github_raw_doc }}/widgets/formpopup/colortitle/myexample3027formpopupcolorconst.widget.json
         --8<--
         ```
 
@@ -242,7 +242,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
           ```json
              --8<--
-             {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/MyExample3400Formpopup.widget.json
+             {{ external_links.github_raw_doc }}/widgets/formpopup/base/onefield/myexample3400formpopup.widget.json
              --8<--
           ```
 
@@ -329,7 +329,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003Form.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/myexample3003form.widget.json
         --8<--
         ```
 
@@ -338,7 +338,7 @@ There are types of:
         **Step1** Add ${customField} for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/form/title/MyExample3003FormCustomTitle.widget.json
+        {{ external_links.github_raw_doc }}/widgets/form/title/myexample3003formcustomtitle.widget.json
         --8<--
         ```   
  

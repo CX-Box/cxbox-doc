@@ -29,7 +29,7 @@ The widget has two modes:
         Add existing field to a AdditionalList widget. see more [Fields](#fields)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190Additional.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/myexample3190additional.widget.json
         --8<--
         ```
      
@@ -46,7 +46,7 @@ The widget has two modes:
         Add existing field to a AdditionalInfo widget. see more [Fields](#fields)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190AdditionalInfo.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/myexample3190additionalinfo.widget.json
         --8<--
         ```
 
@@ -55,7 +55,7 @@ The widget has two modes:
         Add existing field to a AdditionalList widget. see more [Fields](#fields)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190AdditionalRead.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/myexample3190additionalread.widget.json
         --8<--
         ```
 
@@ -98,7 +98,7 @@ There are types of:
             **Step1** Add name for **title** to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195Additional.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/myexample3195additional.widget.json
             --8<--
             ```
  
@@ -106,7 +106,7 @@ There are types of:
             **Step1** Add name for **title** to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalRead.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/myexample3195additionalread.widget.json
             --8<--
             ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3195/view/myexample3195list){:target="_blank"} ·
@@ -117,14 +117,14 @@ There are types of:
             **Step1** Delete parameter **title** to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalEmptyTitle.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/myexample3195additionalemptytitle.widget.json
             --8<--
             ```
         === "Reading Mode"
             **Step1** Delete parameter **title** to **_.widget.json_**.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/title/MyExample3195AdditionalInfoEmpty.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/title/myexample3195additionalinfoempty.widget.json
             --8<--
             ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3195){:target="_blank"} ·
@@ -172,7 +172,7 @@ There are types of:
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196Additional.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/myexample3196additional.widget.json
             --8<--
             ``` 
         === "Reading Mode"
@@ -188,7 +188,7 @@ There are types of:
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalInfo.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/myexample3196additionalinfo.widget.json
             --8<--
             ``` 
 
@@ -204,7 +204,7 @@ There are types of:
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/MyExample3196AdditionalConstant.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/colortitle/twofields/myexample3196additionalconstant.widget.json
             --8<--
             ```
     
@@ -263,14 +263,14 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/MyExample3193Additional.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/myexample3193additional.widget.json
             --8<--
             ```
         === "Reading Mode"
 
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/MyExample3193AdditionalRead.widget.json
+            {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/bycurrententity/myexample3193additionalread.widget.json
             --8<--
             ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3193){:target="_blank"} ·
@@ -281,7 +281,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/byparententity/child/MyExample3107.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/showcondition/byparententity/child/myexample3107.widget.json
         --8<--
         ```
 -->
@@ -332,7 +332,7 @@ Fields Configuration. The fields array defines the individual fields present wit
     
               ```json
                  --8<--
-                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190Additional.widget.json
+                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/myexample3190additional.widget.json
                  --8<--
               ```
         === "Reading Mode"
@@ -340,7 +340,7 @@ Fields Configuration. The fields array defines the individual fields present wit
     
               ```json
                  --8<--
-                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/MyExample3190AdditionalRead.widget.json
+                 {{ external_links.github_raw_doc }}/widgets/additionallist/base/onefield/myexample3190additionalread.widget.json
                  --8<--
               ```
 
@@ -398,7 +398,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/customizationcolumns/MyExample3194Additional.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/customizationcolumns/myexample3194additional.widget.json
         --8<--
         ```
         
@@ -423,7 +423,7 @@ Table *ADDITIONAL_FIELDS* for store user-specific settings:
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/additionallist/customizationcolumns/MyExample3194AdditionalHidden.widget.json
+        {{ external_links.github_raw_doc }}/widgets/additionallist/customizationcolumns/myexample3194additionalhidden.widget.json
         --8<--
         ```
         
@@ -493,7 +493,7 @@ see [Personal filter group](/widget/type/property/filtration/filtration/#by-pers
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/MyExample3616AdditionalList.widget.json
+    {{ external_links.github_raw_doc }}/widgets/property/filtration/filtergroup/myexample3616additionallist.widget.json
     --8<--
     ```
 
@@ -534,6 +534,15 @@ see [Filter group](/widget/type/property/filtration/filtration/#by-filter-group)
       ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3618additionallist){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroupsave){:target="_blank"}
+
+#### Delete personal filter group
+The user deletes the saved personal filter group by the cross next to its name in the gear icon - "Save filters".
+see [Delete personal filter group](/widget/type/property/filtration/filtration/#delete_personal_filter_group)
+
+![delete_filter_group_addlist.gif](../property/filtration/delete_filter_group_addlist.gif)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3616/view/myexample3616additionallist){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/filtration/filtergroup){:target="_blank"}
 
 ### Pagination
 _not applicable_

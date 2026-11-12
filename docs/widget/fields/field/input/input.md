@@ -45,7 +45,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicList.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/basic/inputbasiclist.widget.json
             --8<--
             ```
         === "Info widget"
@@ -53,7 +53,7 @@
             
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/basic/inputbasicinfo.widget.json
             --8<--
             ```
     
@@ -63,7 +63,7 @@
     
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/basic/InputBasicForm.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/basic/inputbasicform.widget.json
             --8<--
             ```    
     
@@ -136,14 +136,14 @@
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/color/InputColorList.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/color/inputcolorlist.widget.json
             --8<--
             ```
         === "Info widget"
             **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/color/InputColorInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/color/inputcolorinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -157,14 +157,14 @@
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/colorconst/InputColorConstList.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/colorconst/inputcolorconstlist.widget.json
             --8<--
             ```
         === "Info widget"
             Add **"bgColor"** :  `HEX color`  to .widget.json.
             ```json
             --8<--
-            {{ external_links.github_raw_doc }}/fields/input/colorconst/InputColorConstInfo.widget.json
+            {{ external_links.github_raw_doc }}/fields/input/colorconst/inputcolorconstinfo.widget.json
             --8<--
             ```
         === "Form widget"
@@ -321,7 +321,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/drilldown/InputDrilldownList.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/drilldown/inputdrilldownlist.widget.json
         --8<--
         ```
  
@@ -333,7 +333,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/drilldown/InputDrilldownInfo.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/drilldown/inputdrilldowninfo.widget.json
         --8<--
         ```
         **Option 2**
@@ -343,7 +343,7 @@ Also, it optionally allows you to filter data on target view before it will be o
         `Step 2` Add **"drillDown": "true"**  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/drilldown/InputDrilldownForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/drilldown/inputdrilldownform.widget.json
         --8<--
         ```
         **Option 2**
@@ -598,7 +598,7 @@ Specifies the maximum number of characters to enter
         Add **maxInput** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/MaxInputList.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/maxinputlist.widget.json
         --8<--
         ```
   
@@ -608,9 +608,49 @@ Specifies the maximum number of characters to enter
         Add **maxInput** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/MaxInputForm.widget.json
+        {{ external_links.github_raw_doc }}/fields/input/additionalproperties/maxinputform.widget.json
         --8<--
         ```
     
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/MaxInput){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/input/additionalproperties){:target="_blank"}
+
+### <a id="snapshotKey">snapshotKey</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}
+
+Shows the difference between the previous (snapshot) value and the current value of the field:
+the previous value is struck through on a red background, the current value is on a green background.
+The field with `snapshotKey` is always read-only.
+
+See [snapshotKey](/widget/fields/property/snapshotkey/snapshotkey) for all features and limitations.
+
+#### How does it look?
+![snapshotKey.png](snapshotKey.png)
+
+#### How to add?
+??? Example
+    **Step 1.** Add the field with the previous value to **DTO**. It must have the same type as the main field.
+
+    **Step 2.** Add **snapshotKey** to the field in **_.widget.json_**. Works for List, Info, Form.
+
+    **Step 3.** Add the field with the previous value to the same **_.widget.json_** with type **hidden**:
+    the backend sends only the fields of the widgets, without it the previous value is not sent.
+    ```json
+    [
+      {
+        "label": "Custom Field",
+        "key": "inputField",
+        "type": "input",
+        "snapshotKey": "inputFieldSnapshot"
+      },
+      {
+        "label": "Custom Field snapshot",
+        "key": "inputFieldSnapshot",
+        "type": "hidden"
+      }
+    ]
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}

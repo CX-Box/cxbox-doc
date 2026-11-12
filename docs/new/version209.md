@@ -157,7 +157,7 @@ We have added support for Bearer token authentication when connecting to WebSock
 * Open in a New Tab: Open the `drilldown` link in a new browser tab.
 * Copy Link Address: Copy the `drilldown` link to the clipboard. 
 
-Feature can be turned on with `cxbox.ui.drill-down-tooltip: newAndCopy`.  
+Feature can be turned on with `cxbox.ui.drill-down-tooltip: newAndCopy`. See more [Drilldown tooltip](/features/element/drilldown/drilldown/#drilldown_tooltip).  
 === "After"  
     ![tooltipTrue.png](v2.0.9/tooltipTrue.png)
 === "Before"  

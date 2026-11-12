@@ -63,7 +63,7 @@ The current number of columns per row is set to 3.
       
           ```json
           --8<--
-          {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/MyExample4203List.widget.json
+          {{ external_links.github_raw_doc }}/widgets/statsblock/base/defaultfields/myexample4203list.widget.json
           --8<--
           ```
 
@@ -120,7 +120,7 @@ The current number of columns per row is set to 3.
 
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/MyExample4200List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/base/customfields/myexample4200list.widget.json
         --8<--
         ```
 
@@ -164,7 +164,7 @@ There are types of:
         **Step1** Add name for **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/title/withtitle/MyExample4226Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/title/withtitle/myexample4226stat.widget.json
         --8<--
         ```
 
@@ -175,7 +175,7 @@ There are types of:
         **Step1** No use parameter **title** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/title/withouttitle/MyExample4225Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/title/withouttitle/myexample4225stat.widget.json
         --8<--
         ```
 
@@ -229,7 +229,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/showcondition/byparententity/MyExample4233Child.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/showcondition/byparententity/myexample4233child.widget.json
         --8<--
         ```
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4230){:target="_blank"} ·
@@ -276,7 +276,7 @@ There are types of:
         **Step1** Add field **icon** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withicon/MyExample4223Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withicon/myexample4223stat.widget.json
         --8<--
         ```
 
@@ -287,7 +287,7 @@ There are types of:
         **Step1** Do not add field **icon** to **_.widget.json_**.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withouticon/MyExample4224Stat.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/icon/withouticon/myexample4224stat.widget.json
         --8<--
         ```
 
@@ -325,7 +325,7 @@ There are types of:
         **Step 2** Add **"bgColorKey"** :  `custom field for color`  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/color/color/MyExample4206List.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/color/color/myexample4206list.widget.json
         --8<--
         ```
   
@@ -335,7 +335,7 @@ There are types of:
         Add **"bgColor"** :  `HEX color`  to .widget.json.
         ```json
         --8<--
-        {{ external_links.github_raw_doc }}/widgets/statsblock/color/colorconst/MyExample4205.widget.json
+        {{ external_links.github_raw_doc }}/widgets/statsblock/color/colorconst/myexample4205.widget.json
         --8<--
         ```
 
@@ -402,7 +402,7 @@ Also, it optionally allows you to filter data on target view before it will be o
     `Step 2` Add **"drillDown": "true"**  to .widget.json.
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/drilldown/MyExample4210List.widget.json
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/drilldown/myexample4210list.widget.json
     --8<--
     ```
 
@@ -470,7 +470,7 @@ Highlighting Functionality for the Current Item (Tile)
 
     ```json
     --8<--
-    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/example4127Stats.widget.json
+    {{ external_links.github_raw_doc }}/widgets/statsblock/drilldown/parentchild/example4127stats.widget.json
     --8<--
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4210/view/myexample4216list){:target="_blank"} ·

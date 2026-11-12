@@ -163,6 +163,8 @@ nav:
       - Controller: environment/controller/controller.md
       - Repository: environment/jparepository/jparepository.md
   - Features:
+      - Administrator additions:
+          - Scheduler: features/element/scheduler/scheduler.md
       - Actions:
           - basic: features/element/actions/actions.md
           - postAction:

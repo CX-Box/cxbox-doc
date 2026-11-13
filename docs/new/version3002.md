@@ -385,7 +385,40 @@ Before : Only the meta of the child widget was requested, its data was not, so t
 !!! warning
     Not merged into `main` yet: branch [feat/CXBOX-1218](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1218).
 
-The drag-and-drop zone of [multi-upload](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/) is always shown, but it is disabled while the meta of the widget is loading and while the upload action is not available (for example, hidden by business logic). Before, a file could be dropped while upload was not available. A file dropped on a disabled zone is ignored: the browser does not open it instead of the application.
+When the multi-upload action was unavailable for the current record (for example, it was hidden by `.available(...)` because the task is closed), the "Add Files" button was hidden, but the drag-and-drop zone (`"mode": "file-upload-dnd"` or `"default-and-file-upload-dnd"` in `options.buttons`) stayed active: the user could still choose or drop files and start the upload for an action that is not allowed.
+
+The cause: the zone took itself as disabled only when the action was found in the row meta and its field was missing. If the action was not in the row meta at all (unavailable, or the row meta was not loaded yet), the zone stayed enabled. Actions inside an action group were not found either.
+
+Now the zone is always shown in its place, but it is disabled (gray, like a disabled field) until the row meta is loaded and while the action is unavailable, including actions inside a group. A file dropped on a disabled zone is not accepted and the browser does not open it instead of the application.
+
+Nothing has to be configured: the zone follows the availability of its action, set with `.available(...)` of the action in the `ResponseService`.
+See [Multi-upload files - Availability](https://doc.cxbox.org/widget/type/property/multiupload/multiupload/#availability).
+
+**The task is closed**  
+=== "After"
+    The "Add Files" button is hidden, the drag-and-drop zone is gray and does not accept files.  
+    ![CXBOX-1218-after.png](v3.0.2/CXBOX-1218-after.png)
+=== "Before"
+    The "Add Files" button is hidden, but the drag-and-drop zone is still active and accepts files.  
+    ![CXBOX-1218-before.png](v3.0.2/CXBOX-1218-before.png)
+
+**First opening of the screen**  
+When the screen is opened from the menu or the page is reloaded, the row meta of the widget is not loaded yet.
+The pictures are taken with every request delayed by 1.5 s; on a usual network this moment lasts as long as the row meta request.
+=== "After"
+    The zone is gray while the row meta is loading, then it becomes active.  
+    ![CXBOX-1218-first-open-after.gif](v3.0.2/CXBOX-1218-first-open-after.gif)
+=== "Before"
+    The zone was active at once, before the row meta was loaded: there is no hint with the allowed formats yet, so a file dropped at this moment was not checked by `fileAccept`.  
+    ![CXBOX-1218-first-open-before.gif](v3.0.2/CXBOX-1218-first-open-before.gif)
+
+**What else changes**
+
+* Switching between views of the same screen, saving the record or selecting another record does not make the zone gray: the row meta loaded before is used until the new one comes.
+* The `actionKey` of the zone in `*.widget.json` must match the type of an action returned by the backend. If it does not (a typo, or the action was removed from `getActions`), the zone is always gray now; before, it looked active.
+* An action placed in an action group on the backend is now found: the zone is active while the action is available and gray while it is not. Before, such an action was not found, and the zone was always active.
+* A child widget whose parent BC has no record (for example, the parent list is empty) has no row meta, so its zone is gray. When the parent has a record, the cursor is set on it automatically and the zone is active.
+* The multi-upload button (`"subtype": "multiFileUpload"`) works as before: it is shown only while its action is available.
 
 #### Fixed: File upload - the error of each file is shown in the upload progress
 <!-- CXBOX-1038 -->

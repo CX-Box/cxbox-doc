@@ -562,6 +562,167 @@ Lexicographic sorting is used for it.
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/required){:target="_blank"}
 
 ## Additional properties
+### <a id="displayMode">Display Mode</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample441){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/displaymode){:target="_blank"}
+
+`displayMode` sets how the values are arranged in edit mode:
+
+| Value        | Description                                                                                         |
+|--------------|-----------------------------------------------------------------------------------------------------|
+| `horizontal` | the values are in a row; the values that do not fit into the width of the widget go to the next line (default) |
+| `vertical`   | one value per line                                                                                  |
+
+In view mode only the selected value is shown, so `displayMode` does not change it.
+
+#### How does it look?
+=== "List widget"
+    === "horizontal"
+        ![img_displaymode_list_horizontal.png](img_displaymode_list_horizontal.png)
+    === "vertical"
+        ![img_displaymode_list_vertical.png](img_displaymode_list_vertical.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    === "horizontal"
+        ![img_displaymode_form_horizontal.png](img_displaymode_form_horizontal.png)
+    === "vertical"
+        ![img_displaymode_form_vertical.png](img_displaymode_form_vertical.png)
+
+#### How to add?
+??? Example
+    Add **"displayMode"** to the field in .widget.json.
+    === "List widget"
+        === "horizontal"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/radio/displaymode/myexample441listhorizontal.widget.json
+            --8<--
+            ```
+        === "vertical"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/radio/displaymode/myexample441listvertical.widget.json
+            --8<--
+            ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        === "horizontal"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/radio/displaymode/myexample441formhorizontal.widget.json
+            --8<--
+            ```
+        === "vertical"
+            ```json
+            --8<--
+            {{ external_links.github_raw_doc }}/fields/radio/displaymode/myexample441formvertical.widget.json
+            --8<--
+            ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample441){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/displaymode){:target="_blank"}
+
+### <a id="height">Value height</a>
+Available since [v3.0.2](/new/version3002/)
+
+The height of each value is set in rows. It works with both values of [displayMode](#displayMode).
+
+| Parameter             | Mode                                                                                                    | Default |
+|-----------------------|---------------------------------------------------------------------------------------------------------|---------|
+| `maxRowsPerValue`     | view and edit mode                                                                                      | 1       |
+| `editMaxRowsPerValue` | edit mode only; overrides `maxRowsPerValue`                                                             | 1       |
+
+* A value longer than the limit is first wrapped by words, then cut: the last row fades out and ends with **...**. Hovering over **...** shows the full value in a tooltip.
+* The limit is applied to each value separately.
+* `maxRowsPerValue` alone is enough: it limits the values in both view and edit mode.
+* `editMaxRowsPerValue` is needed when the value has to be higher in edit mode than in view mode, for widgets where the field has both modes: the value stays compact in view mode and has more rows in edit mode.
+
+#### maxRowsPerValue
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample442){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/maxrows){:target="_blank"}
+
+##### How does it look?
+=== "List widget"
+    === "view mode"
+        ![img_maxrows_list.png](img_maxrows_list.png)
+    === "edit mode"
+        ![img_maxrows_list_edit.png](img_maxrows_list_edit.png)
+=== "Info widget"
+    ![img_maxrows_info.png](img_maxrows_info.png)
+=== "Form widget"
+    ![img_maxrows_form.png](img_maxrows_form.png)
+
+##### How to add?
+??? Example
+    Add **"maxRowsPerValue"** to the field in .widget.json.
+    === "List widget"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/radio/maxrows/myexample442list.widget.json
+        --8<--
+        ```
+    === "Info widget"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/radio/maxrows/myexample442info.widget.json
+        --8<--
+        ```
+    === "Form widget"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/radio/maxrows/myexample442form.widget.json
+        --8<--
+        ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample442){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/maxrows){:target="_blank"}
+
+#### editMaxRowsPerValue
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample443){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/editmaxrows){:target="_blank"}
+
+##### How does it look?
+=== "List widget"
+    `maxRowsPerValue` 1, `editMaxRowsPerValue` 3
+    === "view mode"
+        ![img_editmaxrows_list.png](img_editmaxrows_list.png)
+    === "edit mode"
+        ![img_editmaxrows_list_edit.png](img_editmaxrows_list_edit.png)
+=== "Info widget"
+    _not applicable_
+=== "Form widget"
+    ![img_editmaxrows_form.png](img_editmaxrows_form.png)
+
+##### How to add?
+??? Example
+    Add **"editMaxRowsPerValue"** to the field in .widget.json.
+    === "List widget"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/radio/editmaxrows/myexample443list.widget.json
+        --8<--
+        ```
+    === "Info widget"
+        _not applicable_
+    === "Form widget"
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/fields/radio/editmaxrows/myexample443form.widget.json
+        --8<--
+        ```
+
+    The defaults for all `radio` fields are frontend constants **maxRowsPerValue** and **editMaxRowsPerValue**:
+    ```
+    ui/src/components/ui/RadioButton/constants.ts
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample443){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/editmaxrows){:target="_blank"}
+
 ### <a id="snapshotKey">snapshotKey</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample5900/view/myexample5900list){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/property/snapshotkey){:target="_blank"}

@@ -563,6 +563,8 @@ Lexicographic sorting is used for it.
 
 ## Additional properties
 ### <a id="displayMode">Display Mode</a>
+Available since [v3.0.2](/new/version3002/)
+
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample441){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/displaymode){:target="_blank"}
 
@@ -625,6 +627,8 @@ In view mode only the selected value is shown, so `displayMode` does not change 
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/fields/radio/displaymode){:target="_blank"}
 
 ### <a id="height">Value height</a>
+Available since [v3.0.2](/new/version3002/)
+
 The height of each value is set in rows. It works with both values of [displayMode](#displayMode).
 
 | Parameter             | Mode                                                                                                    | Default |

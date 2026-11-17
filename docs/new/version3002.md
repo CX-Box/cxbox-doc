@@ -453,28 +453,30 @@ Before - every failed file showed the same text: "Error. File not loaded and no 
 #### Added: radio - vertical layout and limit of rows for values
 <!-- CXBOX-1422 -->
 
-!!! warning
-    Not merged into `main` yet: branch [CXBOX-1422](https://github.com/CX-Box/cxbox-demo/tree/CXBOX-1422).
+The [radio field](https://doc.cxbox.org/widget/fields/field/radio/radio/) is used when the user has to choose one of a few options: a priority, a status, an answer to a question. In real projects these options are often long phrases, and the widget is often narrow (half of the view, a column of a list). Before, a long value took as many rows as it needed: one field could stretch the row of a list or a form to half of the screen, and the options were hard to read and compare.
 
-New options of the [radio field](https://doc.cxbox.org/widget/fields/field/radio/radio/) in **.widget.json**:
+Now you can set how the options are arranged and how much space each of them takes:
 
-| Option                | Values                                                                                                       |
-|-----------------------|--------------------------------------------------------------------------------------------------------------|
-| `displayMode`         | `horizontal` (default): the values in a row. <br> `vertical`: each value on its own line.                    |
-| `maxRowsPerValue`     | How many rows of a long value are shown in view mode, the rest is cut off. Default 1.                       |
-| `editMaxRowsPerValue` | The same in edit mode. If not set, `maxRowsPerValue` is used, and then the default 1.                       |
+* **[Display Mode](https://doc.cxbox.org/widget/fields/field/radio/radio/#displayMode)** - `displayMode`: `horizontal` (default) puts the options in a row, which saves height for short values; `vertical` puts each option on its own line, so a list of long options reads as a list.
+* **[Value height](https://doc.cxbox.org/widget/fields/field/radio/radio/#height)** - `maxRowsPerValue` limits the height of each value in rows, in view and in edit mode (default 1). `editMaxRowsPerValue` overrides it for edit mode only: the value stays compact while the user looks through the records, and in edit mode the options have more rows to be read. A cut value ends with **...**, the full text is shown in a tooltip.
 
-Long values no longer overflow narrow fields.
+**displayMode**  
+=== "horizontal"
+    ![CXBOX-1422-form-horizontal.png](v3.0.2/CXBOX-1422-form-horizontal.png)
+=== "vertical"
+    ![CXBOX-1422-form-vertical.png](v3.0.2/CXBOX-1422-form-vertical.png)
 
-```json
-{
-  "label": "Custom Field",
-  "key": "customField",
-  "type": "radio",
-  "displayMode": "vertical",
-  "maxRowsPerValue": 2
-}
-```
+**maxRowsPerValue 1, editMaxRowsPerValue 3**  
+=== "View mode"
+    The value takes one row.  
+    ![CXBOX-1422-list-view.png](v3.0.2/CXBOX-1422-list-view.png)
+=== "Edit mode"
+    Each option takes up to 3 rows.  
+    ![CXBOX-1422-list-edit.png](v3.0.2/CXBOX-1422-list-edit.png)
+
+The defaults for all `radio` fields of a project are frontend constants in `ui/src/components/ui/RadioButton/constants.ts`.
+
+See more [radio - Display Mode](https://doc.cxbox.org/widget/fields/field/radio/radio/#displayMode) and [radio - Value height](https://doc.cxbox.org/widget/fields/field/radio/radio/#height)
 
 #### Fixed: File download - IMPROVED one automatic retry after a 502/503/504 error
 <!-- CXBOX-1438 -->

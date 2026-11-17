@@ -667,7 +667,7 @@ The [Filtration](https://doc.cxbox.org/widget/type/property/filtration/filtratio
 <!-- CXBOX-245 -->
 We have described how the [personal filter group works with the full text search](https://doc.cxbox.org/widget/type/property/filtration/filtration/#personal_filter_group_with_fulltextsearch): the search text is saved in the group together with the column filters (`_fullTextSearch`) and is searched again when the group is applied.
 
-#### Updated: Filtration - filter group for every widget
+#### Fixed: Filtration - filter group for every widget
 <!-- CXBOX-1431 -->
 The filter group and personal filter group sections now have "How does it look" and "How to add" for every widget that supports them: List, AdditionalList, GroupingHierarchy, Tree, PickListPopup, AssocListPopup, PickTreePopup, AssocTreePopup, CardList, CardCarouselList, FilePreview, Pie1D, Column2D, Line2D.
 

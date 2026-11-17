@@ -63,21 +63,26 @@ nav:
   - Field types:
       - Fields: widget/fields/fieldtypes.md
       - SearchOperation for filtering: widget/fields/filtersearchoperation.md
-      - Fields Choice from Predefined Values:
-          - Field checkbox: widget/fields/field/checkbox/checkbox.md
-          - Field dictionary: widget/fields/field/dictionary/dictionary.md
-          - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
-          - Field radio: widget/fields/field/radio/radio.md
+      - Fields Text:
+          - Field input: widget/fields/field/input/input.md
+          - Field richText: widget/fields/field/richtext/richtext.md
+          - Field text: widget/fields/field/text/text.md
+      - Fields Numeric:
+          - Field money: widget/fields/field/money/money.md
+          - Field number: widget/fields/field/number/number.md
+          - Field percent: widget/fields/field/percent/percent.md
       - Fields Date & Time:
           - Field date: widget/fields/field/date/date.md
           - Field dateTime: widget/fields/field/dateTime/dateTime.md
           - Field dateTimeWithSeconds: widget/fields/field/dateTimeWithSeconds/dateTimeWithSeconds.md
           - Field time: widget/fields/field/time/time.md
-      - Fields Display & Technical:
-          - Field hidden: widget/fields/field/hidden/hidden.md
-          - Field hint: widget/fields/field/hint/hint.md
-          - Field multifield: widget/fields/field/multifield/multifield.md
-          - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
+      - Fields Files:
+          - Field fileUpload: widget/fields/field/fileUpload/fileUpload.md
+      - Fields Choice from Predefined Values:
+          - Field checkbox: widget/fields/field/checkbox/checkbox.md
+          - Field dictionary: widget/fields/field/dictionary/dictionary.md
+          - Field multipleSelect: widget/fields/field/multipleSelect/multipleSelect.md
+          - Field radio: widget/fields/field/radio/radio.md
       - Fields Entity Selection:
           - Field inlinePickList: widget/fields/field/inlinePickList/inlinePickList.md
           - Field multivalue: widget/fields/field/multivalue/multivalue.md
@@ -85,21 +90,33 @@ nav:
           - Field pickList: widget/fields/field/pickList/pickList.md
           - Field pickTree: widget/fields/field/pickTree/pickTree.md
           - Field suggestionPickList: widget/fields/field/suggestionpicklist/suggestionPickList.md
-      - Fields Files:
-          - Field fileUpload: widget/fields/field/fileUpload/fileUpload.md
-      - Fields Numeric:
-          - Field money: widget/fields/field/money/money.md
-          - Field number: widget/fields/field/number/number.md
-          - Field percent: widget/fields/field/percent/percent.md
-      - Fields Text:
-          - Field input: widget/fields/field/input/input.md
-          - Field richText: widget/fields/field/richtext/richtext.md
-          - Field text: widget/fields/field/text/text.md
+      - Fields Display & Technical:
+          - Field hidden: widget/fields/field/hidden/hidden.md
+          - Field hint: widget/fields/field/hint/hint.md
+          - Field multifield: widget/fields/field/multifield/multifield.md
+          - Field multivalueHover: widget/fields/field/multivalueHover/multivalueHover.md
   - Field property:
      - Field property History of field changes: widget/fields/property/snapshotkey/snapshotkey.md
   - Widget types:
       - Widgets: widget/type/widget.md
       - Widgets Basic: widget/type/basic/basic.md
+      - Widgets Lists & Tables:
+         - Widget AdditionalList: widget/type/additionallist/additionallist.md
+         - Widget CalendarList: widget/type/calendarlist/calendarlist.md
+         - Widget CalendarYearList: widget/type/calendaryearlist/calendaryearlist.md
+         - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
+         - Widget List: widget/type/list/list.md
+         - Widget Tree: widget/type/tree/tree.md
+      - Widgets Single Record:
+          - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
+          - Widget Form: widget/type/form/form.md
+          - Widget FormPopup: widget/type/formpopup/formpopup.md
+          - Widget Info: widget/type/info/info.md
+      - Widgets Selection Popups:
+          - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
+          - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
+          - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
+          - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
       - Widgets Charts:
           - Widget Column2D: widget/type/column2d/column2d.md
           - Widget DualAxes2D: widget/type/dualaxes2d/dualaxes2d.md
@@ -111,28 +128,12 @@ nav:
           - Widget CardCarouselList: widget/type/cardcarousellist/cardcarousellist.md
           - Widget CardList: widget/type/cardlist/cardlist.md
           - Widget FilePreview: widget/type/filepreview/filepreview.md
+      - Widgets Process & Workflow:
+          - Widget Steps: widget/type/steps/steps.md
       - Widgets Layout & UI Elements:
           - Widget EmptyWidget: widget/type/emptywidget/emptywidget.md
           - Widget HeaderWidget: widget/type/headerwidget/headerwidget.md
-      - Widgets Lists & Tables:
-          - Widget AdditionalList: widget/type/additionallist/additionallist.md
-          - Widget CalendarList: widget/type/calendarlist/calendarlist.md
-          - Widget CalendarYearList: widget/type/calendaryearlist/calendaryearlist.md
-          - Widget GroupingHierarchy: widget/type/groupinghierarchy/groupinghierarchy.md
-          - Widget List: widget/type/list/list.md
-          - Widget Tree: widget/type/tree/tree.md
-      - Widgets Process & Workflow:
-          - Widget Steps: widget/type/steps/steps.md
-      - Widgets Selection Popups:
-          - Widget AssocListPopup: widget/type/assoclistpopup/assoclistpopup.md
-          - Widget AssocTreePopup: widget/type/assoctreepopup/assoctreepopup.md
-          - Widget PickListPopup: widget/type/picklistpopup/picklistpopup.md
-          - Widget PickTreePopup: widget/type/picktreepopup/picktreepopup.md
-      - Widgets Single Record:
-          - Widget AdditionalInfo: widget/type/additionalinfo/additionalinfo.md
-          - Widget Form: widget/type/form/form.md
-          - Widget FormPopup: widget/type/formpopup/formpopup.md
-          - Widget Info: widget/type/info/info.md
+
   - Widget property:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
      - Widget property Collapse: widget/type/property/collapse/collapse.md

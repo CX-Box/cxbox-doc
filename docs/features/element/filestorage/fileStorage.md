@@ -14,6 +14,18 @@ You can provide a source parameter during upload, which lets your business proce
 
 This flexibility enables you to configure storage strategies that align with your domain logic without changing the user-facing behavior.
 
+## <a id="download_retry">Download and open of a file: one automatic retry</a>
+Available since [v3.0.2](/new/version3002/)
+
+Sometimes the download or the opening of a file ended with `502 Bad Gateway`, although the file was in place and the second attempt worked (the reason is a known bug of Spring Security, [spring-security #15510](https://github.com/spring-projects/spring-security/issues/15510)).
+
+Now the application repeats the file request once by itself if the first attempt ends with a network error or with `502`, `503` or `504`. The user gets the file and does not see the error. If the second attempt fails too, the error is shown as before.
+
+* Only requests to the file controller of the application are repeated; other requests are not affected.
+* The retry is written to the browser console as a warning (`[file retry]`), so the support team can see it.
+
+See also [errors of a file upload](/widget/type/property/multiupload/multiupload/#upload_errors).
+
 ## How to add?
 (since [release 2.0.9](https://doc.cxbox.org/new/version209/))
 

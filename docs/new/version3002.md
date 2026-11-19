@@ -370,6 +370,13 @@ After - clearing the field removes the search, and the list shows all records ag
 === "Before"
     ![CXBOX-1358-calendar-before.png](v3.0.2/CXBOX-1358-calendar-before.png)
 
+#### Fixed: drillDownKey of the clicked widget
+<!-- CXBOX-1459 -->
+
+Before - when several widgets of a view show one business component, the click on a field took `drillDownKey` from the first of these widgets. A field of another widget opened the link from `fields.setDrilldown` instead of its own `drillDownKey`. The same for the tooltip buttons **Open link in new tab** and **Copy link address**.
+
+After - `drillDownKey` is taken from the field of the clicked widget, see [Link from a record field: drillDownKey](/features/element/drilldown/drilldown/#drilldownkey).
+
 #### Fixed: AdditionalInfo - full width when hidden
 <!-- CXBOX-318 -->
 

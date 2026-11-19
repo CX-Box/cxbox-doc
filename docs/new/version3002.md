@@ -244,6 +244,7 @@ Before - the button was hidden, but the zone stayed active: the user could drop 
 
 === "After"
     ![CXBOX-1218-after.png](v3.0.2/CXBOX-1218-after.png)
+=== "Before"
     ![CXBOX-1218-before.png](v3.0.2/CXBOX-1218-before.png)
 
 !!! info

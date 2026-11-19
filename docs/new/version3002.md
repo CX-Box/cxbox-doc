@@ -175,9 +175,6 @@ Every error popup now has a **Copy details** row. One click copies everything th
 #### <a id="devPanel">Added: Dev panel - runtime errors</a>
 <!-- CXBOX-1110 -->
 
-!!! warning
-    Not merged into `main` yet: [cxbox-demo #731](https://github.com/CX-Box/cxbox-demo/pull/731), needs the core from [cxbox #148](https://github.com/CX-Box/cxbox/pull/148) (see [Meta validation](#metaValidation)).
-
 Before - when a widget was not shown on a view (for example, it has a type the core does not know), the developer saw an empty place and had to look for the reason in the server log and in the browser console.
 
 After - the dev panel has a new indicator **Runtime errors** with the number of errors and warnings of the current view. A click opens the list of problems of the backend (meta validation) and of the frontend (errors of the browser), and in Debug mode the widget with a problem gets a colored frame.
@@ -247,7 +244,6 @@ Before - the button was hidden, but the zone stayed active: the user could drop 
 
 === "After"
     ![CXBOX-1218-after.png](v3.0.2/CXBOX-1218-after.png)
-=== "Before"
     ![CXBOX-1218-before.png](v3.0.2/CXBOX-1218-before.png)
 
 !!! info
@@ -255,9 +251,6 @@ Before - the button was hidden, but the zone stayed active: the user could drop 
 
 #### Fixed: File upload - error reason for each file
 <!-- CXBOX-1038 -->
-
-!!! warning
-    Not merged into `main` yet: branch [feat/CXBOX-1038](https://github.com/CX-Box/cxbox-demo/tree/feat/CXBOX-1038), [cxbox-code-samples feat/CXBOX-1038](https://github.com/CX-Box/cxbox-code-samples/tree/feat/CXBOX-1038).
 
 After - when a file is not uploaded, the tooltip of its line in the **Upload progress** window shows the reason received from the server. Each file of a multi-upload gets its own text. The same works for a single file of a [fileUpload](/widget/fields/field/fileUpload/fileUpload/) field.
 
@@ -444,9 +437,6 @@ For [mass signing and encryption](/widget/type/property/massoperations/sign/) th
 
 #### <a id="metaValidation">Added: Meta validation - unknown widgets</a>
 <!-- CXBOX-1110 -->
-
-!!! warning
-    Not merged into `main` yet: [cxbox #148](https://github.com/CX-Box/cxbox/pull/148).
 
 Before - when a project added its own widget type and did not register a `FieldExtractor` for it, the widget was shown empty and nothing explained why.
 

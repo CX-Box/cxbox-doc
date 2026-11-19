@@ -655,7 +655,7 @@ After an action (save, delete, cancel-create) the popup refreshes only the **nod
 * the node is collapsed and its already loaded child records are forgotten, so they are loaded again on the next expand.
 
 !!! info
-    Sibling records and parent records are **not** refreshed automatically. `PostAction.refreshBC` is not supported for a tree in this release: the root page is loaded again, but the expanded nodes and their already loaded child records stay as they are.
+    Sibling records and parent records are **not** refreshed automatically. `PostAction.refreshBC` loads the whole tree again and collapses all nodes, as in a [Tree widget](/widget/type/tree/tree/#noderefresh).
 
 #### Customization of displayed columns
 not applicable

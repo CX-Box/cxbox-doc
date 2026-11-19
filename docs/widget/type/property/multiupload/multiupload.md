@@ -231,6 +231,28 @@ When the task status is "Closed", the "Add Files" button is hidden and the drag-
 
     see more [Actions](/features/element/actions/actions)
 
+## <a id="upload_errors">Upload errors</a>
+Available since [v3.0.2](/new/version3002/)
+
+When the upload of a file fails, the tooltip of its line in the **Upload progress** window shows the reason. Each file gets its own text, so the user sees what happened to each file. The same works for a single file uploaded to a [fileUpload](/widget/fields/field/fileupload/fileupload/) field.
+
+The text is taken from the answer of the file controller:
+
+* `errorMessage` - any exception of the backend (`500`);
+* `error.popup` - `BusinessException` (`418`). A popup is not meant for upload errors, so a warning is also written to the browser console.
+
+Each message of the answer is shown on its own line. A long error (for example, with a stack trace) does not go beyond the screen: the tooltip is not higher than 300 px and the text is scrolled inside it. The tooltip stays open while the mouse is on the line of the file or on the tooltip itself.
+
+If the answer has no text of the application, the standard text is shown: for example, `502 Bad Gateway` of a proxy, a network error or a cancelled request.
+
+### How does it look?
+=== "Short error"
+    ![CXBOX-1038-after.jpg](CXBOX-1038-after.jpg)
+=== "Long error"
+    ![CXBOX-1038-after-long.jpg](CXBOX-1038-after-long.jpg)
+=== "Several messages of `error.popup`"
+    ![CXBOX-1038-after-popup.jpg](CXBOX-1038-after-popup.jpg)
+
 ## PostAction
 
 !!! warning line end "Work in progress"

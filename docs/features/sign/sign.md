@@ -994,3 +994,28 @@ How to add?
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3712/view/myexample3712massencryptsignlist){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/encryptsign/encryptsign/mass){:target="_blank"}
 
+## <a id="constants">Settings and constants</a>
+
+### Settings
+
+Environment variables of the frontend (`ui/.env*`).
+
+
+| Variable                                | Meaning                                                                      | Default                                                                                  |
+|-----------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY` | `true` - every attached signature, of any size, is assembled                 | `false` - attached signature by the plugin up to 30 MB                                   |
+| `REACT_APP_CRYPTOPRO_TSA_URL`           | time stamp service, required for `CADES_T`                                   | not set - signing with `CADES_T` fails before the plugin is called (`TSA_NOT_CONFIGURED`) |
+| `REACT_APP_CRYPTOPRO_INSTRUCTION_LINK`  | link to the setup instruction when the plugin or certificates are not found  | `https://doc.cxbox.org/features/sign/sign/`                                              |
+
+### Constants
+
+(`CRYPTOPRO_CONFIG` in `ui/src/features/cryptoPro/config.ts`; MB = 1 000 000 bytes, MiB = 1 048 576 bytes)
+
+| Constant                 | Value                    | Meaning                                                                                                                                                                  |
+|--------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `chunkSize`              | 3 MiB                    | part of the file for hashing and encryption, a multiple of 3                                                                                                              |
+| `nativeAttachedMaxSize`  | 30 MB                    | the largest original file for an attached signature by the plugin; a setting with a margin, not a documented limit of the plugin (testing: 34 MiB was signed, 35 MiB hung the plugin) |
+| `chunkTimeout`           | 60 s                     | time to wait for the plugin to take one part of the file, then "The CryptoPro plugin is not responding"                                                                   |
+| `minPluginVersion`       | `2.0.15260`              | the oldest plugin for encryption in parts                                                                                                                                 |
+| `DEFAULT_SIGNATURE_TYPE` | `CADES_BES`              | signature type when `options.cryptoGenerator[].signatureType` is not set (`CADES_BES`, `CADES_T`)                                                                         |
+| `DEFAULT_SIGNATURE_PACKAGE` | `detached`            | the signature without the file; `attached` - the file inside the signature                                                                                                |

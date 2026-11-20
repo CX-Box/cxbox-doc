@@ -323,6 +323,8 @@ In the sample, Form and List show one business component:
 * the List field opens the link from its `drillDownKey`.
 
 When the record field with the link is empty, the link from `fields.setDrilldown` is used.
+A record without both opens nothing: for example a bar of a chart that the meta gives no drill-down
+(the tab "Chart" of the sample).
 
 ### How does it look?
 ![drilldownkey.gif](drilldownkey.gif)

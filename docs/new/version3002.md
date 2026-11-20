@@ -377,6 +377,10 @@ Before - when several widgets of a view show one business component, the click o
 
 After - `drillDownKey` is taken from the field of the clicked widget, see [Link from a record field: drillDownKey](/features/element/drilldown/drilldown/#drilldownkey).
 
+Before - a click on a record without a link (for example a bar of a chart that the meta gives no drill-down) stopped every drill-down of the page until it was reloaded.
+
+After - such a click opens nothing, other drill-downs work.
+
 #### Fixed: AdditionalInfo - full width when hidden
 <!-- CXBOX-318 -->
 

@@ -370,6 +370,21 @@ After - clearing the field removes the search, and the list shows all records ag
 === "Before"
     ![CXBOX-1358-calendar-before.png](v3.0.2/CXBOX-1358-calendar-before.png)
 
+#### Fixed: drillDownKey of the clicked widget
+<!-- CXBOX-1459 -->
+
+Before - when several widgets of a view show one business component, the click on a field took `drillDownKey` from the first of these widgets. A field of another widget opened the link from `fields.setDrilldown` instead of its own `drillDownKey`. The same for the tooltip buttons **Open link in new tab** and **Copy link address**.
+
+After - `drillDownKey` is taken from the field of the clicked widget, see [Link from a record field: drillDownKey](/features/element/drilldown/drilldown/#drilldownkey).
+
+Before - a click on a record without a link (for example a bar of a chart that the meta gives no drill-down) failed with an error in the browser console.
+
+After - such a click opens nothing, without an error.
+
+Before - when two tabs of a screen show charts of one business component, the chart of the tab opened second used the drill-down settings of the chart of the first tab. For example, after a tab whose chart has no drill-down, a click on a bar opened nothing.
+
+After - a chart uses the drill-down settings of its own tab.
+
 #### Fixed: AdditionalInfo - full width when hidden
 <!-- CXBOX-318 -->
 

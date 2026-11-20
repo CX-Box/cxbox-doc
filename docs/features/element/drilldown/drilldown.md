@@ -10,6 +10,8 @@ The following transition formats are possible:
 * [To view by bc record id](#to_view_id).The most popular option.Transition to viewing by transmitting the ID record.
 * [To view with fields filtration](#to_view_with_fields_filtration) Apply a filter using additional fields (visually visible).
 
+To take the link from a field of the record, see [Link from a record field: drillDownKey](#drilldownkey).
+
 To open a `drilldown` in a new browser tab or copy its link, see [Drilldown tooltip](#drilldown_tooltip).
  
 ## <a id="Transitionformats">Transition formats</a>
@@ -307,6 +309,58 @@ screen/meeting/view/meetingview/meeting/1100012
 + ?filters =
   
 -->
+## <a id="drilldownkey">Link from a record field: drillDownKey</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3627){:target="_blank"}
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/drilldownkey){:target="_blank"}
+
+`drillDownKey` takes the `drilldown` link from a field of the record.
+The backend puts the link into a DTO field. The widget field names this DTO field in `drillDownKey`.
+
+`drillDownKey` belongs to the field of a widget. Widgets of one business component can have different links for the same field.
+In the sample, Form and List show one business component:
+
+* the Form field has no `drillDownKey` and opens the link from `fields.setDrilldown`;
+* the List field opens the link from its `drillDownKey`.
+
+When the record field with the link is empty, the link from `fields.setDrilldown` is used.
+A record without both opens nothing: for example a bar of a chart that the meta gives no drill-down
+(the tab "Chart" of the sample).
+
+### How does it look?
+![drilldownkey.gif](drilldownkey.gif)
+
+### How to add?
+??? Example
+    **Step 1** Add a field with the link to the DTO and fill it.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownkey/MyExample3627DTO.java:drillDownKey
+    --8<--
+    ```
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownkey/MyExample3627DTO.java:drillDownKeyValue
+    --8<--
+    ```
+
+    **Step 2** Add **"drillDown": "true"** and **"drillDownKey"** with the name of the DTO field to the field of .widget.json.
+
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownkey/myexample3627list.widget.json
+    --8<--
+    ```
+
+    A field of another widget without `drillDownKey` uses the link from **fields.setDrilldown** of **FieldMetaBuilder**.
+
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/feature/drilldown/drilldownkey/MyExample3627Meta.java:buildRowDependentMeta
+    --8<--
+    ```
+
 ## <a id="drilldown_tooltip">Drilldown tooltip: open in a new tab and copy link</a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3626){:target="_blank"}
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/feature/drilldown/drilldowntooltip){:target="_blank"}

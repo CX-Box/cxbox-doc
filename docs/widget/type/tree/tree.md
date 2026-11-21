@@ -524,6 +524,8 @@ There are three methods to create a record:
 
 * [With view](#editwithview): You can edit a record by navigating to a view.
 
+After **Save** the row keeps its place among the rows of its node. `insertPosition` places only created rows and rows moved to another parent.
+
 ##### <a id="editline">Inline edit </a>
 [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3265/view/myexample3273tree){:target="_blank"} ·
 [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/actions/edit/basic){:target="_blank"}

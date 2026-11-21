@@ -296,6 +296,13 @@ Before - after each change of such a field the whole form was replaced by a load
 
     See also [FormPopup](/widget/type/formpopup/formpopup/).
 
+#### Fixed: Tree - a saved row keeps its place
+<!-- CXBOX-1462 -->
+
+After - the user changes a row of a [Tree](/widget/type/tree/tree/) and presses **Save**: the row stays where it was, as in a [List](/widget/type/list/list/).
+
+Before - the saved row moved to the top of its node (to the end with `insertPosition: end`), and only F5 put it back in its place.
+
 #### Fixed: showCondition by forceActive - data at once
 <!-- CXBOX-1432 -->
 

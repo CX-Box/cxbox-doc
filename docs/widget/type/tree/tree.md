@@ -246,22 +246,21 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
 
 ## <a id="Showcondition">Show condition</a>
 
-[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261){:target="_blank"} ·
-[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base){:target="_blank"}
-
 * `no show condition - recommended`: widget always visible
+
+  [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3261){:target="_blank"} ·
+  [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/base){:target="_blank"}
+
+* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
 
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3269){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/showcondition/bycurrententity){:target="_blank"}
 
-* `show condition by current entity`: condition can include boolean expression depending on current entity fields. Field updates will trigger condition recalculation only on save or if field is force active
+* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
 
-<!--
   [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3269/view/myexample3276showcond){:target="_blank"} ·
   [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/showcondition/byparententity){:target="_blank"}
- 
-* `show condition by parent entity`: condition can include boolean expression depending on parent entity. Parent field updates will trigger condition recalculation only on save or if field is force active shown on same view
--->
+
 !!! tips
     It is recommended not to use `Show condition` when possible, because wide usage of this feature makes application hard to support.
 
@@ -272,11 +271,8 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
     <video controls width="800">
     <source src="/widget/type/tree/show_cond_current.mp4" type="video/mp4">
     </video>
-
-<!--
 === "show condition by parent entity"
     ![show_cond.gif](show_cond.gif)
--->
 
 #### <a id="howtoadd">How to add?</a>
 ??? Example
@@ -291,7 +287,7 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         {{ external_links.github_raw_doc }}/widgets/tree/showcondition/bycurrententity/myexample32692.widget.json
         --8<--
         ```
-<!--
+
     === "show condition by parent entity"
         **Step1** Add **showCondition** to **_.widget.json_**. see more [showCondition](/widget/type/property/showcondition/showcondition)
         ```json
@@ -299,7 +295,6 @@ see more  [Business component](/environment/businesscomponent/businesscomponent/
         {{ external_links.github_raw_doc }}/widgets/tree/showcondition/byparententity/myexample3277child.widget.json
         --8<--
         ```
--->
 
 ## <a id="fields">Fields</a>
 Fields Configuration. The fields array defines the individual fields present within the form.
@@ -643,7 +638,7 @@ The difference from a [List widget](/widget/type/list/list) is **what is refresh
 
 !!! info
     Sibling records and parent records are **not** refreshed automatically.
-    PostAction.refreshBC` is not supported for a Tree widget in this release: the root page is loaded again, but the expanded nodes and their already loaded child records stay as they are. If an action changes other records, reload the view.
+    If an action changes other records, return `PostAction.refreshBC`: the whole tree is loaded again, as a List widget reloads its page, and all nodes are collapsed.
 
 
 **Requests**

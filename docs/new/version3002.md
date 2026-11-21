@@ -388,6 +388,17 @@ Before - the **Close all** button in the top right corner was visible even when 
 After - the button is hidden until a notification appears.
 
 
+#### Fixed: Tree - rows of the previous parent record
+<!-- CXBOX-1455 -->
+
+Before - after another parent record was selected, a [Tree](/widget/type/tree/tree/) whose records depend on the parent record kept the rows of the previous parent record next to the rows of the new one.
+
+After - the tree shows only the rows of the selected parent record, as a [List](/widget/type/list/list/) does. As on any reload of the tree, its branches are collapsed.
+
+The same holds for `PostAction.refreshBC`: the whole tree is loaded again and its nodes are collapsed, see [Node refresh](/widget/type/tree/tree/#noderefresh). Before, the expanded nodes kept their old child rows.
+
+A new load of the tree also cancels its requests that have not come back yet. Before, after two quick sorts the answer to the first one could come last and add its rows to the tree.
+
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2)
 

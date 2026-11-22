@@ -387,6 +387,13 @@ Before - the **Close all** button in the top right corner was visible even when 
 
 After - the button is hidden until a notification appears.
 
+#### Fixed: List, Tree - three-dot button after the menu is closed
+<!-- CXBOX-1463 -->
+
+Before - when the three-dot menu of a row was closed by a click in the same row, the three-dot button did not come back until the pointer left the row.
+
+After - the button comes back as soon as the pointer moves in the row.
+
 
 #### Other Changes
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2)

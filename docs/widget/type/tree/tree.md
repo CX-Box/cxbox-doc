@@ -314,7 +314,7 @@ Fields Configuration. The fields array defines the individual fields present wit
 
 * **"title"**
 
-  Description:  Field Title.
+  Description:  Field Title. It can show a value of the record, see [Calculated field title](#calculatedfieldtitle).
   
   Type: String(optional).
   
@@ -349,6 +349,40 @@ Fields Configuration. The fields array defines the individual fields present wit
              {{ external_links.github_raw_doc }}/widgets/tree/title/widget/myexample3271tree.widget.json
              --8<--
           ```
+
+### <a id="calculatedfieldtitle">Calculated field title</a>
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6166/view/myexample6166tree){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/fieldtitle){:target="_blank"}
+
+The title of a column can show a value of the record: the key of a field in `${...}`, e.g. `${customFieldTitle}`. The header of the table and the window of the columns ("Additional columns", "Change") show the value of the current record.
+
+#### How does it look?
+![fieldtitle.png](fieldtitle.png)
+
+#### How to add?
+??? Example
+    **Step 1** Add a field with the text of the title to the corresponding **DataResponseDTO**.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/tree/fieldtitle/MyExample6166DTO.java:customFieldTitle
+    --8<--
+    ```
+    Fill it in the constructor of the DTO.
+    ```java
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/tree/fieldtitle/MyExample6166DTO.java:customFieldTitleValue
+    --8<--
+    ```
+
+    **Step 2** Add `${customFieldTitle}` to the **title** of the field in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/tree/fieldtitle/widget/myexample6166tree.widget.json
+    --8<--
+    ```
+
+    [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample6166/view/myexample6166tree){:target="_blank"} ·
+    [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/tree/fieldtitle){:target="_blank"}
 
 ## <a id="Fieldslayout">Options layout</a>
 **options.layout** - no use in this type.

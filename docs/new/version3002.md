@@ -370,6 +370,13 @@ After - clearing the field removes the search, and the list shows all records ag
 === "Before"
     ![CXBOX-1358-calendar-before.png](v3.0.2/CXBOX-1358-calendar-before.png)
 
+#### Fixed: List, Tree - column title with a value of the record
+<!-- CXBOX-1464 -->
+
+Before - a column title with `${...}` showed the template in the window of the columns ("Additional columns", "Change") and in the Excel export, while the header of the table showed the value of the record.
+
+After - the window of the columns and the Excel export show the same title as the header. See [Calculated field title](/widget/type/list/list/#calculatedfieldtitle).
+
 #### Fixed: AdditionalInfo - full width when hidden
 <!-- CXBOX-318 -->
 

@@ -239,7 +239,7 @@ When the upload of a file fails, the tooltip of its line in the **Upload progres
 The text is taken from the answer of the file controller:
 
 * `errorMessage` - any exception of the backend (`500`);
-* `error.popup` - `BusinessException` (`418`). A popup is not meant for upload errors, so a warning is also written to the browser console.
+* `error.popup` - `BusinessException` (`418`). A popup is not meant for upload errors, so a warning is also written to the browser console. The same is done for a download, see [Download progress](/features/element/filestorage/fileStorage/#download_progress).
 
 Each message of the answer is shown on its own line. A long error (for example, with a stack trace) does not go beyond the screen: the tooltip is not higher than 300 px and the text is scrolled inside it. The tooltip stays open while the mouse is on the line of the file or on the tooltip itself.
 

@@ -265,12 +265,24 @@ Before - every failed file showed the same text, "Error. File not loaded and no 
 !!! info
     See [Multi-upload files - Upload errors](/widget/type/property/multiupload/multiupload/#upload_errors).
 
+#### Added: File download - Download progress window
+<!-- CXBOX-1470 -->
+
+After - when the user downloads a file, the **Download progress** window opens at once and shows the received part of the file, as the **Upload progress** window of an upload. A download error is shown in the line of the file with the reason received from the server, instead of the error popup. A `postAction` of a `BusinessException` is not run, as for an upload.
+
+Before - nothing changed on the screen until the file was downloaded completely, and the browser showed the file only at the end. With a large file or a slow file storage the user did not see that the download had started and clicked the file again and again. A download error was shown in a popup.
+
+![CXBOX-1470-after.png](v3.0.2/CXBOX-1470-after.png)
+
+!!! info
+    See [FileStorage - Download progress](/features/element/filestorage/fileStorage/#download_progress).
+
 #### Fixed: File download - one automatic retry
 <!-- CXBOX-1438 -->
 
 Before - sometimes downloading or opening a file ended with the error `502 Bad Gateway`, although the file was in place, and the second attempt worked.
 
-After - the application repeats the request once by itself, the user gets the file and does not see the error. If the second attempt fails too, the error is shown as before.
+After - the application repeats the request once by itself, the user gets the file and does not see the error. If the second attempt fails too, the error is shown: for a download in the [Download progress](/features/element/filestorage/fileStorage/#download_progress) window, for the opening of a file as before.
 
 !!! info
     See [FileStorage - one automatic retry](/features/element/filestorage/fileStorage/#download_retry).

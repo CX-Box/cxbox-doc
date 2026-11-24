@@ -1006,6 +1006,24 @@ Environment variables of the frontend (`ui/.env*`).
 | `REACT_APP_CRYPTOPRO_ATTACHED_ASSEMBLY` | `true` - every attached signature, of any size, is assembled                 | `false` - attached signature by the plugin up to 30 MB                                   |
 | `REACT_APP_CRYPTOPRO_TSA_URL`           | time stamp service, required for `CADES_T`                                   | not set - signing with `CADES_T` fails before the plugin is called (`TSA_NOT_CONFIGURED`) |
 | `REACT_APP_CRYPTOPRO_INSTRUCTION_LINK`  | link to the setup instruction when the plugin or certificates are not found  | `https://doc.cxbox.org/features/sign/sign/`                                              |
+| `REACT_APP_CRYPTOPRO_SIGNATURE_VERIFICATION_MODE` | check of the created signature on this stand: `strict` or `soft`, see [Signature verification](#signature_verification) | `DEFAULT_SIGNATURE_VERIFICATION_MODE` |
+
+#### <a id="signature_verification">Signature verification</a>
+
+After signing, the application checks the signature with the CryptoPro plugin. Sometimes this check fails even for a valid signature.
+
+* `strict` - if the check fails, the user sees an error and does not get the signature.
+* `soft` - if the check fails, the user still gets the signature. A warning is written to the browser console.
+
+The mode is set in two places:
+
+* `DEFAULT_SIGNATURE_VERIFICATION_MODE` in `ui/src/features/cryptoPro/constants.ts` - the mode of the application.
+* `REACT_APP_CRYPTOPRO_SIGNATURE_VERIFICATION_MODE` in `ui/.env*` - overrides it for a stand. For example, `soft` on the dev stand and `strict` on production.
+
+??? Example
+    ```
+    REACT_APP_CRYPTOPRO_SIGNATURE_VERIFICATION_MODE = 'soft'
+    ```
 
 ### Constants
 
@@ -1019,3 +1037,4 @@ Environment variables of the frontend (`ui/.env*`).
 | `minPluginVersion`       | `2.0.15260`              | the oldest plugin for encryption in parts                                                                                                                                 |
 | `DEFAULT_SIGNATURE_TYPE` | `CADES_BES`              | signature type when `options.cryptoGenerator[].signatureType` is not set (`CADES_BES`, `CADES_T`)                                                                         |
 | `DEFAULT_SIGNATURE_PACKAGE` | `detached`            | the signature without the file; `attached` - the file inside the signature                                                                                                |
+| `DEFAULT_SIGNATURE_VERIFICATION_MODE` | `strict`    | check of the created signature in the application (`strict`, `soft`), see [Signature verification](#signature_verification)                                             |

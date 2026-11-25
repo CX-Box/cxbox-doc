@@ -73,6 +73,47 @@ A custom title can be provided if needed.
         [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3138){:target="_blank"} ·
         [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/excel/filtration){:target="_blank"}
 
+## <a id="calculatedtitle">Calculated title</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3141/view/myexample3141list){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/excel/title){:target="_blank"}
+
+The file gets the titles as the user sees them: `${field}` is replaced with the value of the field of the current record,
+in the format of the field type, as on the screen.
+
+The field can be hidden. To keep the format, hide it with `"hidden": true` and keep its type: a field of `"type": "hidden"` gives the raw value.
+
+* The file name is the title of the widget, or `export.title` when it is set, and the current date. Without both, the file name is the current date.
+* The column titles of the file are the column titles of the widget.
+
+### How does it look?
+![calctitle.png](calctitle.png)
+
+The file of this widget is `Sales on 31.10.2026 25-11-2026.xlsx` with the column `Sum on 31.10.2026`.
+
+### How to add?
+??? Example
+    === "Calculated title"
+        Add `${field}` to the title of the widget or to the title of a column in **_.widget.json_**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/excel/title/myexample3141list.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3141/view/myexample3141list){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/excel/title){:target="_blank"}
+
+    === "Export title"
+        Add `${field}` to **export.title** in **_.widget.json_**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/property/excel/title/myexample3141exporttitle.widget.json
+        --8<--
+        ```
+        [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample3141/view/myexample3141exporttitle){:target="_blank"} ·
+        [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/excel/title){:target="_blank"}
+
 ## <a id="exportlimit">Export limit</a>
 Available since [v2.0.13](/new/version2013/) (core 4.0.0-M17)
 

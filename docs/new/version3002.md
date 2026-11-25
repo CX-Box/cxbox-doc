@@ -275,6 +275,18 @@ After - the application repeats the request once by itself, the user gets the fi
 !!! info
     See [FileStorage - one automatic retry](/features/element/filestorage/fileStorage/#download_retry).
 
+#### Fixed: Export to Excel - calculated titles in the file
+<!-- CXBOX-1468 -->
+
+Before - `${field}` in the title of a widget or of a column stayed as is in the exported file: `Sales on ${period} 25-11-2026.xlsx` with the column `Sum on ${period}`.
+A widget without a title gave the file `undefined 25-11-2026.xlsx`.
+
+After - the file gets the titles as the screen shows them: `Sales on 31.10.2026 25-11-2026.xlsx` with the column `Sum on 31.10.2026`.
+A widget without a title gives the file `25-11-2026.xlsx`.
+
+!!! info
+    See [Export to Excel - Calculated title](/widget/type/property/export/excel/excel/#calculatedtitle).
+
 #### Fixed: FormPopup - no "jumping" on forceActive fields
 <!-- CXBOX-1433 -->
 

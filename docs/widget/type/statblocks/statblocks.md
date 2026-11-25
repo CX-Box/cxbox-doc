@@ -92,6 +92,8 @@ The current number of columns per row is set to 3.
 
         [Color](#Color). Optional
 
+        [Tag](#Tag). Optional
+
         Description - comment for field. Optional
 
         Id - We recommend assigning unique identifiers to each block. This is essential for the proper functioning of the application and for enabling drilldown.
@@ -336,6 +338,71 @@ There are types of:
         ```json
         --8<--
         {{ external_links.github_raw_doc }}/widgets/statsblock/color/colorconst/myexample4205.widget.json
+        --8<--
+        ```
+
+### <a id="Tag">Tag</a>
+Available since [v3.0.2](/new/version3002/)
+
+`Tag` shows a field of the record as a colored tag right after the value of a block, for example the change compared with the previous period. Each block has its own tag. Optional.
+
+The color of the tag is calculated or constant, the same way as [Color](#ColorField). The color of the tag field colors only the tag, not the block. A block without the value of the field has no tag.
+
+**Calculated color**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4234/view/myexample4234tag){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/tag){:target="_blank"}
+
+**Constant color**
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4234/view/myexample4234tagconst){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/statsblock/tag){:target="_blank"}
+
+#### How does it look?
+=== "Calculated color"
+    ![tag.png](tag.png)
+=== "Constant color"
+    ![tag_const.png](tag_const.png)
+
+#### How to add?
+??? Example
+    === "Calculated color"
+        **Step 1** Add `custom field for tag` and `custom field for color` to corresponding **DataResponseDTO**. The color field can contain a HEX color or be null.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/statsblock/tag/MyExample4234DTO.java
+        --8<--
+        ```
+
+        **Step 2** Fill both fields for each block. A block without the value of the tag field has no tag.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/statsblock/tag/MyExample4234Dao.java:getStats
+        --8<--
+        ```
+
+        **Step 3** Add `custom field for tag` with **"bgColorKey"** : `custom field for color` to **fields** of .widget.json, and **"tagFieldKey"** : `custom field for tag` to **options.stats**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/statsblock/tag/myexample4234tag.widget.json
+        --8<--
+        ```
+
+    === "Constant color"
+        **Step 1** Add `custom field for tag` to corresponding **DataResponseDTO**.
+
+        ```java
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/statsblock/tag/MyExample4234DTO.java
+        --8<--
+        ```
+
+        **Step 2** Add `custom field for tag` with **"bgColor"** : `HEX color` to **fields** of .widget.json, and **"tagFieldKey"** : `custom field for tag` to **options.stats**.
+        ```json
+        --8<--
+        {{ external_links.github_raw_doc }}/widgets/statsblock/tag/myexample4234tagconst.widget.json
         --8<--
         ```
 

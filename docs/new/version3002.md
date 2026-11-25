@@ -235,6 +235,18 @@ Now you can set how the options are arranged and how much space each of them tak
     Each option takes up to 3 rows.  
     ![CXBOX-1422-list-edit.png](v3.0.2/CXBOX-1422-list-edit.png)
 
+#### Added: StatsBlock - tag next to the value
+<!-- CXBOX-1467 -->
+
+A block of [StatsBlock](/widget/type/statblocks/statblocks/) can show a field of its record as a colored tag right after the value, for example the change compared with the previous period. Each block has its own tag.
+
+The color of the tag is set the same way as the color of a block, and it colors only the tag.
+
+![CXBOX-1467-tag.png](v3.0.2/CXBOX-1467-tag.png)
+
+!!! info
+    See [StatsBlock - Tag](/widget/type/statblocks/statblocks/#Tag).
+
 #### Fixed: Multi-upload - drop zone when adding is not allowed
 <!-- CXBOX-1218 -->
 

@@ -35,6 +35,7 @@ Options:
 | `descriptionFieldKey` | The list of fields for the tooltip, see [Tooltip](#tooltip). |
 | `valuePosition` | Where the values are shown: `inner` (default) or `outer`, see [Label position](#labelposition). |
 | `total` | The text in the center, see [Total](#total). |
+| `maxRows` | The height of the chart in rows of a standard form, see [Chart height](#chartheight). |
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
@@ -77,6 +78,7 @@ Options:
     | `descriptionFieldKey` | The list of fields for the tooltip, see [Tooltip](#tooltip). |
     | `valuePosition` | Where the values are shown: `inner` (default) or `outer`, see [Label position](#labelposition). |
     | `total` | The text in the center, see [Total](#total). |
+    | `maxRows` | The height of the chart in rows of a standard form, see [Chart height](#chartheight). |
     
 
     ```json
@@ -492,6 +494,24 @@ You can set where the values of the segments are shown:
     ```
     [:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4262/view/myexample4262outer){:target="_blank"} ·
     [:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/pie1d/labelposition){:target="_blank"}
+
+#### <a id="chartheight">Chart height</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4279/view/myexample4279pie1d){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/chartheight){:target="_blank"}
+
+`maxRows` sets the height of the chart in rows of a standard form. Without it the chart keeps its own height.
+see more [Chart height](/widget/type/property/chartheight/chartheight)
+
+###### How to add?
+??? Example
+    **Step1** Add **maxRows** to **options.chart1D** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/chartheight/myexample4279pie1d.widget.json
+    --8<--
+    ```
 
 #### Customization of displayed columns
 **not available**.

@@ -213,6 +213,28 @@ After - the dev panel has a new indicator **Runtime errors** with the number of 
     .metaValidation(metaHotReloadService.validateMeta())
     ```
 
+#### Added: Charts - Column2D direction, value labels, chart height
+<!-- CXBOX-1466 -->
+
+Before - the bars of [Column2D](/widget/type/column2d/column2d/) grew only up, the user saw the values only in the tooltip,
+and the height of a chart could not be set: a chart next to a form was higher or lower than the form.
+
+After - three options of the charts, without them the charts work as before:
+
+* **[Mode](/widget/type/column2d/column2d/#mode)** - the bars of Column2D grow up (`BT`), down (`TB`), to the right (`LR`) or to the left (`RL`).
+* **[Label position](/widget/type/column2d/column2d/#labelposition)** - the value is shown in the middle of every bar (`inner`) or after its end (`outer`).
+* **[Chart height](/widget/type/property/chartheight/chartheight/)** - `maxRows` sets the height of Column2D, Line2D, DualAxes2D, Pie1D,
+  RelationGraph, Funnel and RingProgress in rows of a standard form, so a chart stands level with a form next to it.
+
+=== "Mode LR"
+    ![CXBOX-1466-mode.png](v3.0.2/CXBOX-1466-mode.png)
+=== "Label position outer"
+    ![CXBOX-1466-labelposition.png](v3.0.2/CXBOX-1466-labelposition.png)
+
+!!! info
+    See [Column2D - Mode](/widget/type/column2d/column2d/#mode), [Column2D - Label position](/widget/type/column2d/column2d/#labelposition)
+    and [Chart height](/widget/type/property/chartheight/chartheight/).
+
 #### Added: radio - vertical layout and row limit
 <!-- CXBOX-1422 -->
 

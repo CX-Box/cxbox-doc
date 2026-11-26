@@ -453,6 +453,8 @@ For example, if the row has a total width of 24 spans, each widget will take up 
 
 Also, it optionally allows you to filter data on target view before it will be opened `see more` [DrillDown](/features/element/drilldown/drilldown)
 
+A block can filter by several values: the block `Open` passes the statuses `New` and `In progress` to `fb.dictionaryEnum` in one list, and the list shows the records of both statuses.
+
 #### How does it look?
 ![drilldown.gif](drilldown.gif)
 

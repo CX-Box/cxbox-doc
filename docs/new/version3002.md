@@ -404,7 +404,7 @@ After - the button is hidden until a notification appears.
 see [cxbox-demo changelog](https://github.com/CX-Box/cxbox-demo/releases/tag/v.3.0.2)
 
 
-### CXBOX 5.0.3 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.3))
+### CXBOX 5.0.4 ([Core](https://github.com/CX-Box/cxbox/tree/cxbox-5.0.4))
 
 #### Added: Drilldown filter by hint
 <!-- CXBOX-1281 -->
@@ -426,6 +426,18 @@ A drilldown from a [hint](/widget/fields/field/hint/hint/#drilldown) field can n
     ```
 
     See also [DrillDown](/features/element/drilldown/drilldown/).
+
+#### Fixed: Drilldown filter by several values
+<!-- CXBOX-1465 -->
+
+A drilldown filter by several values of a field now opens the target list with the records of any of these values, for example the [StatsBlock](/widget/type/statblocks/statblocks/#drilldown) block for the statuses New and In progress. Before, the values were sent as one value, and the list showed all records.
+
+??? info "Technical details"
+    `fb.dictionaryEnum`, `fb.dictionary` and `fb.radio` with a collection of values pass each value as a separate item of `equalsOneOf`, as the multivalue filter does:
+
+    ```java
+    fb.dictionaryEnum(MyExampleDTO_.status, List.of(StatusEnum.NEW, StatusEnum.IN_PROGRESS))
+    ```
 
 #### Added: Mass operations - row values and failed rows
 <!-- CXBOX-1401 -->

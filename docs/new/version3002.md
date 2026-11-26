@@ -514,6 +514,14 @@ After - the core checks the meta at startup and on every meta refresh, writes su
           enabled: true     # default false: the check is off
           log-level: ERROR  # default ERROR; OFF - do not write problems to the log
     ```
+#### Fixed: ResponseFactory - memory leak on fields with a wrong value type
+<!-- CXBOX-1452 -->
+
+A memory leak in the handling of fields that come with a wrong value type (for example, text in a number field) is fixed. Under load such a field could also lose its "Wrong format" error or get the error of another request. Now memory does not grow, and each form gets only its own errors.
+
+??? info "Technical details"
+    * `ResponseFactory` and `AnySourceResponseFactory` added a new `DeserializationProblemHandler` to the shared `cxboxObjectMapper` on every read and never removed it. Now one handler is added once.
+    * Project code that reads with `cxboxObjectMapper` outside the factories gets a Jackson error for a wrong value type again, not `null`.
 
 #### Fixed: ResponseFactory - memory leak on fields with a wrong value type
 <!-- CXBOX-1452 -->

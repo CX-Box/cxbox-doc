@@ -1,5 +1,5 @@
 FROM squidfunk/mkdocs-material:9.2.5
-RUN apk update && apk add curl curl-dev bash
+RUN apk update && apk add git bash
 RUN pip install --no-cache-dir mkdocs-redirects
 RUN pip install --no-cache-dir mkdocs-markdownextradata-plugin
 RUN pip install --no-cache-dir mkdocs-mermaid2-plugin

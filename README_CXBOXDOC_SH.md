@@ -1,14 +1,25 @@
-# Download file.zip with code_samples 
-Reasons:
-* Performance Improvement: Due to the slowdown caused by frequent access to .md files as the number of documents and links increased, it was decided to load the supply directly into the documentation container.
-* Code Example API: An API has been created in the sample repository to transform code by removing numbers (e.g., myEntity1233 to myEntity) for cleaner example output.
+# Code samples for the documentation
 
-To access and download the latest code samples from the main branch, use the following command:
-`curl "https://code-samples.cxbox.org/api/v1/githubcode/" >/docs/out.zip`
+The documentation includes code from [cxbox-code-samples](https://github.com/CX-Box/cxbox-code-samples)
+(`src/main/java/org/demo/documentation`). Sample files have numbers in names (e.g. `MyEntity1233`) that must not
+be shown in the docs, and `import`/`package` lines are hidden too.
 
-**Parallel Development Process**
-When developing samples and documentation concurrently:
-1) Push the branch to the Git server.
-2) Update the cxboxdoc.sh file to include the branch name as `feature/CXBOX-234` after `githubcode/`.
- 
-`curl "https://code-samples.cxbox.org/api/v1/githubcode/feature/CXBOX-234" >/docs/out.zip`
+`scripts/prepare-snippets.sh <code-samples-checkout> [output-dir]` does this cleanup (digits after letters,
+`import`/`package` lines) and puts the result into `demo/documentation` (ignored by git). It fails if the samples
+are missing or suspiciously few, so a broken checkout is never deployed.
+
+Only the `documentation` folder is fetched (sparse checkout), so the download size does not depend on the rest of the
+samples repository.
+
+## CI (`.github/workflows/build_main.yml`)
+
+Runs on push to `main`/`master`. To build with samples from another branch, run the workflow manually
+(`workflow_dispatch`) and set `samples_ref`.
+
+## Local run (Docker)
+
+`docker compose up` runs `cxboxdoc.sh`: sparse clone of the samples, `prepare-snippets.sh`, `mkdocs serve`.
+
+**Parallel development process.** When developing samples and documentation concurrently:
+1) Push the samples branch to GitHub.
+2) Set `GITHUB_BRANCH=feature/CXBOX-234` in `docker-compose.yml` (it is also used for links to GitHub).

@@ -16,11 +16,21 @@ jobs:
           python-version: 3.x
       - run: pip install --force-reinstall -v "setuptools==71.0.0"
       - run: pip install --force-reinstall -v "mkdocs-material==9.2.5"
-      - run: sudo apt-get update
-      - run: sudo apt-get install
-      - run: curl "https://code-samples.cxbox.org/api/v1/githubcode/" >githubcode.zip
-      - run: unzip githubcode.zip
-      - run: chmod -R 777 docs/
+      - name: Check out code samples
+        uses: actions/checkout@v4
+        with:
+          repository: CX-Box/cxbox-code-samples
+          ref: main
+          path: code-samples
+          sparse-checkout: /src/main/java/org/demo/
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Prepare MkDocs snippets
+        run: |
+          mv code-samples/src/main/java/org/demo ./demo
+          find demo/documentation -type f -exec sed -i -E \
+            -e '/^[[:space:]]*(import|package) /d' \
+            -e 's/([[:alpha:]])[0-9]+/\1/g' {} +
       - run: pip install --no-cache-dir mkdocs-redirects
       - run: pip install --no-cache-dir mkdocs-markdownextradata-plugin
       - run: pip install --no-cache-dir mkdocs-mermaid2-plugin

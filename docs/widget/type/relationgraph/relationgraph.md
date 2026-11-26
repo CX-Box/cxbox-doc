@@ -37,6 +37,7 @@ Options of `options.relationGraph`:
 | `nodes.descriptionFieldKeys` | no       | Field keys shown in the node: the first one is the title, the others are the lines under it. See [Nodes](#nodes). |
 | `edges.labelFieldKeys`       | no       | Field keys shown at the edge, joined with a comma. See [Edges](#edges).                                       |
 | `edges.type`                 | no       | Line of the edge: `polyline`, `line`, `arc`, `quadratic`. By default a curve. See [Edges](#edges).             |
+| `maxRows`                    | no       | Height of the chart in rows of a standard form. See [Chart height](#chartheight).                             |
 
 Fields with fixed keys (they are not set in the options):
 
@@ -457,6 +458,24 @@ The fields `edgeValue`, `targetNodeType`, `targetNodeExpanded` keep their keys.
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/relationGraph/fieldkeys/myexample6164relationgraph.widget.json
+    --8<--
+    ```
+
+#### <a id="chartheight">Chart height</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4279/view/myexample4279relationgraph){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/chartheight){:target="_blank"}
+
+`maxRows` sets the height of the chart in rows of a standard form. Without it the chart keeps its own height.
+see more [Chart height](/widget/type/property/chartheight/chartheight)
+
+###### How to add?
+??? Example
+    **Step1** Add **maxRows** to **options.relationGraph** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/chartheight/myexample4279relationgraph.widget.json
     --8<--
     ```
 

@@ -28,6 +28,7 @@ Options of `options.chart2D`:
 | `yMin`, `yMax`, `yStep` | no     | Scale and step of the Y axis. See [Axis scale and step](#axis).                                                              |
 | `xMin`, `xMax`, `xStep` | no     | Scale and step of the X axis. Only for a numeric X field. See [Axis scale and step](#axis).                                  |
 | `descriptionFieldKey` | no       | Field keys shown in the tooltip instead of the X value. See [Tooltip](#tooltip).                                             |
+| `maxRows`             | no       | Height of the chart in rows of a standard form. See [Chart height](#chartheight).                                            |
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
@@ -380,6 +381,24 @@ For a text X field they are ignored, and the widget writes a message to the brow
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/line2d/axis/myexample4245line2d.widget.json
+    --8<--
+    ```
+
+#### <a id="chartheight">Chart height</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4279/view/myexample4279line2d){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/chartheight){:target="_blank"}
+
+`maxRows` sets the height of the chart in rows of a standard form. Without it the chart keeps its own height.
+see more [Chart height](/widget/type/property/chartheight/chartheight)
+
+###### How to add?
+??? Example
+    **Step1** Add **maxRows** to **options.chart2D** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/chartheight/myexample4279line2d.widget.json
     --8<--
     ```
 

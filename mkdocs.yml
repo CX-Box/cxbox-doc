@@ -138,6 +138,7 @@ nav:
   - Widget property:
      - Widget property Page limit: widget/type/property/defaultlimitpage/defaultlimitpage.md
      - Widget property Collapse: widget/type/property/collapse/collapse.md
+     - Widget property Chart height: widget/type/property/chartheight/chartheight.md
      - Widget property Export:
         - Excel: widget/type/property/export/excel/excel.md
      - Widget property File Options:

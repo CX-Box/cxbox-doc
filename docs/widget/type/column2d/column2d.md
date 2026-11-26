@@ -28,6 +28,9 @@ Options of `options.chart2D`:
 | `yMin`, `yMax`, `yStep` | no       | Scale and step of the Y axis. See [Axis scale and step](#axis).                                                                |
 | `xMin`, `xMax`, `xStep` | no       | Scale and step of the X axis. Only for a numeric X field. See [Axis scale and step](#axis).                                    |
 | `descriptionFieldKey`   | no       | Field keys shown in the tooltip instead of the X value. See [Tooltip](#tooltip).                                               |
+| `mode`                  | no       | Direction in which the bars grow: `BT` (default, bottom-top), `TB`, `LR`, `RL`. See [Mode](#mode).                             |
+| `valuePosition`         | no       | Shows the value on every bar: `inner` or `outer`. Without it the values are not shown. See [Label position](#labelposition).   |
+| `maxRows`               | no       | Height of the chart in rows of a standard form. See [Chart height](#chartheight).                                              |
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
@@ -404,6 +407,91 @@ For a text X field they are ignored, and the widget writes a message to the brow
     ```json
     --8<--
     {{ external_links.github_raw_doc }}/widgets/column2d/axes/myexample4255column2d.widget.json
+    --8<--
+    ```
+
+#### <a id="mode">Mode</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4277){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/mode){:target="_blank"}
+
+`mode` sets the direction in which the bars grow, as `mode` of the [RelationGraph](/widget/type/relationgraph/relationgraph/#mode) widget:
+
+* `BT` (default): from bottom to top;
+* `TB`: from top to bottom;
+* `LR`: from left to right;
+* `RL`: from right to left.
+
+The fields keep their roles in every direction: `xValueFieldKey` gives the categories, `yValueFieldKey` gives the length of the bars.
+`mode` works only for `Column2D`: a [Line2D](/widget/type/line2d/line2d) widget ignores it, and the bars inside
+[DualAxes2D](/widget/type/dualaxes2d/dualaxes2d) are always vertical. In both cases the widget writes a message to the browser console.
+
+###### How does it look?
+=== "BT"
+    ![mode_bt.png](mode_bt.png)
+=== "TB"
+    ![mode_tb.png](mode_tb.png)
+=== "LR"
+    ![mode_lr.png](mode_lr.png)
+=== "RL"
+    ![mode_rl.png](mode_rl.png)
+
+###### How to add?
+??? Example
+    **Step1** Add **mode** to **options.chart2D** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/column2d/mode/myexample4277column2dlr.widget.json
+    --8<--
+    ```
+
+#### <a id="labelposition">Label position</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4278){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/column2d/labelposition){:target="_blank"}
+
+`valuePosition` shows the value on every bar, as `valuePosition` of the [Pie1D](/widget/type/pie1d/pie1d/#labelposition) widget:
+
+* `inner`: in the middle of the bar;
+* `outer`: after the end of the bar.
+
+Without `valuePosition` the values are not shown: the user sees them in the [tooltip](#tooltip).
+The value is formatted by the type of the `yValueFieldKey` field, as in the [table mode](#tablemode).
+When the values overlap, an inner value moves along its bar, and a value that does not fit is hidden.
+`valuePosition` works for the bars inside [DualAxes2D](/widget/type/dualaxes2d/dualaxes2d) too.
+
+###### How does it look?
+=== "inner"
+    ![labelinner.png](labelinner.png)
+=== "outer"
+    ![labelouter.png](labelouter.png)
+
+###### How to add?
+??? Example
+    **Step1** Add **valuePosition** to **options.chart2D** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/column2d/labelposition/myexample4278outer.widget.json
+    --8<--
+    ```
+
+#### <a id="chartheight">Chart height</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4279/view/myexample4279column2d){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/chartheight){:target="_blank"}
+
+`maxRows` sets the height of the chart in rows of a standard form. Without it the chart keeps its own height.
+see more [Chart height](/widget/type/property/chartheight/chartheight)
+
+###### How to add?
+??? Example
+    **Step1** Add **maxRows** to **options.chart2D** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/chartheight/myexample4279column2d.widget.json
     --8<--
     ```
 

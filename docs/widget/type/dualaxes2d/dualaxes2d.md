@@ -20,7 +20,9 @@ For example, the columns show the sum of the sales per month, and the line shows
   They are shown on the view as usual widgets too.
 
 All the settings of `options.chart2D` of the chart widgets work in `DualAxes2D`: `groupFieldKey`, `stack`,
-`yMin`/`yMax`/`yStep`, `descriptionFieldKey`, the colors and the drilldown of the X field.
+`yMin`/`yMax`/`yStep`, `descriptionFieldKey`, the colors and the drilldown of the X field,
+[valuePosition](/widget/type/column2d/column2d/#labelposition) of the `Column2D` widget.
+[mode](/widget/type/column2d/column2d/#mode) is not applied: the bars of `DualAxes2D` are always vertical.
 The legend shows the groups of both charts.
 
 When the conditions are broken, the widget writes a message to the browser console, for example
@@ -31,6 +33,7 @@ Options of `options.dual2D`:
 | Option    | Required | Description                                                                                                  |
 |-----------|----------|--------------------------------------------------------------------------------------------------------------|
 | `widgets` | yes      | Names of two widgets with the type `Column2D` or `Line2D`. The first one uses the left Y axis, the second one the right Y axis. |
+| `maxRows` | no       | Height of the chart in rows of a standard form. See [Chart height](#chartheight).                            |
 
 ###  <a id="Howtoaddbacis">How to add?</a>
 ??? Example
@@ -367,6 +370,24 @@ A `DualAxes2D` widget without fields shows a table without columns.
 
 ###### How to add?
 The table mode is always available. Add the fields of the table to the `DualAxes2D` widget, see [Fields](#fields).
+
+#### <a id="chartheight">Chart height</a>
+Available since [v3.0.2](/new/version3002/)
+
+[:material-play-circle: Live Sample]({{ external_links.code_samples }}/ui/#/screen/myexample4279/view/myexample4279dualaxes2d){:target="_blank"} ·
+[:fontawesome-brands-github: GitHub]({{ external_links.github_ui }}/{{ external_links.github_branch }}/src/main/java/org/demo/documentation/widgets/property/chartheight){:target="_blank"}
+
+`maxRows` sets the height of the chart in rows of a standard form. Without it the chart keeps its own height.
+see more [Chart height](/widget/type/property/chartheight/chartheight)
+
+###### How to add?
+??? Example
+    **Step1** Add **maxRows** to **options.dual2D** in **_.widget.json_**.
+    ```json
+    --8<--
+    {{ external_links.github_raw_doc }}/widgets/property/chartheight/myexample4279dualaxes2d.widget.json
+    --8<--
+    ```
 
 #### Groups and stack
 `groupFieldKey` and `stack` are set in the chart widgets, see [Line2D groups](/widget/type/line2d/line2d/#groups)

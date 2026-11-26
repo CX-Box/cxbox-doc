@@ -533,6 +533,13 @@ A memory leak in the handling of fields that come with a wrong value type (for e
     * Project code that reads with `cxboxObjectMapper` outside the factories gets a Jackson error for a wrong value type again, not `null`.
 
 
+#### Fixed: File download - files and connections are released
+<!-- CXBOX-1453 -->
+
+Before - after a download the application did not release the file or the connection to the file storage. Under load it could run out of open files, and after several downloads interrupted by the user (for example, the tab was closed) files could not be downloaded or uploaded for a while.
+
+After - the file and the connection are released when the download ends, also when the user leaves in the middle of it.
+
 ### CXBOX [documentation](https://doc.cxbox.org/)
 
 #### Added: Chart widgets
